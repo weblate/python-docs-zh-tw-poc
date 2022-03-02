@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>warnings --- Warning control &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>warnings --- Warning control &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="dataclasses --- Data Classes" href="dataclasses.html" />
-    <link rel="prev" title="__main__ --- Top-level script environment" href="__main__.html" />
+    <link rel="prev" title="__main__ --- Top-level code environment" href="__main__.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/warnings.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code> --- Warning control</a><ul>
 <li><a class="reference internal" href="#warning-categories">Warning Categories</a></li>
 <li><a class="reference internal" href="#the-warnings-filter">The Warnings Filter</a><ul>
@@ -91,18 +90,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="__main__.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code> --- Top-level script environment</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="dataclasses.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code> --- Data Classes</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="__main__.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code> --- Top-level code environment</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="dataclasses.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code> --- Data Classes</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/warnings.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/warnings.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -126,7 +130,7 @@
           <a href="dataclasses.html" title="dataclasses --- Data Classes"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="__main__.html" title="__main__ --- Top-level script environment"
+          <a href="__main__.html" title="__main__ --- Top-level code environment"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -138,13 +142,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="python.html" accesskey="U">Python Runtime Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code> --- Warning control</a></li>
                 <li class="right">
@@ -171,7 +173,7 @@
             
   <section id="module-warnings">
 <span id="warnings-warning-control"></span><h1><a class="reference internal" href="#module-warnings" title="warnings: Issue warning messages and control their disposition."><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code></a> --- Warning control<a class="headerlink" href="#module-warnings" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/warnings.py">Lib/warnings.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/warnings.py">Lib/warnings.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>Warning messages are typically issued in situations where it is useful to alert
 the user of some condition in a program, where that condition (normally) doesn't
@@ -179,7 +181,7 @@ warrant raising an exception and terminating the program.  For example, one
 might want to issue a warning when a program uses an obsolete module.</p>
 <p>Python programmers issue warnings by calling the <a class="reference internal" href="#warnings.warn" title="warnings.warn"><code class="xref py py-func docutils literal notranslate"><span class="pre">warn()</span></code></a> function defined
 in this module.  (C programmers use <a class="reference internal" href="../c-api/exceptions.html#c.PyErr_WarnEx" title="PyErr_WarnEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_WarnEx()</span></code></a>; see
-<a class="reference internal" href="../c-api/exceptions.html#exceptionhandling"><span class="std std-ref">例外處理</span></a> for details).</p>
+<a class="reference internal" href="../c-api/exceptions.html#exceptionhandling"><span class="std std-ref">Exception Handling</span></a> for details).</p>
 <p>Warning messages are normally written to <a class="reference internal" href="sys.html#sys.stderr" title="sys.stderr"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stderr</span></code></a>, but their disposition
 can be changed flexibly, from ignoring all warnings to turning them into
 exceptions.  The disposition of warnings can vary based on the <a class="reference internal" href="#warning-categories"><span class="std std-ref">warning category</span></a>, the text of the warning message, and the source location where it
@@ -219,7 +221,7 @@ the <a class="reference internal" href="exceptions.html#Warning" title="Warning"
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Class</p></th>
-<th class="head"><p>描述</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -271,12 +273,12 @@ Unicode.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="exceptions.html#ResourceWarning" title="ResourceWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ResourceWarning</span></code></a></p></td>
 <td><p>Base category for warnings related to
-resource usage.</p></td>
+resource usage (ignored by default).</p></td>
 </tr>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Previously <a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> and <a class="reference internal" href="exceptions.html#FutureWarning" title="FutureWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FutureWarning</span></code></a> were
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Previously <a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> and <a class="reference internal" href="exceptions.html#FutureWarning" title="FutureWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FutureWarning</span></code></a> were
 distinguished based on whether a feature was being removed entirely or
 changing its behaviour. They are now distinguished based on their
 intended audience and the way they're handled by the default warnings
@@ -392,17 +394,17 @@ variable and calls to <a class="reference internal" href="#warnings.filterwarnin
 <span class="n">ignore</span><span class="p">::</span><span class="ne">ResourceWarning</span>
 </pre></div>
 </div>
-<p>In debug builds, the list of default warning filters is empty.</p>
+<p>In a <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug build</span></a>, the list of default warning filters is empty.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span><a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> is now ignored by default in addition to
+<p><span class="versionmodified changed">在 3.2 版本變更: </span><a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> is now ignored by default in addition to
 <a class="reference internal" href="exceptions.html#PendingDeprecationWarning" title="PendingDeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PendingDeprecationWarning</span></code></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> is once again shown by default when triggered
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> is once again shown by default when triggered
 directly by code in <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><a class="reference internal" href="exceptions.html#BytesWarning" title="BytesWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BytesWarning</span></code></a> no longer appears in the default filter list and is
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><a class="reference internal" href="exceptions.html#BytesWarning" title="BytesWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BytesWarning</span></code></a> no longer appears in the default filter list and is
 instead configured via <a class="reference internal" href="sys.html#sys.warnoptions" title="sys.warnoptions"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.warnoptions</span></code></a> when <a class="reference internal" href="../using/cmdline.html#cmdoption-b"><code class="xref std std-option docutils literal notranslate"><span class="pre">-b</span></code></a> is specified
 twice.</p>
 </div>
@@ -551,7 +553,7 @@ of the warning message).</p>
 <p><em>source</em>, if supplied, is the destroyed object which emitted a
 <a class="reference internal" href="exceptions.html#ResourceWarning" title="ResourceWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ResourceWarning</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>source</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>source</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -573,7 +575,7 @@ sources).</p>
 <p><em>source</em>, if supplied, is the destroyed object which emitted a
 <a class="reference internal" href="exceptions.html#ResourceWarning" title="ResourceWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ResourceWarning</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Add the <em>source</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Add the <em>source</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -633,7 +635,7 @@ and calls to <a class="reference internal" href="#warnings.simplefilter" title="
 <h2>Available Context Managers<a class="headerlink" href="#available-context-managers" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="warnings.catch_warnings">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">warnings.</span></span><span class="sig-name descname"><span class="pre">catch_warnings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#warnings.catch_warnings" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">warnings.</span></span><span class="sig-name descname"><span class="pre">catch_warnings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#warnings.catch_warnings" title="本定義的永久連結">¶</a></dt>
 <dd><p>A context manager that copies and, upon exit, restores the warnings filter
 and the <a class="reference internal" href="#warnings.showwarning" title="warnings.showwarning"><code class="xref py py-func docutils literal notranslate"><span class="pre">showwarning()</span></code></a> function.
 If the <em>record</em> argument is <a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a> (the default) the context manager
@@ -666,8 +668,9 @@ global state and therefore is not thread-safe.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code> --- Warning control</a><ul>
 <li><a class="reference internal" href="#warning-categories">Warning Categories</a></li>
 <li><a class="reference internal" href="#the-warnings-filter">The Warnings Filter</a><ul>
@@ -685,18 +688,23 @@ global state and therefore is not thread-safe.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="__main__.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code> --- Top-level script environment</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="dataclasses.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code> --- Data Classes</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="__main__.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code> --- Top-level code environment</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="dataclasses.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code> --- Data Classes</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/warnings.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/warnings.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -719,7 +727,7 @@ global state and therefore is not thread-safe.</p>
           <a href="dataclasses.html" title="dataclasses --- Data Classes"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="__main__.html" title="__main__ --- Top-level script environment"
+          <a href="__main__.html" title="__main__ --- Top-level code environment"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -731,13 +739,11 @@ global state and therefore is not thread-safe.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="python.html" >Python Runtime Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code> --- Warning control</a></li>
                 <li class="right">
@@ -757,25 +763,25 @@ global state and therefore is not thread-safe.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

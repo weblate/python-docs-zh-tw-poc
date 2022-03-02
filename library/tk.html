@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>以 Tk 打造 GUI &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphical User Interfaces with Tk &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="shlex --- Simple lexical analysis" href="shlex.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/tk.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="shlex.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shlex</span></code> --- Simple lexical analysis</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="tkinter.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code> --- Python interface to Tcl/Tk</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="shlex.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shlex</span></code> --- Simple lexical analysis</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="tkinter.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code> --- Python interface to Tcl/Tk</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/tk.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/tk.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,14 +121,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 標準函式庫 (Standard Library)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">以 Tk 打造 GUI</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The Python Standard Library</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Graphical User Interfaces with Tk</a></li>
                 <li class="right">
                     
 
@@ -150,7 +150,7 @@
           <div class="body" role="main">
             
   <section id="graphical-user-interfaces-with-tk">
-<span id="tkinter"></span><h1>以 Tk 打造 GUI<a class="headerlink" href="#graphical-user-interfaces-with-tk" title="本標題的永久連結">¶</a></h1>
+<span id="tkinter"></span><h1>Graphical User Interfaces with Tk<a class="headerlink" href="#graphical-user-interfaces-with-tk" title="本標題的永久連結">¶</a></h1>
 <p id="index-0">Tk/Tcl has long been an integral part of Python.  It provides a robust and
 platform independent windowing toolkit, that is available to Python programmers
 using the <a class="reference internal" href="tkinter.html#module-tkinter" title="tkinter: Interface to Tcl/Tk for graphical user interfaces"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code></a> package, and its extension, the <a class="reference internal" href="tkinter.tix.html#module-tkinter.tix" title="tkinter.tix: Tk Extension Widgets for Tkinter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.tix</span></code></a> and
@@ -170,15 +170,17 @@ alternative <a class="reference external" href="https://wiki.python.org/moin/Gui
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tkinter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code> --- Python interface to Tcl/Tk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.html#architecture">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.html#tkinter-modules">Tkinter Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.html#tkinter-life-preserver">Tkinter Life Preserver</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tkinter.html#how-to-use-this-section">How To Use This Section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tkinter.html#a-simple-hello-world-program">A Simple Hello World Program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tkinter.html#a-hello-world-program">A Hello World Program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tkinter.html#important-tk-concepts">Important Tk Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tkinter.html#understanding-how-tkinter-wraps-tcl-tk">Understanding How Tkinter Wraps Tcl/Tk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tkinter.html#how-do-i-what-option-does">How do I...? What option does...?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tkinter.html#navigating-the-tcl-tk-reference-manual">Navigating the Tcl/Tk Reference Manual</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tkinter.html#a-very-quick-look-at-tcl-tk">A (Very) Quick Look at Tcl/Tk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tkinter.html#mapping-basic-tk-into-tkinter">Mapping Basic Tk into Tkinter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tkinter.html#how-tk-and-tkinter-are-related">How Tk and Tkinter are Related</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.html#threading-model">Threading model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.html#handy-reference">Handy Reference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tkinter.html#setting-options">Setting Options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tkinter.html#the-packer">The Packer</a></li>
@@ -339,18 +341,22 @@ alternative <a class="reference external" href="https://wiki.python.org/moin/Gui
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="shlex.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shlex</span></code> --- Simple lexical analysis</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="tkinter.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code> --- Python interface to Tcl/Tk</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="shlex.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shlex</span></code> --- Simple lexical analysis</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="tkinter.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code> --- Python interface to Tcl/Tk</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/tk.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/tk.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -385,14 +391,12 @@ alternative <a class="reference external" href="https://wiki.python.org/moin/Gui
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">以 Tk 打造 GUI</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Graphical User Interfaces with Tk</a></li>
                 <li class="right">
                     
 
@@ -410,25 +414,25 @@ alternative <a class="reference external" href="https://wiki.python.org/moin/Gui
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

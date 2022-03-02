@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. An Introduction to Distutils &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. An Introduction to Distutils &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="2. Writing the Setup Script" href="setupscript.html" />
-    <link rel="prev" title="發布 Python 模組（舊版）" href="index.html" />
+    <link rel="prev" title="Distributing Python Modules (Legacy version)" href="index.html" />
     <link rel="canonical" href="https://docs.python.org/3/distutils/introduction.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">1. An Introduction to Distutils</a><ul>
 <li><a class="reference internal" href="#concepts-terminology">1.1. Concepts &amp; Terminology</a></li>
 <li><a class="reference internal" href="#a-simple-example">1.2. A Simple Example</a></li>
@@ -83,18 +82,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">發布 Python 模組（舊版）</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="setupscript.html"
-                        title="下一章"><span class="section-number">2. </span>Writing the Setup Script</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="index.html"
+                          title="上一章">Distributing Python Modules (Legacy version)</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="setupscript.html"
+                          title="下一章"><span class="section-number">2. </span>Writing the Setup Script</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/distutils/introduction.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/distutils/introduction.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -118,7 +122,7 @@
           <a href="setupscript.html" title="2. Writing the Setup Script"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="index.html" title="發布 Python 模組（舊版）"
+          <a href="index.html" title="Distributing Python Modules (Legacy version)"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -130,13 +134,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">發布 Python 模組（舊版）</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Distributing Python Modules (Legacy version)</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>An Introduction to Distutils</a></li>
                 <li class="right">
                     
@@ -171,7 +173,7 @@ independently covers all of the relevant information currently included here.</p
 <p>This document covers using the Distutils to distribute your Python modules,
 concentrating on the role of developer/distributor: if you're looking for
 information on installing Python modules, you should refer to the
-<a class="reference internal" href="../install/index.html#install-index"><span class="std std-ref">安裝 Python 模組（舊版）</span></a> chapter.</p>
+<a class="reference internal" href="../install/index.html#install-index"><span class="std std-ref">Installing Python Modules (Legacy version)</span></a> chapter.</p>
 <section id="concepts-terminology">
 <span id="distutils-concepts"></span><h2><span class="section-number">1.1. </span>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="本標題的永久連結">¶</a></h2>
 <p>Using the Distutils is quite simple, both for module developers and for
@@ -254,16 +256,6 @@ the setup script.  The difference is which Distutils <em>commands</em> they use:
 <strong class="command">sdist</strong> command is almost exclusively for module developers, while
 <strong class="command">install</strong> is more often for installers (although most developers will
 want to install their own code occasionally).</p>
-<p>If you want to make things really easy for your users, you can create one or
-more built distributions for them.  For instance, if you are running on a
-Windows machine, and want to make things easy for other Windows users, you can
-create an executable installer (the most appropriate type of built distribution
-for this platform) with the <strong class="command">bdist_wininst</strong> command.  For example:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">bdist_wininst</span>
-</pre></div>
-</div>
-<p>will create an executable installer, <code class="file docutils literal notranslate"><span class="pre">foo-1.0.win32.exe</span></code>, in the current
-directory.</p>
 <p>Other useful built distribution formats are RPM, implemented by the
 <strong class="command">bdist_rpm</strong> command, Solaris <strong class="program">pkgtool</strong>
 (<strong class="command">bdist_pkgtool</strong>), and HP-UX <strong class="program">swinstall</strong>
@@ -349,8 +341,9 @@ run from this directory.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">1. An Introduction to Distutils</a><ul>
 <li><a class="reference internal" href="#concepts-terminology">1.1. Concepts &amp; Terminology</a></li>
 <li><a class="reference internal" href="#a-simple-example">1.2. A Simple Example</a></li>
@@ -360,18 +353,23 @@ run from this directory.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">發布 Python 模組（舊版）</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="setupscript.html"
-                        title="下一章"><span class="section-number">2. </span>Writing the Setup Script</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="index.html"
+                          title="上一章">Distributing Python Modules (Legacy version)</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="setupscript.html"
+                          title="下一章"><span class="section-number">2. </span>Writing the Setup Script</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/distutils/introduction.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/distutils/introduction.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -394,7 +392,7 @@ run from this directory.</p>
           <a href="setupscript.html" title="2. Writing the Setup Script"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="index.html" title="發布 Python 模組（舊版）"
+          <a href="index.html" title="Distributing Python Modules (Legacy version)"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -406,13 +404,11 @@ run from this directory.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >發布 Python 模組（舊版）</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Distributing Python Modules (Legacy version)</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>An Introduction to Distutils</a></li>
                 <li class="right">
                     
@@ -431,25 +427,25 @@ run from this directory.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

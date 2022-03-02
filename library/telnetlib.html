@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>telnetlib --- Telnet client &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>telnetlib --- Telnet client &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="smtpd --- SMTP Server" href="smtpd.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/telnetlib.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code> --- Telnet client</a><ul>
 <li><a class="reference internal" href="#telnet-objects">Telnet Objects</a></li>
 <li><a class="reference internal" href="#telnet-example">Telnet Example</a></li>
@@ -81,18 +80,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="smtpd.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtpd</span></code> --- SMTP Server</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="uuid.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uuid</span></code> --- UUID objects according to <strong>RFC 4122</strong></a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="smtpd.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtpd</span></code> --- SMTP Server</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="uuid.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uuid</span></code> --- UUID objects according to <strong>RFC 4122</strong></a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/telnetlib.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/telnetlib.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -128,13 +132,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" accesskey="U">Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code> --- Telnet client</a></li>
                 <li class="right">
@@ -161,10 +163,10 @@
             
   <section id="module-telnetlib">
 <span id="telnetlib-telnet-client"></span><h1><a class="reference internal" href="#module-telnetlib" title="telnetlib: Telnet client class."><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code></a> --- Telnet client<a class="headerlink" href="#module-telnetlib" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/telnetlib.py">Lib/telnetlib.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/telnetlib.py">Lib/telnetlib.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>The <a class="reference internal" href="#module-telnetlib" title="telnetlib: Telnet client class."><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code></a> module provides a <a class="reference internal" href="#telnetlib.Telnet" title="telnetlib.Telnet"><code class="xref py py-class docutils literal notranslate"><span class="pre">Telnet</span></code></a> class that implements the
-Telnet protocol.  See <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc854.html"><strong>RFC 854</strong></a> for details about the protocol. In addition, it
+Telnet protocol.  See <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc854.html"><strong>RFC 854</strong></a> for details about the protocol. In addition, it
 provides symbolic constants for the protocol characters (see below), and for the
 telnet options. The symbolic names of the telnet options follow the definitions
 in <code class="docutils literal notranslate"><span class="pre">arpa/telnet.h</span></code>, with the leading <code class="docutils literal notranslate"><span class="pre">TELOPT_</span></code> removed. For symbolic names
@@ -176,7 +178,7 @@ SE (Subnegotiation End), NOP (No Operation), DM (Data Mark), BRK (Break), IP
 Character), EL (Erase Line), GA (Go Ahead), SB (Subnegotiation Begin).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telnetlib.Telnet">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">telnetlib.</span></span><span class="sig-name descname"><span class="pre">Telnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host=None</span></em>, <em class="sig-param"><span class="pre">port=0</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#telnetlib.Telnet" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telnetlib.</span></span><span class="sig-name descname"><span class="pre">Telnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port=0</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#telnetlib.Telnet" title="本定義的永久連結">¶</a></dt>
 <dd><p><a class="reference internal" href="#telnetlib.Telnet" title="telnetlib.Telnet"><code class="xref py py-class docutils literal notranslate"><span class="pre">Telnet</span></code></a> represents a connection to a Telnet server. The instance is
 initially not connected by default; the <a class="reference internal" href="#telnetlib.Telnet.open" title="telnetlib.Telnet.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> method must be used to
 establish a connection.  Alternatively, the host name and optional port
@@ -199,14 +201,14 @@ an empty string for other reasons.  See the individual descriptions below.</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Context manager support added</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Context manager support added</p>
 </div>
 </dd></dl>
 
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc854.html"><strong>RFC 854</strong></a> - Telnet Protocol Specification</dt><dd><p>Definition of the Telnet protocol.</p>
+<dt><span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc854.html"><strong>RFC 854</strong></a> - Telnet Protocol Specification</dt><dd><p>Definition of the Telnet protocol.</p>
 </dd>
 </dl>
 </div>
@@ -281,7 +283,7 @@ This method never blocks.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="telnetlib.Telnet.open">
-<span class="sig-prename descclassname"><span class="pre">Telnet.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">port=0</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#telnetlib.Telnet.open" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Telnet.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port=0</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#telnetlib.Telnet.open" title="本定義的永久連結">¶</a></dt>
 <dd><p>Connect to a host. The optional second argument is the port number, which
 defaults to the standard Telnet port (23). The optional <em>timeout</em> parameter
 specifies a timeout in seconds for blocking operations like the connection
@@ -331,7 +333,7 @@ block if the connection is blocked.  May raise <a class="reference internal" hre
 connection is closed.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">telnetlib.Telnet.write</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">buffer</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>This method used to raise <a class="reference internal" href="socket.html#socket.error" title="socket.error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">socket.error</span></code></a>, which is now an alias
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>This method used to raise <a class="reference internal" href="socket.html#socket.error" title="socket.error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">socket.error</span></code></a>, which is now an alias
 of <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -410,8 +412,9 @@ called with the following parameters: callback(telnet socket, command
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code> --- Telnet client</a><ul>
 <li><a class="reference internal" href="#telnet-objects">Telnet Objects</a></li>
 <li><a class="reference internal" href="#telnet-example">Telnet Example</a></li>
@@ -419,18 +422,23 @@ called with the following parameters: callback(telnet socket, command
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="smtpd.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtpd</span></code> --- SMTP Server</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="uuid.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uuid</span></code> --- UUID objects according to <strong>RFC 4122</strong></a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="smtpd.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtpd</span></code> --- SMTP Server</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="uuid.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uuid</span></code> --- UUID objects according to <strong>RFC 4122</strong></a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/telnetlib.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/telnetlib.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -465,13 +473,11 @@ called with the following parameters: callback(telnet socket, command
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" >Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code> --- Telnet client</a></li>
                 <li class="right">
@@ -491,25 +497,25 @@ called with the following parameters: callback(telnet socket, command
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

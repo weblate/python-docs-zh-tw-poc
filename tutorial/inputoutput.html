@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7. 輸入和輸出 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. Input and Output &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="8. 錯誤和例外" href="errors.html" />
-    <link rel="prev" title="6. 模組" href="modules.html" />
+    <link rel="next" title="8. Errors and Exceptions" href="errors.html" />
+    <link rel="prev" title="6. Modules" href="modules.html" />
     <link rel="canonical" href="https://docs.python.org/3/tutorial/inputoutput.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,37 +70,43 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">7. 輸入和輸出</a><ul>
-<li><a class="reference internal" href="#fancier-output-formatting">7.1. 更華麗的輸出格式</a><ul>
-<li><a class="reference internal" href="#formatted-string-literals">7.1.1. 格式化的字串文本 (Formatted String Literals)</a></li>
-<li><a class="reference internal" href="#the-string-format-method">7.1.2. 字串的 format() method</a></li>
-<li><a class="reference internal" href="#manual-string-formatting">7.1.3. 手動格式化字串</a></li>
-<li><a class="reference internal" href="#old-string-formatting">7.1.4. 格式化字串的舊方法</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">7. Input and Output</a><ul>
+<li><a class="reference internal" href="#fancier-output-formatting">7.1. Fancier Output Formatting</a><ul>
+<li><a class="reference internal" href="#formatted-string-literals">7.1.1. Formatted String Literals</a></li>
+<li><a class="reference internal" href="#the-string-format-method">7.1.2. The String format() Method</a></li>
+<li><a class="reference internal" href="#manual-string-formatting">7.1.3. Manual String Formatting</a></li>
+<li><a class="reference internal" href="#old-string-formatting">7.1.4. Old string formatting</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#reading-and-writing-files">7.2. 讀寫檔案</a><ul>
-<li><a class="reference internal" href="#methods-of-file-objects">7.2.1. 檔案物件的 method</a></li>
-<li><a class="reference internal" href="#saving-structured-data-with-json">7.2.2. 使用 <code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> 儲存結構化資料</a></li>
+<li><a class="reference internal" href="#reading-and-writing-files">7.2. Reading and Writing Files</a><ul>
+<li><a class="reference internal" href="#methods-of-file-objects">7.2.1. Methods of File Objects</a></li>
+<li><a class="reference internal" href="#saving-structured-data-with-json">7.2.2. Saving structured data with <code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="modules.html"
-                        title="上一章"><span class="section-number">6. </span>模組</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="errors.html"
-                        title="下一章"><span class="section-number">8. </span>錯誤和例外</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="modules.html"
+                          title="上一章"><span class="section-number">6. </span>Modules</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="errors.html"
+                          title="下一章"><span class="section-number">8. </span>Errors and Exceptions</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/tutorial/inputoutput.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/tutorial/inputoutput.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -123,10 +127,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="errors.html" title="8. 錯誤和例外"
+          <a href="errors.html" title="8. Errors and Exceptions"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="modules.html" title="6. 模組"
+          <a href="modules.html" title="6. Modules"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -138,14 +142,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><span class="section-number">7. </span>輸入和輸出</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The Python Tutorial</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">7. </span>Input and Output</a></li>
                 <li class="right">
                     
 
@@ -169,14 +171,23 @@
           <div class="body" role="main">
             
   <section id="input-and-output">
-<span id="tut-io"></span><h1><span class="section-number">7. </span>輸入和輸出<a class="headerlink" href="#input-and-output" title="本標題的永久連結">¶</a></h1>
-<p>有數種方式可以顯示程式的輸出；資料可以以人類易讀的形式印出，或是寫入檔案以供未來所使用。這章節會討論幾種不同的方式。</p>
+<span id="tut-io"></span><h1><span class="section-number">7. </span>Input and Output<a class="headerlink" href="#input-and-output" title="本標題的永久連結">¶</a></h1>
+<p>There are several ways to present the output of a program; data can be printed
+in a human-readable form, or written to a file for future use. This chapter will
+discuss some of the possibilities.</p>
 <section id="fancier-output-formatting">
-<span id="tut-formatting"></span><h2><span class="section-number">7.1. </span>更華麗的輸出格式<a class="headerlink" href="#fancier-output-formatting" title="本標題的永久連結">¶</a></h2>
-<p>目前為止我們已經學過兩種寫值的方式：<em>運算式陳述 (expression statements)</em> 與 <a class="reference internal" href="../library/functions.html#print" title="print"><code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code></a> 函式。（第三種方法是使用檔案物件的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code> 方法；標準輸出的檔案是使用 <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> 來達成的。詳細的資訊請參考對應的函式庫說明。）</p>
-<p>通常你會想要對輸出格式有更多地控制，而不是僅列印出以空格隔開的值。以下是幾種格式化輸出的方式。</p>
+<span id="tut-formatting"></span><h2><span class="section-number">7.1. </span>Fancier Output Formatting<a class="headerlink" href="#fancier-output-formatting" title="本標題的永久連結">¶</a></h2>
+<p>So far we've encountered two ways of writing values: <em>expression statements</em> and
+the <a class="reference internal" href="../library/functions.html#print" title="print"><code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code></a> function.  (A third way is using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code> method
+of file objects; the standard output file can be referenced as <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>.
+See the Library Reference for more information on this.)</p>
+<p>Often you'll want more control over the formatting of your output than simply
+printing space-separated values. There are several ways to format output.</p>
 <ul>
-<li><p>要使用<a class="reference internal" href="#tut-f-strings"><span class="std std-ref">格式化字串文本 (formatted string literals)</span></a>，需在字串開始前的引號或連續三個引號前加上 <code class="docutils literal notranslate"><span class="pre">f</span></code> 或 <code class="docutils literal notranslate"><span class="pre">F</span></code>。你可以在這個字串中使用 <code class="docutils literal notranslate"><span class="pre">{</span></code> 與 <code class="docutils literal notranslate"><span class="pre">}</span></code> 包夾 Python 的運算式，引用變數或其他字面值 (literal values)。</p>
+<li><p>To use <a class="reference internal" href="#tut-f-strings"><span class="std std-ref">formatted string literals</span></a>, begin a string
+with <code class="docutils literal notranslate"><span class="pre">f</span></code> or <code class="docutils literal notranslate"><span class="pre">F</span></code> before the opening quotation mark or triple quotation mark.
+Inside this string, you can write a Python expression between <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code>
+characters that can refer to variables or literal values.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">year</span> <span class="o">=</span> <span class="mi">2016</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="s1">&#39;Referendum&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s1">&#39;Results of the </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">event</span><span class="si">}</span><span class="s1">&#39;</span>
@@ -184,7 +195,10 @@
 </pre></div>
 </div>
 </li>
-<li><p>字串的 <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method 需要更多手動操作。你還是可以用 <code class="docutils literal notranslate"><span class="pre">{</span></code> 和 <code class="docutils literal notranslate"><span class="pre">}</span></code> 標示欲替代變數的位置，且可給予詳細的格式指令，但你也需提供要被格式化的資訊。</p>
+<li><p>The <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method of strings requires more manual
+effort.  You'll still use <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code> to mark where a variable
+will be substituted and can provide detailed formatting directives,
+but you'll also need to provide the information to be formatted.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">yes_votes</span> <span class="o">=</span> <span class="mi">42_572_654</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">no_votes</span> <span class="o">=</span> <span class="mi">43_132_495</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">percentage</span> <span class="o">=</span> <span class="n">yes_votes</span> <span class="o">/</span> <span class="p">(</span><span class="n">yes_votes</span> <span class="o">+</span> <span class="n">no_votes</span><span class="p">)</span>
@@ -193,11 +207,23 @@
 </pre></div>
 </div>
 </li>
-<li><p>最後，你還可以自己用字串切片 (slicing) 和串接 (concatenation) 操作，完成所有的字串處理，建立任何你能想像的排版格式。字串型別有一些 method，能以給定的欄寬填補字串，這些運算也很有用。</p></li>
+<li><p>Finally, you can do all the string handling yourself by using string slicing and
+concatenation operations to create any layout you can imagine.  The
+string type has some methods that perform useful operations for padding
+strings to a given column width.</p></li>
 </ul>
-<p>如果你不需要華麗的輸出，只想快速顯示變數以進行除錯，可以用 <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a> 或 <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> 函式把任何的值轉換為字串。</p>
-<p><a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> 函式的用意是回傳一個人類易讀的表示法，而 <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a> 的用意是產生直譯器可讀取的表示法（如果沒有等效的語法，則造成 <a class="reference internal" href="../library/exceptions.html#SyntaxError" title="SyntaxError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SyntaxError</span></code></a>）。如果物件沒有人類易讀的特定表示法，<a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> 會回傳與 <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a> 相同的值。有許多的值，像是數字，或 list 及 dictionary 等結構，使用這兩個函式會有相同的表示法。而字串，則較為特別，有兩種不同的表示法。</p>
-<p>一些範例：</p>
+<p>When you don't need fancy output but just want a quick display of some
+variables for debugging purposes, you can convert any value to a string with
+the <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a> or <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> functions.</p>
+<p>The <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> function is meant to return representations of values which are
+fairly human-readable, while <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a> is meant to generate representations
+which can be read by the interpreter (or will force a <a class="reference internal" href="../library/exceptions.html#SyntaxError" title="SyntaxError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SyntaxError</span></code></a> if
+there is no equivalent syntax).  For objects which don't have a particular
+representation for human consumption, <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> will return the same value as
+<a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a>.  Many values, such as numbers or structures like lists and
+dictionaries, have the same representation using either function.  Strings, in
+particular, have two distinct representations.</p>
+<p>Some examples:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Hello, world.&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="go">&#39;Hello, world.&#39;</span>
@@ -220,17 +246,26 @@
 <span class="go">&quot;(32.5, 40000, (&#39;spam&#39;, &#39;eggs&#39;))&quot;</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../library/string.html#module-string" title="string: Common string operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">string</span></code></a> 模組包含一個 <a class="reference internal" href="../library/string.html#string.Template" title="string.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">Template</span></code></a> class（類別），提供了將值替代為字串的另一種方法。該方法使用 <code class="docutils literal notranslate"><span class="pre">$x</span></code> 佔位符號，並以 dictionary 的值進行取代，但對格式的控制明顯較少。</p>
+<p>The <a class="reference internal" href="../library/string.html#module-string" title="string: Common string operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">string</span></code></a> module contains a <a class="reference internal" href="../library/string.html#string.Template" title="string.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">Template</span></code></a> class that offers
+yet another way to substitute values into strings, using placeholders like
+<code class="docutils literal notranslate"><span class="pre">$x</span></code> and replacing them with values from a dictionary, but offers much less
+control of the formatting.</p>
 <section id="formatted-string-literals">
-<span id="tut-f-strings"></span><h3><span class="section-number">7.1.1. </span>格式化的字串文本 (Formatted String Literals)<a class="headerlink" href="#formatted-string-literals" title="本標題的永久連結">¶</a></h3>
-<p><a class="reference internal" href="../reference/lexical_analysis.html#f-strings"><span class="std std-ref">格式化的字串文本</span></a>（簡稱為 f-字串），透過在字串加入前綴 <code class="docutils literal notranslate"><span class="pre">f</span></code> 或 <code class="docutils literal notranslate"><span class="pre">F</span></code>，並將運算式編寫為 <code class="docutils literal notranslate"><span class="pre">{expression}</span></code>，讓你可以在字串內加入 Python 運算式的值。</p>
-<p>格式說明符 (format specifier) 是選擇性的，寫在運算式後面，可以更好地控制值的格式化方式。以下範例將 pi 捨入到小數點後三位：</p>
+<span id="tut-f-strings"></span><h3><span class="section-number">7.1.1. </span>Formatted String Literals<a class="headerlink" href="#formatted-string-literals" title="本標題的永久連結">¶</a></h3>
+<p><a class="reference internal" href="../reference/lexical_analysis.html#f-strings"><span class="std std-ref">Formatted string literals</span></a> (also called f-strings for
+short) let you include the value of Python expressions inside a string by
+prefixing the string with <code class="docutils literal notranslate"><span class="pre">f</span></code> or <code class="docutils literal notranslate"><span class="pre">F</span></code> and writing expressions as
+<code class="docutils literal notranslate"><span class="pre">{expression}</span></code>.</p>
+<p>An optional format specifier can follow the expression. This allows greater
+control over how the value is formatted. The following example rounds pi to
+three places after the decimal:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The value of pi is approximately </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 <span class="go">The value of pi is approximately 3.142.</span>
 </pre></div>
 </div>
-<p>在 <code class="docutils literal notranslate"><span class="pre">':'</span></code> 後傳遞一個整數，可以設定該欄位至少為幾個字元寬，常用於將每一欄對齊。</p>
+<p>Passing an integer after the <code class="docutils literal notranslate"><span class="pre">':'</span></code> will cause that field to be a minimum
+number of characters wide.  This is useful for making columns line up.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Sjoerd&#39;</span><span class="p">:</span> <span class="mi">4127</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s1">&#39;Dcab&#39;</span><span class="p">:</span> <span class="mi">7678</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">phone</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s1">10</span><span class="si">}</span><span class="s1"> ==&gt; </span><span class="si">{</span><span class="n">phone</span><span class="si">:</span><span class="s1">10d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -240,7 +275,9 @@
 <span class="go">Dcab       ==&gt;       7678</span>
 </pre></div>
 </div>
-<p>還有一些修飾符號可以在格式化前先將值轉換過。<code class="docutils literal notranslate"><span class="pre">'!a'</span></code> 會套用 <a class="reference internal" href="../library/functions.html#ascii" title="ascii"><code class="xref py py-func docutils literal notranslate"><span class="pre">ascii()</span></code></a>，<code class="docutils literal notranslate"><span class="pre">'!s'</span></code> 會套用 <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a>，<code class="docutils literal notranslate"><span class="pre">'!r'</span></code> 會套用 <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a>：</p>
+<p>Other modifiers can be used to convert the value before it is formatted.
+<code class="docutils literal notranslate"><span class="pre">'!a'</span></code> applies <a class="reference internal" href="../library/functions.html#ascii" title="ascii"><code class="xref py py-func docutils literal notranslate"><span class="pre">ascii()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">'!s'</span></code> applies <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a>, and <code class="docutils literal notranslate"><span class="pre">'!r'</span></code>
+applies <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a>:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">animals</span> <span class="o">=</span> <span class="s1">&#39;eels&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My hovercraft is full of </span><span class="si">{</span><span class="n">animals</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 <span class="go">My hovercraft is full of eels.</span>
@@ -248,49 +285,60 @@
 <span class="go">My hovercraft is full of &#39;eels&#39;.</span>
 </pre></div>
 </div>
-<p>若要參考這些格式化字串的規格，詳見 <a class="reference internal" href="../library/string.html#formatspec"><span class="std std-ref">Format Specification Mini-Language</span></a> 參考指南。</p>
+<p>For a reference on these format specifications, see
+the reference guide for the <a class="reference internal" href="../library/string.html#formatspec"><span class="std std-ref">Format Specification Mini-Language</span></a>.</p>
 </section>
 <section id="the-string-format-method">
-<span id="tut-string-format"></span><h3><span class="section-number">7.1.2. </span>字串的 format() method<a class="headerlink" href="#the-string-format-method" title="本標題的永久連結">¶</a></h3>
-<p><a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method 的基本用法如下：</p>
+<span id="tut-string-format"></span><h3><span class="section-number">7.1.2. </span>The String format() Method<a class="headerlink" href="#the-string-format-method" title="本標題的永久連結">¶</a></h3>
+<p>Basic usage of the <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method looks like this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We are the </span><span class="si">{}</span><span class="s1"> who say &quot;</span><span class="si">{}</span><span class="s1">!&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;knights&#39;</span><span class="p">,</span> <span class="s1">&#39;Ni&#39;</span><span class="p">))</span>
 <span class="go">We are the knights who say &quot;Ni!&quot;</span>
 </pre></div>
 </div>
-<p>大括號及其內的字元（稱為格式欄位）會被取代為傳遞給 <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method 的物件。大括號中的數字表示該物件在傳遞給 <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method 時所在的位置。</p>
+<p>The brackets and characters within them (called format fields) are replaced with
+the objects passed into the <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method.  A number in the
+brackets can be used to refer to the position of the object passed into the
+<a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> and </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">))</span>
 <span class="go">spam and eggs</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{1}</span><span class="s1"> and </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">))</span>
 <span class="go">eggs and spam</span>
 </pre></div>
 </div>
-<p>如果在 <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method 中使用關鍵字引數，可以使用引數名稱去引用它們的值。</p>
+<p>If keyword arguments are used in the <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> method, their values
+are referred to by using the name of the argument.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This </span><span class="si">{food}</span><span class="s1"> is </span><span class="si">{adjective}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
 <span class="gp">... </span>      <span class="n">food</span><span class="o">=</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="n">adjective</span><span class="o">=</span><span class="s1">&#39;absolutely horrible&#39;</span><span class="p">))</span>
 <span class="go">This spam is absolutely horrible.</span>
 </pre></div>
 </div>
-<p>位置引數和關鍵字引數可以任意組合：</p>
+<p>Positional and keyword arguments can be arbitrarily combined:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The story of </span><span class="si">{0}</span><span class="s1">, </span><span class="si">{1}</span><span class="s1">, and </span><span class="si">{other}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;Manfred&#39;</span><span class="p">,</span>
 <span class="go">                                                       other=&#39;Georg&#39;))</span>
 <span class="go">The story of Bill, Manfred, and Georg.</span>
 </pre></div>
 </div>
-<p>如果你有一個不想分割的長格式化字串，比較好的方式是按名稱而不是按位置來引用變數。這項操作可以透過傳遞字典 (dict)，並用方括號 <code class="docutils literal notranslate"><span class="pre">'[]'</span></code> 使用鍵 (key) 來輕鬆完成。</p>
+<p>If you have a really long format string that you don't want to split up, it
+would be nice if you could reference the variables to be formatted by name
+instead of by position.  This can be done by simply passing the dict and using
+square brackets <code class="docutils literal notranslate"><span class="pre">'[]'</span></code> to access the keys.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Sjoerd&#39;</span><span class="p">:</span> <span class="mi">4127</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s1">&#39;Dcab&#39;</span><span class="p">:</span> <span class="mi">8637678</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jack: </span><span class="si">{0[Jack]:d}</span><span class="s1">; Sjoerd: </span><span class="si">{0[Sjoerd]:d}</span><span class="s1">; &#39;</span>
 <span class="gp">... </span>      <span class="s1">&#39;Dcab: </span><span class="si">{0[Dcab]:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
 <span class="go">Jack: 4098; Sjoerd: 4127; Dcab: 8637678</span>
 </pre></div>
 </div>
-<p>用 '**' 符號，把 table 當作關鍵字引數來傳遞，也有一樣的結果。</p>
+<p>This could also be done by passing the table as keyword arguments with the '**'
+notation.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Sjoerd&#39;</span><span class="p">:</span> <span class="mi">4127</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s1">&#39;Dcab&#39;</span><span class="p">:</span> <span class="mi">8637678</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jack: </span><span class="si">{Jack:d}</span><span class="s1">; Sjoerd: </span><span class="si">{Sjoerd:d}</span><span class="s1">; Dcab: </span><span class="si">{Dcab:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">table</span><span class="p">))</span>
 <span class="go">Jack: 4098; Sjoerd: 4127; Dcab: 8637678</span>
 </pre></div>
 </div>
-<p>與內建函式 <a class="reference internal" href="../library/functions.html#vars" title="vars"><code class="xref py py-func docutils literal notranslate"><span class="pre">vars()</span></code></a> 組合使用時，這種方式特別實用。該函式可以回傳一個包含所有區域變數的 dictionary。</p>
-<p>例如，下面的程式碼產生一組排列整齊的欄，列出整數及其平方與立方：</p>
+<p>This is particularly useful in combination with the built-in function
+<a class="reference internal" href="../library/functions.html#vars" title="vars"><code class="xref py py-func docutils literal notranslate"><span class="pre">vars()</span></code></a>, which returns a dictionary containing all local variables.</p>
+<p>As an example, the following lines produce a tidily-aligned
+set of columns giving integers and their squares and cubes:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0:2d}</span><span class="s1"> </span><span class="si">{1:3d}</span><span class="s1"> </span><span class="si">{2:4d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
 <span class="gp">...</span>
@@ -306,11 +354,12 @@
 <span class="go">10 100 1000</span>
 </pre></div>
 </div>
-<p>關於使用 <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a> 進行字串格式化的完整概述，請見<a class="reference internal" href="../library/string.html#formatstrings"><span class="std std-ref">Format String Syntax</span></a>。</p>
+<p>For a complete overview of string formatting with <a class="reference internal" href="../library/stdtypes.html#str.format" title="str.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.format()</span></code></a>, see
+<a class="reference internal" href="../library/string.html#formatstrings"><span class="std std-ref">Format String Syntax</span></a>.</p>
 </section>
 <section id="manual-string-formatting">
-<h3><span class="section-number">7.1.3. </span>手動格式化字串<a class="headerlink" href="#manual-string-formatting" title="本標題的永久連結">¶</a></h3>
-<p>下面是以手動格式化完成的同一個平方及立方的表：</p>
+<h3><span class="section-number">7.1.3. </span>Manual String Formatting<a class="headerlink" href="#manual-string-formatting" title="本標題的永久連結">¶</a></h3>
+<p>Here's the same table of squares and cubes, formatted manually:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="c1"># Note use of &#39;end&#39; on previous line</span>
@@ -328,9 +377,18 @@
 <span class="go">10 100 1000</span>
 </pre></div>
 </div>
-<p>（請注意，使用 <a class="reference internal" href="../library/functions.html#print" title="print"><code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code></a> 讓每欄之間加入一個空格的方法：這種方法總是在其引數間加入空格。）</p>
-<p>字串物件的 <a class="reference internal" href="../library/stdtypes.html#str.rjust" title="str.rjust"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.rjust()</span></code></a> method 透過在左側填補空格，使字串以給定的欄寬進行靠右對齊。類似的 method 還有 <a class="reference internal" href="../library/stdtypes.html#str.ljust" title="str.ljust"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.ljust()</span></code></a> 和 <a class="reference internal" href="../library/stdtypes.html#str.center" title="str.center"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.center()</span></code></a>。這些 method 不寫入任何內容，只回傳一個新字串，如果輸入的字串太長，它們不會截斷字串，而是不做任何改變地回傳；雖然這樣會弄亂欄的編排，但這通常還是比另一種情況好，那種情況會讓值變得不正確。（如果你真的想截斷字串，可以加入像 <code class="docutils literal notranslate"><span class="pre">x.ljust(n)[:n]</span></code> 這樣的切片運算。）</p>
-<p>另一種 method 是 <a class="reference internal" href="../library/stdtypes.html#str.zfill" title="str.zfill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.zfill()</span></code></a>，可在數值字串的左邊填補零，且能識別正負號：</p>
+<p>(Note that the one space between each column was added by the
+way <a class="reference internal" href="../library/functions.html#print" title="print"><code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code></a> works: it always adds spaces between its arguments.)</p>
+<p>The <a class="reference internal" href="../library/stdtypes.html#str.rjust" title="str.rjust"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.rjust()</span></code></a> method of string objects right-justifies a string in a
+field of a given width by padding it with spaces on the left. There are
+similar methods <a class="reference internal" href="../library/stdtypes.html#str.ljust" title="str.ljust"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.ljust()</span></code></a> and <a class="reference internal" href="../library/stdtypes.html#str.center" title="str.center"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.center()</span></code></a>. These methods do
+not write anything, they just return a new string. If the input string is too
+long, they don't truncate it, but return it unchanged; this will mess up your
+column lay-out but that's usually better than the alternative, which would be
+lying about a value. (If you really want truncation you can always add a
+slice operation, as in <code class="docutils literal notranslate"><span class="pre">x.ljust(n)[:n]</span></code>.)</p>
+<p>There is another method, <a class="reference internal" href="../library/stdtypes.html#str.zfill" title="str.zfill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.zfill()</span></code></a>, which pads a numeric string on the
+left with zeros.  It understands about plus and minus signs:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;12&#39;</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="go">&#39;00012&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;-3.14&#39;</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
@@ -341,26 +399,52 @@
 </div>
 </section>
 <section id="old-string-formatting">
-<h3><span class="section-number">7.1.4. </span>格式化字串的舊方法<a class="headerlink" href="#old-string-formatting" title="本標題的永久連結">¶</a></h3>
-<p>% 運算子（modulo，模數）也可用於字串格式化。在 <code class="docutils literal notranslate"><span class="pre">'string'</span> <span class="pre">%</span> <span class="pre">values</span></code> 中，<code class="docutils literal notranslate"><span class="pre">string</span></code> 中所有的 <code class="docutils literal notranslate"><span class="pre">%</span></code> 會被 <code class="docutils literal notranslate"><span class="pre">values</span></code> 的零個或多個元素所取代。此運算常被稱為字串插值 (string interpolation)。例如：</p>
+<h3><span class="section-number">7.1.4. </span>Old string formatting<a class="headerlink" href="#old-string-formatting" title="本標題的永久連結">¶</a></h3>
+<p>The % operator (modulo) can also be used for string formatting. Given <code class="docutils literal notranslate"><span class="pre">'string'</span>
+<span class="pre">%</span> <span class="pre">values</span></code>, instances of <code class="docutils literal notranslate"><span class="pre">%</span></code> in <code class="docutils literal notranslate"><span class="pre">string</span></code> are replaced with zero or more
+elements of <code class="docutils literal notranslate"><span class="pre">values</span></code>. This operation is commonly known as string
+interpolation. For example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The value of pi is approximately </span><span class="si">%5.3f</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="go">The value of pi is approximately 3.142.</span>
 </pre></div>
 </div>
-<p>更多資訊請見 <a class="reference internal" href="../library/stdtypes.html#old-string-formatting"><span class="std std-ref">printf-style String Formatting</span></a>小節。</p>
+<p>More information can be found in the <a class="reference internal" href="../library/stdtypes.html#old-string-formatting"><span class="std std-ref">printf-style String Formatting</span></a> section.</p>
 </section>
 </section>
 <section id="reading-and-writing-files">
-<span id="tut-files"></span><h2><span class="section-number">7.2. </span>讀寫檔案<a class="headerlink" href="#reading-and-writing-files" title="本標題的永久連結">¶</a></h2>
-<p id="index-0"><a class="reference internal" href="../library/functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> 回傳一個 <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a>，而它最常使用的兩個引數是：<code class="docutils literal notranslate"><span class="pre">open(filename,</span> <span class="pre">mode)</span></code>。</p>
+<span id="tut-files"></span><h2><span class="section-number">7.2. </span>Reading and Writing Files<a class="headerlink" href="#reading-and-writing-files" title="本標題的永久連結">¶</a></h2>
+<p id="index-0"><a class="reference internal" href="../library/functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> returns a <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a>, and is most commonly used with
+two arguments: <code class="docutils literal notranslate"><span class="pre">open(filename,</span> <span class="pre">mode)</span></code>.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;workfile&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>第一個引數是一個包含檔案名稱的字串。第二個引數是另一個字串，包含了描述檔案使用方式的幾個字元。<em>mode</em> 為 <code class="docutils literal notranslate"><span class="pre">'r'</span></code> 時，表示以唯讀模式開啟檔案；為 <code class="docutils literal notranslate"><span class="pre">'w'</span></code> 時，表示以唯寫模式開啟檔案（已存在的同名檔案會被抹除）；為 <code class="docutils literal notranslate"><span class="pre">'a'</span></code> 時，以附加內容為目的開啟檔案，任何寫入檔案的資料會自動被加入到檔案的結尾。<code class="docutils literal notranslate"><span class="pre">'r+'</span></code> 可以開啟檔案並進行讀取和寫入。<em>mode</em> 引數是選擇性的，若省略時會預設為 <code class="docutils literal notranslate"><span class="pre">'r'</span></code>。</p>
-<p>通常，檔案以 <em class="dfn">text mode</em> 開啟，意即，從檔案中讀取或寫入字串時，都以特定編碼方式進行編碼。如未指定編碼方式，則預設值會取決於系統平台（見 <a class="reference internal" href="../library/functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a>）。在 mode 加上 <code class="docutils literal notranslate"><span class="pre">'b'</span></code> 會以 <em class="dfn">binary mode</em> 開啟檔案：此時，資料以位元組串物件 (bytes object) 的形式被讀寫。此模式應該使用於所有不含文字的檔案。</p>
-<p>在文字模式 (text mode) 下，讀取時會預設把平台特定的行尾符號（Unix 上為 <code class="docutils literal notranslate"><span class="pre">\n</span></code>，Windows 上為 <code class="docutils literal notranslate"><span class="pre">\r\n</span></code>）轉換為 <code class="docutils literal notranslate"><span class="pre">\n</span></code>。在文字模式下寫入時，預設會把 <code class="docutils literal notranslate"><span class="pre">\n</span></code> 出現之處轉換回平台特定的行尾符號。這種在幕後對檔案資料的修改方式對文字檔案來說沒有問題，但會毀壞像是 <code class="file docutils literal notranslate"><span class="pre">JPEG</span></code> 或 <code class="file docutils literal notranslate"><span class="pre">EXE</span></code> 檔案中的二進制資料。在讀寫此類檔案時，注意一定要使用二進制模式。</p>
-<p>在處理檔案物件時，使用 <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> 關鍵字是個好習慣。優點是，當它的套件結束後，即使在某個時刻引發了例外，檔案仍會正確地被關閉。使用 <code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code> 也比寫等效的 <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a>-<a class="reference internal" href="../reference/compound_stmts.html#finally"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code></a> 區塊，來得簡短許多：</p>
+<p>The first argument is a string containing the filename.  The second argument is
+another string containing a few characters describing the way in which the file
+will be used.  <em>mode</em> can be <code class="docutils literal notranslate"><span class="pre">'r'</span></code> when the file will only be read, <code class="docutils literal notranslate"><span class="pre">'w'</span></code>
+for only writing (an existing file with the same name will be erased), and
+<code class="docutils literal notranslate"><span class="pre">'a'</span></code> opens the file for appending; any data written to the file is
+automatically added to the end.  <code class="docutils literal notranslate"><span class="pre">'r+'</span></code> opens the file for both reading and
+writing. The <em>mode</em> argument is optional; <code class="docutils literal notranslate"><span class="pre">'r'</span></code> will be assumed if it's
+omitted.</p>
+<p>Normally, files are opened in <em class="dfn">text mode</em>, that means, you read and write
+strings from and to the file, which are encoded in a specific encoding. If
+encoding is not specified, the default is platform dependent (see
+<a class="reference internal" href="../library/functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a>). <code class="docutils literal notranslate"><span class="pre">'b'</span></code> appended to the mode opens the file in
+<em class="dfn">binary mode</em>: now the data is read and written in the form of bytes
+objects.  This mode should be used for all files that don't contain text.</p>
+<p>In text mode, the default when reading is to convert platform-specific line
+endings (<code class="docutils literal notranslate"><span class="pre">\n</span></code> on Unix, <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> on Windows) to just <code class="docutils literal notranslate"><span class="pre">\n</span></code>.  When writing in
+text mode, the default is to convert occurrences of <code class="docutils literal notranslate"><span class="pre">\n</span></code> back to
+platform-specific line endings.  This behind-the-scenes modification
+to file data is fine for text files, but will corrupt binary data like that in
+<code class="file docutils literal notranslate"><span class="pre">JPEG</span></code> or <code class="file docutils literal notranslate"><span class="pre">EXE</span></code> files.  Be very careful to use binary mode when
+reading and writing such files.</p>
+<p>It is good practice to use the <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> keyword when dealing
+with file objects.  The advantage is that the file is properly closed
+after its suite finishes, even if an exception is raised at some
+point.  Using <code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code> is also much shorter than writing
+equivalent <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a>-<a class="reference internal" href="../reference/compound_stmts.html#finally"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code></a> blocks:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;workfile&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">read_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
@@ -369,12 +453,19 @@
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>如果你沒有使用 <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> 關鍵字，則應呼叫 <code class="docutils literal notranslate"><span class="pre">f.close()</span></code> 關閉檔案，可以立即釋放被它所使用的系統資源。</p>
+<p>If you're not using the <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> keyword, then you should call
+<code class="docutils literal notranslate"><span class="pre">f.close()</span></code> to close the file and immediately free up any system
+resources used by it.</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>呼叫 <code class="docutils literal notranslate"><span class="pre">f.write()</span></code> 時，若未使用 <code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code> 關鍵字或呼叫 <code class="docutils literal notranslate"><span class="pre">f.close()</span></code>，即使程式成功退出，也<strong>可能</strong>導致 <code class="docutils literal notranslate"><span class="pre">f.write()</span></code> 的引數沒有被完全寫入硬碟。</p>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">f.write()</span></code> without using the <code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code> keyword or calling
+<code class="docutils literal notranslate"><span class="pre">f.close()</span></code> <strong>might</strong> result in the arguments
+of <code class="docutils literal notranslate"><span class="pre">f.write()</span></code> not being completely written to the disk, even if the
+program exits successfully.</p>
 </div>
-<p>不論是透過 <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> 陳述式，或呼叫 <code class="docutils literal notranslate"><span class="pre">f.close()</span></code> 關閉一個檔案物件之後，嘗試使用該檔案物件將會自動失效。</p>
+<p>After a file object is closed, either by a <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement
+or by calling <code class="docutils literal notranslate"><span class="pre">f.close()</span></code>, attempts to use the file object will
+automatically fail.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="gt">Traceback (most recent call last):</span>
@@ -383,16 +474,29 @@
 </pre></div>
 </div>
 <section id="methods-of-file-objects">
-<span id="tut-filemethods"></span><h3><span class="section-number">7.2.1. </span>檔案物件的 method<a class="headerlink" href="#methods-of-file-objects" title="本標題的永久連結">¶</a></h3>
-<p>本節其餘的範例皆假設一個名為 <code class="docutils literal notranslate"><span class="pre">f</span></code> 的檔案物件已被建立。</p>
-<p>要讀取檔案的內容，可呼叫 <code class="docutils literal notranslate"><span class="pre">f.read(size)</span></code>，它可讀取一部份的資料，並以字串（文字模式）或位元組串物件（二進制模式）形式回傳。<em>size</em> 是個選擇性的數字引數。當 <em>size</em> 被省略或為負數時，檔案的全部內容會被讀取並回傳；如果檔案是機器記憶體容量的兩倍大時，這會是你的問題。否則，最多只有等同於 <em>size</em> 數量的字元（文字模式）或 <em>size</em> 數量的位元組串（二進制模式）會被讀取及回傳。如果之前已經到達檔案的末端，<code class="docutils literal notranslate"><span class="pre">f.read()</span></code> 會回傳空字串（<code class="docutils literal notranslate"><span class="pre">''</span></code>）。</p>
+<span id="tut-filemethods"></span><h3><span class="section-number">7.2.1. </span>Methods of File Objects<a class="headerlink" href="#methods-of-file-objects" title="本標題的永久連結">¶</a></h3>
+<p>The rest of the examples in this section will assume that a file object called
+<code class="docutils literal notranslate"><span class="pre">f</span></code> has already been created.</p>
+<p>To read a file's contents, call <code class="docutils literal notranslate"><span class="pre">f.read(size)</span></code>, which reads some quantity of
+data and returns it as a string (in text mode) or bytes object (in binary mode).
+<em>size</em> is an optional numeric argument.  When <em>size</em> is omitted or negative, the
+entire contents of the file will be read and returned; it's your problem if the
+file is twice as large as your machine's memory. Otherwise, at most <em>size</em>
+characters (in text mode) or <em>size</em> bytes (in binary mode) are read and returned.
+If the end of the file has been reached, <code class="docutils literal notranslate"><span class="pre">f.read()</span></code> will return an empty
+string (<code class="docutils literal notranslate"><span class="pre">''</span></code>).</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="go">&#39;This is the entire file.\n&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">f.readline()</span></code> 從檔案中讀取單獨一行；換行字元（<code class="docutils literal notranslate"><span class="pre">\n</span></code>）會被留在字串的結尾，只有當檔案末端不是換行字元時，它才會在檔案的最後一行被省略。這種方式讓回傳值清晰明確；只要 <code class="docutils literal notranslate"><span class="pre">f.readline()</span></code> 回傳一個空字串，就表示已經到達了檔案末端，而空白行的表示法是 <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>，也就是只含一個換行字元的字串。</p>
+<p><code class="docutils literal notranslate"><span class="pre">f.readline()</span></code> reads a single line from the file; a newline character (<code class="docutils literal notranslate"><span class="pre">\n</span></code>)
+is left at the end of the string, and is only omitted on the last line of the
+file if the file doesn't end in a newline.  This makes the return value
+unambiguous; if <code class="docutils literal notranslate"><span class="pre">f.readline()</span></code> returns an empty string, the end of the file
+has been reached, while a blank line is represented by <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>, a string
+containing only a single newline.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
 <span class="go">&#39;This is the first line of the file.\n&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
@@ -401,7 +505,8 @@
 <span class="go">&#39;&#39;</span>
 </pre></div>
 </div>
-<p>想從檔案中讀取多行時，可以對檔案物件進行迴圈。這種方法能有效地使用記憶體、快速，且程式碼簡潔：</p>
+<p>For reading lines from a file, you can loop over the file object. This is memory
+efficient, fast, and leads to simple code:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="gp">...</span>
@@ -409,21 +514,31 @@
 <span class="go">Second line of the file</span>
 </pre></div>
 </div>
-<p>如果你想把一個檔案的所有行讀進一個 list 裡，可以用 <code class="docutils literal notranslate"><span class="pre">list(f)</span></code> 或 <code class="docutils literal notranslate"><span class="pre">f.readlines()</span></code>。</p>
-<p><code class="docutils literal notranslate"><span class="pre">f.write(string)</span></code> 把 <em>string</em> 的內容寫入檔案，並回傳寫入的字元數。</p>
+<p>If you want to read all the lines of a file in a list you can also use
+<code class="docutils literal notranslate"><span class="pre">list(f)</span></code> or <code class="docutils literal notranslate"><span class="pre">f.readlines()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">f.write(string)</span></code> writes the contents of <em>string</em> to the file, returning
+the number of characters written.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is a test</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="go">15</span>
 </pre></div>
 </div>
-<p>寫入其他類型的物件之前，要先把它們轉換為字串（文字模式）或位元組串物件（二進制模式）：</p>
+<p>Other types of objects need to be converted -- either to a string (in text mode)
+or a bytes object (in binary mode) -- before writing them:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;the answer&#39;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># convert the tuple to string</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="go">18</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">f.tell()</span></code> 回傳一個整數，它給出檔案物件在檔案中的當前位置，在二進制模式下表示為檔案開始至今的位元組數，在文字模式下表示為一個意義不明的數字。</p>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">f.seek(offset,</span> <span class="pre">whence)</span></code> 可以改變檔案物件的位置。位置計算方法是從一個參考點增加 <em>offset</em> 的偏移量；參考點則由引數 <em>whence</em> 來選擇。當 <em>whence</em> 值為 0 時，表示使用檔案開頭，1 表示使用當前的檔案位置，2 表示使用檔案末端作為參考點。<em>whence</em> 可省略，其預設值為 0，即以檔案開頭作為參考點。</p>
+<p><code class="docutils literal notranslate"><span class="pre">f.tell()</span></code> returns an integer giving the file object's current position in the file
+represented as number of bytes from the beginning of the file when in binary mode and
+an opaque number when in text mode.</p>
+<p>To change the file object's position, use <code class="docutils literal notranslate"><span class="pre">f.seek(offset,</span> <span class="pre">whence)</span></code>.  The position is computed
+from adding <em>offset</em> to a reference point; the reference point is selected by
+the <em>whence</em> argument.  A <em>whence</em> value of 0 measures from the beginning
+of the file, 1 uses the current file position, and 2 uses the end of the file as
+the reference point.  <em>whence</em> can be omitted and defaults to 0, using the
+beginning of the file as the reference point.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;workfile&#39;</span><span class="p">,</span> <span class="s1">&#39;rb+&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;0123456789abcdef&#39;</span><span class="p">)</span>
 <span class="go">16</span>
@@ -437,37 +552,68 @@
 <span class="go">b&#39;d&#39;</span>
 </pre></div>
 </div>
-<p>在文字檔案（開啟時模式字串未加入 <code class="docutils literal notranslate"><span class="pre">b</span></code> 的檔案）中，只允許以檔案開頭為參考點進行尋找（但 <code class="docutils literal notranslate"><span class="pre">seek(0,</span> <span class="pre">2)</span></code> 尋找檔案最末端是例外），且只有從 <code class="docutils literal notranslate"><span class="pre">f.tell()</span></code> 回傳的值，或是 0，才是有效的 <em>offset</em> 值。其他任何 <em>offset</em> 值都會產生未定義的行為。</p>
-<p>檔案物件還有一些附加的 method，像是較不常使用的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">isatty()</span></code> 和 <code class="xref py py-meth docutils literal notranslate"><span class="pre">truncate()</span></code>；檔案物件的完整指南詳見程式庫參考手冊。</p>
+<p>In text files (those opened without a <code class="docutils literal notranslate"><span class="pre">b</span></code> in the mode string), only seeks
+relative to the beginning of the file are allowed (the exception being seeking
+to the very file end with <code class="docutils literal notranslate"><span class="pre">seek(0,</span> <span class="pre">2)</span></code>) and the only valid <em>offset</em> values are
+those returned from the <code class="docutils literal notranslate"><span class="pre">f.tell()</span></code>, or zero. Any other <em>offset</em> value produces
+undefined behaviour.</p>
+<p>File objects have some additional methods, such as <code class="xref py py-meth docutils literal notranslate"><span class="pre">isatty()</span></code> and
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">truncate()</span></code> which are less frequently used; consult the Library
+Reference for a complete guide to file objects.</p>
 </section>
 <section id="saving-structured-data-with-json">
-<span id="tut-json"></span><h3><span class="section-number">7.2.2. </span>使用 <a class="reference internal" href="../library/json.html#module-json" title="json: Encode and decode the JSON format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> 儲存結構化資料<a class="headerlink" href="#saving-structured-data-with-json" title="本標題的永久連結">¶</a></h3>
-<p id="index-1">字串可以簡單地從檔案中被寫入和讀取。數字則稍嫌麻煩，因為 <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code> method 只回傳字串，這些字串必須傳遞給像 <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-func docutils literal notranslate"><span class="pre">int()</span></code></a> 這樣的函式，它接受 <code class="docutils literal notranslate"><span class="pre">'123'</span></code> 這樣的字串，並回傳數值 123。當你想儲存像是巢狀 list 和 dictionary（字典）等複雜的資料類型時，手動剖析 (parsing) 和序列化 (serializing) 就變得複雜。</p>
-<p>相較於讓使用者不斷地編寫和除錯程式碼才能把複雜的資料類型儲存到檔案，Python 支援一個普及的資料交換格式，稱為 <a class="reference external" href="http://json.org">JSON (JavaScript Object Notation)</a>。標準模組 <a class="reference internal" href="../library/json.html#module-json" title="json: Encode and decode the JSON format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> 可接收 Python 資料階層，並將它們轉換為字串表示法；這個過程稱為 <em class="dfn">serializing</em>（序列化）。從字串表示法中重建資料則稱為 <em class="dfn">deserializing</em>（反序列化）。在序列化和反序列化之間，表示物件的字串可以被儲存在檔案或資料中，或通過網路連接發送到遠端的機器。</p>
+<span id="tut-json"></span><h3><span class="section-number">7.2.2. </span>Saving structured data with <a class="reference internal" href="../library/json.html#module-json" title="json: Encode and decode the JSON format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a><a class="headerlink" href="#saving-structured-data-with-json" title="本標題的永久連結">¶</a></h3>
+<p id="index-1">Strings can easily be written to and read from a file.  Numbers take a bit more
+effort, since the <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code> method only returns strings, which will have to
+be passed to a function like <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-func docutils literal notranslate"><span class="pre">int()</span></code></a>, which takes a string like <code class="docutils literal notranslate"><span class="pre">'123'</span></code>
+and returns its numeric value 123.  When you want to save more complex data
+types like nested lists and dictionaries, parsing and serializing by hand
+becomes complicated.</p>
+<p>Rather than having users constantly writing and debugging code to save
+complicated data types to files, Python allows you to use the popular data
+interchange format called <a class="reference external" href="http://json.org">JSON (JavaScript Object Notation)</a>.  The standard module called <a class="reference internal" href="../library/json.html#module-json" title="json: Encode and decode the JSON format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> can take Python
+data hierarchies, and convert them to string representations; this process is
+called <em class="dfn">serializing</em>.  Reconstructing the data from the string representation
+is called <em class="dfn">deserializing</em>.  Between serializing and deserializing, the
+string representing the object may have been stored in a file or data, or
+sent over a network connection to some distant machine.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>JSON 格式經常地使用於現代應用程式的資料交換。許多程序設計師早已對它耳熟能詳，使它成為提升互操作性 (interoperability) 的好選擇。</p>
+<p>The JSON format is commonly used by modern applications to allow for data
+exchange.  Many programmers are already familiar with it, which makes
+it a good choice for interoperability.</p>
 </div>
-<p>如果你有一個物件 <code class="docutils literal notranslate"><span class="pre">x</span></code>，只需一行簡單的程式碼即可檢視它的 JSON 字串表示法：</p>
+<p>If you have an object <code class="docutils literal notranslate"><span class="pre">x</span></code>, you can view its JSON string representation with a
+simple line of code:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;simple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">&#39;[1, &quot;simple&quot;, &quot;list&quot;]&#39;</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../library/json.html#json.dumps" title="json.dumps"><code class="xref py py-func docutils literal notranslate"><span class="pre">dumps()</span></code></a> 函式有一個變體，稱為 <a class="reference internal" href="../library/json.html#json.dump" title="json.dump"><code class="xref py py-func docutils literal notranslate"><span class="pre">dump()</span></code></a>，它單純地將物件序列化為 <a class="reference internal" href="../glossary.html#term-text-file"><span class="xref std std-term">text file</span></a>。因此，如果 <code class="docutils literal notranslate"><span class="pre">f</span></code> 是一個為了寫入而開啟的 <a class="reference internal" href="../glossary.html#term-text-file"><span class="xref std std-term">text file</span></a> 物件，我們可以這樣做：</p>
+<p>Another variant of the <a class="reference internal" href="../library/json.html#json.dumps" title="json.dumps"><code class="xref py py-func docutils literal notranslate"><span class="pre">dumps()</span></code></a> function, called <a class="reference internal" href="../library/json.html#json.dump" title="json.dump"><code class="xref py py-func docutils literal notranslate"><span class="pre">dump()</span></code></a>,
+simply serializes the object to a <a class="reference internal" href="../glossary.html#term-text-file"><span class="xref std std-term">text file</span></a>.  So if <code class="docutils literal notranslate"><span class="pre">f</span></code> is a
+<a class="reference internal" href="../glossary.html#term-text-file"><span class="xref std std-term">text file</span></a> object opened for writing, we can do this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>若 <code class="docutils literal notranslate"><span class="pre">f</span></code> 是一個已開啟、可讀取的 <a class="reference internal" href="../glossary.html#term-text-file"><span class="xref std std-term">text file</span></a> 物件，要再次解碼物件的話：</p>
+<p>To decode the object again, if <code class="docutils literal notranslate"><span class="pre">f</span></code> is a <a class="reference internal" href="../glossary.html#term-text-file"><span class="xref std std-term">text file</span></a> object which has
+been opened for reading:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>這種簡單的序列化技術可以處理 list 和 dictionary，但要在 JSON 中序列化任意的 class（類別）實例，則需要一些額外的工作。<a class="reference internal" href="../library/json.html#module-json" title="json: Encode and decode the JSON format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> 模組的參考資料包含對此的說明。</p>
+<p>This simple serialization technique can handle lists and dictionaries, but
+serializing arbitrary class instances in JSON requires a bit of extra effort.
+The reference for the <a class="reference internal" href="../library/json.html#module-json" title="json: Encode and decode the JSON format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> module contains an explanation of this.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
-<p><a class="reference internal" href="../library/pickle.html#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> - pickle 模組</p>
-<p>與 <a class="reference internal" href="#tut-json"><span class="std std-ref">JSON</span></a> 不同，<em>pickle</em> 是一種允許對任意的複雜 Python 物件進行序列化的協定。因此，它為 Python 所特有，不能用於與其他語言編寫的應用程式溝通。在預設情況，它也是不安全的：如果資料是由手段高明的攻擊者精心設計，將這段來自於不受信任來源的 pickle 資料反序列化，可以執行任意的程式碼。</p>
+<p><a class="reference internal" href="../library/pickle.html#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> - the pickle module</p>
+<p>Contrary to <a class="reference internal" href="#tut-json"><span class="std std-ref">JSON</span></a>, <em>pickle</em> is a protocol which allows
+the serialization of arbitrarily complex Python objects.  As such, it is
+specific to Python and cannot be used to communicate with applications
+written in other languages.  It is also insecure by default:
+deserializing pickle data coming from an untrusted source can execute
+arbitrary code, if the data was crafted by a skilled attacker.</p>
 </div>
 </section>
 </section>
@@ -480,37 +626,43 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">7. 輸入和輸出</a><ul>
-<li><a class="reference internal" href="#fancier-output-formatting">7.1. 更華麗的輸出格式</a><ul>
-<li><a class="reference internal" href="#formatted-string-literals">7.1.1. 格式化的字串文本 (Formatted String Literals)</a></li>
-<li><a class="reference internal" href="#the-string-format-method">7.1.2. 字串的 format() method</a></li>
-<li><a class="reference internal" href="#manual-string-formatting">7.1.3. 手動格式化字串</a></li>
-<li><a class="reference internal" href="#old-string-formatting">7.1.4. 格式化字串的舊方法</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">7. Input and Output</a><ul>
+<li><a class="reference internal" href="#fancier-output-formatting">7.1. Fancier Output Formatting</a><ul>
+<li><a class="reference internal" href="#formatted-string-literals">7.1.1. Formatted String Literals</a></li>
+<li><a class="reference internal" href="#the-string-format-method">7.1.2. The String format() Method</a></li>
+<li><a class="reference internal" href="#manual-string-formatting">7.1.3. Manual String Formatting</a></li>
+<li><a class="reference internal" href="#old-string-formatting">7.1.4. Old string formatting</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#reading-and-writing-files">7.2. 讀寫檔案</a><ul>
-<li><a class="reference internal" href="#methods-of-file-objects">7.2.1. 檔案物件的 method</a></li>
-<li><a class="reference internal" href="#saving-structured-data-with-json">7.2.2. 使用 <code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> 儲存結構化資料</a></li>
+<li><a class="reference internal" href="#reading-and-writing-files">7.2. Reading and Writing Files</a><ul>
+<li><a class="reference internal" href="#methods-of-file-objects">7.2.1. Methods of File Objects</a></li>
+<li><a class="reference internal" href="#saving-structured-data-with-json">7.2.2. Saving structured data with <code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="modules.html"
-                        title="上一章"><span class="section-number">6. </span>模組</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="errors.html"
-                        title="下一章"><span class="section-number">8. </span>錯誤和例外</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="modules.html"
+                          title="上一章"><span class="section-number">6. </span>Modules</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="errors.html"
+                          title="下一章"><span class="section-number">8. </span>Errors and Exceptions</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/tutorial/inputoutput.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/tutorial/inputoutput.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -530,10 +682,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="errors.html" title="8. 錯誤和例外"
+          <a href="errors.html" title="8. Errors and Exceptions"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="modules.html" title="6. 模組"
+          <a href="modules.html" title="6. Modules"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -545,14 +697,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><span class="section-number">7. </span>輸入和輸出</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Tutorial</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">7. </span>Input and Output</a></li>
                 <li class="right">
                     
 
@@ -570,25 +720,25 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

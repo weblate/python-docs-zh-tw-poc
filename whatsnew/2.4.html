@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New in Python 2.4 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New in Python 2.4 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="What&#39;s New in Python 2.5" href="2.5.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/2.4.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.4</a><ul>
 <li><a class="reference internal" href="#pep-218-built-in-set-objects">PEP 218: Built-In Set Objects</a></li>
 <li><a class="reference internal" href="#pep-237-unifying-long-integers-and-integers">PEP 237: Unifying Long Integers and Integers</a></li>
@@ -109,18 +108,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.5.html"
-                        title="上一章">What's New in Python 2.5</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.3.html"
-                        title="下一章">What's New in Python 2.3</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.5.html"
+                          title="上一章">What's New in Python 2.5</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.3.html"
+                          title="下一章">What's New in Python 2.3</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.4.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.4.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -156,13 +160,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.4</a></li>
                 <li class="right">
                     
@@ -1058,7 +1060,7 @@ complete list of changes, or look through the CVS logs for all the details.</p>
 <li><p>The <a class="reference internal" href="../library/asyncore.html#module-asyncore" title="asyncore: A base class for developing asynchronous socket handling services."><code class="xref py py-mod docutils literal notranslate"><span class="pre">asyncore</span></code></a> module's <code class="xref py py-func docutils literal notranslate"><span class="pre">loop()</span></code> function now has a <em>count</em> parameter
 that lets you perform a limited number of passes through the polling loop.  The
 default is still to loop forever.</p></li>
-<li><p>The <a class="reference internal" href="../library/base64.html#module-base64" title="base64: RFC 3548: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a> module now has more complete <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3548.html"><strong>RFC 3548</strong></a> support for Base64,
+<li><p>The <a class="reference internal" href="../library/base64.html#module-base64" title="base64: RFC 4648: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a> module now has more complete <span class="target" id="index-18"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3548.html"><strong>RFC 3548</strong></a> support for Base64,
 Base32, and Base16 encoding and decoding, including optional case folding and
 optional alternative alphabets. (Contributed by Barry Warsaw.)</p></li>
 <li><p>The <a class="reference internal" href="../library/bisect.html#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code></a> module now has an underlying C implementation for improved
@@ -1253,7 +1255,7 @@ or <a class="reference internal" href="../library/functions.html#sorted" title="
 </div>
 <p>(Contributed by Raymond Hettinger.)</p>
 </li>
-<li><p>The <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module was updated in various ways.  The module now passes
+<li><p>The <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module was updated in various ways.  The module now passes
 its messages through <a class="reference internal" href="../library/gettext.html#gettext.gettext" title="gettext.gettext"><code class="xref py py-func docutils literal notranslate"><span class="pre">gettext.gettext()</span></code></a>, making it possible to
 internationalize Optik's help and error messages.  Help messages for options can
 now include the string <code class="docutils literal notranslate"><span class="pre">'%default'</span></code>, which will be replaced by the option's
@@ -1549,8 +1551,9 @@ Fredrik Lundh, Sean Reifschneider, Sadruddin Rejeb.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.4</a><ul>
 <li><a class="reference internal" href="#pep-218-built-in-set-objects">PEP 218: Built-In Set Objects</a></li>
 <li><a class="reference internal" href="#pep-237-unifying-long-integers-and-integers">PEP 237: Unifying Long Integers and Integers</a></li>
@@ -1586,18 +1589,23 @@ Fredrik Lundh, Sean Reifschneider, Sadruddin Rejeb.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.5.html"
-                        title="上一章">What's New in Python 2.5</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.3.html"
-                        title="下一章">What's New in Python 2.3</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.5.html"
+                          title="上一章">What's New in Python 2.5</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.3.html"
+                          title="下一章">What's New in Python 2.3</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.4.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.4.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1632,13 +1640,11 @@ Fredrik Lundh, Sean Reifschneider, Sadruddin Rejeb.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.4</a></li>
                 <li class="right">
                     
@@ -1657,25 +1663,25 @@ Fredrik Lundh, Sean Reifschneider, Sadruddin Rejeb.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Iterator Protocol &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterator Protocol &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Mapping Protocol" href="mapping.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/iter.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="mapping.html"
-                        title="上一章">Mapping Protocol</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="buffer.html"
-                        title="下一章">Buffer Protocol</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="mapping.html"
+                          title="上一章">Mapping Protocol</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="buffer.html"
+                          title="下一章">Buffer Protocol</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/iter.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/iter.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,14 +121,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="abstract.html" accesskey="U">抽象物件層</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="abstract.html" accesskey="U">Abstract Objects Layer</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Iterator Protocol</a></li>
                 <li class="right">
                     
@@ -156,17 +156,28 @@
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyIter_Check">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyIter_Check</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyIter_Check" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return true if the object <em>o</em> supports the iterator protocol.  This
-function always succeeds.</p>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.8.</em><p>Return non-zero if the object <em>o</em> can be safely passed to
+<a class="reference internal" href="#c.PyIter_Next" title="PyIter_Next"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyIter_Next()</span></code></a>, and <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise.  This function always succeeds.</p>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.PyAIter_Check">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyAIter_Check</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyAIter_Check" title="本定義的永久連結">¶</a><br /></dt>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.10.</em><p>Returns non-zero if the object 'obj' provides <code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncIterator</span></code>
+protocols, and <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise.  This function always succeeds.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyIter_Next">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyIter_Next</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyIter_Next" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="refcount">Return value: New reference.</em><p>Return the next value from the iteration <em>o</em>.  The object must be an iterator
-(it is up to the caller to check this).  If there are no remaining values,
-returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> with no exception set.  If an error occurs while retrieving
-the item, returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> and passes along the exception.</p>
+<dd><em class="refcount">Return value: New reference.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the next value from the iterator <em>o</em>.  The object must be an iterator
+according to <a class="reference internal" href="#c.PyIter_Check" title="PyIter_Check"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyIter_Check()</span></code></a> (it is up to the caller to check this).
+If there are no remaining values, returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> with no exception set.
+If an error occurs while retrieving the item, returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> and passes
+along the exception.</p>
 </dd></dl>
 
 <p>To write a loop which iterates over an iterator, the C code should look
@@ -195,6 +206,29 @@ something like this:</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
+<dl class="c type">
+<dt class="sig sig-object c" id="c.PySendResult">
+<span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PySendResult</span></span></span><a class="headerlink" href="#c.PySendResult" title="本定義的永久連結">¶</a><br /></dt>
+<dd><p>The enum value used to represent different results of <a class="reference internal" href="#c.PyIter_Send" title="PyIter_Send"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyIter_Send()</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.PyIter_Send">
+<a class="reference internal" href="#c.PySendResult" title="PySendResult"><span class="n"><span class="pre">PySendResult</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyIter_Send</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">iter</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">arg</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">presult</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyIter_Send" title="本定義的永久連結">¶</a><br /></dt>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.10.</em><p>Sends the <em>arg</em> value into the iterator <em>iter</em>. Returns:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PYGEN_RETURN</span></code> if iterator returns. Return value is returned via <em>presult</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYGEN_NEXT</span></code> if iterator yields. Yielded value is returned via <em>presult</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PYGEN_ERROR</span></code> if iterator has raised and exception. <em>presult</em> is set to <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -204,18 +238,22 @@ something like this:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="mapping.html"
-                        title="上一章">Mapping Protocol</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="buffer.html"
-                        title="下一章">Buffer Protocol</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="mapping.html"
+                          title="上一章">Mapping Protocol</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="buffer.html"
+                          title="下一章">Buffer Protocol</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/iter.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/iter.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -250,14 +288,12 @@ something like this:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="abstract.html" >抽象物件層</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="abstract.html" >Abstract Objects Layer</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Iterator Protocol</a></li>
                 <li class="right">
                     
@@ -276,25 +312,25 @@ something like this:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

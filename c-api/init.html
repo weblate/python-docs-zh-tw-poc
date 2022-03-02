@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Initialization, Finalization, and Threads &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initialization, Finalization, and Threads &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Objects for Type Hinting" href="typehints.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/init.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Initialization, Finalization, and Threads</a><ul>
 <li><a class="reference internal" href="#before-python-initialization">Before Python Initialization</a></li>
 <li><a class="reference internal" href="#global-configuration-variables">Global configuration variables</a></li>
@@ -107,18 +106,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="typehints.html"
-                        title="上一章">Objects for Type Hinting</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="init_config.html"
-                        title="下一章">Python Initialization Configuration</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="typehints.html"
+                          title="上一章">Objects for Type Hinting</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="init_config.html"
+                          title="下一章">Python Initialization Configuration</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/init.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/init.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -154,13 +158,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python/C API Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Initialization, Finalization, and Threads</a></li>
                 <li class="right">
                     
@@ -329,15 +331,16 @@ variable.</p>
 neither the script's directory nor the user's site-packages directory.</p>
 <p>Set by the <a class="reference internal" href="../using/cmdline.html#cmdoption-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> option.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c var">
 <dt class="sig sig-object c" id="c.Py_LegacyWindowsFSEncodingFlag">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_LegacyWindowsFSEncodingFlag</span></span></span><a class="headerlink" href="#c.Py_LegacyWindowsFSEncodingFlag" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>If the flag is non-zero, use the <code class="docutils literal notranslate"><span class="pre">mbcs</span></code> encoding instead of the UTF-8
-encoding for the filesystem encoding.</p>
+<dd><p>If the flag is non-zero, use the <code class="docutils literal notranslate"><span class="pre">mbcs</span></code> encoding with <code class="docutils literal notranslate"><span class="pre">replace</span></code> error
+handler, instead of the UTF-8 encoding with <code class="docutils literal notranslate"><span class="pre">surrogatepass</span></code> error handler,
+for the <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem encoding and error handler</span></a>.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">1</span></code> if the <span class="target" id="index-8"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONLEGACYWINDOWSFSENCODING"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONLEGACYWINDOWSFSENCODING</span></code></a> environment
 variable is set to a non-empty string.</p>
 <p>See <span class="target" id="index-9"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0529"><strong>PEP 529</strong></a> for more details.</p>
@@ -387,7 +390,7 @@ variable.</p>
 <dd><p>Don't display the copyright and version messages even in interactive mode.</p>
 <p>Set by the <a class="reference internal" href="../using/cmdline.html#cmdoption-q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-q</span></code></a> option.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -416,12 +419,12 @@ variable.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_Initialize">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_Initialize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_Initialize" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-16">Initialize the Python interpreter.  In an application embedding  Python,
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-16">Initialize the Python interpreter.  In an application embedding  Python,
 this should be called before using any other Python/C API functions; see
 <a class="reference internal" href="#pre-init-safe"><span class="std std-ref">Before Python Initialization</span></a> for the few exceptions.</p>
 <p>This initializes
 the table of loaded modules (<code class="docutils literal notranslate"><span class="pre">sys.modules</span></code>), and creates the fundamental
-modules <a class="reference internal" href="../library/builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a>, <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> and <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a>.  It also initializes
+modules <a class="reference internal" href="../library/builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a>, <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> and <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a>.  It also initializes
 the module search path (<code class="docutils literal notranslate"><span class="pre">sys.path</span></code>). It does not set <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>; use
 <a class="reference internal" href="#c.PySys_SetArgvEx" title="PySys_SetArgvEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_SetArgvEx()</span></code></a> for that.  This is a no-op when called for a second time
 (without calling <a class="reference internal" href="#c.Py_FinalizeEx" title="Py_FinalizeEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_FinalizeEx()</span></code></a> first).  There is no return value; it is a
@@ -436,7 +439,7 @@ also affect non-Python uses of the console using the C Runtime.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_InitializeEx">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_InitializeEx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">initsigs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_InitializeEx" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This function works like <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> if <em>initsigs</em> is <code class="docutils literal notranslate"><span class="pre">1</span></code>. If
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This function works like <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> if <em>initsigs</em> is <code class="docutils literal notranslate"><span class="pre">1</span></code>. If
 <em>initsigs</em> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, it skips initialization registration of signal handlers, which
 might be useful when Python is embedded.</p>
 </dd></dl>
@@ -444,7 +447,7 @@ might be useful when Python is embedded.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_IsInitialized">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_IsInitialized</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_IsInitialized" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return true (nonzero) when the Python interpreter has been initialized, false
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return true (nonzero) when the Python interpreter has been initialized, false
 (zero) if not.  After <a class="reference internal" href="#c.Py_FinalizeEx" title="Py_FinalizeEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_FinalizeEx()</span></code></a> is called, this returns false until
 <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> is called again.</p>
 </dd></dl>
@@ -452,7 +455,7 @@ might be useful when Python is embedded.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_FinalizeEx">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_FinalizeEx</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_FinalizeEx" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Undo all initializations made by <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> and subsequent use of
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.6.</em><p>Undo all initializations made by <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> and subsequent use of
 Python/C API functions, and destroy all sub-interpreters (see
 <a class="reference internal" href="#c.Py_NewInterpreter" title="Py_NewInterpreter"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_NewInterpreter()</span></code></a> below) that were created and not yet destroyed since
 the last call to <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.  Ideally, this frees all memory
@@ -479,14 +482,14 @@ than once; this can happen if an application calls <a class="reference internal"
 <a class="reference internal" href="#c.Py_FinalizeEx" title="Py_FinalizeEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_FinalizeEx()</span></code></a> more than once.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="../library/sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">cpython._PySys_ClearAuditHooks</span></code> with no arguments.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_Finalize">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_Finalize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_Finalize" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This is a backwards-compatible version of <a class="reference internal" href="#c.Py_FinalizeEx" title="Py_FinalizeEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_FinalizeEx()</span></code></a> that
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This is a backwards-compatible version of <a class="reference internal" href="#c.Py_FinalizeEx" title="Py_FinalizeEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_FinalizeEx()</span></code></a> that
 disregards the return value.</p>
 </dd></dl>
 
@@ -511,14 +514,14 @@ again in order to affect subsequent calls to <a class="reference internal" href=
 <p>Returns <code class="docutils literal notranslate"><span class="pre">0</span></code> if successful, a nonzero value on error (e.g. calling after the
 interpreter has already been initialized).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_SetProgramName">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_SetProgramName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_SetProgramName" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-20">This function should be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> is called for
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-20">This function should be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> is called for
 the first time, if it is called at all.  It tells the interpreter the value
 of the <code class="docutils literal notranslate"><span class="pre">argv[0]</span></code> argument to the <code class="xref c c-func docutils literal notranslate"><span class="pre">main()</span></code> function of the program
 (converted to wide characters).
@@ -535,15 +538,20 @@ interpreter will change the contents of this storage.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetProgramName">
 <span class="n"><span class="pre">wchar</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetProgramName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetProgramName" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-21">Return the program name set with <a class="reference internal" href="#c.Py_SetProgramName" title="Py_SetProgramName"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetProgramName()</span></code></a>, or the default.
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-21">Return the program name set with <a class="reference internal" href="#c.Py_SetProgramName" title="Py_SetProgramName"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetProgramName()</span></code></a>, or the default.
 The returned string points into static storage; the caller should not modify its
 value.</p>
+<p>This function should not be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, otherwise
+it returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>It now returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetPrefix">
 <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetPrefix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetPrefix" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the <em>prefix</em> for installed platform-independent files. This is derived
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the <em>prefix</em> for installed platform-independent files. This is derived
 through a number of complicated rules from the program name set with
 <a class="reference internal" href="#c.Py_SetProgramName" title="Py_SetProgramName"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetProgramName()</span></code></a> and some environment variables; for example, if the
 program name is <code class="docutils literal notranslate"><span class="pre">'/usr/local/bin/python'</span></code>, the prefix is <code class="docutils literal notranslate"><span class="pre">'/usr/local'</span></code>. The
@@ -552,12 +560,17 @@ value.  This corresponds to the <strong class="makevar">prefix</strong> variable
 <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> and the <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> argument to the <strong class="program">configure</strong>
 script at build time.  The value is available to Python code as <code class="docutils literal notranslate"><span class="pre">sys.prefix</span></code>.
 It is only useful on Unix.  See also the next function.</p>
+<p>This function should not be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, otherwise
+it returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>It now returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetExecPrefix">
 <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetExecPrefix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetExecPrefix" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the <em>exec-prefix</em> for installed platform-<em>dependent</em> files.  This is
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the <em>exec-prefix</em> for installed platform-<em>dependent</em> files.  This is
 derived through a number of complicated rules from the program name set with
 <a class="reference internal" href="#c.Py_SetProgramName" title="Py_SetProgramName"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetProgramName()</span></code></a> and some environment variables; for example, if the
 program name is <code class="docutils literal notranslate"><span class="pre">'/usr/local/bin/python'</span></code>, the exec-prefix is
@@ -585,41 +598,56 @@ which they were compiled!).</p>
 <strong class="program">automount</strong> programs to share <code class="file docutils literal notranslate"><span class="pre">/usr/local</span></code> between platforms
 while having <code class="file docutils literal notranslate"><span class="pre">/usr/local/plat</span></code> be a different filesystem for each
 platform.</p>
+<p>This function should not be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, otherwise
+it returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>It now returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetProgramFullPath">
 <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetProgramFullPath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetProgramFullPath" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-22">Return the full program name of the Python executable; this is  computed as a
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-22">Return the full program name of the Python executable; this is  computed as a
 side-effect of deriving the default module search path  from the program name
 (set by <a class="reference internal" href="#c.Py_SetProgramName" title="Py_SetProgramName"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetProgramName()</span></code></a> above). The returned string points into
 static storage; the caller should not modify its value.  The value is available
 to Python code as <code class="docutils literal notranslate"><span class="pre">sys.executable</span></code>.</p>
+<p>This function should not be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, otherwise
+it returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>It now returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetPath">
 <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetPath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetPath" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-23">Return the default module search path; this is computed from the program name
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-23">Return the default module search path; this is computed from the program name
 (set by <a class="reference internal" href="#c.Py_SetProgramName" title="Py_SetProgramName"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetProgramName()</span></code></a> above) and some environment variables.
 The returned string consists of a series of directory names separated by a
 platform dependent delimiter character.  The delimiter character is <code class="docutils literal notranslate"><span class="pre">':'</span></code>
-on Unix and Mac OS X, <code class="docutils literal notranslate"><span class="pre">';'</span></code> on Windows.  The returned string points into
+on Unix and macOS, <code class="docutils literal notranslate"><span class="pre">';'</span></code> on Windows.  The returned string points into
 static storage; the caller should not modify its value.  The list
 <a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a> is initialized with this value on interpreter startup; it
 can be (and usually is) modified later to change the search path for loading
 modules.</p>
+<p>This function should not be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, otherwise
+it returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>It now returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_SetPath">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_SetPath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">wchar_t</span></span><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_SetPath" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-24">Set the default module search path.  If this function is called before
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p id="index-24">Set the default module search path.  If this function is called before
 <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, then <a class="reference internal" href="#c.Py_GetPath" title="Py_GetPath"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_GetPath()</span></code></a> won't attempt to compute a
 default search path but uses the one provided instead.  This is useful if
 Python is embedded by an application that has full knowledge of the location
 of all modules.  The path components should be separated by the platform
-dependent delimiter character, which is <code class="docutils literal notranslate"><span class="pre">':'</span></code> on Unix and Mac OS X, <code class="docutils literal notranslate"><span class="pre">';'</span></code>
+dependent delimiter character, which is <code class="docutils literal notranslate"><span class="pre">':'</span></code> on Unix and macOS, <code class="docutils literal notranslate"><span class="pre">';'</span></code>
 on Windows.</p>
 <p>This also causes <a class="reference internal" href="../library/sys.html#sys.executable" title="sys.executable"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.executable</span></code></a> to be set to the program
 full path (see <a class="reference internal" href="#c.Py_GetProgramFullPath" title="Py_GetProgramFullPath"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_GetProgramFullPath()</span></code></a>) and for <a class="reference internal" href="../library/sys.html#sys.prefix" title="sys.prefix"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.prefix</span></code></a> and
@@ -630,7 +658,7 @@ if required after calling <a class="reference internal" href="#c.Py_Initialize" 
 <p>The path argument is copied internally, so the caller may free it after the
 call completes.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The program full path is now used for <a class="reference internal" href="../library/sys.html#sys.executable" title="sys.executable"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.executable</span></code></a>, instead
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The program full path is now used for <a class="reference internal" href="../library/sys.html#sys.executable" title="sys.executable"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.executable</span></code></a>, instead
 of the program name.</p>
 </div>
 </dd></dl>
@@ -638,7 +666,7 @@ of the program name.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetVersion">
 <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetVersion</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetVersion" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the version of this Python interpreter.  This is a string that looks
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the version of this Python interpreter.  This is a string that looks
 something like</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;3.0a5+ (py3k:63103M, May 12 2008, 00:53:55) </span><span class="se">\n</span><span class="s">[GCC 4.2.3]&quot;</span><span class="w"></span>
 </pre></div>
@@ -652,10 +680,10 @@ modify its value.  The value is available to Python code as <a class="reference 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetPlatform">
 <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetPlatform</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetPlatform" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-26">Return the platform identifier for the current platform.  On Unix, this is
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-26">Return the platform identifier for the current platform.  On Unix, this is
 formed from the &quot;official&quot; name of the operating system, converted to lower
 case, followed by the major revision number; e.g., for Solaris 2.x, which is
-also known as SunOS 5.x, the value is <code class="docutils literal notranslate"><span class="pre">'sunos5'</span></code>.  On Mac OS X, it is
+also known as SunOS 5.x, the value is <code class="docutils literal notranslate"><span class="pre">'sunos5'</span></code>.  On macOS, it is
 <code class="docutils literal notranslate"><span class="pre">'darwin'</span></code>.  On Windows, it is <code class="docutils literal notranslate"><span class="pre">'win'</span></code>.  The returned string points into
 static storage; the caller should not modify its value.  The value is available
 to Python code as <code class="docutils literal notranslate"><span class="pre">sys.platform</span></code>.</p>
@@ -664,7 +692,7 @@ to Python code as <code class="docutils literal notranslate"><span class="pre">s
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetCopyright">
 <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetCopyright</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetCopyright" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the official copyright string for the current Python version, for example</p>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the official copyright string for the current Python version, for example</p>
 <p><code class="docutils literal notranslate"><span class="pre">'Copyright</span> <span class="pre">1991-1995</span> <span class="pre">Stichting</span> <span class="pre">Mathematisch</span> <span class="pre">Centrum,</span> <span class="pre">Amsterdam'</span></code></p>
 <p id="index-27">The returned string points into static storage; the caller should not modify its
 value.  The value is available to Python code as <code class="docutils literal notranslate"><span class="pre">sys.copyright</span></code>.</p>
@@ -673,7 +701,7 @@ value.  The value is available to Python code as <code class="docutils literal n
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetCompiler">
 <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetCompiler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetCompiler" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return an indication of the compiler used to build the current Python version,
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return an indication of the compiler used to build the current Python version,
 in square brackets, for example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;[GCC 2.7.2.2]&quot;</span><span class="w"></span>
 </pre></div>
@@ -686,7 +714,7 @@ value.  The value is available to Python code as part of the variable
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetBuildInfo">
 <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetBuildInfo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetBuildInfo" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return information about the sequence number and build date and time  of the
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return information about the sequence number and build date and time  of the
 current Python interpreter instance, for example</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;#67, Aug  1 1997, 22:34:28&quot;</span><span class="w"></span>
 </pre></div>
@@ -699,7 +727,7 @@ value.  The value is available to Python code as part of the variable
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PySys_SetArgvEx">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PySys_SetArgvEx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">argc</span></span>, <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">updatepath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PySys_SetArgvEx" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-30">Set <a class="reference internal" href="../library/sys.html#sys.argv" title="sys.argv"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.argv</span></code></a> based on <em>argc</em> and <em>argv</em>.  These parameters are
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-30">Set <a class="reference internal" href="../library/sys.html#sys.argv" title="sys.argv"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.argv</span></code></a> based on <em>argc</em> and <em>argv</em>.  These parameters are
 similar to those passed to the program's <code class="xref c c-func docutils literal notranslate"><span class="pre">main()</span></code> function with the
 difference that the first entry should refer to the script file to be
 executed rather than the executable hosting the Python interpreter.  If there
@@ -734,27 +762,27 @@ popping the first <a class="reference internal" href="../library/sys.html#sys.pa
 </div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PySys_SetArgv">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PySys_SetArgv</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">argc</span></span>, <span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PySys_SetArgv" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This function works like <a class="reference internal" href="#c.PySys_SetArgvEx" title="PySys_SetArgvEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_SetArgvEx()</span></code></a> with <em>updatepath</em> set
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This function works like <a class="reference internal" href="#c.PySys_SetArgvEx" title="PySys_SetArgvEx"><code class="xref c c-func docutils literal notranslate"><span class="pre">PySys_SetArgvEx()</span></code></a> with <em>updatepath</em> set
 to <code class="docutils literal notranslate"><span class="pre">1</span></code> unless the <strong class="program">python</strong> interpreter was started with the
 <a class="reference internal" href="../using/cmdline.html#cmdoption-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a>.</p>
 <p>Use <a class="reference internal" href="sys.html#c.Py_DecodeLocale" title="Py_DecodeLocale"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_DecodeLocale()</span></code></a> to decode a bytes string to get a
 <span class="xref c c-texpr"><span class="n">wchar_</span><span class="p">*</span></span> string.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The <em>updatepath</em> value depends on <a class="reference internal" href="../using/cmdline.html#cmdoption-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The <em>updatepath</em> value depends on <a class="reference internal" href="../using/cmdline.html#cmdoption-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a>.</p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_SetPythonHome">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_SetPythonHome</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">wchar_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">home</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_SetPythonHome" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Set the default &quot;home&quot; directory, that is, the location of the standard
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Set the default &quot;home&quot; directory, that is, the location of the standard
 Python libraries.  See <span class="target" id="index-31"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONHOME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHOME</span></code></a> for the meaning of the
 argument string.</p>
 <p>The argument should point to a zero-terminated character string in static
@@ -768,9 +796,14 @@ this storage.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_GetPythonHome">
 <span class="n"><span class="pre">w_char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_GetPythonHome</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_GetPythonHome" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the default &quot;home&quot;, that is, the value set by a previous call to
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the default &quot;home&quot;, that is, the value set by a previous call to
 <a class="reference internal" href="#c.Py_SetPythonHome" title="Py_SetPythonHome"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_SetPythonHome()</span></code></a>, or the value of the <span class="target" id="index-32"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONHOME"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHOME</span></code></a>
 environment variable if it is set.</p>
+<p>This function should not be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, otherwise
+it returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>It now returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
+</div>
 </dd></dl>
 
 </section>
@@ -912,7 +945,7 @@ code, or when embedding the Python interpreter:</p>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.PyInterpreterState">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyInterpreterState</span></span></span><a class="headerlink" href="#c.PyInterpreterState" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This data structure represents the state shared by a number of cooperating
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This data structure represents the state shared by a number of cooperating
 threads.  Threads belonging to the same interpreter share their module
 administration and a few other internal items. There are no public members in
 this structure.</p>
@@ -925,7 +958,7 @@ interpreter they belong.</p>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.PyThreadState">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState</span></span></span><a class="headerlink" href="#c.PyThreadState" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This data structure represents the state of a single thread.  The only public
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This data structure represents the state of a single thread.  The only public
 data member is <code class="xref py py-attr docutils literal notranslate"><span class="pre">interp</span></code> (<span class="xref c c-texpr"><a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n">PyInterpreterState</span></a><span class="p">*</span></span>), which points to
 this thread's interpreter state.</p>
 </dd></dl>
@@ -933,17 +966,17 @@ this thread's interpreter state.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyEval_InitThreads">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyEval_InitThreads</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyEval_InitThreads" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-38">Deprecated function which does nothing.</p>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-38">Deprecated function which does nothing.</p>
 <p>In Python 3.6 and older, this function created the GIL if it didn't exist.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The function now does nothing.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The function now does nothing.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>This function is now called by <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, so you don't
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>This function is now called by <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>, so you don't
 have to call it yourself anymore.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>This function cannot be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> anymore.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>This function cannot be called before <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> anymore.</p>
 </div>
 <div class="deprecated-removed">
 <p><span class="versionmodified">Deprecated since version 3.9, will be removed in version 3.11.</span></p>
@@ -953,11 +986,11 @@ have to call it yourself anymore.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyEval_ThreadsInitialized">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyEval_ThreadsInitialized</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyEval_ThreadsInitialized" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Returns a non-zero value if <a class="reference internal" href="#c.PyEval_InitThreads" title="PyEval_InitThreads"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_InitThreads()</span></code></a> has been called.  This
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Returns a non-zero value if <a class="reference internal" href="#c.PyEval_InitThreads" title="PyEval_InitThreads"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_InitThreads()</span></code></a> has been called.  This
 function can be called without holding the GIL, and therefore can be used to
 avoid calls to the locking API when running single-threaded.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The <a class="reference internal" href="../glossary.html#term-GIL"><span class="xref std std-term">GIL</span></a> is now initialized by <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The <a class="reference internal" href="../glossary.html#term-GIL"><span class="xref std std-term">GIL</span></a> is now initialized by <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
 </div>
 <div class="deprecated-removed">
 <p><span class="versionmodified">Deprecated since version 3.9, will be removed in version 3.11.</span></p>
@@ -967,7 +1000,7 @@ avoid calls to the locking API when running single-threaded.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyEval_SaveThread">
 <a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyEval_SaveThread</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyEval_SaveThread" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Release the global interpreter lock (if it has been created) and reset the
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Release the global interpreter lock (if it has been created) and reset the
 thread state to <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, returning the previous thread state (which is not
 <code class="docutils literal notranslate"><span class="pre">NULL</span></code>).  If the lock has been created, the current thread must have
 acquired it.</p>
@@ -976,7 +1009,7 @@ acquired it.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyEval_RestoreThread">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyEval_RestoreThread</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyEval_RestoreThread" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Acquire the global interpreter lock (if it has been created) and set the
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Acquire the global interpreter lock (if it has been created) and set the
 thread state to <em>tstate</em>, which must not be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.  If the lock has been
 created, the current thread must not have acquired it, otherwise deadlock
 ensues.</p>
@@ -993,7 +1026,7 @@ this function to avoid unwanted termination.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_Get">
 <a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_Get</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_Get" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the current thread state.  The global interpreter lock must be held.
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the current thread state.  The global interpreter lock must be held.
 When the current thread state is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, this issues a fatal error (so that
 the caller needn't check for <code class="docutils literal notranslate"><span class="pre">NULL</span></code>).</p>
 </dd></dl>
@@ -1001,7 +1034,7 @@ the caller needn't check for <code class="docutils literal notranslate"><span cl
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_Swap">
 <a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_Swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_Swap" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Swap the current thread state with the thread state given by the argument
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Swap the current thread state with the thread state given by the argument
 <em>tstate</em>, which may be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.  The global interpreter lock must be held
 and is not released.</p>
 </dd></dl>
@@ -1011,7 +1044,7 @@ with sub-interpreters:</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyGILState_Ensure">
 <span class="n"><span class="pre">PyGILState_STATE</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyGILState_Ensure</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyGILState_Ensure" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Ensure that the current thread is ready to call the Python C API regardless
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Ensure that the current thread is ready to call the Python C API regardless
 of the current state of Python, or of the global interpreter lock. This may
 be called as many times as desired by a thread as long as each call is
 matched with a call to <a class="reference internal" href="#c.PyGILState_Release" title="PyGILState_Release"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyGILState_Release()</span></code></a>. In general, other
@@ -1041,7 +1074,7 @@ this function to avoid unwanted termination.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyGILState_Release">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyGILState_Release</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyGILState_STATE</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyGILState_Release" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Release any resources previously acquired.  After this call, Python's state will
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Release any resources previously acquired.  After this call, Python's state will
 be the same as it was prior to the corresponding <a class="reference internal" href="#c.PyGILState_Ensure" title="PyGILState_Ensure"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyGILState_Ensure()</span></code></a> call
 (but generally this state will be unknown to the caller, hence the use of the
 GILState API).</p>
@@ -1052,7 +1085,7 @@ GILState API).</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyGILState_GetThisThreadState">
 <a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyGILState_GetThisThreadState</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyGILState_GetThisThreadState" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Get the current thread state for this thread.  May return <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if no
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Get the current thread state for this thread.  May return <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if no
 GILState API has been used on the current thread.  Note that the main thread
 always has such a thread-state, even if no auto-thread-state call has been
 made on the main thread.  This is mainly a helper/diagnostic function.</p>
@@ -1070,7 +1103,7 @@ for example in callback contexts or memory allocation functions when
 knowing that the GIL is locked can allow the caller to perform sensitive
 actions or otherwise behave differently.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1079,7 +1112,7 @@ example usage in the Python source distribution.</p>
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.Py_BEGIN_ALLOW_THREADS">
 <span class="sig-name descname"><span class="n"><span class="pre">Py_BEGIN_ALLOW_THREADS</span></span></span><a class="headerlink" href="#c.Py_BEGIN_ALLOW_THREADS" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This macro expands to <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">PyThreadState</span> <span class="pre">*_save;</span> <span class="pre">_save</span> <span class="pre">=</span> <span class="pre">PyEval_SaveThread();</span></code>.
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This macro expands to <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">PyThreadState</span> <span class="pre">*_save;</span> <span class="pre">_save</span> <span class="pre">=</span> <span class="pre">PyEval_SaveThread();</span></code>.
 Note that it contains an opening brace; it must be matched with a following
 <a class="reference internal" href="#c.Py_END_ALLOW_THREADS" title="Py_END_ALLOW_THREADS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_END_ALLOW_THREADS</span></code></a> macro.  See above for further discussion of this
 macro.</p>
@@ -1088,7 +1121,7 @@ macro.</p>
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.Py_END_ALLOW_THREADS">
 <span class="sig-name descname"><span class="n"><span class="pre">Py_END_ALLOW_THREADS</span></span></span><a class="headerlink" href="#c.Py_END_ALLOW_THREADS" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This macro expands to <code class="docutils literal notranslate"><span class="pre">PyEval_RestoreThread(_save);</span> <span class="pre">}</span></code>. Note that it contains
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This macro expands to <code class="docutils literal notranslate"><span class="pre">PyEval_RestoreThread(_save);</span> <span class="pre">}</span></code>. Note that it contains
 a closing brace; it must be matched with an earlier
 <a class="reference internal" href="#c.Py_BEGIN_ALLOW_THREADS" title="Py_BEGIN_ALLOW_THREADS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_BEGIN_ALLOW_THREADS</span></code></a> macro.  See above for further discussion of
 this macro.</p>
@@ -1097,14 +1130,14 @@ this macro.</p>
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.Py_BLOCK_THREADS">
 <span class="sig-name descname"><span class="n"><span class="pre">Py_BLOCK_THREADS</span></span></span><a class="headerlink" href="#c.Py_BLOCK_THREADS" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This macro expands to <code class="docutils literal notranslate"><span class="pre">PyEval_RestoreThread(_save);</span></code>: it is equivalent to
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This macro expands to <code class="docutils literal notranslate"><span class="pre">PyEval_RestoreThread(_save);</span></code>: it is equivalent to
 <a class="reference internal" href="#c.Py_END_ALLOW_THREADS" title="Py_END_ALLOW_THREADS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_END_ALLOW_THREADS</span></code></a> without the closing brace.</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.Py_UNBLOCK_THREADS">
 <span class="sig-name descname"><span class="n"><span class="pre">Py_UNBLOCK_THREADS</span></span></span><a class="headerlink" href="#c.Py_UNBLOCK_THREADS" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>This macro expands to <code class="docutils literal notranslate"><span class="pre">_save</span> <span class="pre">=</span> <span class="pre">PyEval_SaveThread();</span></code>: it is equivalent to
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>This macro expands to <code class="docutils literal notranslate"><span class="pre">_save</span> <span class="pre">=</span> <span class="pre">PyEval_SaveThread();</span></code>: it is equivalent to
 <a class="reference internal" href="#c.Py_BEGIN_ALLOW_THREADS" title="Py_BEGIN_ALLOW_THREADS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_BEGIN_ALLOW_THREADS</span></code></a> without the opening brace and variable
 declaration.</p>
 </dd></dl>
@@ -1114,12 +1147,12 @@ declaration.</p>
 <h3>Low-level API<a class="headerlink" href="#low-level-api" title="本標題的永久連結">¶</a></h3>
 <p>All of the following functions must be called after <a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> now initializes the <a class="reference internal" href="../glossary.html#term-GIL"><span class="xref std std-term">GIL</span></a>.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><a class="reference internal" href="#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a> now initializes the <a class="reference internal" href="../glossary.html#term-GIL"><span class="xref std std-term">GIL</span></a>.</p>
 </div>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyInterpreterState_New">
 <a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n"><span class="pre">PyInterpreterState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyInterpreterState_New</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyInterpreterState_New" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Create a new interpreter state object.  The global interpreter lock need not
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Create a new interpreter state object.  The global interpreter lock need not
 be held, but may be held if it is necessary to serialize calls to this
 function.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="../library/sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">cpython.PyInterpreterState_New</span></code> with no arguments.</p>
@@ -1128,7 +1161,7 @@ function.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyInterpreterState_Clear">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyInterpreterState_Clear</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n"><span class="pre">PyInterpreterState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">interp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyInterpreterState_Clear" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Reset all information in an interpreter state object.  The global interpreter
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Reset all information in an interpreter state object.  The global interpreter
 lock must be held.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="../library/sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">cpython.PyInterpreterState_Clear</span></code> with no arguments.</p>
 </dd></dl>
@@ -1136,7 +1169,7 @@ lock must be held.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyInterpreterState_Delete">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyInterpreterState_Delete</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n"><span class="pre">PyInterpreterState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">interp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyInterpreterState_Delete" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Destroy an interpreter state object.  The global interpreter lock need not be
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Destroy an interpreter state object.  The global interpreter lock need not be
 held.  The interpreter state must have been reset with a previous call to
 <a class="reference internal" href="#c.PyInterpreterState_Clear" title="PyInterpreterState_Clear"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyInterpreterState_Clear()</span></code></a>.</p>
 </dd></dl>
@@ -1144,7 +1177,7 @@ held.  The interpreter state must have been reset with a previous call to
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_New">
 <a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_New</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n"><span class="pre">PyInterpreterState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">interp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_New" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Create a new thread state object belonging to the given interpreter object.
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Create a new thread state object belonging to the given interpreter object.
 The global interpreter lock need not be held, but may be held if it is
 necessary to serialize calls to this function.</p>
 </dd></dl>
@@ -1152,10 +1185,10 @@ necessary to serialize calls to this function.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_Clear">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_Clear</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_Clear" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Reset all information in a thread state object.  The global interpreter lock
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Reset all information in a thread state object.  The global interpreter lock
 must be held.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>This function now calls the <code class="xref c c-member docutils literal notranslate"><span class="pre">PyThreadState.on_delete</span></code> callback.
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>This function now calls the <code class="xref c c-member docutils literal notranslate"><span class="pre">PyThreadState.on_delete</span></code> callback.
 Previously, that happened in <a class="reference internal" href="#c.PyThreadState_Delete" title="PyThreadState_Delete"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyThreadState_Delete()</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -1163,7 +1196,7 @@ Previously, that happened in <a class="reference internal" href="#c.PyThreadStat
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_Delete">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_Delete</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_Delete" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Destroy a thread state object.  The global interpreter lock need not be held.
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Destroy a thread state object.  The global interpreter lock need not be held.
 The thread state must have been reset with a previous call to
 <a class="reference internal" href="#c.PyThreadState_Clear" title="PyThreadState_Clear"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyThreadState_Clear()</span></code></a>.</p>
 </dd></dl>
@@ -1180,69 +1213,69 @@ to <a class="reference internal" href="#c.PyThreadState_Clear" title="PyThreadSt
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_GetFrame">
 <a class="reference internal" href="veryhigh.html#c.PyFrameObject" title="PyFrameObject"><span class="n"><span class="pre">PyFrameObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_GetFrame</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_GetFrame" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Get the current frame of the Python thread state <em>tstate</em>.</p>
-<p>Return a strong reference. Return <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if no frame is currently
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.10.</em><p>Get the current frame of the Python thread state <em>tstate</em>.</p>
+<p>Return a <a class="reference internal" href="../glossary.html#term-strong-reference"><span class="xref std std-term">strong reference</span></a>. Return <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if no frame is currently
 executing.</p>
 <p>See also <a class="reference internal" href="reflection.html#c.PyEval_GetFrame" title="PyEval_GetFrame"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_GetFrame()</span></code></a>.</p>
 <p><em>tstate</em> must not be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_GetID">
 <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_GetID</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_GetID" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Get the unique thread state identifier of the Python thread state <em>tstate</em>.</p>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.10.</em><p>Get the unique thread state identifier of the Python thread state <em>tstate</em>.</p>
 <p><em>tstate</em> must not be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_GetInterpreter">
 <a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n"><span class="pre">PyInterpreterState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_GetInterpreter</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_GetInterpreter" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Get the interpreter of the Python thread state <em>tstate</em>.</p>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.10.</em><p>Get the interpreter of the Python thread state <em>tstate</em>.</p>
 <p><em>tstate</em> must not be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyInterpreterState_Get">
 <a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n"><span class="pre">PyInterpreterState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyInterpreterState_Get</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyInterpreterState_Get" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Get the current interpreter.</p>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.9.</em><p>Get the current interpreter.</p>
 <p>Issue a fatal error if there no current Python thread state or no current
 interpreter. It cannot return NULL.</p>
 <p>The caller must hold the GIL.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyInterpreterState_GetID">
 <span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyInterpreterState_GetID</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n"><span class="pre">PyInterpreterState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">interp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyInterpreterState_GetID" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the interpreter's unique ID.  If there was any error in doing
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Return the interpreter's unique ID.  If there was any error in doing
 so then <code class="docutils literal notranslate"><span class="pre">-1</span></code> is returned and an error is set.</p>
 <p>The caller must hold the GIL.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyInterpreterState_GetDict">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyInterpreterState_GetDict</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyInterpreterState" title="PyInterpreterState"><span class="n"><span class="pre">PyInterpreterState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">interp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyInterpreterState_GetDict" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return a dictionary in which interpreter-specific data may be stored.
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.8.</em><p>Return a dictionary in which interpreter-specific data may be stored.
 If this function returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> then no exception has been raised and
 the caller should assume no interpreter-specific dict is available.</p>
 <p>This is not a replacement for <a class="reference internal" href="module.html#c.PyModule_GetState" title="PyModule_GetState"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyModule_GetState()</span></code></a>, which
 extensions should use to store interpreter-specific state information.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1253,7 +1286,7 @@ extensions should use to store interpreter-specific state information.</p>
 <p>The <em>throwflag</em> parameter is used by the <code class="docutils literal notranslate"><span class="pre">throw()</span></code> method of generators:
 if non-zero, handle the current exception.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The function now takes a <em>tstate</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The function now takes a <em>tstate</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -1263,7 +1296,7 @@ if non-zero, handle the current exception.</p>
 <dd><p>Get the frame evaluation function.</p>
 <p>See the <span class="target" id="index-40"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0523"><strong>PEP 523</strong></a> &quot;Adding a frame evaluation API to CPython&quot;.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1273,14 +1306,14 @@ if non-zero, handle the current exception.</p>
 <dd><p>Set the frame evaluation function.</p>
 <p>See the <span class="target" id="index-41"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0523"><strong>PEP 523</strong></a> &quot;Adding a frame evaluation API to CPython&quot;.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_GetDict">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_GetDict</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_GetDict" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="refcount">Return value: Borrowed reference.</em><p>Return a dictionary in which extensions can store thread-specific state
+<dd><em class="refcount">Return value: Borrowed reference.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return a dictionary in which extensions can store thread-specific state
 information.  Each extension should use a unique key to use to store state in
 the dictionary.  It is okay to call this function when no current thread state
 is available. If this function returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, no exception has been raised and
@@ -1289,8 +1322,8 @@ the caller should assume no current thread state is available.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThreadState_SetAsyncExc">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_SetAsyncExc</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">long</span></span><span class="w"> </span><span class="n"><span class="pre">id</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_SetAsyncExc" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Asynchronously raise an exception in a thread. The <em>id</em> argument is the thread
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThreadState_SetAsyncExc</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="n"><span class="pre">id</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">exc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThreadState_SetAsyncExc" title="本定義的永久連結">¶</a><br /></dt>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Asynchronously raise an exception in a thread. The <em>id</em> argument is the thread
 id of the target thread; <em>exc</em> is the exception object to be raised. This
 function does not steal any references to <em>exc</em>. To prevent naive misuse, you
 must write your own C extension to call this.  Must be called with the GIL held.
@@ -1298,15 +1331,15 @@ Returns the number of thread states modified; this is normally one, but will be
 zero if the thread id isn't found.  If <em>exc</em> is <code class="xref py py-const docutils literal notranslate"><span class="pre">NULL</span></code>, the pending
 exception (if any) for the thread is cleared. This raises no exceptions.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The type of the <em>id</em> parameter changed from <span class="xref c c-texpr"><span class="kt">long</span></span> to
-<span class="xref c c-texpr"><span class="kt">unsigned long</span></span>.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The type of the <em>id</em> parameter changed from <span class="xref c c-texpr"><span class="kt">long</span></span> to
+<span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span></span>.</p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyEval_AcquireThread">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyEval_AcquireThread</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyEval_AcquireThread" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Acquire the global interpreter lock and set the current thread state to
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Acquire the global interpreter lock and set the current thread state to
 <em>tstate</em>, which must not be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.  The lock must have been created earlier.
 If this thread already has the lock, deadlock ensues.</p>
 <div class="admonition note">
@@ -1318,7 +1351,7 @@ check if the interpreter is in process of being finalized before calling
 this function to avoid unwanted termination.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Updated to be consistent with <a class="reference internal" href="#c.PyEval_RestoreThread" title="PyEval_RestoreThread"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_RestoreThread()</span></code></a>,
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Updated to be consistent with <a class="reference internal" href="#c.PyEval_RestoreThread" title="PyEval_RestoreThread"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_RestoreThread()</span></code></a>,
 <a class="reference internal" href="#c.Py_END_ALLOW_THREADS" title="Py_END_ALLOW_THREADS"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_END_ALLOW_THREADS()</span></code></a>, and <a class="reference internal" href="#c.PyGILState_Ensure" title="PyGILState_Ensure"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyGILState_Ensure()</span></code></a>,
 and terminate the current thread if called while the interpreter is finalizing.</p>
 </div>
@@ -1329,7 +1362,7 @@ available (even when threads have not been initialized).</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyEval_ReleaseThread">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyEval_ReleaseThread</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyEval_ReleaseThread" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Reset the current thread state to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> and release the global interpreter
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Reset the current thread state to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> and release the global interpreter
 lock.  The lock must have been created earlier and must be held by the current
 thread.  The <em>tstate</em> argument, which must not be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, is only used to check
 that it represents the current thread state --- if it isn't, a fatal error is
@@ -1341,10 +1374,10 @@ available (even when threads have not been initialized).</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyEval_AcquireLock">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyEval_AcquireLock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyEval_AcquireLock" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Acquire the global interpreter lock.  The lock must have been created earlier.
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Acquire the global interpreter lock.  The lock must have been created earlier.
 If this thread already has the lock, a deadlock ensues.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.2 版後已棄用: </span>This function does not update the current thread state.  Please use
+<p><span class="versionmodified deprecated">在 3.2 版本開始棄用: </span>This function does not update the current thread state.  Please use
 <a class="reference internal" href="#c.PyEval_RestoreThread" title="PyEval_RestoreThread"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_RestoreThread()</span></code></a> or <a class="reference internal" href="#c.PyEval_AcquireThread" title="PyEval_AcquireThread"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_AcquireThread()</span></code></a>
 instead.</p>
 </div>
@@ -1357,7 +1390,7 @@ check if the interpreter is in process of being finalized before calling
 this function to avoid unwanted termination.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Updated to be consistent with <a class="reference internal" href="#c.PyEval_RestoreThread" title="PyEval_RestoreThread"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_RestoreThread()</span></code></a>,
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Updated to be consistent with <a class="reference internal" href="#c.PyEval_RestoreThread" title="PyEval_RestoreThread"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_RestoreThread()</span></code></a>,
 <a class="reference internal" href="#c.Py_END_ALLOW_THREADS" title="Py_END_ALLOW_THREADS"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_END_ALLOW_THREADS()</span></code></a>, and <a class="reference internal" href="#c.PyGILState_Ensure" title="PyGILState_Ensure"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyGILState_Ensure()</span></code></a>,
 and terminate the current thread if called while the interpreter is finalizing.</p>
 </div>
@@ -1366,9 +1399,9 @@ and terminate the current thread if called while the interpreter is finalizing.<
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyEval_ReleaseLock">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyEval_ReleaseLock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyEval_ReleaseLock" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Release the global interpreter lock.  The lock must have been created earlier.</p>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Release the global interpreter lock.  The lock must have been created earlier.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.2 版後已棄用: </span>This function does not update the current thread state.  Please use
+<p><span class="versionmodified deprecated">在 3.2 版本開始棄用: </span>This function does not update the current thread state.  Please use
 <a class="reference internal" href="#c.PyEval_SaveThread" title="PyEval_SaveThread"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_SaveThread()</span></code></a> or <a class="reference internal" href="#c.PyEval_ReleaseThread" title="PyEval_ReleaseThread"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyEval_ReleaseThread()</span></code></a>
 instead.</p>
 </div>
@@ -1393,10 +1426,10 @@ function. You can create and destroy them using the following functions:</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_NewInterpreter">
 <a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Py_NewInterpreter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_NewInterpreter" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-42">Create a new sub-interpreter.  This is an (almost) totally separate environment
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-42">Create a new sub-interpreter.  This is an (almost) totally separate environment
 for the execution of Python code.  In particular, the new interpreter has
 separate, independent versions of all imported modules, including the
-fundamental modules <a class="reference internal" href="../library/builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a>, <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> and <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a>.  The
+fundamental modules <a class="reference internal" href="../library/builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a>, <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> and <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a>.  The
 table of loaded modules (<code class="docutils literal notranslate"><span class="pre">sys.modules</span></code>) and the module search path
 (<code class="docutils literal notranslate"><span class="pre">sys.path</span></code>) are also separate.  The new environment has no <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>
 variable.  It has new standard I/O stream file objects <code class="docutils literal notranslate"><span class="pre">sys.stdin</span></code>,
@@ -1442,7 +1475,7 @@ and global variables are shared between these modules.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_EndInterpreter">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_EndInterpreter</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyThreadState" title="PyThreadState"><span class="n"><span class="pre">PyThreadState</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">tstate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_EndInterpreter" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-45">Destroy the (sub-)interpreter represented by the given thread state. The given
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-45">Destroy the (sub-)interpreter represented by the given thread state. The given
 thread state must be the current thread state.  See the discussion of thread
 states below.  When the call returns, the current thread state is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.  All
 thread states associated with this interpreter are destroyed.  (The global
@@ -1485,7 +1518,7 @@ pointer and a void pointer argument.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.Py_AddPendingCall">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Py_AddPendingCall</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">arg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.Py_AddPendingCall" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-46">Schedule a function to be called from the main interpreter thread.  On
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-46">Schedule a function to be called from the main interpreter thread.  On
 success, <code class="docutils literal notranslate"><span class="pre">0</span></code> is returned and <em>func</em> is queued for being called in the
 main thread.  On failure, <code class="docutils literal notranslate"><span class="pre">-1</span></code> is returned without setting any exception.</p>
 <p>When successfully queued, <em>func</em> will be <em>eventually</em> called from the
@@ -1516,13 +1549,13 @@ function is generally <strong>not</strong> suitable for calling Python code from
 arbitrary C threads.  Instead, use the <a class="reference internal" href="#gilstate"><span class="std std-ref">PyGILState API</span></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>If this function is called in a subinterpreter, the function <em>func</em> is
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>If this function is called in a subinterpreter, the function <em>func</em> is
 now scheduled to be called from the subinterpreter, rather than being
 called from the main interpreter. Each subinterpreter now has its own
 list of scheduled calls.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1743,7 +1776,7 @@ functions don't do refcount operations on them either.</p>
 CPython interpreter.  This API uses a new type <a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_tss_t</span></code></a> instead of
 <span class="xref c c-texpr"><span class="kt">int</span></span> to represent thread keys.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
@@ -1775,7 +1808,7 @@ is not possible due to its implementation being opaque at build time.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_tss_alloc">
 <a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><span class="n"><span class="pre">Py_tss_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_tss_alloc</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_tss_alloc" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return a value which is the same state as a value initialized with
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Return a value which is the same state as a value initialized with
 <a class="reference internal" href="#c.Py_tss_NEEDS_INIT" title="Py_tss_NEEDS_INIT"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_tss_NEEDS_INIT</span></code></a>, or <code class="docutils literal notranslate"><span class="pre">NULL</span></code> in the case of dynamic allocation
 failure.</p>
 </dd></dl>
@@ -1783,7 +1816,7 @@ failure.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_tss_free">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_tss_free</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><span class="n"><span class="pre">Py_tss_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_tss_free" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Free the given <em>key</em> allocated by <a class="reference internal" href="#c.PyThread_tss_alloc" title="PyThread_tss_alloc"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyThread_tss_alloc()</span></code></a>, after
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Free the given <em>key</em> allocated by <a class="reference internal" href="#c.PyThread_tss_alloc" title="PyThread_tss_alloc"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyThread_tss_alloc()</span></code></a>, after
 first calling <a class="reference internal" href="#c.PyThread_tss_delete" title="PyThread_tss_delete"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyThread_tss_delete()</span></code></a> to ensure any associated
 thread locals have been unassigned. This is a no-op if the <em>key</em>
 argument is <cite>NULL</cite>.</p>
@@ -1804,14 +1837,14 @@ undefined if the given <a class="reference internal" href="#c.Py_tss_t" title="P
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_tss_is_created">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_tss_is_created</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><span class="n"><span class="pre">Py_tss_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_tss_is_created" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return a non-zero value if the given <a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_tss_t</span></code></a> has been initialized
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Return a non-zero value if the given <a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_tss_t</span></code></a> has been initialized
 by <a class="reference internal" href="#c.PyThread_tss_create" title="PyThread_tss_create"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyThread_tss_create()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_tss_create">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_tss_create</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><span class="n"><span class="pre">Py_tss_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_tss_create" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return a zero value on successful initialization of a TSS key.  The behavior
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Return a zero value on successful initialization of a TSS key.  The behavior
 is undefined if the value pointed to by the <em>key</em> argument is not
 initialized by <a class="reference internal" href="#c.Py_tss_NEEDS_INIT" title="Py_tss_NEEDS_INIT"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_tss_NEEDS_INIT</span></code></a>.  This function can be called
 repeatedly on the same key -- calling it on an already initialized key is a
@@ -1821,7 +1854,7 @@ no-op and immediately returns success.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_tss_delete">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_tss_delete</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><span class="n"><span class="pre">Py_tss_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_tss_delete" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Destroy a TSS key to forget the values associated with the key across all
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Destroy a TSS key to forget the values associated with the key across all
 threads, and change the key's initialization state to uninitialized.  A
 destroyed key is able to be initialized again by
 <a class="reference internal" href="#c.PyThread_tss_create" title="PyThread_tss_create"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyThread_tss_create()</span></code></a>. This function can be called repeatedly on
@@ -1831,7 +1864,7 @@ the same key -- calling it on an already destroyed key is a no-op.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_tss_set">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_tss_set</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><span class="n"><span class="pre">Py_tss_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">key</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_tss_set" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return a zero value to indicate successfully associating a <span class="xref c c-texpr"><span class="kt">void</span><span class="p">*</span></span>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Return a zero value to indicate successfully associating a <span class="xref c c-texpr"><span class="kt">void</span><span class="p">*</span></span>
 value with a TSS key in the current thread.  Each thread has a distinct
 mapping of the key to a <span class="xref c c-texpr"><span class="kt">void</span><span class="p">*</span></span> value.</p>
 </dd></dl>
@@ -1839,7 +1872,7 @@ mapping of the key to a <span class="xref c c-texpr"><span class="kt">void</span
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_tss_get">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_tss_get</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.Py_tss_t" title="Py_tss_t"><span class="n"><span class="pre">Py_tss_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_tss_get" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the <span class="xref c c-texpr"><span class="kt">void</span><span class="p">*</span></span> value associated with a TSS key in the current
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Return the <span class="xref c c-texpr"><span class="kt">void</span><span class="p">*</span></span> value associated with a TSS key in the current
 thread.  This returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if no value is associated with the key in the
 current thread.</p>
 </dd></dl>
@@ -1849,7 +1882,7 @@ current thread.</p>
 <section id="thread-local-storage-tls-api">
 <span id="thread-local-storage-api"></span><h3>Thread Local Storage (TLS) API<a class="headerlink" href="#thread-local-storage-tls-api" title="本標題的永久連結">¶</a></h3>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.7 版後已棄用: </span>This API is superseded by
+<p><span class="versionmodified deprecated">在 3.7 版本開始棄用: </span>This API is superseded by
 <a class="reference internal" href="#thread-specific-storage-api"><span class="std std-ref">Thread Specific Storage (TSS) API</span></a>.</p>
 </div>
 <div class="admonition note">
@@ -1864,32 +1897,32 @@ be used in new code.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_create_key">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_create_key</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_create_key" title="本定義的永久連結">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em></dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_delete_key">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_delete_key</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_delete_key" title="本定義的永久連結">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em></dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_set_key_value">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_set_key_value</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">key</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_set_key_value" title="本定義的永久連結">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em></dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_get_key_value">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_get_key_value</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_get_key_value" title="本定義的永久連結">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em></dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_delete_key_value">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_delete_key_value</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_delete_key_value" title="本定義的永久連結">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em></dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyThread_ReInitTLS">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyThread_ReInitTLS</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyThread_ReInitTLS" title="本定義的永久連結">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em></dd></dl>
 
 </section>
 </section>
@@ -1902,8 +1935,9 @@ be used in new code.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Initialization, Finalization, and Threads</a><ul>
 <li><a class="reference internal" href="#before-python-initialization">Before Python Initialization</a></li>
 <li><a class="reference internal" href="#global-configuration-variables">Global configuration variables</a></li>
@@ -1937,18 +1971,23 @@ be used in new code.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="typehints.html"
-                        title="上一章">Objects for Type Hinting</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="init_config.html"
-                        title="下一章">Python Initialization Configuration</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="typehints.html"
+                          title="上一章">Objects for Type Hinting</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="init_config.html"
+                          title="下一章">Python Initialization Configuration</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/init.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/init.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1983,13 +2022,11 @@ be used in new code.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Initialization, Finalization, and Threads</a></li>
                 <li class="right">
                     
@@ -2008,25 +2045,25 @@ be used in new code.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

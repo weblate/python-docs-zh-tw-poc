@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>readline --- GNU readline interface &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>readline --- GNU readline interface &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="stringprep --- Internet String Preparation" href="stringprep.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/readline.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">readline</span></code> --- GNU readline interface</a><ul>
 <li><a class="reference internal" href="#init-file">Init file</a></li>
 <li><a class="reference internal" href="#line-buffer">Line buffer</a></li>
@@ -86,18 +85,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="stringprep.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stringprep</span></code> --- Internet String Preparation</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="rlcompleter.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rlcompleter</span></code> --- Completion function for GNU readline</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="stringprep.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stringprep</span></code> --- Internet String Preparation</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="rlcompleter.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rlcompleter</span></code> --- Completion function for GNU readline</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/readline.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/readline.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -133,13 +137,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="text.html" accesskey="U">Text Processing Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">readline</span></code> --- GNU readline interface</a></li>
                 <li class="right">
@@ -210,7 +212,7 @@ turn ON <em>vi</em> keybindings and TAB completion:</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="readline.read_init_file">
-<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">read_init_file</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">filename</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.read_init_file" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">read_init_file</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.read_init_file" title="本定義的永久連結">¶</a></dt>
 <dd><p>Execute a readline initialization file. The default filename is the last filename
 used. This calls <code class="xref c c-func docutils literal notranslate"><span class="pre">rl_read_init_file()</span></code> in the underlying library.</p>
 </dd></dl>
@@ -247,7 +249,7 @@ line buffer.  This calls <code class="xref c c-func docutils literal notranslate
 <p>The following functions operate on a history file:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="readline.read_history_file">
-<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">read_history_file</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">filename</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.read_history_file" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">read_history_file</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.read_history_file" title="本定義的永久連結">¶</a></dt>
 <dd><p>Load a readline history file, and append it to the history list.
 The default filename is <code class="file docutils literal notranslate"><span class="pre">~/.history</span></code>.  This calls
 <code class="xref c c-func docutils literal notranslate"><span class="pre">read_history()</span></code> in the underlying library.</p>
@@ -255,7 +257,7 @@ The default filename is <code class="file docutils literal notranslate"><span cl
 
 <dl class="py function">
 <dt class="sig sig-object py" id="readline.write_history_file">
-<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">write_history_file</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">filename</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.write_history_file" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">write_history_file</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.write_history_file" title="本定義的永久連結">¶</a></dt>
 <dd><p>Save the history list to a readline history file, overwriting any
 existing file.  The default filename is <code class="file docutils literal notranslate"><span class="pre">~/.history</span></code>.  This calls
 <code class="xref c c-func docutils literal notranslate"><span class="pre">write_history()</span></code> in the underlying library.</p>
@@ -263,14 +265,14 @@ existing file.  The default filename is <code class="file docutils literal notra
 
 <dl class="py function">
 <dt class="sig sig-object py" id="readline.append_history_file">
-<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">append_history_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nelements</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">filename</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.append_history_file" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">append_history_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nelements</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.append_history_file" title="本定義的永久連結">¶</a></dt>
 <dd><p>Append the last <em>nelements</em> items of history to a file.  The default filename is
 <code class="file docutils literal notranslate"><span class="pre">~/.history</span></code>.  The file must already exist.  This calls
 <code class="xref c c-func docutils literal notranslate"><span class="pre">append_history()</span></code> in the underlying library.  This function
 only exists if Python was compiled for a version of the library
 that supports it.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -344,7 +346,7 @@ input via readline.  The <em>enabled</em> argument should be a Boolean value
 that when true, enables auto history, and that when false, disables
 auto history.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 <div class="impl-detail compound">
 <p><strong>CPython implementation detail:</strong> Auto history is enabled by default, and changes to this do not persist
@@ -357,7 +359,7 @@ across multiple sessions.</p>
 <h2>Startup hooks<a class="headerlink" href="#startup-hooks" title="本標題的永久連結">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="readline.set_startup_hook">
-<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">set_startup_hook</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">function</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.set_startup_hook" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">set_startup_hook</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.set_startup_hook" title="本定義的永久連結">¶</a></dt>
 <dd><p>Set or remove the function invoked by the <code class="xref c c-data docutils literal notranslate"><span class="pre">rl_startup_hook</span></code>
 callback of the underlying library.  If <em>function</em> is specified, it will
 be used as the new hook function; if omitted or <code class="docutils literal notranslate"><span class="pre">None</span></code>, any function
@@ -367,7 +369,7 @@ arguments just before readline prints the first prompt.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="readline.set_pre_input_hook">
-<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">set_pre_input_hook</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">function</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.set_pre_input_hook" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">set_pre_input_hook</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.set_pre_input_hook" title="本定義的永久連結">¶</a></dt>
 <dd><p>Set or remove the function invoked by the <code class="xref c c-data docutils literal notranslate"><span class="pre">rl_pre_input_hook</span></code>
 callback of the underlying library.  If <em>function</em> is specified, it will
 be used as the new hook function; if omitted or <code class="docutils literal notranslate"><span class="pre">None</span></code>, any
@@ -388,7 +390,7 @@ the interactive interpreter.  If the <a class="reference internal" href="#module
 with a custom completer, a different set of word delimiters should be set.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="readline.set_completer">
-<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">set_completer</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">function</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.set_completer" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">set_completer</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.set_completer" title="本定義的永久連結">¶</a></dt>
 <dd><p>Set or remove the completer function.  If <em>function</em> is specified, it will be
 used as the new completer function; if omitted or <code class="docutils literal notranslate"><span class="pre">None</span></code>, any completer
 function already installed is removed.  The completer function is called as
@@ -424,7 +426,9 @@ an integer.</p>
 <dd><p>Get the beginning or ending index of the completion scope.
 These indexes are the <em>start</em> and <em>end</em> arguments passed to the
 <code class="xref c c-data docutils literal notranslate"><span class="pre">rl_attempted_completion_function</span></code> callback of the
-underlying library.</p>
+underlying library.  The values may be different in the same
+input editing scenario based on the underlying C readline implementation.
+Ex: libedit is known to behave differently than libreadline.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -440,7 +444,7 @@ variable in the underlying library.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="readline.set_completion_display_matches_hook">
-<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">set_completion_display_matches_hook</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">function</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.set_completion_display_matches_hook" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">readline.</span></span><span class="sig-name descname"><span class="pre">set_completion_display_matches_hook</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readline.set_completion_display_matches_hook" title="本定義的永久連結">¶</a></dt>
 <dd><p>Set or remove the completion display function.  If <em>function</em> is
 specified, it will be used as the new completion display function;
 if omitted or <code class="docutils literal notranslate"><span class="pre">None</span></code>, any completion display function already
@@ -534,8 +538,9 @@ support history save/restore.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">readline</span></code> --- GNU readline interface</a><ul>
 <li><a class="reference internal" href="#init-file">Init file</a></li>
 <li><a class="reference internal" href="#line-buffer">Line buffer</a></li>
@@ -548,18 +553,23 @@ support history save/restore.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="stringprep.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stringprep</span></code> --- Internet String Preparation</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="rlcompleter.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rlcompleter</span></code> --- Completion function for GNU readline</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="stringprep.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stringprep</span></code> --- Internet String Preparation</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="rlcompleter.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rlcompleter</span></code> --- Completion function for GNU readline</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/readline.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/readline.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -594,13 +604,11 @@ support history save/restore.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="text.html" >Text Processing Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">readline</span></code> --- GNU readline interface</a></li>
                 <li class="right">
@@ -620,25 +628,25 @@ support history save/restore.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

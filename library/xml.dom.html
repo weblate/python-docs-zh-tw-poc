@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>xml.dom --- The Document Object Model API &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml.dom --- The Document Object Model API &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="xml.etree.ElementTree --- The ElementTree XML API" href="xml.etree.elementtree.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/xml.dom.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a><ul>
 <li><a class="reference internal" href="#module-contents">Module Contents</a></li>
 <li><a class="reference internal" href="#objects-in-the-dom">Objects in the DOM</a><ul>
@@ -100,18 +99,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xml.etree.elementtree.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.dom.minidom.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xml.etree.elementtree.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.dom.minidom.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.dom.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.dom.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -147,13 +151,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" accesskey="U">Structured Markup Processing Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a></li>
                 <li class="right">
@@ -180,7 +182,7 @@
             
   <section id="module-xml.dom">
 <span id="xml-dom-the-document-object-model-api"></span><h1><a class="reference internal" href="#module-xml.dom" title="xml.dom: Document Object Model API for Python."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code></a> --- The Document Object Model API<a class="headerlink" href="#module-xml.dom" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/xml/dom/__init__.py">Lib/xml/dom/__init__.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/xml/dom/__init__.py">Lib/xml/dom/__init__.py</a></p>
 <hr class="docutils" />
 <p>The Document Object Model, or &quot;DOM,&quot; is a cross-language API from the World Wide
 Web Consortium (W3C) for accessing and modifying XML documents.  A DOM
@@ -227,7 +229,7 @@ implementations are free to support the strict mapping from IDL).  See section
 </dd>
 <dt><a class="reference external" href="https://www.w3.org/TR/REC-DOM-Level-1/">Document Object Model (DOM) Level 1 Specification</a></dt><dd><p>The W3C recommendation for the DOM supported by <a class="reference internal" href="xml.dom.minidom.html#module-xml.dom.minidom" title="xml.dom.minidom: Minimal Document Object Model (DOM) implementation."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code></a>.</p>
 </dd>
-<dt><a class="reference external" href="http://www.omg.org/cgi-bin/doc?formal/02-11-05.pdf">Python Language Mapping Specification</a></dt><dd><p>This specifies the mapping from OMG IDL to Python.</p>
+<dt><a class="reference external" href="https://www.omg.org/spec/PYTH/1.2/PDF">Python Language Mapping Specification</a></dt><dd><p>This specifies the mapping from OMG IDL to Python.</p>
 </dd>
 </dl>
 </div>
@@ -1010,14 +1012,14 @@ exception, each of which carries the appropriate value for the <a class="referen
 attribute.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.DOMException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">DOMException</span></span><a class="headerlink" href="#xml.dom.DOMException" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">DOMException</span></span><a class="headerlink" href="#xml.dom.DOMException" title="本定義的永久連結">¶</a></dt>
 <dd><p>Base exception class used for all specific DOM exceptions.  This exception class
 cannot be directly instantiated.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.DomstringSizeErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">DomstringSizeErr</span></span><a class="headerlink" href="#xml.dom.DomstringSizeErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">DomstringSizeErr</span></span><a class="headerlink" href="#xml.dom.DomstringSizeErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when a specified range of text does not fit into a string. This is not
 known to be used in the Python DOM implementations, but may be received from DOM
 implementations not written in Python.</p>
@@ -1025,34 +1027,34 @@ implementations not written in Python.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.HierarchyRequestErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">HierarchyRequestErr</span></span><a class="headerlink" href="#xml.dom.HierarchyRequestErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">HierarchyRequestErr</span></span><a class="headerlink" href="#xml.dom.HierarchyRequestErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when an attempt is made to insert a node where the node type is not
 allowed.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.IndexSizeErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">IndexSizeErr</span></span><a class="headerlink" href="#xml.dom.IndexSizeErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">IndexSizeErr</span></span><a class="headerlink" href="#xml.dom.IndexSizeErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when an index or size parameter to a method is negative or exceeds the
 allowed values.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.InuseAttributeErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InuseAttributeErr</span></span><a class="headerlink" href="#xml.dom.InuseAttributeErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InuseAttributeErr</span></span><a class="headerlink" href="#xml.dom.InuseAttributeErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when an attempt is made to insert an <code class="xref py py-class docutils literal notranslate"><span class="pre">Attr</span></code> node that is already
 present elsewhere in the document.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.InvalidAccessErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InvalidAccessErr</span></span><a class="headerlink" href="#xml.dom.InvalidAccessErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InvalidAccessErr</span></span><a class="headerlink" href="#xml.dom.InvalidAccessErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised if a parameter or an operation is not supported on the underlying object.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.InvalidCharacterErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InvalidCharacterErr</span></span><a class="headerlink" href="#xml.dom.InvalidCharacterErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InvalidCharacterErr</span></span><a class="headerlink" href="#xml.dom.InvalidCharacterErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>This exception is raised when a string parameter contains a character that is
 not permitted in the context it's being used in by the XML 1.0 recommendation.
 For example, attempting to create an <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> node with a space in the
@@ -1061,20 +1063,20 @@ element type name will cause this error to be raised.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.InvalidModificationErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InvalidModificationErr</span></span><a class="headerlink" href="#xml.dom.InvalidModificationErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InvalidModificationErr</span></span><a class="headerlink" href="#xml.dom.InvalidModificationErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when an attempt is made to modify the type of a node.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.InvalidStateErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InvalidStateErr</span></span><a class="headerlink" href="#xml.dom.InvalidStateErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">InvalidStateErr</span></span><a class="headerlink" href="#xml.dom.InvalidStateErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when an attempt is made to use an object that is not defined or is no
 longer usable.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.NamespaceErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NamespaceErr</span></span><a class="headerlink" href="#xml.dom.NamespaceErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NamespaceErr</span></span><a class="headerlink" href="#xml.dom.NamespaceErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>If an attempt is made to change any object in a way that is not permitted with
 regard to the <a class="reference external" href="https://www.w3.org/TR/REC-xml-names/">Namespaces in XML</a>
 recommendation, this exception is raised.</p>
@@ -1082,7 +1084,7 @@ recommendation, this exception is raised.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.NotFoundErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NotFoundErr</span></span><a class="headerlink" href="#xml.dom.NotFoundErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NotFoundErr</span></span><a class="headerlink" href="#xml.dom.NotFoundErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception when a node does not exist in the referenced context.  For example,
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">NamedNodeMap.removeNamedItem()</span></code> will raise this if the node passed in does
 not exist in the map.</p>
@@ -1090,33 +1092,33 @@ not exist in the map.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.NotSupportedErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NotSupportedErr</span></span><a class="headerlink" href="#xml.dom.NotSupportedErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NotSupportedErr</span></span><a class="headerlink" href="#xml.dom.NotSupportedErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when the implementation does not support the requested type of object or
 operation.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.NoDataAllowedErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NoDataAllowedErr</span></span><a class="headerlink" href="#xml.dom.NoDataAllowedErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NoDataAllowedErr</span></span><a class="headerlink" href="#xml.dom.NoDataAllowedErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is raised if data is specified for a node which does not support data.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.NoModificationAllowedErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NoModificationAllowedErr</span></span><a class="headerlink" href="#xml.dom.NoModificationAllowedErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">NoModificationAllowedErr</span></span><a class="headerlink" href="#xml.dom.NoModificationAllowedErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised on attempts to modify an object where modifications are not allowed (such
 as for read-only nodes).</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.SyntaxErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">SyntaxErr</span></span><a class="headerlink" href="#xml.dom.SyntaxErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">SyntaxErr</span></span><a class="headerlink" href="#xml.dom.SyntaxErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when an invalid or illegal string is specified.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.dom.WrongDocumentErr">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">WrongDocumentErr</span></span><a class="headerlink" href="#xml.dom.WrongDocumentErr" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.dom.</span></span><span class="sig-name descname"><span class="pre">WrongDocumentErr</span></span><a class="headerlink" href="#xml.dom.WrongDocumentErr" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when a node is inserted in a different document than it currently belongs
 to, and the implementation does not support migrating the node from one document
 to the other.</p>
@@ -1267,8 +1269,9 @@ implementations to enforce such requirements.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a><ul>
 <li><a class="reference internal" href="#module-contents">Module Contents</a></li>
 <li><a class="reference internal" href="#objects-in-the-dom">Objects in the DOM</a><ul>
@@ -1295,18 +1298,23 @@ implementations to enforce such requirements.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xml.etree.elementtree.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.dom.minidom.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xml.etree.elementtree.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.dom.minidom.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.dom.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.dom.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1341,13 +1349,11 @@ implementations to enforce such requirements.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" >Structured Markup Processing Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a></li>
                 <li class="right">
@@ -1367,25 +1373,25 @@ implementations to enforce such requirements.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>email.mime: Creating email and MIME objects from scratch &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email.mime: Creating email and MIME objects from scratch &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="email.message.Message: Representing an email message using the compat32 API" href="email.compat32-message.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/email.mime.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.compat32-message.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.header.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.header</span></code>: Internationalized headers</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.compat32-message.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.header.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.header</span></code>: Internationalized headers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.mime.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.mime.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime</span></code>: Creating email and MIME objects from scratch</a></li>
@@ -153,7 +153,7 @@
             
   <section id="module-email.mime">
 <span id="email-mime-creating-email-and-mime-objects-from-scratch"></span><h1><a class="reference internal" href="#module-email.mime" title="email.mime: Build MIME messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime</span></code></a>: Creating email and MIME objects from scratch<a class="headerlink" href="#module-email.mime" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/email/mime/">Lib/email/mime/</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/email/mime/">Lib/email/mime/</a></p>
 <hr class="docutils" />
 <p>This module is part of the legacy (<code class="docutils literal notranslate"><span class="pre">Compat32</span></code>) email API.  Its functionality
 is partially replaced by the <a class="reference internal" href="email.contentmanager.html#module-email.contentmanager" title="email.contentmanager: Storing and Retrieving Content from MIME Parts"><code class="xref py py-mod docutils literal notranslate"><span class="pre">contentmanager</span></code></a> in the new API, but
@@ -173,7 +173,7 @@ make things easier.</p>
 <p>Here are the classes:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="email.mime.base.MIMEBase">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.mime.base.</span></span><span class="sig-name descname"><span class="pre">MIMEBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_maintype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.base.MIMEBase" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.mime.base.</span></span><span class="sig-name descname"><span class="pre">MIMEBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_maintype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.base.MIMEBase" title="本定義的永久連結">¶</a></dt>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.base</span></code></p>
 <p>This is the base class for all the MIME-specific subclasses of
 <a class="reference internal" href="email.compat32-message.html#email.message.Message" title="email.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a>.  Ordinarily you won't create instances
@@ -191,13 +191,13 @@ key/value dictionary and is passed directly to <a class="reference internal" hre
 (based on <em>_maintype</em>, <em>_subtype</em>, and <em>_params</em>), and a
 <em class="mailheader">MIME-Version</em> header (always set to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>policy</em> keyword-only parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>policy</em> keyword-only parameter.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.mime.nonmultipart.MIMENonMultipart">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.mime.nonmultipart.</span></span><span class="sig-name descname"><span class="pre">MIMENonMultipart</span></span><a class="headerlink" href="#email.mime.nonmultipart.MIMENonMultipart" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.mime.nonmultipart.</span></span><span class="sig-name descname"><span class="pre">MIMENonMultipart</span></span><a class="headerlink" href="#email.mime.nonmultipart.MIMENonMultipart" title="本定義的永久連結">¶</a></dt>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.nonmultipart</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.base.MIMEBase" title="email.mime.base.MIMEBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEBase</span></code></a>, this is an intermediate base
 class for MIME messages that are not <em class="mimetype">multipart</em>.  The primary
@@ -209,7 +209,7 @@ is called, a <a class="reference internal" href="email.errors.html#email.errors.
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.mime.multipart.MIMEMultipart">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.mime.multipart.</span></span><span class="sig-name descname"><span class="pre">MIMEMultipart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subparts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.multipart.MIMEMultipart" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.mime.multipart.</span></span><span class="sig-name descname"><span class="pre">MIMEMultipart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subparts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.multipart.MIMEMultipart" title="本定義的永久連結">¶</a></dt>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.multipart</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.base.MIMEBase" title="email.mime.base.MIMEBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEBase</span></code></a>, this is an intermediate base
 class for MIME messages that are <em class="mimetype">multipart</em>.  Optional <em>_subtype</em>
@@ -228,13 +228,13 @@ to the message by using the <a class="reference internal" href="email.compat32-m
 the keyword arguments, or passed into the <em>_params</em> argument, which is a keyword
 dictionary.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>policy</em> keyword-only parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>policy</em> keyword-only parameter.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.mime.application.MIMEApplication">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.mime.application.</span></span><span class="sig-name descname"><span class="pre">MIMEApplication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'octet-stream'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_encoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">email.encoders.encode_base64</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.application.MIMEApplication" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.mime.application.</span></span><span class="sig-name descname"><span class="pre">MIMEApplication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'octet-stream'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_encoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">email.encoders.encode_base64</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.application.MIMEApplication" title="本定義的永久連結">¶</a></dt>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.application</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.nonmultipart.MIMENonMultipart" title="email.mime.nonmultipart.MIMENonMultipart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMENonMultipart</span></code></a>, the
 <a class="reference internal" href="#email.mime.application.MIMEApplication" title="email.mime.application.MIMEApplication"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEApplication</span></code></a> class is used to represent MIME message objects of
@@ -253,13 +253,13 @@ object as necessary.  The default encoding is base64.  See the
 <p>Optional <em>policy</em> argument defaults to <a class="reference internal" href="email.policy.html#email.policy.Compat32" title="email.policy.Compat32"><code class="xref py py-class docutils literal notranslate"><span class="pre">compat32</span></code></a>.</p>
 <p><em>_params</em> are passed straight through to the base class constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>policy</em> keyword-only parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>policy</em> keyword-only parameter.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.mime.audio.MIMEAudio">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.mime.audio.</span></span><span class="sig-name descname"><span class="pre">MIMEAudio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_audiodata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_encoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">email.encoders.encode_base64</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.audio.MIMEAudio" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.mime.audio.</span></span><span class="sig-name descname"><span class="pre">MIMEAudio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_audiodata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_encoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">email.encoders.encode_base64</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.audio.MIMEAudio" title="本定義的永久連結">¶</a></dt>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.audio</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.nonmultipart.MIMENonMultipart" title="email.mime.nonmultipart.MIMENonMultipart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMENonMultipart</span></code></a>, the
 <a class="reference internal" href="#email.mime.audio.MIMEAudio" title="email.mime.audio.MIMEAudio"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEAudio</span></code></a> class is used to create MIME message objects of major type
@@ -281,13 +281,13 @@ object as necessary.  The default encoding is base64.  See the
 <p>Optional <em>policy</em> argument defaults to <a class="reference internal" href="email.policy.html#email.policy.Compat32" title="email.policy.Compat32"><code class="xref py py-class docutils literal notranslate"><span class="pre">compat32</span></code></a>.</p>
 <p><em>_params</em> are passed straight through to the base class constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>policy</em> keyword-only parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>policy</em> keyword-only parameter.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.mime.image.MIMEImage">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.mime.image.</span></span><span class="sig-name descname"><span class="pre">MIMEImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_imagedata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_encoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">email.encoders.encode_base64</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.image.MIMEImage" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.mime.image.</span></span><span class="sig-name descname"><span class="pre">MIMEImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_imagedata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_encoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">email.encoders.encode_base64</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.image.MIMEImage" title="本定義的永久連結">¶</a></dt>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.image</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.nonmultipart.MIMENonMultipart" title="email.mime.nonmultipart.MIMENonMultipart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMENonMultipart</span></code></a>, the
 <a class="reference internal" href="#email.mime.image.MIMEImage" title="email.mime.image.MIMEImage"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEImage</span></code></a> class is used to create MIME message objects of major type
@@ -310,13 +310,13 @@ object as necessary.  The default encoding is base64.  See the
 <p><em>_params</em> are passed straight through to the <a class="reference internal" href="#email.mime.base.MIMEBase" title="email.mime.base.MIMEBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEBase</span></code></a>
 constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>policy</em> keyword-only parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>policy</em> keyword-only parameter.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.mime.message.MIMEMessage">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.mime.message.</span></span><span class="sig-name descname"><span class="pre">MIMEMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rfc822'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.message.MIMEMessage" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.mime.message.</span></span><span class="sig-name descname"><span class="pre">MIMEMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rfc822'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.message.MIMEMessage" title="本定義的永久連結">¶</a></dt>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.message</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.nonmultipart.MIMENonMultipart" title="email.mime.nonmultipart.MIMENonMultipart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMENonMultipart</span></code></a>, the
 <a class="reference internal" href="#email.mime.message.MIMEMessage" title="email.mime.message.MIMEMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEMessage</span></code></a> class is used to create MIME objects of main type
@@ -327,13 +327,13 @@ a <a class="reference internal" href="exceptions.html#TypeError" title="TypeErro
 <em class="mimetype">rfc822</em>.</p>
 <p>Optional <em>policy</em> argument defaults to <a class="reference internal" href="email.policy.html#email.policy.Compat32" title="email.policy.Compat32"><code class="xref py py-class docutils literal notranslate"><span class="pre">compat32</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>policy</em> keyword-only parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>policy</em> keyword-only parameter.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.mime.text.MIMEText">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.mime.text.</span></span><span class="sig-name descname"><span class="pre">MIMEText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'plain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_charset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.text.MIMEText" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.mime.text.</span></span><span class="sig-name descname"><span class="pre">MIMEText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_subtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'plain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_charset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.mime.text.MIMEText" title="本定義的永久連結">¶</a></dt>
 <dd><p>Module: <code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime.text</span></code></p>
 <p>A subclass of <a class="reference internal" href="#email.mime.nonmultipart.MIMENonMultipart" title="email.mime.nonmultipart.MIMENonMultipart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMENonMultipart</span></code></a>, the
 <a class="reference internal" href="#email.mime.text.MIMEText" title="email.mime.text.MIMEText"><code class="xref py py-class docutils literal notranslate"><span class="pre">MIMEText</span></code></a> class is used to create MIME objects of major type
@@ -355,10 +355,10 @@ will automatically encode the new payload (and add a new
 <em class="mailheader">Content-Transfer-Encoding</em> header).</p>
 <p>Optional <em>policy</em> argument defaults to <a class="reference internal" href="email.policy.html#email.policy.Compat32" title="email.policy.Compat32"><code class="xref py py-class docutils literal notranslate"><span class="pre">compat32</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span><em>_charset</em> also accepts <a class="reference internal" href="email.charset.html#email.charset.Charset" title="email.charset.Charset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Charset</span></code></a> instances.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span><em>_charset</em> also accepts <a class="reference internal" href="email.charset.html#email.charset.Charset" title="email.charset.Charset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Charset</span></code></a> instances.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>policy</em> keyword-only parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>policy</em> keyword-only parameter.</p>
 </div>
 </dd></dl>
 
@@ -371,18 +371,22 @@ will automatically encode the new payload (and add a new
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.compat32-message.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.header.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.header</span></code>: Internationalized headers</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.compat32-message.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.header.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.header</span></code>: Internationalized headers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.mime.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.mime.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -417,13 +421,11 @@ will automatically encode the new payload (and add a new
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime</span></code>: Creating email and MIME objects from scratch</a></li>
@@ -444,25 +446,25 @@ will automatically encode the new payload (and add a new
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

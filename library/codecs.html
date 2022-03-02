@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>codecs --- Codec registry and base classes &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codecs --- Codec registry and base classes &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="struct --- Interpret bytes as packed binary data" href="struct.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/codecs.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code> --- Codec registry and base classes</a><ul>
 <li><a class="reference internal" href="#codec-base-classes">Codec Base Classes</a><ul>
 <li><a class="reference internal" href="#error-handlers">Error Handlers</a></li>
@@ -107,18 +106,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="struct.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code> --- Interpret bytes as packed binary data</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="datatypes.html"
-                        title="下一章">Data Types</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="struct.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code> --- Interpret bytes as packed binary data</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="datatypes.html"
+                          title="下一章">Data Types</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/codecs.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/codecs.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -154,13 +158,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="binary.html" accesskey="U">Binary Data Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code> --- Codec registry and base classes</a></li>
                 <li class="right">
@@ -187,7 +189,7 @@
             
   <section id="module-codecs">
 <span id="codecs-codec-registry-and-base-classes"></span><h1><a class="reference internal" href="#module-codecs" title="codecs: Encode and decode data and streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code></a> --- Codec registry and base classes<a class="headerlink" href="#module-codecs" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/codecs.py">Lib/codecs.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/codecs.py">Lib/codecs.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>This module defines base classes for standard Python codecs (encoders and
 decoders) and provides access to the internal Python codec registry, which
@@ -236,7 +238,7 @@ is stored in the cache and returned to the caller.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="codecs.CodecInfo">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">CodecInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">streamreader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">streamwriter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incrementalencoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incrementaldecoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.CodecInfo" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">CodecInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">streamreader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">streamwriter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incrementalencoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incrementaldecoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.CodecInfo" title="本定義的永久連結">¶</a></dt>
 <dd><p>Codec details when looking up the codec registry. The constructor
 arguments are stored in attributes of the same name:</p>
 <dl class="py attribute">
@@ -342,13 +344,17 @@ and spaces converted to underscores, and return a <a class="reference internal" 
 In case a search function cannot find a given encoding, it should return
 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Hyphens and spaces are converted to underscore.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Hyphens and spaces are converted to underscore.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">備註</p>
-<p>Search function registration is not currently reversible,
-which may cause problems in some cases, such as unit testing or
-module reloading.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="codecs.unregister">
+<span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.unregister" title="本定義的永久連結">¶</a></dt>
+<dd><p>Unregister a codec search function and clear the registry's cache.
+If the search function is not registered, do nothing.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -565,16 +571,16 @@ presence of surrogates as an error.</p></td>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入: </span>The <code class="docutils literal notranslate"><span class="pre">'surrogateescape'</span></code> and <code class="docutils literal notranslate"><span class="pre">'surrogatepass'</span></code> error handlers.</p>
+<p><span class="versionmodified added">在 3.1 版本新加入: </span>The <code class="docutils literal notranslate"><span class="pre">'surrogateescape'</span></code> and <code class="docutils literal notranslate"><span class="pre">'surrogatepass'</span></code> error handlers.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The <code class="docutils literal notranslate"><span class="pre">'surrogatepass'</span></code> error handlers now works with utf-16* and utf-32* codecs.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">'surrogatepass'</span></code> error handlers now works with utf-16* and utf-32* codecs.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入: </span>The <code class="docutils literal notranslate"><span class="pre">'namereplace'</span></code> error handler.</p>
+<p><span class="versionmodified added">在 3.5 版本新加入: </span>The <code class="docutils literal notranslate"><span class="pre">'namereplace'</span></code> error handler.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <code class="docutils literal notranslate"><span class="pre">'backslashreplace'</span></code> error handlers now works with decoding and
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">'backslashreplace'</span></code> error handlers now works with decoding and
 translating.</p>
 </div>
 <p>The set of allowed values can be extended by registering a new named error
@@ -657,7 +663,7 @@ replaced by a backslashed escape sequence.</p>
 <a class="reference internal" href="../glossary.html#term-text-encoding"><span class="xref std std-term">text encodings</span></a> only): the
 unencodable character is replaced by a <code class="docutils literal notranslate"><span class="pre">\N{...}</span></code> escape sequence.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -668,7 +674,7 @@ unencodable character is replaced by a <code class="docutils literal notranslate
 function interfaces of the stateless encoder and decoder:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="codecs.Codec.encode">
-<span class="sig-prename descclassname"><span class="pre">Codec.</span></span><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">input</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">errors</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.Codec.encode" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Codec.</span></span><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.Codec.encode" title="本定義的永久連結">¶</a></dt>
 <dd><p>Encodes the object <em>input</em> and returns a tuple (output object, length consumed).
 For instance, <a class="reference internal" href="../glossary.html#term-text-encoding"><span class="xref std std-term">text encoding</span></a> converts
 a string object to a bytes object using a particular
@@ -684,7 +690,7 @@ of the output object type in this situation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="codecs.Codec.decode">
-<span class="sig-prename descclassname"><span class="pre">Codec.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">input</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">errors</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.Codec.decode" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Codec.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.Codec.decode" title="本定義的永久連結">¶</a></dt>
 <dd><p>Decodes the object <em>input</em> and returns a tuple (output object, length
 consumed). For instance, for a <a class="reference internal" href="../glossary.html#term-text-encoding"><span class="xref std std-term">text encoding</span></a>, decoding converts
 a bytes object encoded using a particular
@@ -722,7 +728,7 @@ steps. It defines the following methods which every incremental encoder must
 define in order to be compatible with the Python codec registry.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="codecs.IncrementalEncoder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">IncrementalEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.IncrementalEncoder" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">IncrementalEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.IncrementalEncoder" title="本定義的永久連結">¶</a></dt>
 <dd><p>Constructor for an <a class="reference internal" href="#codecs.IncrementalEncoder" title="codecs.IncrementalEncoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">IncrementalEncoder</span></code></a> instance.</p>
 <p>All incremental encoders must provide this constructor interface. They are free
 to add additional keyword arguments, but only the ones defined here are used by
@@ -736,7 +742,7 @@ handling strategies during the lifetime of the <a class="reference internal" hre
 object.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="codecs.IncrementalEncoder.encode">
-<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">object</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">final</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.IncrementalEncoder.encode" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">final</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.IncrementalEncoder.encode" title="本定義的永久連結">¶</a></dt>
 <dd><p>Encodes <em>object</em> (taking the current state of the encoder into account)
 and returns the resulting encoded object. If this is the last call to
 <a class="reference internal" href="#codecs.encode" title="codecs.encode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encode()</span></code></a> <em>final</em> must be true (the default is false).</p>
@@ -777,7 +783,7 @@ steps. It defines the following methods which every incremental decoder must
 define in order to be compatible with the Python codec registry.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="codecs.IncrementalDecoder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">IncrementalDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.IncrementalDecoder" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">IncrementalDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.IncrementalDecoder" title="本定義的永久連結">¶</a></dt>
 <dd><p>Constructor for an <a class="reference internal" href="#codecs.IncrementalDecoder" title="codecs.IncrementalDecoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">IncrementalDecoder</span></code></a> instance.</p>
 <p>All incremental decoders must provide this constructor interface. They are free
 to add additional keyword arguments, but only the ones defined here are used by
@@ -791,7 +797,7 @@ handling strategies during the lifetime of the <a class="reference internal" hre
 object.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="codecs.IncrementalDecoder.decode">
-<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">object</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">final</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.IncrementalDecoder.decode" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">final</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.IncrementalDecoder.decode" title="本定義的永久連結">¶</a></dt>
 <dd><p>Decodes <em>object</em> (taking the current state of the decoder into account)
 and returns the resulting decoded object. If this is the last call to
 <a class="reference internal" href="#codecs.decode" title="codecs.decode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">decode()</span></code></a> <em>final</em> must be true (the default is false). If <em>final</em> is
@@ -846,7 +852,7 @@ following methods which every stream writer must define in order to be
 compatible with the Python codec registry.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="codecs.StreamWriter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">StreamWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamWriter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">StreamWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamWriter" title="本定義的永久連結">¶</a></dt>
 <dd><p>Constructor for a <a class="reference internal" href="#codecs.StreamWriter" title="codecs.StreamWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamWriter</span></code></a> instance.</p>
 <p>All stream writers must provide this constructor interface. They are free to add
 additional keyword arguments, but only the ones defined here are used by the
@@ -894,7 +900,7 @@ following methods which every stream reader must define in order to be
 compatible with the Python codec registry.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="codecs.StreamReader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">StreamReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">StreamReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReader" title="本定義的永久連結">¶</a></dt>
 <dd><p>Constructor for a <a class="reference internal" href="#codecs.StreamReader" title="codecs.StreamReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamReader</span></code></a> instance.</p>
 <p>All stream readers must provide this constructor interface. They are free to add
 additional keyword arguments, but only the ones defined here are used by the
@@ -911,7 +917,7 @@ handling strategies during the lifetime of the <a class="reference internal" hre
 <a class="reference internal" href="#codecs.register_error" title="codecs.register_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">register_error()</span></code></a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="codecs.StreamReader.read">
-<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">size</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">chars</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">firstline</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReader.read" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">chars</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">firstline</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReader.read" title="本定義的永久連結">¶</a></dt>
 <dd><p>Decodes data from the stream and returns the resulting object.</p>
 <p>The <em>chars</em> argument indicates the number of decoded
 code points or bytes to return. The <a class="reference internal" href="#codecs.StreamReader.read" title="codecs.StreamReader.read"><code class="xref py py-func docutils literal notranslate"><span class="pre">read()</span></code></a> method will
@@ -934,7 +940,7 @@ available on the stream, these should be read too.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="codecs.StreamReader.readline">
-<span class="sig-name descname"><span class="pre">readline</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">size</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">keepends</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReader.readline" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">readline</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">keepends</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReader.readline" title="本定義的永久連結">¶</a></dt>
 <dd><p>Read one line from the input stream and return the decoded data.</p>
 <p><em>size</em>, if given, is passed as size argument to the stream's
 <a class="reference internal" href="#codecs.StreamReader.read" title="codecs.StreamReader.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> method.</p>
@@ -944,7 +950,7 @@ returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="codecs.StreamReader.readlines">
-<span class="sig-name descname"><span class="pre">readlines</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">sizehint</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">keepends</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReader.readlines" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">readlines</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">sizehint</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">keepends</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReader.readlines" title="本定義的永久連結">¶</a></dt>
 <dd><p>Read all lines available on the input stream and return them as a list of
 lines.</p>
 <p>Line-endings are implemented using the codec's <a class="reference internal" href="#codecs.decode" title="codecs.decode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">decode()</span></code></a> method and
@@ -974,7 +980,7 @@ streams which work in both read and write modes.</p>
 <a class="reference internal" href="#codecs.lookup" title="codecs.lookup"><code class="xref py py-func docutils literal notranslate"><span class="pre">lookup()</span></code></a> function to construct the instance.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="codecs.StreamReaderWriter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">StreamReaderWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReaderWriter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">StreamReaderWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamReaderWriter" title="本定義的永久連結">¶</a></dt>
 <dd><p>Creates a <a class="reference internal" href="#codecs.StreamReaderWriter" title="codecs.StreamReaderWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamReaderWriter</span></code></a> instance. <em>stream</em> must be a file-like
 object. <em>Reader</em> and <em>Writer</em> must be factory functions or classes providing the
 <a class="reference internal" href="#codecs.StreamReader" title="codecs.StreamReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamReader</span></code></a> and <a class="reference internal" href="#codecs.StreamWriter" title="codecs.StreamWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamWriter</span></code></a> interface resp. Error handling
@@ -993,7 +999,7 @@ which is sometimes useful when dealing with different encoding environments.</p>
 <a class="reference internal" href="#codecs.lookup" title="codecs.lookup"><code class="xref py py-func docutils literal notranslate"><span class="pre">lookup()</span></code></a> function to construct the instance.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="codecs.StreamRecoder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">StreamRecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamRecoder" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">codecs.</span></span><span class="sig-name descname"><span class="pre">StreamRecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codecs.StreamRecoder" title="本定義的永久連結">¶</a></dt>
 <dd><p>Creates a <a class="reference internal" href="#codecs.StreamRecoder" title="codecs.StreamRecoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamRecoder</span></code></a> instance which implements a two-way conversion:
 <em>encode</em> and <em>decode</em> work on the frontend — the data visible to
 code calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code>, while <em>Reader</em> and <em>Writer</em>
@@ -1064,7 +1070,7 @@ Unicode software still must be able to handle <code class="docutils literal notr
 it's a device to determine the storage layout of the encoded bytes, and vanishes
 once the byte sequence has been decoded into a string; as a <code class="docutils literal notranslate"><span class="pre">ZERO</span> <span class="pre">WIDTH</span>
 <span class="pre">NO-BREAK</span> <span class="pre">SPACE</span></code> it's a normal character that will be decoded like any other.</p>
-<p>There's another encoding that is able to encoding the full range of Unicode
+<p>There's another encoding that is able to encode the full range of Unicode
 characters: UTF-8. UTF-8 is an 8-bit encoding, which means there are no issues
 with byte order in UTF-8. Each byte in a UTF-8 byte sequence consists of two
 parts: marker bits (the most significant bits) and payload bits. The marker bits
@@ -1145,7 +1151,7 @@ aliases: utf-8, utf8, latin-1, latin1, iso-8859-1, iso8859-1, mbcs
 the same using underscores instead of dashes. Using alternative
 aliases for these encodings may result in slower execution.</p>
 <div class="compound-last versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Optimization opportunity recognized for us-ascii.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Optimization opportunity recognized for us-ascii.</p>
 </div>
 </div>
 <p>Many of the character sets support the same languages. They vary in individual
@@ -1192,7 +1198,7 @@ but replaces control characters with additional graphic characters</p></li>
 <td><p>273, IBM273, csIBM273</p></td>
 <td><p>German</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </td>
 </tr>
@@ -1310,7 +1316,7 @@ Macedonian, Russian, Serbian</p></td>
 <td><p>1125, ibm1125, cp866u, ruscii</p></td>
 <td><p>Ukrainian</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </td>
 </tr>
@@ -1498,7 +1504,7 @@ Macedonian, Russian, Serbian</p></td>
 <td></td>
 <td><p>Tajik</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </td>
 </tr>
@@ -1510,7 +1516,7 @@ Macedonian, Russian, Serbian</p></td>
 <td><p>kz_1048, strk1048_2002, rk1048</p></td>
 <td><p>Kazakh</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </td>
 </tr>
@@ -1599,13 +1605,13 @@ s_jisx0213</p></td>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The utf-16* and utf-32* encoders no longer allow surrogate code points
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The utf-16* and utf-32* encoders no longer allow surrogate code points
 (<code class="docutils literal notranslate"><span class="pre">U+D800</span></code>--<code class="docutils literal notranslate"><span class="pre">U+DFFF</span></code>) to be encoded.
 The utf-32* decoders no longer decode
 byte sequences that correspond to surrogate code points.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span><code class="docutils literal notranslate"><span class="pre">cp65001</span></code> is now an alias to <code class="docutils literal notranslate"><span class="pre">utf_8</span></code>.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span><code class="docutils literal notranslate"><span class="pre">cp65001</span></code> is now an alias to <code class="docutils literal notranslate"><span class="pre">utf_8</span></code>.</p>
 </div>
 </section>
 <section id="python-specific-encodings">
@@ -1636,7 +1642,7 @@ encodings.</p>
 <tbody>
 <tr class="row-even"><td><p>idna</p></td>
 <td></td>
-<td><p>Implement <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3490.html"><strong>RFC 3490</strong></a>,
+<td><p>Implement <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3490.html"><strong>RFC 3490</strong></a>,
 see also
 <a class="reference internal" href="#module-encodings.idna" title="encodings.idna: Internationalized Domain Names implementation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">encodings.idna</span></code></a>.
 Only <code class="docutils literal notranslate"><span class="pre">errors='strict'</span></code>
@@ -1655,7 +1661,7 @@ ANSI codepage (CP_ACP).</p></td>
 operand according to the
 OEM codepage (CP_OEMCP).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </td>
 </tr>
@@ -1665,7 +1671,7 @@ OEM codepage (CP_OEMCP).</p>
 </tr>
 <tr class="row-even"><td><p>punycode</p></td>
 <td></td>
-<td><p>Implement <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3492.html"><strong>RFC 3492</strong></a>.
+<td><p>Implement <span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3492.html"><strong>RFC 3492</strong></a>.
 Stateful codecs are not
 supported.</p></td>
 </tr>
@@ -1703,7 +1709,7 @@ by default.</p></td>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>&quot;unicode_internal&quot; codec is removed.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>&quot;unicode_internal&quot; codec is removed.</p>
 </div>
 </section>
 <section id="binary-transforms">
@@ -1733,7 +1739,7 @@ multiline MIME base64 (the
 result always includes a
 trailing <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>accepts any
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>accepts any
 <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>
 as input for encoding and
 decoding</p>
@@ -1792,10 +1798,10 @@ decoding</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入: </span>Restoration of the binary transforms.</p>
+<p><span class="versionmodified added">在 3.2 版本新加入: </span>Restoration of the binary transforms.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Restoration of the aliases for the binary transforms.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Restoration of the aliases for the binary transforms.</p>
 </div>
 </section>
 <section id="text-transforms">
@@ -1825,20 +1831,20 @@ operand.</p></td>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入: </span>Restoration of the <code class="docutils literal notranslate"><span class="pre">rot_13</span></code> text transform.</p>
+<p><span class="versionmodified added">在 3.2 版本新加入: </span>Restoration of the <code class="docutils literal notranslate"><span class="pre">rot_13</span></code> text transform.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Restoration of the <code class="docutils literal notranslate"><span class="pre">rot13</span></code> alias.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Restoration of the <code class="docutils literal notranslate"><span class="pre">rot13</span></code> alias.</p>
 </div>
 </section>
 </section>
 <section id="module-encodings.idna">
 <span id="encodings-idna-internationalized-domain-names-in-applications"></span><h2><a class="reference internal" href="#module-encodings.idna" title="encodings.idna: Internationalized Domain Names implementation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">encodings.idna</span></code></a> --- Internationalized Domain Names in Applications<a class="headerlink" href="#module-encodings.idna" title="本標題的永久連結">¶</a></h2>
-<p>This module implements <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3490.html"><strong>RFC 3490</strong></a> (Internationalized Domain Names in
-Applications) and <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3492.html"><strong>RFC 3492</strong></a> (Nameprep: A Stringprep Profile for
+<p>This module implements <span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3490.html"><strong>RFC 3490</strong></a> (Internationalized Domain Names in
+Applications) and <span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3492.html"><strong>RFC 3492</strong></a> (Nameprep: A Stringprep Profile for
 Internationalized Domain Names (IDN)). It builds upon the <code class="docutils literal notranslate"><span class="pre">punycode</span></code> encoding
 and <a class="reference internal" href="stringprep.html#module-stringprep" title="stringprep: String preparation, as per RFC 3453"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stringprep</span></code></a>.</p>
-<p>If you need the IDNA 2008 standard from <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5891.html"><strong>RFC 5891</strong></a> and <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5895.html"><strong>RFC 5895</strong></a>, use the
+<p>If you need the IDNA 2008 standard from <span class="target" id="index-8"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5891.html"><strong>RFC 5891</strong></a> and <span class="target" id="index-9"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5895.html"><strong>RFC 5895</strong></a>, use the
 third-party <cite>idna module &lt;https://pypi.org/project/idna/&gt;_</cite>.</p>
 <p>These RFCs together define a protocol to support non-ASCII characters in domain
 names. A domain name containing non-ASCII characters (such as
@@ -1852,7 +1858,7 @@ IDNA on the wire, and convert back ACE labels to Unicode before presenting them
 to the user.</p>
 <p>Python supports this conversion in several ways:  the <code class="docutils literal notranslate"><span class="pre">idna</span></code> codec performs
 conversion between Unicode and ACE, separating an input string into labels
-based on the separator characters defined in <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3490.html#section-3.1"><strong>section 3.1 of RFC 3490</strong></a>
+based on the separator characters defined in <span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3490.html#section-3.1"><strong>section 3.1 of RFC 3490</strong></a>
 and converting each label to ACE as required, and conversely separating an input
 byte string into labels based on the <code class="docutils literal notranslate"><span class="pre">.</span></code> separator and converting any ACE
 labels found into unicode. Furthermore, the <a class="reference internal" href="socket.html#module-socket" title="socket: Low-level networking interface."><code class="xref py py-mod docutils literal notranslate"><span class="pre">socket</span></code></a> module
@@ -1879,14 +1885,14 @@ query strings, so <code class="docutils literal notranslate"><span class="pre">A
 <dl class="py function">
 <dt class="sig sig-object py" id="encodings.idna.ToASCII">
 <span class="sig-prename descclassname"><span class="pre">encodings.idna.</span></span><span class="sig-name descname"><span class="pre">ToASCII</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#encodings.idna.ToASCII" title="本定義的永久連結">¶</a></dt>
-<dd><p>Convert a label to ASCII, as specified in <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3490.html"><strong>RFC 3490</strong></a>. <code class="docutils literal notranslate"><span class="pre">UseSTD3ASCIIRules</span></code> is
+<dd><p>Convert a label to ASCII, as specified in <span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3490.html"><strong>RFC 3490</strong></a>. <code class="docutils literal notranslate"><span class="pre">UseSTD3ASCIIRules</span></code> is
 assumed to be false.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="encodings.idna.ToUnicode">
 <span class="sig-prename descclassname"><span class="pre">encodings.idna.</span></span><span class="sig-name descname"><span class="pre">ToUnicode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#encodings.idna.ToUnicode" title="本定義的永久連結">¶</a></dt>
-<dd><p>Convert a label to Unicode, as specified in <span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3490.html"><strong>RFC 3490</strong></a>.</p>
+<dd><p>Convert a label to Unicode, as specified in <span class="target" id="index-12"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3490.html"><strong>RFC 3490</strong></a>.</p>
 </dd></dl>
 
 </section>
@@ -1895,10 +1901,10 @@ assumed to be false.</p>
 <p>This module implements the ANSI codepage (CP_ACP).</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows only.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Support any error handler.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Support any error handler.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Before 3.2, the <em>errors</em> argument was ignored; <code class="docutils literal notranslate"><span class="pre">'replace'</span></code> was always used
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Before 3.2, the <em>errors</em> argument was ignored; <code class="docutils literal notranslate"><span class="pre">'replace'</span></code> was always used
 to encode, and <code class="docutils literal notranslate"><span class="pre">'ignore'</span></code> to decode.</p>
 </div>
 </section>
@@ -1918,8 +1924,9 @@ optional UTF-8 encoded BOM at the start of the data will be skipped.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code> --- Codec registry and base classes</a><ul>
 <li><a class="reference internal" href="#codec-base-classes">Codec Base Classes</a><ul>
 <li><a class="reference internal" href="#error-handlers">Error Handlers</a></li>
@@ -1953,18 +1960,23 @@ optional UTF-8 encoded BOM at the start of the data will be skipped.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="struct.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code> --- Interpret bytes as packed binary data</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="datatypes.html"
-                        title="下一章">Data Types</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="struct.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code> --- Interpret bytes as packed binary data</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="datatypes.html"
+                          title="下一章">Data Types</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/codecs.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/codecs.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1999,13 +2011,11 @@ optional UTF-8 encoded BOM at the start of the data will be skipped.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="binary.html" >Binary Data Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code> --- Codec registry and base classes</a></li>
                 <li class="right">
@@ -2025,25 +2035,25 @@ optional UTF-8 encoded BOM at the start of the data will be skipped.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

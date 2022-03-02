@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>zlib --- Compression compatible with gzip &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zlib --- Compression compatible with gzip &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="gzip --- Support for gzip files" href="gzip.html" />
-    <link rel="prev" title="資料壓縮與保存" href="archiving.html" />
+    <link rel="prev" title="Data Compression and Archiving" href="archiving.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/zlib.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="archiving.html"
-                        title="上一章">資料壓縮與保存</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="gzip.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gzip</span></code> --- Support for <strong class="program">gzip</strong> files</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="archiving.html"
+                          title="上一章">Data Compression and Archiving</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="gzip.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gzip</span></code> --- Support for <strong class="program">gzip</strong> files</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/zlib.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/zlib.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -107,7 +109,7 @@
           <a href="gzip.html" title="gzip --- Support for gzip files"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="archiving.html" title="資料壓縮與保存"
+          <a href="archiving.html" title="Data Compression and Archiving"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -119,14 +121,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="archiving.html" accesskey="U">資料壓縮與保存</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="archiving.html" accesskey="U">Data Compression and Archiving</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">zlib</span></code> --- Compression compatible with <strong class="program">gzip</strong></a></li>
                 <li class="right">
                     
@@ -167,13 +167,13 @@ information.</p>
 <p>The available exception and functions in this module are:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="zlib.error">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#zlib.error" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#zlib.error" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised on compression and decompression errors.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="zlib.adler32">
-<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">adler32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.adler32" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">adler32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.adler32" title="本定義的永久連結">¶</a></dt>
 <dd><p>Computes an Adler-32 checksum of <em>data</em>.  (An Adler-32 checksum is almost as
 reliable as a CRC32 but can be computed much more quickly.)  The result
 is an unsigned 32-bit integer.  If <em>value</em> is present, it is used as
@@ -184,7 +184,7 @@ strong, and should not be used for authentication or digital signatures.  Since
 the algorithm is designed for use as a checksum algorithm, it is not suitable
 for use as a general hash algorithm.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.0 版更變: </span>Always returns an unsigned value.
+<p><span class="versionmodified changed">在 3.0 版本變更: </span>Always returns an unsigned value.
 To generate the same numeric value across all Python versions and
 platforms, use <code class="docutils literal notranslate"><span class="pre">adler32(data)</span> <span class="pre">&amp;</span> <span class="pre">0xffffffff</span></code>.</p>
 </div>
@@ -201,13 +201,13 @@ The default value is <code class="docutils literal notranslate"><span class="pre
 compromise between speed and compression (currently equivalent to level 6).
 Raises the <a class="reference internal" href="#zlib.error" title="zlib.error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">error</span></code></a> exception if any error occurs.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>level</em> can now be used as a keyword parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>level</em> can now be used as a keyword parameter.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="zlib.compressobj">
-<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">compressobj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">level=-1</span></em>, <em class="sig-param"><span class="pre">method=DEFLATED</span></em>, <em class="sig-param"><span class="pre">wbits=MAX_WBITS</span></em>, <em class="sig-param"><span class="pre">memLevel=DEF_MEM_LEVEL</span></em>, <em class="sig-param"><span class="pre">strategy=Z_DEFAULT_STRATEGY</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">zdict</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.compressobj" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">compressobj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level=-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method=DEFLATED</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wbits=MAX_WBITS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memLevel=DEF_MEM_LEVEL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy=Z_DEFAULT_STRATEGY</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">zdict</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.compressobj" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns a compression object, to be used for compressing data streams that won't
 fit into memory at once.</p>
 <p><em>level</em> is the compression level -- an integer from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code> or <code class="docutils literal notranslate"><span class="pre">-1</span></code>.
@@ -245,13 +245,13 @@ Higher values use more memory, but are faster and produce smaller output.</p>
 to occur frequently in the data that is to be compressed. Those subsequences
 that are expected to be most common should come at the end of the dictionary.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added the <em>zdict</em> parameter and keyword argument support.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added the <em>zdict</em> parameter and keyword argument support.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="zlib.crc32">
-<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">crc32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.crc32" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">crc32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.crc32" title="本定義的永久連結">¶</a></dt>
 <dd><p id="index-0">Computes a CRC (Cyclic Redundancy Check) checksum of <em>data</em>. The
 result is an unsigned 32-bit integer. If <em>value</em> is present, it is used
 as the starting value of the checksum; otherwise, a default value of 0
@@ -261,7 +261,7 @@ strong, and should not be used for authentication or digital signatures.  Since
 the algorithm is designed for use as a checksum algorithm, it is not suitable
 for use as a general hash algorithm.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.0 版更變: </span>Always returns an unsigned value.
+<p><span class="versionmodified changed">在 3.0 版本變更: </span>Always returns an unsigned value.
 To generate the same numeric value across all Python versions and
 platforms, use <code class="docutils literal notranslate"><span class="pre">crc32(data)</span> <span class="pre">&amp;</span> <span class="pre">0xffffffff</span></code>.</p>
 </div>
@@ -303,13 +303,13 @@ more space is required, the buffer size will be increased as needed, so you
 don't have to get this value exactly right; tuning it will only save a few calls
 to <code class="xref c c-func docutils literal notranslate"><span class="pre">malloc()</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>wbits</em> and <em>bufsize</em> can be used as keyword arguments.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>wbits</em> and <em>bufsize</em> can be used as keyword arguments.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="zlib.decompressobj">
-<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">decompressobj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">wbits=MAX_WBITS</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">zdict</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.decompressobj" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">decompressobj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wbits=MAX_WBITS</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">zdict</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.decompressobj" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns a decompression object, to be used for decompressing data streams that
 won't fit into memory at once.</p>
 <p>The <em>wbits</em> parameter controls the size of the history buffer (or the
@@ -325,7 +325,7 @@ modify its contents between the call to <a class="reference internal" href="#zli
 call to the decompressor's <code class="docutils literal notranslate"><span class="pre">decompress()</span></code> method.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added the <em>zdict</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added the <em>zdict</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -341,7 +341,7 @@ be kept in internal buffers for later processing.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="zlib.Compress.flush">
-<span class="sig-prename descclassname"><span class="pre">Compress.</span></span><span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">mode</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.Compress.flush" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Compress.</span></span><span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.Compress.flush" title="本定義的永久連結">¶</a></dt>
 <dd><p>All pending input is processed, and a bytes object containing the remaining compressed
 output is returned.  <em>mode</em> can be selected from the constants
 <code class="xref py py-const docutils literal notranslate"><span class="pre">Z_NO_FLUSH</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">Z_PARTIAL_FLUSH</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">Z_SYNC_FLUSH</span></code>,
@@ -361,7 +361,7 @@ compress a set of data that share a common initial prefix.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added <a class="reference internal" href="copy.html#copy.copy" title="copy.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.copy()</span></code></a> and <a class="reference internal" href="copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code></a> support to compression
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added <a class="reference internal" href="copy.html#copy.copy" title="copy.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.copy()</span></code></a> and <a class="reference internal" href="copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code></a> support to compression
 objects.</p>
 </div>
 <p>Decompression objects support the following methods and attributes:</p>
@@ -392,7 +392,7 @@ reached.</p>
 <p>This makes it possible to distinguish between a properly-formed compressed
 stream, and an incomplete or truncated one.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -411,13 +411,13 @@ can be processed; and unconsumed data will be stored in the attribute
 <a class="reference internal" href="#zlib.decompress" title="zlib.decompress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">decompress()</span></code></a> if decompression is to continue.  If <em>max_length</em> is zero
 then the whole input is decompressed, and <a class="reference internal" href="#zlib.Decompress.unconsumed_tail" title="zlib.Decompress.unconsumed_tail"><code class="xref py py-attr docutils literal notranslate"><span class="pre">unconsumed_tail</span></code></a> is empty.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>max_length</em> can be used as a keyword argument.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>max_length</em> can be used as a keyword argument.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="zlib.Decompress.flush">
-<span class="sig-prename descclassname"><span class="pre">Decompress.</span></span><span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">length</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.Decompress.flush" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Decompress.</span></span><span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#zlib.Decompress.flush" title="本定義的永久連結">¶</a></dt>
 <dd><p>All pending input is processed, and a bytes object containing the remaining
 uncompressed output is returned.  After calling <a class="reference internal" href="#zlib.Decompress.flush" title="zlib.Decompress.flush"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flush()</span></code></a>, the
 <a class="reference internal" href="#zlib.decompress" title="zlib.decompress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">decompress()</span></code></a> method cannot be called again; the only realistic action is
@@ -434,7 +434,7 @@ seeks into the stream at a future point.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added <a class="reference internal" href="copy.html#copy.copy" title="copy.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.copy()</span></code></a> and <a class="reference internal" href="copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code></a> support to decompression
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added <a class="reference internal" href="copy.html#copy.copy" title="copy.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.copy()</span></code></a> and <a class="reference internal" href="copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code></a> support to decompression
 objects.</p>
 </div>
 <p>Information about the version of the zlib library in use is available through
@@ -452,7 +452,7 @@ is available as <a class="reference internal" href="#zlib.ZLIB_RUNTIME_VERSION" 
 <span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">ZLIB_RUNTIME_VERSION</span></span><a class="headerlink" href="#zlib.ZLIB_RUNTIME_VERSION" title="本定義的永久連結">¶</a></dt>
 <dd><p>The version string of the zlib library actually loaded by the interpreter.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -477,18 +477,22 @@ functions.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="archiving.html"
-                        title="上一章">資料壓縮與保存</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="gzip.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gzip</span></code> --- Support for <strong class="program">gzip</strong> files</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="archiving.html"
+                          title="上一章">Data Compression and Archiving</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="gzip.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gzip</span></code> --- Support for <strong class="program">gzip</strong> files</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/zlib.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/zlib.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -511,7 +515,7 @@ functions.</p>
           <a href="gzip.html" title="gzip --- Support for gzip files"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="archiving.html" title="資料壓縮與保存"
+          <a href="archiving.html" title="Data Compression and Archiving"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -523,14 +527,12 @@ functions.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="archiving.html" >資料壓縮與保存</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="archiving.html" >Data Compression and Archiving</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">zlib</span></code> --- Compression compatible with <strong class="program">gzip</strong></a></li>
                 <li class="right">
                     
@@ -549,25 +551,25 @@ functions.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

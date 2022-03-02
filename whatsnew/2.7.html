@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New in Python 2.7 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New in Python 2.7 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="What&#39;s New In Python 3.0" href="3.0.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/2.7.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.7</a><ul>
 <li><a class="reference internal" href="#the-future-for-python-2-x">The Future for Python 2.x</a></li>
 <li><a class="reference internal" href="#changes-to-the-handling-of-deprecation-warnings">Changes to the Handling of Deprecation Warnings</a></li>
@@ -126,18 +125,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="3.0.html"
-                        title="上一章">What's New In Python 3.0</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.6.html"
-                        title="下一章">What's New in Python 2.6</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.0.html"
+                          title="上一章">What's New In Python 3.0</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.6.html"
+                          title="下一章">What's New in Python 2.6</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.7.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.7.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -173,13 +177,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.7</a></li>
                 <li class="right">
                     
@@ -278,7 +280,7 @@ maintenance releases where they were added, will be noted in the
 and framework developers wishing to support users on both Python 2 and
 Python 3, there are a variety of tools and guides available to help decide
 on a suitable approach and manage some of the technical details involved.
-The recommended starting point is the <a class="reference internal" href="../howto/pyporting.html#pyporting-howto"><span class="std std-ref">Python 2 的程式碼移植到Python 3</span></a> HOWTO guide.</p>
+The recommended starting point is the <a class="reference internal" href="../howto/pyporting.html#pyporting-howto"><span class="std std-ref">Porting Python 2 Code to Python 3</span></a> HOWTO guide.</p>
 </section>
 <section id="changes-to-the-handling-of-deprecation-warnings">
 <h2>Changes to the Handling of Deprecation Warnings<a class="headerlink" href="#changes-to-the-handling-of-deprecation-warnings" title="本標題的永久連結">¶</a></h2>
@@ -475,20 +477,20 @@ module, but it's easier to use.</p>
 <h2>PEP 389: The argparse Module for Parsing Command Lines<a class="headerlink" href="#pep-389-the-argparse-module-for-parsing-command-lines" title="本標題的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> module for parsing command-line arguments was
 added as a more powerful replacement for the
-<a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module.</p>
+<a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module.</p>
 <p>This means Python now supports three different modules for parsing
-command-line arguments: <a class="reference internal" href="../library/getopt.html#module-getopt" title="getopt: Portable parser for command line options; support both short and long option names."><code class="xref py py-mod docutils literal notranslate"><span class="pre">getopt</span></code></a>, <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>, and
+command-line arguments: <a class="reference internal" href="../library/getopt.html#module-getopt" title="getopt: Portable parser for command line options; support both short and long option names."><code class="xref py py-mod docutils literal notranslate"><span class="pre">getopt</span></code></a>, <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>, and
 <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a>.  The <a class="reference internal" href="../library/getopt.html#module-getopt" title="getopt: Portable parser for command line options; support both short and long option names."><code class="xref py py-mod docutils literal notranslate"><span class="pre">getopt</span></code></a> module closely resembles the C
 library's <code class="xref c c-func docutils literal notranslate"><span class="pre">getopt()</span></code> function, so it remains useful if you're writing a
 Python prototype that will eventually be rewritten in C.
-<a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> becomes redundant, but there are no plans to remove it
+<a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> becomes redundant, but there are no plans to remove it
 because there are many scripts still using it, and there's no
 automated way to update these scripts.  (Making the <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a>
-API consistent with <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>'s interface was discussed but
+API consistent with <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>'s interface was discussed but
 rejected as too messy and difficult.)</p>
 <p>In short, if you're writing a new script and don't need to worry
 about compatibility with earlier versions of Python, use
-<a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> instead of <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>.</p>
+<a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> instead of <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>.</p>
 <p>Here's an example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
@@ -529,7 +531,7 @@ are automatically added, and produce neatly formatted output:</p>
   <span class="o">-</span><span class="n">C</span> <span class="n">NUM</span>      <span class="n">display</span> <span class="n">NUM</span> <span class="n">lines</span> <span class="n">of</span> <span class="n">added</span> <span class="n">context</span>
 </pre></div>
 </div>
-<p>As with <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>, the command-line switches and arguments
+<p>As with <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>, the command-line switches and arguments
 are returned as an object with attributes named by the <em>dest</em> parameters:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span> <span class="o">./</span><span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="n">argparse</span><span class="o">-</span><span class="n">example</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">v</span>
 <span class="p">{</span><span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
@@ -544,7 +546,7 @@ are returned as an object with attributes named by the <em>dest</em> parameters:
  <span class="s1">&#39;inputs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;file1&#39;</span><span class="p">,</span> <span class="s1">&#39;file2&#39;</span><span class="p">]}</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> has much fancier validation than <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>; you
+<p><a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> has much fancier validation than <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>; you
 can specify an exact number of arguments as an integer, 0 or more
 arguments by passing <code class="docutils literal notranslate"><span class="pre">'*'</span></code>, 1 or more by passing <code class="docutils literal notranslate"><span class="pre">'+'</span></code>, or an
 optional argument with <code class="docutils literal notranslate"><span class="pre">'?'</span></code>.  A top-level parser can contain
@@ -559,7 +561,7 @@ standard input or output.</p>
 <dt><a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> documentation</dt><dd><p>The documentation page of the argparse module.</p>
 </dd>
 <dt><a class="reference internal" href="../library/argparse.html#upgrading-optparse-code"><span class="std std-ref">Upgrading optparse code</span></a></dt><dd><p>Part of the Python documentation, describing how to convert
-code that uses <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>.</p>
+code that uses <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>.</p>
 </dd>
 <dt><span class="target" id="index-4"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0389"><strong>PEP 389</strong></a> - argparse - New Command Line Parsing Module</dt><dd><p>PEP written and implemented by Steven Bethard.</p>
 </dd>
@@ -1011,12 +1013,12 @@ be tracked either. This helps reduce the cost of each
 garbage collection by decreasing the number of objects to be
 considered and traversed by the collector.
 (Contributed by Antoine Pitrou; <a class="reference external" href="https://bugs.python.org/issue4688">bpo-4688</a>.)</p></li>
-<li><p>Long integers are now stored internally either in base 2**15 or in base
-2**30, the base being determined at build time.  Previously, they
-were always stored in base 2**15.  Using base 2**30 gives
+<li><p>Long integers are now stored internally either in base <code class="docutils literal notranslate"><span class="pre">2**15</span></code> or in base
+<code class="docutils literal notranslate"><span class="pre">2**30</span></code>, the base being determined at build time.  Previously, they
+were always stored in base <code class="docutils literal notranslate"><span class="pre">2**15</span></code>.  Using base <code class="docutils literal notranslate"><span class="pre">2**30</span></code> gives
 significant performance improvements on 64-bit machines, but
 benchmark results on 32-bit machines have been mixed.  Therefore,
-the default is to use base 2**30 on 64-bit machines and base 2**15
+the default is to use base <code class="docutils literal notranslate"><span class="pre">2**30</span></code> on 64-bit machines and base <code class="docutils literal notranslate"><span class="pre">2**15</span></code>
 on 32-bit machines; on Unix, there's a new configure option
 <code class="xref std std-option docutils literal notranslate"><span class="pre">--enable-big-digits</span></code> that can be used to override this default.</p>
 <p>Apart from the performance improvements this change should be
@@ -1459,7 +1461,7 @@ the path of a Python source file (<code class="file docutils literal notranslate
 bytecode file (<code class="file docutils literal notranslate"><span class="pre">example.pyc</span></code>), a directory
 (<code class="file docutils literal notranslate"><span class="pre">./package/</span></code>), or a zip archive (<code class="file docutils literal notranslate"><span class="pre">example.zip</span></code>).  If a
 directory or zip path is provided, it will be added to the front of
-<code class="docutils literal notranslate"><span class="pre">sys.path</span></code> and the module <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> will be imported.  It's
+<code class="docutils literal notranslate"><span class="pre">sys.path</span></code> and the module <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> will be imported.  It's
 expected that the directory or zip contains a <code class="file docutils literal notranslate"><span class="pre">__main__.py</span></code>;
 if it doesn't, some other <code class="file docutils literal notranslate"><span class="pre">__main__.py</span></code> might be imported from
 a location later in <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.  This makes more of the machinery
@@ -1619,7 +1621,7 @@ by Anders Chrigström and Amaury Forgeot d'Arc; <a class="reference external" hr
 and has been updated to version 5.2.0 (updated by
 Florent Xicluna; <a class="reference external" href="https://bugs.python.org/issue8024">bpo-8024</a>).</p></li>
 <li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code> module's <code class="xref py py-func docutils literal notranslate"><span class="pre">urlsplit()</span></code> now handles
-unknown URL schemes in a fashion compliant with <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3986.html"><strong>RFC 3986</strong></a>: if the
+unknown URL schemes in a fashion compliant with <span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>: if the
 URL is of the form <code class="docutils literal notranslate"><span class="pre">&quot;&lt;something&gt;://...&quot;</span></code>, the text before the
 <code class="docutils literal notranslate"><span class="pre">://</span></code> is treated as the scheme, even if it's a made-up scheme that
 the module doesn't know about.  This change may break code that
@@ -1639,7 +1641,7 @@ will return the following:</p>
 <p>(Python 2.7 actually produces slightly different output, since it
 returns a named tuple instead of a standard tuple.)</p>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code> module also supports IPv6 literal addresses as defined by
-<span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2732.html"><strong>RFC 2732</strong></a> (contributed by Senthil Kumaran; <a class="reference external" href="https://bugs.python.org/issue2987">bpo-2987</a>).</p>
+<span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2732.html"><strong>RFC 2732</strong></a> (contributed by Senthil Kumaran; <a class="reference external" href="https://bugs.python.org/issue2987">bpo-2987</a>).</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">urlparse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="s1">&#39;http://[1080::8:800:200C:417A]/foo&#39;</span><span class="p">)</span>
 <span class="go">ParseResult(scheme=&#39;http&#39;, netloc=&#39;[1080::8:800:200C:417A]&#39;,</span>
 <span class="go">            path=&#39;/foo&#39;, params=&#39;&#39;, query=&#39;&#39;, fragment=&#39;&#39;)</span>
@@ -2042,7 +2044,7 @@ instruction currently executing, and then look up the line number
 corresponding to that address.  (Added by Jeffrey Yasskin.)</p></li>
 <li><p>New functions: <a class="reference internal" href="../c-api/long.html#c.PyLong_AsLongAndOverflow" title="PyLong_AsLongAndOverflow"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyLong_AsLongAndOverflow()</span></code></a> and
 <a class="reference internal" href="../c-api/long.html#c.PyLong_AsLongLongAndOverflow" title="PyLong_AsLongLongAndOverflow"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyLong_AsLongLongAndOverflow()</span></code></a>  approximates a Python long
-integer as a C <span class="xref c c-texpr"><span class="kt">long</span></span> or <span class="xref c c-texpr"><span class="kt">long long</span></span>.
+integer as a C <span class="xref c c-texpr"><span class="kt">long</span></span> or <span class="xref c c-texpr"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></span>.
 If the number is too large to fit into
 the output type, an <em>overflow</em> flag is set and returned to the caller.
 (Contributed by Case Van Horsen; <a class="reference external" href="https://bugs.python.org/issue7528">bpo-7528</a> and <a class="reference external" href="https://bugs.python.org/issue7767">bpo-7767</a>.)</p></li>
@@ -2091,7 +2093,7 @@ deleted by now.  (Removed by Antoine Pitrou; <a class="reference external" href=
 <li><p>New format codes: the <code class="xref c c-func docutils literal notranslate"><span class="pre">PyFormat_FromString()</span></code>,
 <code class="xref c c-func docutils literal notranslate"><span class="pre">PyFormat_FromStringV()</span></code>, and <a class="reference internal" href="../c-api/exceptions.html#c.PyErr_Format" title="PyErr_Format"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_Format()</span></code></a> functions now
 accept <code class="docutils literal notranslate"><span class="pre">%lld</span></code> and <code class="docutils literal notranslate"><span class="pre">%llu</span></code> format codes for displaying
-C's <span class="xref c c-texpr"><span class="kt">long long</span></span> types.
+C's <span class="xref c c-texpr"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></span> types.
 (Contributed by Mark Dickinson; <a class="reference external" href="https://bugs.python.org/issue7228">bpo-7228</a>.)</p></li>
 <li><p>The complicated interaction between threads and process forking has
 been changed.  Previously, the child process created by
@@ -2227,7 +2229,7 @@ installation and a user-installed copy of the same version.
 (Changed by Ronald Oussoren; <a class="reference external" href="https://bugs.python.org/issue4865">bpo-4865</a>.)</p>
 <blockquote>
 <div><div class="versionchanged">
-<p><span class="versionmodified changed">2.7.13 版更變: </span>As of 2.7.13, this change was removed.
+<p><span class="versionmodified changed">在 2.7.13 版本變更: </span>As of 2.7.13, this change was removed.
 <code class="docutils literal notranslate"><span class="pre">/Library/Python/2.7/site-packages</span></code>, the site-packages directory
 used by the Apple-supplied system Python 2.7 is no longer appended to
 <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> for user-installed Pythons such as from the python.org
@@ -2353,7 +2355,7 @@ these errors go unnoticed.  The default error level is now 1,
 which raises an exception if there's an error.
 (Changed by Lars Gustäbel; <a class="reference external" href="https://bugs.python.org/issue7357">bpo-7357</a>.)</p></li>
 <li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">urlparse</span></code> module's <code class="xref py py-func docutils literal notranslate"><span class="pre">urlsplit()</span></code> now handles
-unknown URL schemes in a fashion compliant with <span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3986.html"><strong>RFC 3986</strong></a>: if the
+unknown URL schemes in a fashion compliant with <span class="target" id="index-13"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>: if the
 URL is of the form <code class="docutils literal notranslate"><span class="pre">&quot;&lt;something&gt;://...&quot;</span></code>, the text before the
 <code class="docutils literal notranslate"><span class="pre">://</span></code> is treated as the scheme, even if it's a made-up scheme that
 the module doesn't know about.  This change may break code that
@@ -2413,7 +2415,7 @@ longer dumped by default anymore: the <span class="target" id="index-15"></span>
 variable must now also be set. Moreover, allocation counts are now dumped into
 stderr, rather than stdout. (Contributed by Victor Stinner; <a class="reference external" href="https://bugs.python.org/issue31692">bpo-31692</a>.)</p>
 <div class="versionadded">
-<p><span class="versionmodified added">2.7.15 版新加入.</span></p>
+<p><span class="versionmodified added">在 2.7.15 版本新加入.</span></p>
 </div>
 </section>
 <section id="pep-434-idle-enhancement-exception-for-all-branches">
@@ -2497,15 +2499,15 @@ the system package manager).</p>
 </section>
 <section id="documentation-changes">
 <h4>Documentation Changes<a class="headerlink" href="#documentation-changes" title="本標題的永久連結">¶</a></h4>
-<p>As part of this change, the <a class="reference internal" href="../installing/index.html#installing-index"><span class="std std-ref">安裝 Python 模組</span></a> and
-<a class="reference internal" href="../distributing/index.html#distributing-index"><span class="std std-ref">發布 Python 模組</span></a> sections of the documentation have been
+<p>As part of this change, the <a class="reference internal" href="../installing/index.html#installing-index"><span class="std std-ref">Installing Python Modules</span></a> and
+<a class="reference internal" href="../distributing/index.html#distributing-index"><span class="std std-ref">Distributing Python Modules</span></a> sections of the documentation have been
 completely redesigned as short getting started and FAQ documents. Most
 packaging documentation has now been moved out to the Python Packaging
 Authority maintained <a class="reference external" href="http://packaging.python.org">Python Packaging User Guide</a> and the documentation of the individual
 projects.</p>
 <p>However, as this migration is currently still incomplete, the legacy
-versions of those guides remaining available as <a class="reference internal" href="../install/index.html#install-index"><span class="std std-ref">安裝 Python 模組（舊版）</span></a>
-and <a class="reference internal" href="../distutils/index.html#distutils-index"><span class="std std-ref">發布 Python 模組（舊版）</span></a>.</p>
+versions of those guides remaining available as <a class="reference internal" href="../install/index.html#install-index"><span class="std std-ref">Installing Python Modules (Legacy version)</span></a>
+and <a class="reference internal" href="../distutils/index.html#distutils-index"><span class="std std-ref">Distributing Python Modules (Legacy version)</span></a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
@@ -2568,10 +2570,10 @@ recompile generated files based on file modification times.</p>
 of these files when desired (e.g. after an initial version of Python has
 already been built based on the pregenerated versions).</p>
 <p>More selective regeneration targets are also defined - see
-<a class="reference external" href="https://github.com/python/cpython/tree/3.9/Makefile.pre.in">Makefile.pre.in</a> for details.</p>
+<a class="reference external" href="https://github.com/python/cpython/tree/3.10/Makefile.pre.in">Makefile.pre.in</a> for details.</p>
 <p>(Contributed by Victor Stinner in <a class="reference external" href="https://bugs.python.org/issue23404">bpo-23404</a>.)</p>
 <div class="versionadded">
-<p><span class="versionmodified added">2.7.14 版新加入.</span></p>
+<p><span class="versionmodified added">在 2.7.14 版本新加入.</span></p>
 </div>
 </section>
 <section id="removal-of-make-touch-build-target">
@@ -2581,7 +2583,7 @@ of generated files by updating their modification times has been removed.</p>
 <p>It has been replaced by the new <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">regen-all</span></code> target.</p>
 <p>(Contributed by Victor Stinner in <a class="reference external" href="https://bugs.python.org/issue23404">bpo-23404</a>.)</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">2.7.14 版更變.</span></p>
+<p><span class="versionmodified changed">在 2.7.14 版本變更.</span></p>
 </div>
 </section>
 </section>
@@ -2601,8 +2603,9 @@ Hugh Secker-Walker.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.7</a><ul>
 <li><a class="reference internal" href="#the-future-for-python-2-x">The Future for Python 2.x</a></li>
 <li><a class="reference internal" href="#changes-to-the-handling-of-deprecation-warnings">Changes to the Handling of Deprecation Warnings</a></li>
@@ -2655,18 +2658,23 @@ Hugh Secker-Walker.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="3.0.html"
-                        title="上一章">What's New In Python 3.0</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.6.html"
-                        title="下一章">What's New in Python 2.6</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.0.html"
+                          title="上一章">What's New In Python 3.0</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.6.html"
+                          title="下一章">What's New in Python 2.6</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.7.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.7.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2701,13 +2709,11 @@ Hugh Secker-Walker.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.7</a></li>
                 <li class="right">
                     
@@ -2726,25 +2732,25 @@ Hugh Secker-Walker.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

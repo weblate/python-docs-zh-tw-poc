@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>itertools --- Functions creating iterators for efficient looping &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itertools --- Functions creating iterators for efficient looping &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="functools --- Higher-order functions and operations on callable objects" href="functools.html" />
-    <link rel="prev" title="函式編程模組" href="functional.html" />
+    <link rel="prev" title="Functional Programming Modules" href="functional.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/itertools.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">itertools</span></code> --- Functions creating iterators for efficient looping</a><ul>
 <li><a class="reference internal" href="#itertool-functions">Itertool functions</a></li>
 <li><a class="reference internal" href="#itertools-recipes">Itertools Recipes</a></li>
@@ -81,18 +80,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="functional.html"
-                        title="上一章">函式編程模組</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="functools.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="functional.html"
+                          title="上一章">Functional Programming Modules</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="functools.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/itertools.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/itertools.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -116,7 +120,7 @@
           <a href="functools.html" title="functools --- Higher-order functions and operations on callable objects"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="functional.html" title="函式編程模組"
+          <a href="functional.html" title="Functional Programming Modules"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -128,14 +132,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="functional.html" accesskey="U">函式編程模組</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="functional.html" accesskey="U">Functional Programming Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">itertools</span></code> --- Functions creating iterators for efficient looping</a></li>
                 <li class="right">
                     
@@ -265,22 +267,27 @@ operator can be mapped across two vectors to form an efficient dot-product:
 <td><p>elements from seq[start:stop:step]</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">islice('ABCDEFG',</span> <span class="pre">2,</span> <span class="pre">None)</span> <span class="pre">--&gt;</span> <span class="pre">C</span> <span class="pre">D</span> <span class="pre">E</span> <span class="pre">F</span> <span class="pre">G</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#itertools.starmap" title="itertools.starmap"><code class="xref py py-func docutils literal notranslate"><span class="pre">starmap()</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#itertools.pairwise" title="itertools.pairwise"><code class="xref py py-func docutils literal notranslate"><span class="pre">pairwise()</span></code></a></p></td>
+<td><p>iterable</p></td>
+<td><p>(p[0], p[1]), (p[1], p[2])</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pairwise('ABCDEFG')</span> <span class="pre">--&gt;</span> <span class="pre">AB</span> <span class="pre">BC</span> <span class="pre">CD</span> <span class="pre">DE</span> <span class="pre">EF</span> <span class="pre">FG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#itertools.starmap" title="itertools.starmap"><code class="xref py py-func docutils literal notranslate"><span class="pre">starmap()</span></code></a></p></td>
 <td><p>func, seq</p></td>
 <td><p>func(*seq[0]), func(*seq[1]), ...</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">starmap(pow,</span> <span class="pre">[(2,5),</span> <span class="pre">(3,2),</span> <span class="pre">(10,3)])</span> <span class="pre">--&gt;</span> <span class="pre">32</span> <span class="pre">9</span> <span class="pre">1000</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#itertools.takewhile" title="itertools.takewhile"><code class="xref py py-func docutils literal notranslate"><span class="pre">takewhile()</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#itertools.takewhile" title="itertools.takewhile"><code class="xref py py-func docutils literal notranslate"><span class="pre">takewhile()</span></code></a></p></td>
 <td><p>pred, seq</p></td>
 <td><p>seq[0], seq[1], until pred fails</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">takewhile(lambda</span> <span class="pre">x:</span> <span class="pre">x&lt;5,</span> <span class="pre">[1,4,6,4,1])</span> <span class="pre">--&gt;</span> <span class="pre">1</span> <span class="pre">4</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#itertools.tee" title="itertools.tee"><code class="xref py py-func docutils literal notranslate"><span class="pre">tee()</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#itertools.tee" title="itertools.tee"><code class="xref py py-func docutils literal notranslate"><span class="pre">tee()</span></code></a></p></td>
 <td><p>it, n</p></td>
 <td><p>it1, it2, ... itn  splits one iterator into n</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#itertools.zip_longest" title="itertools.zip_longest"><code class="xref py py-func docutils literal notranslate"><span class="pre">zip_longest()</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#itertools.zip_longest" title="itertools.zip_longest"><code class="xref py py-func docutils literal notranslate"><span class="pre">zip_longest()</span></code></a></p></td>
 <td><p>p, q, ...</p></td>
 <td><p>(p[0], q[0]), (p[1], q[1]), ...</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">zip_longest('ABCD',</span> <span class="pre">'xy',</span> <span class="pre">fillvalue='-')</span> <span class="pre">--&gt;</span> <span class="pre">Ax</span> <span class="pre">By</span> <span class="pre">C-</span> <span class="pre">D-</span></code></p></td>
@@ -351,7 +358,7 @@ streams of infinite length, so they should only be accessed by functions or
 loops that truncate the stream.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="itertools.accumulate">
-<span class="sig-prename descclassname"><span class="pre">itertools.</span></span><span class="sig-name descname"><span class="pre">accumulate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">iterable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">*</span></em>, <em class="sig-param"><span class="pre">initial=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.accumulate" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">itertools.</span></span><span class="sig-name descname"><span class="pre">accumulate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.accumulate" title="本定義的永久連結">¶</a></dt>
 <dd><p>Make an iterator that returns accumulated sums, or accumulated
 results of other binary functions (specified via the optional
 <em>func</em> argument).</p>
@@ -417,13 +424,13 @@ the accumulated total in <em>func</em> argument:</p>
 <p>See <a class="reference internal" href="functools.html#functools.reduce" title="functools.reduce"><code class="xref py py-func docutils literal notranslate"><span class="pre">functools.reduce()</span></code></a> for a similar function that returns only the
 final accumulated value.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added the optional <em>func</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added the optional <em>func</em> parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added the optional <em>initial</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added the optional <em>initial</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -445,7 +452,7 @@ Roughly equivalent to:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="itertools.chain.from_iterable">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">chain.</span></span><span class="sig-name descname"><span class="pre">from_iterable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.chain.from_iterable" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chain.</span></span><span class="sig-name descname"><span class="pre">from_iterable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.chain.from_iterable" title="本定義的永久連結">¶</a></dt>
 <dd><p>Alternate constructor for <a class="reference internal" href="#itertools.chain" title="itertools.chain"><code class="xref py py-func docutils literal notranslate"><span class="pre">chain()</span></code></a>.  Gets chained inputs from a
 single iterable argument that is evaluated lazily.  Roughly equivalent to:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">from_iterable</span><span class="p">(</span><span class="n">iterables</span><span class="p">):</span>
@@ -547,7 +554,7 @@ are not in sorted order (according to their position in the input pool):</p>
 </div>
 <p>The number of items returned is <code class="docutils literal notranslate"><span class="pre">(n+r-1)!</span> <span class="pre">/</span> <span class="pre">r!</span> <span class="pre">/</span> <span class="pre">(n-1)!</span></code> when <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -564,7 +571,7 @@ Roughly equivalent to:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -587,7 +594,7 @@ Also, used with <a class="reference internal" href="functions.html#zip" title="z
 achieved by substituting multiplicative code such as: <code class="docutils literal notranslate"><span class="pre">(start</span> <span class="pre">+</span> <span class="pre">step</span> <span class="pre">*</span> <span class="pre">i</span>
 <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">count())</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added <em>step</em> argument and allowed non-integer arguments.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added <em>step</em> argument and allowed non-integer arguments.</p>
 </div>
 </dd></dl>
 
@@ -709,7 +716,7 @@ is needed later, it should be stored as a list:</p>
 <dt class="sig sig-object py" id="itertools.islice">
 <span class="sig-prename descclassname"><span class="pre">itertools.</span></span><span class="sig-name descname"><span class="pre">islice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.islice" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">itertools.</span></span><span class="sig-name descname"><span class="pre">islice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">iterable</span></em>, <em class="sig-param"><span class="pre">start</span></em>, <em class="sig-param"><span class="pre">stop</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">step</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">itertools.</span></span><span class="sig-name descname"><span class="pre">islice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Make an iterator that returns selected elements from the iterable. If <em>start</em> is
 non-zero, then elements from the iterable are skipped until start is reached.
 Afterward, elements are returned consecutively unless <em>step</em> is set higher than
@@ -747,6 +754,26 @@ multi-line report may list a name field on every third line).  Roughly equivalen
 </div>
 <p>If <em>start</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then iteration starts at zero. If <em>step</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
 then the step defaults to one.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="itertools.pairwise">
+<span class="sig-prename descclassname"><span class="pre">itertools.</span></span><span class="sig-name descname"><span class="pre">pairwise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.pairwise" title="本定義的永久連結">¶</a></dt>
+<dd><p>Return successive overlapping pairs taken from the input <em>iterable</em>.</p>
+<p>The number of 2-tuples in the output iterator will be one fewer than the
+number of inputs.  It will be empty if the input iterable has fewer than
+two values.</p>
+<p>Roughly equivalent to:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+    <span class="c1"># pairwise(&#39;ABCDEFG&#39;) --&gt; AB BC CD DE EF FG</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tee</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+    <span class="nb">next</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -838,7 +865,7 @@ it is only useful with finite inputs.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="itertools.repeat">
-<span class="sig-prename descclassname"><span class="pre">itertools.</span></span><span class="sig-name descname"><span class="pre">repeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">object</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">times</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.repeat" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">itertools.</span></span><span class="sig-name descname"><span class="pre">repeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">times</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.repeat" title="本定義的永久連結">¶</a></dt>
 <dd><p>Make an iterator that returns <em>object</em> over and over again. Runs indefinitely
 unless the <em>times</em> argument is specified. Used as argument to <a class="reference internal" href="functions.html#map" title="map"><code class="xref py py-func docutils literal notranslate"><span class="pre">map()</span></code></a> for
 invariant parameters to the called function.  Also used with <a class="reference internal" href="functions.html#zip" title="zip"><code class="xref py py-func docutils literal notranslate"><span class="pre">zip()</span></code></a> to
@@ -1061,17 +1088,36 @@ which incur interpreter overhead.</p>
         <span class="k">return</span> <span class="n">starmap</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">repeat</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">starmap</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">repeat</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">times</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">pairwise</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
-    <span class="s2">&quot;s -&gt; (s0,s1), (s1,s2), (s2, s3), ...&quot;</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tee</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
-    <span class="nb">next</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">grouper</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">fillvalue</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="s2">&quot;Collect data into fixed-length chunks or blocks&quot;</span>
-    <span class="c1"># grouper(&#39;ABCDEFG&#39;, 3, &#39;x&#39;) --&gt; ABC DEF Gxx&quot;</span>
+<span class="k">def</span> <span class="nf">grouper</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">incomplete</span><span class="o">=</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="n">fillvalue</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="s2">&quot;Collect data into non-overlapping fixed-length chunks or blocks&quot;</span>
+    <span class="c1"># grouper(&#39;ABCDEFG&#39;, 3, fillvalue=&#39;x&#39;) --&gt; ABC DEF Gxx</span>
+    <span class="c1"># grouper(&#39;ABCDEFG&#39;, 3, incomplete=&#39;strict&#39;) --&gt; ABC DEF ValueError</span>
+    <span class="c1"># grouper(&#39;ABCDEFG&#39;, 3, incomplete=&#39;ignore&#39;) --&gt; ABC DEF</span>
     <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="nb">iter</span><span class="p">(</span><span class="n">iterable</span><span class="p">)]</span> <span class="o">*</span> <span class="n">n</span>
-    <span class="k">return</span> <span class="n">zip_longest</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">fillvalue</span><span class="o">=</span><span class="n">fillvalue</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">incomplete</span> <span class="o">==</span> <span class="s1">&#39;fill&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">zip_longest</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">fillvalue</span><span class="o">=</span><span class="n">fillvalue</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">incomplete</span> <span class="o">==</span> <span class="s1">&#39;strict&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">incomplete</span> <span class="o">==</span> <span class="s1">&#39;ignore&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Expected fill, strict, or ignore&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">triplewise</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+    <span class="s2">&quot;Return overlapping triplets from an iterable&quot;</span>
+    <span class="c1"># triplewise(&#39;ABCDEFG&#39;) -&gt; ABC BCD CDE DEF EFG</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">_</span><span class="p">),</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pairwise</span><span class="p">(</span><span class="n">pairwise</span><span class="p">(</span><span class="n">iterable</span><span class="p">)):</span>
+        <span class="k">yield</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+
+<span class="k">def</span> <span class="nf">sliding_window</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="c1"># sliding_window(&#39;ABCDEFG&#39;, 4) -&gt; ABCD BCDE CDEF DEFG</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">(</span><span class="n">islice</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">roundrobin</span><span class="p">(</span><span class="o">*</span><span class="n">iterables</span><span class="p">):</span>
     <span class="s2">&quot;roundrobin(&#39;ABC&#39;, &#39;D&#39;, &#39;EF&#39;) --&gt; A D E B F C&quot;</span>
@@ -1092,6 +1138,41 @@ which incur interpreter overhead.</p>
     <span class="c1"># partition(is_odd, range(10)) --&gt; 0 2 4 6 8   and  1 3 5 7 9</span>
     <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">tee</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">filterfalse</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">t1</span><span class="p">),</span> <span class="nb">filter</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">before_and_after</span><span class="p">(</span><span class="n">predicate</span><span class="p">,</span> <span class="n">it</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Variant of takewhile() that allows complete</span>
+<span class="sd">        access to the remainder of the iterator.</span>
+
+<span class="sd">        &gt;&gt;&gt; it = iter(&#39;ABCdEfGhI&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; all_upper, remainder = before_and_after(str.isupper, it)</span>
+<span class="sd">        &gt;&gt;&gt; &#39;&#39;.join(all_upper)</span>
+<span class="sd">        &#39;ABC&#39;</span>
+<span class="sd">        &gt;&gt;&gt; &#39;&#39;.join(remainder)     # takewhile() would lose the &#39;d&#39;</span>
+<span class="sd">        &#39;dEfGhI&#39;</span>
+
+<span class="sd">        Note that the first iterator must be fully</span>
+<span class="sd">        consumed before the second iterator can</span>
+<span class="sd">        generate valid results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+    <span class="n">transition</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span> <span class="nf">true_iterator</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">predicate</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">elem</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">transition</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+                <span class="k">return</span>
+    <span class="k">def</span> <span class="nf">remainder_iterator</span><span class="p">():</span>
+        <span class="k">yield from</span> <span class="n">transition</span>
+        <span class="k">yield from</span> <span class="n">it</span>
+    <span class="k">return</span> <span class="n">true_iterator</span><span class="p">(),</span> <span class="n">remainder_iterator</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">subslices</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+    <span class="s2">&quot;Return all contiguous non-empty subslices of a sequence&quot;</span>
+    <span class="c1"># subslices(&#39;ABCD&#39;) --&gt; A AB ABC ABCD B BC BCD C CD D</span>
+    <span class="n">slices</span> <span class="o">=</span> <span class="n">starmap</span><span class="p">(</span><span class="nb">slice</span><span class="p">,</span> <span class="n">combinations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">getitem</span><span class="p">,</span> <span class="n">repeat</span><span class="p">(</span><span class="n">seq</span><span class="p">),</span> <span class="n">slices</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">powerset</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
     <span class="s2">&quot;powerset([1,2,3]) --&gt; () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)&quot;</span>
@@ -1216,8 +1297,9 @@ which incur interpreter overhead.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">itertools</span></code> --- Functions creating iterators for efficient looping</a><ul>
 <li><a class="reference internal" href="#itertool-functions">Itertool functions</a></li>
 <li><a class="reference internal" href="#itertools-recipes">Itertools Recipes</a></li>
@@ -1225,18 +1307,23 @@ which incur interpreter overhead.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="functional.html"
-                        title="上一章">函式編程模組</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="functools.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="functional.html"
+                          title="上一章">Functional Programming Modules</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="functools.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/itertools.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/itertools.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1259,7 +1346,7 @@ which incur interpreter overhead.</p>
           <a href="functools.html" title="functools --- Higher-order functions and operations on callable objects"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="functional.html" title="函式編程模組"
+          <a href="functional.html" title="Functional Programming Modules"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -1271,14 +1358,12 @@ which incur interpreter overhead.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="functional.html" >函式編程模組</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="functional.html" >Functional Programming Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">itertools</span></code> --- Functions creating iterators for efficient looping</a></li>
                 <li class="right">
                     
@@ -1297,25 +1382,25 @@ which incur interpreter overhead.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

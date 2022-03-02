@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>datetime --- Basic date and time types &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datetime --- Basic date and time types &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Data Types" href="datatypes.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/datetime.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> --- Basic date and time types</a><ul>
 <li><a class="reference internal" href="#aware-and-naive-objects">Aware and Naive Objects</a></li>
 <li><a class="reference internal" href="#constants">Constants</a></li>
@@ -109,18 +108,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="datatypes.html"
-                        title="上一章">Data Types</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="zoneinfo.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zoneinfo</span></code> --- IANA time zone support</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="datatypes.html"
+                          title="上一章">Data Types</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="zoneinfo.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zoneinfo</span></code> --- IANA time zone support</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/datetime.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/datetime.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -156,13 +160,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">Data Types</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> --- Basic date and time types</a></li>
                 <li class="right">
@@ -189,7 +191,7 @@
             
   <section id="module-datetime">
 <span id="datetime-basic-date-and-time-types"></span><h1><a class="reference internal" href="#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a> --- Basic date and time types<a class="headerlink" href="#module-datetime" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/datetime.py">Lib/datetime.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/datetime.py">Lib/datetime.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a> module supplies classes for manipulating dates and times.</p>
 <p>While date and time arithmetic is supported, the focus of the implementation is
@@ -200,6 +202,8 @@ on efficient attribute extraction for output formatting and manipulation.</p>
 <dt>Module <a class="reference internal" href="calendar.html#module-calendar" title="calendar: Functions for working with calendars, including some emulation of the Unix cal program."><code class="xref py py-mod docutils literal notranslate"><span class="pre">calendar</span></code></a></dt><dd><p>General calendar related functions.</p>
 </dd>
 <dt>Module <a class="reference internal" href="time.html#module-time" title="time: Time access and conversions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a></dt><dd><p>Time access and conversions.</p>
+</dd>
+<dt>Module <a class="reference internal" href="zoneinfo.html#module-zoneinfo" title="zoneinfo: IANA time zone support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zoneinfo</span></code></a></dt><dd><p>Concrete time zones representing the IANA time zone database.</p>
 </dd>
 <dt>Package <a class="reference external" href="https://dateutil.readthedocs.io/en/stable/">dateutil</a></dt><dd><p>Third-party library with expanded time zone and parsing support.</p>
 </dd>
@@ -255,7 +259,7 @@ standard suitable for every application aside from UTC.</p>
 <h2>Available Types<a class="headerlink" href="#available-types" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">date</span></span></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">date</span></span></dt>
 <dd><p>An idealized naive date, assuming the current Gregorian calendar always was, and
 always will be, in effect. Attributes: <a class="reference internal" href="#datetime.date.year" title="datetime.date.year"><code class="xref py py-attr docutils literal notranslate"><span class="pre">year</span></code></a>, <a class="reference internal" href="#datetime.date.month" title="datetime.date.month"><code class="xref py py-attr docutils literal notranslate"><span class="pre">month</span></code></a>, and
 <a class="reference internal" href="#datetime.date.day" title="datetime.date.day"><code class="xref py py-attr docutils literal notranslate"><span class="pre">day</span></code></a>.</p>
@@ -263,7 +267,7 @@ always will be, in effect. Attributes: <a class="reference internal" href="#date
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">time</span></span></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">time</span></span></dt>
 <dd><p>An idealized time, independent of any particular day, assuming that every day
 has exactly 24*60*60 seconds.  (There is no notion of &quot;leap seconds&quot; here.)
 Attributes: <a class="reference internal" href="#datetime.time.hour" title="datetime.time.hour"><code class="xref py py-attr docutils literal notranslate"><span class="pre">hour</span></code></a>, <a class="reference internal" href="#datetime.time.minute" title="datetime.time.minute"><code class="xref py py-attr docutils literal notranslate"><span class="pre">minute</span></code></a>, <a class="reference internal" href="#datetime.time.second" title="datetime.time.second"><code class="xref py py-attr docutils literal notranslate"><span class="pre">second</span></code></a>, <a class="reference internal" href="#datetime.time.microsecond" title="datetime.time.microsecond"><code class="xref py py-attr docutils literal notranslate"><span class="pre">microsecond</span></code></a>,
@@ -272,7 +276,7 @@ and <a class="reference internal" href="#datetime.time.tzinfo" title="datetime.t
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">datetime</span></span></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">datetime</span></span></dt>
 <dd><p>A combination of a date and a time. Attributes: <a class="reference internal" href="#datetime.datetime.year" title="datetime.datetime.year"><code class="xref py py-attr docutils literal notranslate"><span class="pre">year</span></code></a>, <a class="reference internal" href="#datetime.datetime.month" title="datetime.datetime.month"><code class="xref py py-attr docutils literal notranslate"><span class="pre">month</span></code></a>,
 <a class="reference internal" href="#datetime.datetime.day" title="datetime.datetime.day"><code class="xref py py-attr docutils literal notranslate"><span class="pre">day</span></code></a>, <a class="reference internal" href="#datetime.datetime.hour" title="datetime.datetime.hour"><code class="xref py py-attr docutils literal notranslate"><span class="pre">hour</span></code></a>, <a class="reference internal" href="#datetime.datetime.minute" title="datetime.datetime.minute"><code class="xref py py-attr docutils literal notranslate"><span class="pre">minute</span></code></a>, <a class="reference internal" href="#datetime.datetime.second" title="datetime.datetime.second"><code class="xref py py-attr docutils literal notranslate"><span class="pre">second</span></code></a>, <a class="reference internal" href="#datetime.datetime.microsecond" title="datetime.datetime.microsecond"><code class="xref py py-attr docutils literal notranslate"><span class="pre">microsecond</span></code></a>,
 and <a class="reference internal" href="#datetime.datetime.tzinfo" title="datetime.datetime.tzinfo"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tzinfo</span></code></a>.</p>
@@ -280,14 +284,14 @@ and <a class="reference internal" href="#datetime.datetime.tzinfo" title="dateti
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">timedelta</span></span></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">timedelta</span></span></dt>
 <dd><p>A duration expressing the difference between two <a class="reference internal" href="#datetime.date" title="datetime.date"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a>, <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a>,
 or <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> instances to microsecond resolution.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">tzinfo</span></span></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">tzinfo</span></span></dt>
 <dd><p>An abstract base class for time zone information objects. These are used by the
 <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> and <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> classes to provide a customizable notion of
 time adjustment (for example, to account for time zone and/or daylight saving
@@ -296,11 +300,11 @@ time).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">timezone</span></span></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">timezone</span></span></dt>
 <dd><p>A class that implements the <a class="reference internal" href="#datetime.tzinfo" title="datetime.tzinfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">tzinfo</span></code></a> abstract base class as a
 fixed offset from the UTC.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -352,7 +356,7 @@ objects.</p>
 dates or times.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="datetime.timedelta">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">timedelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microseconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">milliseconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weeks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.timedelta" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">timedelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microseconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">milliseconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weeks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.timedelta" title="本定義的永久連結">¶</a></dt>
 <dd><p>All arguments are optional and default to <code class="docutils literal notranslate"><span class="pre">0</span></code>. Arguments may be integers
 or floats, and may be positive or negative.</p>
 <p>Only <em>days</em>, <em>seconds</em> and <em>microseconds</em> are stored internally.
@@ -539,7 +543,7 @@ call with canonical attribute values.</p></td>
 </tr>
 </tbody>
 </table>
-<p>註解：</p>
+<p>Notes:</p>
 <ol class="arabic">
 <li><p>This is exact but may overflow.</p></li>
 <li><p>This is exact and cannot overflow.</p></li>
@@ -563,7 +567,7 @@ while the latter will overflow.</p></li>
 certain additions and subtractions with <a class="reference internal" href="#datetime.date" title="datetime.date"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a> and <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>
 objects (see below).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Floor division and true division of a <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a> object by another
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Floor division and true division of a <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a> object by another
 <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a> object are now supported, as are remainder operations and
 the <a class="reference internal" href="functions.html#divmod" title="divmod"><code class="xref py py-func docutils literal notranslate"><span class="pre">divmod()</span></code></a> function. True division and multiplication of a
 <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a> object by a <a class="reference internal" href="functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> object are now supported.</p>
@@ -603,7 +607,7 @@ division form directly (e.g. <code class="docutils literal notranslate"><span cl
 <p>Note that for very large time intervals (greater than 270 years on
 most platforms) this method will lose microsecond accuracy.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -648,7 +652,7 @@ directions.</p>
 called day number 2, and so on. <a class="footnote-reference brackets" href="#id6" id="id2">2</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="datetime.date">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date" title="本定義的永久連結">¶</a></dt>
 <dd><p>All arguments are required. Arguments must be integers, in the following
 ranges:</p>
 <ul class="simple">
@@ -662,14 +666,14 @@ ranges:</p>
 <p>Other constructors, all class methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.date.today">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">today</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.today" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">today</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.today" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the current local date.</p>
 <p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">date.fromtimestamp(time.time())</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.date.fromtimestamp">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">fromtimestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromtimestamp" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">fromtimestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromtimestamp" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the local date corresponding to the POSIX timestamp, such as is
 returned by <a class="reference internal" href="time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.time()</span></code></a>.</p>
 <p>This may raise <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a>, if the timestamp is out
@@ -679,7 +683,7 @@ It's common for this to be restricted to years from 1970 through 2038. Note
 that on non-POSIX systems that include leap seconds in their notion of a
 timestamp, leap seconds are ignored by <a class="reference internal" href="#datetime.date.fromtimestamp" title="datetime.date.fromtimestamp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromtimestamp()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Raise <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> instead of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the timestamp
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Raise <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> instead of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the timestamp
 is out of the range of values supported by the platform C
 <code class="xref c c-func docutils literal notranslate"><span class="pre">localtime()</span></code> function. Raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> instead of
 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> on <code class="xref c c-func docutils literal notranslate"><span class="pre">localtime()</span></code> failure.</p>
@@ -688,7 +692,7 @@ is out of the range of values supported by the platform C
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.date.fromordinal">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">fromordinal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ordinal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromordinal" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">fromordinal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ordinal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromordinal" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the date corresponding to the proleptic Gregorian ordinal, where
 January 1 of year 1 has ordinal 1.</p>
 <p><a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised unless <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">ordinal</span> <span class="pre">&lt;=</span>
@@ -698,7 +702,7 @@ January 1 of year 1 has ordinal 1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.date.fromisoformat">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">fromisoformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromisoformat" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">fromisoformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromisoformat" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="#datetime.date" title="datetime.date"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a> corresponding to a <em>date_string</em> given in the format
 <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
@@ -709,17 +713,17 @@ January 1 of year 1 has ordinal 1.</p>
 <p>This is the inverse of <a class="reference internal" href="#datetime.date.isoformat" title="datetime.date.isoformat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">date.isoformat()</span></code></a>. It only supports the format
 <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.date.fromisocalendar">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">fromisocalendar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">week</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromisocalendar" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">date.</span></span><span class="sig-name descname"><span class="pre">fromisocalendar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">week</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromisocalendar" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="#datetime.date" title="datetime.date"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a> corresponding to the ISO calendar date specified by
 year, week and day. This is the inverse of the function <a class="reference internal" href="#datetime.date.isocalendar" title="datetime.date.isocalendar"><code class="xref py py-meth docutils literal notranslate"><span class="pre">date.isocalendar()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -791,7 +795,7 @@ from <em>date1</em>. (1)</p></td>
 </tr>
 </tbody>
 </table>
-<p>註解：</p>
+<p>Notes:</p>
 <ol class="arabic simple">
 <li><p><em>date2</em> is moved forward in time if <code class="docutils literal notranslate"><span class="pre">timedelta.days</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, or backward if
 <code class="docutils literal notranslate"><span class="pre">timedelta.days</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>. Afterward <code class="docutils literal notranslate"><span class="pre">date2</span> <span class="pre">-</span> <span class="pre">date1</span> <span class="pre">==</span> <span class="pre">timedelta.days</span></code>.
@@ -884,7 +888,7 @@ begins on Monday, 29 Dec 2003 and ends on Sunday, 4 Jan 2004:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Result changed from a tuple to a <a class="reference internal" href="../glossary.html#term-named-tuple"><span class="xref std std-term">named tuple</span></a>.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Result changed from a tuple to a <a class="reference internal" href="../glossary.html#term-named-tuple"><span class="xref std std-term">named tuple</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -1018,7 +1022,7 @@ calendar extended in both directions; like a <a class="reference internal" href=
 <p>Constructor:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="datetime.datetime">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microsecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tzinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microsecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tzinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <em>year</em>, <em>month</em> and <em>day</em> arguments are required. <em>tzinfo</em> may be <code class="docutils literal notranslate"><span class="pre">None</span></code>, or an
 instance of a <a class="reference internal" href="#datetime.tzinfo" title="datetime.tzinfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">tzinfo</span></code></a> subclass. The remaining arguments must be integers
 in the following ranges:</p>
@@ -1034,14 +1038,14 @@ in the following ranges:</p>
 </ul>
 <p>If an argument outside those ranges is given, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">fold</span></code> argument.</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">fold</span></code> argument.</p>
 </div>
 </dd></dl>
 
 <p>Other constructors, all class methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.today">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">today</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.today" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">today</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.today" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the current local datetime, with <a class="reference internal" href="#datetime.datetime.tzinfo" title="datetime.datetime.tzinfo"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tzinfo</span></code></a> <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>Equivalent to:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
@@ -1054,7 +1058,7 @@ in the following ranges:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.now">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.now" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.now" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the current local date and time.</p>
 <p>If optional argument <em>tz</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code>
 or not specified, this is like <a class="reference internal" href="#datetime.datetime.today" title="datetime.datetime.today"><code class="xref py py-meth docutils literal notranslate"><span class="pre">today()</span></code></a>, but, if possible, supplies more
@@ -1068,7 +1072,7 @@ and the current date and time are converted to <em>tz</em>’s time zone.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.utcnow">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">utcnow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.utcnow" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">utcnow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.utcnow" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the current UTC date and time, with <a class="reference internal" href="#datetime.datetime.tzinfo" title="datetime.datetime.tzinfo"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tzinfo</span></code></a> <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>This is like <a class="reference internal" href="#datetime.datetime.now" title="datetime.datetime.now"><code class="xref py py-meth docutils literal notranslate"><span class="pre">now()</span></code></a>, but returns the current UTC date and time, as a naive
 <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object. An aware current UTC datetime can be obtained by
@@ -1084,7 +1088,7 @@ current time in UTC is by calling <code class="docutils literal notranslate"><sp
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.fromtimestamp">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">fromtimestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromtimestamp" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">fromtimestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromtimestamp" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the local date and time corresponding to the POSIX timestamp, such as is
 returned by <a class="reference internal" href="time.html#time.time" title="time.time"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.time()</span></code></a>. If optional argument <em>tz</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or not
 specified, the timestamp is converted to the platform's local date and time, and
@@ -1102,20 +1106,20 @@ and then it's possible to have two timestamps differing by a second that yield
 identical <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> objects. This method is preferred over
 <a class="reference internal" href="#datetime.datetime.utcfromtimestamp" title="datetime.datetime.utcfromtimestamp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">utcfromtimestamp()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Raise <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> instead of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the timestamp
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Raise <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> instead of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the timestamp
 is out of the range of values supported by the platform C
 <code class="xref c c-func docutils literal notranslate"><span class="pre">localtime()</span></code> or <code class="xref c c-func docutils literal notranslate"><span class="pre">gmtime()</span></code> functions. Raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>
 instead of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> on <code class="xref c c-func docutils literal notranslate"><span class="pre">localtime()</span></code> or <code class="xref c c-func docutils literal notranslate"><span class="pre">gmtime()</span></code>
 failure.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><a class="reference internal" href="#datetime.datetime.fromtimestamp" title="datetime.datetime.fromtimestamp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromtimestamp()</span></code></a> may return instances with <a class="reference internal" href="#datetime.datetime.fold" title="datetime.datetime.fold"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fold</span></code></a> set to 1.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><a class="reference internal" href="#datetime.datetime.fromtimestamp" title="datetime.datetime.fromtimestamp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromtimestamp()</span></code></a> may return instances with <a class="reference internal" href="#datetime.datetime.fold" title="datetime.datetime.fold"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fold</span></code></a> set to 1.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.utcfromtimestamp">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">utcfromtimestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.utcfromtimestamp" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">utcfromtimestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.utcfromtimestamp" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the UTC <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> corresponding to the POSIX timestamp, with
 <a class="reference internal" href="#datetime.datetime.tzinfo" title="datetime.datetime.tzinfo"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tzinfo</span></code></a> <code class="docutils literal notranslate"><span class="pre">None</span></code>.  (The resulting object is naive.)</p>
 <p>This may raise <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a>, if the timestamp is
@@ -1142,7 +1146,7 @@ specific timestamp in UTC is by calling
 <code class="docutils literal notranslate"><span class="pre">datetime.fromtimestamp(timestamp,</span> <span class="pre">tz=timezone.utc)</span></code>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Raise <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> instead of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the timestamp
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Raise <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> instead of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the timestamp
 is out of the range of values supported by the platform C
 <code class="xref c c-func docutils literal notranslate"><span class="pre">gmtime()</span></code> function. Raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> instead of
 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> on <code class="xref c c-func docutils literal notranslate"><span class="pre">gmtime()</span></code> failure.</p>
@@ -1151,7 +1155,7 @@ is out of the range of values supported by the platform C
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.fromordinal">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">fromordinal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ordinal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromordinal" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">fromordinal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ordinal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromordinal" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> corresponding to the proleptic Gregorian ordinal,
 where January 1 of year 1 has ordinal 1. <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised unless <code class="docutils literal notranslate"><span class="pre">1</span>
 <span class="pre">&lt;=</span> <span class="pre">ordinal</span> <span class="pre">&lt;=</span> <span class="pre">datetime.max.toordinal()</span></code>. The hour, minute, second and
@@ -1160,7 +1164,7 @@ microsecond of the result are all 0, and <a class="reference internal" href="#da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.combine">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">combine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tzinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">self.tzinfo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.combine" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">combine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tzinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">self.tzinfo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.combine" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a new <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object whose date components are equal to the
 given <a class="reference internal" href="#datetime.date" title="datetime.date"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a> object's, and whose time components
 are equal to the given <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object's. If the <em>tzinfo</em>
@@ -1172,13 +1176,13 @@ is used.</p>
 <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object, its time components and <a class="reference internal" href="#datetime.datetime.tzinfo" title="datetime.datetime.tzinfo"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tzinfo</span></code></a> attributes
 are ignored.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added the <em>tzinfo</em> argument.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added the <em>tzinfo</em> argument.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.fromisoformat">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">fromisoformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromisoformat" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">fromisoformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromisoformat" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> corresponding to a <em>date_string</em> in one of the
 formats emitted by <a class="reference internal" href="#datetime.date.isoformat" title="datetime.date.isoformat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">date.isoformat()</span></code></a> and <a class="reference internal" href="#datetime.datetime.isoformat" title="datetime.datetime.isoformat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datetime.isoformat()</span></code></a>.</p>
 <p>Specifically, this function supports strings in the format:</p>
@@ -1209,25 +1213,25 @@ ISO 8601 parser, <code class="docutils literal notranslate"><span class="pre">da
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.fromisocalendar">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">fromisocalendar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">week</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromisocalendar" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">fromisocalendar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">week</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromisocalendar" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> corresponding to the ISO calendar date specified
 by year, week and day. The non-date components of the datetime are populated
 with their normal default values. This is the inverse of the function
 <a class="reference internal" href="#datetime.datetime.isocalendar" title="datetime.datetime.isocalendar"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datetime.isocalendar()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.datetime.strptime">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">strptime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.strptime" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">strptime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.strptime" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> corresponding to <em>date_string</em>, parsed according to
 <em>format</em>.</p>
 <p>This is equivalent to:</p>
@@ -1321,7 +1325,7 @@ time or when the UTC offset for the current zone is decreased for political reas
 The value 0 (1) represents the earlier (later) of the two moments with the same wall
 time representation.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1386,7 +1390,7 @@ compared. If both comparands are aware and have different <a class="reference in
 attributes, the comparands are first adjusted by subtracting their UTC
 offsets (obtained from <code class="docutils literal notranslate"><span class="pre">self.utcoffset()</span></code>).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Equality comparisons between aware and naive <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Equality comparisons between aware and naive <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>
 instances don't raise <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a>.</p>
 </div>
 <div class="admonition note">
@@ -1416,7 +1420,7 @@ unless the comparison is <code class="docutils literal notranslate"><span class=
 <dd><p>Return <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object with same hour, minute, second, microsecond and fold.
 <a class="reference internal" href="#datetime.datetime.tzinfo" title="datetime.datetime.tzinfo"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tzinfo</span></code></a> is <code class="docutils literal notranslate"><span class="pre">None</span></code>. See also method <a class="reference internal" href="#datetime.datetime.timetz" title="datetime.datetime.timetz"><code class="xref py py-meth docutils literal notranslate"><span class="pre">timetz()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>The fold value is copied to the returned <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>The fold value is copied to the returned <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object.</p>
 </div>
 </dd></dl>
 
@@ -1426,7 +1430,7 @@ unless the comparison is <code class="docutils literal notranslate"><span class=
 <dd><p>Return <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object with same hour, minute, second, microsecond, fold, and
 tzinfo attributes. See also method <a class="reference internal" href="time.html#module-time" title="time: Time access and conversions."><code class="xref py py-meth docutils literal notranslate"><span class="pre">time()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>The fold value is copied to the returned <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>The fold value is copied to the returned <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object.</p>
 </div>
 </dd></dl>
 
@@ -1438,7 +1442,7 @@ new values by whichever keyword arguments are specified. Note that
 <code class="docutils literal notranslate"><span class="pre">tzinfo=None</span></code> can be specified to create a naive datetime from an aware
 datetime with no conversion of date and time data.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">fold</span></code> argument.</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">fold</span></code> argument.</p>
 </div>
 </dd></dl>
 
@@ -1477,10 +1481,10 @@ Ignoring error cases, <a class="reference internal" href="#datetime.datetime.ast
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span><em>tz</em> now can be omitted.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span><em>tz</em> now can be omitted.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>The <a class="reference internal" href="#datetime.datetime.astimezone" title="datetime.datetime.astimezone"><code class="xref py py-meth docutils literal notranslate"><span class="pre">astimezone()</span></code></a> method can now be called on naive instances that
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>The <a class="reference internal" href="#datetime.datetime.astimezone" title="datetime.datetime.astimezone"><code class="xref py py-meth docutils literal notranslate"><span class="pre">astimezone()</span></code></a> method can now be called on naive instances that
 are presumed to represent system local time.</p>
 </div>
 </dd></dl>
@@ -1492,7 +1496,7 @@ are presumed to represent system local time.</p>
 <code class="docutils literal notranslate"><span class="pre">self.tzinfo.utcoffset(self)</span></code>, and raises an exception if the latter doesn't
 return <code class="docutils literal notranslate"><span class="pre">None</span></code> or a <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a> object with magnitude less than one day.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The UTC offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The UTC offset is not restricted to a whole number of minutes.</p>
 </div>
 </dd></dl>
 
@@ -1503,7 +1507,7 @@ return <code class="docutils literal notranslate"><span class="pre">None</span><
 <code class="docutils literal notranslate"><span class="pre">self.tzinfo.dst(self)</span></code>, and raises an exception if the latter doesn't return
 <code class="docutils literal notranslate"><span class="pre">None</span></code> or a <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a> object with magnitude less than one day.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The DST offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The DST offset is not restricted to a whole number of minutes.</p>
 </div>
 </dd></dl>
 
@@ -1582,10 +1586,10 @@ as:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>The <a class="reference internal" href="#datetime.datetime.timestamp" title="datetime.datetime.timestamp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">timestamp()</span></code></a> method uses the <a class="reference internal" href="#datetime.datetime.fold" title="datetime.datetime.fold"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fold</span></code></a> attribute to
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>The <a class="reference internal" href="#datetime.datetime.timestamp" title="datetime.datetime.timestamp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">timestamp()</span></code></a> method uses the <a class="reference internal" href="#datetime.datetime.fold" title="datetime.datetime.fold"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fold</span></code></a> attribute to
 disambiguate the times during a repeated interval.</p>
 </div>
 <div class="admonition note">
@@ -1692,7 +1696,7 @@ part to milliseconds. <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>Added the <em>timespec</em> argument.</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>Added the <em>timespec</em> argument.</p>
 </div>
 </dd></dl>
 
@@ -1872,7 +1876,7 @@ and then +4:30 UTC thereafter:</p>
 day, and subject to adjustment via a <a class="reference internal" href="#datetime.tzinfo" title="datetime.tzinfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">tzinfo</span></code></a> object.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="datetime.time">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hour</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microsecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tzinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.time" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hour</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microsecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tzinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.time" title="本定義的永久連結">¶</a></dt>
 <dd><p>All arguments are optional. <em>tzinfo</em> may be <code class="docutils literal notranslate"><span class="pre">None</span></code>, or an instance of a
 <a class="reference internal" href="#datetime.tzinfo" title="datetime.tzinfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">tzinfo</span></code></a> subclass. The remaining arguments must be integers in the
 following ranges:</p>
@@ -1949,7 +1953,7 @@ time or when the UTC offset for the current zone is decreased for political reas
 The value 0 (1) represents the earlier (later) of the two moments with the same wall
 time representation.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1968,12 +1972,12 @@ object address, when a <a class="reference internal" href="#datetime.time" title
 different type, <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> is raised unless the comparison is <code class="docutils literal notranslate"><span class="pre">==</span></code> or
 <code class="docutils literal notranslate"><span class="pre">!=</span></code>. The latter cases return <a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a> or <a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a>, respectively.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Equality comparisons between aware and naive <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> instances
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Equality comparisons between aware and naive <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> instances
 don't raise <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a>.</p>
 </div>
 <p>In Boolean contexts, a <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object is always considered to be true.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Before Python 3.5, a <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object was considered to be false if it
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Before Python 3.5, a <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object was considered to be false if it
 represented midnight in UTC. This behavior was considered obscure and
 error-prone and has been removed in Python 3.5. See <a class="reference external" href="https://bugs.python.org/issue13936">bpo-13936</a> for full
 details.</p>
@@ -1981,7 +1985,7 @@ details.</p>
 <p>Other constructor:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datetime.time.fromisoformat">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">time.</span></span><span class="sig-name descname"><span class="pre">fromisoformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.time.fromisoformat" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">time.</span></span><span class="sig-name descname"><span class="pre">fromisoformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.time.fromisoformat" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> corresponding to a <em>time_string</em> in one of the
 formats emitted by <a class="reference internal" href="#datetime.time.isoformat" title="datetime.time.isoformat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">time.isoformat()</span></code></a>. Specifically, this function supports
 strings in the format:</p>
@@ -2004,7 +2008,7 @@ intended as the inverse operation of <a class="reference internal" href="#dateti
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -2017,7 +2021,7 @@ new values by whichever keyword arguments are specified. Note that
 <code class="docutils literal notranslate"><span class="pre">tzinfo=None</span></code> can be specified to create a naive <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> from an
 aware <a class="reference internal" href="#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a>, without conversion of the time data.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">fold</span></code> argument.</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">fold</span></code> argument.</p>
 </div>
 </dd></dl>
 
@@ -2062,7 +2066,7 @@ part to milliseconds. <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>Added the <em>timespec</em> argument.</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>Added the <em>timespec</em> argument.</p>
 </div>
 </dd></dl>
 
@@ -2097,7 +2101,7 @@ complete list of formatting directives, see
 <code class="docutils literal notranslate"><span class="pre">self.tzinfo.utcoffset(None)</span></code>, and raises an exception if the latter doesn't
 return <code class="docutils literal notranslate"><span class="pre">None</span></code> or a <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a> object with magnitude less than one day.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The UTC offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The UTC offset is not restricted to a whole number of minutes.</p>
 </div>
 </dd></dl>
 
@@ -2108,7 +2112,7 @@ return <code class="docutils literal notranslate"><span class="pre">None</span><
 <code class="docutils literal notranslate"><span class="pre">self.tzinfo.dst(None)</span></code>, and raises an exception if the latter doesn't return
 <code class="docutils literal notranslate"><span class="pre">None</span></code>, or a <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a> object with magnitude less than one day.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The DST offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The DST offset is not restricted to a whole number of minutes.</p>
 </div>
 </dd></dl>
 
@@ -2155,7 +2159,7 @@ return <code class="docutils literal notranslate"><span class="pre">None</span><
 <span id="datetime-tzinfo"></span><h2><a class="reference internal" href="#datetime.tzinfo" title="datetime.tzinfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">tzinfo</span></code></a> Objects<a class="headerlink" href="#tzinfo-objects" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="datetime.tzinfo">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">tzinfo</span></span><a class="headerlink" href="#datetime.tzinfo" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">tzinfo</span></span><a class="headerlink" href="#datetime.tzinfo" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is an abstract base class, meaning that this class should not be
 instantiated directly.  Define a subclass of <a class="reference internal" href="#datetime.tzinfo" title="datetime.tzinfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">tzinfo</span></code></a> to capture
 information about a particular time zone.</p>
@@ -2200,7 +2204,7 @@ of <a class="reference internal" href="#datetime.tzinfo.utcoffset" title="dateti
 <p>The default implementation of <a class="reference internal" href="#datetime.tzinfo.utcoffset" title="datetime.tzinfo.utcoffset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">utcoffset()</span></code></a> raises
 <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The UTC offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The UTC offset is not restricted to a whole number of minutes.</p>
 </div>
 </dd></dl>
 
@@ -2250,7 +2254,7 @@ this, it may be able to override the default implementation of
 </div>
 <p>The default implementation of <a class="reference internal" href="#datetime.tzinfo.dst" title="datetime.tzinfo.dst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dst()</span></code></a> raises <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The DST offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The DST offset is not restricted to a whole number of minutes.</p>
 </div>
 </dd></dl>
 
@@ -2565,14 +2569,17 @@ or any other fixed-offset <a class="reference internal" href="#datetime.tzinfo" 
 only EST (fixed offset -5 hours), or only EDT (fixed offset -4 hours)).</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
-<dl>
-<dt><a class="reference external" href="https://dateutil.readthedocs.io/en/stable/tz.html">dateutil.tz</a></dt><dd><p>The <a class="reference internal" href="#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a> module has a basic <a class="reference internal" href="#datetime.timezone" title="datetime.timezone"><code class="xref py py-class docutils literal notranslate"><span class="pre">timezone</span></code></a> class (for
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="zoneinfo.html#module-zoneinfo" title="zoneinfo: IANA time zone support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zoneinfo</span></code></a></dt><dd><p>The <a class="reference internal" href="#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a> module has a basic <a class="reference internal" href="#datetime.timezone" title="datetime.timezone"><code class="xref py py-class docutils literal notranslate"><span class="pre">timezone</span></code></a> class (for
 handling arbitrary fixed offsets from UTC) and its <a class="reference internal" href="#datetime.timezone.utc" title="datetime.timezone.utc"><code class="xref py py-attr docutils literal notranslate"><span class="pre">timezone.utc</span></code></a>
 attribute (a UTC timezone instance).</p>
-<p><em>dateutil.tz</em> library brings the <em>IANA timezone database</em>
-(also known as the Olson database) to Python, and its usage is
-recommended.</p>
+<p><code class="docutils literal notranslate"><span class="pre">zoneinfo</span></code> brings the <em>IANA timezone database</em> (also known as the Olson
+database) to Python, and its usage is recommended.</p>
 </dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
 <dt><a class="reference external" href="https://www.iana.org/time-zones">IANA timezone database</a></dt><dd><p>The Time Zone Database (often called tz, tzdata or zoneinfo) contains code
 and data that represent the history of local time for many representative
 locations around the globe. It is updated periodically to reflect changes
@@ -2592,7 +2599,7 @@ locations where different offsets are used in different days of the year or
 where historical changes have been made to civil time.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="datetime.timezone">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">timezone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.timezone" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">timezone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.timezone" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <em>offset</em> argument must be specified as a <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a>
 object representing the difference between the local time and UTC. It must
 be strictly between <code class="docutils literal notranslate"><span class="pre">-timedelta(hours=24)</span></code> and
@@ -2600,10 +2607,10 @@ be strictly between <code class="docutils literal notranslate"><span class="pre"
 <p>The <em>name</em> argument is optional. If specified it must be a string that
 will be used as the value returned by the <a class="reference internal" href="#datetime.datetime.tzname" title="datetime.datetime.tzname"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datetime.tzname()</span></code></a> method.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The UTC offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The UTC offset is not restricted to a whole number of minutes.</p>
 </div>
 </dd></dl>
 
@@ -2615,7 +2622,7 @@ constructed.</p>
 <p>The <em>dt</em> argument is ignored. The return value is a <a class="reference internal" href="#datetime.timedelta" title="datetime.timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a>
 instance equal to the difference between the local time and UTC.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The UTC offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The UTC offset is not restricted to a whole number of minutes.</p>
 </div>
 </dd></dl>
 
@@ -2630,7 +2637,7 @@ is constructed.</p>
 the format <code class="docutils literal notranslate"><span class="pre">UTC±HH:MM</span></code>, where ± is the sign of <code class="docutils literal notranslate"><span class="pre">offset</span></code>, HH and MM are
 two digits of <code class="docutils literal notranslate"><span class="pre">offset.hours</span></code> and <code class="docutils literal notranslate"><span class="pre">offset.minutes</span></code> respectively.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Name generated from <code class="docutils literal notranslate"><span class="pre">offset=timedelta(0)</span></code> is now plain <cite>'UTC'</cite>, not
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Name generated from <code class="docutils literal notranslate"><span class="pre">offset=timedelta(0)</span></code> is now plain <cite>'UTC'</cite>, not
 <code class="docutils literal notranslate"><span class="pre">'UTC+00:00'</span></code>.</p>
 </div>
 </dd></dl>
@@ -2712,7 +2719,7 @@ requires, and these work on all platforms with a standard C implementation.</p>
 <tr class="row-odd"><th class="head"><p>Directive</p></th>
 <th class="head"><p>Meaning</p></th>
 <th class="head"><p>Example</p></th>
-<th class="head"><p>註解</p></th>
+<th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2832,8 +2839,8 @@ decimal number.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%f</span></code></p></td>
 <td><p>Microsecond as a decimal
-number, zero-padded on the
-left.</p></td>
+number, zero-padded to 6
+digits.</p></td>
 <td><p>000000, 000001, ...,
 999999</p></td>
 <td><p>(5)</p></td>
@@ -2864,7 +2871,7 @@ zero-padded decimal number.</p></td>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%U</span></code></p></td>
 <td><p>Week number of the year
 (Sunday as the first day of
-the week) as a zero padded
+the week) as a zero-padded
 decimal number. All days in a
 new year preceding the first
 Sunday are considered to be in
@@ -2876,10 +2883,10 @@ week 0.</p></td>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%W</span></code></p></td>
 <td><p>Week number of the year
 (Monday as the first day of
-the week) as a decimal number.
-All days in a new year
-preceding the first Monday
-are considered to be in
+the week) as a zero-padded
+decimal number. All days in a
+new year preceding the first
+Monday are considered to be in
 week 0.</p></td>
 <td><p>00, 01, ..., 53</p></td>
 <td><p>(7),
@@ -2938,7 +2945,7 @@ convenience. These parameters all correspond to ISO 8601 date values.</p>
 <tr class="row-odd"><th class="head"><p>Directive</p></th>
 <th class="head"><p>Meaning</p></th>
 <th class="head"><p>Example</p></th>
-<th class="head"><p>註解</p></th>
+<th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2976,9 +2983,10 @@ incomplete or ambiguous ISO 8601 directives will raise a <a class="reference int
 <p>The full set of format codes supported varies across platforms, because Python
 calls the platform C library's <code class="xref py py-func docutils literal notranslate"><span class="pre">strftime()</span></code> function, and platform
 variations are common. To see the full set of format codes supported on your
-platform, consult the <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/strftime(3)">strftime(3)</a></em> documentation.</p>
+platform, consult the <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/strftime(3)">strftime(3)</a></em> documentation. There are also
+differences between platforms in handling of unsupported format specifiers.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span><code class="docutils literal notranslate"><span class="pre">%G</span></code>, <code class="docutils literal notranslate"><span class="pre">%u</span></code> and <code class="docutils literal notranslate"><span class="pre">%V</span></code> were added.</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span><code class="docutils literal notranslate"><span class="pre">%G</span></code>, <code class="docutils literal notranslate"><span class="pre">%u</span></code> and <code class="docutils literal notranslate"><span class="pre">%V</span></code> were added.</p>
 </div>
 </section>
 <section id="technical-detail">
@@ -3007,7 +3015,7 @@ that can't be represented in the charset of the current locale is also
 platform-dependent. On some platforms such code points are preserved intact in
 the output, while on others <code class="docutils literal notranslate"><span class="pre">strftime</span></code> may raise <a class="reference internal" href="exceptions.html#UnicodeError" title="UnicodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeError</span></code></a> or return
 an empty string instead.</p>
-<p>註解：</p>
+<p>Notes:</p>
 <ol class="arabic">
 <li><p>Because the format depends on the current locale, care should be taken when
 making assumptions about the output value. Field orderings will vary (for
@@ -3019,11 +3027,11 @@ to determine the current locale's encoding).</p></li>
 <li><p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">strptime()</span></code> method can parse years in the full [1, 9999] range, but
 years &lt; 1000 must be zero-filled to 4-digit width.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>In previous versions, <code class="xref py py-meth docutils literal notranslate"><span class="pre">strftime()</span></code> method was restricted to
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>In previous versions, <code class="xref py py-meth docutils literal notranslate"><span class="pre">strftime()</span></code> method was restricted to
 years &gt;= 1900.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>In version 3.2, <code class="xref py py-meth docutils literal notranslate"><span class="pre">strftime()</span></code> method was restricted to
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>In version 3.2, <code class="xref py py-meth docutils literal notranslate"><span class="pre">strftime()</span></code> method was restricted to
 years &gt;= 1000.</p>
 </div>
 </li>
@@ -3053,10 +3061,10 @@ replaced with the string <code class="docutils literal notranslate"><span class=
 </dd>
 </dl>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The UTC offset is not restricted to a whole number of minutes.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The UTC offset is not restricted to a whole number of minutes.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>When the <code class="docutils literal notranslate"><span class="pre">%z</span></code> directive is provided to the  <code class="xref py py-meth docutils literal notranslate"><span class="pre">strptime()</span></code> method,
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>When the <code class="docutils literal notranslate"><span class="pre">%z</span></code> directive is provided to the  <code class="xref py py-meth docutils literal notranslate"><span class="pre">strptime()</span></code> method,
 the UTC offsets can have a colon as a separator between hours, minutes
 and seconds.
 For example, <code class="docutils literal notranslate"><span class="pre">'+01:00:00'</span></code> will be parsed as an offset of one hour.
@@ -3077,7 +3085,7 @@ invalid values.</p>
 </dd>
 </dl>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>When the <code class="docutils literal notranslate"><span class="pre">%z</span></code> directive is provided to the <code class="xref py py-meth docutils literal notranslate"><span class="pre">strptime()</span></code> method, an
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>When the <code class="docutils literal notranslate"><span class="pre">%z</span></code> directive is provided to the <code class="xref py py-meth docutils literal notranslate"><span class="pre">strptime()</span></code> method, an
 aware <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object will be produced. The <code class="docutils literal notranslate"><span class="pre">tzinfo</span></code> of the
 result will be set to a <a class="reference internal" href="#datetime.timezone" title="datetime.timezone"><code class="xref py py-class docutils literal notranslate"><span class="pre">timezone</span></code></a> instance.</p>
 </div>
@@ -3093,7 +3101,7 @@ interchangeable.</p></li>
 for  formats <code class="docutils literal notranslate"><span class="pre">%d</span></code>, <code class="docutils literal notranslate"><span class="pre">%m</span></code>, <code class="docutils literal notranslate"><span class="pre">%H</span></code>, <code class="docutils literal notranslate"><span class="pre">%I</span></code>, <code class="docutils literal notranslate"><span class="pre">%M</span></code>, <code class="docutils literal notranslate"><span class="pre">%S</span></code>, <code class="docutils literal notranslate"><span class="pre">%J</span></code>, <code class="docutils literal notranslate"><span class="pre">%U</span></code>,
 <code class="docutils literal notranslate"><span class="pre">%W</span></code>, and <code class="docutils literal notranslate"><span class="pre">%V</span></code>. Format <code class="docutils literal notranslate"><span class="pre">%y</span></code> does require a leading zero.</p></li>
 </ol>
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>If, that is, we ignore the effects of Relativity</p>
@@ -3124,8 +3132,9 @@ for a good explanation.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> --- Basic date and time types</a><ul>
 <li><a class="reference internal" href="#aware-and-naive-objects">Aware and Naive Objects</a></li>
 <li><a class="reference internal" href="#constants">Constants</a></li>
@@ -3161,18 +3170,23 @@ for a good explanation.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="datatypes.html"
-                        title="上一章">Data Types</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="zoneinfo.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zoneinfo</span></code> --- IANA time zone support</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="datatypes.html"
+                          title="上一章">Data Types</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="zoneinfo.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zoneinfo</span></code> --- IANA time zone support</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/datetime.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/datetime.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -3207,13 +3221,11 @@ for a good explanation.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" >Data Types</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> --- Basic date and time types</a></li>
                 <li class="right">
@@ -3233,25 +3245,25 @@ for a good explanation.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

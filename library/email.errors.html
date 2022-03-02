@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>email.errors: Exception and Defect classes &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email.errors: Exception and Defect classes &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="email.policy: Policy Objects" href="email.policy.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/email.errors.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.policy.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.policy</span></code>: Policy Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.headerregistry.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.headerregistry</span></code>: Custom Header Objects</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.policy.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.policy</span></code>: Policy Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.headerregistry.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.headerregistry</span></code>: Custom Header Objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.errors.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.errors.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.errors</span></code>: Exception and Defect classes</a></li>
@@ -153,12 +153,12 @@
             
   <section id="module-email.errors">
 <span id="email-errors-exception-and-defect-classes"></span><h1><a class="reference internal" href="#module-email.errors" title="email.errors: The exception classes used by the email package."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.errors</span></code></a>: Exception and Defect classes<a class="headerlink" href="#module-email.errors" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/email/errors.py">Lib/email/errors.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/email/errors.py">Lib/email/errors.py</a></p>
 <hr class="docutils" />
 <p>The following exception classes are defined in the <a class="reference internal" href="#module-email.errors" title="email.errors: The exception classes used by the email package."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.errors</span></code></a> module:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="email.errors.MessageError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">MessageError</span></span><a class="headerlink" href="#email.errors.MessageError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">MessageError</span></span><a class="headerlink" href="#email.errors.MessageError" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is the base class for all exceptions that the <a class="reference internal" href="email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a> package can
 raise.  It is derived from the standard <a class="reference internal" href="exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a> class and defines no
 additional methods.</p>
@@ -166,7 +166,7 @@ additional methods.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="email.errors.MessageParseError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">MessageParseError</span></span><a class="headerlink" href="#email.errors.MessageParseError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">MessageParseError</span></span><a class="headerlink" href="#email.errors.MessageParseError" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is the base class for exceptions raised by the
 <a class="reference internal" href="email.parser.html#email.parser.Parser" title="email.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parser</span></code></a> class.  It is derived from
 <a class="reference internal" href="#email.errors.MessageError" title="email.errors.MessageError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MessageError</span></code></a>.  This class is also used internally by the parser used
@@ -175,8 +175,8 @@ by <a class="reference internal" href="email.headerregistry.html#module-email.he
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="email.errors.HeaderParseError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">HeaderParseError</span></span><a class="headerlink" href="#email.errors.HeaderParseError" title="本定義的永久連結">¶</a></dt>
-<dd><p>Raised under some error conditions when parsing the <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> headers of a
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">HeaderParseError</span></span><a class="headerlink" href="#email.errors.HeaderParseError" title="本定義的永久連結">¶</a></dt>
+<dd><p>Raised under some error conditions when parsing the <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> headers of a
 message, this class is derived from <a class="reference internal" href="#email.errors.MessageParseError" title="email.errors.MessageParseError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MessageParseError</span></code></a>.  The
 <a class="reference internal" href="email.message.html#email.message.EmailMessage.set_boundary" title="email.message.EmailMessage.set_boundary"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_boundary()</span></code></a> method will raise this
 error if the content type is unknown when the method is called.
@@ -188,13 +188,13 @@ continuation line that has no leading whitespace and looks like a header).</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="email.errors.BoundaryError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">BoundaryError</span></span><a class="headerlink" href="#email.errors.BoundaryError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">BoundaryError</span></span><a class="headerlink" href="#email.errors.BoundaryError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Deprecated and no longer used.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="email.errors.MultipartConversionError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">MultipartConversionError</span></span><a class="headerlink" href="#email.errors.MultipartConversionError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.errors.</span></span><span class="sig-name descname"><span class="pre">MultipartConversionError</span></span><a class="headerlink" href="#email.errors.MultipartConversionError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when a payload is added to a <a class="reference internal" href="email.compat32-message.html#email.message.Message" title="email.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a> object
 using <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_payload()</span></code>, but the payload is already a scalar and the
 message's <em class="mailheader">Content-Type</em> main type is not either
@@ -222,7 +222,7 @@ but had no <em class="mimetype">boundary</em> parameter.</p></li>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CloseBoundaryNotFoundDefect</span></code> -- A start boundary was found, but
 no corresponding close boundary was ever found.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </li>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">FirstHeaderLineIsContinuationDefect</span></code> -- The message had a continuation
@@ -233,13 +233,13 @@ middle of a header block.</p></li>
 headers that had no leading white space but contained no ':'.  Parsing
 continues assuming that the line represents the first line of the body.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </li>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MalformedHeaderDefect</span></code> -- A header was found that was missing a colon,
 or was otherwise malformed.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用: </span>This defect has not been used for several Python versions.</p>
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用: </span>This defect has not been used for several Python versions.</p>
 </div>
 </li>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipartInvariantViolationDefect</span></code> -- A message claimed to be a
@@ -255,6 +255,8 @@ The characters are ignored, but the resulting decoded bytes may be invalid.</p><
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">InvalidBase64LengthDefect</span></code> -- When decoding a block of base64 encoded
 bytes, the number of non-padding base64 characters was invalid (1 more than
 a multiple of 4).  The encoded block was kept as-is.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">InvalidDateDefect</span></code> -- When decoding an invalid or unparsable date field.
+The original value is kept as-is.</p></li>
 </ul>
 </section>
 
@@ -265,18 +267,22 @@ a multiple of 4).  The encoded block was kept as-is.</p></li>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.policy.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.policy</span></code>: Policy Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.headerregistry.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.headerregistry</span></code>: Custom Header Objects</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.policy.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.policy</span></code>: Policy Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.headerregistry.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.headerregistry</span></code>: Custom Header Objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.errors.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.errors.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -311,13 +317,11 @@ a multiple of 4).  The encoded block was kept as-is.</p></li>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.errors</span></code>: Exception and Defect classes</a></li>
@@ -338,25 +342,25 @@ a multiple of 4).  The encoded block was kept as-is.</p></li>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

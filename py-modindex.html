@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python 模組索引 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 模組索引 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -19,7 +19,7 @@
     <script src="_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="about.html" />
     <link rel="index" title="索引" href="genindex.html" />
@@ -28,8 +28,6 @@
 
     <link rel="canonical" href="https://docs.python.org/3/py-modindex.html" />
     
-      
-      <script type="text/javascript" src="_static/switchers.js"></script>
       
     
 
@@ -100,10 +98,8 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="index.html">3.10.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Python 模組索引</a></li>
@@ -174,7 +170,8 @@
        <td></td>
        <td>
        <a href="library/__main__.html#module-__main__"><code class="xref">__main__</code></a></td><td>
-       <em>The environment where the top-level script is run.</em></td></tr>
+       <em>The environment where top-level code is run. Covers command-line
+interfaces, import-time behavior, and ``__name__ == &#39;__main__&#39;``.</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -241,7 +238,7 @@ services.</em></td></tr>
        <td></td>
        <td>
        <a href="library/base64.html#module-base64"><code class="xref">base64</code></a></td><td>
-       <em>RFC 3548: Base16, Base32, Base64 Data Encodings;
+       <em>RFC 4648: Base16, Base32, Base64 Data Encodings;
 Base85 and Ascii85</em></td></tr>
      <tr>
        <td></td>
@@ -529,11 +526,6 @@ is subclassed by the modules in the distutils.command subpackage.</em></td></tr>
        <td>&#160;&#160;&#160;
        <a href="distutils/apiref.html#module-distutils.command.bdist_rpm"><code class="xref">distutils.command.bdist_rpm</code></a></td><td>
        <em>Build a binary distribution as a Redhat RPM and SRPM</em></td></tr>
-     <tr class="cg-5">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="distutils/apiref.html#module-distutils.command.bdist_wininst"><code class="xref">distutils.command.bdist_wininst</code></a></td><td>
-       <em>Build a Windows installer</em></td></tr>
      <tr class="cg-5">
        <td></td>
        <td>&#160;&#160;&#160;
@@ -852,11 +844,6 @@ installation or virtual environment.</em></td></tr>
        <td>
        <a href="library/fnmatch.html#module-fnmatch"><code class="xref">fnmatch</code></a></td><td>
        <em>Unix shell style filename pattern matching.</em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="library/formatter.html#module-formatter"><code class="xref">formatter</code></a></td><td><strong>已棄用:</strong>
-       <em>Generic output formatter and device interface.</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -1249,11 +1236,6 @@ constraints).</em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="library/parser.html#module-parser"><code class="xref">parser</code></a></td><td>
-       <em>Access parse trees for Python source code.</em></td></tr>
-     <tr>
-       <td></td>
-       <td>
        <a href="library/pathlib.html#module-pathlib"><code class="xref">pathlib</code></a></td><td>
        <em>Object-oriented filesystem paths</em></td></tr>
      <tr>
@@ -1320,8 +1302,8 @@ pickle-machine opcodes, as well as some useful functions.</em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="library/pty.html#module-pty"><code class="xref">pty</code></a> <em>(Linux)</em></td><td>
-       <em>Pseudo-Terminal Handling for Linux.</em></td></tr>
+       <a href="library/pty.html#module-pty"><code class="xref">pty</code></a> <em>(Unix)</em></td><td>
+       <em>Pseudo-Terminal Handling for Unix.</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -1520,11 +1502,6 @@ os.lstat() and os.fstat().</em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="library/symbol.html#module-symbol"><code class="xref">symbol</code></a></td><td>
-       <em>Constants representing internal nodes of the parse tree.</em></td></tr>
-     <tr>
-       <td></td>
-       <td>
        <a href="library/symtable.html#module-symtable"><code class="xref">symtable</code></a></td><td>
        <em>Interface to the compiler&#39;s internal symbol tables.</em></td></tr>
      <tr>
@@ -1590,6 +1567,16 @@ source files in a directory tree.</em></td></tr>
      <tr class="cg-15">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="library/test.html#module-test.support.import_helper"><code class="xref">test.support.import_helper</code></a></td><td>
+       <em>Support for import tests.</em></td></tr>
+     <tr class="cg-15">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="library/test.html#module-test.support.os_helper"><code class="xref">test.support.os_helper</code></a></td><td>
+       <em>Support for os tests.</em></td></tr>
+     <tr class="cg-15">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="library/test.html#module-test.support.script_helper"><code class="xref">test.support.script_helper</code></a></td><td>
        <em>Support for Python&#39;s script execution tests.</em></td></tr>
      <tr class="cg-15">
@@ -1597,6 +1584,16 @@ source files in a directory tree.</em></td></tr>
        <td>&#160;&#160;&#160;
        <a href="library/test.html#module-test.support.socket_helper"><code class="xref">test.support.socket_helper</code></a></td><td>
        <em>Support for socket tests.</em></td></tr>
+     <tr class="cg-15">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="library/test.html#module-test.support.threading_helper"><code class="xref">test.support.threading_helper</code></a></td><td>
+       <em>Support for threading tests.</em></td></tr>
+     <tr class="cg-15">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="library/test.html#module-test.support.warnings_helper"><code class="xref">test.support.warnings_helper</code></a></td><td>
+       <em>Support for warnings tests.</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -1814,7 +1811,7 @@ fetchability of other URLs.</em></td></tr>
        <td></td>
        <td>
        <a href="library/webbrowser.html#module-webbrowser"><code class="xref">webbrowser</code></a></td><td>
-       <em>Easy-to-use controller for Web browsers.</em></td></tr>
+       <em>Easy-to-use controller for web browsers.</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -2002,10 +1999,8 @@ compatible with gzip.</em></td></tr>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="index.html">3.10.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Python 模組索引</a></li>
@@ -2026,25 +2021,25 @@ compatible with gzip.</em></td></tr>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

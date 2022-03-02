@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>xml.dom.minidom --- Minimal DOM implementation &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml.dom.minidom --- Minimal DOM implementation &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="xml.dom --- The Document Object Model API" href="xml.dom.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/xml.dom.minidom.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a><ul>
 <li><a class="reference internal" href="#dom-objects">DOM Objects</a></li>
 <li><a class="reference internal" href="#dom-example">DOM Example</a></li>
@@ -82,18 +81,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xml.dom.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.dom.pulldom.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.pulldom</span></code> --- Support for building partial DOM trees</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xml.dom.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.dom.pulldom.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.pulldom</span></code> --- Support for building partial DOM trees</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.dom.minidom.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.dom.minidom.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -129,13 +133,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" accesskey="U">Structured Markup Processing Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a></li>
                 <li class="right">
@@ -162,7 +164,7 @@
             
   <section id="module-xml.dom.minidom">
 <span id="xml-dom-minidom-minimal-dom-implementation"></span><h1><a class="reference internal" href="#module-xml.dom.minidom" title="xml.dom.minidom: Minimal Document Object Model (DOM) implementation."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code></a> --- Minimal DOM implementation<a class="headerlink" href="#module-xml.dom.minidom" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/xml/dom/minidom.py">Lib/xml/dom/minidom.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/xml/dom/minidom.py">Lib/xml/dom/minidom.py</a></p>
 <hr class="docutils" />
 <p><a class="reference internal" href="#module-xml.dom.minidom" title="xml.dom.minidom: Minimal Document Object Model (DOM) implementation."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code></a> is a minimal implementation of the Document Object
 Model interface, with an API similar to that in other languages.  It is intended
@@ -293,8 +295,11 @@ If the value is set to <cite>True</cite>, <cite>standalone=&quot;yes&quot;</cite
 otherwise it is set to <cite>&quot;no&quot;</cite>.
 Not stating the argument will omit the declaration from the document.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <a class="reference internal" href="#xml.dom.minidom.Node.writexml" title="xml.dom.minidom.Node.writexml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">writexml()</span></code></a> method now preserves the attribute order specified
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <a class="reference internal" href="#xml.dom.minidom.Node.writexml" title="xml.dom.minidom.Node.writexml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">writexml()</span></code></a> method now preserves the attribute order specified
 by the user.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The <em>standalone</em> parameter was added.</p>
 </div>
 </dd></dl>
 
@@ -311,14 +316,17 @@ encoding. Encoding this string in an encoding other than UTF-8 is
 likely incorrect, since UTF-8 is the default encoding of XML.</p>
 <p>The <em>standalone</em> argument behaves exactly as in <a class="reference internal" href="#xml.dom.minidom.Node.writexml" title="xml.dom.minidom.Node.writexml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">writexml()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <a class="reference internal" href="#xml.dom.minidom.Node.toxml" title="xml.dom.minidom.Node.toxml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">toxml()</span></code></a> method now preserves the attribute order specified
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <a class="reference internal" href="#xml.dom.minidom.Node.toxml" title="xml.dom.minidom.Node.toxml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">toxml()</span></code></a> method now preserves the attribute order specified
 by the user.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The <em>standalone</em> parameter was added.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xml.dom.minidom.Node.toprettyxml">
-<span class="sig-prename descclassname"><span class="pre">Node.</span></span><span class="sig-name descname"><span class="pre">toprettyxml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\\t'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standalone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.dom.minidom.Node.toprettyxml" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Node.</span></span><span class="sig-name descname"><span class="pre">toprettyxml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\t'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standalone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.dom.minidom.Node.toprettyxml" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a pretty-printed version of the document. <em>indent</em> specifies the
 indentation string and defaults to a tabulator; <em>newl</em> specifies the string
 emitted at the end of each line and defaults to <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
@@ -326,8 +334,11 @@ emitted at the end of each line and defaults to <code class="docutils literal no
 <a class="reference internal" href="#xml.dom.minidom.Node.toxml" title="xml.dom.minidom.Node.toxml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">toxml()</span></code></a>.</p>
 <p>The <em>standalone</em> argument behaves exactly as in <a class="reference internal" href="#xml.dom.minidom.Node.writexml" title="xml.dom.minidom.Node.writexml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">writexml()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <a class="reference internal" href="#xml.dom.minidom.Node.toprettyxml" title="xml.dom.minidom.Node.toprettyxml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">toprettyxml()</span></code></a> method now preserves the attribute order specified
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <a class="reference internal" href="#xml.dom.minidom.Node.toprettyxml" title="xml.dom.minidom.Node.toprettyxml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">toprettyxml()</span></code></a> method now preserves the attribute order specified
 by the user.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The <em>standalone</em> parameter was added.</p>
 </div>
 </dd></dl>
 
@@ -445,7 +456,7 @@ recommendations.</p></li>
 </ul>
 <p>Most of these reflect information in the XML document that is not of general
 utility to most DOM users.</p>
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>The encoding name included in the XML output should conform to
@@ -466,8 +477,9 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a><ul>
 <li><a class="reference internal" href="#dom-objects">DOM Objects</a></li>
 <li><a class="reference internal" href="#dom-example">DOM Example</a></li>
@@ -476,18 +488,23 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xml.dom.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.dom.pulldom.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.pulldom</span></code> --- Support for building partial DOM trees</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xml.dom.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.dom.pulldom.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.pulldom</span></code> --- Support for building partial DOM trees</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.dom.minidom.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.dom.minidom.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -522,13 +539,11 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" >Structured Markup Processing Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a></li>
                 <li class="right">
@@ -548,25 +563,25 @@ and <a class="reference external" href="https://www.iana.org/assignments/charact
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

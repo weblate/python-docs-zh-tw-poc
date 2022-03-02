@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>DateTime 物件 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DateTime Objects &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Context Variables Objects" href="contextvars.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/datetime.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="contextvars.html"
-                        title="上一章">Context Variables Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="typehints.html"
-                        title="下一章">Objects for Type Hinting</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="contextvars.html"
+                          title="上一章">Context Variables Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="typehints.html"
+                          title="下一章">Objects for Type Hinting</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/datetime.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/datetime.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,15 +121,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concrete.html" accesskey="U">Concrete Objects Layer</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">DateTime 物件</a></li>
+        <li class="nav-item nav-item-this"><a href="">DateTime Objects</a></li>
                 <li class="right">
                     
 
@@ -151,7 +151,7 @@
           <div class="body" role="main">
             
   <section id="datetime-objects">
-<span id="datetimeobjects"></span><h1>DateTime 物件<a class="headerlink" href="#datetime-objects" title="本標題的永久連結">¶</a></h1>
+<span id="datetimeobjects"></span><h1>DateTime Objects<a class="headerlink" href="#datetime-objects" title="本標題的永久連結">¶</a></h1>
 <p>Various date and time objects are supplied by the <a class="reference internal" href="../library/datetime.html#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a> module.
 Before using any of these functions, the header file <code class="file docutils literal notranslate"><span class="pre">datetime.h</span></code> must be
 included in your source (note that this is not included by <code class="file docutils literal notranslate"><span class="pre">Python.h</span></code>),
@@ -166,7 +166,7 @@ macros.</p>
 <dd><p>Returns the time zone singleton representing UTC, the same object as
 <a class="reference internal" href="../library/datetime.html#datetime.timezone.utc" title="datetime.timezone.utc"><code class="xref py py-attr docutils literal notranslate"><span class="pre">datetime.timezone.utc</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -266,7 +266,7 @@ minute, second and microsecond.</p>
 <dd><em class="refcount">Return value: New reference.</em><p>Return a <a class="reference internal" href="../library/datetime.html#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> object with the specified year, month, day, hour,
 minute, second, microsecond and fold.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -283,7 +283,7 @@ microsecond.</p>
 <dd><em class="refcount">Return value: New reference.</em><p>Return a <a class="reference internal" href="../library/datetime.html#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.time</span></code></a> object with the specified hour, minute, second,
 microsecond and fold.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -302,7 +302,7 @@ resulting number of microseconds and seconds lie in the ranges documented for
 <dd><em class="refcount">Return value: New reference.</em><p>Return a <a class="reference internal" href="../library/datetime.html#datetime.timezone" title="datetime.timezone"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.timezone</span></code></a> object with an unnamed fixed offset
 represented by the <em>offset</em> argument.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -312,7 +312,7 @@ represented by the <em>offset</em> argument.</p>
 <dd><em class="refcount">Return value: New reference.</em><p>Return a <a class="reference internal" href="../library/datetime.html#datetime.timezone" title="datetime.timezone"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.timezone</span></code></a> object with a fixed offset represented
 by the <em>offset</em> argument and with tzname <em>name</em>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -323,19 +323,19 @@ not checked:</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_GET_YEAR">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_GET_YEAR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Date</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_GET_YEAR" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳年份，為正整數。</p>
+<dd><p>Return the year, as a positive int.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_GET_MONTH">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_GET_MONTH</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Date</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_GET_MONTH" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳月份，為正整數，從 1 到 12。</p>
+<dd><p>Return the month, as an int from 1 through 12.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_GET_DAY">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_GET_DAY</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Date</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_GET_DAY" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳日期，為正整數，從 1 到 31。</p>
+<dd><p>Return the day, as an int from 1 through 31.</p>
 </dd></dl>
 
 <p>Macros to extract fields from datetime objects.  The argument must be an
@@ -344,25 +344,34 @@ must not be <code class="docutils literal notranslate"><span class="pre">NULL</s
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_DATE_GET_HOUR">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_DATE_GET_HOUR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_DateTime</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_DATE_GET_HOUR" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳小時，為正整數，從 0 到 23。</p>
+<dd><p>Return the hour, as an int from 0 through 23.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_DATE_GET_MINUTE">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_DATE_GET_MINUTE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_DateTime</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_DATE_GET_MINUTE" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳分鐘，為正整數，從 0 到 59。</p>
+<dd><p>Return the minute, as an int from 0 through 59.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_DATE_GET_SECOND">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_DATE_GET_SECOND</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_DateTime</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_DATE_GET_SECOND" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳秒，為正整數，從0 到59。</p>
+<dd><p>Return the second, as an int from 0 through 59.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_DATE_GET_MICROSECOND">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_DATE_GET_MICROSECOND</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_DateTime</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_DATE_GET_MICROSECOND" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳微秒，為正整數，從 0 到 999999。</p>
+<dd><p>Return the microsecond, as an int from 0 through 999999.</p>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.PyDateTime_DATE_GET_TZINFO">
+<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_DATE_GET_TZINFO</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_DateTime</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_DATE_GET_TZINFO" title="本定義的永久連結">¶</a><br /></dt>
+<dd><p>Return the tzinfo (which may be <code class="docutils literal notranslate"><span class="pre">None</span></code>).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
 </dd></dl>
 
 <p>Macros to extract fields from time objects.  The argument must be an instance of
@@ -371,25 +380,34 @@ and the type is not checked:</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_TIME_GET_HOUR">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_TIME_GET_HOUR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Time</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_TIME_GET_HOUR" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳小時，為正整數，從 0 到 23。</p>
+<dd><p>Return the hour, as an int from 0 through 23.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_TIME_GET_MINUTE">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_TIME_GET_MINUTE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Time</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_TIME_GET_MINUTE" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳分鐘，為正整數，從 0 到 59。</p>
+<dd><p>Return the minute, as an int from 0 through 59.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_TIME_GET_SECOND">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_TIME_GET_SECOND</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Time</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_TIME_GET_SECOND" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳秒，為正整數，從0 到59。</p>
+<dd><p>Return the second, as an int from 0 through 59.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyDateTime_TIME_GET_MICROSECOND">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_TIME_GET_MICROSECOND</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Time</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_TIME_GET_MICROSECOND" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>回傳微秒，為正整數，從 0 到 999999。</p>
+<dd><p>Return the microsecond, as an int from 0 through 999999.</p>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.PyDateTime_TIME_GET_TZINFO">
+<a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_TIME_GET_TZINFO</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Time</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_TIME_GET_TZINFO" title="本定義的永久連結">¶</a><br /></dt>
+<dd><p>Return the tzinfo (which may be <code class="docutils literal notranslate"><span class="pre">None</span></code>).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
 </dd></dl>
 
 <p>Macros to extract fields from time delta objects.  The argument must be an
@@ -400,7 +418,7 @@ not be <code class="docutils literal notranslate"><span class="pre">NULL</span><
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_DELTA_GET_DAYS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Delta</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_DELTA_GET_DAYS" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Return the number of days, as an int from -999999999 to 999999999.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -409,7 +427,7 @@ not be <code class="docutils literal notranslate"><span class="pre">NULL</span><
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_DELTA_GET_SECONDS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Delta</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_DELTA_GET_SECONDS" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Return the number of seconds, as an int from 0 through 86399.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -418,7 +436,7 @@ not be <code class="docutils literal notranslate"><span class="pre">NULL</span><
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyDateTime_DELTA_GET_MICROSECONDS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">PyDateTime_Delta</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyDateTime_DELTA_GET_MICROSECONDS" title="本定義的永久連結">¶</a><br /></dt>
 <dd><p>Return the number of microseconds, as an int from 0 through 999999.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -446,18 +464,22 @@ tuple suitable for passing to <a class="reference internal" href="../library/dat
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="contextvars.html"
-                        title="上一章">Context Variables Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="typehints.html"
-                        title="下一章">Objects for Type Hinting</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="contextvars.html"
+                          title="上一章">Context Variables Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="typehints.html"
+                          title="下一章">Objects for Type Hinting</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/datetime.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/datetime.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -492,15 +514,13 @@ tuple suitable for passing to <a class="reference internal" href="../library/dat
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concrete.html" >Concrete Objects Layer</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">DateTime 物件</a></li>
+        <li class="nav-item nav-item-this"><a href="">DateTime Objects</a></li>
                 <li class="right">
                     
 
@@ -518,25 +538,25 @@ tuple suitable for passing to <a class="reference internal" href="../library/dat
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

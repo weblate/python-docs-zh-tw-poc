@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>imaplib --- IMAP4 protocol client &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imaplib --- IMAP4 protocol client &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="poplib --- POP3 protocol client" href="poplib.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/imaplib.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imaplib</span></code> --- IMAP4 protocol client</a><ul>
 <li><a class="reference internal" href="#imap4-objects">IMAP4 Objects</a></li>
 <li><a class="reference internal" href="#imap4-example">IMAP4 Example</a></li>
@@ -81,18 +80,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="poplib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">poplib</span></code> --- POP3 protocol client</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="nntplib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nntplib</span></code> --- NNTP protocol client</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="poplib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">poplib</span></code> --- POP3 protocol client</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="nntplib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nntplib</span></code> --- NNTP protocol client</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/imaplib.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/imaplib.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -128,13 +132,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" accesskey="U">Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">imaplib</span></code> --- IMAP4 protocol client</a></li>
                 <li class="right">
@@ -161,18 +163,18 @@
             
   <section id="module-imaplib">
 <span id="imaplib-imap4-protocol-client"></span><h1><a class="reference internal" href="#module-imaplib" title="imaplib: IMAP4 protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">imaplib</span></code></a> --- IMAP4 protocol client<a class="headerlink" href="#module-imaplib" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/imaplib.py">Lib/imaplib.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/imaplib.py">Lib/imaplib.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>This module defines three classes, <a class="reference internal" href="#imaplib.IMAP4" title="imaplib.IMAP4"><code class="xref py py-class docutils literal notranslate"><span class="pre">IMAP4</span></code></a>, <a class="reference internal" href="#imaplib.IMAP4_SSL" title="imaplib.IMAP4_SSL"><code class="xref py py-class docutils literal notranslate"><span class="pre">IMAP4_SSL</span></code></a> and
 <a class="reference internal" href="#imaplib.IMAP4_stream" title="imaplib.IMAP4_stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">IMAP4_stream</span></code></a>, which encapsulate a connection to an IMAP4 server and
 implement a large subset of the IMAP4rev1 client protocol as defined in
-<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2060.html"><strong>RFC 2060</strong></a>. It is backward compatible with IMAP4 (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1730.html"><strong>RFC 1730</strong></a>) servers, but
+<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2060.html"><strong>RFC 2060</strong></a>. It is backward compatible with IMAP4 (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc1730.html"><strong>RFC 1730</strong></a>) servers, but
 note that the <code class="docutils literal notranslate"><span class="pre">STATUS</span></code> command is not supported in IMAP4.</p>
 <p>Three classes are provided by the <a class="reference internal" href="#module-imaplib" title="imaplib: IMAP4 protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">imaplib</span></code></a> module, <a class="reference internal" href="#imaplib.IMAP4" title="imaplib.IMAP4"><code class="xref py py-class docutils literal notranslate"><span class="pre">IMAP4</span></code></a> is the
 base class:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="imaplib.IMAP4">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">imaplib.</span></span><span class="sig-name descname"><span class="pre">IMAP4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">IMAP4_PORT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">imaplib.</span></span><span class="sig-name descname"><span class="pre">IMAP4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">IMAP4_PORT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class implements the actual IMAP4 protocol.  The connection is created and
 protocol version (IMAP4 or IMAP4rev1) is determined when the instance is
 initialized. If <em>host</em> is not specified, <code class="docutils literal notranslate"><span class="pre">''</span></code> (the local host) is used. If
@@ -190,24 +192,24 @@ like this, the IMAP4 <code class="docutils literal notranslate"><span class="pre
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Support for the <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement was added.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Support for the <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement was added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The optional <em>timeout</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The optional <em>timeout</em> parameter was added.</p>
 </div>
 </dd></dl>
 
 <p>Three exceptions are defined as attributes of the <a class="reference internal" href="#imaplib.IMAP4" title="imaplib.IMAP4"><code class="xref py py-class docutils literal notranslate"><span class="pre">IMAP4</span></code></a> class:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="imaplib.IMAP4.error">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#imaplib.IMAP4.error" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#imaplib.IMAP4.error" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised on any errors.  The reason for the exception is passed to the
 constructor as a string.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="imaplib.IMAP4.abort">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">abort</span></span><a class="headerlink" href="#imaplib.IMAP4.abort" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">abort</span></span><a class="headerlink" href="#imaplib.IMAP4.abort" title="本定義的永久連結">¶</a></dt>
 <dd><p>IMAP4 server errors cause this exception to be raised.  This is a sub-class of
 <a class="reference internal" href="#imaplib.IMAP4.error" title="imaplib.IMAP4.error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IMAP4.error</span></code></a>.  Note that closing the instance and instantiating a new one
 will usually allow recovery from this exception.</p>
@@ -215,7 +217,7 @@ will usually allow recovery from this exception.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="imaplib.IMAP4.readonly">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">readonly</span></span><a class="headerlink" href="#imaplib.IMAP4.readonly" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">readonly</span></span><a class="headerlink" href="#imaplib.IMAP4.readonly" title="本定義的永久連結">¶</a></dt>
 <dd><p>This exception is raised when a writable mailbox has its status changed by the
 server.  This is a sub-class of <a class="reference internal" href="#imaplib.IMAP4.error" title="imaplib.IMAP4.error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IMAP4.error</span></code></a>.  Some other client now has
 write permission, and the mailbox will need to be re-opened to re-obtain write
@@ -225,7 +227,7 @@ permission.</p>
 <p>There's also a subclass for secure connections:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="imaplib.IMAP4_SSL">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">imaplib.</span></span><span class="sig-name descname"><span class="pre">IMAP4_SSL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">IMAP4_SSL_PORT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">certfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4_SSL" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">imaplib.</span></span><span class="sig-name descname"><span class="pre">IMAP4_SSL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">IMAP4_SSL_PORT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">certfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4_SSL" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is a subclass derived from <a class="reference internal" href="#imaplib.IMAP4" title="imaplib.IMAP4"><code class="xref py py-class docutils literal notranslate"><span class="pre">IMAP4</span></code></a> that connects over an SSL
 encrypted socket (to use this class you need a socket module that was compiled
 with SSL support).  If <em>host</em> is not specified, <code class="docutils literal notranslate"><span class="pre">''</span></code> (the local host) is used.
@@ -243,28 +245,28 @@ if <em>keyfile</em>/<em>certfile</em> is provided along with <em>ssl_context</em
 connection attempt. If timeout is not given or is None, the global default
 socket timeout is used.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span><em>ssl_context</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span><em>ssl_context</em> parameter was added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The class now supports hostname check with
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The class now supports hostname check with
 <a class="reference internal" href="ssl.html#ssl.SSLContext.check_hostname" title="ssl.SSLContext.check_hostname"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ssl.SSLContext.check_hostname</span></code></a> and <em>Server Name Indication</em> (see
 <a class="reference internal" href="ssl.html#ssl.HAS_SNI" title="ssl.HAS_SNI"><code class="xref py py-data docutils literal notranslate"><span class="pre">ssl.HAS_SNI</span></code></a>).</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.6 版後已棄用: </span><em>keyfile</em> and <em>certfile</em> are deprecated in favor of <em>ssl_context</em>.
+<p><span class="versionmodified deprecated">在 3.6 版本開始棄用: </span><em>keyfile</em> and <em>certfile</em> are deprecated in favor of <em>ssl_context</em>.
 Please use <a class="reference internal" href="ssl.html#ssl.SSLContext.load_cert_chain" title="ssl.SSLContext.load_cert_chain"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ssl.SSLContext.load_cert_chain()</span></code></a> instead, or let
 <a class="reference internal" href="ssl.html#ssl.create_default_context" title="ssl.create_default_context"><code class="xref py py-func docutils literal notranslate"><span class="pre">ssl.create_default_context()</span></code></a> select the system's trusted CA
 certificates for you.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The optional <em>timeout</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The optional <em>timeout</em> parameter was added.</p>
 </div>
 </dd></dl>
 
 <p>The second subclass allows for connections created by a child process:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="imaplib.IMAP4_stream">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">imaplib.</span></span><span class="sig-name descname"><span class="pre">IMAP4_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4_stream" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">imaplib.</span></span><span class="sig-name descname"><span class="pre">IMAP4_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4_stream" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is a subclass derived from <a class="reference internal" href="#imaplib.IMAP4" title="imaplib.IMAP4"><code class="xref py py-class docutils literal notranslate"><span class="pre">IMAP4</span></code></a> that connects to the
 <code class="docutils literal notranslate"><span class="pre">stdin/stdout</span></code> file descriptors created by passing <em>command</em> to
 <code class="docutils literal notranslate"><span class="pre">subprocess.Popen()</span></code>.</p>
@@ -360,7 +362,7 @@ argument it is passed will be <code class="docutils literal notranslate"><span c
 that will be base64 encoded and sent to the server.  It should return
 <code class="docutils literal notranslate"><span class="pre">None</span></code> if the client abort response <code class="docutils literal notranslate"><span class="pre">*</span></code> should be sent instead.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>string usernames and passwords are now encoded to <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> instead of
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>string usernames and passwords are now encoded to <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> instead of
 being limited to ASCII.</p>
 </div>
 </dd></dl>
@@ -405,11 +407,11 @@ mailbox. This is the recommended command before <code class="docutils literal no
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.enable">
 <span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capability</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.enable" title="本定義的永久連結">¶</a></dt>
-<dd><p>Enable <em>capability</em> (see <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5161.html"><strong>RFC 5161</strong></a>).  Most capabilities do not need to be
+<dd><p>Enable <em>capability</em> (see <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5161.html"><strong>RFC 5161</strong></a>).  Most capabilities do not need to be
 enabled.  Currently only the <code class="docutils literal notranslate"><span class="pre">UTF8=ACCEPT</span></code> capability is supported
-(see <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6855.html"><strong>RFC 6855</strong></a>).</p>
+(see <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6855.html"><strong>RFC 6855</strong></a>).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入: </span>The <a class="reference internal" href="#imaplib.IMAP4.enable" title="imaplib.IMAP4.enable"><code class="xref py py-meth docutils literal notranslate"><span class="pre">enable()</span></code></a> method itself, and <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6855.html"><strong>RFC 6855</strong></a> support.</p>
+<p><span class="versionmodified added">在 3.5 版本新加入: </span>The <a class="reference internal" href="#imaplib.IMAP4.enable" title="imaplib.IMAP4.enable"><code class="xref py py-meth docutils literal notranslate"><span class="pre">enable()</span></code></a> method itself, and <span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6855.html"><strong>RFC 6855</strong></a> support.</p>
 </div>
 </dd></dl>
 
@@ -459,7 +461,7 @@ of the IMAP4 QUOTA extension defined in rfc2087.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.list">
-<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">directory</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">pattern</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.list" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.list" title="本定義的永久連結">¶</a></dt>
 <dd><p>List mailbox names in <em>directory</em> matching <em>pattern</em>.  <em>directory</em> defaults to
 the top-level mail folder, and <em>pattern</em> defaults to match anything.  Returned
 data contains a list of <code class="docutils literal notranslate"><span class="pre">LIST</span></code> responses.</p>
@@ -484,7 +486,7 @@ phrase <code class="docutils literal notranslate"><span class="pre">AUTH=CRAM-MD
 <span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.logout" title="本定義的永久連結">¶</a></dt>
 <dd><p>Shutdown connection to server. Returns server <code class="docutils literal notranslate"><span class="pre">BYE</span></code> response.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The method no longer ignores silently arbitrary exceptions.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The method no longer ignores silently arbitrary exceptions.</p>
 </div>
 </dd></dl>
 
@@ -505,7 +507,7 @@ Returned data are tuples of message part envelope and data.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.namespace">
 <span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">namespace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.namespace" title="本定義的永久連結">¶</a></dt>
-<dd><p>Returns IMAP namespaces as defined in <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2342.html"><strong>RFC 2342</strong></a>.</p>
+<dd><p>Returns IMAP namespaces as defined in <span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2342.html"><strong>RFC 2342</strong></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -528,7 +530,7 @@ the <a class="reference internal" href="#imaplib.IMAP4.read" title="imaplib.IMAP
 and <a class="reference internal" href="#imaplib.IMAP4.shutdown" title="imaplib.IMAP4.shutdown"><code class="xref py py-meth docutils literal notranslate"><span class="pre">IMAP4.shutdown()</span></code></a> methods. You may override this method.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">imaplib.open</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">host</span></code>, <code class="docutils literal notranslate"><span class="pre">port</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The <em>timeout</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The <em>timeout</em> parameter was added.</p>
 </div>
 </dd></dl>
 
@@ -580,7 +582,7 @@ code, instead of the usual type.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.search">
-<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">charset</span></em>, <em class="sig-param"><span class="pre">criterion</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.search" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.search" title="本定義的永久連結">¶</a></dt>
 <dd><p>Search mailbox for matching messages.  <em>charset</em> may be <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case
 no <code class="docutils literal notranslate"><span class="pre">CHARSET</span></code> will be specified in the request to the server.  The IMAP
 protocol requires that at least one criterion be specified; an exception will be
@@ -621,7 +623,7 @@ the <code class="docutils literal notranslate"><span class="pre">Cyrus</span></c
 
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.setannotation">
-<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">setannotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mailbox</span></em>, <em class="sig-param"><span class="pre">entry</span></em>, <em class="sig-param"><span class="pre">attribute</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.setannotation" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">setannotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mailbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.setannotation" title="本定義的永久連結">¶</a></dt>
 <dd><p>Set <code class="docutils literal notranslate"><span class="pre">ANNOTATION</span></code>s for <em>mailbox</em>. The method is non-standard, but is
 supported by the <code class="docutils literal notranslate"><span class="pre">Cyrus</span></code> server.</p>
 </dd></dl>
@@ -648,7 +650,7 @@ called by <a class="reference internal" href="#imaplib.IMAP4.logout" title="imap
 
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.sort">
-<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sort_criteria</span></em>, <em class="sig-param"><span class="pre">charset</span></em>, <em class="sig-param"><span class="pre">search_criterion</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.sort" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_criteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_criterion</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.sort" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">sort</span></code> command is a variant of <code class="docutils literal notranslate"><span class="pre">search</span></code> with sorting semantics for the
 results.  Returned data contains a space separated list of matching message
 numbers.</p>
@@ -671,10 +673,10 @@ and should be a <a class="reference internal" href="ssl.html#ssl.SSLContext" tit
 encryption on the IMAP connection.  Please read <a class="reference internal" href="ssl.html#ssl-security"><span class="std std-ref">Security considerations</span></a> for
 best practices.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The method now supports hostname check with
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The method now supports hostname check with
 <a class="reference internal" href="ssl.html#ssl.SSLContext.check_hostname" title="ssl.SSLContext.check_hostname"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ssl.SSLContext.check_hostname</span></code></a> and <em>Server Name Indication</em> (see
 <a class="reference internal" href="ssl.html#ssl.HAS_SNI" title="ssl.HAS_SNI"><code class="xref py py-data docutils literal notranslate"><span class="pre">ssl.HAS_SNI</span></code></a>).</p>
 </div>
@@ -690,7 +692,7 @@ best practices.</p>
 <dt class="sig sig-object py" id="imaplib.IMAP4.store">
 <span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.store" title="本定義的永久連結">¶</a></dt>
 <dd><p>Alters flag dispositions for messages in mailbox.  <em>command</em> is specified by
-section 6.4.6 of <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2060.html"><strong>RFC 2060</strong></a> as being one of &quot;FLAGS&quot;, &quot;+FLAGS&quot;, or &quot;-FLAGS&quot;,
+section 6.4.6 of <span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2060.html"><strong>RFC 2060</strong></a> as being one of &quot;FLAGS&quot;, &quot;+FLAGS&quot;, or &quot;-FLAGS&quot;,
 optionally with a suffix of &quot;.SILENT&quot;.</p>
 <p>For example, to set the delete flag on all messages:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">typ</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;ALL&#39;</span><span class="p">)</span>
@@ -702,7 +704,7 @@ optionally with a suffix of &quot;.SILENT&quot;.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>Creating flags containing ']' (for example: &quot;[test]&quot;) violates
-<span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a> (the IMAP protocol).  However, imaplib has historically
+<span class="target" id="index-8"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3501.html"><strong>RFC 3501</strong></a> (the IMAP protocol).  However, imaplib has historically
 allowed creation of such tags, and popular IMAP servers, such as Gmail,
 accept and produce such flags.  There are non-Python programs which also
 create such tags.  Although it is an RFC violation and IMAP clients and
@@ -721,7 +723,7 @@ improves real-world compatibility.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.thread">
-<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">thread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">threading_algorithm</span></em>, <em class="sig-param"><span class="pre">charset</span></em>, <em class="sig-param"><span class="pre">search_criterion</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.thread" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">thread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threading_algorithm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_criterion</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.thread" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">thread</span></code> command is a variant of <code class="docutils literal notranslate"><span class="pre">search</span></code> with threading semantics for
 the results.  Returned data contains a space separated list of thread members.</p>
 <p>Thread members consist of zero or more messages numbers, delimited by spaces,
@@ -740,7 +742,7 @@ algorithm.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.uid">
-<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">uid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">command</span></em>, <em class="sig-param"><span class="pre">arg</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.uid" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">uid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.uid" title="本定義的永久連結">¶</a></dt>
 <dd><p>Execute command args with messages identified by UID, rather than message
 number.  Returns response appropriate to command.  At least one argument must be
 supplied; if none are provided, the server will return an error and an exception
@@ -762,13 +764,13 @@ state. This command performs the same actions as <a class="reference internal" h
 that no messages are permanently removed from the currently
 selected mailbox.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="imaplib.IMAP4.xatom">
-<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">xatom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.xatom" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">IMAP4.</span></span><span class="sig-name descname"><span class="pre">xatom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imaplib.IMAP4.xatom" title="本定義的永久連結">¶</a></dt>
 <dd><p>Allow simple extension commands notified by server in <code class="docutils literal notranslate"><span class="pre">CAPABILITY</span></code> response.</p>
 </dd></dl>
 
@@ -794,7 +796,7 @@ the module variable <code class="docutils literal notranslate"><span class="pre"
 <a class="reference internal" href="#imaplib.IMAP4.enable" title="imaplib.IMAP4.enable"><code class="xref py py-meth docutils literal notranslate"><span class="pre">enable()</span></code></a> command is successfully issued for the <code class="docutils literal notranslate"><span class="pre">UTF8=ACCEPT</span></code>
 capability.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -826,8 +828,9 @@ retrieves and prints all messages:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imaplib</span></code> --- IMAP4 protocol client</a><ul>
 <li><a class="reference internal" href="#imap4-objects">IMAP4 Objects</a></li>
 <li><a class="reference internal" href="#imap4-example">IMAP4 Example</a></li>
@@ -835,18 +838,23 @@ retrieves and prints all messages:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="poplib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">poplib</span></code> --- POP3 protocol client</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="nntplib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nntplib</span></code> --- NNTP protocol client</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="poplib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">poplib</span></code> --- POP3 protocol client</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="nntplib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nntplib</span></code> --- NNTP protocol client</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/imaplib.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/imaplib.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -881,13 +889,11 @@ retrieves and prints all messages:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" >Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">imaplib</span></code> --- IMAP4 protocol client</a></li>
                 <li class="right">
@@ -907,25 +913,25 @@ retrieves and prints all messages:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

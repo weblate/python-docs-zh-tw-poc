@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>enum --- Support for enumerations &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enum --- Support for enumerations &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="reprlib --- Alternate repr() implementation" href="reprlib.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/enum.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code> --- Support for enumerations</a><ul>
 <li><a class="reference internal" href="#module-contents">Module Contents</a></li>
 <li><a class="reference internal" href="#creating-an-enum">Creating an Enum</a></li>
@@ -128,18 +127,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="reprlib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">reprlib</span></code> --- Alternate <code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code> implementation</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="graphlib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="reprlib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">reprlib</span></code> --- Alternate <code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code> implementation</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="graphlib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/enum.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/enum.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -175,13 +179,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">Data Types</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code> --- Support for enumerations</a></li>
                 <li class="right">
@@ -209,9 +211,9 @@
   <section id="module-enum">
 <span id="enum-support-for-enumerations"></span><h1><a class="reference internal" href="#module-enum" title="enum: Implementation of an enumeration class."><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code></a> --- Support for enumerations<a class="headerlink" href="#module-enum" title="本標題的永久連結">¶</a></h1>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/enum.py">Lib/enum.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/enum.py">Lib/enum.py</a></p>
 <hr class="docutils" />
 <p>An enumeration is a set of symbolic names (members) bound to unique,
 constant values.  Within an enumeration, the members can be compared
@@ -231,21 +233,21 @@ sets of names and values: <a class="reference internal" href="#enum.Enum" title=
 helper, <a class="reference internal" href="#enum.auto" title="enum.auto"><code class="xref py py-class docutils literal notranslate"><span class="pre">auto</span></code></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="enum.Enum">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">Enum</span></span><a class="headerlink" href="#enum.Enum" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">Enum</span></span><a class="headerlink" href="#enum.Enum" title="本定義的永久連結">¶</a></dt>
 <dd><p>Base class for creating enumerated constants.  See section
 <a class="reference internal" href="#functional-api">Functional API</a> for an alternate construction syntax.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="enum.IntEnum">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">IntEnum</span></span><a class="headerlink" href="#enum.IntEnum" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">IntEnum</span></span><a class="headerlink" href="#enum.IntEnum" title="本定義的永久連結">¶</a></dt>
 <dd><p>Base class for creating enumerated constants that are also
 subclasses of <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="enum.IntFlag">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">IntFlag</span></span><a class="headerlink" href="#enum.IntFlag" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">IntFlag</span></span><a class="headerlink" href="#enum.IntFlag" title="本定義的永久連結">¶</a></dt>
 <dd><p>Base class for creating enumerated constants that can be combined using
 the bitwise operators without losing their <a class="reference internal" href="#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></a> membership.
 <a class="reference internal" href="#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></a> members are also subclasses of <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.</p>
@@ -253,7 +255,7 @@ the bitwise operators without losing their <a class="reference internal" href="#
 
 <dl class="py class">
 <dt class="sig sig-object py" id="enum.Flag">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">Flag</span></span><a class="headerlink" href="#enum.Flag" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">Flag</span></span><a class="headerlink" href="#enum.Flag" title="本定義的永久連結">¶</a></dt>
 <dd><p>Base class for creating enumerated constants that can be combined using
 the bitwise operations without losing their <a class="reference internal" href="#enum.Flag" title="enum.Flag"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flag</span></code></a> membership.</p>
 </dd></dl>
@@ -266,12 +268,12 @@ the bitwise operations without losing their <a class="reference internal" href="
 
 <dl class="py class">
 <dt class="sig sig-object py" id="enum.auto">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">auto</span></span><a class="headerlink" href="#enum.auto" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">auto</span></span><a class="headerlink" href="#enum.auto" title="本定義的永久連結">¶</a></dt>
 <dd><p>Instances are replaced with an appropriate value for Enum members.  By default, the initial value starts at 1.</p>
 </dd></dl>
 
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span><code class="docutils literal notranslate"><span class="pre">Flag</span></code>, <code class="docutils literal notranslate"><span class="pre">IntFlag</span></code>, <code class="docutils literal notranslate"><span class="pre">auto</span></code></p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span><code class="docutils literal notranslate"><span class="pre">Flag</span></code>, <code class="docutils literal notranslate"><span class="pre">IntFlag</span></code>, <code class="docutils literal notranslate"><span class="pre">auto</span></code></p>
 </div>
 </section>
 <section id="creating-an-enum">
@@ -617,7 +619,7 @@ any members.  So this is forbidden:</p>
 <span class="gp">...</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
-<span class="gr">TypeError</span>: <span class="n">Cannot extend enumerations</span>
+<span class="gr">TypeError</span>: <span class="n">MoreColor: cannot extend enumeration &#39;Color&#39;</span>
 </pre></div>
 </div>
 <p>But this is allowed:</p>
@@ -753,7 +755,7 @@ SomeData in the global scope:</p>
 </dd>
 </dl>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <em>start</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <em>start</em> parameter was added.</p>
 </div>
 </section>
 <section id="derived-enumerations">
@@ -814,7 +816,7 @@ members also subclass <a class="reference internal" href="functions.html#int" ti
 used.  Any operation on an <a class="reference internal" href="#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></a> member besides the bit-wise
 operations will lose the <a class="reference internal" href="#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></a> membership.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 <p>Sample <a class="reference internal" href="#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></a> class:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntFlag</span>
@@ -868,7 +870,7 @@ other <a class="reference internal" href="#enum.Flag" title="enum.Flag"><code cl
 specify the values directly it is recommended to use <a class="reference internal" href="#enum.auto" title="enum.auto"><code class="xref py py-class docutils literal notranslate"><span class="pre">auto</span></code></a> as the
 value and let <a class="reference internal" href="#enum.Flag" title="enum.Flag"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flag</span></code></a> select an appropriate value.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 <p>Like <a class="reference internal" href="#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></a>, if a combination of <a class="reference internal" href="#enum.Flag" title="enum.Flag"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flag</span></code></a> members results in no
 flags being set, the boolean evaluation is <a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-data docutils literal notranslate"><span class="pre">False</span></code></a>:</p>
@@ -1096,7 +1098,7 @@ to handle any extra arguments:</p>
 <span class="gp">... </span>    <span class="n">BLEACHED_CORAL</span> <span class="o">=</span> <span class="p">()</span> <span class="c1"># New color, no Pantone code yet!</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Swatch</span><span class="o">.</span><span class="n">SEA_GREEN</span>
-<span class="go">&lt;Swatch.SEA_GREEN: 2&gt;</span>
+<span class="go">&lt;Swatch.SEA_GREEN&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Swatch</span><span class="o">.</span><span class="n">SEA_GREEN</span><span class="o">.</span><span class="n">pantone</span>
 <span class="go">&#39;1246&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Swatch</span><span class="o">.</span><span class="n">BLEACHED_CORAL</span><span class="o">.</span><span class="n">pantone</span>
@@ -1275,10 +1277,10 @@ class</p></li>
 overridden</p></li>
 </ul>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span><code class="docutils literal notranslate"><span class="pre">_missing_</span></code>, <code class="docutils literal notranslate"><span class="pre">_order_</span></code>, <code class="docutils literal notranslate"><span class="pre">_generate_next_value_</span></code></p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span><code class="docutils literal notranslate"><span class="pre">_missing_</span></code>, <code class="docutils literal notranslate"><span class="pre">_order_</span></code>, <code class="docutils literal notranslate"><span class="pre">_generate_next_value_</span></code></p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入: </span><code class="docutils literal notranslate"><span class="pre">_ignore_</span></code></p>
+<p><span class="versionmodified added">在 3.7 版本新加入: </span><code class="docutils literal notranslate"><span class="pre">_ignore_</span></code></p>
 </div>
 <p>To help keep Python 2 / Python 3 code in sync an <code class="xref py py-attr docutils literal notranslate"><span class="pre">_order_</span></code> attribute can
 be provided.  It will be checked against the actual order of the enumeration
@@ -1302,9 +1304,9 @@ order is lost before it can be recorded.</p>
 </section>
 <section id="private-names">
 <h4>_Private__names<a class="headerlink" href="#private-names" title="本標題的永久連結">¶</a></h4>
-<p>Private names will be normal attributes in Python 3.10 instead of either an error
-or a member (depending on if the name ends with an underscore). Using these names
-in 3.9 will issue a <a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>.</p>
+<p><a class="reference internal" href="../reference/expressions.html#private-name-mangling"><span class="std std-ref">Private names</span></a> will be normal attributes in Python
+3.11 instead of either an error or a member (depending on if the name ends with
+an underscore). Using these names in 3.10 will issue a <a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>.</p>
 </section>
 <section id="enum-member-type">
 <h4><code class="docutils literal notranslate"><span class="pre">Enum</span></code> member type<a class="headerlink" href="#enum-member-type" title="本標題的永久連結">¶</a></h4>
@@ -1325,8 +1327,12 @@ all-uppercase names for members):</p>
 <span class="go">2</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>This behavior is deprecated and will be removed in 3.11.</p>
+</div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變.</span></p>
+<p><span class="versionmodified changed">在 3.5 版本變更.</span></p>
 </div>
 </section>
 <section id="boolean-value-of-enum-classes-and-members">
@@ -1350,7 +1356,7 @@ but not of the class:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">Planet</span><span class="p">)</span>
 <span class="go">[&#39;EARTH&#39;, &#39;JUPITER&#39;, &#39;MARS&#39;, &#39;MERCURY&#39;, &#39;NEPTUNE&#39;, &#39;SATURN&#39;, &#39;URANUS&#39;, &#39;VENUS&#39;, &#39;__class__&#39;, &#39;__doc__&#39;, &#39;__members__&#39;, &#39;__module__&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">Planet</span><span class="o">.</span><span class="n">EARTH</span><span class="p">)</span>
-<span class="go">[&#39;__class__&#39;, &#39;__doc__&#39;, &#39;__module__&#39;, &#39;name&#39;, &#39;surface_gravity&#39;, &#39;value&#39;]</span>
+<span class="go">[&#39;__class__&#39;, &#39;__doc__&#39;, &#39;__module__&#39;, &#39;mass&#39;, &#39;name&#39;, &#39;radius&#39;, &#39;surface_gravity&#39;, &#39;value&#39;]</span>
 </pre></div>
 </div>
 </section>
@@ -1372,6 +1378,12 @@ all named flags and all named combinations of flags that are in the value:</p>
 <span class="go">&lt;Color.CYAN|MAGENTA|BLUE|YELLOW|GREEN|RED: 7&gt;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>In 3.11 unnamed combinations of flags will only produce the canonical flag
+members (aka single-value flags).  So <code class="docutils literal notranslate"><span class="pre">Color(7)</span></code> will produce something
+like <code class="docutils literal notranslate"><span class="pre">&lt;Color.BLUE|GREEN|RED:</span> <span class="pre">7&gt;</span></code>.</p>
+</div>
 </section>
 </section>
 </section>
@@ -1384,8 +1396,9 @@ all named flags and all named combinations of flags that are in the value:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code> --- Support for enumerations</a><ul>
 <li><a class="reference internal" href="#module-contents">Module Contents</a></li>
 <li><a class="reference internal" href="#creating-an-enum">Creating an Enum</a></li>
@@ -1440,18 +1453,23 @@ all named flags and all named combinations of flags that are in the value:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="reprlib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">reprlib</span></code> --- Alternate <code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code> implementation</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="graphlib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="reprlib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">reprlib</span></code> --- Alternate <code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code> implementation</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="graphlib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/enum.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/enum.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1486,13 +1504,11 @@ all named flags and all named combinations of flags that are in the value:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" >Data Types</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code> --- Support for enumerations</a></li>
                 <li class="right">
@@ -1512,25 +1528,25 @@ all named flags and all named combinations of flags that are in the value:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

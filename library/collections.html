@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>collections --- 容器資料型態 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>collections --- Container datatypes &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="calendar --- General calendar-related functions" href="calendar.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/collections.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,14 +70,15 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- 容器資料型態</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- Container datatypes</a><ul>
 <li><a class="reference internal" href="#chainmap-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code> objects</a><ul>
 <li><a class="reference internal" href="#chainmap-examples-and-recipes"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code> Examples and Recipes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#counter-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code> 物件</a></li>
+<li><a class="reference internal" href="#counter-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code> objects</a></li>
 <li><a class="reference internal" href="#deque-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">deque</span></code> objects</a><ul>
 <li><a class="reference internal" href="#deque-recipes"><code class="xref py py-class docutils literal notranslate"><span class="pre">deque</span></code> Recipes</a></li>
 </ul>
@@ -100,18 +99,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="calendar.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">calendar</span></code> --- General calendar-related functions</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="collections.abc.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections.abc</span></code> --- Abstract Base Classes for Containers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="calendar.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">calendar</span></code> --- General calendar-related functions</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="collections.abc.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections.abc</span></code> --- Abstract Base Classes for Containers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/collections.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/collections.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -147,15 +151,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">Data Types</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- 容器資料型態</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- Container datatypes</a></li>
                 <li class="right">
                     
 
@@ -179,10 +181,12 @@
           <div class="body" role="main">
             
   <section id="module-collections">
-<span id="collections-container-datatypes"></span><h1><a class="reference internal" href="#module-collections" title="collections: Container datatypes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code></a> --- 容器資料型態<a class="headerlink" href="#module-collections" title="本標題的永久連結">¶</a></h1>
-<p><strong>原始碼：</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/collections/__init__.py">Lib/collections/__init__.py</a></p>
+<span id="collections-container-datatypes"></span><h1><a class="reference internal" href="#module-collections" title="collections: Container datatypes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code></a> --- Container datatypes<a class="headerlink" href="#module-collections" title="本標題的永久連結">¶</a></h1>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/collections/__init__.py">Lib/collections/__init__.py</a></p>
 <hr class="docutils" />
-<p>這個模組實作了一些特別的容器資料型態，用來替代 Python 一般內建的容器，例如 <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> 、 <a class="reference internal" href="stdtypes.html#list" title="list"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> 、 <a class="reference internal" href="stdtypes.html#set" title="set"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a> 和 <a class="reference internal" href="stdtypes.html#tuple" title="tuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a> 。</p>
+<p>This module implements specialized container datatypes providing alternatives to
+Python's general purpose built-in containers, <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>, <a class="reference internal" href="stdtypes.html#list" title="list"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>,
+<a class="reference internal" href="stdtypes.html#set" title="set"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a>, and <a class="reference internal" href="stdtypes.html#tuple" title="tuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 24%" />
@@ -190,22 +194,22 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#collections.namedtuple" title="collections.namedtuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a></p></td>
-<td><p>用來建立一個欄位擁有名字的 tuple 子類別的函數</p></td>
+<td><p>factory function for creating tuple subclasses with named fields</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#collections.deque" title="collections.deque"><code class="xref py py-class docutils literal notranslate"><span class="pre">deque</span></code></a></p></td>
-<td><p>一個類似 list 的容器，可以快速的在頭尾加入元素與取出元素。</p></td>
+<td><p>list-like container with fast appends and pops on either end</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#collections.ChainMap" title="collections.ChainMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code></a></p></td>
-<td><p>一個像是 dict 的類別，用來為多個 mapping 建立單一的 view 。</p></td>
+<td><p>dict-like class for creating a single view of multiple mappings</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#collections.Counter" title="collections.Counter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code></a></p></td>
-<td><p>dict 的子類別，用來計算可 hash 物件的數量。</p></td>
+<td><p>dict subclass for counting hashable objects</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a></p></td>
-<td><p>dict 的子類別，會記錄物件被加入的順序。</p></td>
+<td><p>dict subclass that remembers the order entries were added</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#collections.defaultdict" title="collections.defaultdict"><code class="xref py py-class docutils literal notranslate"><span class="pre">defaultdict</span></code></a></p></td>
-<td><p>dict 的子類別，在值不存在 dict 當中時會呼叫一個產生函式。</p></td>
+<td><p>dict subclass that calls a factory function to supply missing values</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#collections.UserDict" title="collections.UserDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></a></p></td>
 <td><p>wrapper around dictionary objects for easier dict subclassing</p></td>
@@ -218,15 +222,10 @@
 </tr>
 </tbody>
 </table>
-<div class="deprecated-removed">
-<p><span class="versionmodified">Deprecated since version 3.3, will be removed in version 3.10: </span>Moved <a class="reference internal" href="collections.abc.html#collections-abstract-base-classes"><span class="std std-ref">Collections Abstract Base Classes</span></a> to the <a class="reference internal" href="collections.abc.html#module-collections.abc" title="collections.abc: Abstract base classes for containers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections.abc</span></code></a> module.
-For backwards compatibility, they continue to be visible in this module through
-Python 3.9.</p>
-</div>
 <section id="chainmap-objects">
 <h2><a class="reference internal" href="#collections.ChainMap" title="collections.ChainMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code></a> objects<a class="headerlink" href="#chainmap-objects" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <p>A <a class="reference internal" href="#collections.ChainMap" title="collections.ChainMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code></a> class is provided for quickly linking a number of mappings
 so they can be treated as a single unit.  It is often much faster than creating
@@ -234,7 +233,7 @@ a new dictionary and running multiple <a class="reference internal" href="stdtyp
 <p>The class can be used to simulate nested scopes and is useful in templating.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="collections.ChainMap">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">ChainMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">maps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.ChainMap" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">ChainMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">maps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.ChainMap" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#collections.ChainMap" title="collections.ChainMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code></a> groups multiple dicts or other mappings together to
 create a single, updateable view.  If no <em>maps</em> are specified, a single empty
 dictionary is provided so that a new chain always has at least one mapping.</p>
@@ -259,16 +258,20 @@ always contain at least one mapping.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="collections.ChainMap.new_child">
-<span class="sig-name descname"><span class="pre">new_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.ChainMap.new_child" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">new_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.ChainMap.new_child" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns a new <a class="reference internal" href="#collections.ChainMap" title="collections.ChainMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code></a> containing a new map followed by
 all of the maps in the current instance.  If <code class="docutils literal notranslate"><span class="pre">m</span></code> is specified,
 it becomes the new map at the front of the list of mappings; if not
 specified, an empty dict is used, so that a call to <code class="docutils literal notranslate"><span class="pre">d.new_child()</span></code>
-is equivalent to: <code class="docutils literal notranslate"><span class="pre">ChainMap({},</span> <span class="pre">*d.maps)</span></code>.  This method is used for
-creating subcontexts that can be updated without altering values in any
-of the parent mappings.</p>
+is equivalent to: <code class="docutils literal notranslate"><span class="pre">ChainMap({},</span> <span class="pre">*d.maps)</span></code>. If any keyword arguments
+are specified, they update passed map or new empty dict. This method
+is used for creating subcontexts that can be updated without altering
+values in any of the parent mappings.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The optional <code class="docutils literal notranslate"><span class="pre">m</span></code> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The optional <code class="docutils literal notranslate"><span class="pre">m</span></code> parameter was added.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Keyword arguments support was added.</p>
 </div>
 </dd></dl>
 
@@ -300,7 +303,7 @@ starting with the last mapping:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Added support for <code class="docutils literal notranslate"><span class="pre">|</span></code> and <code class="docutils literal notranslate"><span class="pre">|=</span></code> operators, specified in <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added support for <code class="docutils literal notranslate"><span class="pre">|</span></code> and <code class="docutils literal notranslate"><span class="pre">|=</span></code> operators, specified in <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>.</p>
 </div>
 </dd></dl>
 
@@ -397,8 +400,9 @@ updates keys found deeper in the chain:</p>
 </section>
 </section>
 <section id="counter-objects">
-<h2><a class="reference internal" href="#collections.Counter" title="collections.Counter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code></a> 物件<a class="headerlink" href="#counter-objects" title="本標題的永久連結">¶</a></h2>
-<p>提供一個計數工具支援方便且快速的對應 ，舉例：</p>
+<h2><a class="reference internal" href="#collections.Counter" title="collections.Counter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code></a> objects<a class="headerlink" href="#counter-objects" title="本標題的永久連結">¶</a></h2>
+<p>A counter tool is provided to support convenient and rapid tallies.
+For example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Tally occurrences of words in a list</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cnt</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]:</span>
@@ -416,41 +420,45 @@ updates keys found deeper in the chain:</p>
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="collections.Counter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">Counter</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">iterable-or-mapping</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">Counter</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">iterable-or-mapping</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#collections.Counter" title="collections.Counter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code></a> is a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> subclass for counting hashable objects.
 It is a collection where elements are stored as dictionary keys
 and their counts are stored as dictionary values.  Counts are allowed to be
 any integer value including zero or negative counts.  The <a class="reference internal" href="#collections.Counter" title="collections.Counter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code></a>
 class is similar to bags or multisets in other languages.</p>
-<p>被計數的元素來自一個 <em>iterable</em> 或是被其他的 <em>mapping</em> (or counter) 初始化。</p>
+<p>Elements are counted from an <em>iterable</em> or initialized from another
+<em>mapping</em> (or counter):</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>                           <span class="c1"># a new, empty counter</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="s1">&#39;gallahad&#39;</span><span class="p">)</span>                 <span class="c1"># a new counter from an iterable</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;red&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>      <span class="c1"># a new counter from a mapping</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">cats</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">dogs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>             <span class="c1"># a new counter from keyword args</span>
 </pre></div>
 </div>
-<p>Counter 物件擁有一個字典的使用介面，除了遇到 Counter 中沒有的值時會回傳計數 0 取代 <a class="reference internal" href="exceptions.html#KeyError" title="KeyError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code></a> 這點不同。</p>
+<p>Counter objects have a dictionary interface except that they return a zero
+count for missing items instead of raising a <a class="reference internal" href="exceptions.html#KeyError" title="KeyError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code></a>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;bacon&#39;</span><span class="p">]</span>                              <span class="c1"># count of a missing element is zero</span>
 <span class="go">0</span>
 </pre></div>
 </div>
-<p>將一個值的計數設為 0 並不會真的從 counter 中刪除這個元素，使用 <code class="docutils literal notranslate"><span class="pre">del</span></code> 來刪除元素。</p>
+<p>Setting a count to zero does not remove an element from a counter.
+Use <code class="docutils literal notranslate"><span class="pre">del</span></code> to remove it entirely:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;sausage&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                        <span class="c1"># counter entry with a zero count</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;sausage&#39;</span><span class="p">]</span>                        <span class="c1"># del actually removes the entry</span>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>As a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> subclass, <a class="reference internal" href="#collections.Counter" title="collections.Counter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code></a>
-Inherited the capability to remember insertion order.  Math operations
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>As a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> subclass, <a class="reference internal" href="#collections.Counter" title="collections.Counter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code></a>
+inherited the capability to remember insertion order.  Math operations
 on <em>Counter</em> objects also preserve order.  Results are ordered
 according to when an element is first encountered in the left operand
 and then by the order encountered in the right operand.</p>
 </div>
-<p>除了字典的方法外，Counter 物件額外支援三個新方法。</p>
+<p>Counter objects support additional methods beyond those available for all
+dictionaries:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="collections.Counter.elements">
 <span class="sig-name descname"><span class="pre">elements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter.elements" title="本定義的永久連結">¶</a></dt>
@@ -466,7 +474,7 @@ element's count is less than one, <a class="reference internal" href="#collectio
 
 <dl class="py method">
 <dt class="sig sig-object py" id="collections.Counter.most_common">
-<span class="sig-name descname"><span class="pre">most_common</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">n</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter.most_common" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">most_common</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter.most_common" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a list of the <em>n</em> most common elements and their counts from the
 most common to the least.  If <em>n</em> is omitted or <code class="docutils literal notranslate"><span class="pre">None</span></code>,
 <a class="reference internal" href="#collections.Counter.most_common" title="collections.Counter.most_common"><code class="xref py py-meth docutils literal notranslate"><span class="pre">most_common()</span></code></a> returns <em>all</em> elements in the counter.
@@ -479,7 +487,7 @@ Elements with equal counts are ordered in the order first encountered:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="collections.Counter.subtract">
-<span class="sig-name descname"><span class="pre">subtract</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">iterable-or-mapping</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter.subtract" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">subtract</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">iterable-or-mapping</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter.subtract" title="本定義的永久連結">¶</a></dt>
 <dd><p>Elements are subtracted from an <em>iterable</em> or from another <em>mapping</em>
 (or counter).  Like <a class="reference internal" href="stdtypes.html#dict.update" title="dict.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dict.update()</span></code></a> but subtracts counts instead
 of replacing them.  Both inputs and outputs may be zero or negative.</p>
@@ -491,7 +499,21 @@ of replacing them.  Both inputs and outputs may be zero or negative.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="collections.Counter.total">
+<span class="sig-name descname"><span class="pre">total</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter.total" title="本定義的永久連結">¶</a></dt>
+<dd><p>Compute the sum of the counts.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">total</span><span class="p">()</span>
+<span class="go">15</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -505,7 +527,7 @@ except for two which work differently for counters.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="collections.Counter.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">iterable-or-mapping</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter.update" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">iterable-or-mapping</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.Counter.update" title="本定義的永久連結">¶</a></dt>
 <dd><p>Elements are counted from an <em>iterable</em> or added-in from another
 <em>mapping</em> (or counter).  Like <a class="reference internal" href="stdtypes.html#dict.update" title="dict.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dict.update()</span></code></a> but adds counts
 instead of replacing them.  Also, the <em>iterable</em> is expected to be a
@@ -514,8 +536,20 @@ sequence of elements, not a sequence of <code class="docutils literal notranslat
 
 </dd></dl>
 
+<p>Counters support rich comparison operators for equality, subset, and
+superset relationships: <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>.
+All of those tests treat missing elements as having zero counts so that
+<code class="docutils literal notranslate"><span class="pre">Counter(a=1)</span> <span class="pre">==</span> <span class="pre">Counter(a=1,</span> <span class="pre">b=0)</span></code> returns true.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入: </span>Rich comparison operations were added.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>In equality tests, missing elements are treated as having zero counts.
+Formerly, <code class="docutils literal notranslate"><span class="pre">Counter(a=3)</span></code> and <code class="docutils literal notranslate"><span class="pre">Counter(a=3,</span> <span class="pre">b=0)</span></code> were considered
+distinct.</p>
+</div>
 <p>Common patterns for working with <a class="reference internal" href="#collections.Counter" title="collections.Counter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code></a> objects:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>                 <span class="c1"># total of all counts</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">total</span><span class="p">()</span>                       <span class="c1"># total of all counts</span>
 <span class="n">c</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>                       <span class="c1"># reset all counts</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>                         <span class="c1"># list unique elements</span>
 <span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>                          <span class="c1"># convert to a set</span>
@@ -530,18 +564,23 @@ sequence of elements, not a sequence of <code class="docutils literal notranslat
 objects to produce multisets (counters that have counts greater than zero).
 Addition and subtraction combine counters by adding or subtracting the counts
 of corresponding elements.  Intersection and union return the minimum and
-maximum of corresponding counts.  Each operation can accept inputs with signed
+maximum of corresponding counts.  Equality and inclusion compare
+corresponding counts.  Each operation can accept inputs with signed
 counts, but the output will exclude results with counts of zero or less.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">+</span> <span class="n">d</span>                       <span class="c1"># add two counters together:  c[x] + d[x]</span>
 <span class="go">Counter({&#39;a&#39;: 4, &#39;b&#39;: 3})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">-</span> <span class="n">d</span>                       <span class="c1"># subtract (keeping only positive counts)</span>
 <span class="go">Counter({&#39;a&#39;: 2})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">&amp;</span> <span class="n">d</span>                       <span class="c1"># intersection:  min(c[x], d[x]) </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">&amp;</span> <span class="n">d</span>                       <span class="c1"># intersection:  min(c[x], d[x])</span>
 <span class="go">Counter({&#39;a&#39;: 1, &#39;b&#39;: 1})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">|</span> <span class="n">d</span>                       <span class="c1"># union:  max(c[x], d[x])</span>
 <span class="go">Counter({&#39;a&#39;: 3, &#39;b&#39;: 2})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">==</span> <span class="n">d</span>                      <span class="c1"># equality:  c[x] == d[x]</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">&lt;=</span> <span class="n">d</span>                      <span class="c1"># inclusion:  c[x] &lt;= d[x]</span>
+<span class="go">False</span>
 </pre></div>
 </div>
 <p>Unary addition and subtraction are shortcuts for adding an empty counter
@@ -554,7 +593,7 @@ or subtracting from an empty counter.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入: </span>Added support for unary plus, unary minus, and in-place multiset operations.</p>
+<p><span class="versionmodified added">在 3.3 版本新加入: </span>Added support for unary plus, unary minus, and in-place multiset operations.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -604,7 +643,7 @@ elements, see <a class="reference internal" href="itertools.html#itertools.combi
 <h2><a class="reference internal" href="#collections.deque" title="collections.deque"><code class="xref py py-class docutils literal notranslate"><span class="pre">deque</span></code></a> objects<a class="headerlink" href="#deque-objects" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="collections.deque">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">deque</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">iterable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">maxlen</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">deque</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">maxlen</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns a new deque object initialized left-to-right (using <a class="reference internal" href="#collections.deque.append" title="collections.deque.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">append()</span></code></a>) with
 data from <em>iterable</em>.  If <em>iterable</em> is not specified, the new deque is empty.</p>
 <p>Deques are a generalization of stacks and queues (the name is pronounced &quot;deck&quot;
@@ -646,7 +685,7 @@ where only the most recent activity is of interest.</p>
 <span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.copy" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a shallow copy of the deque.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -655,7 +694,7 @@ where only the most recent activity is of interest.</p>
 <span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.count" title="本定義的永久連結">¶</a></dt>
 <dd><p>Count the number of deque elements equal to <em>x</em>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -676,12 +715,12 @@ elements in the iterable argument.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="collections.deque.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">start</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">stop</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.index" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.index" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the position of <em>x</em> in the deque (at or after index <em>start</em>
 and before index <em>stop</em>).  Returns the first match or raises
 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if not found.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -692,7 +731,7 @@ and before index <em>stop</em>).  Returns the first match or raises
 <p>If the insertion would cause a bounded deque to grow beyond <em>maxlen</em>,
 an <a class="reference internal" href="exceptions.html#IndexError" title="IndexError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IndexError</span></code></a> is raised.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -722,7 +761,7 @@ elements are present, raises an <a class="reference internal" href="exceptions.h
 <span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.reverse" title="本定義的永久連結">¶</a></dt>
 <dd><p>Reverse the elements of the deque in-place and then return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -742,7 +781,7 @@ equivalent to <code class="docutils literal notranslate"><span class="pre">d.app
 <span class="sig-name descname"><span class="pre">maxlen</span></span><a class="headerlink" href="#collections.deque.maxlen" title="本定義的永久連結">¶</a></dt>
 <dd><p>Maximum size of a deque or <code class="docutils literal notranslate"><span class="pre">None</span></code> if unbounded.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -874,7 +913,7 @@ stack manipulations such as <code class="docutils literal notranslate"><span cla
 <h2><a class="reference internal" href="#collections.defaultdict" title="collections.defaultdict"><code class="xref py py-class docutils literal notranslate"><span class="pre">defaultdict</span></code></a> objects<a class="headerlink" href="#defaultdict-objects" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="collections.defaultdict">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">defaultdict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">default_factory=None</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.defaultdict" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">defaultdict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_factory=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">/</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.defaultdict" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a new dictionary-like object.  <a class="reference internal" href="#collections.defaultdict" title="collections.defaultdict"><code class="xref py py-class docutils literal notranslate"><span class="pre">defaultdict</span></code></a> is a subclass of the
 built-in <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> class.  It overrides one method and adds one writable
 instance variable.  The remaining functionality is the same as for the
@@ -914,7 +953,7 @@ initialized from the first argument to the constructor, if present, or to
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Added merge (<code class="docutils literal notranslate"><span class="pre">|</span></code>) and update (<code class="docutils literal notranslate"><span class="pre">|=</span></code>) operators, specified in
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added merge (<code class="docutils literal notranslate"><span class="pre">|</span></code>) and update (<code class="docutils literal notranslate"><span class="pre">|=</span></code>) operators, specified in
 <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>.</p>
 </div>
 </dd></dl>
@@ -1025,20 +1064,20 @@ lightweight and require no more memory than regular tuples.</p>
 <p>To support pickling, the named tuple class should be assigned to a variable
 that matches <em>typename</em>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added support for <em>rename</em>.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added support for <em>rename</em>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>The <em>verbose</em> and <em>rename</em> parameters became
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>The <em>verbose</em> and <em>rename</em> parameters became
 <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only arguments</span></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added the <em>module</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added the <em>module</em> parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Removed the <em>verbose</em> parameter and the <code class="xref py py-attr docutils literal notranslate"><span class="pre">_source</span></code> attribute.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Removed the <em>verbose</em> parameter and the <code class="xref py py-attr docutils literal notranslate"><span class="pre">_source</span></code> attribute.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added the <em>defaults</em> parameter and the <code class="xref py py-attr docutils literal notranslate"><span class="pre">_field_defaults</span></code>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added the <em>defaults</em> parameter and the <code class="xref py py-attr docutils literal notranslate"><span class="pre">_field_defaults</span></code>
 attribute.</p>
 </div>
 </dd></dl>
@@ -1078,7 +1117,7 @@ three additional methods and two attributes.  To prevent conflicts with
 field names, the method and attribute names start with an underscore.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="collections.somenamedtuple._make">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-prename descclassname"><span class="pre">somenamedtuple.</span></span><span class="sig-name descname"><span class="pre">_make</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.somenamedtuple._make" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">somenamedtuple.</span></span><span class="sig-name descname"><span class="pre">_make</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.somenamedtuple._make" title="本定義的永久連結">¶</a></dt>
 <dd><p>Class method that makes a new instance from an existing sequence or iterable.</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="o">.</span><span class="n">_make</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -1098,10 +1137,10 @@ values:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Returns an <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> instead of a regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Returns an <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> instead of a regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Returns a regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> instead of an <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a>.
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Returns a regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> instead of an <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a>.
 As of Python 3.7, regular dicts are guaranteed to be ordered.  If the
 extra features of <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> are required, the suggested
 remediation is to cast the result to the desired type:
@@ -1160,7 +1199,7 @@ function:</p>
 </pre></div>
 </div>
 <p>To convert a dictionary to a named tuple, use the double-star-operator
-(as described in <a class="reference internal" href="../tutorial/controlflow.html#tut-unpacking-arguments"><span class="std std-ref">拆解引數列表（Unpacking Argument Lists）</span></a>):</p>
+(as described in <a class="reference internal" href="../tutorial/controlflow.html#tut-unpacking-arguments"><span class="std std-ref">Unpacking Argument Lists</span></a>):</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
 <span class="go">Point(x=11, y=22)</span>
@@ -1200,7 +1239,7 @@ fields:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Property docstrings became writeable.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Property docstrings became writeable.</p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
@@ -1230,29 +1269,45 @@ important now that the built-in <a class="reference internal" href="stdtypes.htm
 to remember insertion order (this new behavior became guaranteed in
 Python 3.7).</p>
 <p>Some differences from <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> still remain:</p>
-<ul class="simple">
+<ul>
 <li><p>The regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> was designed to be very good at mapping
 operations.  Tracking insertion order was secondary.</p></li>
 <li><p>The <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> was designed to be good at reordering operations.
 Space efficiency, iteration speed, and the performance of update
 operations were secondary.</p></li>
-<li><p>Algorithmically, <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> can handle frequent reordering
-operations better than <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.  This makes it suitable for tracking
-recent accesses (for example in an <a class="reference external" href="https://medium.com/&#64;krishankantsinghal/my-first-blog-on-medium-583159139237">LRU cache</a>).</p></li>
-<li><p>The equality operation for <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> checks for matching order.</p></li>
+<li><p>The <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> algorithm can handle frequent reordering operations
+better than <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.  As shown in the recipes below, this makes it
+suitable for implementing various kinds of LRU caches.</p></li>
+<li><p>The equality operation for <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> checks for matching order.</p>
+<p>A regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> can emulate the order sensitive equality test with
+<code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">==</span> <span class="pre">q</span> <span class="pre">and</span> <span class="pre">all(k1</span> <span class="pre">==</span> <span class="pre">k2</span> <span class="pre">for</span> <span class="pre">k1,</span> <span class="pre">k2</span> <span class="pre">in</span> <span class="pre">zip(p,</span> <span class="pre">q))</span></code>.</p>
+</li>
 <li><p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">popitem()</span></code> method of <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> has a different
-signature.  It accepts an optional argument to specify which item is popped.</p></li>
-<li><p><a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> has a <code class="xref py py-meth docutils literal notranslate"><span class="pre">move_to_end()</span></code> method to
-efficiently reposition an element to an endpoint.</p></li>
+signature.  It accepts an optional argument to specify which item is popped.</p>
+<p>A regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> can emulate OrderedDict's <code class="docutils literal notranslate"><span class="pre">od.popitem(last=True)</span></code>
+with <code class="docutils literal notranslate"><span class="pre">d.popitem()</span></code> which is guaranteed to pop the rightmost (last) item.</p>
+<p>A regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> can emulate OrderedDict's <code class="docutils literal notranslate"><span class="pre">od.popitem(last=False)</span></code>
+with <code class="docutils literal notranslate"><span class="pre">(k</span> <span class="pre">:=</span> <span class="pre">next(iter(d)),</span> <span class="pre">d.pop(k))</span></code> which will return and remove the
+leftmost (first) item if it exists.</p>
+</li>
+<li><p><a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> has a <code class="xref py py-meth docutils literal notranslate"><span class="pre">move_to_end()</span></code> method to efficiently
+reposition an element to an endpoint.</p>
+<p>A regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> can emulate OrderedDict's <code class="docutils literal notranslate"><span class="pre">od.move_to_end(k,</span>
+<span class="pre">last=True)</span></code> with <code class="docutils literal notranslate"><span class="pre">d[k]</span> <span class="pre">=</span> <span class="pre">d.pop(k)</span></code> which will move the key and its
+associated value to the rightmost (last) position.</p>
+<p>A regular <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> does not have an efficient equivalent for
+OrderedDict's <code class="docutils literal notranslate"><span class="pre">od.move_to_end(k,</span> <span class="pre">last=False)</span></code> which moves the key
+and its associated value to the leftmost (first) position.</p>
+</li>
 <li><p>Until Python 3.8, <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> lacked a <code class="xref py py-meth docutils literal notranslate"><span class="pre">__reversed__()</span></code> method.</p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="collections.OrderedDict">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">OrderedDict</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">items</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.OrderedDict" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">OrderedDict</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.OrderedDict" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return an instance of a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> subclass that has methods
 specialized for rearranging dictionary order.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="collections.OrderedDict.popitem">
@@ -1270,17 +1325,17 @@ or <abbr title="first-in, first-out">FIFO</abbr> order if false.</p>
 is moved to the right end if <em>last</em> is true (the default) or to the
 beginning if <em>last</em> is false.  Raises <a class="reference internal" href="exceptions.html#KeyError" title="KeyError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code></a> if the <em>key</em> does
 not exist:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">)</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="go">&#39;acdeb&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="go">&#39;bacde&#39;</span>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1295,16 +1350,16 @@ Equality tests between <a class="reference internal" href="#collections.OrderedD
 dictionaries.  This allows <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> objects to be substituted
 anywhere a regular dictionary is used.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The items, keys, and values <a class="reference internal" href="../glossary.html#term-dictionary-view"><span class="xref std std-term">views</span></a>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The items, keys, and values <a class="reference internal" href="../glossary.html#term-dictionary-view"><span class="xref std std-term">views</span></a>
 of <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> now support reverse iteration using <a class="reference internal" href="functions.html#reversed" title="reversed"><code class="xref py py-func docutils literal notranslate"><span class="pre">reversed()</span></code></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>With the acceptance of <span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0468"><strong>PEP 468</strong></a>, order is retained for keyword arguments
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>With the acceptance of <span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0468"><strong>PEP 468</strong></a>, order is retained for keyword arguments
 passed to the <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> constructor and its <code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code>
 method.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Added merge (<code class="docutils literal notranslate"><span class="pre">|</span></code>) and update (<code class="docutils literal notranslate"><span class="pre">|=</span></code>) operators, specified in <span class="target" id="index-3"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added merge (<code class="docutils literal notranslate"><span class="pre">|</span></code>) and update (<code class="docutils literal notranslate"><span class="pre">|=</span></code>) operators, specified in <span class="target" id="index-3"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>.</p>
 </div>
 <section id="ordereddict-examples-and-recipes">
 <h3><a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> Examples and Recipes<a class="headerlink" href="#ordereddict-examples-and-recipes" title="本標題的永久連結">¶</a></h3>
@@ -1322,23 +1377,63 @@ original insertion position is changed and moved to the end:</p>
 </div>
 <p>An <a class="reference internal" href="#collections.OrderedDict" title="collections.OrderedDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a> would also be useful for implementing
 variants of <a class="reference internal" href="functools.html#functools.lru_cache" title="functools.lru_cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">functools.lru_cache()</span></code></a>:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LRU</span><span class="p">:</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">maxsize</span><span class="o">=</span><span class="mi">128</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">TimeBoundedLRU</span><span class="p">:</span>
+    <span class="s2">&quot;LRU Cache that invalidates and refreshes old entries.&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">maxsize</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">maxage</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>      <span class="c1"># { args : (timestamp, result)}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">maxsize</span> <span class="o">=</span> <span class="n">maxsize</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxage</span> <span class="o">=</span> <span class="n">maxage</span>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">args</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">value</span>
-        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxsize</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">popitem</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="k">return</span> <span class="n">value</span>
+            <span class="n">timestamp</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">timestamp</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxage</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">result</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">(),</span> <span class="n">result</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxsize</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">popitem</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MultiHitLRUCache</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; LRU cache that defers caching a result until</span>
+<span class="sd">        it has been requested multiple times.</span>
+
+<span class="sd">        To avoid flushing the LRU cache with one-time requests,</span>
+<span class="sd">        we don&#39;t cache until a request has been made more than once.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">maxsize</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">maxrequests</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">cache_after</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">requests</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>   <span class="c1"># { uncached_key : request_count }</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>      <span class="c1"># { cached_key : function_result }</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxrequests</span> <span class="o">=</span> <span class="n">maxrequests</span>  <span class="c1"># max number of uncached requests</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxsize</span> <span class="o">=</span> <span class="n">maxsize</span>          <span class="c1"># max number of stored return values</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache_after</span> <span class="o">=</span> <span class="n">cache_after</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">args</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_after</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxrequests</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">popitem</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxsize</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">popitem</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
 </section>
@@ -1352,7 +1447,7 @@ to work with because the underlying dictionary is accessible as an
 attribute.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="collections.UserDict">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">UserDict</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">initialdata</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.UserDict" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">UserDict</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">initialdata</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.UserDict" title="本定義的永久連結">¶</a></dt>
 <dd><p>Class that simulates a dictionary.  The instance's contents are kept in a
 regular dictionary, which is accessible via the <a class="reference internal" href="#collections.UserDict.data" title="collections.UserDict.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> attribute of
 <a class="reference internal" href="#collections.UserDict" title="collections.UserDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></a> instances.  If <em>initialdata</em> is provided, <a class="reference internal" href="#collections.UserDict.data" title="collections.UserDict.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> is
@@ -1381,7 +1476,7 @@ subclass directly from <a class="reference internal" href="stdtypes.html#list" t
 to work with because the underlying list is accessible as an attribute.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="collections.UserList">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">UserList</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">list</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.UserList" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">UserList</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">list</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.UserList" title="本定義的永久連結">¶</a></dt>
 <dd><p>Class that simulates a list.  The instance's contents are kept in a regular
 list, which is accessible via the <a class="reference internal" href="#collections.UserList.data" title="collections.UserList.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> attribute of <a class="reference internal" href="#collections.UserList" title="collections.UserList"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserList</span></code></a>
 instances.  The instance's contents are initially set to a copy of <em>list</em>,
@@ -1418,7 +1513,7 @@ to work with because the underlying string is accessible as an
 attribute.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="collections.UserString">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">UserString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.UserString" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">UserString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.UserString" title="本定義的永久連結">¶</a></dt>
 <dd><p>Class that simulates a string object.  The instance's
 content is kept in a regular string object, which is accessible via the
 <a class="reference internal" href="#collections.UserString.data" title="collections.UserString.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> attribute of <a class="reference internal" href="#collections.UserString" title="collections.UserString"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserString</span></code></a> instances.  The instance's
@@ -1435,7 +1530,7 @@ be any object which can be converted into a string using the built-in
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>New methods <code class="docutils literal notranslate"><span class="pre">__getnewargs__</span></code>, <code class="docutils literal notranslate"><span class="pre">__rmod__</span></code>, <code class="docutils literal notranslate"><span class="pre">casefold</span></code>,
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>New methods <code class="docutils literal notranslate"><span class="pre">__getnewargs__</span></code>, <code class="docutils literal notranslate"><span class="pre">__rmod__</span></code>, <code class="docutils literal notranslate"><span class="pre">casefold</span></code>,
 <code class="docutils literal notranslate"><span class="pre">format_map</span></code>, <code class="docutils literal notranslate"><span class="pre">isprintable</span></code>, and <code class="docutils literal notranslate"><span class="pre">maketrans</span></code>.</p>
 </div>
 </dd></dl>
@@ -1450,14 +1545,15 @@ be any object which can be converted into a string using the built-in
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- 容器資料型態</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- Container datatypes</a><ul>
 <li><a class="reference internal" href="#chainmap-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code> objects</a><ul>
 <li><a class="reference internal" href="#chainmap-examples-and-recipes"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainMap</span></code> Examples and Recipes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#counter-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code> 物件</a></li>
+<li><a class="reference internal" href="#counter-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">Counter</span></code> objects</a></li>
 <li><a class="reference internal" href="#deque-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">deque</span></code> objects</a><ul>
 <li><a class="reference internal" href="#deque-recipes"><code class="xref py py-class docutils literal notranslate"><span class="pre">deque</span></code> Recipes</a></li>
 </ul>
@@ -1478,18 +1574,23 @@ be any object which can be converted into a string using the built-in
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="calendar.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">calendar</span></code> --- General calendar-related functions</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="collections.abc.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections.abc</span></code> --- Abstract Base Classes for Containers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="calendar.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">calendar</span></code> --- General calendar-related functions</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="collections.abc.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections.abc</span></code> --- Abstract Base Classes for Containers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/collections.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/collections.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1524,15 +1625,13 @@ be any object which can be converted into a string using the built-in
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" >Data Types</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- 容器資料型態</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- Container datatypes</a></li>
                 <li class="right">
                     
 
@@ -1550,25 +1649,25 @@ be any object which can be converted into a string using the built-in
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

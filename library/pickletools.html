@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>pickletools --- Tools for pickle developers &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pickletools --- Tools for pickle developers &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="Miscellaneous Services" href="misc.html" />
-    <link rel="prev" title="dis --- Python bytecode的反組譯器" href="dis.html" />
+    <link rel="next" title="MS Windows Specific Services" href="windows.html" />
+    <link rel="prev" title="dis --- Disassembler for Python bytecode" href="dis.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/pickletools.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a><ul>
 <li><a class="reference internal" href="#command-line-usage">Command line usage</a><ul>
 <li><a class="reference internal" href="#command-line-options">Command line options</a></li>
@@ -84,18 +83,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="dis.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="misc.html"
-                        title="下一章">Miscellaneous Services</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="dis.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="windows.html"
+                          title="下一章">MS Windows Specific Services</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/pickletools.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/pickletools.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -116,10 +120,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="misc.html" title="Miscellaneous Services"
+          <a href="windows.html" title="MS Windows Specific Services"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="dis.html" title="dis --- Python bytecode的反組譯器"
+          <a href="dis.html" title="dis --- Disassembler for Python bytecode"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -131,13 +135,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" accesskey="U">Python Language Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a></li>
                 <li class="right">
@@ -164,7 +166,7 @@
             
   <section id="module-pickletools">
 <span id="pickletools-tools-for-pickle-developers"></span><h1><a class="reference internal" href="#module-pickletools" title="pickletools: Contains extensive comments about the pickle protocols and pickle-machine opcodes, as well as some useful functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code></a> --- Tools for pickle developers<a class="headerlink" href="#module-pickletools" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/pickletools.py">Lib/pickletools.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/pickletools.py">Lib/pickletools.py</a></p>
 <hr class="docutils" />
 <p>This module contains various constants relating to the intimate details of the
 <a class="reference internal" href="pickle.html#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> module, some lengthy comments about the implementation, and a
@@ -175,7 +177,7 @@ ordinary users of the <a class="reference internal" href="pickle.html#module-pic
 <section id="command-line-usage">
 <h2>Command line usage<a class="headerlink" href="#command-line-usage" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <p>When invoked from the command line, <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pickletools</span></code> will
 disassemble the contents of one or more pickle files.  Note that if
@@ -250,7 +252,7 @@ is given to <em>annotate</em>, each opcode in the output is annotated with
 a short description.  The value of <em>annotate</em> is used as a hint for
 the column where annotation should start.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入: </span>The <em>annotate</em> argument.</p>
+<p><span class="versionmodified added">在 3.2 版本新加入: </span>The <em>annotate</em> argument.</p>
 </div>
 </dd></dl>
 
@@ -282,8 +284,9 @@ requires less storage space, and unpickles more efficiently.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a><ul>
 <li><a class="reference internal" href="#command-line-usage">Command line usage</a><ul>
 <li><a class="reference internal" href="#command-line-options">Command line options</a></li>
@@ -294,18 +297,23 @@ requires less storage space, and unpickles more efficiently.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="dis.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="misc.html"
-                        title="下一章">Miscellaneous Services</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="dis.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="windows.html"
+                          title="下一章">MS Windows Specific Services</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/pickletools.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/pickletools.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -325,10 +333,10 @@ requires less storage space, and unpickles more efficiently.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="misc.html" title="Miscellaneous Services"
+          <a href="windows.html" title="MS Windows Specific Services"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="dis.html" title="dis --- Python bytecode的反組譯器"
+          <a href="dis.html" title="dis --- Disassembler for Python bytecode"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -340,13 +348,11 @@ requires less storage space, and unpickles more efficiently.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" >Python Language Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a></li>
                 <li class="right">
@@ -366,25 +372,25 @@ requires less storage space, and unpickles more efficiently.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>hmac --- Keyed-Hashing for Message Authentication &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hmac --- Keyed-Hashing for Message Authentication &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="secrets --- 產生用於管理機密的安全亂數" href="secrets.html" />
+    <link rel="next" title="secrets --- Generate secure random numbers for managing secrets" href="secrets.html" />
     <link rel="prev" title="hashlib --- Secure hashes and message digests" href="hashlib.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/hmac.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="hashlib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> --- Secure hashes and message digests</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="secrets.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- 產生用於管理機密的安全亂數</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="hashlib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> --- Secure hashes and message digests</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="secrets.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- Generate secure random numbers for managing secrets</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/hmac.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/hmac.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -104,7 +106,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="secrets.html" title="secrets --- 產生用於管理機密的安全亂數"
+          <a href="secrets.html" title="secrets --- Generate secure random numbers for managing secrets"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="hashlib.html" title="hashlib --- Secure hashes and message digests"
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="crypto.html" accesskey="U">Cryptographic Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">hmac</span></code> --- Keyed-Hashing for Message Authentication</a></li>
                 <li class="right">
@@ -152,9 +152,9 @@
             
   <section id="module-hmac">
 <span id="hmac-keyed-hashing-for-message-authentication"></span><h1><a class="reference internal" href="#module-hmac" title="hmac: Keyed-Hashing for Message Authentication (HMAC) implementation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hmac</span></code></a> --- Keyed-Hashing for Message Authentication<a class="headerlink" href="#module-hmac" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/hmac.py">Lib/hmac.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/hmac.py">Lib/hmac.py</a></p>
 <hr class="docutils" />
-<p>This module implements the HMAC algorithm as described by <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2104.html"><strong>RFC 2104</strong></a>.</p>
+<p>This module implements the HMAC algorithm as described by <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2104.html"><strong>RFC 2104</strong></a>.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="hmac.new">
 <span class="sig-prename descclassname"><span class="pre">hmac.</span></span><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digestmod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hmac.new" title="本定義的永久連結">¶</a></dt>
@@ -164,7 +164,7 @@ secret key.  If <em>msg</em> is present, the method call <code class="docutils l
 object to use.  It may be any name suitable to <a class="reference internal" href="hashlib.html#hashlib.new" title="hashlib.new"><code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.new()</span></code></a>.
 Despite its argument position, it is required.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Parameter <em>key</em> can be a bytes or bytearray object.
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Parameter <em>key</em> can be a bytes or bytearray object.
 Parameter <em>msg</em> can be of any type supported by <a class="reference internal" href="hashlib.html#module-hashlib" title="hashlib: Secure hash and message digest algorithms."><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code></a>.
 Parameter <em>digestmod</em> can be the name of a hash algorithm.</p>
 </div>
@@ -187,7 +187,7 @@ the same meaning as in <a class="reference internal" href="#hmac.new" title="hma
 when <em>digest</em> is a string and name of a digest algorithm, which is
 supported by OpenSSL.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -199,7 +199,7 @@ supported by OpenSSL.</p>
 single call with the concatenation of all the arguments:
 <code class="docutils literal notranslate"><span class="pre">m.update(a);</span> <span class="pre">m.update(b)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">m.update(a</span> <span class="pre">+</span> <span class="pre">b)</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Parameter <em>msg</em> can be of any type supported by <a class="reference internal" href="hashlib.html#module-hashlib" title="hashlib: Secure hash and message digest algorithms."><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Parameter <em>msg</em> can be of any type supported by <a class="reference internal" href="hashlib.html#module-hashlib" title="hashlib: Secure hash and message digest algorithms."><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -253,7 +253,7 @@ compute the digests of strings that share a common initial substring.</p>
 <span class="sig-prename descclassname"><span class="pre">HMAC.</span></span><span class="sig-name descname"><span class="pre">block_size</span></span><a class="headerlink" href="#hmac.HMAC.block_size" title="本定義的永久連結">¶</a></dt>
 <dd><p>The internal block size of the hash algorithm in bytes.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -262,12 +262,12 @@ compute the digests of strings that share a common initial substring.</p>
 <span class="sig-prename descclassname"><span class="pre">HMAC.</span></span><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#hmac.HMAC.name" title="本定義的永久連結">¶</a></dt>
 <dd><p>The canonical name of this HMAC, always lowercase, e.g. <code class="docutils literal notranslate"><span class="pre">hmac-md5</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用: </span>The undocumented attributes <code class="docutils literal notranslate"><span class="pre">HMAC.digest_cons</span></code>, <code class="docutils literal notranslate"><span class="pre">HMAC.inner</span></code>, and
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用: </span>The undocumented attributes <code class="docutils literal notranslate"><span class="pre">HMAC.digest_cons</span></code>, <code class="docutils literal notranslate"><span class="pre">HMAC.inner</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">HMAC.outer</span></code> are internal implementation details and will be removed in
 Python 3.10.</p>
 </div>
@@ -287,10 +287,10 @@ a timing attack could theoretically reveal information about the
 types and lengths of <em>a</em> and <em>b</em>—but not their values.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The function uses OpenSSL's <code class="docutils literal notranslate"><span class="pre">CRYPTO_memcmp()</span></code> internally when
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>The function uses OpenSSL's <code class="docutils literal notranslate"><span class="pre">CRYPTO_memcmp()</span></code> internally when
 available.</p>
 </div>
 </dd></dl>
@@ -311,18 +311,22 @@ available.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="hashlib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> --- Secure hashes and message digests</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="secrets.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- 產生用於管理機密的安全亂數</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="hashlib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> --- Secure hashes and message digests</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="secrets.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- Generate secure random numbers for managing secrets</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/hmac.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/hmac.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -342,7 +346,7 @@ available.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="secrets.html" title="secrets --- 產生用於管理機密的安全亂數"
+          <a href="secrets.html" title="secrets --- Generate secure random numbers for managing secrets"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="hashlib.html" title="hashlib --- Secure hashes and message digests"
@@ -357,13 +361,11 @@ available.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="crypto.html" >Cryptographic Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">hmac</span></code> --- Keyed-Hashing for Message Authentication</a></li>
                 <li class="right">
@@ -383,25 +385,25 @@ available.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

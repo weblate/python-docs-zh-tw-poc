@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>sqlite3 --- DB-API 2.0 interface for SQLite databases &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sqlite3 --- DB-API 2.0 interface for SQLite databases &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="資料壓縮與保存" href="archiving.html" />
+    <link rel="next" title="Data Compression and Archiving" href="archiving.html" />
     <link rel="prev" title="dbm --- Interfaces to Unix &#34;databases&#34;" href="dbm.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/sqlite3.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code> --- DB-API 2.0 interface for SQLite databases</a><ul>
 <li><a class="reference internal" href="#module-functions-and-constants">Module functions and constants</a></li>
 <li><a class="reference internal" href="#connection-objects">Connection Objects</a></li>
@@ -81,7 +80,7 @@
 <li><a class="reference internal" href="#row-objects">Row Objects</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 <li><a class="reference internal" href="#sqlite-and-python-types">SQLite and Python types</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#using-adapters-to-store-additional-python-types-in-sqlite-databases">Using adapters to store additional Python types in SQLite databases</a><ul>
 <li><a class="reference internal" href="#letting-your-object-adapt-itself">Letting your object adapt itself</a></li>
 <li><a class="reference internal" href="#registering-an-adapter-callable">Registering an adapter callable</a></li>
@@ -102,18 +101,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="dbm.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm</span></code> --- Interfaces to Unix &quot;databases&quot;</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="archiving.html"
-                        title="下一章">資料壓縮與保存</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="dbm.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm</span></code> --- Interfaces to Unix &quot;databases&quot;</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="archiving.html"
+                          title="下一章">Data Compression and Archiving</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/sqlite3.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/sqlite3.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -134,7 +138,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="archiving.html" title="資料壓縮與保存"
+          <a href="archiving.html" title="Data Compression and Archiving"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="dbm.html" title="dbm --- Interfaces to Unix &#34;databases&#34;"
@@ -149,13 +153,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="persistence.html" accesskey="U">Data Persistence</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code> --- DB-API 2.0 interface for SQLite databases</a></li>
                 <li class="right">
@@ -182,7 +184,7 @@
             
   <section id="module-sqlite3">
 <span id="sqlite3-db-api-2-0-interface-for-sqlite-databases"></span><h1><a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> --- DB-API 2.0 interface for SQLite databases<a class="headerlink" href="#module-sqlite3" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/sqlite3/">Lib/sqlite3/</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/sqlite3/">Lib/sqlite3/</a></p>
 <hr class="docutils" />
 <p>SQLite is a C library that provides a lightweight disk-based database that
 doesn't require a separate server process and allows accessing the database
@@ -191,16 +193,18 @@ SQLite for internal data storage.  It's also possible to prototype an
 application using SQLite and then port the code to a larger database such as
 PostgreSQL or Oracle.</p>
 <p>The sqlite3 module was written by Gerhard Häring.  It provides a SQL interface
-compliant with the DB-API 2.0 specification described by <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0249"><strong>PEP 249</strong></a>.</p>
-<p>To use the module, you must first create a <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object that
+compliant with the DB-API 2.0 specification described by <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0249"><strong>PEP 249</strong></a>, and
+requires SQLite 3.7.15 or newer.</p>
+<p>To use the module, start by creating a <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object that
 represents the database.  Here the data will be stored in the
 <code class="file docutils literal notranslate"><span class="pre">example.db</span></code> file:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;example.db&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can also supply the special name <code class="docutils literal notranslate"><span class="pre">:memory:</span></code> to create a database in RAM.</p>
-<p>Once you have a <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a>, you can create a <a class="reference internal" href="#sqlite3.Cursor" title="sqlite3.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a>  object
+<p>The special path name <code class="docutils literal notranslate"><span class="pre">:memory:</span></code> can be provided to create a temporary
+database in RAM.</p>
+<p>Once a <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> has been established, create a <a class="reference internal" href="#sqlite3.Cursor" title="sqlite3.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a> object
 and call its <a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> method to perform SQL commands:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 
@@ -219,16 +223,17 @@ and call its <a class="reference internal" href="#sqlite3.Cursor.execute" title=
 <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The data you've saved is persistent and is available in subsequent sessions:</p>
+<p>The saved data is persistent: it can be reloaded in a subsequent session even
+after restarting the Python interpreter:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;example.db&#39;</span><span class="p">)</span>
 <span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>To retrieve data after executing a SELECT statement, you can either treat the
-cursor as an <a class="reference internal" href="../glossary.html#term-iterator"><span class="xref std std-term">iterator</span></a>, call the cursor's <a class="reference internal" href="#sqlite3.Cursor.fetchone" title="sqlite3.Cursor.fetchone"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fetchone()</span></code></a> method to
-retrieve a single matching row, or call <a class="reference internal" href="#sqlite3.Cursor.fetchall" title="sqlite3.Cursor.fetchall"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fetchall()</span></code></a> to get a list of the
-matching rows.</p>
+<p>To retrieve data after executing a SELECT statement, either treat the cursor as
+an <a class="reference internal" href="../glossary.html#term-iterator"><span class="xref std std-term">iterator</span></a>, call the cursor's <a class="reference internal" href="#sqlite3.Cursor.fetchone" title="sqlite3.Cursor.fetchone"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fetchone()</span></code></a> method to
+retrieve a single matching row, or call <a class="reference internal" href="#sqlite3.Cursor.fetchall" title="sqlite3.Cursor.fetchall"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fetchall()</span></code></a> to get a list
+of the matching rows.</p>
 <p>This example uses the iterator form:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM stocks ORDER BY price&#39;</span><span class="p">):</span>
 <span class="go">        print(row)</span>
@@ -239,27 +244,26 @@ matching rows.</p>
 <span class="go">(&#39;2006-04-05&#39;, &#39;BUY&#39;, &#39;MSFT&#39;, 1000, 72.0)</span>
 </pre></div>
 </div>
-<p id="sqlite3-placeholders">Usually your SQL operations will need to use values from Python variables.  You
-shouldn't assemble your query using Python's string operations because doing so
-is insecure; it makes your program vulnerable to an SQL injection attack
-(see the <a class="reference external" href="https://xkcd.com/327/">xkcd webcomic</a> for a humorous example of
-what can go wrong):</p>
+<p id="sqlite3-placeholders">SQL operations usually need to use values from Python variables. However,
+beware of using Python's string operations to assemble queries, as they
+are vulnerable to SQL injection attacks (see the <a class="reference external" href="https://xkcd.com/327/">xkcd webcomic</a> for a humorous example of what can go wrong):</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Never do this -- insecure!</span>
 <span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;RHAT&#39;</span>
 <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM stocks WHERE symbol = &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">symbol</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Instead, use the DB-API's parameter substitution. Put a placeholder wherever
-you want to use a value, and then provide a tuple of values as the second
-argument to the cursor's <a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> method. An SQL statement may
+<p>Instead, use the DB-API's parameter substitution. To insert a variable into a
+query string, use a placeholder in the string, and substitute the actual values
+into the query by providing them as a <a class="reference internal" href="stdtypes.html#tuple" title="tuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a> of values to the second
+argument of the cursor's <a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> method. An SQL statement may
 use one of two kinds of placeholders: question marks (qmark style) or named
 placeholders (named style). For the qmark style, <code class="docutils literal notranslate"><span class="pre">parameters</span></code> must be a
 <a class="reference internal" href="../glossary.html#term-sequence"><span class="xref std std-term">sequence</span></a>. For the named style, it can be either a
 <a class="reference internal" href="../glossary.html#term-sequence"><span class="xref std std-term">sequence</span></a> or <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> instance. The length of the
 <a class="reference internal" href="../glossary.html#term-sequence"><span class="xref std std-term">sequence</span></a> must match the number of placeholders, or a
 <a class="reference internal" href="#sqlite3.ProgrammingError" title="sqlite3.ProgrammingError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ProgrammingError</span></code></a> is raised. If a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> is given, it must contain
-keys for all named parameters. Any extra items are ignored. Here's an example
-of both styles:</p>
+keys for all named parameters. Any extra items are ignored. Here's an example of
+both styles:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 
 <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
@@ -299,6 +303,28 @@ available data types for the supported SQL dialect.</p>
 <section id="module-functions-and-constants">
 <span id="sqlite3-module-contents"></span><h2>Module functions and constants<a class="headerlink" href="#module-functions-and-constants" title="本標題的永久連結">¶</a></h2>
 <dl class="py data">
+<dt class="sig sig-object py" id="sqlite3.apilevel">
+<span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">apilevel</span></span><a class="headerlink" href="#sqlite3.apilevel" title="本定義的永久連結">¶</a></dt>
+<dd><p>String constant stating the supported DB-API level. Required by the DB-API.
+Hard-coded to <code class="docutils literal notranslate"><span class="pre">&quot;2.0&quot;</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="sqlite3.paramstyle">
+<span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">paramstyle</span></span><a class="headerlink" href="#sqlite3.paramstyle" title="本定義的永久連結">¶</a></dt>
+<dd><p>String constant stating the type of parameter marker formatting expected by
+the <a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> module. Required by the DB-API. Hard-coded to
+<code class="docutils literal notranslate"><span class="pre">&quot;qmark&quot;</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>The <a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> module supports both <code class="docutils literal notranslate"><span class="pre">qmark</span></code> and <code class="docutils literal notranslate"><span class="pre">numeric</span></code> DB-API
+parameter styles, because that is what the underlying SQLite library
+supports. However, the DB-API does not allow multiple values for
+the <code class="docutils literal notranslate"><span class="pre">paramstyle</span></code> attribute.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="sqlite3.version">
 <span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#sqlite3.version" title="本定義的永久連結">¶</a></dt>
 <dd><p>The version number of this module, as a string. This is not the version of
@@ -322,6 +348,26 @@ version of the SQLite library.</p>
 <dt class="sig sig-object py" id="sqlite3.sqlite_version_info">
 <span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">sqlite_version_info</span></span><a class="headerlink" href="#sqlite3.sqlite_version_info" title="本定義的永久連結">¶</a></dt>
 <dd><p>The version number of the run-time SQLite library, as a tuple of integers.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="sqlite3.threadsafety">
+<span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">threadsafety</span></span><a class="headerlink" href="#sqlite3.threadsafety" title="本定義的永久連結">¶</a></dt>
+<dd><p>Integer constant required by the DB-API, stating the level of thread safety
+the <a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> module supports. Currently hard-coded to <code class="docutils literal notranslate"><span class="pre">1</span></code>, meaning
+<em>&quot;Threads may share the module, but not connections.&quot;</em> However, this may not
+always be true. You can check the underlying SQLite library's compile-time
+threaded mode using the following query:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+<span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    select * from pragma_compile_options</span>
+<span class="s2">    where compile_options like &#39;THREADSAFE=%&#39;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that the <a class="reference external" href="https://sqlite.org/compile.html#threadsafe">SQLITE_THREADSAFE levels</a> do not match the DB-API 2.0
+<code class="docutils literal notranslate"><span class="pre">threadsafety</span></code> levels.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -355,7 +401,7 @@ the preceding space: the column name would simply be &quot;Expiration date&quot;
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sqlite3.connect">
-<span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">database</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">timeout</span></em>, <em class="sig-param"><span class="pre">detect_types</span></em>, <em class="sig-param"><span class="pre">isolation_level</span></em>, <em class="sig-param"><span class="pre">check_same_thread</span></em>, <em class="sig-param"><span class="pre">factory</span></em>, <em class="sig-param"><span class="pre">cached_statements</span></em>, <em class="sig-param"><span class="pre">uri</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.connect" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detect_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isolation_level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_same_thread</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cached_statements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uri</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.connect" title="本定義的永久連結">¶</a></dt>
 <dd><p>Opens a connection to the SQLite database file <em>database</em>. By default returns a
 <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object, unless a custom <em>factory</em> is given.</p>
 <p><em>database</em> is a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a> giving the pathname (absolute or
@@ -391,20 +437,38 @@ parameter.</p>
 overhead. If you want to explicitly set the number of statements that are cached
 for the connection, you can set the <em>cached_statements</em> parameter. The currently
 implemented default is to cache 100 statements.</p>
-<p>If <em>uri</em> is true, <em>database</em> is interpreted as a URI. This allows you
-to specify options. For example, to open a database in read-only mode
-you can use:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;file:path/to/database?mode=ro&#39;</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<p>If <em>uri</em> is <a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a>, <em>database</em> is interpreted as a
+<abbr title="Uniform Resource Identifier">URI</abbr> with a file path and an optional
+query string.  The scheme part <em>must</em> be <code class="docutils literal notranslate"><span class="pre">&quot;file:&quot;</span></code>.  The path can be a
+relative or absolute file path.  The query string allows us to pass
+parameters to SQLite. Some useful URI tricks include:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a database in read-only mode.</span>
+<span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;file:template.db?mode=ro&quot;</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Don&#39;t implicitly create a new database file if it does not already exist.</span>
+<span class="c1"># Will raise sqlite3.OperationalError if unable to open a database file.</span>
+<span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;file:nosuchdb.db?mode=rw&quot;</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Create a shared named in-memory database.</span>
+<span class="n">con1</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;file:mem1?mode=memory&amp;cache=shared&quot;</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">con2</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;file:mem1?mode=memory&amp;cache=shared&quot;</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">con1</span><span class="o">.</span><span class="n">executescript</span><span class="p">(</span><span class="s2">&quot;create table t(t); insert into t values(28);&quot;</span><span class="p">)</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">con2</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select * from t&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>More information about this feature, including a list of recognized options, can
-be found in the <a class="reference external" href="https://www.sqlite.org/uri.html">SQLite URI documentation</a>.</p>
+<p>More information about this feature, including a list of recognized
+parameters, can be found in the
+<a class="reference external" href="https://www.sqlite.org/uri.html">SQLite URI documentation</a>.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">sqlite3.connect</span></code> with argument <code class="docutils literal notranslate"><span class="pre">database</span></code>.</p>
+<p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">sqlite3.connect/handle</span></code> with argument <code class="docutils literal notranslate"><span class="pre">connection_handle</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added the <em>uri</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added the <em>uri</em> parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><em>database</em> can now also be a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>, not only a string.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><em>database</em> can now also be a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>, not only a string.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">sqlite3.connect/handle</span></code> auditing event.</p>
 </div>
 </dd></dl>
 
@@ -484,7 +548,7 @@ disable the feature again.</p>
 <span id="sqlite3-connection-objects"></span><h2>Connection Objects<a class="headerlink" href="#connection-objects" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sqlite3.Connection">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Connection</span></span><a class="headerlink" href="#sqlite3.Connection" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Connection</span></span><a class="headerlink" href="#sqlite3.Connection" title="本定義的永久連結">¶</a></dt>
 <dd><p>A SQLite database connection has the following attributes and methods:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sqlite3.Connection.isolation_level">
@@ -500,7 +564,7 @@ one of &quot;DEFERRED&quot;, &quot;IMMEDIATE&quot; or &quot;EXCLUSIVE&quot;. See
 <dd><p><a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> if a transaction is active (there are uncommitted changes),
 <a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a> otherwise.  Read-only attribute.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -538,7 +602,7 @@ calling <a class="reference internal" href="#sqlite3.Connection.commit" title="s
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sqlite3.Connection.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sql</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">parameters</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.execute" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.execute" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is a nonstandard shortcut that creates a cursor object by calling
 the <a class="reference internal" href="#sqlite3.Connection.cursor" title="sqlite3.Connection.cursor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cursor()</span></code></a> method, calls the cursor's
 <a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> method with the <em>parameters</em> given, and returns
@@ -547,7 +611,7 @@ the cursor.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sqlite3.Connection.executemany">
-<span class="sig-name descname"><span class="pre">executemany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sql</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">parameters</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.executemany" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">executemany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.executemany" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is a nonstandard shortcut that creates a cursor object by
 calling the <a class="reference internal" href="#sqlite3.Connection.cursor" title="sqlite3.Connection.cursor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cursor()</span></code></a> method, calls the cursor's
 <a class="reference internal" href="#sqlite3.Cursor.executemany" title="sqlite3.Cursor.executemany"><code class="xref py py-meth docutils literal notranslate"><span class="pre">executemany()</span></code></a> method with the <em>parameters</em> given, and
@@ -578,7 +642,7 @@ with older versions.</p>
 <p>The function can return any of the types supported by SQLite: bytes, str, int,
 float and <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>deterministic</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>deterministic</em> parameter was added.</p>
 </div>
 <p>Example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
@@ -721,14 +785,23 @@ exception.</p>
 <span class="sig-name descname"><span class="pre">set_trace_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.set_trace_callback" title="本定義的永久連結">¶</a></dt>
 <dd><p>Registers <em>trace_callback</em> to be called for each SQL statement that is
 actually executed by the SQLite backend.</p>
-<p>The only argument passed to the callback is the statement (as string) that
-is being executed. The return value of the callback is ignored. Note that
-the backend does not only run statements passed to the <a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Cursor.execute()</span></code></a>
-methods.  Other sources include the transaction management of the Python
-module and the execution of triggers defined in the current database.</p>
+<p>The only argument passed to the callback is the statement (as
+<a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) that is being executed. The return value of the callback is
+ignored. Note that the backend does not only run statements passed to the
+<a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Cursor.execute()</span></code></a> methods.  Other sources include the
+<a class="reference internal" href="#sqlite3-controlling-transactions"><span class="std std-ref">transaction management</span></a> of the
+sqlite3 module and the execution of triggers defined in the current
+database.</p>
 <p>Passing <a class="reference internal" href="constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a> as <em>trace_callback</em> will disable the trace callback.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>Exceptions raised in the trace callback are not propagated. As a
+development and debugging aid, use
+<a class="reference internal" href="#sqlite3.enable_callback_tracebacks" title="sqlite3.enable_callback_tracebacks"><code class="xref py py-meth docutils literal notranslate"><span class="pre">enable_callback_tracebacks()</span></code></a> to enable printing
+tracebacks from exceptions raised in the trace callback.</p>
+</div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -740,8 +813,12 @@ from shared libraries.  SQLite extensions can define new functions,
 aggregates or whole new virtual table implementations.  One well-known
 extension is the fulltext-search extension distributed with SQLite.</p>
 <p>Loadable extensions are disabled by default. See <a class="footnote-reference brackets" href="#f1" id="id1">1</a>.</p>
+<p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">sqlite3.enable_load_extension</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">connection</span></code>, <code class="docutils literal notranslate"><span class="pre">enabled</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">sqlite3.enable_load_extension</span></code> auditing event.</p>
 </div>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 
@@ -782,8 +859,12 @@ extension is the fulltext-search extension distributed with SQLite.</p>
 enable extension loading with <a class="reference internal" href="#sqlite3.Connection.enable_load_extension" title="sqlite3.Connection.enable_load_extension"><code class="xref py py-meth docutils literal notranslate"><span class="pre">enable_load_extension()</span></code></a> before you can
 use this routine.</p>
 <p>Loadable extensions are disabled by default. See <a class="footnote-reference brackets" href="#f1" id="id2">1</a>.</p>
+<p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">sqlite3.load_extension</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">connection</span></code>, <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">sqlite3.load_extension</span></code> auditing event.</p>
 </div>
 </dd></dl>
 
@@ -825,8 +906,8 @@ dictionary-based approach or even a db_row based solution.</p>
 <span class="sig-name descname"><span class="pre">text_factory</span></span><a class="headerlink" href="#sqlite3.Connection.text_factory" title="本定義的永久連結">¶</a></dt>
 <dd><p>Using this attribute you can control what objects are returned for the <code class="docutils literal notranslate"><span class="pre">TEXT</span></code>
 data type. By default, this attribute is set to <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> and the
-<a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> module will return Unicode objects for <code class="docutils literal notranslate"><span class="pre">TEXT</span></code>. If you want to
-return bytestrings instead, you can set it to <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p>
+<a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> module will return <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> objects for <code class="docutils literal notranslate"><span class="pre">TEXT</span></code>.
+If you want to return <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> instead, you can set it to <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p>
 <p>You can also set it to any other callable that accepts a single bytestring
 parameter and returns the resulting object.</p>
 <p>See the following example code for illustration:</p>
@@ -835,9 +916,9 @@ parameter and returns the resulting object.</p>
 <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
 <span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 
-<span class="n">AUSTRIA</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\xd6</span><span class="s2">sterreich&quot;</span>
+<span class="n">AUSTRIA</span> <span class="o">=</span> <span class="s2">&quot;Österreich&quot;</span>
 
-<span class="c1"># by default, rows are returned as Unicode</span>
+<span class="c1"># by default, rows are returned as str</span>
 <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">AUSTRIA</span><span class="p">,))</span>
 <span class="n">row</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
 <span class="k">assert</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">AUSTRIA</span>
@@ -934,9 +1015,8 @@ integer or a floating point value.</p>
 <span class="n">source</span><span class="o">.</span><span class="n">backup</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Availability: SQLite 3.6.11 or higher</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -947,11 +1027,11 @@ integer or a floating point value.</p>
 <span id="sqlite3-cursor-objects"></span><h2>Cursor Objects<a class="headerlink" href="#cursor-objects" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sqlite3.Cursor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Cursor</span></span><a class="headerlink" href="#sqlite3.Cursor" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Cursor</span></span><a class="headerlink" href="#sqlite3.Cursor" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#sqlite3.Cursor" title="sqlite3.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a> instance has the following attributes and methods.</p>
 <span class="target" id="index-2"></span><span class="target" id="index-3"></span><dl class="py method">
 <dt class="sig sig-object py" id="sqlite3.Cursor.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sql</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">parameters</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.execute" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.execute" title="本定義的永久連結">¶</a></dt>
 <dd><p>Executes an SQL statement. Values may be bound to the statement using
 <a class="reference internal" href="#sqlite3-placeholders"><span class="std std-ref">placeholders</span></a>.</p>
 <p><a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> will only execute a single SQL statement. If you try to execute
@@ -1094,6 +1174,18 @@ An empty list is returned when no rows are available.</p>
 exception will be raised if any operation is attempted with the cursor.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="sqlite3.Cursor.setinputsizes">
+<span class="sig-name descname"><span class="pre">setinputsizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.setinputsizes" title="本定義的永久連結">¶</a></dt>
+<dd><p>Required by the DB-API. Is a no-op in <a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sqlite3.Cursor.setoutputsize">
+<span class="sig-name descname"><span class="pre">setoutputsize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">column</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.setoutputsize" title="本定義的永久連結">¶</a></dt>
+<dd><p>Required by the DB-API. Is a no-op in <a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a>.</p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sqlite3.Cursor.rowcount">
 <span class="sig-name descname"><span class="pre">rowcount</span></span><a class="headerlink" href="#sqlite3.Cursor.rowcount" title="本定義的永久連結">¶</a></dt>
@@ -1107,22 +1199,23 @@ case no <code class="docutils literal notranslate"><span class="pre">executeXX()
 last operation is not determinable by the interface&quot;. This includes <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>
 statements because we cannot determine the number of rows a query produced
 until all rows were fetched.</p>
-<p>With SQLite versions before 3.6.5, <a class="reference internal" href="#sqlite3.Cursor.rowcount" title="sqlite3.Cursor.rowcount"><code class="xref py py-attr docutils literal notranslate"><span class="pre">rowcount</span></code></a> is set to 0 if
-you make a <code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">table</span></code> without any condition.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sqlite3.Cursor.lastrowid">
 <span class="sig-name descname"><span class="pre">lastrowid</span></span><a class="headerlink" href="#sqlite3.Cursor.lastrowid" title="本定義的永久連結">¶</a></dt>
-<dd><p>This read-only attribute provides the rowid of the last modified row. It is
-only set if you issued an <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> or a <code class="docutils literal notranslate"><span class="pre">REPLACE</span></code> statement using the
-<a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> method.  For operations other than <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> or
-<code class="docutils literal notranslate"><span class="pre">REPLACE</span></code> or when <a class="reference internal" href="#sqlite3.Cursor.executemany" title="sqlite3.Cursor.executemany"><code class="xref py py-meth docutils literal notranslate"><span class="pre">executemany()</span></code></a> is called, <a class="reference internal" href="#sqlite3.Cursor.lastrowid" title="sqlite3.Cursor.lastrowid"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lastrowid</span></code></a> is
-set to <a class="reference internal" href="constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a>.</p>
-<p>If the <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> or <code class="docutils literal notranslate"><span class="pre">REPLACE</span></code> statement failed to insert the previous
-successful rowid is returned.</p>
+<dd><p>This read-only attribute provides the row id of the last inserted row. It
+is only updated after successful <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> or <code class="docutils literal notranslate"><span class="pre">REPLACE</span></code> statements
+using the <a class="reference internal" href="#sqlite3.Cursor.execute" title="sqlite3.Cursor.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> method.  For other statements, after
+<a class="reference internal" href="#sqlite3.Cursor.executemany" title="sqlite3.Cursor.executemany"><code class="xref py py-meth docutils literal notranslate"><span class="pre">executemany()</span></code></a> or <a class="reference internal" href="#sqlite3.Cursor.executescript" title="sqlite3.Cursor.executescript"><code class="xref py py-meth docutils literal notranslate"><span class="pre">executescript()</span></code></a>, or if the insertion failed,
+the value of <code class="docutils literal notranslate"><span class="pre">lastrowid</span></code> is left unchanged.  The initial value of
+<code class="docutils literal notranslate"><span class="pre">lastrowid</span></code> is <a class="reference internal" href="constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>Inserts into <code class="docutils literal notranslate"><span class="pre">WITHOUT</span> <span class="pre">ROWID</span></code> tables are not recorded.</p>
+</div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">REPLACE</span></code> statement.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">REPLACE</span></code> statement.</p>
 </div>
 </dd></dl>
 
@@ -1164,7 +1257,7 @@ calling <a class="reference internal" href="#sqlite3.Connection.cursor" title="s
 <span id="sqlite3-row-objects"></span><h2>Row Objects<a class="headerlink" href="#row-objects" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sqlite3.Row">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Row</span></span><a class="headerlink" href="#sqlite3.Row" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Row</span></span><a class="headerlink" href="#sqlite3.Row" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#sqlite3.Row" title="sqlite3.Row"><code class="xref py py-class docutils literal notranslate"><span class="pre">Row</span></code></a> instance serves as a highly optimized
 <a class="reference internal" href="#sqlite3.Connection.row_factory" title="sqlite3.Connection.row_factory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">row_factory</span></code></a> for <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> objects.
 It tries to mimic a tuple in most of its features.</p>
@@ -1180,7 +1273,7 @@ it is the first member of each tuple in <a class="reference internal" href="#sql
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added support of slicing.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added support of slicing.</p>
 </div>
 </dd></dl>
 
@@ -1229,33 +1322,33 @@ it is the first member of each tuple in <a class="reference internal" href="#sql
 <span id="sqlite3-exceptions"></span><h2>Exceptions<a class="headerlink" href="#exceptions" title="本標題的永久連結">¶</a></h2>
 <dl class="py exception">
 <dt class="sig sig-object py" id="sqlite3.Warning">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Warning</span></span><a class="headerlink" href="#sqlite3.Warning" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Warning</span></span><a class="headerlink" href="#sqlite3.Warning" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="sqlite3.Error">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#sqlite3.Error" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#sqlite3.Error" title="本定義的永久連結">¶</a></dt>
 <dd><p>The base class of the other exceptions in this module.  It is a subclass
 of <a class="reference internal" href="exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="sqlite3.DatabaseError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">DatabaseError</span></span><a class="headerlink" href="#sqlite3.DatabaseError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">DatabaseError</span></span><a class="headerlink" href="#sqlite3.DatabaseError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised for errors that are related to the database.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="sqlite3.IntegrityError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">IntegrityError</span></span><a class="headerlink" href="#sqlite3.IntegrityError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">IntegrityError</span></span><a class="headerlink" href="#sqlite3.IntegrityError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised when the relational integrity of the database is affected,
 e.g. a foreign key check fails.  It is a subclass of <a class="reference internal" href="#sqlite3.DatabaseError" title="sqlite3.DatabaseError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DatabaseError</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="sqlite3.ProgrammingError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">ProgrammingError</span></span><a class="headerlink" href="#sqlite3.ProgrammingError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">ProgrammingError</span></span><a class="headerlink" href="#sqlite3.ProgrammingError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised for programming errors, e.g. table not found or already
 exists, syntax error in the SQL statement, wrong number of parameters
 specified, etc.  It is a subclass of <a class="reference internal" href="#sqlite3.DatabaseError" title="sqlite3.DatabaseError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DatabaseError</span></code></a>.</p>
@@ -1263,7 +1356,7 @@ specified, etc.  It is a subclass of <a class="reference internal" href="#sqlite
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="sqlite3.OperationalError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">OperationalError</span></span><a class="headerlink" href="#sqlite3.OperationalError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">OperationalError</span></span><a class="headerlink" href="#sqlite3.OperationalError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised for errors that are related to the database's operation
 and not necessarily under the control of the programmer, e.g. an unexpected
 disconnect occurs, the data source name is not found, a transaction could
@@ -1272,7 +1365,7 @@ not be processed, etc.  It is a subclass of <a class="reference internal" href="
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="sqlite3.NotSupportedError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">NotSupportedError</span></span><a class="headerlink" href="#sqlite3.NotSupportedError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sqlite3.</span></span><span class="sig-name descname"><span class="pre">NotSupportedError</span></span><a class="headerlink" href="#sqlite3.NotSupportedError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised in case a method or database API was used which is not
 supported by the database, e.g. calling the <a class="reference internal" href="#sqlite3.Connection.rollback" title="sqlite3.Connection.rollback"><code class="xref py py-meth docutils literal notranslate"><span class="pre">rollback()</span></code></a>
 method on a connection that does not support transaction or has
@@ -1283,7 +1376,7 @@ transactions turned off.  It is a subclass of <a class="reference internal" href
 <section id="sqlite-and-python-types">
 <span id="sqlite3-types"></span><h2>SQLite and Python types<a class="headerlink" href="#sqlite-and-python-types" title="本標題的永久連結">¶</a></h2>
 <section id="introduction">
-<h3>簡介<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h3>
+<h3>Introduction<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h3>
 <p>SQLite natively supports the following types: <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>,
 <code class="docutils literal notranslate"><span class="pre">REAL</span></code>, <code class="docutils literal notranslate"><span class="pre">TEXT</span></code>, <code class="docutils literal notranslate"><span class="pre">BLOB</span></code>.</p>
 <p>The following Python types can thus be sent to SQLite without any problem:</p>
@@ -1559,6 +1652,13 @@ experimental SQLite date/time functions.</p>
 <p>If a timestamp stored in SQLite has a fractional part longer than 6
 numbers, its value will be truncated to microsecond precision by the
 timestamp converter.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>The default &quot;timestamp&quot; converter ignores UTC offsets in the database and
+always returns a naive <a class="reference internal" href="datetime.html#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> object. To preserve UTC
+offsets in timestamps, either leave converters disabled, or register an
+offset-aware converter with <a class="reference internal" href="#sqlite3.register_converter" title="sqlite3.register_converter"><code class="xref py py-func docutils literal notranslate"><span class="pre">register_converter()</span></code></a>.</p>
+</div>
 </section>
 </section>
 <section id="controlling-transactions">
@@ -1586,7 +1686,7 @@ control the transaction state by explicitly issuing <code class="docutils litera
 <p>Note that <a class="reference internal" href="#sqlite3.Cursor.executescript" title="sqlite3.Cursor.executescript"><code class="xref py py-meth docutils literal notranslate"><span class="pre">executescript()</span></code></a> disregards
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">isolation_level</span></code>; any transaction control must be added explicitly.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> used to implicitly commit an open transaction before DDL
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><a class="reference internal" href="#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> used to implicitly commit an open transaction before DDL
 statements.  This is no longer the case.</p>
 </div>
 </section>
@@ -1679,14 +1779,14 @@ committed:</p>
 <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="f1"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
 <dd><p>The sqlite3 module is not built with loadable extension support by
-default, because some platforms (notably Mac OS X) have SQLite
+default, because some platforms (notably macOS) have SQLite
 libraries which are compiled without this feature. To get loadable
-extension support, you must pass <code class="docutils literal notranslate"><span class="pre">--enable-loadable-sqlite-extensions</span></code> to
-configure.</p>
+extension support, you must pass the
+<a class="reference internal" href="../using/configure.html#cmdoption-enable-loadable-sqlite-extensions"><code class="xref std std-option docutils literal notranslate"><span class="pre">--enable-loadable-sqlite-extensions</span></code></a> option to configure.</p>
 </dd>
 </dl>
 </section>
@@ -1700,8 +1800,9 @@ configure.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code> --- DB-API 2.0 interface for SQLite databases</a><ul>
 <li><a class="reference internal" href="#module-functions-and-constants">Module functions and constants</a></li>
 <li><a class="reference internal" href="#connection-objects">Connection Objects</a></li>
@@ -1709,7 +1810,7 @@ configure.</p>
 <li><a class="reference internal" href="#row-objects">Row Objects</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 <li><a class="reference internal" href="#sqlite-and-python-types">SQLite and Python types</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#using-adapters-to-store-additional-python-types-in-sqlite-databases">Using adapters to store additional Python types in SQLite databases</a><ul>
 <li><a class="reference internal" href="#letting-your-object-adapt-itself">Letting your object adapt itself</a></li>
 <li><a class="reference internal" href="#registering-an-adapter-callable">Registering an adapter callable</a></li>
@@ -1730,18 +1831,23 @@ configure.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="dbm.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm</span></code> --- Interfaces to Unix &quot;databases&quot;</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="archiving.html"
-                        title="下一章">資料壓縮與保存</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="dbm.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm</span></code> --- Interfaces to Unix &quot;databases&quot;</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="archiving.html"
+                          title="下一章">Data Compression and Archiving</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/sqlite3.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/sqlite3.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1761,7 +1867,7 @@ configure.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="archiving.html" title="資料壓縮與保存"
+          <a href="archiving.html" title="Data Compression and Archiving"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="dbm.html" title="dbm --- Interfaces to Unix &#34;databases&#34;"
@@ -1776,13 +1882,11 @@ configure.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="persistence.html" >Data Persistence</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code> --- DB-API 2.0 interface for SQLite databases</a></li>
                 <li class="right">
@@ -1802,25 +1906,25 @@ configure.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

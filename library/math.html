@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>math --- Mathematical functions &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math --- Mathematical functions &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="numbers --- Numeric abstract base classes" href="numbers.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/math.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> --- Mathematical functions</a><ul>
 <li><a class="reference internal" href="#number-theoretic-and-representation-functions">Number-theoretic and representation functions</a></li>
 <li><a class="reference internal" href="#power-and-logarithmic-functions">Power and logarithmic functions</a></li>
@@ -86,18 +85,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="numbers.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code> --- Numeric abstract base classes</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="cmath.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> --- Mathematical functions for complex numbers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="numbers.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code> --- Numeric abstract base classes</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="cmath.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> --- Mathematical functions for complex numbers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/math.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/math.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -133,14 +137,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="numeric.html" accesskey="U">數值與數學模組</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="numeric.html" accesskey="U">Numeric and Mathematical Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> --- Mathematical functions</a></li>
                 <li class="right">
                     
@@ -202,7 +204,7 @@ expression <code class="docutils literal notranslate"><span class="pre">(1</span
 <p>Raises <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> if either of the arguments are not integers.
 Raises <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if either of the arguments are negative.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -226,7 +228,7 @@ returns <em>-1.0</em>.</p>
 <dd><p>Return <em>x</em> factorial as an integer.  Raises <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if <em>x</em> is not integral or
 is negative.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用: </span>Accepting floats with integral values (like <code class="docutils literal notranslate"><span class="pre">5.0</span></code>) is deprecated.</p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用: </span>Accepting floats with integral values (like <code class="docutils literal notranslate"><span class="pre">5.0</span></code>) is deprecated.</p>
 </div>
 </dd></dl>
 
@@ -292,10 +294,10 @@ positive integer that is a divisor of all arguments.  If all arguments
 are zero, then the returned value is <code class="docutils literal notranslate"><span class="pre">0</span></code>.  <code class="docutils literal notranslate"><span class="pre">gcd()</span></code> without arguments
 returns <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Added support for an arbitrary number of arguments. Formerly, only two
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added support for an arbitrary number of arguments. Formerly, only two
 arguments were supported.</p>
 </div>
 </dd></dl>
@@ -321,7 +323,7 @@ handled according to IEEE rules.  Specifically, <code class="docutils literal no
 close to any other value, including <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.  <code class="docutils literal notranslate"><span class="pre">inf</span></code> and <code class="docutils literal notranslate"><span class="pre">-inf</span></code> are only
 considered close to themselves.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
@@ -335,7 +337,7 @@ considered close to themselves.</p>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>x</em> is neither an infinity nor a NaN, and
 <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.  (Note that <code class="docutils literal notranslate"><span class="pre">0.0</span></code> <em>is</em> considered finite.)</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -363,7 +365,7 @@ floor of the exact square root of <em>n</em>, or equivalently the greatest integ
 the exact square root of <em>n</em>. For positive <em>n</em>, this can be computed using
 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">isqrt(n</span> <span class="pre">-</span> <span class="pre">1)</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -376,7 +378,7 @@ positive integer that is a multiple of all arguments.  If any of the arguments
 is zero, then the returned value is <code class="docutils literal notranslate"><span class="pre">0</span></code>.  <code class="docutils literal notranslate"><span class="pre">lcm()</span></code> without arguments
 returns <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -408,7 +410,7 @@ of <em>x</em> and are floats.</p>
 </ul>
 <p>See also <a class="reference internal" href="#math.ulp" title="math.ulp"><code class="xref py py-func docutils literal notranslate"><span class="pre">math.ulp()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -424,7 +426,7 @@ and the function returns <code class="docutils literal notranslate"><span class=
 <p>Raises <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> if either of the arguments are not integers.
 Raises <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if either of the arguments are negative.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -437,7 +439,7 @@ The default <em>start</em> value for the product is <code class="docutils litera
 intended specifically for use with numeric values and may reject
 non-numeric types.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -458,7 +460,7 @@ the same sign as <em>x</em>.</p>
 <p>On platforms using IEEE 754 binary floating-point, the result of this
 operation is always exactly representable: no rounding error is introduced.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -491,7 +493,7 @@ is <code class="docutils literal notranslate"><span class="pre">x</span> <span c
 <p>ULP stands for &quot;Unit in the Last Place&quot;.</p>
 <p>See also <a class="reference internal" href="#math.nextafter" title="math.nextafter"><code class="xref py py-func docutils literal notranslate"><span class="pre">math.nextafter()</span></code></a> and <a class="reference internal" href="sys.html#sys.float_info" title="sys.float_info"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.float_info.epsilon</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -530,13 +532,13 @@ function provides a way to compute this quantity to full precision:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="math.log">
-<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">base</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#math.log" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#math.log" title="本定義的永久連結">¶</a></dt>
 <dd><p>With one argument, return the natural logarithm of <em>x</em> (to base <em>e</em>).</p>
 <p>With two arguments, return the logarithm of <em>x</em> to the given <em>base</em>,
 calculated as <code class="docutils literal notranslate"><span class="pre">log(x)/log(base)</span></code>.</p>
@@ -555,7 +557,7 @@ result is calculated in a way which is accurate for <em>x</em> near zero.</p>
 <dd><p>Return the base-2 logarithm of <em>x</em>. This is usually more accurate than
 <code class="docutils literal notranslate"><span class="pre">log(x,</span> <span class="pre">2)</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
@@ -643,7 +645,7 @@ must have the same dimension.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -657,8 +659,13 @@ given by the coordinates.</p>
 the hypotenuse of a right triangle using the Pythagorean theorem,
 <code class="docutils literal notranslate"><span class="pre">sqrt(x*x</span> <span class="pre">+</span> <span class="pre">y*y)</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added support for n-dimensional points. Formerly, only the two
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added support for n-dimensional points. Formerly, only the two
 dimensional case was supported.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Improved the algorithm's accuracy so that the maximum error is
+under 1 ulp (unit in the last place).  More typically, the result
+is almost always correctly rounded to within 1/2 ulp.</p>
 </div>
 </dd></dl>
 
@@ -747,7 +754,7 @@ functions such as the <a class="reference external" href="https://en.wikipedia.o
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -759,7 +766,7 @@ function</a> is defined as
 <code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">-</span> <span class="pre">erf(x)</span></code>.  It is used for large values of <em>x</em> where a subtraction
 from one would cause a <a class="reference external" href="https://en.wikipedia.org/wiki/Loss_of_significance">loss of significance</a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -769,7 +776,7 @@ from one would cause a <a class="reference external" href="https://en.wikipedia.
 <dd><p>Return the <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_function">Gamma function</a> at
 <em>x</em>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -779,7 +786,7 @@ from one would cause a <a class="reference external" href="https://en.wikipedia.
 <dd><p>Return the natural logarithm of the absolute value of the Gamma
 function at <em>x</em>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -807,7 +814,7 @@ its radius. To learn more about Tau, check out Vi Hart's video <a class="referen
 Wrong</a>, and start celebrating
 <a class="reference external" href="https://tauday.com/">Tau day</a> by eating twice as much pie!</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -817,7 +824,7 @@ Wrong</a>, and start celebrating
 <dd><p>A floating-point positive infinity.  (For negative infinity, use
 <code class="docutils literal notranslate"><span class="pre">-math.inf</span></code>.)  Equivalent to the output of <code class="docutils literal notranslate"><span class="pre">float('inf')</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -827,7 +834,7 @@ Wrong</a>, and start celebrating
 <dd><p>A floating-point &quot;not a number&quot; (NaN) value.  Equivalent to the output of
 <code class="docutils literal notranslate"><span class="pre">float('nan')</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -864,8 +871,9 @@ Typical behavior is to treat all NaNs as though they were quiet.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> --- Mathematical functions</a><ul>
 <li><a class="reference internal" href="#number-theoretic-and-representation-functions">Number-theoretic and representation functions</a></li>
 <li><a class="reference internal" href="#power-and-logarithmic-functions">Power and logarithmic functions</a></li>
@@ -878,18 +886,23 @@ Typical behavior is to treat all NaNs as though they were quiet.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="numbers.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code> --- Numeric abstract base classes</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="cmath.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> --- Mathematical functions for complex numbers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="numbers.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code> --- Numeric abstract base classes</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="cmath.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> --- Mathematical functions for complex numbers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/math.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/math.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -924,14 +937,12 @@ Typical behavior is to treat all NaNs as though they were quiet.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="numeric.html" >數值與數學模組</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="numeric.html" >Numeric and Mathematical Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> --- Mathematical functions</a></li>
                 <li class="right">
                     
@@ -950,25 +961,25 @@ Typical behavior is to treat all NaNs as though they were quiet.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

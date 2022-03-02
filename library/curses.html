@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>curses --- Terminal handling for character-cell displays &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curses --- Terminal handling for character-cell displays &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="getpass --- Portable password input" href="getpass.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/curses.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses</span></code> --- Terminal handling for character-cell displays</a><ul>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 <li><a class="reference internal" href="#window-objects">Window Objects</a></li>
@@ -86,18 +85,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="getpass.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- Portable password input</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="curses.ascii.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses.ascii</span></code> --- Utilities for ASCII characters</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="getpass.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- Portable password input</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="curses.ascii.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses.ascii</span></code> --- Utilities for ASCII characters</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/curses.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/curses.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -133,13 +137,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="allos.html" accesskey="U">Generic Operating System Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses</span></code> --- Terminal handling for character-cell displays</a></li>
                 <li class="right">
@@ -207,7 +209,7 @@ system's default encoding:</p>
 Raymond.</p>
 </dd>
 </dl>
-<p>The <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Tools/demo/">Tools/demo/</a> directory in the Python source distribution contains
+<p>The <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Tools/demo/">Tools/demo/</a> directory in the Python source distribution contains
 some example programs using the curses bindings provided by this module.</p>
 </div>
 <section id="functions">
@@ -215,7 +217,7 @@ some example programs using the curses bindings provided by this module.</p>
 <p>The module <a class="reference internal" href="#module-curses" title="curses: An interface to the curses library, providing portable terminal handling. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses</span></code></a> defines the following exception:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="curses.error">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#curses.error" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#curses.error" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised when a curses library function returns an error.</p>
 </dd></dl>
 
@@ -382,10 +384,14 @@ method should be called to retrieve the queued mouse event, represented as a
 multiple devices, and <em>x</em>, <em>y</em>, <em>z</em> are the event's coordinates.  (<em>z</em> is
 currently unused.)  <em>bstate</em> is an integer value whose bits will be set to
 indicate the type of event, and will be the bitwise OR of one or more of the
-following constants, where <em>n</em> is the button number from 1 to 4:
+following constants, where <em>n</em> is the button number from 1 to 5:
 <code class="xref py py-const docutils literal notranslate"><span class="pre">BUTTONn_PRESSED</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">BUTTONn_RELEASED</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">BUTTONn_CLICKED</span></code>,
 <code class="xref py py-const docutils literal notranslate"><span class="pre">BUTTONn_DOUBLE_CLICKED</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">BUTTONn_TRIPLE_CLICKED</span></code>,
 <code class="xref py py-const docutils literal notranslate"><span class="pre">BUTTON_SHIFT</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">BUTTON_CTRL</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">BUTTON_ALT</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">BUTTON5_*</span></code> constants are now exposed if they are provided by the
+underlying curses library.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -407,6 +413,18 @@ the new window object.</p>
 <dt class="sig sig-object py" id="curses.has_colors">
 <span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">has_colors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.has_colors" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the terminal can display colors; otherwise, return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="curses.has_extended_color_support">
+<span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">has_extended_color_support</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.has_extended_color_support" title="本定義的永久連結">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the module supports extended colors; otherwise, return
+<code class="docutils literal notranslate"><span class="pre">False</span></code>. Extended color support allows more than 256 color pairs for
+terminals that support more than 16 colors (e.g. xterm-256color).</p>
+<p>Extended color support requires ncurses version 6.1 or later.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -652,7 +670,7 @@ always goes to standard output.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="curses.qiflush">
-<span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">qiflush</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">flag</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.qiflush" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">qiflush</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.qiflush" title="本定義的永久連結">¶</a></dt>
 <dd><p>If <em>flag</em> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the effect is the same as calling <a class="reference internal" href="#curses.noqiflush" title="curses.noqiflush"><code class="xref py py-func docutils literal notranslate"><span class="pre">noqiflush()</span></code></a>. If
 <em>flag</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, or no argument is provided, the queues will be flushed when
 these control characters are read.</p>
@@ -718,7 +736,7 @@ window dimensions (in particular the SIGWINCH handler).</p>
 <span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">get_escdelay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.get_escdelay" title="本定義的永久連結">¶</a></dt>
 <dd><p>Retrieves the value set by <a class="reference internal" href="#curses.set_escdelay" title="curses.set_escdelay"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_escdelay()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -729,7 +747,7 @@ window dimensions (in particular the SIGWINCH handler).</p>
 to distinguish between an individual escape character entered on the
 keyboard from escape sequences sent by cursor and function keys.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -738,7 +756,7 @@ keyboard from escape sequences sent by cursor and function keys.</p>
 <span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">get_tabsize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.get_tabsize" title="本定義的永久連結">¶</a></dt>
 <dd><p>Retrieves the value set by <a class="reference internal" href="#curses.set_tabsize" title="curses.set_tabsize"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_tabsize()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -748,7 +766,7 @@ keyboard from escape sequences sent by cursor and function keys.</p>
 <dd><p>Sets the number of columns used by the curses library when converting a tab
 character to spaces as it adds the tab to a window.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -826,7 +844,7 @@ terminal description.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="curses.tparm">
-<span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">tparm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">str</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.tparm" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">tparm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.tparm" title="本定義的永久連結">¶</a></dt>
 <dd><p>Instantiate the bytes object <em>str</em> with the supplied parameters, where <em>str</em> should
 be a parameterized string obtained from the terminfo database.  E.g.
 <code class="docutils literal notranslate"><span class="pre">tparm(tigetstr(&quot;cup&quot;),</span> <span class="pre">5,</span> <span class="pre">3)</span></code> could result in <code class="docutils literal notranslate"><span class="pre">b'\033[6;4H'</span></code>, the exact
@@ -868,7 +886,7 @@ example as <code class="docutils literal notranslate"><span class="pre">b'^C'</s
 <span class="sig-prename descclassname"><span class="pre">curses.</span></span><span class="sig-name descname"><span class="pre">update_lines_cols</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.update_lines_cols" title="本定義的永久連結">¶</a></dt>
 <dd><p>Update <span class="target" id="index-3"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">LINES</span></code> and <span class="target" id="index-4"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">COLS</span></code>. Useful for detecting manual screen resize.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -881,7 +899,7 @@ example as <code class="docutils literal notranslate"><span class="pre">b'^C'</s
 <p>Only one <em>ch</em> can be pushed before <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_wch()</span></code> is called.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -934,9 +952,9 @@ it restores cooked mode, turns on echo, and disables the terminal keypad.</p>
 the following methods and attributes:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.addch">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ch</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.addch" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.addch" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">ch</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Paint character <em>ch</em> at <code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code> with attributes <em>attr</em>, overwriting any
 character previously painted at that location.  By default, the character
 position and attributes are the current settings for the window object.</p>
@@ -950,9 +968,9 @@ or pad will cause an exception to be raised after the character is printed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.addnstr">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addnstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">n</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.addnstr" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addnstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.addnstr" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addnstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">n</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addnstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Paint at most <em>n</em> characters of the character string <em>str</em> at
 <code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code> with attributes
 <em>attr</em>, overwriting anything previously on the display.</p>
@@ -960,9 +978,9 @@ or pad will cause an exception to be raised after the character is printed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.addstr">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">str</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.addstr" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.addstr" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">str</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">addstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Paint the character string <em>str</em> at <code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code> with attributes
 <em>attr</em>, overwriting anything previously on the display.</p>
 <div class="admonition note">
@@ -1004,7 +1022,7 @@ current window.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.bkgd">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">bkgd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ch</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.bkgd" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">bkgd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.bkgd" title="本定義的永久連結">¶</a></dt>
 <dd><p>Set the background property of the window to the character <em>ch</em>, with
 attributes <em>attr</em>.  The change is then applied to every character position in
 that window:</p>
@@ -1018,7 +1036,7 @@ background character.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.bkgdset">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">bkgdset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ch</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.bkgdset" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">bkgdset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.bkgdset" title="本定義的永久連結">¶</a></dt>
 <dd><p>Set the window's background.  A window's background consists of a character and
 any combination of attributes.  The attribute part of the background is combined
 (OR'ed) with all non-blank characters that are written into the window.  Both
@@ -1029,7 +1047,7 @@ the character through any scrolling and insert/delete line/character operations.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.border">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">border</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">ls</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">rs</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">ts</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">bs</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">tl</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">tr</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">bl</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">br</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.border" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">border</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">ls</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">rs</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">ts</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">bs</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">tl</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">tr</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">bl</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">br</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.border" title="本定義的永久連結">¶</a></dt>
 <dd><p>Draw a border around the edges of the window. Each parameter specifies  the
 character to use for a specific part of the border; see the table below for more
 details.</p>
@@ -1047,7 +1065,7 @@ in this table:</p>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
-<th class="head"><p>描述</p></th>
+<th class="head"><p>Description</p></th>
 <th class="head"><p>Default value</p></th>
 </tr>
 </thead>
@@ -1090,7 +1108,7 @@ in this table:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.box">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">box</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">vertch</span></em>, <em class="sig-param"><span class="pre">horch</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.box" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">box</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">vertch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horch</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.box" title="本定義的永久連結">¶</a></dt>
 <dd><p>Similar to <a class="reference internal" href="#curses.window.border" title="curses.window.border"><code class="xref py py-meth docutils literal notranslate"><span class="pre">border()</span></code></a>, but both <em>ls</em> and <em>rs</em> are <em>vertch</em> and both <em>ts</em> and
 <em>bs</em> are <em>horch</em>.  The default corner characters are always used by this function.</p>
 </dd></dl>
@@ -1148,7 +1166,7 @@ reflect the current cursor position of the window.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.delch">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">delch</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.delch" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">delch</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.delch" title="本定義的永久連結">¶</a></dt>
 <dd><p>Delete any character at <code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code>.</p>
 </dd></dl>
 
@@ -1171,7 +1189,7 @@ object for the derived window.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.echochar">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">echochar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ch</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.echochar" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">echochar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.echochar" title="本定義的永久連結">¶</a></dt>
 <dd><p>Add character <em>ch</em> with attribute <em>attr</em>, and immediately  call <a class="reference internal" href="#curses.window.refresh" title="curses.window.refresh"><code class="xref py py-meth docutils literal notranslate"><span class="pre">refresh()</span></code></a>
 on the window.</p>
 </dd></dl>
@@ -1183,6 +1201,9 @@ on the window.</p>
 enclosed by the given window, returning <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.  It is useful for
 determining what subset of the screen windows enclose the location of a mouse
 event.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Previously it returned <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> instead of <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</div>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1193,7 +1214,7 @@ The encoding attribute is inherited from the parent window when a subwindow
 is created, for example with <a class="reference internal" href="#curses.window.subwin" title="curses.window.subwin"><code class="xref py py-meth docutils literal notranslate"><span class="pre">window.subwin()</span></code></a>. By default, the locale
 encoding is used (see <a class="reference internal" href="locale.html#locale.getpreferredencoding" title="locale.getpreferredencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">locale.getpreferredencoding()</span></code></a>).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1217,7 +1238,7 @@ encoding is used (see <a class="reference internal" href="locale.html#locale.get
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.getch">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">getch</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.getch" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">getch</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.getch" title="本定義的永久連結">¶</a></dt>
 <dd><p>Get a character. Note that the integer returned does <em>not</em> have to be in ASCII
 range: function keys, keypad keys and so on are represented by numbers higher
 than 255.  In no-delay mode, return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if there is no input, otherwise
@@ -1226,18 +1247,18 @@ wait until a key is pressed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.get_wch">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">get_wch</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.get_wch" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">get_wch</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.get_wch" title="本定義的永久連結">¶</a></dt>
 <dd><p>Get a wide character. Return a character for most keys, or an integer for
 function keys, keypad keys, and other special keys.
 In no-delay mode, raise an exception if there is no input.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.getkey">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">getkey</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.getkey" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">getkey</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.getkey" title="本定義的永久連結">¶</a></dt>
 <dd><p>Get a character, returning a string instead of an integer, as <a class="reference internal" href="#curses.window.getch" title="curses.window.getch"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getch()</span></code></a>
 does. Function keys, keypad keys and other special keys return a multibyte
 string containing the key name.  In no-delay mode, raise an exception if
@@ -1313,16 +1334,16 @@ wrefresh.  This option is disabled by default.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.inch">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">inch</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.inch" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">inch</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.inch" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the character at the given position in the window. The bottom 8 bits are
 the character proper, and upper bits are the attributes.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.insch">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ch</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.insch" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.insch" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">ch</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Paint character <em>ch</em> at <code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code> with attributes <em>attr</em>, moving the line from
 position <em>x</em> right by one character.</p>
 </dd></dl>
@@ -1346,9 +1367,9 @@ line.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.insnstr">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insnstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">n</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.insnstr" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insnstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.insnstr" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insnstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">n</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insnstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Insert a character string (as many characters as will fit on the line) before
 the character under the cursor, up to <em>n</em> characters.   If <em>n</em> is zero or
 negative, the entire string is inserted. All characters to the right of the
@@ -1358,9 +1379,9 @@ The cursor position does not change (after moving to <em>y</em>, <em>x</em>, if 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.insstr">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">str</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.insstr" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.insstr" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">str</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">attr</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">insstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Insert a character string (as many characters as will fit on the line) before
 the character under the cursor.  All characters to the right of the cursor are
 shifted right, with the rightmost characters on the line being lost.  The cursor
@@ -1369,9 +1390,9 @@ position does not change (after moving to <em>y</em>, <em>x</em>, if specified).
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.instr">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">instr</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">n</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.instr" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">instr</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.instr" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">instr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">n</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">instr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Return a bytes object of characters, extracted from the window starting at the
 current cursor position, or at <em>y</em>, <em>x</em> if specified. Attributes are stripped
 from the characters.  If <em>n</em> is specified, <a class="reference internal" href="#curses.window.instr" title="curses.window.instr"><code class="xref py py-meth docutils literal notranslate"><span class="pre">instr()</span></code></a> returns a string
@@ -1454,7 +1475,7 @@ the physical screen.  To accomplish that, call  <a class="reference internal" hr
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.overlay">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">overlay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">destwin</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">sminrow</span></em>, <em class="sig-param"><span class="pre">smincol</span></em>, <em class="sig-param"><span class="pre">dminrow</span></em>, <em class="sig-param"><span class="pre">dmincol</span></em>, <em class="sig-param"><span class="pre">dmaxrow</span></em>, <em class="sig-param"><span class="pre">dmaxcol</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.overlay" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">overlay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destwin</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">sminrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smincol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dminrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmincol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmaxrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmaxcol</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.overlay" title="本定義的永久連結">¶</a></dt>
 <dd><p>Overlay the window on top of <em>destwin</em>. The windows need not be the same size,
 only the overlapping region is copied. This copy is non-destructive, which means
 that the current background character does not overwrite the old contents of
@@ -1467,7 +1488,7 @@ the destination window.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.overwrite">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">overwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">destwin</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">sminrow</span></em>, <em class="sig-param"><span class="pre">smincol</span></em>, <em class="sig-param"><span class="pre">dminrow</span></em>, <em class="sig-param"><span class="pre">dmincol</span></em>, <em class="sig-param"><span class="pre">dmaxrow</span></em>, <em class="sig-param"><span class="pre">dmaxcol</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.overwrite" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">overwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destwin</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">sminrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smincol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dminrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmincol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmaxrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmaxcol</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.overwrite" title="本定義的永久連結">¶</a></dt>
 <dd><p>Overwrite the window on top of <em>destwin</em>. The windows need not be the same size,
 in which case only the overlapping region is copied. This copy is destructive,
 which means that the current background character overwrites the old contents of
@@ -1501,7 +1522,7 @@ should be completely redrawn on the next <a class="reference internal" href="#cu
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.refresh">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">pminrow</span></em>, <em class="sig-param"><span class="pre">pmincol</span></em>, <em class="sig-param"><span class="pre">sminrow</span></em>, <em class="sig-param"><span class="pre">smincol</span></em>, <em class="sig-param"><span class="pre">smaxrow</span></em>, <em class="sig-param"><span class="pre">smaxcol</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.refresh" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">pminrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmincol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sminrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smincol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smaxrow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smaxcol</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.refresh" title="本定義的永久連結">¶</a></dt>
 <dd><p>Update the display immediately (sync actual screen with previous
 drawing/deleting methods).</p>
 <p>The 6 optional arguments can only be specified when the window is a pad created
@@ -1527,7 +1548,7 @@ rendition (as set by <a class="reference internal" href="#curses.window.bkgdset"
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.scroll">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">scroll</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">lines=1</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.scroll" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">scroll</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">lines=1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.scroll" title="本定義的永久連結">¶</a></dt>
 <dd><p>Scroll the screen or scrolling region upward by <em>lines</em> lines.</p>
 </dd></dl>
 
@@ -1617,7 +1638,7 @@ still no input at the end of that time.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.window.touchline">
-<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">touchline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">start</span></em>, <em class="sig-param"><span class="pre">count</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">changed</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.touchline" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">window.</span></span><span class="sig-name descname"><span class="pre">touchline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">changed</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.window.touchline" title="本定義的永久連結">¶</a></dt>
 <dd><p>Pretend <em>count</em> lines have been changed, starting with line <em>start</em>.  If
 <em>changed</em> is supplied, it specifies whether the affected lines are marked as
 having been changed (<em>changed</em><code class="docutils literal notranslate"><span class="pre">=True</span></code>) or unchanged (<em>changed</em><code class="docutils literal notranslate"><span class="pre">=False</span></code>).</p>
@@ -1680,7 +1701,7 @@ components can also be accessed by name,  so <code class="docutils literal notra
 is equivalent to <code class="docutils literal notranslate"><span class="pre">curses.ncurses_version.major</span></code> and so on.</p>
 <p>Availability: if the ncurses library is used.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1756,7 +1777,7 @@ character</p></td>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入: </span><code class="docutils literal notranslate"><span class="pre">A_ITALIC</span></code> was added.</p>
+<p><span class="versionmodified added">在 3.7 版本新加入: </span><code class="docutils literal notranslate"><span class="pre">A_ITALIC</span></code> was added.</p>
 </div>
 <p>Several constants are available to extract corresponding attributes returned
 by some methods.</p>
@@ -2337,7 +2358,7 @@ with ASCII  dashes, vertical bars, and plus signs.</p>
 <p>You can instantiate a <a class="reference internal" href="#curses.textpad.Textbox" title="curses.textpad.Textbox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Textbox</span></code></a> object as follows:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="curses.textpad.Textbox">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">curses.textpad.</span></span><span class="sig-name descname"><span class="pre">Textbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#curses.textpad.Textbox" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">curses.textpad.</span></span><span class="sig-name descname"><span class="pre">Textbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#curses.textpad.Textbox" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a textbox widget object.  The <em>win</em> argument should be a curses
 <a class="reference internal" href="#curses-window-objects"><span class="std std-ref">window</span></a> object in which the textbox is to
 be contained. The edit cursor of the textbox is initially located at the
@@ -2346,7 +2367,7 @@ The instance's <a class="reference internal" href="#curses.textpad.Textbox.strip
 <p><a class="reference internal" href="#curses.textpad.Textbox" title="curses.textpad.Textbox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Textbox</span></code></a> objects have the following methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="curses.textpad.Textbox.edit">
-<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">validator</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.textpad.Textbox.edit" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">validator</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#curses.textpad.Textbox.edit" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is the entry point you will normally use.  It accepts editing
 keystrokes until one of the termination keystrokes is entered.  If
 <em>validator</em> is supplied, it must be a function.  It will be called for
@@ -2481,8 +2502,9 @@ contents are gathered.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses</span></code> --- Terminal handling for character-cell displays</a><ul>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 <li><a class="reference internal" href="#window-objects">Window Objects</a></li>
@@ -2495,18 +2517,23 @@ contents are gathered.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="getpass.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- Portable password input</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="curses.ascii.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses.ascii</span></code> --- Utilities for ASCII characters</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="getpass.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">getpass</span></code> --- Portable password input</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="curses.ascii.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses.ascii</span></code> --- Utilities for ASCII characters</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/curses.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/curses.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2541,13 +2568,11 @@ contents are gathered.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="allos.html" >Generic Operating System Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">curses</span></code> --- Terminal handling for character-cell displays</a></li>
                 <li class="right">
@@ -2567,25 +2592,25 @@ contents are gathered.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

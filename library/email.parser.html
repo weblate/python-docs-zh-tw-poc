@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>email.parser: Parsing email messages &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email.parser: Parsing email messages &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="email.message: Representing an email message" href="email.message.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/email.parser.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.parser</span></code>: Parsing email messages</a><ul>
 <li><a class="reference internal" href="#feedparser-api">FeedParser API</a></li>
 <li><a class="reference internal" href="#parser-api">Parser API</a></li>
@@ -82,18 +81,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.message.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message</span></code>: Representing an email message</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.generator.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.generator</span></code>: Generating MIME documents</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.message.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message</span></code>: Representing an email message</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.generator.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.generator</span></code>: Generating MIME documents</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.parser.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.parser.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -129,13 +133,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.parser</span></code>: Parsing email messages</a></li>
@@ -163,7 +165,7 @@
             
   <section id="module-email.parser">
 <span id="email-parser-parsing-email-messages"></span><h1><a class="reference internal" href="#module-email.parser" title="email.parser: Parse flat text email messages to produce a message object structure."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.parser</span></code></a>: Parsing email messages<a class="headerlink" href="#module-email.parser" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/email/parser.py">Lib/email/parser.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/email/parser.py">Lib/email/parser.py</a></p>
 <hr class="docutils" />
 <p>Message object structures can be created in one of two ways: they can be
 created from whole cloth by creating an <a class="reference internal" href="email.message.html#email.message.EmailMessage" title="email.message.EmailMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmailMessage</span></code></a>
@@ -219,7 +221,7 @@ list of defects that it can find.</p>
 <p>Here is the API for the <a class="reference internal" href="#email.parser.BytesFeedParser" title="email.parser.BytesFeedParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesFeedParser</span></code></a>:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="email.parser.BytesFeedParser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">BytesFeedParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_factory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.BytesFeedParser" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">BytesFeedParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_factory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.BytesFeedParser" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#email.parser.BytesFeedParser" title="email.parser.BytesFeedParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesFeedParser</span></code></a> instance.  Optional <em>_factory</em> is a
 no-argument callable; if not specified use the
 <a class="reference internal" href="email.policy.html#email.policy.Policy.message_factory" title="email.policy.Policy.message_factory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">message_factory</span></code></a> from the <em>policy</em>.  Call
@@ -235,13 +237,13 @@ more information on what else <em>policy</em> controls, see the
 <p>Note: <strong>The policy keyword should always be specified</strong>; The default will
 change to <a class="reference internal" href="email.policy.html#email.policy.default" title="email.policy.default"><code class="xref py py-data docutils literal notranslate"><span class="pre">email.policy.default</span></code></a> in a future version of Python.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added the <em>policy</em> keyword.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added the <em>policy</em> keyword.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>_factory</em> defaults to the policy <code class="docutils literal notranslate"><span class="pre">message_factory</span></code>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>_factory</em> defaults to the policy <code class="docutils literal notranslate"><span class="pre">message_factory</span></code>.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="email.parser.BytesFeedParser.feed">
@@ -265,14 +267,14 @@ after this method has been called.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.parser.FeedParser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">FeedParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_factory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.FeedParser" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">FeedParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_factory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.FeedParser" title="本定義的永久連結">¶</a></dt>
 <dd><p>Works like <a class="reference internal" href="#email.parser.BytesFeedParser" title="email.parser.BytesFeedParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesFeedParser</span></code></a> except that the input to the
 <a class="reference internal" href="#email.parser.BytesFeedParser.feed" title="email.parser.BytesFeedParser.feed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">feed()</span></code></a> method must be a string.  This is of limited
 utility, since the only way for such a message to be valid is for it to
 contain only ASCII text or, if <code class="xref py py-attr docutils literal notranslate"><span class="pre">utf8</span></code> is
 <code class="docutils literal notranslate"><span class="pre">True</span></code>, no binary attachments.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added the <em>policy</em> keyword.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added the <em>policy</em> keyword.</p>
 </div>
 </dd></dl>
 
@@ -290,18 +292,18 @@ can be much faster in these situations, since they do not attempt to parse the
 message body, instead setting the payload to the raw body.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="email.parser.BytesParser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">BytesParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.BytesParser" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">BytesParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.BytesParser" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#email.parser.BytesParser" title="email.parser.BytesParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesParser</span></code></a> instance.  The <em>_class</em> and <em>policy</em>
 arguments have the same meaning and semantics as the <em>_factory</em>
 and <em>policy</em> arguments of <a class="reference internal" href="#email.parser.BytesFeedParser" title="email.parser.BytesFeedParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesFeedParser</span></code></a>.</p>
 <p>Note: <strong>The policy keyword should always be specified</strong>; The default will
 change to <a class="reference internal" href="email.policy.html#email.policy.default" title="email.policy.default"><code class="xref py py-data docutils literal notranslate"><span class="pre">email.policy.default</span></code></a> in a future version of Python.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Removed the <em>strict</em> argument that was deprecated in 2.4.  Added the
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Removed the <em>strict</em> argument that was deprecated in 2.4.  Added the
 <em>policy</em> keyword.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>_class</em> defaults to the policy <code class="docutils literal notranslate"><span class="pre">message_factory</span></code>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>_class</em> defaults to the policy <code class="docutils literal notranslate"><span class="pre">message_factory</span></code>.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="email.parser.BytesParser.parse">
@@ -310,8 +312,8 @@ change to <a class="reference internal" href="email.policy.html#email.policy.def
 resulting bytes, and return the message object.  <em>fp</em> must support
 both the <a class="reference internal" href="io.html#io.IOBase.readline" title="io.IOBase.readline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code></a> and the <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code>
 methods.</p>
-<p>The bytes contained in <em>fp</em> must be formatted as a block of <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a>
-(or, if <code class="xref py py-attr docutils literal notranslate"><span class="pre">utf8</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6532.html"><strong>RFC 6532</strong></a>)
+<p>The bytes contained in <em>fp</em> must be formatted as a block of <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a>
+(or, if <code class="xref py py-attr docutils literal notranslate"><span class="pre">utf8</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6532.html"><strong>RFC 6532</strong></a>)
 style headers and header continuation lines, optionally preceded by an
 envelope header.  The header block is terminated either by the end of the
 data or by a blank line.  Following the header block is the body of the
@@ -333,29 +335,29 @@ object</span></a> instead of a file-like object.  Calling this method on a
 </dd></dl>
 
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.parser.BytesHeaderParser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">BytesHeaderParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.BytesHeaderParser" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">BytesHeaderParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.BytesHeaderParser" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exactly like <a class="reference internal" href="#email.parser.BytesParser" title="email.parser.BytesParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesParser</span></code></a>, except that <em>headersonly</em>
 defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.parser.Parser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">Parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.Parser" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">Parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.Parser" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class is parallel to <a class="reference internal" href="#email.parser.BytesParser" title="email.parser.BytesParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesParser</span></code></a>, but handles string input.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>_class</em> defaults to the policy <code class="docutils literal notranslate"><span class="pre">message_factory</span></code>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>_class</em> defaults to the policy <code class="docutils literal notranslate"><span class="pre">message_factory</span></code>.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="email.parser.Parser.parse">
@@ -382,7 +384,7 @@ and calling <a class="reference internal" href="#email.parser.Parser.parse" titl
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.parser.HeaderParser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">HeaderParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.HeaderParser" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.parser.</span></span><span class="sig-name descname"><span class="pre">HeaderParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">policy.compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.parser.HeaderParser" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exactly like <a class="reference internal" href="#email.parser.Parser" title="email.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parser</span></code></a>, except that <em>headersonly</em>
 defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </dd></dl>
@@ -398,10 +400,10 @@ equivalent to <code class="docutils literal notranslate"><span class="pre">Bytes
 <em>policy</em> are interpreted as with the <a class="reference internal" href="#email.parser.BytesParser" title="email.parser.BytesParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesParser</span></code></a> class
 constructor.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
 </div>
 </dd></dl>
 
@@ -413,10 +415,10 @@ object</span></a>.  This is equivalent to <code class="docutils literal notransl
 <em>policy</em> are interpreted as with the <a class="reference internal" href="#email.parser.BytesParser" title="email.parser.BytesParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesParser</span></code></a> class
 constructor.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
 </div>
 </dd></dl>
 
@@ -427,7 +429,7 @@ constructor.</p>
 <code class="docutils literal notranslate"><span class="pre">Parser().parsestr(s)</span></code>.  <em>_class</em> and <em>policy</em> are interpreted as
 with the <a class="reference internal" href="#email.parser.Parser" title="email.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parser</span></code></a> class constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
 </div>
 </dd></dl>
 
@@ -438,10 +440,10 @@ with the <a class="reference internal" href="#email.parser.Parser" title="email.
 This is equivalent to <code class="docutils literal notranslate"><span class="pre">Parser().parse(fp)</span></code>.  <em>_class</em> and <em>policy</em> are
 interpreted as with the <a class="reference internal" href="#email.parser.Parser" title="email.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parser</span></code></a> class constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Removed the <em>strict</em> argument.  Added the <em>policy</em> keyword.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>_class</em> defaults to the policy <code class="docutils literal notranslate"><span class="pre">message_factory</span></code>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>_class</em> defaults to the policy <code class="docutils literal notranslate"><span class="pre">message_factory</span></code>.</p>
 </div>
 </dd></dl>
 
@@ -490,8 +492,9 @@ they will have an instance of the
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.parser</span></code>: Parsing email messages</a><ul>
 <li><a class="reference internal" href="#feedparser-api">FeedParser API</a></li>
 <li><a class="reference internal" href="#parser-api">Parser API</a></li>
@@ -500,18 +503,23 @@ they will have an instance of the
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.message.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message</span></code>: Representing an email message</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.generator.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.generator</span></code>: Generating MIME documents</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.message.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message</span></code>: Representing an email message</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.generator.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.generator</span></code>: Generating MIME documents</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.parser.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.parser.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -546,13 +554,11 @@ they will have an instance of the
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.parser</span></code>: Parsing email messages</a></li>
@@ -573,25 +579,25 @@ they will have an instance of the
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>imp --- Access the import internals &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imp --- Access the import internals &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="optparse --- Parser for command line options" href="optparse.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/imp.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,26 +70,32 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code> --- Access the <span class="xref std std-ref">import</span> internals</a><ul>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="optparse.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code> --- Parser for command line options</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="undoc.html"
-                        title="下一章">Undocumented Modules</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="optparse.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code> --- Parser for command line options</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="undoc.html"
+                          title="下一章">Undocumented Modules</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/imp.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/imp.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -127,13 +131,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="superseded.html" accesskey="U">Superseded Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code> --- Access the <span class="xref std std-ref">import</span> internals</a></li>
                 <li class="right">
@@ -159,10 +161,10 @@
           <div class="body" role="main">
             
   <section id="module-imp">
-<span id="imp-access-the-import-internals"></span><h1><a class="reference internal" href="#module-imp" title="imp: Access the implementation of the import statement.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> --- Access the <a class="reference internal" href="../reference/import.html#importsystem"><span class="std std-ref">import</span></a> internals<a class="headerlink" href="#module-imp" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/imp.py">Lib/imp.py</a></p>
+<span id="imp-access-the-import-internals"></span><h1><a class="reference internal" href="#module-imp" title="imp: Access the implementation of the import statement.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> --- Access the <a class="reference internal" href="../reference/import.html#importsystem"><span class="std std-ref">import</span></a> internals<a class="headerlink" href="#module-imp" title="本標題的永久連結">¶</a></h1>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/imp.py">Lib/imp.py</a></p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用: </span>The <a class="reference internal" href="#module-imp" title="imp: Access the implementation of the import statement.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module is deprecated in favor of <a class="reference internal" href="importlib.html#module-importlib" title="importlib: The implementation of the import machinery."><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib</span></code></a>.</p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用: </span>The <a class="reference internal" href="#module-imp" title="imp: Access the implementation of the import statement.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module is deprecated in favor of <a class="reference internal" href="importlib.html#module-importlib" title="importlib: The implementation of the import machinery."><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib</span></code></a>.</p>
 </div>
 <hr class="docutils" id="index-0" />
 <p>This module provides an interface to the mechanisms used to implement the
@@ -173,7 +175,7 @@
 <dd><p id="index-1">Return the magic string value used to recognize byte-compiled code files
 (<code class="file docutils literal notranslate"><span class="pre">.pyc</span></code> files).  (This value may be different for each Python version.)</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.MAGIC_NUMBER" title="importlib.util.MAGIC_NUMBER"><code class="xref py py-attr docutils literal notranslate"><span class="pre">importlib.util.MAGIC_NUMBER</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.MAGIC_NUMBER" title="importlib.util.MAGIC_NUMBER"><code class="xref py py-attr docutils literal notranslate"><span class="pre">importlib.util.MAGIC_NUMBER</span></code></a> instead.</p>
 </div>
 </dd></dl>
 
@@ -189,13 +191,13 @@ files), and <em>type</em> is the file type, which has one of the values
 <a class="reference internal" href="#imp.PY_SOURCE" title="imp.PY_SOURCE"><code class="xref py py-const docutils literal notranslate"><span class="pre">PY_SOURCE</span></code></a>, <a class="reference internal" href="#imp.PY_COMPILED" title="imp.PY_COMPILED"><code class="xref py py-const docutils literal notranslate"><span class="pre">PY_COMPILED</span></code></a>, or <a class="reference internal" href="#imp.C_EXTENSION" title="imp.C_EXTENSION"><code class="xref py py-const docutils literal notranslate"><span class="pre">C_EXTENSION</span></code></a>, described
 below.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用: </span>Use the constants defined on <a class="reference internal" href="importlib.html#module-importlib.machinery" title="importlib.machinery: Importers and path hooks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.machinery</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用: </span>Use the constants defined on <a class="reference internal" href="importlib.html#module-importlib.machinery" title="importlib.machinery: Importers and path hooks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.machinery</span></code></a> instead.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="imp.find_module">
-<span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">find_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">path</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imp.find_module" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">find_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imp.find_module" title="本定義的永久連結">¶</a></dt>
 <dd><p>Try to find the module <em>name</em>.  If <em>path</em> is omitted or <code class="docutils literal notranslate"><span class="pre">None</span></code>, the list of
 directory names given by <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> is searched, but first a few special
 places are searched: the function tries to find a built-in module with the
@@ -225,7 +227,7 @@ dots).  In order to find <em>P.M</em>, that is, submodule <em>M</em> of package 
 then use <a class="reference internal" href="#imp.find_module" title="imp.find_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_module()</span></code></a> with the <em>path</em> argument set to <code class="docutils literal notranslate"><span class="pre">P.__path__</span></code>.
 When <em>P</em> itself has a dotted name, apply this recipe recursively.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.find_spec" title="importlib.util.find_spec"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.find_spec()</span></code></a> instead unless Python 3.3
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.find_spec" title="importlib.util.find_spec"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.find_spec()</span></code></a> instead unless Python 3.3
 compatibility is required, in which case use
 <a class="reference internal" href="importlib.html#importlib.find_loader" title="importlib.find_loader"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.find_loader()</span></code></a>. For example usage of the former case,
 see the <a class="reference internal" href="importlib.html#importlib-examples"><span class="std std-ref">Examples</span></a> section of the <a class="reference internal" href="importlib.html#module-importlib" title="importlib: The implementation of the import machinery."><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib</span></code></a>
@@ -252,7 +254,7 @@ an exception (usually <a class="reference internal" href="exceptions.html#Import
 it was not <code class="docutils literal notranslate"><span class="pre">None</span></code>, even when an exception is raised.  This is best done
 using a <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> ... <a class="reference internal" href="../reference/compound_stmts.html#finally"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code></a> statement.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用: </span>If previously used in conjunction with <a class="reference internal" href="#imp.find_module" title="imp.find_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">imp.find_module()</span></code></a> then
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用: </span>If previously used in conjunction with <a class="reference internal" href="#imp.find_module" title="imp.find_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">imp.find_module()</span></code></a> then
 consider using <a class="reference internal" href="importlib.html#importlib.import_module" title="importlib.import_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.import_module()</span></code></a>, otherwise use the loader
 returned by the replacement you chose for <a class="reference internal" href="#imp.find_module" title="imp.find_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">imp.find_module()</span></code></a>. If you
 called <a class="reference internal" href="#imp.load_module" title="imp.load_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">imp.load_module()</span></code></a> and related functions directly with file
@@ -270,7 +272,7 @@ approaches.</p>
 <dd><p>Return a new empty module object called <em>name</em>.  This object is <em>not</em> inserted
 in <code class="docutils literal notranslate"><span class="pre">sys.modules</span></code>.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.module_from_spec" title="importlib.util.module_from_spec"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.module_from_spec()</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.module_from_spec" title="importlib.util.module_from_spec"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.module_from_spec()</span></code></a> instead.</p>
 </div>
 </dd></dl>
 
@@ -311,7 +313,7 @@ for the table's presence and skip its initialization if desired:</p>
 </pre></div>
 </div>
 <p>It is legal though generally not very useful to reload built-in or dynamically
-loaded modules, except for <a class="reference internal" href="sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a>, <a class="reference internal" href="__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> and <a class="reference internal" href="builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a>.
+loaded modules, except for <a class="reference internal" href="sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a>, <a class="reference internal" href="__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> and <a class="reference internal" href="builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a>.
 In many cases, however, extension modules are not designed to be initialized
 more than once, and may fail in arbitrary ways when reloaded.</p>
 <p>If a module imports objects from another module using <a class="reference internal" href="../reference/simple_stmts.html#from"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">from</span></code></a> ...
@@ -323,18 +325,18 @@ names (<em>module</em>.*name*) instead.</p>
 the class does not affect the method definitions of the instances --- they
 continue to use the old class definition.  The same is true for derived classes.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Relies on both <code class="docutils literal notranslate"><span class="pre">__name__</span></code> and <code class="docutils literal notranslate"><span class="pre">__loader__</span></code> being defined on the module
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Relies on both <code class="docutils literal notranslate"><span class="pre">__name__</span></code> and <code class="docutils literal notranslate"><span class="pre">__loader__</span></code> being defined on the module
 being reloaded instead of just <code class="docutils literal notranslate"><span class="pre">__name__</span></code>.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.reload" title="importlib.reload"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.reload()</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.reload" title="importlib.reload"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.reload()</span></code></a> instead.</p>
 </div>
 </dd></dl>
 
 <p>The following functions are conveniences for handling <span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3147"><strong>PEP 3147</strong></a> byte-compiled
 file paths.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="imp.cache_from_source">
@@ -349,14 +351,14 @@ The <code class="docutils literal notranslate"><span class="pre">cpython-32</spa
 <code class="docutils literal notranslate"><span class="pre">__debug__</span></code>, leading to optimized bytecode.</p>
 <p><em>path</em> need not exist.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.implementation.cache_tag</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.implementation.cache_tag</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then
 <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> is raised.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.cache_from_source" title="importlib.util.cache_from_source"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.cache_from_source()</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.cache_from_source" title="importlib.util.cache_from_source"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.cache_from_source()</span></code></a> instead.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <em>debug_override</em> parameter no longer creates a <code class="docutils literal notranslate"><span class="pre">.pyo</span></code> file.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <em>debug_override</em> parameter no longer creates a <code class="docutils literal notranslate"><span class="pre">.pyo</span></code> file.</p>
 </div>
 </dd></dl>
 
@@ -371,11 +373,11 @@ to <span class="target" id="index-5"></span><a class="pep reference external" hr
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.implementation.cache_tag</span></code> is not defined,
 <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> is raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Raise <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> when
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Raise <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> when
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.implementation.cache_tag</span></code> is not defined.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.source_from_cache" title="importlib.util.source_from_cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.source_from_cache()</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用: </span>Use <a class="reference internal" href="importlib.html#importlib.util.source_from_cache" title="importlib.util.source_from_cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.util.source_from_cache()</span></code></a> instead.</p>
 </div>
 </dd></dl>
 
@@ -385,7 +387,7 @@ to <span class="target" id="index-5"></span><a class="pep reference external" hr
 <dd><p>Return the <span class="target" id="index-6"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3147"><strong>PEP 3147</strong></a> magic tag string matching this version of Python's
 magic number, as returned by <a class="reference internal" href="#imp.get_magic" title="imp.get_magic"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_magic()</span></code></a>.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用: </span>Use <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.implementation.cache_tag</span></code> directly starting
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用: </span>Use <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.implementation.cache_tag</span></code> directly starting
 in Python 3.3.</p>
 </div>
 </dd></dl>
@@ -407,12 +409,12 @@ incomplete module objects constructed by the original thread.  An
 exception is made for circular imports, which by construction have to
 expose an incomplete module object at some point.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The locking scheme has changed to per-module locks for
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The locking scheme has changed to per-module locks for
 the most part.  A global import lock is kept for some critical tasks,
 such as initializing the per-module locks.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -427,12 +429,12 @@ again without blocking; the thread must release it once for each time it has
 acquired it.</p>
 <p>On platforms without threads, this function does nothing.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The locking scheme has changed to per-module locks for
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The locking scheme has changed to per-module locks for
 the most part.  A global import lock is kept for some critical tasks,
 such as initializing the per-module locks.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -442,12 +444,12 @@ such as initializing the per-module locks.</p>
 <dd><p>Release the interpreter's global import lock. On platforms without
 threads, this function does nothing.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The locking scheme has changed to per-module locks for
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The locking scheme has changed to per-module locks for
 the most part.  A global import lock is kept for some critical tasks,
 such as initializing the per-module locks.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -458,7 +460,7 @@ to indicate the search result of <a class="reference internal" href="#imp.find_m
 <span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">PY_SOURCE</span></span><a class="headerlink" href="#imp.PY_SOURCE" title="本定義的永久連結">¶</a></dt>
 <dd><p>The module was found as a source file.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -467,7 +469,7 @@ to indicate the search result of <a class="reference internal" href="#imp.find_m
 <span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">PY_COMPILED</span></span><a class="headerlink" href="#imp.PY_COMPILED" title="本定義的永久連結">¶</a></dt>
 <dd><p>The module was found as a compiled code object file.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -476,7 +478,7 @@ to indicate the search result of <a class="reference internal" href="#imp.find_m
 <span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">C_EXTENSION</span></span><a class="headerlink" href="#imp.C_EXTENSION" title="本定義的永久連結">¶</a></dt>
 <dd><p>The module was found as dynamically loadable shared library.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -485,7 +487,7 @@ to indicate the search result of <a class="reference internal" href="#imp.find_m
 <span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">PKG_DIRECTORY</span></span><a class="headerlink" href="#imp.PKG_DIRECTORY" title="本定義的永久連結">¶</a></dt>
 <dd><p>The module was found as a package directory.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -494,7 +496,7 @@ to indicate the search result of <a class="reference internal" href="#imp.find_m
 <span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">C_BUILTIN</span></span><a class="headerlink" href="#imp.C_BUILTIN" title="本定義的永久連結">¶</a></dt>
 <dd><p>The module was found as a built-in module.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -503,13 +505,13 @@ to indicate the search result of <a class="reference internal" href="#imp.find_m
 <span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">PY_FROZEN</span></span><a class="headerlink" href="#imp.PY_FROZEN" title="本定義的永久連結">¶</a></dt>
 <dd><p>The module was found as a frozen module.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.3 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.3 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="imp.NullImporter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">NullImporter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imp.NullImporter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">imp.</span></span><span class="sig-name descname"><span class="pre">NullImporter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#imp.NullImporter" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#imp.NullImporter" title="imp.NullImporter"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullImporter</span></code></a> type is a <span class="target" id="index-7"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0302"><strong>PEP 302</strong></a> import hook that handles
 non-directory path strings by failing to find any modules.  Calling this type
 with an existing directory or empty string raises <a class="reference internal" href="exceptions.html#ImportError" title="ImportError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportError</span></code></a>.
@@ -517,17 +519,17 @@ Otherwise, a <a class="reference internal" href="#imp.NullImporter" title="imp.N
 <p>Instances have only one method:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="imp.NullImporter.find_module">
-<span class="sig-name descname"><span class="pre">find_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">fullname</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">path</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imp.NullImporter.find_module" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">find_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#imp.NullImporter.find_module" title="本定義的永久連結">¶</a></dt>
 <dd><p>This method always returns <code class="docutils literal notranslate"><span class="pre">None</span></code>, indicating that the requested module could
 not be found.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span><code class="docutils literal notranslate"><span class="pre">None</span></code> is inserted into <code class="docutils literal notranslate"><span class="pre">sys.path_importer_cache</span></code> instead of an
+<p><span class="versionmodified changed">在 3.3 版本變更: </span><code class="docutils literal notranslate"><span class="pre">None</span></code> is inserted into <code class="docutils literal notranslate"><span class="pre">sys.path_importer_cache</span></code> instead of an
 instance of <a class="reference internal" href="#imp.NullImporter" title="imp.NullImporter"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullImporter</span></code></a>.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.4 版後已棄用: </span>Insert <code class="docutils literal notranslate"><span class="pre">None</span></code> into <code class="docutils literal notranslate"><span class="pre">sys.path_importer_cache</span></code> instead.</p>
+<p><span class="versionmodified deprecated">在 3.4 版本開始棄用: </span>Insert <code class="docutils literal notranslate"><span class="pre">None</span></code> into <code class="docutils literal notranslate"><span class="pre">sys.path_importer_cache</span></code> instead.</p>
 </div>
 </dd></dl>
 
@@ -570,26 +572,32 @@ in that version, since <a class="reference internal" href="#imp.find_module" tit
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code> --- Access the <span class="xref std std-ref">import</span> internals</a><ul>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="optparse.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code> --- Parser for command line options</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="undoc.html"
-                        title="下一章">Undocumented Modules</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="optparse.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code> --- Parser for command line options</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="undoc.html"
+                          title="下一章">Undocumented Modules</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/imp.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/imp.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -624,13 +632,11 @@ in that version, since <a class="reference internal" href="#imp.find_module" tit
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="superseded.html" >Superseded Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code> --- Access the <span class="xref std std-ref">import</span> internals</a></li>
                 <li class="right">
@@ -650,25 +656,25 @@ in that version, since <a class="reference internal" href="#imp.find_module" tit
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

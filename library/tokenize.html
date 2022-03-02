@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>tokenize --- Tokenizer for Python source &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tokenize --- Tokenizer for Python source &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="keyword --- Testing for Python keywords" href="keyword.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/tokenize.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tokenize</span></code> --- Tokenizer for Python source</a><ul>
 <li><a class="reference internal" href="#tokenizing-input">Tokenizing Input</a></li>
 <li><a class="reference internal" href="#command-line-usage">Command-Line Usage</a></li>
@@ -82,18 +81,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="keyword.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="tabnanny.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabnanny</span></code> --- Detection of ambiguous indentation</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="keyword.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="tabnanny.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabnanny</span></code> --- Detection of ambiguous indentation</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/tokenize.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/tokenize.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -129,13 +133,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" accesskey="U">Python Language Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">tokenize</span></code> --- Tokenizer for Python source</a></li>
                 <li class="right">
@@ -162,7 +164,7 @@
             
   <section id="module-tokenize">
 <span id="tokenize-tokenizer-for-python-source"></span><h1><a class="reference internal" href="#module-tokenize" title="tokenize: Lexical scanner for Python source code."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tokenize</span></code></a> --- Tokenizer for Python source<a class="headerlink" href="#module-tokenize" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/tokenize.py">Lib/tokenize.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/tokenize.py">Lib/tokenize.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-tokenize" title="tokenize: Lexical scanner for Python source code."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tokenize</span></code></a> module provides a lexical scanner for Python source code,
 implemented in Python.  The scanner in this module returns comments as tokens
@@ -196,10 +198,10 @@ with the field names:
 <a class="reference internal" href="token.html#token.OP" title="token.OP"><code class="xref py py-data docutils literal notranslate"><span class="pre">OP</span></code></a> tokens.  For all other token types <code class="docutils literal notranslate"><span class="pre">exact_type</span></code>
 equals the named tuple <code class="docutils literal notranslate"><span class="pre">type</span></code> field.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added support for named tuples.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added support for named tuples.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added support for <code class="docutils literal notranslate"><span class="pre">exact_type</span></code>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added support for <code class="docutils literal notranslate"><span class="pre">exact_type</span></code>.</p>
 </div>
 <p><a class="reference internal" href="#tokenize.tokenize" title="tokenize.tokenize"><code class="xref py py-func docutils literal notranslate"><span class="pre">tokenize()</span></code></a> determines the source encoding of the file by looking for a
 UTF-8 BOM or encoding cookie, according to <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0263"><strong>PEP 263</strong></a>.</p>
@@ -264,20 +266,20 @@ returned.</p>
 <dd><p>Open a file in read only mode using the encoding detected by
 <a class="reference internal" href="#tokenize.detect_encoding" title="tokenize.detect_encoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">detect_encoding()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="tokenize.TokenError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">tokenize.</span></span><span class="sig-name descname"><span class="pre">TokenError</span></span><a class="headerlink" href="#tokenize.TokenError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tokenize.</span></span><span class="sig-name descname"><span class="pre">TokenError</span></span><a class="headerlink" href="#tokenize.TokenError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when either a docstring or expression that may be split over several
 lines is not completed anywhere in the file, for example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;&quot;&quot;Beginning of</span>
 <span class="s2">docstring</span>
 </pre></div>
 </div>
-<p>或是：</p>
+<p>or:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span>
  <span class="mi">2</span><span class="p">,</span>
  <span class="mi">3</span>
@@ -292,7 +294,7 @@ tokenization of their contents.</p>
 <section id="command-line-usage">
 <span id="tokenize-cli"></span><h2>Command-Line Usage<a class="headerlink" href="#command-line-usage" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <p>The <a class="reference internal" href="#module-tokenize" title="tokenize: Lexical scanner for Python source code."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tokenize</span></code></a> module can be executed as a script from the command line.
 It is as simple as:</p>
@@ -445,8 +447,9 @@ strings instead of bytes with <a class="reference internal" href="#tokenize.gene
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tokenize</span></code> --- Tokenizer for Python source</a><ul>
 <li><a class="reference internal" href="#tokenizing-input">Tokenizing Input</a></li>
 <li><a class="reference internal" href="#command-line-usage">Command-Line Usage</a></li>
@@ -455,18 +458,23 @@ strings instead of bytes with <a class="reference internal" href="#tokenize.gene
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="keyword.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="tabnanny.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabnanny</span></code> --- Detection of ambiguous indentation</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="keyword.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="tabnanny.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabnanny</span></code> --- Detection of ambiguous indentation</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/tokenize.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/tokenize.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -501,13 +509,11 @@ strings instead of bytes with <a class="reference internal" href="#tokenize.gene
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" >Python Language Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">tokenize</span></code> --- Tokenizer for Python source</a></li>
                 <li class="right">
@@ -527,25 +533,25 @@ strings instead of bytes with <a class="reference internal" href="#tokenize.gene
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

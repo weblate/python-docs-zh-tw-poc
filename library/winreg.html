@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>winreg --- Windows registry access &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>winreg --- Windows registry access &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="msvcrt --- Useful routines from the MS VC++ runtime" href="msvcrt.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/winreg.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">winreg</span></code> --- Windows registry access</a><ul>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 <li><a class="reference internal" href="#constants">Constants</a><ul>
@@ -90,18 +89,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="msvcrt.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msvcrt</span></code> --- Useful routines from the MS VC++ runtime</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="winsound.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">winsound</span></code> --- Sound-playing interface for Windows</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="msvcrt.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msvcrt</span></code> --- Useful routines from the MS VC++ runtime</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="winsound.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">winsound</span></code> --- Sound-playing interface for Windows</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/winreg.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/winreg.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -137,13 +141,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="windows.html" accesskey="U">MS Windows Specific Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">winreg</span></code> --- Windows registry access</a></li>
                 <li class="right">
@@ -176,7 +178,7 @@ integer as the registry handle, a <a class="reference internal" href="#handle-ob
 to ensure that the handles are closed correctly, even if the programmer neglects
 to explicitly close them.</p>
 <div class="versionchanged" id="exception-changed">
-<p><span class="versionmodified changed">3.3 版更變: </span>Several functions in this module used to raise a
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Several functions in this module used to raise a
 <a class="reference internal" href="exceptions.html#WindowsError" title="WindowsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">WindowsError</span></code></a>, which is now an alias of <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
 </div>
 <section id="functions">
@@ -206,7 +208,7 @@ and returns a <a class="reference internal" href="#handle-object"><span class="s
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> exception is raised.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.ConnectRegistry</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">computer_name</span></code>, <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -226,7 +228,7 @@ case, the handle returned is the same key handle passed in to the function.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.CreateKey</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">sub_key</span></code>, <code class="docutils literal notranslate"><span class="pre">access</span></code>.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.OpenKey/result</span></code> with argument <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -250,10 +252,10 @@ case, the handle returned is the same key handle passed in to the function.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.CreateKey</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">sub_key</span></code>, <code class="docutils literal notranslate"><span class="pre">access</span></code>.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.OpenKey/result</span></code> with argument <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -270,7 +272,7 @@ parameter.  This value must not be <code class="docutils literal notranslate"><s
 If the method fails, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> exception is raised.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.DeleteKey</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">sub_key</span></code>, <code class="docutils literal notranslate"><span class="pre">access</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -299,10 +301,10 @@ removed. If the method fails, an <a class="reference internal" href="exceptions.
 <p>On unsupported Windows versions, <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> is raised.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.DeleteKey</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">sub_key</span></code>, <code class="docutils literal notranslate"><span class="pre">access</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -328,7 +330,7 @@ typically called repeatedly until an <a class="reference internal" href="excepti
 raised, indicating, no more values are available.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.EnumKey</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -371,7 +373,7 @@ value data (see table in docs for
 </table>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.EnumValue</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -444,10 +446,10 @@ Rights</span></a> for other allowed values.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.OpenKey</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">sub_key</span></code>, <code class="docutils literal notranslate"><span class="pre">access</span></code>.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">winreg.OpenKey/result</span></code> with argument <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Allow the use of named arguments.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Allow the use of named arguments.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>See <a class="reference internal" href="#exception-changed"><span class="std std-ref">above</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -844,7 +846,7 @@ variables (<code class="docutils literal notranslate"><span class="pre">%PATH%</
 <span class="sig-prename descclassname"><span class="pre">winreg.</span></span><span class="sig-name descname"><span class="pre">REG_QWORD</span></span><a class="headerlink" href="#winreg.REG_QWORD" title="本定義的永久連結">¶</a></dt>
 <dd><p>A 64-bit number.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -853,7 +855,7 @@ variables (<code class="docutils literal notranslate"><span class="pre">%PATH%</
 <span class="sig-prename descclassname"><span class="pre">winreg.</span></span><span class="sig-name descname"><span class="pre">REG_QWORD_LITTLE_ENDIAN</span></span><a class="headerlink" href="#winreg.REG_QWORD_LITTLE_ENDIAN" title="本定義的永久連結">¶</a></dt>
 <dd><p>A 64-bit number in little-endian format. Equivalent to <a class="reference internal" href="#winreg.REG_QWORD" title="winreg.REG_QWORD"><code class="xref py py-const docutils literal notranslate"><span class="pre">REG_QWORD</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -949,8 +951,9 @@ underlying Win32 handle to exist beyond the lifetime of the handle object.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">winreg</span></code> --- Windows registry access</a><ul>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 <li><a class="reference internal" href="#constants">Constants</a><ul>
@@ -967,18 +970,23 @@ underlying Win32 handle to exist beyond the lifetime of the handle object.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="msvcrt.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msvcrt</span></code> --- Useful routines from the MS VC++ runtime</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="winsound.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">winsound</span></code> --- Sound-playing interface for Windows</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="msvcrt.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">msvcrt</span></code> --- Useful routines from the MS VC++ runtime</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="winsound.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">winsound</span></code> --- Sound-playing interface for Windows</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/winreg.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/winreg.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1013,13 +1021,11 @@ underlying Win32 handle to exist beyond the lifetime of the handle object.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="windows.html" >MS Windows Specific Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">winreg</span></code> --- Windows registry access</a></li>
                 <li class="right">
@@ -1039,25 +1045,25 @@ underlying Win32 handle to exist beyond the lifetime of the handle object.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

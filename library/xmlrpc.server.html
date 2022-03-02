@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>xmlrpc.server --- Basic XML-RPC servers &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlrpc.server --- Basic XML-RPC servers &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="xmlrpc.client --- XML-RPC client access" href="xmlrpc.client.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/xmlrpc.server.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a><ul>
 <li><a class="reference internal" href="#simplexmlrpcserver-objects">SimpleXMLRPCServer Objects</a><ul>
 <li><a class="reference internal" href="#simplexmlrpcserver-example">SimpleXMLRPCServer Example</a></li>
@@ -87,18 +86,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xmlrpc.client.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code> --- XML-RPC client access</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="ipaddress.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code> --- IPv4/IPv6 manipulation library</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xmlrpc.client.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code> --- XML-RPC client access</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="ipaddress.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code> --- IPv4/IPv6 manipulation library</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xmlrpc.server.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xmlrpc.server.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -134,13 +138,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" accesskey="U">Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a></li>
                 <li class="right">
@@ -167,7 +169,7 @@
             
   <section id="module-xmlrpc.server">
 <span id="xmlrpc-server-basic-xml-rpc-servers"></span><h1><a class="reference internal" href="#module-xmlrpc.server" title="xmlrpc.server: Basic XML-RPC server implementations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code></a> --- Basic XML-RPC servers<a class="headerlink" href="#module-xmlrpc.server" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/xmlrpc/server.py">Lib/xmlrpc/server.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/xmlrpc/server.py">Lib/xmlrpc/server.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-xmlrpc.server" title="xmlrpc.server: Basic XML-RPC server implementations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code></a> module provides a basic server framework for XML-RPC
 servers written in Python.  Servers can either be free standing, using
@@ -181,7 +183,7 @@ constructed data.  If you need to parse untrusted or unauthenticated data see
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="xmlrpc.server.SimpleXMLRPCServer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">SimpleXMLRPCServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestHandler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SimpleXMLRPCRequestHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logRequests</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_none</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bind_and_activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_builtin_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmlrpc.server.SimpleXMLRPCServer" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">SimpleXMLRPCServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestHandler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SimpleXMLRPCRequestHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logRequests</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_none</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bind_and_activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_builtin_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmlrpc.server.SimpleXMLRPCServer" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a new server instance.  This class provides methods for registration of
 functions that can be called by the XML-RPC protocol.  The <em>requestHandler</em>
 parameter should be a factory for request handler instances; it defaults to
@@ -198,13 +200,13 @@ The <em>use_builtin_types</em> parameter is passed to the
 <a class="reference internal" href="xmlrpc.client.html#xmlrpc.client.loads" title="xmlrpc.client.loads"><code class="xref py py-func docutils literal notranslate"><span class="pre">loads()</span></code></a> function and controls which types are processed
 when date/times values or binary data are received; it defaults to false.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The <em>use_builtin_types</em> flag was added.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The <em>use_builtin_types</em> flag was added.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xmlrpc.server.CGIXMLRPCRequestHandler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">CGIXMLRPCRequestHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_none</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_builtin_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmlrpc.server.CGIXMLRPCRequestHandler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">CGIXMLRPCRequestHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_none</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_builtin_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmlrpc.server.CGIXMLRPCRequestHandler" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a new instance to handle XML-RPC requests in a CGI environment.  The
 <em>allow_none</em> and <em>encoding</em> parameters are passed on to <a class="reference internal" href="xmlrpc.client.html#module-xmlrpc.client" title="xmlrpc.client: XML-RPC client access."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code></a>
 and control the XML-RPC responses that will be returned from the server.
@@ -212,13 +214,13 @@ The <em>use_builtin_types</em> parameter is passed to the
 <a class="reference internal" href="xmlrpc.client.html#xmlrpc.client.loads" title="xmlrpc.client.loads"><code class="xref py py-func docutils literal notranslate"><span class="pre">loads()</span></code></a> function and controls which types are processed
 when date/times values or binary data are received; it defaults to false.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The <em>use_builtin_types</em> flag was added.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The <em>use_builtin_types</em> flag was added.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xmlrpc.server.SimpleXMLRPCRequestHandler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">SimpleXMLRPCRequestHandler</span></span><a class="headerlink" href="#xmlrpc.server.SimpleXMLRPCRequestHandler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">SimpleXMLRPCRequestHandler</span></span><a class="headerlink" href="#xmlrpc.server.SimpleXMLRPCRequestHandler" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a new request handler instance.  This request handler supports <code class="docutils literal notranslate"><span class="pre">POST</span></code>
 requests and modifies logging so that the <em>logRequests</em> parameter to the
 <a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer" title="xmlrpc.server.SimpleXMLRPCServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleXMLRPCServer</span></code></a> constructor parameter is honored.</p>
@@ -240,7 +242,7 @@ characters not legal in Python identifiers, including the period character.</p>
 <em>name</em> can only be given as a keyword argument to register <em>function</em> under
 <em>name</em>.  If no <em>name</em> is given, <code class="docutils literal notranslate"><span class="pre">function.__name__</span></code> will be used.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_function" title="xmlrpc.server.SimpleXMLRPCServer.register_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">register_function()</span></code></a> can be used as a decorator.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer.register_function" title="xmlrpc.server.SimpleXMLRPCServer.register_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">register_function()</span></code></a> can be used as a decorator.</p>
 </div>
 </dd></dl>
 
@@ -450,7 +452,7 @@ characters not legal in Python identifiers, including the period character.</p>
 <em>name</em> can only be given as a keyword argument to register <em>function</em> under
 <em>name</em>.  If no <em>name</em> is given, <code class="docutils literal notranslate"><span class="pre">function.__name__</span></code> will be used.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_function" title="xmlrpc.server.CGIXMLRPCRequestHandler.register_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">register_function()</span></code></a> can be used as a decorator.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><a class="reference internal" href="#xmlrpc.server.CGIXMLRPCRequestHandler.register_function" title="xmlrpc.server.CGIXMLRPCRequestHandler.register_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">register_function()</span></code></a> can be used as a decorator.</p>
 </div>
 </dd></dl>
 
@@ -512,24 +514,24 @@ to HTTP GET requests.  Servers can either be free standing, using
 <a class="reference internal" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler" title="xmlrpc.server.DocCGIXMLRPCRequestHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">DocCGIXMLRPCRequestHandler</span></code></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xmlrpc.server.DocXMLRPCServer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">DocXMLRPCServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestHandler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DocXMLRPCRequestHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logRequests</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_none</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bind_and_activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_builtin_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmlrpc.server.DocXMLRPCServer" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">DocXMLRPCServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requestHandler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DocXMLRPCRequestHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logRequests</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_none</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bind_and_activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_builtin_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmlrpc.server.DocXMLRPCServer" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a new server instance. All parameters have the same meaning as for
 <a class="reference internal" href="#xmlrpc.server.SimpleXMLRPCServer" title="xmlrpc.server.SimpleXMLRPCServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleXMLRPCServer</span></code></a>; <em>requestHandler</em> defaults to
 <a class="reference internal" href="#xmlrpc.server.DocXMLRPCRequestHandler" title="xmlrpc.server.DocXMLRPCRequestHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">DocXMLRPCRequestHandler</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The <em>use_builtin_types</em> flag was added.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The <em>use_builtin_types</em> flag was added.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xmlrpc.server.DocCGIXMLRPCRequestHandler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">DocCGIXMLRPCRequestHandler</span></span><a class="headerlink" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">DocCGIXMLRPCRequestHandler</span></span><a class="headerlink" href="#xmlrpc.server.DocCGIXMLRPCRequestHandler" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a new instance to handle XML-RPC requests in a CGI environment.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xmlrpc.server.DocXMLRPCRequestHandler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">DocXMLRPCRequestHandler</span></span><a class="headerlink" href="#xmlrpc.server.DocXMLRPCRequestHandler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xmlrpc.server.</span></span><span class="sig-name descname"><span class="pre">DocXMLRPCRequestHandler</span></span><a class="headerlink" href="#xmlrpc.server.DocXMLRPCRequestHandler" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a new request handler instance. This request handler supports XML-RPC
 POST requests, documentation GET requests, and modifies logging so that the
 <em>logRequests</em> parameter to the <a class="reference internal" href="#xmlrpc.server.DocXMLRPCServer" title="xmlrpc.server.DocXMLRPCServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">DocXMLRPCServer</span></code></a> constructor parameter is
@@ -604,8 +606,9 @@ will appear as a paragraph, below the server name, in the documentation.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a><ul>
 <li><a class="reference internal" href="#simplexmlrpcserver-objects">SimpleXMLRPCServer Objects</a><ul>
 <li><a class="reference internal" href="#simplexmlrpcserver-example">SimpleXMLRPCServer Example</a></li>
@@ -619,18 +622,23 @@ will appear as a paragraph, below the server name, in the documentation.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xmlrpc.client.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code> --- XML-RPC client access</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="ipaddress.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code> --- IPv4/IPv6 manipulation library</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xmlrpc.client.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code> --- XML-RPC client access</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="ipaddress.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code> --- IPv4/IPv6 manipulation library</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xmlrpc.server.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xmlrpc.server.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -665,13 +673,11 @@ will appear as a paragraph, below the server name, in the documentation.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" >Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a></li>
                 <li class="right">
@@ -691,25 +697,25 @@ will appear as a paragraph, below the server name, in the documentation.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

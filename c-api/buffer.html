@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Buffer Protocol &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffer Protocol &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Iterator Protocol" href="iter.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/buffer.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Buffer Protocol</a><ul>
 <li><a class="reference internal" href="#buffer-structure">Buffer structure</a></li>
 <li><a class="reference internal" href="#buffer-request-types">Buffer request types</a><ul>
@@ -94,18 +93,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="iter.html"
-                        title="上一章">Iterator Protocol</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="objbuffer.html"
-                        title="下一章">Old Buffer Protocol</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="iter.html"
+                          title="上一章">Iterator Protocol</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="objbuffer.html"
+                          title="下一章">Old Buffer Protocol</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/buffer.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/buffer.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -141,14 +145,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="abstract.html" accesskey="U">抽象物件層</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="abstract.html" accesskey="U">Abstract Objects Layer</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Buffer Protocol</a></li>
                 <li class="right">
                     
@@ -790,7 +792,7 @@ is no longer being used, otherwise reference leaks may occur.</p>
 <dd><p>Return the implied <a class="reference internal" href="#c.Py_buffer.itemsize" title="Py_buffer.itemsize"><code class="xref c c-data docutils literal notranslate"><span class="pre">itemsize</span></code></a> from <a class="reference internal" href="#c.Py_buffer.format" title="Py_buffer.format"><code class="xref c c-data docutils literal notranslate"><span class="pre">format</span></code></a>.
 On error, raise an exception and return -1.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -861,8 +863,9 @@ unmodified. Otherwise, <em>exporter</em> MUST be <code class="docutils literal n
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Buffer Protocol</a><ul>
 <li><a class="reference internal" href="#buffer-structure">Buffer structure</a></li>
 <li><a class="reference internal" href="#buffer-request-types">Buffer request types</a><ul>
@@ -883,18 +886,23 @@ unmodified. Otherwise, <em>exporter</em> MUST be <code class="docutils literal n
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="iter.html"
-                        title="上一章">Iterator Protocol</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="objbuffer.html"
-                        title="下一章">Old Buffer Protocol</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="iter.html"
+                          title="上一章">Iterator Protocol</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="objbuffer.html"
+                          title="下一章">Old Buffer Protocol</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/buffer.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/buffer.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -929,14 +937,12 @@ unmodified. Otherwise, <em>exporter</em> MUST be <code class="docutils literal n
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="abstract.html" >抽象物件層</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="abstract.html" >Abstract Objects Layer</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Buffer Protocol</a></li>
                 <li class="right">
                     
@@ -955,25 +961,25 @@ unmodified. Otherwise, <em>exporter</em> MUST be <code class="docutils literal n
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

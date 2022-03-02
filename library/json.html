@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>json --- JSON encoder and decoder &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json --- JSON encoder and decoder &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="email.iterators: Iterators" href="email.iterators.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/json.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,12 +70,13 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> --- JSON encoder and decoder</a><ul>
 <li><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
 <li><a class="reference internal" href="#encoders-and-decoders">Encoders and Decoders</a></li>
-<li><a class="reference internal" href="#exceptions">例外</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 <li><a class="reference internal" href="#standard-compliance-and-interoperability">Standard Compliance and Interoperability</a><ul>
 <li><a class="reference internal" href="#character-encodings">Character Encodings</a></li>
 <li><a class="reference internal" href="#infinite-and-nan-number-values">Infinite and NaN Number Values</a></li>
@@ -94,18 +93,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.iterators.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.iterators</span></code>: Iterators</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="mailcap.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code> --- Mailcap file handling</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.iterators.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.iterators</span></code>: Iterators</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="mailcap.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code> --- Mailcap file handling</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/json.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/json.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -141,13 +145,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" accesskey="U">Internet Data Handling</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> --- JSON encoder and decoder</a></li>
                 <li class="right">
@@ -174,11 +176,11 @@
             
   <section id="module-json">
 <span id="json-json-encoder-and-decoder"></span><h1><a class="reference internal" href="#module-json" title="json: Encode and decode the JSON format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> --- JSON encoder and decoder<a class="headerlink" href="#module-json" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/json/__init__.py">Lib/json/__init__.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/json/__init__.py">Lib/json/__init__.py</a></p>
 <hr class="docutils" />
-<p><a class="reference external" href="http://json.org">JSON (JavaScript Object Notation)</a>, specified by
-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7159.html"><strong>RFC 7159</strong></a> (which obsoletes <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4627.html"><strong>RFC 4627</strong></a>) and by
-<a class="reference external" href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">ECMA-404</a>,
+<p><a class="reference external" href="https://json.org">JSON (JavaScript Object Notation)</a>, specified by
+<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7159.html"><strong>RFC 7159</strong></a> (which obsoletes <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4627.html"><strong>RFC 4627</strong></a>) and by
+<a class="reference external" href="https://www.ecma-international.org/publications-and-standards/standards/ecma-404/">ECMA-404</a>,
 is a lightweight data interchange format inspired by
 <a class="reference external" href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> object literal syntax
 (although it is not a strict subset of JavaScript <a class="footnote-reference brackets" href="#rfc-errata" id="id1">1</a> ).</p>
@@ -209,7 +211,7 @@ is a lightweight data interchange format inspired by
 <span class="go">&#39;[1,2,3,{&quot;4&quot;:5,&quot;6&quot;:7}]&#39;</span>
 </pre></div>
 </div>
-<p>美化輸出：</p>
+<p>Pretty printing:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 <span class="go">{</span>
@@ -308,7 +310,7 @@ have all incoming non-ASCII characters escaped.  If <em>ensure_ascii</em> is
 false, these characters will be output as-is.</p>
 <p>If <em>check_circular</em> is false (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>), then the circular
 reference check for container types will be skipped and a circular reference
-will result in an <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> (or worse).</p>
+will result in an <a class="reference internal" href="exceptions.html#RecursionError" title="RecursionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RecursionError</span></code></a> (or worse).</p>
 <p>If <em>allow_nan</em> is false (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>), then it will be a
 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> to serialize out of range <a class="reference internal" href="functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> values (<code class="docutils literal notranslate"><span class="pre">nan</span></code>,
 <code class="docutils literal notranslate"><span class="pre">inf</span></code>, <code class="docutils literal notranslate"><span class="pre">-inf</span></code>) in strict compliance of the JSON specification.
@@ -321,14 +323,14 @@ selects the most compact representation. Using a positive integer indent
 indents that many spaces per level.  If <em>indent</em> is a string (such as <code class="docutils literal notranslate"><span class="pre">&quot;\t&quot;</span></code>),
 that string is used to indent each level.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Allow strings for <em>indent</em> in addition to integers.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Allow strings for <em>indent</em> in addition to integers.</p>
 </div>
 <p>If specified, <em>separators</em> should be an <code class="docutils literal notranslate"><span class="pre">(item_separator,</span> <span class="pre">key_separator)</span></code>
 tuple.  The default is <code class="docutils literal notranslate"><span class="pre">(',</span> <span class="pre">',</span> <span class="pre">':</span> <span class="pre">')</span></code> if <em>indent</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and
 <code class="docutils literal notranslate"><span class="pre">(',',</span> <span class="pre">':</span> <span class="pre">')</span></code> otherwise.  To get the most compact JSON representation,
 you should specify <code class="docutils literal notranslate"><span class="pre">(',',</span> <span class="pre">':')</span></code> to eliminate whitespace.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Use <code class="docutils literal notranslate"><span class="pre">(',',</span> <span class="pre">':</span> <span class="pre">')</span></code> as default if <em>indent</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Use <code class="docutils literal notranslate"><span class="pre">(',',</span> <span class="pre">':</span> <span class="pre">')</span></code> as default if <em>indent</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 <p>If specified, <em>default</em> should be a function that gets called for objects that
 can't otherwise be serialized.  It should return a JSON encodable version of
@@ -340,7 +342,7 @@ dictionaries will be sorted by key.</p>
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">default()</span></code> method to serialize additional types), specify it with the
 <em>cls</em> kwarg; otherwise <a class="reference internal" href="#json.JSONEncoder" title="json.JSONEncoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">JSONEncoder</span></code></a> is used.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>All optional parameters are now <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>All optional parameters are now <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only</span></a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -384,7 +386,7 @@ return value of <em>object_pairs_hook</em> will be used instead of the
 <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.  This feature can be used to implement custom decoders.
 If <em>object_hook</em> is also defined, the <em>object_pairs_hook</em> takes priority.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added support for <em>object_pairs_hook</em>.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added support for <em>object_pairs_hook</em>.</p>
 </div>
 <p><em>parse_float</em>, if specified, will be called with the string of every JSON
 float to be decoded.  By default, this is equivalent to <code class="docutils literal notranslate"><span class="pre">float(num_str)</span></code>.
@@ -399,7 +401,7 @@ strings: <code class="docutils literal notranslate"><span class="pre">'-Infinity
 This can be used to raise an exception if invalid JSON numbers
 are encountered.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span><em>parse_constant</em> doesn't get called on 'null', 'true', 'false' anymore.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span><em>parse_constant</em> doesn't get called on 'null', 'true', 'false' anymore.</p>
 </div>
 <p>To use a custom <a class="reference internal" href="#json.JSONDecoder" title="json.JSONDecoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">JSONDecoder</span></code></a> subclass, specify it with the <code class="docutils literal notranslate"><span class="pre">cls</span></code>
 kwarg; otherwise <a class="reference internal" href="#json.JSONDecoder" title="json.JSONDecoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">JSONDecoder</span></code></a> is used.  Additional keyword arguments
@@ -407,10 +409,10 @@ will be passed to the constructor of the class.</p>
 <p>If the data being deserialized is not a valid JSON document, a
 <a class="reference internal" href="#json.JSONDecodeError" title="json.JSONDecodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">JSONDecodeError</span></code></a> will be raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>All optional parameters are now <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>All optional parameters are now <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only</span></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>fp</em> can now be a <a class="reference internal" href="../glossary.html#term-binary-file"><span class="xref std std-term">binary file</span></a>. The input encoding should be
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>fp</em> can now be a <a class="reference internal" href="../glossary.html#term-binary-file"><span class="xref std std-term">binary file</span></a>. The input encoding should be
 UTF-8, UTF-16 or UTF-32.</p>
 </div>
 </dd></dl>
@@ -425,11 +427,11 @@ instance containing a JSON document) to a Python object using this
 <p>If the data being deserialized is not a valid JSON document, a
 <a class="reference internal" href="#json.JSONDecodeError" title="json.JSONDecodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">JSONDecodeError</span></code></a> will be raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><em>s</em> can now be of type <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> or <a class="reference internal" href="stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a>. The
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><em>s</em> can now be of type <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> or <a class="reference internal" href="stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a>. The
 input encoding should be UTF-8, UTF-16 or UTF-32.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The keyword argument <em>encoding</em> has been removed.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The keyword argument <em>encoding</em> has been removed.</p>
 </div>
 </dd></dl>
 
@@ -438,7 +440,7 @@ input encoding should be UTF-8, UTF-16 or UTF-32.</p>
 <h2>Encoders and Decoders<a class="headerlink" href="#encoders-and-decoders" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="json.JSONDecoder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">json.</span></span><span class="sig-name descname"><span class="pre">JSONDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_hook</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_float</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_constant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_pairs_hook</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json.JSONDecoder" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">json.</span></span><span class="sig-name descname"><span class="pre">JSONDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_hook</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_float</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_constant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_pairs_hook</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json.JSONDecoder" title="本定義的永久連結">¶</a></dt>
 <dd><p>Simple JSON decoder.</p>
 <p>Performs the following translations in decoding by default:</p>
 <table class="docutils align-default" id="json-to-py-table">
@@ -490,7 +492,7 @@ JSON object decoded with an ordered list of pairs.  The return value of
 feature can be used to implement custom decoders.  If <em>object_hook</em> is also
 defined, the <em>object_pairs_hook</em> takes priority.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added support for <em>object_pairs_hook</em>.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added support for <em>object_pairs_hook</em>.</p>
 </div>
 <p><em>parse_float</em>, if specified, will be called with the string of every JSON
 float to be decoded.  By default, this is equivalent to <code class="docutils literal notranslate"><span class="pre">float(num_str)</span></code>.
@@ -511,7 +513,7 @@ those with character codes in the 0--31 range, including <code class="docutils l
 <p>If the data being deserialized is not a valid JSON document, a
 <a class="reference internal" href="#json.JSONDecodeError" title="json.JSONDecodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">JSONDecodeError</span></code></a> will be raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>All parameters are now <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>All parameters are now <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only</span></a>.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="json.JSONDecoder.decode">
@@ -536,7 +538,7 @@ extraneous data at the end.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="json.JSONEncoder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">json.</span></span><span class="sig-name descname"><span class="pre">JSONEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipkeys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_ascii</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_circular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json.JSONEncoder" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">json.</span></span><span class="sig-name descname"><span class="pre">JSONEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipkeys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_ascii</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_circular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json.JSONEncoder" title="本定義的永久連結">¶</a></dt>
 <dd><p>Extensible JSON encoder for Python data structures.</p>
 <p>Supports the following objects and types by default:</p>
 <table class="docutils align-default" id="py-to-json-table">
@@ -574,7 +576,7 @@ extraneous data at the end.</p>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added support for int- and float-derived Enum classes.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added support for int- and float-derived Enum classes.</p>
 </div>
 <p>To extend this to recognize other objects, subclass and implement a
 <a class="reference internal" href="#json.JSONEncoder.default" title="json.JSONEncoder.default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">default()</span></code></a> method with another method that returns a serializable object
@@ -588,7 +590,7 @@ have all incoming non-ASCII characters escaped.  If <em>ensure_ascii</em> is
 false, these characters will be output as-is.</p>
 <p>If <em>check_circular</em> is true (the default), then lists, dicts, and custom
 encoded objects will be checked for circular references during encoding to
-prevent an infinite recursion (which would cause an <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a>).
+prevent an infinite recursion (which would cause an <a class="reference internal" href="exceptions.html#RecursionError" title="RecursionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RecursionError</span></code></a>).
 Otherwise, no such check takes place.</p>
 <p>If <em>allow_nan</em> is true (the default), then <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, <code class="docutils literal notranslate"><span class="pre">Infinity</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">-Infinity</span></code> will be encoded as such.  This behavior is not JSON
@@ -605,21 +607,21 @@ selects the most compact representation. Using a positive integer indent
 indents that many spaces per level.  If <em>indent</em> is a string (such as <code class="docutils literal notranslate"><span class="pre">&quot;\t&quot;</span></code>),
 that string is used to indent each level.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Allow strings for <em>indent</em> in addition to integers.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Allow strings for <em>indent</em> in addition to integers.</p>
 </div>
 <p>If specified, <em>separators</em> should be an <code class="docutils literal notranslate"><span class="pre">(item_separator,</span> <span class="pre">key_separator)</span></code>
 tuple.  The default is <code class="docutils literal notranslate"><span class="pre">(',</span> <span class="pre">',</span> <span class="pre">':</span> <span class="pre">')</span></code> if <em>indent</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and
 <code class="docutils literal notranslate"><span class="pre">(',',</span> <span class="pre">':</span> <span class="pre">')</span></code> otherwise.  To get the most compact JSON representation,
 you should specify <code class="docutils literal notranslate"><span class="pre">(',',</span> <span class="pre">':')</span></code> to eliminate whitespace.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Use <code class="docutils literal notranslate"><span class="pre">(',',</span> <span class="pre">':</span> <span class="pre">')</span></code> as default if <em>indent</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Use <code class="docutils literal notranslate"><span class="pre">(',',</span> <span class="pre">':</span> <span class="pre">')</span></code> as default if <em>indent</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 <p>If specified, <em>default</em> should be a function that gets called for objects that
 can't otherwise be serialized.  It should return a JSON encodable version of
 the object or raise a <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a>.  If not specified, <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a>
 is raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>All parameters are now <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>All parameters are now <a class="reference internal" href="../glossary.html#keyword-only-parameter"><span class="std std-ref">keyword-only</span></a>.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="json.JSONEncoder.default">
@@ -668,10 +670,10 @@ available.  For example:</p>
 
 </section>
 <section id="exceptions">
-<h2>例外<a class="headerlink" href="#exceptions" title="本標題的永久連結">¶</a></h2>
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="本標題的永久連結">¶</a></h2>
 <dl class="py exception">
 <dt class="sig sig-object py" id="json.JSONDecodeError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">json.</span></span><span class="sig-name descname"><span class="pre">JSONDecodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json.JSONDecodeError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">json.</span></span><span class="sig-name descname"><span class="pre">JSONDecodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#json.JSONDecodeError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Subclass of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> with the following additional attributes:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="json.JSONDecodeError.msg">
@@ -704,15 +706,15 @@ available.  For example:</p>
 </dd></dl>
 
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 </section>
 <section id="standard-compliance-and-interoperability">
 <h2>Standard Compliance and Interoperability<a class="headerlink" href="#standard-compliance-and-interoperability" title="本標題的永久連結">¶</a></h2>
-<p>The JSON format is specified by <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7159.html"><strong>RFC 7159</strong></a> and by
-<a class="reference external" href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">ECMA-404</a>.
+<p>The JSON format is specified by <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7159.html"><strong>RFC 7159</strong></a> and by
+<a class="reference external" href="https://www.ecma-international.org/publications-and-standards/standards/ecma-404/">ECMA-404</a>.
 This section details this module's level of compliance with the RFC.
 For simplicity, <a class="reference internal" href="#json.JSONEncoder" title="json.JSONEncoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">JSONEncoder</span></code></a> and <a class="reference internal" href="#json.JSONDecoder" title="json.JSONDecoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">JSONDecoder</span></code></a> subclasses, and
 parameters other than those explicitly mentioned, are not considered.</p>
@@ -784,10 +786,10 @@ the last name-value pair for a given name:</p>
 </section>
 <section id="top-level-non-object-non-array-values">
 <h3>Top-level Non-Object, Non-Array Values<a class="headerlink" href="#top-level-non-object-non-array-values" title="本標題的永久連結">¶</a></h3>
-<p>The old version of JSON specified by the obsolete <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4627.html"><strong>RFC 4627</strong></a> required that
+<p>The old version of JSON specified by the obsolete <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4627.html"><strong>RFC 4627</strong></a> required that
 the top-level value of a JSON text must be either a JSON object or array
 (Python <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> or <a class="reference internal" href="stdtypes.html#list" title="list"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>), and could not be a JSON null,
-boolean, number, or string value.  <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7159.html"><strong>RFC 7159</strong></a> removed that restriction, and
+boolean, number, or string value.  <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7159.html"><strong>RFC 7159</strong></a> removed that restriction, and
 this module does not and has never implemented that restriction in either its
 serializer or its deserializer.</p>
 <p>Regardless, for maximum interoperability, you may wish to voluntarily adhere
@@ -815,7 +817,7 @@ when serializing instances of &quot;exotic&quot; numerical types such as
 </section>
 <section id="module-json.tool">
 <span id="command-line-interface"></span><span id="json-commandline"></span><h2>Command Line Interface<a class="headerlink" href="#module-json.tool" title="本標題的永久連結">¶</a></h2>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/json/tool.py">Lib/json/tool.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/json/tool.py">Lib/json/tool.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-json.tool" title="json.tool: A command line to validate and pretty-print JSON."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json.tool</span></code></a> module provides a simple command line interface to validate
 and pretty-print JSON objects.</p>
@@ -830,7 +832,7 @@ specified, <a class="reference internal" href="sys.html#sys.stdin" title="sys.st
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The output is now in the same order as the input. Use the
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The output is now in the same order as the input. Use the
 <a class="reference internal" href="#cmdoption-json.tool-sort-keys"><code class="xref std std-option docutils literal notranslate"><span class="pre">--sort-keys</span></code></a> option to sort the output of dictionaries
 alphabetically by key.</p>
 </div>
@@ -868,7 +870,7 @@ to <a class="reference internal" href="sys.html#sys.stdout" title="sys.stdout"><
 <span id="cmdoption-json-tool-sort-keys"></span><span class="sig-name descname"><span class="pre">--sort-keys</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-json.tool-sort-keys" title="本定義的永久連結">¶</a></dt>
 <dd><p>Sort the output of dictionaries alphabetically by key.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -877,7 +879,7 @@ to <a class="reference internal" href="sys.html#sys.stdout" title="sys.stdout"><
 <span id="cmdoption-json-tool-no-ensure-ascii"></span><span class="sig-name descname"><span class="pre">--no-ensure-ascii</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-json.tool-no-ensure-ascii" title="本定義的永久連結">¶</a></dt>
 <dd><p>Disable escaping of non-ascii characters, see <a class="reference internal" href="#json.dumps" title="json.dumps"><code class="xref py py-func docutils literal notranslate"><span class="pre">json.dumps()</span></code></a> for more information.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -886,7 +888,7 @@ to <a class="reference internal" href="sys.html#sys.stdout" title="sys.stdout"><
 <span id="cmdoption-json-tool-json-lines"></span><span class="sig-name descname"><span class="pre">--json-lines</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-json.tool-json-lines" title="本定義的永久連結">¶</a></dt>
 <dd><p>Parse every input line as separate JSON object.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -895,7 +897,7 @@ to <a class="reference internal" href="sys.html#sys.stdout" title="sys.stdout"><
 <span id="cmdoption-json-tool-indent"></span><span id="cmdoption-json.tool-tab"></span><span id="cmdoption-json-tool-tab"></span><span id="cmdoption-json.tool-no-indent"></span><span id="cmdoption-json-tool-no-indent"></span><span id="cmdoption-json.tool-compact"></span><span id="cmdoption-json-tool-compact"></span><span class="sig-name descname"><span class="pre">--indent</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--tab</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-indent</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--compact</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-json.tool-indent" title="本定義的永久連結">¶</a></dt>
 <dd><p>Mutually exclusive options for whitespace control.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -905,7 +907,7 @@ to <a class="reference internal" href="sys.html#sys.stdout" title="sys.stdout"><
 <dd><p>Show the help message.</p>
 </dd></dl>
 
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="rfc-errata"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>As noted in <a class="reference external" href="https://www.rfc-editor.org/errata_search.php?rfc=7159">the errata for RFC 7159</a>,
@@ -925,12 +927,13 @@ U+2029 (PARAGRAPH SEPARATOR) characters in strings, whereas JavaScript
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> --- JSON encoder and decoder</a><ul>
 <li><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
 <li><a class="reference internal" href="#encoders-and-decoders">Encoders and Decoders</a></li>
-<li><a class="reference internal" href="#exceptions">例外</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 <li><a class="reference internal" href="#standard-compliance-and-interoperability">Standard Compliance and Interoperability</a><ul>
 <li><a class="reference internal" href="#character-encodings">Character Encodings</a></li>
 <li><a class="reference internal" href="#infinite-and-nan-number-values">Infinite and NaN Number Values</a></li>
@@ -947,18 +950,23 @@ U+2029 (PARAGRAPH SEPARATOR) characters in strings, whereas JavaScript
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.iterators.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.iterators</span></code>: Iterators</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="mailcap.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code> --- Mailcap file handling</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.iterators.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.iterators</span></code>: Iterators</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="mailcap.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code> --- Mailcap file handling</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/json.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/json.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -993,13 +1001,11 @@ U+2029 (PARAGRAPH SEPARATOR) characters in strings, whereas JavaScript
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> --- JSON encoder and decoder</a></li>
                 <li class="right">
@@ -1019,25 +1025,25 @@ U+2029 (PARAGRAPH SEPARATOR) characters in strings, whereas JavaScript
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

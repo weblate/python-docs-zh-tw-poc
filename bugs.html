@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>處理 Bug &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealing with Bugs &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="about.html" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜尋" href="search.html" />
     <link rel="copyright" title="版權" href="copyright.html" />
-    <link rel="next" title="版權宣告" href="copyright.html" />
-    <link rel="prev" title="關於這些說明文件" href="about.html" />
+    <link rel="next" title="Copyright" href="copyright.html" />
+    <link rel="prev" title="About these documents" href="about.html" />
     <link rel="canonical" href="https://docs.python.org/3/bugs.html" />
     
-      
-      <script type="text/javascript" src="_static/switchers.js"></script>
       
     
 
@@ -72,28 +70,34 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">處理 Bug</a><ul>
-<li><a class="reference internal" href="#documentation-bugs">說明文件錯誤</a></li>
-<li><a class="reference internal" href="#using-the-python-issue-tracker">使用 Python 議題追蹤</a></li>
-<li><a class="reference internal" href="#getting-started-contributing-to-python-yourself">開始讓自己貢獻 Python</a></li>
+  <div>
+    <h3><a href="contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Dealing with Bugs</a><ul>
+<li><a class="reference internal" href="#documentation-bugs">Documentation bugs</a></li>
+<li><a class="reference internal" href="#using-the-python-issue-tracker">Using the Python issue tracker</a></li>
+<li><a class="reference internal" href="#getting-started-contributing-to-python-yourself">Getting started contributing to Python yourself</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="about.html"
-                        title="上一章">關於這些說明文件</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="copyright.html"
-                        title="下一章">版權宣告</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="about.html"
+                          title="上一章">About these documents</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="copyright.html"
+                          title="下一章">Copyright</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="#">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/bugs.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/bugs.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -114,10 +118,10 @@
           <a href="py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="copyright.html" title="版權宣告"
+          <a href="copyright.html" title="Copyright"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="about.html" title="關於這些說明文件"
+          <a href="about.html" title="About these documents"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -129,13 +133,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-        <li class="nav-item nav-item-this"><a href="">處理 Bug</a></li>
+        <li class="nav-item nav-item-this"><a href="">Dealing with Bugs</a></li>
                 <li class="right">
                     
 
@@ -159,11 +161,15 @@
           <div class="body" role="main">
             
   <section id="dealing-with-bugs">
-<span id="reporting-bugs"></span><h1>處理 Bug<a class="headerlink" href="#dealing-with-bugs" title="本標題的永久連結">¶</a></h1>
-<p>Python 已經是一個以穩定著稱的成熟程式語言。為了維持「穩定」此信譽，開發者們想知道任何您發現的缺失。</p>
-<p>有時候自己直接修復 bug 並且送出一個修正給 Python 會比較快，因為這樣會加速流程而且不會困擾到太多人。學習如何<a class="reference internal" href="#contributing-to-python"><span class="std std-ref">貢獻給 Python</span></a>。</p>
+<span id="reporting-bugs"></span><h1>Dealing with Bugs<a class="headerlink" href="#dealing-with-bugs" title="本標題的永久連結">¶</a></h1>
+<p>Python is a mature programming language which has established a reputation for
+stability.  In order to maintain this reputation, the developers would like to
+know of any deficiencies you find in Python.</p>
+<p>It can be sometimes faster to fix bugs yourself and contribute patches to
+Python as it streamlines the process and involves less people. Learn how to
+<a class="reference internal" href="#contributing-to-python"><span class="std std-ref">contribute</span></a>.</p>
 <section id="documentation-bugs">
-<h2>說明文件錯誤<a class="headerlink" href="#documentation-bugs" title="本標題的永久連結">¶</a></h2>
+<h2>Documentation bugs<a class="headerlink" href="#documentation-bugs" title="本標題的永久連結">¶</a></h2>
 <p>If you find a bug in this documentation or would like to propose an improvement,
 please submit a bug report on the <a class="reference internal" href="#using-the-tracker"><span class="std std-ref">tracker</span></a>.  If you
 have a suggestion on how to fix it, include that as well.</p>
@@ -184,9 +190,9 @@ though it may take a while to be processed.</p>
 </div>
 </section>
 <section id="using-the-python-issue-tracker">
-<span id="using-the-tracker"></span><h2>使用 Python 議題追蹤<a class="headerlink" href="#using-the-python-issue-tracker" title="本標題的永久連結">¶</a></h2>
+<span id="using-the-tracker"></span><h2>Using the Python issue tracker<a class="headerlink" href="#using-the-python-issue-tracker" title="本標題的永久連結">¶</a></h2>
 <p>Bug reports for Python itself should be submitted via the Python Bug Tracker
-(<a class="reference external" href="https://bugs.python.org/">https://bugs.python.org/</a>).  The bug tracker offers a Web form which allows
+(<a class="reference external" href="https://bugs.python.org/">https://bugs.python.org/</a>).  The bug tracker offers a web form which allows
 pertinent information to be entered and submitted to the developers.</p>
 <p>The first step in filing a report is to determine whether the problem has
 already been reported.  The advantage in doing so, aside from saving the
@@ -224,7 +230,7 @@ Mozilla project, but describes general good practices.</p>
 </div>
 </section>
 <section id="getting-started-contributing-to-python-yourself">
-<span id="contributing-to-python"></span><h2>開始讓自己貢獻 Python<a class="headerlink" href="#getting-started-contributing-to-python-yourself" title="本標題的永久連結">¶</a></h2>
+<span id="contributing-to-python"></span><h2>Getting started contributing to Python yourself<a class="headerlink" href="#getting-started-contributing-to-python-yourself" title="本標題的永久連結">¶</a></h2>
 <p>Beyond just reporting bugs that you find, you are also welcome to submit
 patches to fix them.  You can find more information on how to get started
 patching Python in the <a class="reference external" href="https://devguide.python.org/">Python Developer's Guide</a>.  If you have questions,
@@ -240,28 +246,34 @@ any and all questions pertaining to the process of fixing issues in Python.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">處理 Bug</a><ul>
-<li><a class="reference internal" href="#documentation-bugs">說明文件錯誤</a></li>
-<li><a class="reference internal" href="#using-the-python-issue-tracker">使用 Python 議題追蹤</a></li>
-<li><a class="reference internal" href="#getting-started-contributing-to-python-yourself">開始讓自己貢獻 Python</a></li>
+  <div>
+    <h3><a href="contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Dealing with Bugs</a><ul>
+<li><a class="reference internal" href="#documentation-bugs">Documentation bugs</a></li>
+<li><a class="reference internal" href="#using-the-python-issue-tracker">Using the Python issue tracker</a></li>
+<li><a class="reference internal" href="#getting-started-contributing-to-python-yourself">Getting started contributing to Python yourself</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="about.html"
-                        title="上一章">關於這些說明文件</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="copyright.html"
-                        title="下一章">版權宣告</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="about.html"
+                          title="上一章">About these documents</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="copyright.html"
+                          title="下一章">Copyright</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="#">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/bugs.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/bugs.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -281,10 +293,10 @@ any and all questions pertaining to the process of fixing issues in Python.</p>
           <a href="py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="copyright.html" title="版權宣告"
+          <a href="copyright.html" title="Copyright"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="about.html" title="關於這些說明文件"
+          <a href="about.html" title="About these documents"
              >上一頁</a> |</li>
 
           <li><img src="_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -296,13 +308,11 @@ any and all questions pertaining to the process of fixing issues in Python.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-        <li class="nav-item nav-item-this"><a href="">處理 Bug</a></li>
+        <li class="nav-item nav-item-this"><a href="">Dealing with Bugs</a></li>
                 <li class="right">
                     
 
@@ -320,25 +330,25 @@ any and all questions pertaining to the process of fixing issues in Python.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

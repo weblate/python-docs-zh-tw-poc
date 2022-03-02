@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>11. Brief Tour of the Standard Library --- Part II &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. Brief Tour of the Standard Library --- Part II &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="12. 虛擬環境與套件" href="venv.html" />
-    <link rel="prev" title="10. Python 標準函式庫概覽" href="stdlib.html" />
+    <link rel="next" title="12. Virtual Environments and Packages" href="venv.html" />
+    <link rel="prev" title="10. Brief Tour of the Standard Library" href="stdlib.html" />
     <link rel="canonical" href="https://docs.python.org/3/tutorial/stdlib2.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">11. Brief Tour of the Standard Library --- Part II</a><ul>
 <li><a class="reference internal" href="#output-formatting">11.1. Output Formatting</a></li>
 <li><a class="reference internal" href="#templating">11.2. Templating</a></li>
@@ -87,18 +86,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="stdlib.html"
-                        title="上一章"><span class="section-number">10. </span>Python 標準函式庫概覽</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="venv.html"
-                        title="下一章"><span class="section-number">12. </span>虛擬環境與套件</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="stdlib.html"
+                          title="上一章"><span class="section-number">10. </span>Brief Tour of the Standard Library</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="venv.html"
+                          title="下一章"><span class="section-number">12. </span>Virtual Environments and Packages</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/tutorial/stdlib2.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/tutorial/stdlib2.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,10 +123,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="venv.html" title="12. 虛擬環境與套件"
+          <a href="venv.html" title="12. Virtual Environments and Packages"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="stdlib.html" title="10. Python 標準函式庫概覽"
+          <a href="stdlib.html" title="10. Brief Tour of the Standard Library"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -134,13 +138,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The Python Tutorial</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">11. </span>Brief Tour of the Standard Library --- Part II</a></li>
                 <li class="right">
                     
@@ -166,7 +168,8 @@
             
   <section id="brief-tour-of-the-standard-library-part-ii">
 <span id="tut-brieftourtwo"></span><h1><span class="section-number">11. </span>Brief Tour of the Standard Library --- Part II<a class="headerlink" href="#brief-tour-of-the-standard-library-part-ii" title="本標題的永久連結">¶</a></h1>
-<p>第二部分涵蓋更多支援專業程式設計所需要的進階模組。這些模組很少出現在小腳本中。</p>
+<p>This second tour covers more advanced modules that support professional
+programming needs.  These modules rarely occur in small scripts.</p>
 <section id="output-formatting">
 <span id="tut-output-formatting"></span><h2><span class="section-number">11.1. </span>Output Formatting<a class="headerlink" href="#output-formatting" title="本標題的永久連結">¶</a></h2>
 <p>The <a class="reference internal" href="../library/reprlib.html#module-reprlib" title="reprlib: Alternate repr() implementation with size limits."><code class="xref py py-mod docutils literal notranslate"><span class="pre">reprlib</span></code></a> module provides a version of <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a> customized for
@@ -408,7 +411,7 @@ applications include caching objects that are expensive to create:</p>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
     <span class="n">d</span><span class="p">[</span><span class="s1">&#39;primary&#39;</span><span class="p">]</span>                <span class="c1"># entry was automatically removed</span>
-  File <span class="nb">&quot;C:/python39/lib/weakref.py&quot;</span>, line <span class="m">46</span>, in <span class="n">__getitem__</span>
+  File <span class="nb">&quot;C:/python310/lib/weakref.py&quot;</span>, line <span class="m">46</span>, in <span class="n">__getitem__</span>
     <span class="n">o</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]()</span>
 <span class="gr">KeyError</span>: <span class="n">&#39;primary&#39;</span>
 </pre></div>
@@ -534,8 +537,9 @@ point:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">11. Brief Tour of the Standard Library --- Part II</a><ul>
 <li><a class="reference internal" href="#output-formatting">11.1. Output Formatting</a></li>
 <li><a class="reference internal" href="#templating">11.2. Templating</a></li>
@@ -549,18 +553,23 @@ point:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="stdlib.html"
-                        title="上一章"><span class="section-number">10. </span>Python 標準函式庫概覽</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="venv.html"
-                        title="下一章"><span class="section-number">12. </span>虛擬環境與套件</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="stdlib.html"
+                          title="上一章"><span class="section-number">10. </span>Brief Tour of the Standard Library</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="venv.html"
+                          title="下一章"><span class="section-number">12. </span>Virtual Environments and Packages</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/tutorial/stdlib2.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/tutorial/stdlib2.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -580,10 +589,10 @@ point:</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="venv.html" title="12. 虛擬環境與套件"
+          <a href="venv.html" title="12. Virtual Environments and Packages"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="stdlib.html" title="10. Python 標準函式庫概覽"
+          <a href="stdlib.html" title="10. Brief Tour of the Standard Library"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -595,13 +604,11 @@ point:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Tutorial</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">11. </span>Brief Tour of the Standard Library --- Part II</a></li>
                 <li class="right">
                     
@@ -620,25 +627,25 @@ point:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

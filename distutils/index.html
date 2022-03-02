@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>發布 Python 模組（舊版） &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributing Python Modules (Legacy version) &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="1. An Introduction to Distutils" href="introduction.html" />
-    <link rel="prev" title="歷史與授權" href="../license.html" />
+    <link rel="prev" title="沿革與授權" href="../license.html" />
     <link rel="canonical" href="https://docs.python.org/3/distutils/index.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="../license.html"
-                        title="上一章">歷史與授權</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="introduction.html"
-                        title="下一章"><span class="section-number">1. </span>An Introduction to Distutils</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="../license.html"
+                          title="上一章">沿革與授權</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="下一章"><span class="section-number">1. </span>An Introduction to Distutils</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/distutils/index.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/distutils/index.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -107,7 +109,7 @@
           <a href="introduction.html" title="1. An Introduction to Distutils"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="../license.html" title="歷史與授權"
+          <a href="../license.html" title="沿革與授權"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-        <li class="nav-item nav-item-this"><a href="">發布 Python 模組（舊版）</a></li>
+        <li class="nav-item nav-item-this"><a href="">Distributing Python Modules (Legacy version)</a></li>
                 <li class="right">
                     
 
@@ -149,7 +149,7 @@
           <div class="body" role="main">
             
   <section id="distributing-python-modules-legacy-version">
-<span id="distutils-index"></span><h1>發布 Python 模組（舊版）<a class="headerlink" href="#distributing-python-modules-legacy-version" title="本標題的永久連結">¶</a></h1>
+<span id="distutils-index"></span><h1>Distributing Python Modules (Legacy version)<a class="headerlink" href="#distributing-python-modules-legacy-version" title="本標題的永久連結">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Authors</dt>
 <dd class="field-odd"><p>Greg Ward, Anthony Baxter</p>
@@ -161,9 +161,16 @@
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><a class="reference internal" href="../distributing/index.html#distributing-index"><span class="std std-ref">發布 Python 模組</span></a></dt><dd><p>The up to date module distribution documentations</p>
+<dt><a class="reference internal" href="../distributing/index.html#distributing-index"><span class="std std-ref">Distributing Python Modules</span></a></dt><dd><p>The up to date module distribution documentations</p>
 </dd>
 </dl>
+</div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>The entire <code class="docutils literal notranslate"><span class="pre">distutils</span></code> package has been deprecated and will be
+removed in Python 3.12. This documentation is retained as a
+reference only, and will be removed with the package. See the
+<a class="reference internal" href="../whatsnew/3.10.html#distutils-deprecated"><span class="std std-ref">What's New</span></a> entry for more information.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -212,9 +219,7 @@ and extensions readily available to a wider audience.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="builtdist.html">5. Creating Built Distributions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="builtdist.html#creating-rpm-packages">5.1. Creating RPM packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="builtdist.html#creating-windows-installers">5.2. Creating Windows Installers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="builtdist.html#cross-compiling-on-windows">5.3. Cross-compiling on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="builtdist.html#vista-user-access-control-uac">5.4. Vista User Access Control (UAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builtdist.html#cross-compiling-on-windows">5.2. Cross-compiling on Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">6. Distutils Examples</a><ul>
@@ -230,12 +235,12 @@ and extensions readily available to a wider audience.</p>
 <li class="toctree-l2"><a class="reference internal" href="extending.html#adding-new-distribution-types">7.2. Adding new distribution types</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="commandref.html">8. 指令參照</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="commandref.html">8. Command Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commandref.html#installing-modules-the-install-command-family">8.1. Installing modules: the <strong class="command">install</strong> command family</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commandref.html#creating-a-source-distribution-the-sdist-command">8.2. Creating a source distribution: the <strong class="command">sdist</strong> command</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="apiref.html">9. API參照</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="apiref.html">9. API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.core">9.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.core</span></code> --- Core Distutils functionality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.ccompiler">9.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.ccompiler</span></code> --- CCompiler base class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.unixccompiler">9.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.unixccompiler</span></code> --- Unix C Compiler</a></li>
@@ -266,22 +271,21 @@ and extensions readily available to a wider audience.</p>
 <li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.bdist_dumb">9.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_dumb</span></code> --- Build a &quot;dumb&quot; installer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.bdist_msi">9.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_msi</span></code> --- Build a Microsoft Installer binary package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.bdist_rpm">9.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_rpm</span></code> --- Build a binary distribution as a Redhat RPM and SRPM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.bdist_wininst">9.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_wininst</span></code> --- Build a Windows installer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.sdist">9.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.sdist</span></code> --- Build a source distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build">9.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build</span></code> --- Build all files of a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build_clib">9.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_clib</span></code> --- Build any C libraries in a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build_ext">9.35. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_ext</span></code> --- Build any extensions in a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build_py">9.36. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_py</span></code> --- Build the .py/.pyc files of a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build_scripts">9.37. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_scripts</span></code> --- Build the scripts of a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.clean">9.38. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.clean</span></code> --- Clean a package build area</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.config">9.39. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.config</span></code> --- Perform package configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install">9.40. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install</span></code> --- Install a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install_data">9.41. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_data</span></code> --- Install data files from a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install_headers">9.42. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_headers</span></code> --- Install C/C++ header files from a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install_lib">9.43. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_lib</span></code> --- Install library files from a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install_scripts">9.44. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_scripts</span></code> --- Install script files from a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.register">9.45. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.register</span></code> --- Register a module with the Python Package Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.check">9.46. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.check</span></code> --- Check the meta-data of a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.sdist">9.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.sdist</span></code> --- Build a source distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build">9.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build</span></code> --- Build all files of a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build_clib">9.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_clib</span></code> --- Build any C libraries in a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build_ext">9.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_ext</span></code> --- Build any extensions in a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build_py">9.35. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_py</span></code> --- Build the .py/.pyc files of a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.build_scripts">9.36. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_scripts</span></code> --- Build the scripts of a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.clean">9.37. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.clean</span></code> --- Clean a package build area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.config">9.38. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.config</span></code> --- Perform package configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install">9.39. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install</span></code> --- Install a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install_data">9.40. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_data</span></code> --- Install data files from a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install_headers">9.41. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_headers</span></code> --- Install C/C++ header files from a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install_lib">9.42. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_lib</span></code> --- Install library files from a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.install_scripts">9.43. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_scripts</span></code> --- Install script files from a package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.register">9.44. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.register</span></code> --- Register a module with the Python Package Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiref.html#module-distutils.command.check">9.45. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.check</span></code> --- Check the meta-data of a package</a></li>
 </ul>
 </li>
 </ul>
@@ -295,18 +299,22 @@ and extensions readily available to a wider audience.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="../license.html"
-                        title="上一章">歷史與授權</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="introduction.html"
-                        title="下一章"><span class="section-number">1. </span>An Introduction to Distutils</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="../license.html"
+                          title="上一章">沿革與授權</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="下一章"><span class="section-number">1. </span>An Introduction to Distutils</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/distutils/index.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/distutils/index.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -329,7 +337,7 @@ and extensions readily available to a wider audience.</p>
           <a href="introduction.html" title="1. An Introduction to Distutils"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="../license.html" title="歷史與授權"
+          <a href="../license.html" title="沿革與授權"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -341,13 +349,11 @@ and extensions readily available to a wider audience.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-        <li class="nav-item nav-item-this"><a href="">發布 Python 模組（舊版）</a></li>
+        <li class="nav-item nav-item-this"><a href="">Distributing Python Modules (Legacy version)</a></li>
                 <li class="right">
                     
 
@@ -365,25 +371,25 @@ and extensions readily available to a wider audience.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>dis --- Python bytecode的反組譯器 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dis --- Disassembler for Python bytecode &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="compileall --- Byte-compile Python libraries" href="compileall.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/dis.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,9 +70,10 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a><ul>
 <li><a class="reference internal" href="#bytecode-analysis">Bytecode analysis</a></li>
 <li><a class="reference internal" href="#analysis-functions">Analysis functions</a></li>
 <li><a class="reference internal" href="#python-bytecode-instructions">Python Bytecode Instructions</a></li>
@@ -83,18 +82,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="compileall.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="pickletools.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="compileall.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="pickletools.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/dis.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/dis.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -130,15 +134,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" accesskey="U">Python Language Services</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a></li>
                 <li class="right">
                     
 
@@ -162,17 +164,20 @@
           <div class="body" role="main">
             
   <section id="module-dis">
-<span id="dis-disassembler-for-python-bytecode"></span><h1><a class="reference internal" href="#module-dis" title="dis: Disassembler for Python bytecode."><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code></a> --- Python bytecode的反組譯器<a class="headerlink" href="#module-dis" title="本標題的永久連結">¶</a></h1>
-<p><strong>原始碼：</strong><a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/dis.py">Lib/dis.py</a></p>
+<span id="dis-disassembler-for-python-bytecode"></span><h1><a class="reference internal" href="#module-dis" title="dis: Disassembler for Python bytecode."><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code></a> --- Disassembler for Python bytecode<a class="headerlink" href="#module-dis" title="本標題的永久連結">¶</a></h1>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/dis.py">Lib/dis.py</a></p>
 <hr class="docutils" />
-<p><a class="reference internal" href="#module-dis" title="dis: Disassembler for Python bytecode."><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code></a> 模組支援反組譯分析 CPython <a class="reference internal" href="../glossary.html#term-bytecode"><span class="xref std std-term">bytecode</span></a>。CPython bytecode 作為輸入的模組被定義於 <code class="file docutils literal notranslate"><span class="pre">Include/opcode.h</span></code> 並且被編譯器和直譯器所使用。</p>
+<p>The <a class="reference internal" href="#module-dis" title="dis: Disassembler for Python bytecode."><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code></a> module supports the analysis of CPython <a class="reference internal" href="../glossary.html#term-bytecode"><span class="xref std std-term">bytecode</span></a> by
+disassembling it. The CPython bytecode which this module takes as an input is
+defined in the file <code class="file docutils literal notranslate"><span class="pre">Include/opcode.h</span></code> and used by the compiler and the
+interpreter.</p>
 <div class="impl-detail compound">
 <p class="compound-first"><strong>CPython implementation detail:</strong> Bytecode is an implementation detail of the CPython interpreter.  No
 guarantees are made that bytecode will not be added, removed, or changed
 between versions of Python.  Use of this module should not be considered to
 work across Python VMs or Python releases.</p>
 <div class="compound-last versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Use 2 bytes for each instruction. Previously the number of bytes varied
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Use 2 bytes for each instruction. Previously the number of bytes varied
 by instruction.</p>
 </div>
 </div>
@@ -194,14 +199,14 @@ by instruction.</p>
 <section id="bytecode-analysis">
 <h2>Bytecode analysis<a class="headerlink" href="#bytecode-analysis" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 <p>The bytecode analysis API allows pieces of Python code to be wrapped in a
 <a class="reference internal" href="#dis.Bytecode" title="dis.Bytecode"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bytecode</span></code></a> object that provides easy access to details of the compiled
 code.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="dis.Bytecode">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dis.</span></span><span class="sig-name descname"><span class="pre">Bytecode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dis.Bytecode" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dis.</span></span><span class="sig-name descname"><span class="pre">Bytecode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dis.Bytecode" title="本定義的永久連結">¶</a></dt>
 <dd><p>Analyse the bytecode corresponding to a function, generator, asynchronous
 generator, coroutine, method, string of source code, or a code object (as
 returned by <a class="reference internal" href="functions.html#compile" title="compile"><code class="xref py py-func docutils literal notranslate"><span class="pre">compile()</span></code></a>).</p>
@@ -217,7 +222,7 @@ disassembled code. Setting this means <a class="reference internal" href="#dis.B
 instruction&quot; marker against the specified opcode.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dis.Bytecode.from_traceback">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dis.Bytecode.from_traceback" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dis.Bytecode.from_traceback" title="本定義的永久連結">¶</a></dt>
 <dd><p>Construct a <a class="reference internal" href="#dis.Bytecode" title="dis.Bytecode"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bytecode</span></code></a> instance from the given traceback, setting
 <em>current_offset</em> to the instruction responsible for the exception.</p>
 </dd></dl>
@@ -249,7 +254,7 @@ code object, like <a class="reference internal" href="#dis.code_info" title="dis
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>This can now handle coroutine and asynchronous generator objects.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>This can now handle coroutine and asynchronous generator objects.</p>
 </div>
 </dd></dl>
 
@@ -280,10 +285,10 @@ method, source code string or code object.</p>
 dependent and they may change arbitrarily across Python VMs or Python
 releases.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>This can now handle coroutine and asynchronous generator objects.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>This can now handle coroutine and asynchronous generator objects.</p>
 </div>
 </dd></dl>
 
@@ -296,10 +301,10 @@ is not specified).</p>
 <p>This is a convenient shorthand for <code class="docutils literal notranslate"><span class="pre">print(code_info(x),</span> <span class="pre">file=file)</span></code>,
 intended for interactive exploration at the interpreter prompt.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added <em>file</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added <em>file</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -323,13 +328,13 @@ provided and to <code class="docutils literal notranslate"><span class="pre">sys
 <p>The maximal depth of recursion is limited by <em>depth</em> unless it is <code class="docutils literal notranslate"><span class="pre">None</span></code>.
 <code class="docutils literal notranslate"><span class="pre">depth=0</span></code> means no recursion.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added <em>file</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added <em>file</em> parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Implemented recursive disassembling and added <em>depth</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Implemented recursive disassembling and added <em>depth</em> parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>This can now handle coroutine and asynchronous generator objects.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>This can now handle coroutine and asynchronous generator objects.</p>
 </div>
 </dd></dl>
 
@@ -342,7 +347,7 @@ indicated.</p>
 <p>The disassembly is written as text to the supplied <em>file</em> argument if
 provided and to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> otherwise.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added <em>file</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added <em>file</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -367,7 +372,7 @@ constant values, branch targets, and compare operators.</p>
 <p>The disassembly is written as text to the supplied <em>file</em> argument if
 provided and to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> otherwise.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added <em>file</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added <em>file</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -383,7 +388,7 @@ reported for the first source line in the disassembled code.  Otherwise, the
 source line information (if any) is taken directly from the disassembled code
 object.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -393,10 +398,10 @@ object.</p>
 <dd><p>This generator function uses the <code class="docutils literal notranslate"><span class="pre">co_firstlineno</span></code> and <code class="docutils literal notranslate"><span class="pre">co_lnotab</span></code>
 attributes of the code object <em>code</em> to find the offsets which are starts of
 lines in the source code.  They are generated as <code class="docutils literal notranslate"><span class="pre">(offset,</span> <span class="pre">lineno)</span></code> pairs.
-See <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Objects/lnotab_notes.txt">Objects/lnotab_notes.txt</a> for the <code class="docutils literal notranslate"><span class="pre">co_lnotab</span></code> format and
+See <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Objects/lnotab_notes.txt">Objects/lnotab_notes.txt</a> for the <code class="docutils literal notranslate"><span class="pre">co_lnotab</span></code> format and
 how to decode it.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Line numbers can be decreasing. Before, they were always increasing.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Line numbers can be decreasing. Before, they were always increasing.</p>
 </div>
 </dd></dl>
 
@@ -416,10 +421,10 @@ will return the stack effect of jumping.  If <em>jump</em> is <code class="docut
 it will return the stack effect of not jumping. And if <em>jump</em> is
 <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), it will return the maximal stack effect of both cases.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added <em>jump</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added <em>jump</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -430,7 +435,7 @@ it will return the stack effect of not jumping. And if <em>jump</em> is
 details of bytecode instructions as <a class="reference internal" href="#dis.Instruction" title="dis.Instruction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instruction</span></code></a> instances:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="dis.Instruction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dis.</span></span><span class="sig-name descname"><span class="pre">Instruction</span></span><a class="headerlink" href="#dis.Instruction" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dis.</span></span><span class="sig-name descname"><span class="pre">Instruction</span></span><a class="headerlink" href="#dis.Instruction" title="本定義的永久連結">¶</a></dt>
 <dd><p>Details for a bytecode operation</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="dis.Instruction.opcode">
@@ -482,7 +487,7 @@ below and the bytecode values in the <a class="reference internal" href="#opcode
 </dd></dl>
 
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -519,7 +524,7 @@ three.</p>
 <dd><p>Lifts second, third and fourth stack items one position up, moves top down
 to position four.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -528,7 +533,7 @@ to position four.</p>
 <span class="sig-name descname"><span class="pre">DUP_TOP</span></span><a class="headerlink" href="#opcode-DUP_TOP" title="本定義的永久連結">¶</a></dt>
 <dd><p>Duplicates the reference on top of the stack.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -538,7 +543,7 @@ to position four.</p>
 <dd><p>Duplicates the two references on top of the stack, leaving them in the
 same order.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -581,7 +586,7 @@ result back on the stack.</p>
 <dd><p>If <code class="docutils literal notranslate"><span class="pre">TOS</span></code> is a <a class="reference internal" href="../glossary.html#term-generator-iterator"><span class="xref std std-term">generator iterator</span></a> or <a class="reference internal" href="../glossary.html#term-coroutine"><span class="xref std std-term">coroutine</span></a> object
 it is left as is.  Otherwise, implements <code class="docutils literal notranslate"><span class="pre">TOS</span> <span class="pre">=</span> <span class="pre">iter(TOS)</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -606,7 +611,7 @@ result back on the stack.</p>
 <span class="sig-name descname"><span class="pre">BINARY_MATRIX_MULTIPLY</span></span><a class="headerlink" href="#opcode-BINARY_MATRIX_MULTIPLY" title="本定義的永久連結">¶</a></dt>
 <dd><p>Implements <code class="docutils literal notranslate"><span class="pre">TOS</span> <span class="pre">=</span> <span class="pre">TOS1</span> <span class="pre">&#64;</span> <span class="pre">TOS</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -698,7 +703,7 @@ the original TOS1.</p>
 <span class="sig-name descname"><span class="pre">INPLACE_MATRIX_MULTIPLY</span></span><a class="headerlink" href="#opcode-INPLACE_MATRIX_MULTIPLY" title="本定義的永久連結">¶</a></dt>
 <dd><p>Implements in-place <code class="docutils literal notranslate"><span class="pre">TOS</span> <span class="pre">=</span> <span class="pre">TOS1</span> <span class="pre">&#64;</span> <span class="pre">TOS</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -783,7 +788,7 @@ returns <code class="docutils literal notranslate"><span class="pre">o</span></c
 the CO_ITERABLE_COROUTINE flag, or resolves
 <code class="docutils literal notranslate"><span class="pre">o.__await__</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -792,10 +797,10 @@ the CO_ITERABLE_COROUTINE flag, or resolves
 <span class="sig-name descname"><span class="pre">GET_AITER</span></span><a class="headerlink" href="#opcode-GET_AITER" title="本定義的永久連結">¶</a></dt>
 <dd><p>Implements <code class="docutils literal notranslate"><span class="pre">TOS</span> <span class="pre">=</span> <span class="pre">TOS.__aiter__()</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Returning awaitable objects from <code class="docutils literal notranslate"><span class="pre">__aiter__</span></code> is no longer
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Returning awaitable objects from <code class="docutils literal notranslate"><span class="pre">__aiter__</span></code> is no longer
 supported.</p>
 </div>
 </dd></dl>
@@ -806,7 +811,7 @@ supported.</p>
 <dd><p>Implements <code class="docutils literal notranslate"><span class="pre">PUSH(get_awaitable(TOS.__anext__()))</span></code>.  See <code class="docutils literal notranslate"><span class="pre">GET_AWAITABLE</span></code>
 for details about <code class="docutils literal notranslate"><span class="pre">get_awaitable</span></code></p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -819,7 +824,7 @@ values from the stack and restore the exception state using the second
 three of them.  Otherwise re-raise the exception using the three values
 from the stack.  An exception handler block is removed from the block stack.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -829,7 +834,7 @@ from the stack.  An exception handler block is removed from the block stack.</p>
 <dd><p>Resolves <code class="docutils literal notranslate"><span class="pre">__aenter__</span></code> and <code class="docutils literal notranslate"><span class="pre">__aexit__</span></code> from the object on top of the
 stack.  Pushes <code class="docutils literal notranslate"><span class="pre">__aexit__</span></code> and result of <code class="docutils literal notranslate"><span class="pre">__aenter__()</span></code> to the stack.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -838,7 +843,7 @@ stack.  Pushes <code class="docutils literal notranslate"><span class="pre">__ae
 <span class="sig-name descname"><span class="pre">SETUP_ASYNC_WITH</span></span><a class="headerlink" href="#opcode-SETUP_ASYNC_WITH" title="本定義的永久連結">¶</a></dt>
 <dd><p>Creates a new frame object.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -869,10 +874,10 @@ is terminated with <a class="reference internal" href="#opcode-POP_TOP"><code cl
 <dd><p>Calls <code class="docutils literal notranslate"><span class="pre">dict.__setitem__(TOS1[-i],</span> <span class="pre">TOS1,</span> <span class="pre">TOS)</span></code>.  Used to implement dict
 comprehensions.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Map value is TOS and map key is TOS1. Before, those were reversed.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Map value is TOS and map key is TOS1. Before, those were reversed.</p>
 </div>
 </dd></dl>
 
@@ -897,7 +902,7 @@ iterations of the loop.</p>
 <span class="sig-name descname"><span class="pre">YIELD_FROM</span></span><a class="headerlink" href="#opcode-YIELD_FROM" title="本定義的永久連結">¶</a></dt>
 <dd><p>Pops TOS and delegates to it as a subiterator from a <a class="reference internal" href="../glossary.html#term-generator"><span class="xref std std-term">generator</span></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -909,7 +914,7 @@ set up to an empty <code class="docutils literal notranslate"><span class="pre">
 or module body contains <a class="reference internal" href="../glossary.html#term-variable-annotation"><span class="xref std std-term">variable annotations</span></a>
 statically.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -940,9 +945,10 @@ popped values are used to restore the exception state.</p>
 <dl class="std opcode">
 <dt class="sig sig-object std" id="opcode-RERAISE">
 <span class="sig-name descname"><span class="pre">RERAISE</span></span><a class="headerlink" href="#opcode-RERAISE" title="本定義的永久連結">¶</a></dt>
-<dd><p>Re-raises the exception currently on top of the stack.</p>
+<dd><p>Re-raises the exception currently on top of the stack. If oparg is non-zero,
+restores <code class="docutils literal notranslate"><span class="pre">f_lasti</span></code> of the current frame to its value when the exception was raised.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -954,7 +960,7 @@ items on the stack as arguments.
 Used to implement the call <code class="docutils literal notranslate"><span class="pre">context_manager.__exit__(*exc_info())</span></code> when an exception
 has occurred in a <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -964,7 +970,7 @@ has occurred in a <a class="reference internal" href="../reference/compound_stmt
 <dd><p>Pushes <a class="reference internal" href="exceptions.html#AssertionError" title="AssertionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code></a> onto the stack.  Used by the <a class="reference internal" href="../reference/simple_stmts.html#assert"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">assert</span></code></a>
 statement.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -987,7 +993,63 @@ the stack.  The next opcode will either ignore it (<a class="reference internal"
 store it in (a) variable(s) (<a class="reference internal" href="#opcode-STORE_FAST"><code class="xref std std-opcode docutils literal notranslate"><span class="pre">STORE_FAST</span></code></a>, <a class="reference internal" href="#opcode-STORE_NAME"><code class="xref std std-opcode docutils literal notranslate"><span class="pre">STORE_NAME</span></code></a>, or
 <a class="reference internal" href="#opcode-UNPACK_SEQUENCE"><code class="xref std std-opcode docutils literal notranslate"><span class="pre">UNPACK_SEQUENCE</span></code></a>).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="std opcode">
+<dt class="sig sig-object std" id="opcode-COPY_DICT_WITHOUT_KEYS">
+<span class="sig-name descname"><span class="pre">COPY_DICT_WITHOUT_KEYS</span></span><a class="headerlink" href="#opcode-COPY_DICT_WITHOUT_KEYS" title="本定義的永久連結">¶</a></dt>
+<dd><p>TOS is a tuple of mapping keys, and TOS1 is the match subject.  Replace TOS
+with a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> formed from the items of TOS1, but without any of the
+keys in TOS.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="std opcode">
+<dt class="sig sig-object std" id="opcode-GET_LEN">
+<span class="sig-name descname"><span class="pre">GET_LEN</span></span><a class="headerlink" href="#opcode-GET_LEN" title="本定義的永久連結">¶</a></dt>
+<dd><p>Push <code class="docutils literal notranslate"><span class="pre">len(TOS)</span></code> onto the stack.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="std opcode">
+<dt class="sig sig-object std" id="opcode-MATCH_MAPPING">
+<span class="sig-name descname"><span class="pre">MATCH_MAPPING</span></span><a class="headerlink" href="#opcode-MATCH_MAPPING" title="本定義的永久連結">¶</a></dt>
+<dd><p>If TOS is an instance of <a class="reference internal" href="collections.abc.html#collections.abc.Mapping" title="collections.abc.Mapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Mapping</span></code></a> (or, more technically: if
+it has the <a class="reference internal" href="../c-api/typeobj.html#Py_TPFLAGS_MAPPING" title="Py_TPFLAGS_MAPPING"><code class="xref py py-const docutils literal notranslate"><span class="pre">Py_TPFLAGS_MAPPING</span></code></a> flag set in its
+<a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_flags" title="PyTypeObject.tp_flags"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_flags</span></code></a>), push <code class="docutils literal notranslate"><span class="pre">True</span></code> onto the stack.  Otherwise, push
+<code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="std opcode">
+<dt class="sig sig-object std" id="opcode-MATCH_SEQUENCE">
+<span class="sig-name descname"><span class="pre">MATCH_SEQUENCE</span></span><a class="headerlink" href="#opcode-MATCH_SEQUENCE" title="本定義的永久連結">¶</a></dt>
+<dd><p>If TOS is an instance of <a class="reference internal" href="collections.abc.html#collections.abc.Sequence" title="collections.abc.Sequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sequence</span></code></a> and is <em>not</em> an instance
+of <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>/<a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>/<a class="reference internal" href="stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> (or, more technically: if it has
+the <a class="reference internal" href="../c-api/typeobj.html#Py_TPFLAGS_SEQUENCE" title="Py_TPFLAGS_SEQUENCE"><code class="xref py py-const docutils literal notranslate"><span class="pre">Py_TPFLAGS_SEQUENCE</span></code></a> flag set in its <a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_flags" title="PyTypeObject.tp_flags"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_flags</span></code></a>),
+push <code class="docutils literal notranslate"><span class="pre">True</span></code> onto the stack.  Otherwise, push <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="std opcode">
+<dt class="sig sig-object std" id="opcode-MATCH_KEYS">
+<span class="sig-name descname"><span class="pre">MATCH_KEYS</span></span><a class="headerlink" href="#opcode-MATCH_KEYS" title="本定義的永久連結">¶</a></dt>
+<dd><p>TOS is a tuple of mapping keys, and TOS1 is the match subject.  If TOS1
+contains all of the keys in TOS, push a <a class="reference internal" href="stdtypes.html#tuple" title="tuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a> containing the
+corresponding values, followed by <code class="docutils literal notranslate"><span class="pre">True</span></code>. Otherwise, push <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+followed by <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1089,7 +1151,7 @@ resulting tuple onto the stack.</p>
 so that the dictionary holds <em>count</em> entries:
 <code class="docutils literal notranslate"><span class="pre">{...,</span> <span class="pre">TOS3:</span> <span class="pre">TOS2,</span> <span class="pre">TOS1:</span> <span class="pre">TOS}</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The dictionary is created from stack items instead of creating an
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The dictionary is created from stack items instead of creating an
 empty dictionary pre-sized to hold <em>count</em> items.</p>
 </div>
 </dd></dl>
@@ -1101,7 +1163,7 @@ empty dictionary pre-sized to hold <em>count</em> items.</p>
 top element on the stack which contains a tuple of keys, then starting from
 <code class="docutils literal notranslate"><span class="pre">TOS1</span></code>, pops <em>count</em> values to form values in the built dictionary.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1111,7 +1173,7 @@ top element on the stack which contains a tuple of keys, then starting from
 <dd><p>Concatenates <em>count</em> strings from the stack and pushes the resulting string
 onto the stack.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1120,7 +1182,7 @@ onto the stack.</p>
 <span class="sig-name descname"><span class="pre">LIST_TO_TUPLE</span></span><a class="headerlink" href="#opcode-LIST_TO_TUPLE" title="本定義的永久連結">¶</a></dt>
 <dd><p>Pops a list from the stack and pushes a tuple containing the same values.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1129,7 +1191,7 @@ onto the stack.</p>
 <span class="sig-name descname"><span class="pre">LIST_EXTEND</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">i</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-LIST_EXTEND" title="本定義的永久連結">¶</a></dt>
 <dd><p>Calls <code class="docutils literal notranslate"><span class="pre">list.extend(TOS1[-i],</span> <span class="pre">TOS)</span></code>.  Used to build lists.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1138,7 +1200,7 @@ onto the stack.</p>
 <span class="sig-name descname"><span class="pre">SET_UPDATE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">i</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-SET_UPDATE" title="本定義的永久連結">¶</a></dt>
 <dd><p>Calls <code class="docutils literal notranslate"><span class="pre">set.update(TOS1[-i],</span> <span class="pre">TOS)</span></code>.  Used to build sets.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1147,7 +1209,7 @@ onto the stack.</p>
 <span class="sig-name descname"><span class="pre">DICT_UPDATE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">i</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-DICT_UPDATE" title="本定義的永久連結">¶</a></dt>
 <dd><p>Calls <code class="docutils literal notranslate"><span class="pre">dict.update(TOS1[-i],</span> <span class="pre">TOS)</span></code>.  Used to build dicts.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1156,7 +1218,7 @@ onto the stack.</p>
 <span class="sig-name descname"><span class="pre">DICT_MERGE</span></span><a class="headerlink" href="#opcode-DICT_MERGE" title="本定義的永久連結">¶</a></dt>
 <dd><p>Like <a class="reference internal" href="#opcode-DICT_UPDATE"><code class="xref std std-opcode docutils literal notranslate"><span class="pre">DICT_UPDATE</span></code></a> but raises an exception for duplicate keys.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1178,7 +1240,7 @@ onto the stack.</p>
 <span class="sig-name descname"><span class="pre">IS_OP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">invert</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-IS_OP" title="本定義的永久連結">¶</a></dt>
 <dd><p>Performs <code class="docutils literal notranslate"><span class="pre">is</span></code> comparison, or <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> if <code class="docutils literal notranslate"><span class="pre">invert</span></code> is 1.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1187,7 +1249,7 @@ onto the stack.</p>
 <span class="sig-name descname"><span class="pre">CONTAINS_OP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">invert</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-CONTAINS_OP" title="本定義的永久連結">¶</a></dt>
 <dd><p>Performs <code class="docutils literal notranslate"><span class="pre">in</span></code> comparison, or <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> if <code class="docutils literal notranslate"><span class="pre">invert</span></code> is 1.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1220,7 +1282,7 @@ resulting object is pushed onto the stack, to be subsequently stored by a
 <span class="sig-name descname"><span class="pre">POP_JUMP_IF_TRUE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">target</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-POP_JUMP_IF_TRUE" title="本定義的永久連結">¶</a></dt>
 <dd><p>If TOS is true, sets the bytecode counter to <em>target</em>.  TOS is popped.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1229,7 +1291,7 @@ resulting object is pushed onto the stack, to be subsequently stored by a
 <span class="sig-name descname"><span class="pre">POP_JUMP_IF_FALSE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">target</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-POP_JUMP_IF_FALSE" title="本定義的永久連結">¶</a></dt>
 <dd><p>If TOS is false, sets the bytecode counter to <em>target</em>.  TOS is popped.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1239,7 +1301,7 @@ resulting object is pushed onto the stack, to be subsequently stored by a
 <dd><p>Tests whether the second value on the stack is an exception matching TOS,
 and jumps if it is not. Pops two values from the stack.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1249,7 +1311,7 @@ and jumps if it is not. Pops two values from the stack.</p>
 <dd><p>If TOS is true, sets the bytecode counter to <em>target</em> and leaves TOS on the
 stack.  Otherwise (TOS is false), TOS is popped.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1259,7 +1321,7 @@ stack.  Otherwise (TOS is false), TOS is popped.</p>
 <dd><p>If TOS is false, sets the bytecode counter to <em>target</em> and leaves TOS on the
 stack.  Otherwise (TOS is true), TOS is popped.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1332,7 +1394,7 @@ Pushes a reference to the object the cell contains on the stack.</p>
 consulting the cell.  This is used for loading free variables in class
 bodies.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1349,7 +1411,7 @@ storage.</p>
 <dd><p>Empties the cell contained in slot <em>i</em> of the cell and free variable storage.
 Used by the <a class="reference internal" href="../reference/simple_stmts.html#del"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code></a> statement.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1377,7 +1439,7 @@ argument on top.  Below the arguments is a callable object to call.
 calls the callable object with those arguments, and pushes the return value
 returned by the callable object.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>This opcode is used only for calls with positional arguments.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>This opcode is used only for calls with positional arguments.</p>
 </div>
 </dd></dl>
 
@@ -1396,7 +1458,7 @@ top.  Below the arguments is a callable object to call.
 calls the callable object with those arguments, and pushes the return value
 returned by the callable object.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Keyword arguments are packed in a tuple instead of a dictionary,
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Keyword arguments are packed in a tuple instead of a dictionary,
 <em>argc</em> indicates the total number of arguments.</p>
 </div>
 </dd></dl>
@@ -1414,7 +1476,7 @@ positional arguments respectively.
 calls the callable object with those arguments, and pushes the return value
 returned by the callable object.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1428,7 +1490,7 @@ the first argument (<code class="docutils literal notranslate"><span class="pre"
 unbound method. Otherwise, <code class="docutils literal notranslate"><span class="pre">NULL</span></code> and the object return by the attribute
 lookup are pushed.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1442,7 +1504,7 @@ Below them, the two items described in <a class="reference internal" href="#opco
 stack (either <code class="docutils literal notranslate"><span class="pre">self</span></code> and an unbound method object or <code class="docutils literal notranslate"><span class="pre">NULL</span></code> and an
 arbitrary callable). All of them are popped and the return value is pushed.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1455,11 +1517,14 @@ stack must consist of values if the argument carries a specified flag value</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">0x01</span></code> a tuple of default values for positional-only and
 positional-or-keyword parameters in positional order</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">0x02</span></code> a dictionary of keyword-only parameters' default values</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">0x04</span></code> an annotation dictionary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x04</span></code> a tuple of strings containing parameters' annotations</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">0x08</span></code> a tuple containing cells for free variables, making a closure</p></li>
 <li><p>the code associated with the function (at TOS1)</p></li>
 <li><p>the <a class="reference internal" href="../glossary.html#term-qualified-name"><span class="xref std std-term">qualified name</span></a> of the function (at TOS)</p></li>
 </ul>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Flag value <code class="docutils literal notranslate"><span class="pre">0x04</span></code> is a tuple of strings instead of dictionary</p>
+</div>
 </dd></dl>
 
 <dl class="std opcode">
@@ -1499,7 +1564,44 @@ it, else use an empty <em>fmt_spec</em>.</p></li>
 <p>Formatting is performed using <code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_Format()</span></code>.  The
 result is pushed on the stack.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="std opcode">
+<dt class="sig sig-object std" id="opcode-MATCH_CLASS">
+<span class="sig-name descname"><span class="pre">MATCH_CLASS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">count</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-MATCH_CLASS" title="本定義的永久連結">¶</a></dt>
+<dd><p>TOS is a tuple of keyword attribute names, TOS1 is the class being matched
+against, and TOS2 is the match subject.  <em>count</em> is the number of positional
+sub-patterns.</p>
+<p>Pop TOS.  If TOS2 is an instance of TOS1 and has the positional and keyword
+attributes required by <em>count</em> and TOS, set TOS to <code class="docutils literal notranslate"><span class="pre">True</span></code> and TOS1 to a
+tuple of extracted attributes.  Otherwise, set TOS to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="std opcode">
+<dt class="sig sig-object std" id="opcode-GEN_START">
+<span class="sig-name descname"><span class="pre">GEN_START</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">kind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-GEN_START" title="本定義的永久連結">¶</a></dt>
+<dd><blockquote>
+<div><p>Pops TOS. The <code class="docutils literal notranslate"><span class="pre">kind</span></code> operand corresponds to the type of generator or
+coroutine. The legal kinds are 0 for generator, 1 for coroutine,
+and 2 for async generator.</p>
+</div></blockquote>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="std opcode">
+<dt class="sig sig-object std" id="opcode-ROT_N">
+<span class="sig-name descname"><span class="pre">ROT_N</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">count</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opcode-ROT_N" title="本定義的永久連結">¶</a></dt>
+<dd><p>Lift the top <em>count</em> stack items one position up, and move TOS down to
+position <em>count</em>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1510,7 +1612,7 @@ result is pushed on the stack.</p>
 opcodes which don't use their argument and those that do
 (<code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">HAVE_ARGUMENT</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">HAVE_ARGUMENT</span></code>, respectively).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Now every instruction has an argument, but opcodes <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">HAVE_ARGUMENT</span></code>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Now every instruction has an argument, but opcodes <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">HAVE_ARGUMENT</span></code>
 ignore it. Before, only opcodes <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">HAVE_ARGUMENT</span></code> had an argument.</p>
 </div>
 </dd></dl>
@@ -1593,9 +1695,10 @@ scopes or names in outer scopes that are referenced from this scope.  It does
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a><ul>
 <li><a class="reference internal" href="#bytecode-analysis">Bytecode analysis</a></li>
 <li><a class="reference internal" href="#analysis-functions">Analysis functions</a></li>
 <li><a class="reference internal" href="#python-bytecode-instructions">Python Bytecode Instructions</a></li>
@@ -1604,18 +1707,23 @@ scopes or names in outer scopes that are referenced from this scope.  It does
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="compileall.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="pickletools.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="compileall.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="pickletools.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/dis.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/dis.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1650,15 +1758,13 @@ scopes or names in outer scopes that are referenced from this scope.  It does
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" >Python Language Services</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a></li>
                 <li class="right">
                     
 
@@ -1676,25 +1782,25 @@ scopes or names in outer scopes that are referenced from this scope.  It does
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

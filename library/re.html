@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>re --- Regular expression operations &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>re --- Regular expression operations &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="string --- Common string operations" href="string.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/re.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code> --- Regular expression operations</a><ul>
 <li><a class="reference internal" href="#regular-expression-syntax">Regular Expression Syntax</a></li>
 <li><a class="reference internal" href="#module-contents">Module Contents</a></li>
@@ -95,18 +94,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="string.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">string</span></code> --- Common string operations</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="difflib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">difflib</span></code> --- Helpers for computing deltas</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="string.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">string</span></code> --- Common string operations</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="difflib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">difflib</span></code> --- Helpers for computing deltas</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/re.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/re.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -142,13 +146,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="text.html" accesskey="U">Text Processing Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code> --- Regular expression operations</a></li>
                 <li class="right">
@@ -175,7 +177,7 @@
             
   <section id="module-re">
 <span id="re-regular-expression-operations"></span><h1><a class="reference internal" href="#module-re" title="re: Regular expression operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a> --- Regular expression operations<a class="headerlink" href="#module-re" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/re.py">Lib/re.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/re.py">Lib/re.py</a></p>
 <hr class="docutils" />
 <p>This module provides regular expression matching operations similar to
 those found in Perl.</p>
@@ -229,7 +231,7 @@ primitive expressions like the ones described here.  For details of the theory
 and implementation of regular expressions, consult the Friedl book <a class="reference internal" href="#frie09" id="id1"><span>[Frie09]</span></a>,
 or almost any textbook about compiler construction.</p>
 <p>A brief explanation of the format of regular expressions follows.  For further
-information and a gentler presentation, consult the <a class="reference internal" href="../howto/regex.html#regex-howto"><span class="std std-ref">如何使用正規表達式</span></a>.</p>
+information and a gentler presentation, consult the <a class="reference internal" href="../howto/regex.html#regex-howto"><span class="std std-ref">Regular Expression HOWTO</span></a>.</p>
 <p>Regular expressions can contain both special and ordinary characters. Most
 ordinary characters, like <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'0'</span></code>, are the simplest regular
 expressions; they simply match themselves.  You can concatenate ordinary
@@ -369,7 +371,7 @@ character sequences <code class="docutils literal notranslate"><span class="pre"
 avoid a warning escape them with a backslash.</p></li>
 </ul>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><a class="reference internal" href="exceptions.html#FutureWarning" title="FutureWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FutureWarning</span></code></a> is raised if a character set contains constructs
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><a class="reference internal" href="exceptions.html#FutureWarning" title="FutureWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FutureWarning</span></code></a> is raised if a character set contains constructs
 that will change semantically in the future.</p>
 </div>
 </dd>
@@ -440,10 +442,10 @@ matching, and <code class="docutils literal notranslate"><span class="pre">(?a:.
 This override is only in effect for the narrow inline group, and the
 original matching mode is restored outside of the group.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The letters <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and <code class="docutils literal notranslate"><span class="pre">'u'</span></code> also can be used in a group.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The letters <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'L'</span></code> and <code class="docutils literal notranslate"><span class="pre">'u'</span></code> also can be used in a group.</p>
 </div>
 </dd>
 </dl>
@@ -538,7 +540,7 @@ beginning of the string being searched; you will most likely want to use the
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added support for group references of fixed length.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added support for group references of fixed length.</p>
 </div>
 </dd>
 </dl>
@@ -682,13 +684,13 @@ there are three octal digits, it is considered an octal escape. Otherwise, it is
 a group reference.  As for string literals, octal escapes are always at most
 three digits in length.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The <code class="docutils literal notranslate"><span class="pre">'\u'</span></code> and <code class="docutils literal notranslate"><span class="pre">'\U'</span></code> escape sequences have been added.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">'\u'</span></code> and <code class="docutils literal notranslate"><span class="pre">'\U'</span></code> escape sequences have been added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Unknown escapes consisting of <code class="docutils literal notranslate"><span class="pre">'\'</span></code> and an ASCII letter now are errors.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Unknown escapes consisting of <code class="docutils literal notranslate"><span class="pre">'\'</span></code> and an ASCII letter now are errors.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <code class="docutils literal notranslate"><span class="pre">'\N{name}'</span></code> escape sequence has been added. As in string literals,
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">'\N{name}'</span></code> escape sequence has been added. As in string literals,
 it expands to the named Unicode character (e.g. <code class="docutils literal notranslate"><span class="pre">'\N{EM</span> <span class="pre">DASH}'</span></code>).</p>
 </div>
 </section>
@@ -699,7 +701,7 @@ functions are simplified versions of the full featured methods for compiled
 regular expressions.  Most non-trivial applications always use the compiled
 form.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Flag constants are now instances of <code class="xref py py-class docutils literal notranslate"><span class="pre">RegexFlag</span></code>, which is a subclass of
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Flag constants are now instances of <code class="xref py py-class docutils literal notranslate"><span class="pre">RegexFlag</span></code>, which is a subclass of
 <a class="reference internal" href="enum.html#enum.IntFlag" title="enum.IntFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.IntFlag</span></code></a>.</p>
 </div>
 <dl class="py function">
@@ -789,11 +791,11 @@ in Python 3 for Unicode (str) patterns, and it is able to handle different
 locales/languages.
 Corresponds to the inline flag <code class="docutils literal notranslate"><span class="pre">(?L)</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><a class="reference internal" href="#re.LOCALE" title="re.LOCALE"><code class="xref py py-const docutils literal notranslate"><span class="pre">re.LOCALE</span></code></a> can be used only with bytes patterns and is
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><a class="reference internal" href="#re.LOCALE" title="re.LOCALE"><code class="xref py py-const docutils literal notranslate"><span class="pre">re.LOCALE</span></code></a> can be used only with bytes patterns and is
 not compatible with <a class="reference internal" href="#re.ASCII" title="re.ASCII"><code class="xref py py-const docutils literal notranslate"><span class="pre">re.ASCII</span></code></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Compiled regular expression objects with the <a class="reference internal" href="#re.LOCALE" title="re.LOCALE"><code class="xref py py-const docutils literal notranslate"><span class="pre">re.LOCALE</span></code></a> flag no
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Compiled regular expression objects with the <a class="reference internal" href="#re.LOCALE" title="re.LOCALE"><code class="xref py py-const docutils literal notranslate"><span class="pre">re.LOCALE</span></code></a> flag no
 longer depend on the locale at compile time.  Only the locale at
 matching time affects the result of matching.</p>
 </div>
@@ -876,7 +878,7 @@ corresponding <a class="reference internal" href="#match-objects"><span class="s
 string does not match the pattern; note that this is different from a
 zero-length match.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -918,10 +920,10 @@ to a previous empty match.</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added the optional flags argument.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added the optional flags argument.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added support of splitting on a pattern that could match an empty string.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added support of splitting on a pattern that could match an empty string.</p>
 </div>
 </dd></dl>
 
@@ -944,7 +946,7 @@ affect the form of the result.</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Non-empty matches can now start just after a previous empty match.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Non-empty matches can now start just after a previous empty match.</p>
 </div>
 </dd></dl>
 
@@ -956,7 +958,7 @@ all non-overlapping matches for the RE <em>pattern</em> in <em>string</em>.  The
 is scanned left-to-right, and matches are returned in the order found.  Empty
 matches are included in the result.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Non-empty matches can now start just after a previous empty match.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Non-empty matches can now start just after a previous empty match.</p>
 </div>
 </dd></dl>
 
@@ -1007,21 +1009,21 @@ reference to group 20, not a reference to group 2 followed by the literal
 character <code class="docutils literal notranslate"><span class="pre">'0'</span></code>.  The backreference <code class="docutils literal notranslate"><span class="pre">\g&lt;0&gt;</span></code> substitutes in the entire
 substring matched by the RE.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added the optional flags argument.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added the optional flags argument.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Unmatched groups are replaced with an empty string.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Unmatched groups are replaced with an empty string.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Unknown escapes in <em>pattern</em> consisting of <code class="docutils literal notranslate"><span class="pre">'\'</span></code> and an ASCII letter
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Unknown escapes in <em>pattern</em> consisting of <code class="docutils literal notranslate"><span class="pre">'\'</span></code> and an ASCII letter
 now are errors.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Unknown escapes in <em>repl</em> consisting of <code class="docutils literal notranslate"><span class="pre">'\'</span></code> and an ASCII letter
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Unknown escapes in <em>repl</em> consisting of <code class="docutils literal notranslate"><span class="pre">'\'</span></code> and an ASCII letter
 now are errors.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Empty matches for the pattern are replaced when adjacent to a previous
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Empty matches for the pattern are replaced when adjacent to a previous
 non-empty match.</p>
 </div>
 </dd></dl>
@@ -1032,10 +1034,10 @@ non-empty match.</p>
 <dd><p>Perform the same operation as <a class="reference internal" href="#re.sub" title="re.sub"><code class="xref py py-func docutils literal notranslate"><span class="pre">sub()</span></code></a>, but return a tuple <code class="docutils literal notranslate"><span class="pre">(new_string,</span>
 <span class="pre">number_of_subs_made)</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added the optional flags argument.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added the optional flags argument.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Unmatched groups are replaced with an empty string.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Unmatched groups are replaced with an empty string.</p>
 </div>
 </dd></dl>
 
@@ -1066,10 +1068,10 @@ and <a class="reference internal" href="#re.subn" title="re.subn"><code class="x
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The <code class="docutils literal notranslate"><span class="pre">'_'</span></code> character is no longer escaped.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">'_'</span></code> character is no longer escaped.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Only characters that can have special meaning in a regular expression
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Only characters that can have special meaning in a regular expression
 are escaped. As a result, <code class="docutils literal notranslate"><span class="pre">'!'</span></code>, <code class="docutils literal notranslate"><span class="pre">'&quot;'</span></code>, <code class="docutils literal notranslate"><span class="pre">'%'</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;'&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">','</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'/'</span></code>, <code class="docutils literal notranslate"><span class="pre">':'</span></code>, <code class="docutils literal notranslate"><span class="pre">';'</span></code>, <code class="docutils literal notranslate"><span class="pre">'&lt;'</span></code>, <code class="docutils literal notranslate"><span class="pre">'='</span></code>, <code class="docutils literal notranslate"><span class="pre">'&gt;'</span></code>, <code class="docutils literal notranslate"><span class="pre">'&#64;'</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">&quot;`&quot;</span></code> are no longer escaped.</p>
@@ -1084,7 +1086,7 @@ are escaped. As a result, <code class="docutils literal notranslate"><span class
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="re.error">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">re.</span></span><span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#re.error" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">re.</span></span><span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#re.error" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised when a string passed to one of the functions here is not a
 valid regular expression (for example, it might contain unmatched parentheses)
 or when some other error occurs during compilation or matching.  It is never an
@@ -1121,7 +1123,7 @@ the following additional attributes:</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added additional attributes.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added additional attributes.</p>
 </div>
 </dd></dl>
 
@@ -1132,7 +1134,7 @@ the following additional attributes:</p>
 attributes:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="re.Pattern.search">
-<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">endpos</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.search" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">endpos</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.search" title="本定義的永久連結">¶</a></dt>
 <dd><p>Scan through <em>string</em> looking for the first location where this regular
 expression produces a match, and return a corresponding <a class="reference internal" href="#match-objects"><span class="std std-ref">match object</span></a>.  Return <code class="docutils literal notranslate"><span class="pre">None</span></code> if no position in the string matches the
 pattern; note that this is different from finding a zero-length match at some
@@ -1158,7 +1160,7 @@ expression object, <code class="docutils literal notranslate"><span class="pre">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="re.Pattern.match">
-<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">endpos</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.match" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">endpos</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.match" title="本定義的永久連結">¶</a></dt>
 <dd><p>If zero or more characters at the <em>beginning</em> of <em>string</em> match this regular
 expression, return a corresponding <a class="reference internal" href="#match-objects"><span class="std std-ref">match object</span></a>.
 Return <code class="docutils literal notranslate"><span class="pre">None</span></code> if the string does not match the pattern; note that this is
@@ -1177,7 +1179,7 @@ different from a zero-length match.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="re.Pattern.fullmatch">
-<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">fullmatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">endpos</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.fullmatch" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">fullmatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">endpos</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.fullmatch" title="本定義的永久連結">¶</a></dt>
 <dd><p>If the whole <em>string</em> matches this regular expression, return a corresponding
 <a class="reference internal" href="#match-objects"><span class="std std-ref">match object</span></a>.  Return <code class="docutils literal notranslate"><span class="pre">None</span></code> if the string does not
 match the pattern; note that this is different from a zero-length match.</p>
@@ -1191,7 +1193,7 @@ match the pattern; note that this is different from a zero-length match.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1203,7 +1205,7 @@ match the pattern; note that this is different from a zero-length match.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="re.Pattern.findall">
-<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">findall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">endpos</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.findall" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">findall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">endpos</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.findall" title="本定義的永久連結">¶</a></dt>
 <dd><p>Similar to the <a class="reference internal" href="#re.findall" title="re.findall"><code class="xref py py-func docutils literal notranslate"><span class="pre">findall()</span></code></a> function, using the compiled pattern, but
 also accepts optional <em>pos</em> and <em>endpos</em> parameters that limit the search
 region like for <a class="reference internal" href="#re.search" title="re.search"><code class="xref py py-meth docutils literal notranslate"><span class="pre">search()</span></code></a>.</p>
@@ -1211,7 +1213,7 @@ region like for <a class="reference internal" href="#re.search" title="re.search
 
 <dl class="py method">
 <dt class="sig sig-object py" id="re.Pattern.finditer">
-<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">finditer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">pos</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">endpos</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.finditer" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Pattern.</span></span><span class="sig-name descname"><span class="pre">finditer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">endpos</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Pattern.finditer" title="本定義的永久連結">¶</a></dt>
 <dd><p>Similar to the <a class="reference internal" href="#re.finditer" title="re.finditer"><code class="xref py py-func docutils literal notranslate"><span class="pre">finditer()</span></code></a> function, using the compiled pattern, but
 also accepts optional <em>pos</em> and <em>endpos</em> parameters that limit the search
 region like for <a class="reference internal" href="#re.search" title="re.search"><code class="xref py py-meth docutils literal notranslate"><span class="pre">search()</span></code></a>.</p>
@@ -1258,7 +1260,7 @@ pattern.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added support of <a class="reference internal" href="copy.html#copy.copy" title="copy.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.copy()</span></code></a> and <a class="reference internal" href="copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code></a>.  Compiled
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added support of <a class="reference internal" href="copy.html#copy.copy" title="copy.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.copy()</span></code></a> and <a class="reference internal" href="copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code></a>.  Compiled
 regular expression objects are considered atomic.</p>
 </div>
 </section>
@@ -1284,13 +1286,13 @@ and numeric backreferences (<code class="docutils literal notranslate"><span cla
 (<code class="docutils literal notranslate"><span class="pre">\g&lt;1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">\g&lt;name&gt;</span></code>) are replaced by the contents of the
 corresponding group.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Unmatched groups are replaced with an empty string.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Unmatched groups are replaced with an empty string.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="re.Match.group">
-<span class="sig-prename descclassname"><span class="pre">Match.</span></span><span class="sig-name descname"><span class="pre">group</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">group1</span></em>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Match.group" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Match.</span></span><span class="sig-name descname"><span class="pre">group</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">group1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Match.group" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns one or more subgroups of the match.  If there is a single argument, the
 result is a single string; if there are multiple arguments, the result is a
 tuple with one item per argument. Without arguments, <em>group1</em> defaults to zero
@@ -1355,7 +1357,7 @@ an individual group from a match:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1398,9 +1400,9 @@ participate in the match; it defaults to <code class="docutils literal notransla
 
 <dl class="py method">
 <dt class="sig sig-object py" id="re.Match.start">
-<span class="sig-prename descclassname"><span class="pre">Match.</span></span><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">group</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Match.start" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Match.</span></span><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">group</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Match.start" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py" id="re.Match.end">
-<span class="sig-prename descclassname"><span class="pre">Match.</span></span><span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">group</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Match.end" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Match.</span></span><span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">group</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Match.end" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the indices of the start and end of the substring matched by <em>group</em>;
 <em>group</em> defaults to zero (meaning the whole matched substring). Return <code class="docutils literal notranslate"><span class="pre">-1</span></code> if
 <em>group</em> exists but did not contribute to the match.  For a match object <em>m</em>, and
@@ -1424,7 +1426,7 @@ null string.  For example, after <code class="docutils literal notranslate"><spa
 
 <dl class="py method">
 <dt class="sig sig-object py" id="re.Match.span">
-<span class="sig-prename descclassname"><span class="pre">Match.</span></span><span class="sig-name descname"><span class="pre">span</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">group</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Match.span" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Match.</span></span><span class="sig-name descname"><span class="pre">span</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">group</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#re.Match.span" title="本定義的永久連結">¶</a></dt>
 <dd><p>For a match <em>m</em>, return the 2-tuple <code class="docutils literal notranslate"><span class="pre">(m.start(group),</span> <span class="pre">m.end(group))</span></code>. Note
 that if <em>group</em> did not contribute to the match, this is <code class="docutils literal notranslate"><span class="pre">(-1,</span> <span class="pre">-1)</span></code>.
 <em>group</em> defaults to zero, the entire match.</p>
@@ -1477,7 +1479,7 @@ have a name, or if no group was matched at all.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added support of <a class="reference internal" href="copy.html#copy.copy" title="copy.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.copy()</span></code></a> and <a class="reference internal" href="copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code></a>.  Match objects
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added support of <a class="reference internal" href="copy.html#copy.copy" title="copy.copy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.copy()</span></code></a> and <a class="reference internal" href="copy.html#copy.deepcopy" title="copy.deepcopy"><code class="xref py py-func docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code></a>.  Match objects
 are considered atomic.</p>
 </div>
 </section>
@@ -1697,7 +1699,7 @@ one as <a class="reference internal" href="#re.search" title="re.search"><code c
 find all of the adverbs in some text, they might use <a class="reference internal" href="#re.findall" title="re.findall"><code class="xref py py-func docutils literal notranslate"><span class="pre">findall()</span></code></a> in
 the following manner:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;He was carefully disguised but captured quickly by police.&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\w+ly&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\w+ly\b&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 <span class="go">[&#39;carefully&#39;, &#39;quickly&#39;]</span>
 </pre></div>
 </div>
@@ -1709,7 +1711,7 @@ text, <a class="reference internal" href="#re.finditer" title="re.finditer"><cod
 a writer wanted to find all of the adverbs <em>and their positions</em> in
 some text, they would use <a class="reference internal" href="#re.finditer" title="re.finditer"><code class="xref py py-func docutils literal notranslate"><span class="pre">finditer()</span></code></a> in the following manner:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;He was carefully disguised but captured quickly by police.&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\w+ly&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\w+ly\b&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%02d</span><span class="s1">-</span><span class="si">%02d</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
 <span class="go">07-16: carefully</span>
 <span class="go">40-47: quickly</span>
@@ -1841,8 +1843,9 @@ great detail.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code> --- Regular expression operations</a><ul>
 <li><a class="reference internal" href="#regular-expression-syntax">Regular Expression Syntax</a></li>
 <li><a class="reference internal" href="#module-contents">Module Contents</a></li>
@@ -1864,18 +1867,23 @@ great detail.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="string.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">string</span></code> --- Common string operations</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="difflib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">difflib</span></code> --- Helpers for computing deltas</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="string.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">string</span></code> --- Common string operations</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="difflib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">difflib</span></code> --- Helpers for computing deltas</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/re.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/re.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1910,13 +1918,11 @@ great detail.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="text.html" >Text Processing Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code> --- Regular expression operations</a></li>
                 <li class="right">
@@ -1936,25 +1942,25 @@ great detail.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

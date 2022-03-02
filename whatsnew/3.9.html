@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New In Python 3.9 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New In Python 3.9 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="What&#39;s New In Python 3.8" href="3.8.html" />
-    <link rel="prev" title="Python 有什麼新功能？" href="index.html" />
+    <link rel="prev" title="What&#39;s New In Python 3.10" href="3.10.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/3.9.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New In Python 3.9</a><ul>
 <li><a class="reference internal" href="#summary-release-highlights">Summary -- Release highlights</a></li>
 <li><a class="reference internal" href="#you-should-check-for-deprecationwarning-in-your-code">You should check for DeprecationWarning in your code</a></li>
@@ -156,27 +155,27 @@
 <li><a class="reference internal" href="#urllib-parse">urllib.parse</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#notable-changes-in-python-3-9-3">Notable changes in Python 3.9.3</a></li>
-<li><a class="reference internal" href="#notable-changes-in-python-3-9-5">Notable changes in Python 3.9.5</a><ul>
-<li><a class="reference internal" href="#id5">urllib.parse</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">Python 有什麼新功能？</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="3.8.html"
-                        title="下一章">What's New In Python 3.8</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.10.html"
+                          title="上一章">What's New In Python 3.10</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="3.8.html"
+                          title="下一章">What's New In Python 3.8</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/3.9.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/3.9.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -200,7 +199,7 @@
           <a href="3.8.html" title="What&#39;s New In Python 3.8"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Python 有什麼新功能？"
+          <a href="3.10.html" title="What&#39;s New In Python 3.10"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -212,13 +211,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New In Python 3.9</a></li>
                 <li class="right">
                     
@@ -246,10 +243,10 @@
 <h1>What's New In Python 3.9<a class="headerlink" href="#what-s-new-in-python-3-9" title="本標題的永久連結">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Release</dt>
-<dd class="field-odd"><p>3.9.7</p>
+<dd class="field-odd"><p>3.10.2</p>
 </dd>
 <dt class="field-even">Date</dt>
-<dd class="field-even"><p>9月 06, 2021</p>
+<dd class="field-even"><p>3月 02, 2022</p>
 </dd>
 <dt class="field-odd">Editor</dt>
 <dd class="field-odd"><p>Łukasz Langa</p>
@@ -389,7 +386,7 @@ in Python 3.10 and later.</p>
 <p>The <a class="reference internal" href="../library/ast.html#module-ast" title="ast: Abstract Syntax Tree classes and manipulation."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ast</span></code></a> module uses the new parser and produces the same AST as
 the old parser.</p>
 <p>In Python 3.10, the old parser will be deleted and so will all
-functionality that depends on it (primarily the <a class="reference internal" href="../library/parser.html#module-parser" title="parser: Access parse trees for Python source code."><code class="xref py py-mod docutils literal notranslate"><span class="pre">parser</span></code></a> module,
+functionality that depends on it (primarily the <code class="xref py py-mod docutils literal notranslate"><span class="pre">parser</span></code> module,
 which has long been deprecated).  In Python 3.9 <em>only</em>, you can switch
 back to the LL(1) parser using a command line switch (<code class="docutils literal notranslate"><span class="pre">-X</span>
 <span class="pre">oldparser</span></code>) or an environment variable (<code class="docutils literal notranslate"><span class="pre">PYTHONOLDPARSER=1</span></code>).</p>
@@ -406,12 +403,12 @@ its top-level package.
 (Contributed by Ngalim Siregar in <a class="reference external" href="https://bugs.python.org/issue37444">bpo-37444</a>.)</p></li>
 <li><p>Python now gets the absolute path of the script filename specified on
 the command line (ex: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">script.py</span></code>): the <code class="docutils literal notranslate"><span class="pre">__file__</span></code> attribute of
-the <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> module became an absolute path, rather than a relative
+the <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> module became an absolute path, rather than a relative
 path. These paths now remain valid after the current directory is changed
 by <a class="reference internal" href="../library/os.html#os.chdir" title="os.chdir"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.chdir()</span></code></a>. As a side effect, the traceback also displays the
-absolute path for <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> module frames in this case.
+absolute path for <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> module frames in this case.
 (Contributed by Victor Stinner in <a class="reference external" href="https://bugs.python.org/issue20443">bpo-20443</a>.)</p></li>
-<li><p>In the <a class="reference internal" href="../library/devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> and in debug build, the
+<li><p>In the <a class="reference internal" href="../library/devmode.html#devmode"><span class="std std-ref">Python Development Mode</span></a> and in <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug build</span></a>, the
 <em>encoding</em> and <em>errors</em> arguments are now checked for string encoding and
 decoding operations. Examples: <a class="reference internal" href="../library/functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a>, <a class="reference internal" href="../library/stdtypes.html#str.encode" title="str.encode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.encode()</span></code></a> and
 <a class="reference internal" href="../library/stdtypes.html#bytes.decode" title="bytes.decode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bytes.decode()</span></code></a>.</p>
@@ -622,7 +619,20 @@ in <a class="reference external" href="https://bugs.python.org/issue4603">bpo-46
 Najera in <a class="reference external" href="https://bugs.python.org/issue38944">bpo-38944</a>.)</p>
 <p>Added keywords to module name completion list.  (Contributed by Terry J.
 Reedy in <a class="reference external" href="https://bugs.python.org/issue37765">bpo-37765</a>.)</p>
+<p>New in 3.9 maintenance releases</p>
+<p>Make IDLE invoke <a class="reference internal" href="../library/sys.html#sys.excepthook" title="sys.excepthook"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.excepthook()</span></code></a> (when started without '-n').
+User hooks were previously ignored.  (Contributed by Ken Hilton in
+<a class="reference external" href="https://bugs.python.org/issue43008">bpo-43008</a>.)</p>
 <p>The changes above have been backported to 3.8 maintenance releases.</p>
+<p>Rearrange the settings dialog.  Split the General tab into Windows
+and Shell/Ed tabs.  Move help sources, which extend the Help menu, to the
+Extensions tab.  Make space for new options and shorten the dialog. The
+latter makes the dialog better fit small screens.  (Contributed by Terry Jan
+Reedy in <a class="reference external" href="https://bugs.python.org/issue40468">bpo-40468</a>.)  Move the indent space setting from the Font tab to
+the new Windows tab.  (Contributed by Mark Roseman and Terry Jan Reedy in
+<a class="reference external" href="https://bugs.python.org/issue33962">bpo-33962</a>.)</p>
+<p>Apply syntax highlighting to <cite>.pyi</cite> files. (Contributed by Alex
+Waygood and Terry Jan Reedy in <a class="reference external" href="https://bugs.python.org/issue45447">bpo-45447</a>.)</p>
 </section>
 <section id="imaplib">
 <h3>imaplib<a class="headerlink" href="#imaplib" title="本標題的永久連結">¶</a></h3>
@@ -932,13 +942,13 @@ non-negative integer values (like <code class="docutils literal notranslate"><sp
 for non-integral and negative floats.  It is now deprecated.  In future
 Python versions it will raise a <a class="reference internal" href="../library/exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> for all floats.
 (Contributed by Serhiy Storchaka in <a class="reference external" href="https://bugs.python.org/issue37315">bpo-37315</a>.)</p></li>
-<li><p>The <a class="reference internal" href="../library/parser.html#module-parser" title="parser: Access parse trees for Python source code."><code class="xref py py-mod docutils literal notranslate"><span class="pre">parser</span></code></a> and <a class="reference internal" href="../library/symbol.html#module-symbol" title="symbol: Constants representing internal nodes of the parse tree."><code class="xref py py-mod docutils literal notranslate"><span class="pre">symbol</span></code></a> modules are deprecated and will be
+<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">parser</span></code> and <code class="xref py py-mod docutils literal notranslate"><span class="pre">symbol</span></code> modules are deprecated and will be
 removed in future versions of Python. For the majority of use cases,
 users can leverage the Abstract Syntax Tree (AST) generation and compilation
 stage, using the <a class="reference internal" href="../library/ast.html#module-ast" title="ast: Abstract Syntax Tree classes and manipulation."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ast</span></code></a> module.</p></li>
-<li><p>The Public C API functions <a class="reference internal" href="../c-api/veryhigh.html#c.PyParser_SimpleParseStringFlags" title="PyParser_SimpleParseStringFlags"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyParser_SimpleParseStringFlags()</span></code></a>,
-<a class="reference internal" href="../c-api/veryhigh.html#c.PyParser_SimpleParseStringFlagsFilename" title="PyParser_SimpleParseStringFlagsFilename"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyParser_SimpleParseStringFlagsFilename()</span></code></a>,
-<a class="reference internal" href="../c-api/veryhigh.html#c.PyParser_SimpleParseFileFlags" title="PyParser_SimpleParseFileFlags"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyParser_SimpleParseFileFlags()</span></code></a> and <code class="xref c c-func docutils literal notranslate"><span class="pre">PyNode_Compile()</span></code>
+<li><p>The Public C API functions <code class="xref c c-func docutils literal notranslate"><span class="pre">PyParser_SimpleParseStringFlags()</span></code>,
+<code class="xref c c-func docutils literal notranslate"><span class="pre">PyParser_SimpleParseStringFlagsFilename()</span></code>,
+<code class="xref c c-func docutils literal notranslate"><span class="pre">PyParser_SimpleParseFileFlags()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">PyNode_Compile()</span></code>
 are deprecated and will be removed in Python 3.10 together with the old parser.</p></li>
 <li><p>Using <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a> in a boolean context has been deprecated,
 as it is almost exclusively the result of incorrect rich comparator
@@ -1123,7 +1133,7 @@ environment variable when the <a class="reference internal" href="../using/cmdli
 options are being used.</p></li>
 <li><p>The <em>encoding</em> parameter has been added to the classes <a class="reference internal" href="../library/ftplib.html#ftplib.FTP" title="ftplib.FTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">ftplib.FTP</span></code></a> and
 <a class="reference internal" href="../library/ftplib.html#ftplib.FTP_TLS" title="ftplib.FTP_TLS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ftplib.FTP_TLS</span></code></a> as a keyword-only parameter, and the default encoding
-is changed from Latin-1 to UTF-8 to follow <span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2640.html"><strong>RFC 2640</strong></a>.</p></li>
+is changed from Latin-1 to UTF-8 to follow <span class="target" id="index-22"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2640.html"><strong>RFC 2640</strong></a>.</p></li>
 <li><p><a class="reference internal" href="../library/asyncio-eventloop.html#asyncio.loop.shutdown_default_executor" title="asyncio.loop.shutdown_default_executor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">asyncio.loop.shutdown_default_executor()</span></code></a> has been added to
 <a class="reference internal" href="../library/asyncio-eventloop.html#asyncio.AbstractEventLoop" title="asyncio.AbstractEventLoop"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractEventLoop</span></code></a>, meaning alternative event loops that
 inherit from it should have this method defined.
@@ -1164,7 +1174,7 @@ name is now normalized to <code class="docutils literal notranslate"><span class
 <section id="changes-in-the-c-api">
 <h3>Changes in the C API<a class="headerlink" href="#changes-in-the-c-api" title="本標題的永久連結">¶</a></h3>
 <ul>
-<li><p>Instances of heap-allocated types (such as those created with
+<li><p>Instances of <a class="reference internal" href="../c-api/typeobj.html#heap-types"><span class="std std-ref">heap-allocated types</span></a> (such as those created with
 <a class="reference internal" href="../c-api/type.html#c.PyType_FromSpec" title="PyType_FromSpec"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyType_FromSpec()</span></code></a> and similar APIs) hold a reference to their type
 object since Python 3.8. As indicated in the &quot;Changes in the C API&quot; of Python
 3.8, for the vast majority of cases, there should be no side effect but for
@@ -1186,7 +1196,8 @@ visit the object's type.</p>
 </div></blockquote>
 <p>If your traverse function delegates to <code class="docutils literal notranslate"><span class="pre">tp_traverse</span></code> of its base class
 (or another type), ensure that <code class="docutils literal notranslate"><span class="pre">Py_TYPE(self)</span></code> is visited only once.
-Note that only heap types are expected to visit the type in <code class="docutils literal notranslate"><span class="pre">tp_traverse</span></code>.</p>
+Note that only <a class="reference internal" href="../c-api/typeobj.html#heap-types"><span class="std std-ref">heap type</span></a> are expected to visit the type
+in <code class="docutils literal notranslate"><span class="pre">tp_traverse</span></code>.</p>
 <blockquote>
 <div><p>For example, if your <code class="docutils literal notranslate"><span class="pre">tp_traverse</span></code> function includes:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">base</span><span class="o">-&gt;</span><span class="n">tp_traverse</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">visit</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"></span>
@@ -1194,7 +1205,7 @@ Note that only heap types are expected to visit the type in <code class="docutil
 </div>
 <p>then add:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#if PY_VERSION_HEX &gt;= 0x03090000</span>
-<span class="w">    </span><span class="c1">// This was not needed before Python 3.9 (Python issue 35810 and 40217)</span>
+<span class="w">    </span><span class="c1">// This was not needed before Python 3.9 (bpo-35810 and bpo-40217)</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">base</span><span class="o">-&gt;</span><span class="n">tp_flags</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Py_TPFLAGS_HEAPTYPE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// a heap type&#39;s tp_traverse already visited Py_TYPE(self)</span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1251,9 +1262,9 @@ officially unsupported.  (See <a class="reference external" href="https://bugs.p
 non-system Tcl and Tk frameworks if they are installed in
 <code class="docutils literal notranslate"><span class="pre">/Library/Frameworks</span></code>, as had been the case on older releases
 of macOS. If a macOS SDK is explicitly configured, by using
-<code class="docutils literal notranslate"><span class="pre">--enable-universalsdk=</span></code> or <code class="docutils literal notranslate"><span class="pre">-isysroot</span></code>, only the SDK itself is
+<a class="reference internal" href="../using/configure.html#cmdoption-1"><code class="xref std std-option docutils literal notranslate"><span class="pre">--enable-universalsdk</span></code></a> or <code class="docutils literal notranslate"><span class="pre">-isysroot</span></code>, only the SDK itself is
 searched. The default behavior can still be overridden with
-<code class="docutils literal notranslate"><span class="pre">--with-tcltk-includes</span></code> and <code class="docutils literal notranslate"><span class="pre">--with-tcltk-libs</span></code>.
+<a class="reference internal" href="../using/configure.html#cmdoption-with-tcltk-includes"><code class="xref std std-option docutils literal notranslate"><span class="pre">--with-tcltk-includes</span></code></a> and <a class="reference internal" href="../using/configure.html#cmdoption-with-tcltk-libs"><code class="xref std std-option docutils literal notranslate"><span class="pre">--with-tcltk-libs</span></code></a>.
 (Contributed by Ned Deily in <a class="reference external" href="https://bugs.python.org/issue34956">bpo-34956</a>.)</p></li>
 <li><p>Python can now be built for Windows 10 ARM64.
 (Contributed by Steve Dower in <a class="reference external" href="https://bugs.python.org/issue33125">bpo-33125</a>.)</p></li>
@@ -1376,9 +1387,6 @@ keyword names. (See <a class="reference external" href="https://bugs.python.org/
 <a class="reference internal" href="../c-api/allocation.html#c.PyObject_New" title="PyObject_New"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_New()</span></code></a> macro, and the <code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_NEW_VAR()</span></code> macro
 becomes an alias to the <a class="reference internal" href="../c-api/allocation.html#c.PyObject_NewVar" title="PyObject_NewVar"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_NewVar()</span></code></a> macro. They no longer
 access directly the <a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_basicsize" title="PyTypeObject.tp_basicsize"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyTypeObject.tp_basicsize</span></code></a> member.</p></li>
-<li><p><a class="reference internal" href="../c-api/type.html#c.PyType_HasFeature" title="PyType_HasFeature"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyType_HasFeature()</span></code></a> now always calls <a class="reference internal" href="../c-api/type.html#c.PyType_GetFlags" title="PyType_GetFlags"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyType_GetFlags()</span></code></a>.
-Previously, it accessed directly the <a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_flags" title="PyTypeObject.tp_flags"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyTypeObject.tp_flags</span></code></a>
-member when the limited C API was not used.</p></li>
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GET_WEAKREFS_LISTPTR()</span></code> macro was converted to a function:
 the macro accessed directly the <a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_weaklistoffset" title="PyTypeObject.tp_weaklistoffset"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyTypeObject.tp_weaklistoffset</span></code></a>
 member.</p></li>
@@ -1438,7 +1446,7 @@ Python 3.0, it has been ignored and unused.
 macro which was an alias to <code class="docutils literal notranslate"><span class="pre">_PyRuntime.getframe</span></code>. They were only exposed
 by the internal C API. Removed also <code class="docutils literal notranslate"><span class="pre">PyThreadFrameGetter</span></code> type.
 (Contributed by Victor Stinner in <a class="reference external" href="https://bugs.python.org/issue39946">bpo-39946</a>.)</p></li>
-<li><p>Removed the following functions from the C API. Call <code class="xref c c-func docutils literal notranslate"><span class="pre">PyGC_Collect()</span></code>
+<li><p>Removed the following functions from the C API. Call <a class="reference internal" href="../c-api/gcsupport.html#c.PyGC_Collect" title="PyGC_Collect"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyGC_Collect()</span></code></a>
 explicitly to clear all free lists.
 (Contributed by Inada Naoki and Victor Stinner in <a class="reference external" href="https://bugs.python.org/issue37340">bpo-37340</a>,
 <a class="reference external" href="https://bugs.python.org/issue38896">bpo-38896</a> and <a class="reference external" href="https://bugs.python.org/issue40428">bpo-40428</a>.)</p>
@@ -1548,26 +1556,6 @@ documentation.
 (Contributed by Adam Goldschmidt, Senthil Kumaran and Ken Jin in <a class="reference external" href="https://bugs.python.org/issue42967">bpo-42967</a>.)</p>
 </section>
 </section>
-<section id="notable-changes-in-python-3-9-3">
-<h2>Notable changes in Python 3.9.3<a class="headerlink" href="#notable-changes-in-python-3-9-3" title="本標題的永久連結">¶</a></h2>
-<p>A security fix alters the <a class="reference internal" href="../library/ftplib.html#ftplib.FTP" title="ftplib.FTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">ftplib.FTP</span></code></a> behavior to not trust the
-IPv4 address sent from the remote server when setting up a passive data
-channel.  We reuse the ftp server IP address instead.  For unusual code
-requiring the old behavior, set a <code class="docutils literal notranslate"><span class="pre">trust_server_pasv_ipv4_address</span></code>
-attribute on your FTP instance to <code class="docutils literal notranslate"><span class="pre">True</span></code>.  (See <a class="reference external" href="https://bugs.python.org/issue43285">bpo-43285</a>)</p>
-</section>
-<section id="notable-changes-in-python-3-9-5">
-<h2>Notable changes in Python 3.9.5<a class="headerlink" href="#notable-changes-in-python-3-9-5" title="本標題的永久連結">¶</a></h2>
-<section id="id5">
-<h3>urllib.parse<a class="headerlink" href="#id5" title="本標題的永久連結">¶</a></h3>
-<p>The presence of newline or tab characters in parts of a URL allows for some
-forms of attacks. Following the WHATWG specification that updates <span class="target" id="index-28"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3986.html"><strong>RFC 3986</strong></a>,
-ASCII newline <code class="docutils literal notranslate"><span class="pre">\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\r</span></code> and tab <code class="docutils literal notranslate"><span class="pre">\t</span></code> characters are stripped from the
-URL by the parser in <a class="reference internal" href="../library/urllib.parse.html#module-urllib.parse" title="urllib.parse: Parse URLs into or assemble them from components."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib.parse</span></code></a> preventing such attacks. The removal
-characters are controlled by a new module level variable
-<code class="docutils literal notranslate"><span class="pre">urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE</span></code>. (See <a class="reference external" href="https://bugs.python.org/issue43882">bpo-43882</a>)</p>
-</section>
-</section>
 </section>
 
 
@@ -1577,8 +1565,9 @@ characters are controlled by a new module level variable
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New In Python 3.9</a><ul>
 <li><a class="reference internal" href="#summary-release-highlights">Summary -- Release highlights</a></li>
 <li><a class="reference internal" href="#you-should-check-for-deprecationwarning-in-your-code">You should check for DeprecationWarning in your code</a></li>
@@ -1661,27 +1650,27 @@ characters are controlled by a new module level variable
 <li><a class="reference internal" href="#urllib-parse">urllib.parse</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#notable-changes-in-python-3-9-3">Notable changes in Python 3.9.3</a></li>
-<li><a class="reference internal" href="#notable-changes-in-python-3-9-5">Notable changes in Python 3.9.5</a><ul>
-<li><a class="reference internal" href="#id5">urllib.parse</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">Python 有什麼新功能？</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="3.8.html"
-                        title="下一章">What's New In Python 3.8</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.10.html"
+                          title="上一章">What's New In Python 3.10</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="3.8.html"
+                          title="下一章">What's New In Python 3.8</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/3.9.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/3.9.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1704,7 +1693,7 @@ characters are controlled by a new module level variable
           <a href="3.8.html" title="What&#39;s New In Python 3.8"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Python 有什麼新功能？"
+          <a href="3.10.html" title="What&#39;s New In Python 3.10"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -1716,13 +1705,11 @@ characters are controlled by a new module level variable
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New In Python 3.9</a></li>
                 <li class="right">
                     
@@ -1741,25 +1728,25 @@ characters are controlled by a new module level variable
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

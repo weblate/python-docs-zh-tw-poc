@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>unittest.mock --- mock object library &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unittest.mock --- mock object library &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="unittest.mock --- getting started" href="unittest.mock-examples.html" />
-    <link rel="prev" title="unittest --- 單元測試框架" href="unittest.html" />
+    <link rel="prev" title="unittest --- Unit testing framework" href="unittest.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/unittest.mock.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- mock object library</a><ul>
 <li><a class="reference internal" href="#quick-guide">Quick Guide</a></li>
 <li><a class="reference internal" href="#the-mock-class">The Mock Class</a><ul>
@@ -117,18 +116,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="unittest.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code> --- 單元測試框架</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="unittest.mock-examples.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- getting started</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="unittest.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code> --- Unit testing framework</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="unittest.mock-examples.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- getting started</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/unittest.mock.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/unittest.mock.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -152,7 +156,7 @@
           <a href="unittest.mock-examples.html" title="unittest.mock --- getting started"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="unittest.html" title="unittest --- 單元測試框架"
+          <a href="unittest.html" title="unittest --- Unit testing framework"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -164,14 +168,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="development.html" accesskey="U">開發工具</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="development.html" accesskey="U">Development Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- mock object library</a></li>
                 <li class="right">
                     
@@ -198,9 +200,9 @@
   <section id="module-unittest.mock">
 <span id="unittest-mock-mock-object-library"></span><h1><a class="reference internal" href="#module-unittest.mock" title="unittest.mock: Mock object library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code></a> --- mock object library<a class="headerlink" href="#module-unittest.mock" title="本標題的永久連結">¶</a></h1>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/unittest/mock.py">Lib/unittest/mock.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/unittest/mock.py">Lib/unittest/mock.py</a></p>
 <hr class="docutils" />
 <p><a class="reference internal" href="#module-unittest.mock" title="unittest.mock: Mock object library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code></a> is a library for testing in Python. It allows you to
 replace parts of your system under test with mock objects and make assertions
@@ -372,7 +374,7 @@ a <a class="reference internal" href="#unittest.mock.MagicMock" title="unittest.
 the <em>new_callable</em> argument to <a class="reference internal" href="#unittest.mock.patch" title="unittest.mock.patch"><code class="xref py py-func docutils literal notranslate"><span class="pre">patch()</span></code></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="unittest.mock.Mock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">Mock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side_effect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wraps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsafe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.Mock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">Mock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side_effect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wraps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsafe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.Mock" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#unittest.mock.Mock" title="unittest.mock.Mock"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mock</span></code></a> object. <a class="reference internal" href="#unittest.mock.Mock" title="unittest.mock.Mock"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mock</span></code></a> takes several optional arguments
 that specify the behaviour of the Mock object:</p>
 <ul>
@@ -402,11 +404,12 @@ the next value from the iterable.</p>
 <li><p><em>return_value</em>: The value returned when the mock is called. By default
 this is a new Mock (created on first access). See the
 <a class="reference internal" href="#unittest.mock.Mock.return_value" title="unittest.mock.Mock.return_value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">return_value</span></code></a> attribute.</p></li>
-<li><p><em>unsafe</em>: By default if any attribute starts with <em>assert</em> or
-<em>assret</em> will raise an <a class="reference internal" href="exceptions.html#AttributeError" title="AttributeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AttributeError</span></code></a>. Passing <code class="docutils literal notranslate"><span class="pre">unsafe=True</span></code>
-will allow access to these attributes.</p>
+<li><p><em>unsafe</em>: By default, accessing any attribute with name starting with
+<em>assert</em>, <em>assret</em>, <em>asert</em>, <em>aseert</em> or <em>assrt</em> will raise an
+<a class="reference internal" href="exceptions.html#AttributeError" title="AttributeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AttributeError</span></code></a>. Passing <code class="docutils literal notranslate"><span class="pre">unsafe=True</span></code> will allow access to
+these attributes.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </li>
 <li><p><em>wraps</em>: Item for the mock object to wrap. If <em>wraps</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> then
@@ -436,7 +439,7 @@ used to set attributes on the mock after it is created. See the
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -457,7 +460,7 @@ used to set attributes on the mock after it is created. See the
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -544,7 +547,7 @@ they must all appear in <a class="reference internal" href="#unittest.mock.Mock.
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -562,7 +565,7 @@ they must all appear in <a class="reference internal" href="#unittest.mock.Mock.
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added two keyword only argument to the reset_mock function.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added two keyword only argument to the reset_mock function.</p>
 </div>
 <p>This can be useful where you want to make a series of assertions that
 reuse the same object. Note that <a class="reference internal" href="#unittest.mock.Mock.reset_mock" title="unittest.mock.Mock.reset_mock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset_mock()</span></code></a> <em>doesn't</em> clear the
@@ -815,7 +818,7 @@ These are tuples, so they can be unpacked to get at the individual
 arguments and make more complex assertions. See
 <a class="reference internal" href="#calls-as-tuples"><span class="std std-ref">calls as tuples</span></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added <code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> properties.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added <code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> properties.</p>
 </div>
 </dd></dl>
 
@@ -929,7 +932,7 @@ object they are replacing / masquerading as:</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unittest.mock.NonCallableMock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">NonCallableMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wraps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.NonCallableMock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">NonCallableMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wraps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.NonCallableMock" title="本定義的永久連結">¶</a></dt>
 <dd><p>A non-callable version of <a class="reference internal" href="#unittest.mock.Mock" title="unittest.mock.Mock"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mock</span></code></a>. The constructor parameters have the same
 meaning of <a class="reference internal" href="#unittest.mock.Mock" title="unittest.mock.Mock"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mock</span></code></a>, with the exception of <em>return_value</em> and <em>side_effect</em>
 which have no meaning on a non-callable mock.</p>
@@ -992,12 +995,12 @@ of whether they were passed positionally or by name:</p>
 apply to method calls on the mock object.</p>
 <blockquote>
 <div><div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added signature introspection on specced and autospecced mock objects.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added signature introspection on specced and autospecced mock objects.</p>
 </div>
 </div></blockquote>
 <dl class="py class">
 <dt class="sig sig-object py" id="unittest.mock.PropertyMock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">PropertyMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.PropertyMock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">PropertyMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.PropertyMock" title="本定義的永久連結">¶</a></dt>
 <dd><p>A mock intended to be used as a property, or other descriptor, on a class.
 <a class="reference internal" href="#unittest.mock.PropertyMock" title="unittest.mock.PropertyMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">PropertyMock</span></code></a> provides <code class="xref py py-meth docutils literal notranslate"><span class="pre">__get__()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">__set__()</span></code> methods
 so you can specify a return value when it is fetched.</p>
@@ -1037,7 +1040,7 @@ object:</p>
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="unittest.mock.AsyncMock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">AsyncMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side_effect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wraps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsafe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.AsyncMock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">AsyncMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side_effect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wraps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsafe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.AsyncMock" title="本定義的永久連結">¶</a></dt>
 <dd><p>An asynchronous version of <a class="reference internal" href="#unittest.mock.MagicMock" title="unittest.mock.MagicMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MagicMock</span></code></a>. The <a class="reference internal" href="#unittest.mock.AsyncMock" title="unittest.mock.AsyncMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncMock</span></code></a> object will
 behave so the object is recognized as an async function, and the result of a
 call is an awaitable.</p>
@@ -1098,7 +1101,7 @@ the parent mock is <a class="reference internal" href="#unittest.mock.Mock" titl
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="unittest.mock.AsyncMock.assert_awaited">
@@ -1577,7 +1580,7 @@ write passing tests against APIs that don't actually exist!</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>If you are patching builtins in a module then you don't
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>If you are patching builtins in a module then you don't
 need to pass <code class="docutils literal notranslate"><span class="pre">create=True</span></code>, it will be added by default.</p>
 </div>
 </div>
@@ -1701,7 +1704,7 @@ attribute in a class) that does not exist will fail with <a class="reference int
 <span class="gp">&gt;&gt;&gt; </span><span class="n">test</span><span class="p">()</span>
 <span class="gt">Traceback (most recent call last):</span>
   <span class="c">...</span>
-<span class="gr">AttributeError</span>: <span class="n">&lt;module &#39;sys&#39; (built-in)&gt; does not have the attribute &#39;non_existing&#39;</span>
+<span class="gr">AttributeError</span>: <span class="n">&lt;module &#39;sys&#39; (built-in)&gt; does not have the attribute &#39;non_existing_attribute&#39;</span>
 </pre></div>
 </div>
 <p>but adding <code class="docutils literal notranslate"><span class="pre">create=True</span></code> in the call to <a class="reference internal" href="#unittest.mock.patch" title="unittest.mock.patch"><code class="xref py py-func docutils literal notranslate"><span class="pre">patch()</span></code></a> will make the previous example
@@ -1714,7 +1717,7 @@ work as expected:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span><a class="reference internal" href="#unittest.mock.patch" title="unittest.mock.patch"><code class="xref py py-func docutils literal notranslate"><span class="pre">patch()</span></code></a> now returns an <a class="reference internal" href="#unittest.mock.AsyncMock" title="unittest.mock.AsyncMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncMock</span></code></a> if the target is an async function.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span><a class="reference internal" href="#unittest.mock.patch" title="unittest.mock.patch"><code class="xref py py-func docutils literal notranslate"><span class="pre">patch()</span></code></a> now returns an <a class="reference internal" href="#unittest.mock.AsyncMock" title="unittest.mock.AsyncMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncMock</span></code></a> if the target is an async function.</p>
 </div>
 </section>
 <section id="patch-object">
@@ -1769,7 +1772,7 @@ values are set.</p>
 <p><a class="reference internal" href="#unittest.mock.patch.dict" title="unittest.mock.patch.dict"><code class="xref py py-func docutils literal notranslate"><span class="pre">patch.dict()</span></code></a> can also be called with arbitrary keyword arguments to set
 values in the dictionary.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span><a class="reference internal" href="#unittest.mock.patch.dict" title="unittest.mock.patch.dict"><code class="xref py py-func docutils literal notranslate"><span class="pre">patch.dict()</span></code></a> now returns the patched dictionary when used as a context
+<p><span class="versionmodified changed">在 3.8 版本變更: </span><a class="reference internal" href="#unittest.mock.patch.dict" title="unittest.mock.patch.dict"><code class="xref py py-func docutils literal notranslate"><span class="pre">patch.dict()</span></code></a> now returns the patched dictionary when used as a context
 manager.</p>
 </div>
 </dd></dl>
@@ -2180,10 +2183,10 @@ and <code class="docutils literal notranslate"><span class="pre">__index__</span
 <li><p>Asynchronous iteration methods: <code class="docutils literal notranslate"><span class="pre">__aiter__</span></code> and <code class="docutils literal notranslate"><span class="pre">__anext__</span></code></p></li>
 </ul>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added support for <a class="reference internal" href="os.html#os.PathLike.__fspath__" title="os.PathLike.__fspath__"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.PathLike.__fspath__()</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added support for <a class="reference internal" href="os.html#os.PathLike.__fspath__" title="os.PathLike.__fspath__"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.PathLike.__fspath__()</span></code></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added support for <code class="docutils literal notranslate"><span class="pre">__aenter__</span></code>, <code class="docutils literal notranslate"><span class="pre">__aexit__</span></code>, <code class="docutils literal notranslate"><span class="pre">__aiter__</span></code> and <code class="docutils literal notranslate"><span class="pre">__anext__</span></code>.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added support for <code class="docutils literal notranslate"><span class="pre">__aenter__</span></code>, <code class="docutils literal notranslate"><span class="pre">__aexit__</span></code>, <code class="docutils literal notranslate"><span class="pre">__aiter__</span></code> and <code class="docutils literal notranslate"><span class="pre">__anext__</span></code>.</p>
 </div>
 <p>The following methods exist but are <em>not</em> supported as they are either in use
 by mock, can't be set dynamically, or can cause problems:</p>
@@ -2197,7 +2200,7 @@ by mock, can't be set dynamically, or can cause problems:</p>
 <p>There are two <code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> variants: <a class="reference internal" href="#unittest.mock.MagicMock" title="unittest.mock.MagicMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MagicMock</span></code></a> and <a class="reference internal" href="#unittest.mock.NonCallableMagicMock" title="unittest.mock.NonCallableMagicMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonCallableMagicMock</span></code></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="unittest.mock.MagicMock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">MagicMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.MagicMock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">MagicMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.MagicMock" title="本定義的永久連結">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> is a subclass of <a class="reference internal" href="#unittest.mock.Mock" title="unittest.mock.Mock"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mock</span></code></a> with default implementations
 of most of the magic methods. You can use <code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> without having to
 configure the magic methods yourself.</p>
@@ -2208,7 +2211,7 @@ that exist in the spec will be created.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unittest.mock.NonCallableMagicMock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">NonCallableMagicMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.NonCallableMagicMock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unittest.mock.</span></span><span class="sig-name descname"><span class="pre">NonCallableMagicMock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unittest.mock.NonCallableMagicMock" title="本定義的永久連結">¶</a></dt>
 <dd><p>A non-callable version of <a class="reference internal" href="#unittest.mock.MagicMock" title="unittest.mock.MagicMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MagicMock</span></code></a>.</p>
 <p>The constructor parameters have the same meaning as for
 <a class="reference internal" href="#unittest.mock.MagicMock" title="unittest.mock.MagicMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MagicMock</span></code></a>, with the exception of <em>return_value</em> and
@@ -2335,7 +2338,7 @@ objects for your tests.</p>
 the same attribute will always return the same object. The objects
 returned have a sensible repr so that test failure messages are readable.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The <code class="docutils literal notranslate"><span class="pre">sentinel</span></code> attributes now preserve their identity when they are
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">sentinel</span></code> attributes now preserve their identity when they are
 <a class="reference internal" href="copy.html#module-copy" title="copy: Shallow and deep copy operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">copied</span></code></a> or <a class="reference internal" href="pickle.html#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickled</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -2477,7 +2480,7 @@ the constructor of the created mock.</p>
 <p>See <a class="reference internal" href="#auto-speccing"><span class="std std-ref">Autospeccing</span></a> for examples of how to use auto-speccing with
 <a class="reference internal" href="#unittest.mock.create_autospec" title="unittest.mock.create_autospec"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_autospec()</span></code></a> and the <em>autospec</em> argument to <a class="reference internal" href="#unittest.mock.patch" title="unittest.mock.patch"><code class="xref py py-func docutils literal notranslate"><span class="pre">patch()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span><a class="reference internal" href="#unittest.mock.create_autospec" title="unittest.mock.create_autospec"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_autospec()</span></code></a> now returns an <a class="reference internal" href="#unittest.mock.AsyncMock" title="unittest.mock.AsyncMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncMock</span></code></a> if the target is
+<p><span class="versionmodified changed">在 3.8 版本變更: </span><a class="reference internal" href="#unittest.mock.create_autospec" title="unittest.mock.create_autospec"><code class="xref py py-func docutils literal notranslate"><span class="pre">create_autospec()</span></code></a> now returns an <a class="reference internal" href="#unittest.mock.AsyncMock" title="unittest.mock.AsyncMock"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncMock</span></code></a> if the target is
 an async function.</p>
 </div>
 </section>
@@ -2589,15 +2592,15 @@ the start.  If you need more control over the data that you are feeding to
 the tested code you will need to customize this mock for yourself.  When that
 is insufficient, one of the in-memory filesystem packages on <a class="reference external" href="https://pypi.org">PyPI</a> can offer a realistic filesystem for testing.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added <a class="reference internal" href="io.html#io.IOBase.readline" title="io.IOBase.readline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code></a> and <a class="reference internal" href="io.html#io.IOBase.readlines" title="io.IOBase.readlines"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readlines()</span></code></a> support.
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added <a class="reference internal" href="io.html#io.IOBase.readline" title="io.IOBase.readline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code></a> and <a class="reference internal" href="io.html#io.IOBase.readlines" title="io.IOBase.readlines"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readlines()</span></code></a> support.
 The mock of <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code> changed to consume <em>read_data</em> rather
 than returning it on each call.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span><em>read_data</em> is now reset on each call to the <em>mock</em>.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span><em>read_data</em> is now reset on each call to the <em>mock</em>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added <code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code> to implementation so that iteration (such as in for
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added <code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code> to implementation so that iteration (such as in for
 loops) correctly consumes <em>read_data</em>.</p>
 </div>
 </dd></dl>
@@ -2876,7 +2879,7 @@ fixing part of the mock object.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -2891,8 +2894,9 @@ fixing part of the mock object.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- mock object library</a><ul>
 <li><a class="reference internal" href="#quick-guide">Quick Guide</a></li>
 <li><a class="reference internal" href="#the-mock-class">The Mock Class</a><ul>
@@ -2936,18 +2940,23 @@ fixing part of the mock object.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="unittest.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code> --- 單元測試框架</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="unittest.mock-examples.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- getting started</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="unittest.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code> --- Unit testing framework</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="unittest.mock-examples.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- getting started</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/unittest.mock.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/unittest.mock.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2970,7 +2979,7 @@ fixing part of the mock object.</p>
           <a href="unittest.mock-examples.html" title="unittest.mock --- getting started"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="unittest.html" title="unittest --- 單元測試框架"
+          <a href="unittest.html" title="unittest --- Unit testing framework"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -2982,14 +2991,12 @@ fixing part of the mock object.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="development.html" >開發工具</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="development.html" >Development Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- mock object library</a></li>
                 <li class="right">
                     
@@ -3008,25 +3015,25 @@ fixing part of the mock object.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

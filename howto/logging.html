@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>如何使用 Logging 模組 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging HOWTO &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="Logging Cookbook" href="logging-cookbook.html" />
-    <link rel="prev" title="函式編程 HOWTO" href="functional.html" />
+    <link rel="prev" title="Functional Programming HOWTO" href="functional.html" />
     <link rel="canonical" href="https://docs.python.org/3/howto/logging.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,11 +70,12 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">如何使用 Logging 模組</a><ul>
-<li><a class="reference internal" href="#basic-logging-tutorial">基礎 Logging 指南</a><ul>
-<li><a class="reference internal" href="#when-to-use-logging">什麼時候使用 logging</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Logging HOWTO</a><ul>
+<li><a class="reference internal" href="#basic-logging-tutorial">Basic Logging Tutorial</a><ul>
+<li><a class="reference internal" href="#when-to-use-logging">When to use logging</a></li>
 <li><a class="reference internal" href="#a-simple-example">A simple example</a></li>
 <li><a class="reference internal" href="#logging-to-a-file">Logging to a file</a></li>
 <li><a class="reference internal" href="#logging-from-multiple-modules">Logging from multiple modules</a></li>
@@ -108,18 +107,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="functional.html"
-                        title="上一章">函式編程 HOWTO</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="logging-cookbook.html"
-                        title="下一章">Logging Cookbook</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="functional.html"
+                          title="上一章">Functional Programming HOWTO</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="logging-cookbook.html"
+                          title="下一章">Logging Cookbook</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/logging.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/logging.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -143,7 +147,7 @@
           <a href="logging-cookbook.html" title="Logging Cookbook"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="functional.html" title="函式編程 HOWTO"
+          <a href="functional.html" title="Functional Programming HOWTO"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -155,14 +159,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python HOWTOs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">如何使用 Logging 模組</a></li>
+        <li class="nav-item nav-item-this"><a href="">Logging HOWTO</a></li>
                 <li class="right">
                     
 
@@ -186,17 +188,23 @@
           <div class="body" role="main">
             
   <section id="logging-howto">
-<h1>如何使用 Logging 模組<a class="headerlink" href="#logging-howto" title="本標題的永久連結">¶</a></h1>
+<h1>Logging HOWTO<a class="headerlink" href="#logging-howto" title="本標題的永久連結">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
-<dd class="field-odd"><p>原文作者 Vinay Sajip &lt;vinay_sajip at red-dove dot com&gt;</p>
+<dd class="field-odd"><p>Vinay Sajip &lt;vinay_sajip at red-dove dot com&gt;</p>
 </dd>
 </dl>
 <section id="basic-logging-tutorial">
-<span id="logging-basic-tutorial"></span><h2>基礎 Logging 指南<a class="headerlink" href="#basic-logging-tutorial" title="本標題的永久連結">¶</a></h2>
-<p>軟體執行時，追蹤有什麼事件發生的動作稱為 Logging。軟體開發者會使用 Logging 這樣的機制是因為想知道在運行過程中是否有特定的事件發生。事件會被一段訊息所描述。這段訊息可能包含一些因為此事件發生而改變的資料。開發者也可以指派事件的重要程度，重要程度有時候也會被稱作 <em>程度</em> 或是 <em>嚴重性</em> 。</p>
+<span id="logging-basic-tutorial"></span><h2>Basic Logging Tutorial<a class="headerlink" href="#basic-logging-tutorial" title="本標題的永久連結">¶</a></h2>
+<p>Logging is a means of tracking events that happen when some software runs. The
+software's developer adds logging calls to their code to indicate that certain
+events have occurred. An event is described by a descriptive message which can
+optionally contain variable data (i.e. data that is potentially different for
+each occurrence of the event). Events also have an importance which the
+developer ascribes to the event; the importance can also be called the <em>level</em>
+or <em>severity</em>.</p>
 <section id="when-to-use-logging">
-<h3>什麼時候使用 logging<a class="headerlink" href="#when-to-use-logging" title="本標題的永久連結">¶</a></h3>
+<h3>When to use logging<a class="headerlink" href="#when-to-use-logging" title="本標題的永久連結">¶</a></h3>
 <p>Logging provides a set of convenience functions for simple logging usage. These
 are <a class="reference internal" href="../library/logging.html#logging.debug" title="logging.debug"><code class="xref py py-func docutils literal notranslate"><span class="pre">debug()</span></code></a>, <a class="reference internal" href="../library/logging.html#logging.info" title="logging.info"><code class="xref py py-func docutils literal notranslate"><span class="pre">info()</span></code></a>, <a class="reference internal" href="../library/logging.html#logging.warning" title="logging.warning"><code class="xref py py-func docutils literal notranslate"><span class="pre">warning()</span></code></a>, <a class="reference internal" href="../library/logging.html#logging.error" title="logging.error"><code class="xref py py-func docutils literal notranslate"><span class="pre">error()</span></code></a> and
 <a class="reference internal" href="../library/logging.html#logging.critical" title="logging.critical"><code class="xref py py-func docutils literal notranslate"><span class="pre">critical()</span></code></a>. To determine when to use logging, see the table below, which
@@ -332,7 +340,7 @@ interpreter, and don't just continue from the session described above:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The <em>encoding</em> argument was added. In earlier Python versions, or if not
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The <em>encoding</em> argument was added. In earlier Python versions, or if not
 specified, the encoding used is the default value used by <a class="reference internal" href="../library/functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a>. While
 not shown in the above example, an <em>errors</em> argument can also now be passed,
 which determines how encoding errors are handled. For available values and
@@ -480,7 +488,7 @@ your format string:</p>
 </pre></div>
 </div>
 <p>The default format for date/time display (shown above) is like ISO8601 or
-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3339.html"><strong>RFC 3339</strong></a>. If you need more control over the formatting of the date/time, provide
+<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3339.html"><strong>RFC 3339</strong></a>. If you need more control over the formatting of the date/time, provide
 a <em>datefmt</em> argument to <code class="docutils literal notranslate"><span class="pre">basicConfig</span></code>, as in this example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s1">&#39;%m/</span><span class="si">%d</span><span class="s1">/%Y %I:%M:%S %p&#39;</span><span class="p">)</span>
@@ -694,7 +702,7 @@ format string is assumed to be compatible with <a class="reference internal" hre
 keyword arguments), while if the style is '$' then the message format string
 should conform to what is expected by <a class="reference internal" href="../library/string.html#string.Template.substitute" title="string.Template.substitute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">string.Template.substitute()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Added the <code class="docutils literal notranslate"><span class="pre">style</span></code> parameter.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">style</span></code> parameter.</p>
 </div>
 <p>The following message format string will log the time in a human-readable
 format, the severity of the message, and the contents of the message, in that
@@ -780,34 +788,33 @@ the names of the objects:</p>
 </pre></div>
 </div>
 <p>Here is the logging.conf file:</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[loggers]</span>
-<span class="na">keys</span><span class="o">=</span><span class="s">root,simpleExample</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[loggers]</span><span class="w"></span>
+<span class="na">keys</span><span class="o">=</span><span class="s">root,simpleExample</span><span class="w"></span>
 
-<span class="k">[handlers]</span>
-<span class="na">keys</span><span class="o">=</span><span class="s">consoleHandler</span>
+<span class="k">[handlers]</span><span class="w"></span>
+<span class="na">keys</span><span class="o">=</span><span class="s">consoleHandler</span><span class="w"></span>
 
-<span class="k">[formatters]</span>
-<span class="na">keys</span><span class="o">=</span><span class="s">simpleFormatter</span>
+<span class="k">[formatters]</span><span class="w"></span>
+<span class="na">keys</span><span class="o">=</span><span class="s">simpleFormatter</span><span class="w"></span>
 
-<span class="k">[logger_root]</span>
-<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
-<span class="na">handlers</span><span class="o">=</span><span class="s">consoleHandler</span>
+<span class="k">[logger_root]</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span><span class="w"></span>
+<span class="na">handlers</span><span class="o">=</span><span class="s">consoleHandler</span><span class="w"></span>
 
-<span class="k">[logger_simpleExample]</span>
-<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
-<span class="na">handlers</span><span class="o">=</span><span class="s">consoleHandler</span>
-<span class="na">qualname</span><span class="o">=</span><span class="s">simpleExample</span>
-<span class="na">propagate</span><span class="o">=</span><span class="s">0</span>
+<span class="k">[logger_simpleExample]</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span><span class="w"></span>
+<span class="na">handlers</span><span class="o">=</span><span class="s">consoleHandler</span><span class="w"></span>
+<span class="na">qualname</span><span class="o">=</span><span class="s">simpleExample</span><span class="w"></span>
+<span class="na">propagate</span><span class="o">=</span><span class="s">0</span><span class="w"></span>
 
-<span class="k">[handler_consoleHandler]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">StreamHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">simpleFormatter</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(sys.stdout,)</span>
+<span class="k">[handler_consoleHandler]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">StreamHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">simpleFormatter</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(sys.stdout,)</span><span class="w"></span>
 
-<span class="k">[formatter_simpleFormatter]</span>
-<span class="na">format</span><span class="o">=</span><span class="s">%(asctime)s - %(name)s - %(levelname)s - %(message)s</span>
-<span class="na">datefmt</span><span class="o">=</span>
+<span class="k">[formatter_simpleFormatter]</span><span class="w"></span>
+<span class="na">format</span><span class="o">=</span><span class="s">%(asctime)s - %(name)s - %(levelname)s - %(message)s</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The output is nearly identical to that of the non-config-file-based example:</p>
@@ -858,24 +865,24 @@ construct the dictionary in Python code, receive it in pickled form over a
 socket, or use whatever approach makes sense for your application.</p>
 <p>Here's an example of the same configuration as above, in YAML format for
 the new dictionary-based approach:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="nt">formatters</span><span class="p">:</span>
-  <span class="nt">simple</span><span class="p">:</span>
-    <span class="nt">format</span><span class="p">:</span> <span class="s">&#39;%(asctime)s</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">%(name)s</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">%(levelname)s</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">%(message)s&#39;</span>
-<span class="nt">handlers</span><span class="p">:</span>
-  <span class="nt">console</span><span class="p">:</span>
-    <span class="nt">class</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">logging.StreamHandler</span>
-    <span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DEBUG</span>
-    <span class="nt">formatter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">simple</span>
-    <span class="nt">stream</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ext://sys.stdout</span>
-<span class="nt">loggers</span><span class="p">:</span>
-  <span class="nt">simpleExample</span><span class="p">:</span>
-    <span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DEBUG</span>
-    <span class="nt">handlers</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">console</span><span class="p p-Indicator">]</span>
-    <span class="nt">propagate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
-<span class="nt">root</span><span class="p">:</span>
-  <span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DEBUG</span>
-  <span class="nt">handlers</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">console</span><span class="p p-Indicator">]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="nt">formatters</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">simple</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%(asctime)s</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">%(name)s</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">%(levelname)s</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">%(message)s&#39;</span><span class="w"></span>
+<span class="nt">handlers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">console</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logging.StreamHandler</span><span class="w"></span>
+<span class="w">    </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DEBUG</span><span class="w"></span>
+<span class="w">    </span><span class="nt">formatter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simple</span><span class="w"></span>
+<span class="w">    </span><span class="nt">stream</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ext://sys.stdout</span><span class="w"></span>
+<span class="nt">loggers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">simpleExample</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DEBUG</span><span class="w"></span>
+<span class="w">    </span><span class="nt">handlers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">console</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">propagate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span><span class="w"></span>
+<span class="nt">root</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DEBUG</span><span class="w"></span>
+<span class="w">  </span><span class="nt">handlers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">console</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>For more information about logging using a dictionary, see
@@ -1072,10 +1079,10 @@ the library user has not configured logging. See <a class="reference internal" h
 more information.</p></li>
 </ol>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入: </span>The <a class="reference internal" href="../library/logging.handlers.html#logging.NullHandler" title="logging.NullHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullHandler</span></code></a> class.</p>
+<p><span class="versionmodified added">在 3.1 版本新加入: </span>The <a class="reference internal" href="../library/logging.handlers.html#logging.NullHandler" title="logging.NullHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullHandler</span></code></a> class.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入: </span>The <a class="reference internal" href="../library/logging.handlers.html#logging.handlers.QueueHandler" title="logging.handlers.QueueHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueueHandler</span></code></a> class.</p>
+<p><span class="versionmodified added">在 3.2 版本新加入: </span>The <a class="reference internal" href="../library/logging.handlers.html#logging.handlers.QueueHandler" title="logging.handlers.QueueHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueueHandler</span></code></a> class.</p>
 </div>
 <p>The <a class="reference internal" href="../library/logging.handlers.html#logging.NullHandler" title="logging.NullHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullHandler</span></code></a>, <a class="reference internal" href="../library/logging.handlers.html#logging.StreamHandler" title="logging.StreamHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamHandler</span></code></a> and <a class="reference internal" href="../library/logging.handlers.html#logging.FileHandler" title="logging.FileHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileHandler</span></code></a>
 classes are defined in the core logging package. The other handlers are
@@ -1164,8 +1171,8 @@ list of things you can do to avoid processing during logging which you don't
 need:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 54%" />
-<col style="width: 46%" />
+<col style="width: 51%" />
+<col style="width: 49%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>What you don't want to collect</p></th>
@@ -1175,17 +1182,20 @@ need:</p>
 <tbody>
 <tr class="row-even"><td><p>Information about where calls were made from.</p></td>
 <td><p>Set <code class="docutils literal notranslate"><span class="pre">logging._srcfile</span></code> to <code class="docutils literal notranslate"><span class="pre">None</span></code>.
-This avoids calling
-<a class="reference internal" href="../library/sys.html#sys._getframe" title="sys._getframe"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys._getframe()</span></code></a>, which may help
-to speed up your code in environments
-like PyPy (which can't speed up code
-that uses <a class="reference internal" href="../library/sys.html#sys._getframe" title="sys._getframe"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys._getframe()</span></code></a>).</p></td>
+This avoids calling <a class="reference internal" href="../library/sys.html#sys._getframe" title="sys._getframe"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys._getframe()</span></code></a>, which
+may help to speed up your code in environments
+like PyPy (which can't speed up code that uses
+<a class="reference internal" href="../library/sys.html#sys._getframe" title="sys._getframe"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys._getframe()</span></code></a>).</p></td>
 </tr>
 <tr class="row-odd"><td><p>Threading information.</p></td>
-<td><p>Set <code class="docutils literal notranslate"><span class="pre">logging.logThreads</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></td>
+<td><p>Set <code class="docutils literal notranslate"><span class="pre">logging.logThreads</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p>Process information.</p></td>
-<td><p>Set <code class="docutils literal notranslate"><span class="pre">logging.logProcesses</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></td>
+<tr class="row-even"><td><p>Current process ID (<a class="reference internal" href="../library/os.html#os.getpid" title="os.getpid"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.getpid()</span></code></a>)</p></td>
+<td><p>Set <code class="docutils literal notranslate"><span class="pre">logging.logProcesses</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Current process name when using <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>
+to manage multiple processes.</p></td>
+<td><p>Set <code class="docutils literal notranslate"><span class="pre">logging.logMultiprocessing</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1214,11 +1224,12 @@ take up any memory.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">如何使用 Logging 模組</a><ul>
-<li><a class="reference internal" href="#basic-logging-tutorial">基礎 Logging 指南</a><ul>
-<li><a class="reference internal" href="#when-to-use-logging">什麼時候使用 logging</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Logging HOWTO</a><ul>
+<li><a class="reference internal" href="#basic-logging-tutorial">Basic Logging Tutorial</a><ul>
+<li><a class="reference internal" href="#when-to-use-logging">When to use logging</a></li>
 <li><a class="reference internal" href="#a-simple-example">A simple example</a></li>
 <li><a class="reference internal" href="#logging-to-a-file">Logging to a file</a></li>
 <li><a class="reference internal" href="#logging-from-multiple-modules">Logging from multiple modules</a></li>
@@ -1250,18 +1261,23 @@ take up any memory.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="functional.html"
-                        title="上一章">函式編程 HOWTO</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="logging-cookbook.html"
-                        title="下一章">Logging Cookbook</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="functional.html"
+                          title="上一章">Functional Programming HOWTO</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="logging-cookbook.html"
+                          title="下一章">Logging Cookbook</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/logging.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/logging.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1284,7 +1300,7 @@ take up any memory.</p>
           <a href="logging-cookbook.html" title="Logging Cookbook"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="functional.html" title="函式編程 HOWTO"
+          <a href="functional.html" title="Functional Programming HOWTO"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -1296,14 +1312,12 @@ take up any memory.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python HOWTOs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">如何使用 Logging 模組</a></li>
+        <li class="nav-item nav-item-this"><a href="">Logging HOWTO</a></li>
                 <li class="right">
                     
 
@@ -1321,25 +1335,25 @@ take up any memory.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

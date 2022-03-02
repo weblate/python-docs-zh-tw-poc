@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>csv --- CSV File Reading and Writing &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>csv --- CSV File Reading and Writing &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="configparser --- Configuration file parser" href="configparser.html" />
-    <link rel="prev" title="檔案格式" href="fileformats.html" />
+    <link rel="prev" title="File Formats" href="fileformats.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/csv.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code> --- CSV File Reading and Writing</a><ul>
 <li><a class="reference internal" href="#module-contents">Module Contents</a></li>
 <li><a class="reference internal" href="#dialects-and-formatting-parameters">Dialects and Formatting Parameters</a></li>
@@ -84,18 +83,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="fileformats.html"
-                        title="上一章">檔案格式</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="configparser.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="fileformats.html"
+                          title="上一章">File Formats</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="configparser.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/csv.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/csv.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,7 +123,7 @@
           <a href="configparser.html" title="configparser --- Configuration file parser"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="fileformats.html" title="檔案格式"
+          <a href="fileformats.html" title="File Formats"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -131,14 +135,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="fileformats.html" accesskey="U">檔案格式</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="fileformats.html" accesskey="U">File Formats</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code> --- CSV File Reading and Writing</a></li>
                 <li class="right">
                     
@@ -164,12 +166,12 @@
             
   <section id="module-csv">
 <span id="csv-csv-file-reading-and-writing"></span><h1><a class="reference internal" href="#module-csv" title="csv: Write and read tabular data to and from delimited files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code></a> --- CSV File Reading and Writing<a class="headerlink" href="#module-csv" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/csv.py">Lib/csv.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/csv.py">Lib/csv.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>The so-called CSV (Comma Separated Values) format is the most common import and
 export format for spreadsheets and databases.  CSV format was used for many
 years prior to attempts to describe the format in a standardized way in
-<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4180.html"><strong>RFC 4180</strong></a>.  The lack of a well-defined standard means that subtle differences
+<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4180.html"><strong>RFC 4180</strong></a>.  The lack of a well-defined standard means that subtle differences
 often exist in the data produced and consumed by different applications.  These
 differences can make it annoying to process CSV files from multiple sources.
 Still, while the delimiters and quoting characters vary, the overall format is
@@ -256,7 +258,7 @@ All other non-string data are stringified with <a class="reference internal" hre
 
 <dl class="py function">
 <dt class="sig sig-object py" id="csv.register_dialect">
-<span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">register_dialect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">dialect</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">**fmtparams</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#csv.register_dialect" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">register_dialect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">dialect</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">**fmtparams</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#csv.register_dialect" title="本定義的永久連結">¶</a></dt>
 <dd><p>Associate <em>dialect</em> with <em>name</em>.  <em>name</em> must be a string. The
 dialect can be specified either by passing a sub-class of <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a>, or
 by <em>fmtparams</em> keyword arguments, or both, with keyword arguments overriding
@@ -287,7 +289,7 @@ parameters, see section <a class="reference internal" href="#csv-fmt-params"><sp
 
 <dl class="py function">
 <dt class="sig sig-object py" id="csv.field_size_limit">
-<span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">field_size_limit</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">new_limit</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#csv.field_size_limit" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">field_size_limit</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">new_limit</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#csv.field_size_limit" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns the current maximum field size allowed by the parser. If <em>new_limit</em> is
 given, this becomes the new limit.</p>
 </dd></dl>
@@ -295,7 +297,7 @@ given, this becomes the new limit.</p>
 <p>The <a class="reference internal" href="#module-csv" title="csv: Write and read tabular data to and from delimited files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code></a> module defines the following classes:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="csv.DictReader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">DictReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restkey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'excel'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.DictReader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">DictReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restkey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'excel'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.DictReader" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create an object that operates like a regular reader but maps the
 information in each row to a <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> whose keys are given by the
 optional <em>fieldnames</em> parameter.</p>
@@ -311,10 +313,10 @@ to <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <p>All other optional or keyword arguments are passed to the underlying
 <a class="reference internal" href="#csv.reader" title="csv.reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">reader</span></code></a> instance.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Returned rows are now of type <code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Returned rows are now of type <code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Returned rows are now of type <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Returned rows are now of type <a class="reference internal" href="stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.</p>
 </div>
 <p>A short usage example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">csv</span>
@@ -334,7 +336,7 @@ to <code class="docutils literal notranslate"><span class="pre">None</span></cod
 
 <dl class="py class">
 <dt class="sig sig-object py" id="csv.DictWriter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">DictWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldnames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrasaction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'excel'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.DictWriter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">DictWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldnames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrasaction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'excel'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.DictWriter" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create an object which operates like a regular writer but maps dictionaries
 onto output rows.  The <em>fieldnames</em> parameter is a <a class="reference internal" href="collections.abc.html#module-collections.abc" title="collections.abc: Abstract base classes for containers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sequence</span></code></a> of keys that identify the order in which values in the
 dictionary passed to the <code class="xref py py-meth docutils literal notranslate"><span class="pre">writerow()</span></code> method are written to file
@@ -367,7 +369,7 @@ of the <a class="reference internal" href="#csv.DictWriter" title="csv.DictWrite
 
 <dl class="py class">
 <dt class="sig sig-object py" id="csv.Dialect">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">Dialect</span></span><a class="headerlink" href="#csv.Dialect" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">Dialect</span></span><a class="headerlink" href="#csv.Dialect" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a> class is a container class whose attributes contain
 information for how to handle doublequotes, whitespace, delimiters, etc.
 Due to the lack of a strict CSV specification, different applications
@@ -387,32 +389,32 @@ classes through their initializer (<code class="docutils literal notranslate"><s
 
 <dl class="py class">
 <dt class="sig sig-object py" id="csv.excel">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">excel</span></span><a class="headerlink" href="#csv.excel" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">excel</span></span><a class="headerlink" href="#csv.excel" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#csv.excel" title="csv.excel"><code class="xref py py-class docutils literal notranslate"><span class="pre">excel</span></code></a> class defines the usual properties of an Excel-generated CSV
 file.  It is registered with the dialect name <code class="docutils literal notranslate"><span class="pre">'excel'</span></code>.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="csv.excel_tab">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">excel_tab</span></span><a class="headerlink" href="#csv.excel_tab" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">excel_tab</span></span><a class="headerlink" href="#csv.excel_tab" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#csv.excel_tab" title="csv.excel_tab"><code class="xref py py-class docutils literal notranslate"><span class="pre">excel_tab</span></code></a> class defines the usual properties of an Excel-generated
 TAB-delimited file.  It is registered with the dialect name <code class="docutils literal notranslate"><span class="pre">'excel-tab'</span></code>.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="csv.unix_dialect">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">unix_dialect</span></span><a class="headerlink" href="#csv.unix_dialect" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">unix_dialect</span></span><a class="headerlink" href="#csv.unix_dialect" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#csv.unix_dialect" title="csv.unix_dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">unix_dialect</span></code></a> class defines the usual properties of a CSV file
 generated on UNIX systems, i.e. using <code class="docutils literal notranslate"><span class="pre">'\n'</span></code> as line terminator and quoting
 all fields.  It is registered with the dialect name <code class="docutils literal notranslate"><span class="pre">'unix'</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="csv.Sniffer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">Sniffer</span></span><a class="headerlink" href="#csv.Sniffer" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">Sniffer</span></span><a class="headerlink" href="#csv.Sniffer" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#csv.Sniffer" title="csv.Sniffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sniffer</span></code></a> class is used to deduce the format of a CSV file.</p>
 <p>The <a class="reference internal" href="#csv.Sniffer" title="csv.Sniffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sniffer</span></code></a> class provides two methods:</p>
 <dl class="py method">
@@ -428,9 +430,25 @@ delimiter characters.</p>
 <dt class="sig sig-object py" id="csv.Sniffer.has_header">
 <span class="sig-name descname"><span class="pre">has_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#csv.Sniffer.has_header" title="本定義的永久連結">¶</a></dt>
 <dd><p>Analyze the sample text (presumed to be in CSV format) and return
-<a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> if the first row appears to be a series of column headers.</p>
+<a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> if the first row appears to be a series of column headers.
+Inspecting each column, one of two key criteria will be considered to
+estimate if the sample contains a header:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the second through n-th rows contain numeric values</p></li>
+<li><p>the second through n-th rows contain strings where at least one value's
+length differs from that of the putative header of that column.</p></li>
+</ul>
+</div></blockquote>
+<p>Twenty rows after the first row are sampled; if more than half of columns +
+rows meet the criteria, <a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> is returned.</p>
 </dd></dl>
 
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>This method is a rough heuristic and may produce both false positives and
+negatives.</p>
+</div>
 </dd></dl>
 
 <p>An example for <a class="reference internal" href="#csv.Sniffer" title="csv.Sniffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sniffer</span></code></a> use:</p>
@@ -476,7 +494,7 @@ any characters that require escaping are encountered.</p>
 <p>The <a class="reference internal" href="#module-csv" title="csv: Write and read tabular data to and from delimited files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code></a> module defines the following exception:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="csv.Error">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#csv.Error" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csv.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#csv.Error" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised by any of the functions when an error is detected.</p>
 </dd></dl>
 
@@ -616,7 +634,7 @@ read CSV files (assuming they support complex numbers at all).</p>
 to the current <a class="reference internal" href="#csv.Dialect" title="csv.Dialect"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialect</span></code></a>. Return the return value of the call to the
 <em>write</em> method of the underlying file object.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added support of arbitrary iterables.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added support of arbitrary iterables.</p>
 </div>
 </dd></dl>
 
@@ -643,10 +661,10 @@ dialect.</p>
 the writer's file object, formatted according to the current dialect. Return
 the return value of the <a class="reference internal" href="#csv.csvwriter.writerow" title="csv.csvwriter.writerow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">csvwriter.writerow()</span></code></a> call used internally.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span><a class="reference internal" href="#csv.DictWriter.writeheader" title="csv.DictWriter.writeheader"><code class="xref py py-meth docutils literal notranslate"><span class="pre">writeheader()</span></code></a> now also returns the value returned by
+<p><span class="versionmodified changed">在 3.8 版本變更: </span><a class="reference internal" href="#csv.DictWriter.writeheader" title="csv.DictWriter.writeheader"><code class="xref py py-meth docutils literal notranslate"><span class="pre">writeheader()</span></code></a> now also returns the value returned by
 the <a class="reference internal" href="#csv.csvwriter.writerow" title="csv.csvwriter.writerow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">csvwriter.writerow()</span></code></a> method it uses internally.</p>
 </div>
 </dd></dl>
@@ -716,7 +734,7 @@ done:</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
 <dd><p>If <code class="docutils literal notranslate"><span class="pre">newline=''</span></code> is not specified, newlines embedded inside quoted fields
@@ -736,8 +754,9 @@ on write an extra <code class="docutils literal notranslate"><span class="pre">\
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code> --- CSV File Reading and Writing</a><ul>
 <li><a class="reference internal" href="#module-contents">Module Contents</a></li>
 <li><a class="reference internal" href="#dialects-and-formatting-parameters">Dialects and Formatting Parameters</a></li>
@@ -748,18 +767,23 @@ on write an extra <code class="docutils literal notranslate"><span class="pre">\
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="fileformats.html"
-                        title="上一章">檔案格式</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="configparser.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="fileformats.html"
+                          title="上一章">File Formats</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="configparser.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/csv.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/csv.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -782,7 +806,7 @@ on write an extra <code class="docutils literal notranslate"><span class="pre">\
           <a href="configparser.html" title="configparser --- Configuration file parser"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="fileformats.html" title="檔案格式"
+          <a href="fileformats.html" title="File Formats"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -794,14 +818,12 @@ on write an extra <code class="docutils literal notranslate"><span class="pre">\
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="fileformats.html" >檔案格式</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="fileformats.html" >File Formats</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code> --- CSV File Reading and Writing</a></li>
                 <li class="right">
                     
@@ -820,25 +842,25 @@ on write an extra <code class="docutils literal notranslate"><span class="pre">\
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

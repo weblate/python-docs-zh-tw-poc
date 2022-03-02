@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9. API參照 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. API Reference &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="安裝 Python 模組（舊版）" href="../install/index.html" />
-    <link rel="prev" title="8. 指令參照" href="commandref.html" />
+    <link rel="next" title="Installing Python Modules (Legacy version)" href="../install/index.html" />
+    <link rel="prev" title="8. Command Reference" href="commandref.html" />
     <link rel="canonical" href="https://docs.python.org/3/distutils/apiref.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,9 +70,10 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">9. API參照</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">9. API Reference</a><ul>
 <li><a class="reference internal" href="#module-distutils.core">9.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.core</span></code> --- Core Distutils functionality</a></li>
 <li><a class="reference internal" href="#module-distutils.ccompiler">9.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.ccompiler</span></code> --- CCompiler base class</a></li>
 <li><a class="reference internal" href="#module-distutils.unixccompiler">9.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.unixccompiler</span></code> --- Unix C Compiler</a></li>
@@ -105,38 +104,42 @@
 <li><a class="reference internal" href="#module-distutils.command.bdist_dumb">9.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_dumb</span></code> --- Build a &quot;dumb&quot; installer</a></li>
 <li><a class="reference internal" href="#module-distutils.command.bdist_msi">9.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_msi</span></code> --- Build a Microsoft Installer binary package</a></li>
 <li><a class="reference internal" href="#module-distutils.command.bdist_rpm">9.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_rpm</span></code> --- Build a binary distribution as a Redhat RPM and SRPM</a></li>
-<li><a class="reference internal" href="#module-distutils.command.bdist_wininst">9.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_wininst</span></code> --- Build a Windows installer</a></li>
-<li><a class="reference internal" href="#module-distutils.command.sdist">9.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.sdist</span></code> --- Build a source distribution</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build">9.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build</span></code> --- Build all files of a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build_clib">9.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_clib</span></code> --- Build any C libraries in a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build_ext">9.35. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_ext</span></code> --- Build any extensions in a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build_py">9.36. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_py</span></code> --- Build the .py/.pyc files of a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build_scripts">9.37. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_scripts</span></code> --- Build the scripts of a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.clean">9.38. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.clean</span></code> --- Clean a package build area</a></li>
-<li><a class="reference internal" href="#module-distutils.command.config">9.39. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.config</span></code> --- Perform package configuration</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install">9.40. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install</span></code> --- Install a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install_data">9.41. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_data</span></code> --- Install data files from a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install_headers">9.42. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_headers</span></code> --- Install C/C++ header files from a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install_lib">9.43. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_lib</span></code> --- Install library files from a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install_scripts">9.44. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_scripts</span></code> --- Install script files from a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.register">9.45. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.register</span></code> --- Register a module with the Python Package Index</a></li>
-<li><a class="reference internal" href="#module-distutils.command.check">9.46. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.check</span></code> --- Check the meta-data of a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.sdist">9.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.sdist</span></code> --- Build a source distribution</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build">9.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build</span></code> --- Build all files of a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build_clib">9.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_clib</span></code> --- Build any C libraries in a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build_ext">9.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_ext</span></code> --- Build any extensions in a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build_py">9.35. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_py</span></code> --- Build the .py/.pyc files of a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build_scripts">9.36. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_scripts</span></code> --- Build the scripts of a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.clean">9.37. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.clean</span></code> --- Clean a package build area</a></li>
+<li><a class="reference internal" href="#module-distutils.command.config">9.38. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.config</span></code> --- Perform package configuration</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install">9.39. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install</span></code> --- Install a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install_data">9.40. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_data</span></code> --- Install data files from a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install_headers">9.41. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_headers</span></code> --- Install C/C++ header files from a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install_lib">9.42. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_lib</span></code> --- Install library files from a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install_scripts">9.43. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_scripts</span></code> --- Install script files from a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.register">9.44. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.register</span></code> --- Register a module with the Python Package Index</a></li>
+<li><a class="reference internal" href="#module-distutils.command.check">9.45. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.check</span></code> --- Check the meta-data of a package</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="commandref.html"
-                        title="上一章"><span class="section-number">8. </span>指令參照</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="../install/index.html"
-                        title="下一章">安裝 Python 模組（舊版）</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="commandref.html"
+                          title="上一章"><span class="section-number">8. </span>Command Reference</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="../install/index.html"
+                          title="下一章">Installing Python Modules (Legacy version)</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/distutils/apiref.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/distutils/apiref.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -157,10 +160,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="../install/index.html" title="安裝 Python 模組（舊版）"
+          <a href="../install/index.html" title="Installing Python Modules (Legacy version)"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="commandref.html" title="8. 指令參照"
+          <a href="commandref.html" title="8. Command Reference"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -172,14 +175,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">發布 Python 模組（舊版）</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><span class="section-number">9. </span>API參照</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Distributing Python Modules (Legacy version)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">9. </span>API Reference</a></li>
                 <li class="right">
                     
 
@@ -203,7 +204,7 @@
           <div class="body" role="main">
             
   <section id="api-reference">
-<span id="id1"></span><h1><span class="section-number">9. </span>API參照<a class="headerlink" href="#api-reference" title="本標題的永久連結">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">9. </span>API Reference<a class="headerlink" href="#api-reference" title="本標題的永久連結">¶</a></h1>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
@@ -381,7 +382,7 @@ directory names</p></td>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.core.run_setup">
-<span class="sig-prename descclassname"><span class="pre">distutils.core.</span></span><span class="sig-name descname"><span class="pre">run_setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">script_name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">script_args=None</span></em>, <em class="sig-param"><span class="pre">stop_after='run'</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.core.run_setup" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.core.</span></span><span class="sig-name descname"><span class="pre">run_setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script_name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">script_args=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_after='run'</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.core.run_setup" title="本定義的永久連結">¶</a></dt>
 <dd><p>Run a setup script in a somewhat controlled environment, and return  the
 <code class="xref py py-class docutils literal notranslate"><span class="pre">distutils.dist.Distribution</span></code> instance that drives things.   This is
 useful if you need to find out the distribution meta-data  (passed as keyword
@@ -440,7 +441,7 @@ live elsewhere.</p>
 the full reference.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.core.Extension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.core.</span></span><span class="sig-name descname"><span class="pre">Extension</span></span><a class="headerlink" href="#distutils.core.Extension" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.core.</span></span><span class="sig-name descname"><span class="pre">Extension</span></span><a class="headerlink" href="#distutils.core.Extension" title="本定義的永久連結">¶</a></dt>
 <dd><p>The Extension class describes a single C or C++ extension module in a setup
 script. It accepts the following keyword arguments in its constructor:</p>
 <table class="docutils align-default">
@@ -591,20 +592,20 @@ simply skip the extension.</p></td>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>On Unix, C extensions are no longer linked to libpython except on
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>On Unix, C extensions are no longer linked to libpython except on
 Android and Cygwin.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.core.Distribution">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.core.</span></span><span class="sig-name descname"><span class="pre">Distribution</span></span><a class="headerlink" href="#distutils.core.Distribution" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.core.</span></span><span class="sig-name descname"><span class="pre">Distribution</span></span><a class="headerlink" href="#distutils.core.Distribution" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#distutils.core.Distribution" title="distutils.core.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> describes how to build, install and package up a Python
 software package.</p>
 <p>See the <a class="reference internal" href="#distutils.core.setup" title="distutils.core.setup"><code class="xref py py-func docutils literal notranslate"><span class="pre">setup()</span></code></a> function for a list of keyword arguments accepted  by the
 Distribution constructor. <a class="reference internal" href="#distutils.core.setup" title="distutils.core.setup"><code class="xref py py-func docutils literal notranslate"><span class="pre">setup()</span></code></a> creates a Distribution instance.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><a class="reference internal" href="#distutils.core.Distribution" title="distutils.core.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> now warns if <code class="docutils literal notranslate"><span class="pre">classifiers</span></code>,
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><a class="reference internal" href="#distutils.core.Distribution" title="distutils.core.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> now warns if <code class="docutils literal notranslate"><span class="pre">classifiers</span></code>,
 <code class="docutils literal notranslate"><span class="pre">keywords</span></code> and <code class="docutils literal notranslate"><span class="pre">platforms</span></code> fields are not specified as a list or
 a string.</p>
 </div>
@@ -612,7 +613,7 @@ a string.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.core.Command">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.core.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><a class="headerlink" href="#distutils.core.Command" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.core.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><a class="headerlink" href="#distutils.core.Command" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#distutils.core.Command" title="distutils.core.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a> class (or rather, an instance of one of its subclasses)
 implement a single distutils command.</p>
 </dd></dl>
@@ -683,7 +684,7 @@ to <strong class="command">build</strong>, <strong class="command">build_ext</st
 
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.ccompiler.</span></span><span class="sig-name descname"><span class="pre">CCompiler</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em>, <em class="sig-param"><span class="pre">force=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.ccompiler.</span></span><span class="sig-name descname"><span class="pre">CCompiler</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler" title="本定義的永久連結">¶</a></dt>
 <dd><p>The abstract base class <a class="reference internal" href="#distutils.ccompiler.CCompiler" title="distutils.ccompiler.CCompiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">CCompiler</span></code></a> defines the interface that  must be
 implemented by real compiler classes.  The class also has  some utility methods
 used by several compiler classes.</p>
@@ -776,7 +777,7 @@ runtime linker may search by default.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.define_macro">
-<span class="sig-name descname"><span class="pre">define_macro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">value=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.define_macro" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">define_macro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">value=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.define_macro" title="本定義的永久連結">¶</a></dt>
 <dd><p>Define a preprocessor macro for all compilations driven by this compiler object.
 The optional parameter <em>value</em> should be a string; if it is not supplied, then
 the macro will be defined without an explicit value and the exact outcome
@@ -822,7 +823,7 @@ list) to do the job.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.find_library_file">
-<span class="sig-name descname"><span class="pre">find_library_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dirs</span></em>, <em class="sig-param"><span class="pre">lib</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">debug=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.find_library_file" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">find_library_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lib</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">debug=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.find_library_file" title="本定義的永久連結">¶</a></dt>
 <dd><p>Search the specified list of directories for a static or shared library file
 <em>lib</em> and return the full path to that file.  If <em>debug</em> is true, look for a
 debugging version (if that makes sense on the current platform).  Return
@@ -831,7 +832,7 @@ debugging version (if that makes sense on the current platform).  Return
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.has_function">
-<span class="sig-name descname"><span class="pre">has_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">funcname</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">includes=None</span></em>, <em class="sig-param"><span class="pre">include_dirs=None</span></em>, <em class="sig-param"><span class="pre">libraries=None</span></em>, <em class="sig-param"><span class="pre">library_dirs=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.has_function" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funcname</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">includes=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libraries=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library_dirs=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.has_function" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a boolean indicating whether <em>funcname</em> is supported on the current
 platform.  The optional arguments can be used to augment the compilation
 environment by providing additional include files and paths and libraries and
@@ -902,7 +903,7 @@ delimited by spaces, but quotes and backslashes can override this.  See
 <p>The following methods invoke stages in the build process.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.compile">
-<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sources</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">output_dir=None</span></em>, <em class="sig-param"><span class="pre">macros=None</span></em>, <em class="sig-param"><span class="pre">include_dirs=None</span></em>, <em class="sig-param"><span class="pre">debug=0</span></em>, <em class="sig-param"><span class="pre">extra_preargs=None</span></em>, <em class="sig-param"><span class="pre">extra_postargs=None</span></em>, <em class="sig-param"><span class="pre">depends=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.compile" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sources</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">output_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">macros=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_preargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_postargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depends=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.compile" title="本定義的永久連結">¶</a></dt>
 <dd><p>Compile one or more source files. Generates object files (e.g.  transforms a
 <code class="file docutils literal notranslate"><span class="pre">.c</span></code> file to a <code class="file docutils literal notranslate"><span class="pre">.o</span></code> file.)</p>
 <p><em>sources</em> must be a list of filenames, most likely C/C++ files, but in reality
@@ -939,7 +940,7 @@ granularity.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.create_static_lib">
-<span class="sig-name descname"><span class="pre">create_static_lib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">objects</span></em>, <em class="sig-param"><span class="pre">output_libname</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">output_dir=None</span></em>, <em class="sig-param"><span class="pre">debug=0</span></em>, <em class="sig-param"><span class="pre">target_lang=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.create_static_lib" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_static_lib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_libname</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">output_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_lang=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.create_static_lib" title="本定義的永久連結">¶</a></dt>
 <dd><p>Link a bunch of stuff together to create a static library file. The &quot;bunch of
 stuff&quot; consists of the list of object files supplied as <em>objects</em>, the extra
 object files supplied to <a class="reference internal" href="#distutils.ccompiler.CCompiler.add_link_object" title="distutils.ccompiler.CCompiler.add_link_object"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_link_object()</span></code></a> and/or
@@ -958,7 +959,7 @@ compiled. This allows specific linkage time treatment of certain languages.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.link">
-<span class="sig-name descname"><span class="pre">link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">target_desc</span></em>, <em class="sig-param"><span class="pre">objects</span></em>, <em class="sig-param"><span class="pre">output_filename</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">output_dir=None</span></em>, <em class="sig-param"><span class="pre">libraries=None</span></em>, <em class="sig-param"><span class="pre">library_dirs=None</span></em>, <em class="sig-param"><span class="pre">runtime_library_dirs=None</span></em>, <em class="sig-param"><span class="pre">export_symbols=None</span></em>, <em class="sig-param"><span class="pre">debug=0</span></em>, <em class="sig-param"><span class="pre">extra_preargs=None</span></em>, <em class="sig-param"><span class="pre">extra_postargs=None</span></em>, <em class="sig-param"><span class="pre">build_temp=None</span></em>, <em class="sig-param"><span class="pre">target_lang=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.link" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_desc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objects</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">output_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libraries=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime_library_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_symbols=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_preargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_postargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_temp=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_lang=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.link" title="本定義的永久連結">¶</a></dt>
 <dd><p>Link a bunch of stuff together to create an executable or shared library file.</p>
 <p>The &quot;bunch of stuff&quot; consists of the list of object files supplied as <em>objects</em>.
 <em>output_filename</em> should be a filename.  If <em>output_dir</em> is supplied,
@@ -993,7 +994,7 @@ compiled. This allows specific linkage time treatment of certain languages.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.link_executable">
-<span class="sig-name descname"><span class="pre">link_executable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">objects</span></em>, <em class="sig-param"><span class="pre">output_progname</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">output_dir=None</span></em>, <em class="sig-param"><span class="pre">libraries=None</span></em>, <em class="sig-param"><span class="pre">library_dirs=None</span></em>, <em class="sig-param"><span class="pre">runtime_library_dirs=None</span></em>, <em class="sig-param"><span class="pre">debug=0</span></em>, <em class="sig-param"><span class="pre">extra_preargs=None</span></em>, <em class="sig-param"><span class="pre">extra_postargs=None</span></em>, <em class="sig-param"><span class="pre">target_lang=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.link_executable" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">link_executable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_progname</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">output_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libraries=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime_library_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_preargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_postargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_lang=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.link_executable" title="本定義的永久連結">¶</a></dt>
 <dd><p>Link an executable.  <em>output_progname</em> is the name of the file executable, while
 <em>objects</em> are a list of object filenames to link in. Other arguments  are as for
 the <a class="reference internal" href="#distutils.ccompiler.CCompiler.link" title="distutils.ccompiler.CCompiler.link"><code class="xref py py-meth docutils literal notranslate"><span class="pre">link()</span></code></a> method.</p>
@@ -1001,7 +1002,7 @@ the <a class="reference internal" href="#distutils.ccompiler.CCompiler.link" tit
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.link_shared_lib">
-<span class="sig-name descname"><span class="pre">link_shared_lib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">objects</span></em>, <em class="sig-param"><span class="pre">output_libname</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">output_dir=None</span></em>, <em class="sig-param"><span class="pre">libraries=None</span></em>, <em class="sig-param"><span class="pre">library_dirs=None</span></em>, <em class="sig-param"><span class="pre">runtime_library_dirs=None</span></em>, <em class="sig-param"><span class="pre">export_symbols=None</span></em>, <em class="sig-param"><span class="pre">debug=0</span></em>, <em class="sig-param"><span class="pre">extra_preargs=None</span></em>, <em class="sig-param"><span class="pre">extra_postargs=None</span></em>, <em class="sig-param"><span class="pre">build_temp=None</span></em>, <em class="sig-param"><span class="pre">target_lang=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.link_shared_lib" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">link_shared_lib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_libname</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">output_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libraries=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime_library_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_symbols=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_preargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_postargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_temp=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_lang=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.link_shared_lib" title="本定義的永久連結">¶</a></dt>
 <dd><p>Link a shared library. <em>output_libname</em> is the name of the output  library,
 while <em>objects</em> is a list of object filenames to link in.  Other arguments are
 as for the <a class="reference internal" href="#distutils.ccompiler.CCompiler.link" title="distutils.ccompiler.CCompiler.link"><code class="xref py py-meth docutils literal notranslate"><span class="pre">link()</span></code></a> method.</p>
@@ -1009,7 +1010,7 @@ as for the <a class="reference internal" href="#distutils.ccompiler.CCompiler.li
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.link_shared_object">
-<span class="sig-name descname"><span class="pre">link_shared_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">objects</span></em>, <em class="sig-param"><span class="pre">output_filename</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">output_dir=None</span></em>, <em class="sig-param"><span class="pre">libraries=None</span></em>, <em class="sig-param"><span class="pre">library_dirs=None</span></em>, <em class="sig-param"><span class="pre">runtime_library_dirs=None</span></em>, <em class="sig-param"><span class="pre">export_symbols=None</span></em>, <em class="sig-param"><span class="pre">debug=0</span></em>, <em class="sig-param"><span class="pre">extra_preargs=None</span></em>, <em class="sig-param"><span class="pre">extra_postargs=None</span></em>, <em class="sig-param"><span class="pre">build_temp=None</span></em>, <em class="sig-param"><span class="pre">target_lang=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.link_shared_object" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">link_shared_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">output_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libraries=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime_library_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_symbols=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_preargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_postargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_temp=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_lang=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.link_shared_object" title="本定義的永久連結">¶</a></dt>
 <dd><p>Link a shared object. <em>output_filename</em> is the name of the shared object that
 will be created, while <em>objects</em> is a list of object filenames  to link in.
 Other arguments are as for the <a class="reference internal" href="#distutils.ccompiler.CCompiler.link" title="distutils.ccompiler.CCompiler.link"><code class="xref py py-meth docutils literal notranslate"><span class="pre">link()</span></code></a> method.</p>
@@ -1017,7 +1018,7 @@ Other arguments are as for the <a class="reference internal" href="#distutils.cc
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.preprocess">
-<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">source</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">output_file=None</span></em>, <em class="sig-param"><span class="pre">macros=None</span></em>, <em class="sig-param"><span class="pre">include_dirs=None</span></em>, <em class="sig-param"><span class="pre">extra_preargs=None</span></em>, <em class="sig-param"><span class="pre">extra_postargs=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.preprocess" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">output_file=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">macros=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_dirs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_preargs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_postargs=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.preprocess" title="本定義的永久連結">¶</a></dt>
 <dd><p>Preprocess a single C/C++ source file, named in <em>source</em>. Output will be written
 to file named <em>output_file</em>, or <em>stdout</em> if <em>output_file</em> not supplied.
 <em>macros</em> is a list of macro definitions as for <a class="reference internal" href="../library/functions.html#compile" title="compile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compile()</span></code></a>, which will
@@ -1031,7 +1032,7 @@ list, in the same way as <a class="reference internal" href="#distutils.ccompile
 use by the various concrete subclasses.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.executable_filename">
-<span class="sig-name descname"><span class="pre">executable_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">basename</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">strip_dir=0</span></em>, <em class="sig-param"><span class="pre">output_dir=''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.executable_filename" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">executable_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basename</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">strip_dir=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir=''</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.executable_filename" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns the filename of the executable for the given <em>basename</em>.  Typically for
 non-Windows platforms this is the same as the basename,  while Windows will get
 a <code class="file docutils literal notranslate"><span class="pre">.exe</span></code> added.</p>
@@ -1039,7 +1040,7 @@ a <code class="file docutils literal notranslate"><span class="pre">.exe</span><
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.library_filename">
-<span class="sig-name descname"><span class="pre">library_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">libname</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">lib_type='static'</span></em>, <em class="sig-param"><span class="pre">strip_dir=0</span></em>, <em class="sig-param"><span class="pre">output_dir=''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.library_filename" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">library_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">libname</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">lib_type='static'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strip_dir=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir=''</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.library_filename" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns the filename for the given library name on the current platform. On Unix
 a library with <em>lib_type</em> of <code class="docutils literal notranslate"><span class="pre">'static'</span></code> will typically  be of the form
 <code class="file docutils literal notranslate"><span class="pre">liblibname.a</span></code>, while a <em>lib_type</em> of <code class="docutils literal notranslate"><span class="pre">'dynamic'</span></code>  will be of the form
@@ -1048,20 +1049,20 @@ a library with <em>lib_type</em> of <code class="docutils literal notranslate"><
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.object_filenames">
-<span class="sig-name descname"><span class="pre">object_filenames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">source_filenames</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">strip_dir=0</span></em>, <em class="sig-param"><span class="pre">output_dir=''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.object_filenames" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">object_filenames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_filenames</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">strip_dir=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir=''</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.object_filenames" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns the name of the object files for the given source files.
 <em>source_filenames</em> should be a list of filenames.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.shared_object_filename">
-<span class="sig-name descname"><span class="pre">shared_object_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">basename</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">strip_dir=0</span></em>, <em class="sig-param"><span class="pre">output_dir=''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.shared_object_filename" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">shared_object_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basename</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">strip_dir=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir=''</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.shared_object_filename" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns the name of a shared object file for the given file name <em>basename</em>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">args</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">msg=None</span></em>, <em class="sig-param"><span class="pre">level=1</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.execute" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">msg=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level=1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.execute" title="本定義的永久連結">¶</a></dt>
 <dd><p>Invokes <a class="reference internal" href="#distutils.util.execute" title="distutils.util.execute"><code class="xref py py-func docutils literal notranslate"><span class="pre">distutils.util.execute()</span></code></a>. This method invokes a  Python function
 <em>func</em> with the given arguments <em>args</em>, after  logging and taking into account
 the <em>dry_run</em> flag.</p>
@@ -1076,7 +1077,7 @@ the given command.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.mkpath">
-<span class="sig-name descname"><span class="pre">mkpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">mode=511</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.mkpath" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mkpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">mode=511</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.mkpath" title="本定義的永久連結">¶</a></dt>
 <dd><p>Invokes <a class="reference internal" href="#distutils.dir_util.mkpath" title="distutils.dir_util.mkpath"><code class="xref py py-func docutils literal notranslate"><span class="pre">distutils.dir_util.mkpath()</span></code></a>. This creates a directory  and any
 missing ancestor directories.</p>
 </dd></dl>
@@ -1089,7 +1090,7 @@ missing ancestor directories.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.ccompiler.CCompiler.announce">
-<span class="sig-name descname"><span class="pre">announce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">msg</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">level=1</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.announce" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">announce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">level=1</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.ccompiler.CCompiler.announce" title="本定義的永久連結">¶</a></dt>
 <dd><p>Write a message using <code class="xref py py-func docutils literal notranslate"><span class="pre">distutils.log.debug()</span></code>.</p>
 </dd></dl>
 
@@ -1159,7 +1160,7 @@ port of GCC (same as cygwin in no-cygwin mode).</p>
 tarballs or zipfiles.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.archive_util.make_archive">
-<span class="sig-prename descclassname"><span class="pre">distutils.archive_util.</span></span><span class="sig-name descname"><span class="pre">make_archive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">base_name</span></em>, <em class="sig-param"><span class="pre">format</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">root_dir=None</span></em>, <em class="sig-param"><span class="pre">base_dir=None</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.archive_util.make_archive" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.archive_util.</span></span><span class="sig-name descname"><span class="pre">make_archive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">root_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.archive_util.make_archive" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create an archive file (eg. <code class="docutils literal notranslate"><span class="pre">zip</span></code> or <code class="docutils literal notranslate"><span class="pre">tar</span></code>).  <em>base_name</em>  is the name of
 the file to create, minus any format-specific extension;  <em>format</em> is the
 archive format: one of <code class="docutils literal notranslate"><span class="pre">zip</span></code>, <code class="docutils literal notranslate"><span class="pre">tar</span></code>, <code class="docutils literal notranslate"><span class="pre">gztar</span></code>, <code class="docutils literal notranslate"><span class="pre">bztar</span></code>, <code class="docutils literal notranslate"><span class="pre">xztar</span></code>, or
@@ -1170,13 +1171,13 @@ archive.  <em>base_dir</em> is the directory where we start  archiving from; ie.
 archive.  <em>root_dir</em> and <em>base_dir</em> both default to the current directory.
 Returns the name of the archive file.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">xztar</span></code> format.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">xztar</span></code> format.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.archive_util.make_tarball">
-<span class="sig-prename descclassname"><span class="pre">distutils.archive_util.</span></span><span class="sig-name descname"><span class="pre">make_tarball</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">base_name</span></em>, <em class="sig-param"><span class="pre">base_dir</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">compress='gzip'</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.archive_util.make_tarball" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.archive_util.</span></span><span class="sig-name descname"><span class="pre">make_tarball</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dir</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">compress='gzip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.archive_util.make_tarball" title="本定義的永久連結">¶</a></dt>
 <dd><p>'Create an (optional compressed) archive as a tar file from all files in and
 under <em>base_dir</em>. <em>compress</em> must be <code class="docutils literal notranslate"><span class="pre">'gzip'</span></code> (the default),
 <code class="docutils literal notranslate"><span class="pre">'bzip2'</span></code>, <code class="docutils literal notranslate"><span class="pre">'xz'</span></code>, <code class="docutils literal notranslate"><span class="pre">'compress'</span></code>, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.  For the <code class="docutils literal notranslate"><span class="pre">'compress'</span></code>
@@ -1186,13 +1187,13 @@ tar file will be named <code class="file docutils literal notranslate"><span cla
 compression extension (<code class="docutils literal notranslate"><span class="pre">.gz</span></code>, <code class="docutils literal notranslate"><span class="pre">.bz2</span></code>, <code class="docutils literal notranslate"><span class="pre">.xz</span></code> or <code class="docutils literal notranslate"><span class="pre">.Z</span></code>).  Return the
 output filename.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">xz</span></code> compression.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">xz</span></code> compression.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.archive_util.make_zipfile">
-<span class="sig-prename descclassname"><span class="pre">distutils.archive_util.</span></span><span class="sig-name descname"><span class="pre">make_zipfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">base_name</span></em>, <em class="sig-param"><span class="pre">base_dir</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.archive_util.make_zipfile" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.archive_util.</span></span><span class="sig-name descname"><span class="pre">make_zipfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dir</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.archive_util.make_zipfile" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a zip file from all files in and under <em>base_dir</em>.  The output zip file
 will be named <em>base_name</em> + <code class="file docutils literal notranslate"><span class="pre">.zip</span></code>.  Uses either the  <a class="reference internal" href="../library/zipfile.html#module-zipfile" title="zipfile: Read and write ZIP-format archive files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code></a> Python
 module (if available) or the InfoZIP <code class="file docutils literal notranslate"><span class="pre">zip</span></code>  utility (if installed and
@@ -1225,7 +1226,7 @@ source is newer than target, according to the semantics of <a class="reference i
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.dep_util.newer_group">
-<span class="sig-prename descclassname"><span class="pre">distutils.dep_util.</span></span><span class="sig-name descname"><span class="pre">newer_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sources</span></em>, <em class="sig-param"><span class="pre">target</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">missing='error'</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dep_util.newer_group" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.dep_util.</span></span><span class="sig-name descname"><span class="pre">newer_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">missing='error'</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dep_util.newer_group" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return true if <em>target</em> is out-of-date with respect to any file listed in
 <em>sources</em>.  In other words, if <em>target</em> exists and is newer than every file in
 <em>sources</em>, return false; otherwise return true. <em>missing</em> controls what we do
@@ -1245,7 +1246,7 @@ the commands).</p>
 directories.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.dir_util.mkpath">
-<span class="sig-prename descclassname"><span class="pre">distutils.dir_util.</span></span><span class="sig-name descname"><span class="pre">mkpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">mode=0o777</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dir_util.mkpath" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.dir_util.</span></span><span class="sig-name descname"><span class="pre">mkpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">mode=0o777</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dir_util.mkpath" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a directory and any missing ancestor directories.  If the directory
 already exists (or if <em>name</em> is the empty string, which means the current
 directory, which of course exists), then do nothing.  Raise
@@ -1257,7 +1258,7 @@ directories actually created.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.dir_util.create_tree">
-<span class="sig-prename descclassname"><span class="pre">distutils.dir_util.</span></span><span class="sig-name descname"><span class="pre">create_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">base_dir</span></em>, <em class="sig-param"><span class="pre">files</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">mode=0o777</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dir_util.create_tree" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.dir_util.</span></span><span class="sig-name descname"><span class="pre">create_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">mode=0o777</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dir_util.create_tree" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create all the empty directories under <em>base_dir</em> needed to put <em>files</em> there.
 <em>base_dir</em> is just the name of a directory which doesn't necessarily exist
 yet; <em>files</em> is a list of filenames to be interpreted relative to <em>base_dir</em>.
@@ -1268,7 +1269,7 @@ it doesn't already exist.  <em>mode</em>, <em>verbose</em> and <em>dry_run</em> 
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.dir_util.copy_tree">
-<span class="sig-prename descclassname"><span class="pre">distutils.dir_util.</span></span><span class="sig-name descname"><span class="pre">copy_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">src</span></em>, <em class="sig-param"><span class="pre">dst</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">preserve_mode=1</span></em>, <em class="sig-param"><span class="pre">preserve_times=1</span></em>, <em class="sig-param"><span class="pre">preserve_symlinks=0</span></em>, <em class="sig-param"><span class="pre">update=0</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dir_util.copy_tree" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.dir_util.</span></span><span class="sig-name descname"><span class="pre">copy_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">preserve_mode=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve_times=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve_symlinks=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dir_util.copy_tree" title="本定義的永久連結">¶</a></dt>
 <dd><p>Copy an entire directory tree <em>src</em> to a new location <em>dst</em>.  Both <em>src</em> and
 <em>dst</em> must be directory names.  If <em>src</em> is not a directory, raise
 <code class="xref py py-exc docutils literal notranslate"><span class="pre">DistutilsFileError</span></code>.  If <em>dst</em> does  not exist, it is created with
@@ -1288,13 +1289,13 @@ as for <code class="xref py py-func docutils literal notranslate"><span class="p
 <p>Files in <em>src</em> that begin with <code class="file docutils literal notranslate"><span class="pre">.nfs</span></code> are skipped (more information on
 these files is available in answer D2 of the <a class="reference external" href="http://nfs.sourceforge.net/#section_d">NFS FAQ page</a>).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3.1 版更變: </span>NFS files are ignored.</p>
+<p><span class="versionmodified changed">在 3.3.1 版本變更: </span>NFS files are ignored.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.dir_util.remove_tree">
-<span class="sig-prename descclassname"><span class="pre">distutils.dir_util.</span></span><span class="sig-name descname"><span class="pre">remove_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">directory</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dir_util.remove_tree" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.dir_util.</span></span><span class="sig-name descname"><span class="pre">remove_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.dir_util.remove_tree" title="本定義的永久連結">¶</a></dt>
 <dd><p>Recursively remove <em>directory</em> and all files and directories underneath it. Any
 errors are ignored (apart from being reported to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> if <em>verbose</em> is
 true).</p>
@@ -1306,7 +1307,7 @@ true).</p>
 <p>This module contains some utility functions for operating on individual files.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.file_util.copy_file">
-<span class="sig-prename descclassname"><span class="pre">distutils.file_util.</span></span><span class="sig-name descname"><span class="pre">copy_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">src</span></em>, <em class="sig-param"><span class="pre">dst</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">preserve_mode=1</span></em>, <em class="sig-param"><span class="pre">preserve_times=1</span></em>, <em class="sig-param"><span class="pre">update=0</span></em>, <em class="sig-param"><span class="pre">link=None</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.file_util.copy_file" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.file_util.</span></span><span class="sig-name descname"><span class="pre">copy_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">preserve_mode=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve_times=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.file_util.copy_file" title="本定義的永久連結">¶</a></dt>
 <dd><p>Copy file <em>src</em> to <em>dst</em>. If <em>dst</em> is a directory, then <em>src</em> is copied there
 with the same name; otherwise, it must be a filename. (If the file exists, it
 will be ruthlessly clobbered.) If <em>preserve_mode</em> is true (the default), the
@@ -1328,7 +1329,7 @@ copied, if <em>dry_run</em> true).</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.file_util.move_file">
-<span class="sig-prename descclassname"><span class="pre">distutils.file_util.</span></span><span class="sig-name descname"><span class="pre">move_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">src</span></em>, <em class="sig-param"><span class="pre">dst</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">verbose</span></em>, <em class="sig-param"><span class="pre">dry_run</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.file_util.move_file" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.file_util.</span></span><span class="sig-name descname"><span class="pre">move_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.file_util.move_file" title="本定義的永久連結">¶</a></dt>
 <dd><p>Move file <em>src</em> to <em>dst</em>. If <em>dst</em> is a directory, the file will be moved into
 it with the same name; otherwise, <em>src</em> is just renamed to <em>dst</em>.  Returns the
 new full name of the file.</p>
@@ -1367,10 +1368,10 @@ particularly important.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">solaris-2.6-sun4u</span></code></p></li>
 </ul>
 <p>For non-POSIX platforms, currently just returns <code class="docutils literal notranslate"><span class="pre">sys.platform</span></code>.</p>
-<p>For Mac OS X systems the OS version reflects the minimal version on which
+<p>For macOS systems the OS version reflects the minimal version on which
 binaries will run (that is, the value of <code class="docutils literal notranslate"><span class="pre">MACOSX_DEPLOYMENT_TARGET</span></code>
 during the build of Python), not the OS version of the current system.</p>
-<p>For universal binary builds on Mac OS X the architecture value reflects
+<p>For universal binary builds on macOS the architecture value reflects
 the universal binary status instead of the architecture of the current
 processor. For 32-bit universal binaries the architecture is <code class="docutils literal notranslate"><span class="pre">fat</span></code>,
 for 64-bit universal binaries the architecture is <code class="docutils literal notranslate"><span class="pre">fat64</span></code>, and
@@ -1378,7 +1379,7 @@ for 4-way universal binaries the architecture is <code class="docutils literal n
 from Python 2.7 and Python 3.2 the architecture <code class="docutils literal notranslate"><span class="pre">fat3</span></code> is used for
 a 3-way universal build (ppc, i386, x86_64) and <code class="docutils literal notranslate"><span class="pre">intel</span></code> is used for
 a universal build with the i386 and x86_64 architectures</p>
-<p>Examples of returned values on Mac OS X:</p>
+<p>Examples of returned values on macOS:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">macosx-10.3-ppc</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">macosx-10.3-fat</span></code></p></li>
@@ -1397,7 +1398,7 @@ only a single additional field with the AIX Version and Release.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">aix-7.2</span></code>          # Legacy form reported in Python 3.8 and earlier</p></li>
 </ul>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The AIX platform string format now also includes the technology level,
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The AIX platform string format now also includes the technology level,
 build date, and ABI bit-size.</p>
 </div>
 </dd></dl>
@@ -1462,7 +1463,7 @@ list of words.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.util.execute">
-<span class="sig-prename descclassname"><span class="pre">distutils.util.</span></span><span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">args</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">msg=None</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.util.execute" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.util.</span></span><span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">msg=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.util.execute" title="本定義的永久連結">¶</a></dt>
 <dd><p>Perform some action that affects the outside world (for instance, writing to the
 filesystem).  Such actions are special because they are disabled by the
 <em>dry_run</em> flag.  This method takes  care of all that bureaucracy for you; all
@@ -1481,7 +1482,7 @@ are <code class="docutils literal notranslate"><span class="pre">n</span></code>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.util.byte_compile">
-<span class="sig-prename descclassname"><span class="pre">distutils.util.</span></span><span class="sig-name descname"><span class="pre">byte_compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">py_files</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">optimize=0</span></em>, <em class="sig-param"><span class="pre">force=0</span></em>, <em class="sig-param"><span class="pre">prefix=None</span></em>, <em class="sig-param"><span class="pre">base_dir=None</span></em>, <em class="sig-param"><span class="pre">verbose=1</span></em>, <em class="sig-param"><span class="pre">dry_run=0</span></em>, <em class="sig-param"><span class="pre">direct=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.util.byte_compile" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.util.</span></span><span class="sig-name descname"><span class="pre">byte_compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_files</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">optimize=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dir=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.util.byte_compile" title="本定義的永久連結">¶</a></dt>
 <dd><p>Byte-compile a collection of Python source files to <code class="file docutils literal notranslate"><span class="pre">.pyc</span></code> files in a
 <code class="file docutils literal notranslate"><span class="pre">__pycache__</span></code> subdirectory (see <span class="target" id="index-3"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3147"><strong>PEP 3147</strong></a> and <span class="target" id="index-4"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0488"><strong>PEP 488</strong></a>).
 <em>py_files</em> is a list of files to compile; any files that don't end in
@@ -1507,18 +1508,18 @@ use direct compilation or not (see the source for details).  The <em>direct</em>
 is used by the script generated in indirect mode; unless you know what you're
 doing, leave it set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2.3 版更變: </span>Create <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files with an <a class="reference internal" href="../library/imp.html#imp.get_tag" title="imp.get_tag"><code class="xref py py-func docutils literal notranslate"><span class="pre">import</span> <span class="pre">magic</span> <span class="pre">tag</span></code></a> in their name, in a <code class="file docutils literal notranslate"><span class="pre">__pycache__</span></code> subdirectory
+<p><span class="versionmodified changed">在 3.2.3 版本變更: </span>Create <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files with an <a class="reference internal" href="../library/imp.html#imp.get_tag" title="imp.get_tag"><code class="xref py py-func docutils literal notranslate"><span class="pre">import</span> <span class="pre">magic</span> <span class="pre">tag</span></code></a> in their name, in a <code class="file docutils literal notranslate"><span class="pre">__pycache__</span></code> subdirectory
 instead of files without tag in the current directory.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Create <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files according to <span class="target" id="index-5"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0488"><strong>PEP 488</strong></a>.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Create <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files according to <span class="target" id="index-5"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0488"><strong>PEP 488</strong></a>.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.util.rfc822_escape">
 <span class="sig-prename descclassname"><span class="pre">distutils.util.</span></span><span class="sig-name descname"><span class="pre">rfc822_escape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distutils.util.rfc822_escape" title="本定義的永久連結">¶</a></dt>
-<dd><p>Return a version of <em>header</em> escaped for inclusion in an <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a> header, by
+<dd><p>Return a version of <em>header</em> escaped for inclusion in an <span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc822.html"><strong>RFC 822</strong></a> header, by
 ensuring there are 8 spaces space after each newline. Note that it does no other
 modification of the string.</p>
 </dd></dl>
@@ -1579,7 +1580,7 @@ method of the <a class="reference internal" href="#distutils.fancy_getopt.FancyG
 
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.fancy_getopt.FancyGetopt">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.fancy_getopt.</span></span><span class="sig-name descname"><span class="pre">FancyGetopt</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">option_table=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.fancy_getopt.FancyGetopt" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.fancy_getopt.</span></span><span class="sig-name descname"><span class="pre">FancyGetopt</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">option_table=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.fancy_getopt.FancyGetopt" title="本定義的永久連結">¶</a></dt>
 <dd><p>The option_table is a list of 3-tuples: <code class="docutils literal notranslate"><span class="pre">(long_option,</span> <span class="pre">short_option,</span>
 <span class="pre">help_string)</span></code></p>
 <p>If an option takes an argument, its <em>long_option</em> should have <code class="docutils literal notranslate"><span class="pre">'='</span></code> appended;
@@ -1591,7 +1592,7 @@ corresponding <em>short_option</em>. All option tuples must have long options.</
 <p>The <a class="reference internal" href="#distutils.fancy_getopt.FancyGetopt" title="distutils.fancy_getopt.FancyGetopt"><code class="xref py py-class docutils literal notranslate"><span class="pre">FancyGetopt</span></code></a> class provides the following methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.fancy_getopt.FancyGetopt.getopt">
-<span class="sig-prename descclassname"><span class="pre">FancyGetopt.</span></span><span class="sig-name descname"><span class="pre">getopt</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">args=None</span></em>, <em class="sig-param"><span class="pre">object=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.fancy_getopt.FancyGetopt.getopt" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">FancyGetopt.</span></span><span class="sig-name descname"><span class="pre">getopt</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">args=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.fancy_getopt.FancyGetopt.getopt" title="本定義的永久連結">¶</a></dt>
 <dd><p>Parse command-line options in args. Store as attributes on <em>object</em>.</p>
 <p>If <em>args</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or not supplied, uses <code class="docutils literal notranslate"><span class="pre">sys.argv[1:]</span></code>.  If <em>object</em> is
 <code class="docutils literal notranslate"><span class="pre">None</span></code> or not supplied, creates a new <code class="xref py py-class docutils literal notranslate"><span class="pre">OptionDummy</span></code> instance, stores
@@ -1611,7 +1612,7 @@ yet.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.fancy_getopt.FancyGetopt.generate_help">
-<span class="sig-prename descclassname"><span class="pre">FancyGetopt.</span></span><span class="sig-name descname"><span class="pre">generate_help</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">header=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.fancy_getopt.FancyGetopt.generate_help" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">FancyGetopt.</span></span><span class="sig-name descname"><span class="pre">generate_help</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">header=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.fancy_getopt.FancyGetopt.generate_help" title="本定義的永久連結">¶</a></dt>
 <dd><p>Generate help text (a list of strings, one per suggested line of output) from
 the option table for this <a class="reference internal" href="#distutils.fancy_getopt.FancyGetopt" title="distutils.fancy_getopt.FancyGetopt"><code class="xref py py-class docutils literal notranslate"><span class="pre">FancyGetopt</span></code></a> object.</p>
 <p>If supplied, prints the supplied <em>header</em> at the top of the help.</p>
@@ -1635,6 +1636,9 @@ name.</p>
 </section>
 <section id="module-distutils.sysconfig">
 <span id="distutils-sysconfig-system-configuration-information"></span><h2><span class="section-number">9.20. </span><a class="reference internal" href="#module-distutils.sysconfig" title="distutils.sysconfig: Low-level access to configuration information of the Python interpreter."><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.sysconfig</span></code></a> --- System configuration information<a class="headerlink" href="#module-distutils.sysconfig" title="本標題的永久連結">¶</a></h2>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">在 3.10 版本開始棄用: </span><a class="reference internal" href="#module-distutils.sysconfig" title="distutils.sysconfig: Low-level access to configuration information of the Python interpreter."><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.sysconfig</span></code></a> has been merged into <a class="reference internal" href="../library/sysconfig.html#module-sysconfig" title="sysconfig: Python's configuration information"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sysconfig</span></code></a>.</p>
+</div>
 <p>The <a class="reference internal" href="#module-distutils.sysconfig" title="distutils.sysconfig: Low-level access to configuration information of the Python interpreter."><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.sysconfig</span></code></a> module provides access to Python's low-level
 configuration information.  The specific configuration variables available
 depend heavily on the platform and configuration. The specific variables depend
@@ -1666,7 +1670,7 @@ for other parts of the <a class="reference internal" href="../library/distutils.
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.sysconfig.get_config_vars">
-<span class="sig-prename descclassname"><span class="pre">distutils.sysconfig.</span></span><span class="sig-name descname"><span class="pre">get_config_vars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">...</span></em><span class="sig-paren">)</span><a class="headerlink" href="#distutils.sysconfig.get_config_vars" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.sysconfig.</span></span><span class="sig-name descname"><span class="pre">get_config_vars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distutils.sysconfig.get_config_vars" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a set of variable definitions.  If there are no arguments, this returns a
 dictionary mapping names of configuration variables to values.  If arguments are
 provided, they should be strings, and the return value will be a sequence giving
@@ -1692,9 +1696,11 @@ meaning for other platforms will vary.  The file is a platform-specific text
 file, if it exists. This function is only useful on POSIX platforms.</p>
 </dd></dl>
 
+<p>The following functions are deprecated together with this module and they
+have no direct replacement.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.sysconfig.get_python_inc">
-<span class="sig-prename descclassname"><span class="pre">distutils.sysconfig.</span></span><span class="sig-name descname"><span class="pre">get_python_inc</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">plat_specific</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">prefix</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.sysconfig.get_python_inc" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.sysconfig.</span></span><span class="sig-name descname"><span class="pre">get_python_inc</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">plat_specific</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.sysconfig.get_python_inc" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the directory for either the general or platform-dependent C include
 files.  If <em>plat_specific</em> is true, the platform-dependent include directory is
 returned; if false or omitted, the platform-independent directory is returned.
@@ -1705,7 +1711,7 @@ If <em>prefix</em> is given, it is used as either the prefix instead of
 
 <dl class="py function">
 <dt class="sig sig-object py" id="distutils.sysconfig.get_python_lib">
-<span class="sig-prename descclassname"><span class="pre">distutils.sysconfig.</span></span><span class="sig-name descname"><span class="pre">get_python_lib</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">plat_specific</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">standard_lib</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">prefix</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.sysconfig.get_python_lib" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">distutils.sysconfig.</span></span><span class="sig-name descname"><span class="pre">get_python_lib</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">plat_specific</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">standard_lib</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.sysconfig.get_python_lib" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the directory for either the general or platform-dependent library
 installation.  If <em>plat_specific</em> is true, the platform-dependent include
 directory is returned; if false or omitted, the platform-independent directory
@@ -1749,7 +1755,7 @@ text files that (optionally) takes care of stripping comments, ignoring  blank
 lines, and joining lines with backslashes.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.text_file.TextFile">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.text_file.</span></span><span class="sig-name descname"><span class="pre">TextFile</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">filename=None</span></em>, <em class="sig-param"><span class="pre">file=None</span></em>, <em class="sig-param"><span class="pre">**options</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.text_file.TextFile" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.text_file.</span></span><span class="sig-name descname"><span class="pre">TextFile</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">filename=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**options</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.text_file.TextFile" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class provides a file-like object that takes care of all  the things you
 commonly want to do when processing a text file  that has some line-by-line
 syntax: strip comments (as long as <code class="docutils literal notranslate"><span class="pre">#</span></code>  is your comment character), skip blank
@@ -1857,7 +1863,7 @@ filename and the current line number).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="distutils.text_file.TextFile.warn">
-<span class="sig-name descname"><span class="pre">warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">msg</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">line=None</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.text_file.TextFile.warn" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">line=None</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distutils.text_file.TextFile.warn" title="本定義的永久連結">¶</a></dt>
 <dd><p>Print (to stderr) a warning message tied to the current logical line in the
 current file.  If the current logical line in the file spans multiple physical
 lines, the warning refers to the whole range, such as <code class="docutils literal notranslate"><span class="pre">&quot;lines</span> <span class="pre">3-5&quot;</span></code>.  If
@@ -1907,7 +1913,7 @@ to <a class="reference internal" href="../library/readline.html#module-readline"
 <p>This module supplies the abstract base class <a class="reference internal" href="#distutils.cmd.Command" title="distutils.cmd.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.cmd.Command">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.cmd.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distutils.cmd.Command" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.cmd.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distutils.cmd.Command" title="本定義的永久連結">¶</a></dt>
 <dd><p>Abstract base class for defining command classes, the &quot;worker bees&quot; of the
 Distutils.  A useful analogy for command classes is to think of them as
 subroutines with local variables called <em>options</em>.  The options are declared
@@ -2004,49 +2010,39 @@ defined.  The canonical example is the <strong class="command">install</strong> 
 <span id="distutils-command-bdist-msi-build-a-microsoft-installer-binary-package"></span><h2><span class="section-number">9.29. </span><a class="reference internal" href="#module-distutils.command.bdist_msi" title="distutils.command.bdist_msi: Build a binary distribution as a Windows MSI file"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_msi</span></code></a> --- Build a Microsoft Installer binary package<a class="headerlink" href="#module-distutils.command.bdist_msi" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.command.bdist_msi.bdist_msi">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.command.bdist_msi.</span></span><span class="sig-name descname"><span class="pre">bdist_msi</span></span><a class="headerlink" href="#distutils.command.bdist_msi.bdist_msi" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.command.bdist_msi.</span></span><span class="sig-name descname"><span class="pre">bdist_msi</span></span><a class="headerlink" href="#distutils.command.bdist_msi.bdist_msi" title="本定義的永久連結">¶</a></dt>
 <dd></dd></dl>
 
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用: </span>Use bdist_wheel (wheel packages) instead.</p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用: </span>Use bdist_wheel (wheel packages) instead.</p>
 <p>Builds a <a class="reference external" href="https://msdn.microsoft.com/en-us/library/cc185688(VS.85).aspx">Windows Installer</a> (.msi) binary package.</p>
-<p>In most cases, the <code class="docutils literal notranslate"><span class="pre">bdist_msi</span></code> installer is a better choice than the
-<code class="docutils literal notranslate"><span class="pre">bdist_wininst</span></code> installer, because it provides better support for
-Win64 platforms, allows administrators to perform non-interactive
-installations, and allows installation through group policies.</p>
 </div>
 </section>
 <section id="module-distutils.command.bdist_rpm">
 <span id="distutils-command-bdist-rpm-build-a-binary-distribution-as-a-redhat-rpm-and-srpm"></span><h2><span class="section-number">9.30. </span><a class="reference internal" href="#module-distutils.command.bdist_rpm" title="distutils.command.bdist_rpm: Build a binary distribution as a Redhat RPM and SRPM"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_rpm</span></code></a> --- Build a binary distribution as a Redhat RPM and SRPM<a class="headerlink" href="#module-distutils.command.bdist_rpm" title="本標題的永久連結">¶</a></h2>
 </section>
-<section id="module-distutils.command.bdist_wininst">
-<span id="distutils-command-bdist-wininst-build-a-windows-installer"></span><h2><span class="section-number">9.31. </span><a class="reference internal" href="#module-distutils.command.bdist_wininst" title="distutils.command.bdist_wininst: Build a Windows installer"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_wininst</span></code></a> --- Build a Windows installer<a class="headerlink" href="#module-distutils.command.bdist_wininst" title="本標題的永久連結">¶</a></h2>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">3.8 版後已棄用: </span>Use bdist_wheel (wheel packages) instead.</p>
-</div>
-</section>
 <section id="module-distutils.command.sdist">
-<span id="distutils-command-sdist-build-a-source-distribution"></span><h2><span class="section-number">9.32. </span><a class="reference internal" href="#module-distutils.command.sdist" title="distutils.command.sdist: Build a source distribution"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.sdist</span></code></a> --- Build a source distribution<a class="headerlink" href="#module-distutils.command.sdist" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-sdist-build-a-source-distribution"></span><h2><span class="section-number">9.31. </span><a class="reference internal" href="#module-distutils.command.sdist" title="distutils.command.sdist: Build a source distribution"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.sdist</span></code></a> --- Build a source distribution<a class="headerlink" href="#module-distutils.command.sdist" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.build">
-<span id="distutils-command-build-build-all-files-of-a-package"></span><h2><span class="section-number">9.33. </span><a class="reference internal" href="#module-distutils.command.build" title="distutils.command.build: Build all files of a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build</span></code></a> --- Build all files of a package<a class="headerlink" href="#module-distutils.command.build" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-build-build-all-files-of-a-package"></span><h2><span class="section-number">9.32. </span><a class="reference internal" href="#module-distutils.command.build" title="distutils.command.build: Build all files of a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build</span></code></a> --- Build all files of a package<a class="headerlink" href="#module-distutils.command.build" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.build_clib">
-<span id="distutils-command-build-clib-build-any-c-libraries-in-a-package"></span><h2><span class="section-number">9.34. </span><a class="reference internal" href="#module-distutils.command.build_clib" title="distutils.command.build_clib: Build any C libraries in a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_clib</span></code></a> --- Build any C libraries in a package<a class="headerlink" href="#module-distutils.command.build_clib" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-build-clib-build-any-c-libraries-in-a-package"></span><h2><span class="section-number">9.33. </span><a class="reference internal" href="#module-distutils.command.build_clib" title="distutils.command.build_clib: Build any C libraries in a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_clib</span></code></a> --- Build any C libraries in a package<a class="headerlink" href="#module-distutils.command.build_clib" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.build_ext">
-<span id="distutils-command-build-ext-build-any-extensions-in-a-package"></span><h2><span class="section-number">9.35. </span><a class="reference internal" href="#module-distutils.command.build_ext" title="distutils.command.build_ext: Build any extensions in a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_ext</span></code></a> --- Build any extensions in a package<a class="headerlink" href="#module-distutils.command.build_ext" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-build-ext-build-any-extensions-in-a-package"></span><h2><span class="section-number">9.34. </span><a class="reference internal" href="#module-distutils.command.build_ext" title="distutils.command.build_ext: Build any extensions in a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_ext</span></code></a> --- Build any extensions in a package<a class="headerlink" href="#module-distutils.command.build_ext" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.build_py">
-<span id="distutils-command-build-py-build-the-py-pyc-files-of-a-package"></span><h2><span class="section-number">9.36. </span><a class="reference internal" href="#module-distutils.command.build_py" title="distutils.command.build_py: Build the .py/.pyc files of a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_py</span></code></a> --- Build the .py/.pyc files of a package<a class="headerlink" href="#module-distutils.command.build_py" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-build-py-build-the-py-pyc-files-of-a-package"></span><h2><span class="section-number">9.35. </span><a class="reference internal" href="#module-distutils.command.build_py" title="distutils.command.build_py: Build the .py/.pyc files of a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_py</span></code></a> --- Build the .py/.pyc files of a package<a class="headerlink" href="#module-distutils.command.build_py" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.command.build_py.build_py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.command.build_py.</span></span><span class="sig-name descname"><span class="pre">build_py</span></span><a class="headerlink" href="#distutils.command.build_py.build_py" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.command.build_py.</span></span><span class="sig-name descname"><span class="pre">build_py</span></span><a class="headerlink" href="#distutils.command.build_py.build_py" title="本定義的永久連結">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="distutils.command.build_py.build_py_2to3">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">distutils.command.build_py.</span></span><span class="sig-name descname"><span class="pre">build_py_2to3</span></span><a class="headerlink" href="#distutils.command.build_py.build_py_2to3" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">distutils.command.build_py.</span></span><span class="sig-name descname"><span class="pre">build_py_2to3</span></span><a class="headerlink" href="#distutils.command.build_py.build_py_2to3" title="本定義的永久連結">¶</a></dt>
 <dd><p>Alternative implementation of build_py which also runs the
 2to3 conversion library on each .py file that is going to be
 installed. To use this in a setup.py file for a distribution
@@ -2066,10 +2062,10 @@ that is designed to run with both Python 2.x and 3.x, add:</p>
 
 </section>
 <section id="module-distutils.command.build_scripts">
-<span id="distutils-command-build-scripts-build-the-scripts-of-a-package"></span><h2><span class="section-number">9.37. </span><a class="reference internal" href="#module-distutils.command.build_scripts" title="distutils.command.build_scripts: Build the scripts of a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_scripts</span></code></a> --- Build the scripts of a package<a class="headerlink" href="#module-distutils.command.build_scripts" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-build-scripts-build-the-scripts-of-a-package"></span><h2><span class="section-number">9.36. </span><a class="reference internal" href="#module-distutils.command.build_scripts" title="distutils.command.build_scripts: Build the scripts of a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_scripts</span></code></a> --- Build the scripts of a package<a class="headerlink" href="#module-distutils.command.build_scripts" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.clean">
-<span id="distutils-command-clean-clean-a-package-build-area"></span><h2><span class="section-number">9.38. </span><a class="reference internal" href="#module-distutils.command.clean" title="distutils.command.clean: Clean a package build area"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.clean</span></code></a> --- Clean a package build area<a class="headerlink" href="#module-distutils.command.clean" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-clean-clean-a-package-build-area"></span><h2><span class="section-number">9.37. </span><a class="reference internal" href="#module-distutils.command.clean" title="distutils.command.clean: Clean a package build area"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.clean</span></code></a> --- Clean a package build area<a class="headerlink" href="#module-distutils.command.clean" title="本標題的永久連結">¶</a></h2>
 <p>This command removes the temporary files created by <strong class="command">build</strong>
 and its subcommands, like intermediary compiled object files.  With
 the <code class="docutils literal notranslate"><span class="pre">--all</span></code> option, the complete build directory will be removed.</p>
@@ -2077,30 +2073,30 @@ the <code class="docutils literal notranslate"><span class="pre">--all</span></c
 will not be cleaned, as they are not in the build directory.</p>
 </section>
 <section id="module-distutils.command.config">
-<span id="distutils-command-config-perform-package-configuration"></span><h2><span class="section-number">9.39. </span><a class="reference internal" href="#module-distutils.command.config" title="distutils.command.config: Perform package configuration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.config</span></code></a> --- Perform package configuration<a class="headerlink" href="#module-distutils.command.config" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-config-perform-package-configuration"></span><h2><span class="section-number">9.38. </span><a class="reference internal" href="#module-distutils.command.config" title="distutils.command.config: Perform package configuration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.config</span></code></a> --- Perform package configuration<a class="headerlink" href="#module-distutils.command.config" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.install">
-<span id="distutils-command-install-install-a-package"></span><h2><span class="section-number">9.40. </span><a class="reference internal" href="#module-distutils.command.install" title="distutils.command.install: Install a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install</span></code></a> --- Install a package<a class="headerlink" href="#module-distutils.command.install" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-install-install-a-package"></span><h2><span class="section-number">9.39. </span><a class="reference internal" href="#module-distutils.command.install" title="distutils.command.install: Install a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install</span></code></a> --- Install a package<a class="headerlink" href="#module-distutils.command.install" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.install_data">
-<span id="distutils-command-install-data-install-data-files-from-a-package"></span><h2><span class="section-number">9.41. </span><a class="reference internal" href="#module-distutils.command.install_data" title="distutils.command.install_data: Install data files from a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_data</span></code></a> --- Install data files from a package<a class="headerlink" href="#module-distutils.command.install_data" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-install-data-install-data-files-from-a-package"></span><h2><span class="section-number">9.40. </span><a class="reference internal" href="#module-distutils.command.install_data" title="distutils.command.install_data: Install data files from a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_data</span></code></a> --- Install data files from a package<a class="headerlink" href="#module-distutils.command.install_data" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.install_headers">
-<span id="distutils-command-install-headers-install-c-c-header-files-from-a-package"></span><h2><span class="section-number">9.42. </span><a class="reference internal" href="#module-distutils.command.install_headers" title="distutils.command.install_headers: Install C/C++ header files from a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_headers</span></code></a> --- Install C/C++ header files from a package<a class="headerlink" href="#module-distutils.command.install_headers" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-install-headers-install-c-c-header-files-from-a-package"></span><h2><span class="section-number">9.41. </span><a class="reference internal" href="#module-distutils.command.install_headers" title="distutils.command.install_headers: Install C/C++ header files from a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_headers</span></code></a> --- Install C/C++ header files from a package<a class="headerlink" href="#module-distutils.command.install_headers" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.install_lib">
-<span id="distutils-command-install-lib-install-library-files-from-a-package"></span><h2><span class="section-number">9.43. </span><a class="reference internal" href="#module-distutils.command.install_lib" title="distutils.command.install_lib: Install library files from a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_lib</span></code></a> --- Install library files from a package<a class="headerlink" href="#module-distutils.command.install_lib" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-install-lib-install-library-files-from-a-package"></span><h2><span class="section-number">9.42. </span><a class="reference internal" href="#module-distutils.command.install_lib" title="distutils.command.install_lib: Install library files from a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_lib</span></code></a> --- Install library files from a package<a class="headerlink" href="#module-distutils.command.install_lib" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.install_scripts">
-<span id="distutils-command-install-scripts-install-script-files-from-a-package"></span><h2><span class="section-number">9.44. </span><a class="reference internal" href="#module-distutils.command.install_scripts" title="distutils.command.install_scripts: Install script files from a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_scripts</span></code></a> --- Install script files from a package<a class="headerlink" href="#module-distutils.command.install_scripts" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-install-scripts-install-script-files-from-a-package"></span><h2><span class="section-number">9.43. </span><a class="reference internal" href="#module-distutils.command.install_scripts" title="distutils.command.install_scripts: Install script files from a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_scripts</span></code></a> --- Install script files from a package<a class="headerlink" href="#module-distutils.command.install_scripts" title="本標題的永久連結">¶</a></h2>
 </section>
 <section id="module-distutils.command.register">
-<span id="distutils-command-register-register-a-module-with-the-python-package-index"></span><h2><span class="section-number">9.45. </span><a class="reference internal" href="#module-distutils.command.register" title="distutils.command.register: Register a module with the Python Package Index"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.register</span></code></a> --- Register a module with the Python Package Index<a class="headerlink" href="#module-distutils.command.register" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-register-register-a-module-with-the-python-package-index"></span><h2><span class="section-number">9.44. </span><a class="reference internal" href="#module-distutils.command.register" title="distutils.command.register: Register a module with the Python Package Index"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.register</span></code></a> --- Register a module with the Python Package Index<a class="headerlink" href="#module-distutils.command.register" title="本標題的永久連結">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">register</span></code> command registers the package with the Python Package  Index.
 This is described in more detail in <span class="target" id="index-8"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0301"><strong>PEP 301</strong></a>.</p>
 </section>
 <section id="module-distutils.command.check">
-<span id="distutils-command-check-check-the-meta-data-of-a-package"></span><h2><span class="section-number">9.46. </span><a class="reference internal" href="#module-distutils.command.check" title="distutils.command.check: Check the meta-data of a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.check</span></code></a> --- Check the meta-data of a package<a class="headerlink" href="#module-distutils.command.check" title="本標題的永久連結">¶</a></h2>
+<span id="distutils-command-check-check-the-meta-data-of-a-package"></span><h2><span class="section-number">9.45. </span><a class="reference internal" href="#module-distutils.command.check" title="distutils.command.check: Check the meta-data of a package"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.check</span></code></a> --- Check the meta-data of a package<a class="headerlink" href="#module-distutils.command.check" title="本標題的永久連結">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">check</span></code> command performs some tests on the meta-data of a package.
 For example, it verifies that all required meta-data are provided as
 the arguments passed to the <code class="xref py py-func docutils literal notranslate"><span class="pre">setup()</span></code> function.</p>
@@ -2114,9 +2110,10 @@ the arguments passed to the <code class="xref py py-func docutils literal notran
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">9. API參照</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">9. API Reference</a><ul>
 <li><a class="reference internal" href="#module-distutils.core">9.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.core</span></code> --- Core Distutils functionality</a></li>
 <li><a class="reference internal" href="#module-distutils.ccompiler">9.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.ccompiler</span></code> --- CCompiler base class</a></li>
 <li><a class="reference internal" href="#module-distutils.unixccompiler">9.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.unixccompiler</span></code> --- Unix C Compiler</a></li>
@@ -2147,38 +2144,42 @@ the arguments passed to the <code class="xref py py-func docutils literal notran
 <li><a class="reference internal" href="#module-distutils.command.bdist_dumb">9.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_dumb</span></code> --- Build a &quot;dumb&quot; installer</a></li>
 <li><a class="reference internal" href="#module-distutils.command.bdist_msi">9.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_msi</span></code> --- Build a Microsoft Installer binary package</a></li>
 <li><a class="reference internal" href="#module-distutils.command.bdist_rpm">9.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_rpm</span></code> --- Build a binary distribution as a Redhat RPM and SRPM</a></li>
-<li><a class="reference internal" href="#module-distutils.command.bdist_wininst">9.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.bdist_wininst</span></code> --- Build a Windows installer</a></li>
-<li><a class="reference internal" href="#module-distutils.command.sdist">9.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.sdist</span></code> --- Build a source distribution</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build">9.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build</span></code> --- Build all files of a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build_clib">9.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_clib</span></code> --- Build any C libraries in a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build_ext">9.35. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_ext</span></code> --- Build any extensions in a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build_py">9.36. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_py</span></code> --- Build the .py/.pyc files of a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.build_scripts">9.37. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_scripts</span></code> --- Build the scripts of a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.clean">9.38. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.clean</span></code> --- Clean a package build area</a></li>
-<li><a class="reference internal" href="#module-distutils.command.config">9.39. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.config</span></code> --- Perform package configuration</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install">9.40. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install</span></code> --- Install a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install_data">9.41. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_data</span></code> --- Install data files from a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install_headers">9.42. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_headers</span></code> --- Install C/C++ header files from a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install_lib">9.43. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_lib</span></code> --- Install library files from a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.install_scripts">9.44. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_scripts</span></code> --- Install script files from a package</a></li>
-<li><a class="reference internal" href="#module-distutils.command.register">9.45. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.register</span></code> --- Register a module with the Python Package Index</a></li>
-<li><a class="reference internal" href="#module-distutils.command.check">9.46. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.check</span></code> --- Check the meta-data of a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.sdist">9.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.sdist</span></code> --- Build a source distribution</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build">9.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build</span></code> --- Build all files of a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build_clib">9.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_clib</span></code> --- Build any C libraries in a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build_ext">9.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_ext</span></code> --- Build any extensions in a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build_py">9.35. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_py</span></code> --- Build the .py/.pyc files of a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.build_scripts">9.36. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.build_scripts</span></code> --- Build the scripts of a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.clean">9.37. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.clean</span></code> --- Clean a package build area</a></li>
+<li><a class="reference internal" href="#module-distutils.command.config">9.38. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.config</span></code> --- Perform package configuration</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install">9.39. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install</span></code> --- Install a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install_data">9.40. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_data</span></code> --- Install data files from a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install_headers">9.41. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_headers</span></code> --- Install C/C++ header files from a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install_lib">9.42. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_lib</span></code> --- Install library files from a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.install_scripts">9.43. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.install_scripts</span></code> --- Install script files from a package</a></li>
+<li><a class="reference internal" href="#module-distutils.command.register">9.44. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.register</span></code> --- Register a module with the Python Package Index</a></li>
+<li><a class="reference internal" href="#module-distutils.command.check">9.45. <code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils.command.check</span></code> --- Check the meta-data of a package</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="commandref.html"
-                        title="上一章"><span class="section-number">8. </span>指令參照</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="../install/index.html"
-                        title="下一章">安裝 Python 模組（舊版）</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="commandref.html"
+                          title="上一章"><span class="section-number">8. </span>Command Reference</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="../install/index.html"
+                          title="下一章">Installing Python Modules (Legacy version)</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/distutils/apiref.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/distutils/apiref.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2198,10 +2199,10 @@ the arguments passed to the <code class="xref py py-func docutils literal notran
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="../install/index.html" title="安裝 Python 模組（舊版）"
+          <a href="../install/index.html" title="Installing Python Modules (Legacy version)"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="commandref.html" title="8. 指令參照"
+          <a href="commandref.html" title="8. Command Reference"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -2213,14 +2214,12 @@ the arguments passed to the <code class="xref py py-func docutils literal notran
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >發布 Python 模組（舊版）</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><span class="section-number">9. </span>API參照</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Distributing Python Modules (Legacy version)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">9. </span>API Reference</a></li>
                 <li class="right">
                     
 
@@ -2238,25 +2237,25 @@ the arguments passed to the <code class="xref py py-func docutils literal notran
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

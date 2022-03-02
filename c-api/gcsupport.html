@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Supporting Cyclic Garbage Collection &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supporting Cyclic Garbage Collection &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Type Objects" href="typeobj.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/gcsupport.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,32 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="typeobj.html"
-                        title="上一章">Type Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="apiabiversion.html"
-                        title="下一章">API and ABI Versioning</a></p>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Supporting Cyclic Garbage Collection</a><ul>
+<li><a class="reference internal" href="#controlling-the-garbage-collector-state">Controlling the Garbage Collector State</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="typeobj.html"
+                          title="上一章">Type Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="apiabiversion.html"
+                          title="下一章">API and ABI Versioning</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/gcsupport.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/gcsupport.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +131,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="objimpl.html" accesskey="U">Object Implementation Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Supporting Cyclic Garbage Collection</a></li>
                 <li class="right">
@@ -171,11 +181,18 @@ container objects.</p>
 </dd></dl>
 
 <p>Constructors for container types must conform to two rules:</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>The memory for the object must be allocated using <a class="reference internal" href="#c.PyObject_GC_New" title="PyObject_GC_New"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_New()</span></code></a>
 or <a class="reference internal" href="#c.PyObject_GC_NewVar" title="PyObject_GC_NewVar"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_NewVar()</span></code></a>.</p></li>
 <li><p>Once all the fields which may contain references to other containers are
-initialized, it must call <a class="reference internal" href="#c.PyObject_GC_Track" title="PyObject_GC_Track"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_Track()</span></code></a>.</p>
+initialized, it must call <a class="reference internal" href="#c.PyObject_GC_Track" title="PyObject_GC_Track"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_Track()</span></code></a>.</p></li>
+</ol>
+<p>Similarly, the deallocator for the object must conform to a similar pair of
+rules:</p>
+<ol class="arabic">
+<li><p>Before fields which refer to other containers are invalidated,
+<a class="reference internal" href="#c.PyObject_GC_UnTrack" title="PyObject_GC_UnTrack"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_UnTrack()</span></code></a> must be called.</p></li>
+<li><p>The object's memory must be deallocated using <a class="reference internal" href="#c.PyObject_GC_Del" title="PyObject_GC_Del"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_Del()</span></code></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>If a type adds the Py_TPFLAGS_HAVE_GC, then it <em>must</em> implement at least
@@ -215,7 +232,7 @@ resized object or <code class="docutils literal notranslate"><span class="pre">N
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_GC_Track">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_GC_Track</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_GC_Track" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Adds the object <em>op</em> to the set of container objects tracked by the
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Adds the object <em>op</em> to the set of container objects tracked by the
 collector.  The collector can run at unexpected times so objects must be
 valid while being tracked.  This should be called once all the fields
 followed by the <a class="reference internal" href="typeobj.html#c.PyTypeObject.tp_traverse" title="PyTypeObject.tp_traverse"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_traverse</span></code></a> handler become valid, usually near the
@@ -233,43 +250,36 @@ otherwise returns 0.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_GC_IsTracked">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_GC_IsTracked</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_GC_IsTracked" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Returns 1 if the object type of <em>op</em> implements the GC protocol and <em>op</em> is being
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.9.</em><p>Returns 1 if the object type of <em>op</em> implements the GC protocol and <em>op</em> is being
 currently tracked by the garbage collector and 0 otherwise.</p>
 <p>This is analogous to the Python function <a class="reference internal" href="../library/gc.html#gc.is_tracked" title="gc.is_tracked"><code class="xref py py-func docutils literal notranslate"><span class="pre">gc.is_tracked()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_GC_IsFinalized">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_GC_IsFinalized</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_GC_IsFinalized" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Returns 1 if the object type of <em>op</em> implements the GC protocol and <em>op</em> has been
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.9.</em><p>Returns 1 if the object type of <em>op</em> implements the GC protocol and <em>op</em> has been
 already finalized by the garbage collector and 0 otherwise.</p>
 <p>This is analogous to the Python function <a class="reference internal" href="../library/gc.html#gc.is_finalized" title="gc.is_finalized"><code class="xref py py-func docutils literal notranslate"><span class="pre">gc.is_finalized()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
-<p>Similarly, the deallocator for the object must conform to a similar pair of
-rules:</p>
-<ol class="arabic simple">
-<li><p>Before fields which refer to other containers are invalidated,
-<a class="reference internal" href="#c.PyObject_GC_UnTrack" title="PyObject_GC_UnTrack"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_UnTrack()</span></code></a> must be called.</p></li>
-<li><p>The object's memory must be deallocated using <a class="reference internal" href="#c.PyObject_GC_Del" title="PyObject_GC_Del"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_Del()</span></code></a>.</p></li>
-</ol>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_GC_Del">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_GC_Del</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_GC_Del" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Releases memory allocated to an object using <a class="reference internal" href="#c.PyObject_GC_New" title="PyObject_GC_New"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_New()</span></code></a> or
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Releases memory allocated to an object using <a class="reference internal" href="#c.PyObject_GC_New" title="PyObject_GC_New"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_New()</span></code></a> or
 <a class="reference internal" href="#c.PyObject_GC_NewVar" title="PyObject_GC_NewVar"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_NewVar()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_GC_UnTrack">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_GC_UnTrack</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_GC_UnTrack" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Remove the object <em>op</em> from the set of container objects tracked by the
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Remove the object <em>op</em> from the set of container objects tracked by the
 collector.  Note that <a class="reference internal" href="#c.PyObject_GC_Track" title="PyObject_GC_Track"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_Track()</span></code></a> can be called again on
 this object to add it back to the set of tracked objects.  The deallocator
 (<a class="reference internal" href="typeobj.html#c.PyTypeObject.tp_dealloc" title="PyTypeObject.tp_dealloc"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_dealloc</span></code></a> handler) should call this for the object before any of
@@ -277,14 +287,14 @@ the fields used by the <a class="reference internal" href="typeobj.html#c.PyType
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <code class="xref c c-func docutils literal notranslate"><span class="pre">_PyObject_GC_TRACK()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">_PyObject_GC_UNTRACK()</span></code> macros
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <code class="xref c c-func docutils literal notranslate"><span class="pre">_PyObject_GC_TRACK()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">_PyObject_GC_UNTRACK()</span></code> macros
 have been removed from the public C API.</p>
 </div>
 <p>The <a class="reference internal" href="typeobj.html#c.PyTypeObject.tp_traverse" title="PyTypeObject.tp_traverse"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_traverse</span></code></a> handler accepts a function parameter of this type:</p>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.visitproc">
 <span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">visitproc</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">object</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">arg</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#c.visitproc" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Type of the visitor function passed to the <a class="reference internal" href="typeobj.html#c.PyTypeObject.tp_traverse" title="PyTypeObject.tp_traverse"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_traverse</span></code></a> handler.
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Type of the visitor function passed to the <a class="reference internal" href="typeobj.html#c.PyTypeObject.tp_traverse" title="PyTypeObject.tp_traverse"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_traverse</span></code></a> handler.
 The function should be called with an object to traverse as <em>object</em> and
 the third parameter to the <a class="reference internal" href="typeobj.html#c.PyTypeObject.tp_traverse" title="PyTypeObject.tp_traverse"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_traverse</span></code></a> handler as <em>arg</em>.  The
 Python core uses several visitor functions to implement cyclic garbage
@@ -296,7 +306,7 @@ visitor functions.</p>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.traverseproc">
 <span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">traverseproc</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#c.visitproc" title="visitproc"><span class="n"><span class="pre">visitproc</span></span></a><span class="w"> </span><span class="n"><span class="pre">visit</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">arg</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#c.traverseproc" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Traversal function for a container object.  Implementations must call the
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Traversal function for a container object.  Implementations must call the
 <em>visit</em> function for each object directly contained by <em>self</em>, with the
 parameters to <em>visit</em> being the contained object and the <em>arg</em> value passed
 to the handler.  The <em>visit</em> function must not be called with a <code class="docutils literal notranslate"><span class="pre">NULL</span></code>
@@ -330,7 +340,7 @@ if the object is immutable.</p>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.inquiry">
 <span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">inquiry</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#c.inquiry" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Drop references that may have created reference cycles.  Immutable objects
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Drop references that may have created reference cycles.  Immutable objects
 do not have to define this method since they can never directly create
 reference cycles.  Note that the object must still be valid after calling
 this method (don't just call <a class="reference internal" href="refcounting.html#c.Py_DECREF" title="Py_DECREF"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_DECREF()</span></code></a> on a reference).  The
@@ -338,6 +348,54 @@ collector will call this method if it detects that this object is involved
 in a reference cycle.</p>
 </dd></dl>
 
+<section id="controlling-the-garbage-collector-state">
+<h2>Controlling the Garbage Collector State<a class="headerlink" href="#controlling-the-garbage-collector-state" title="本標題的永久連結">¶</a></h2>
+<p>The C-API provides the following functions for controlling
+garbage collection runs.</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.PyGC_Collect">
+<span class="n"><span class="pre">Py_ssize_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyGC_Collect</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyGC_Collect" title="本定義的永久連結">¶</a><br /></dt>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Perform a full garbage collection, if the garbage collector is enabled.
+(Note that <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> runs it unconditionally.)</p>
+<p>Returns the number of collected + unreachable objects which cannot
+be collected.
+If the garbage collector is disabled or already collecting,
+returns <code class="docutils literal notranslate"><span class="pre">0</span></code> immediately.
+Errors during garbage collection are passed to <a class="reference internal" href="../library/sys.html#sys.unraisablehook" title="sys.unraisablehook"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.unraisablehook</span></code></a>.
+This function does not raise exceptions.</p>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.PyGC_Enable">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyGC_Enable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyGC_Enable" title="本定義的永久連結">¶</a><br /></dt>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.10.</em><p>Enable the garbage collector: similar to <a class="reference internal" href="../library/gc.html#gc.enable" title="gc.enable"><code class="xref py py-func docutils literal notranslate"><span class="pre">gc.enable()</span></code></a>.
+Returns the previous state, 0 for disabled and 1 for enabled.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.PyGC_Disable">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyGC_Disable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyGC_Disable" title="本定義的永久連結">¶</a><br /></dt>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.10.</em><p>Disable the garbage collector: similar to <a class="reference internal" href="../library/gc.html#gc.disable" title="gc.disable"><code class="xref py py-func docutils literal notranslate"><span class="pre">gc.disable()</span></code></a>.
+Returns the previous state, 0 for disabled and 1 for enabled.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.PyGC_IsEnabled">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyGC_IsEnabled</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyGC_IsEnabled" title="本定義的永久連結">¶</a><br /></dt>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.10.</em><p>Query the state of the garbage collector: similar to <a class="reference internal" href="../library/gc.html#gc.isenabled" title="gc.isenabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">gc.isenabled()</span></code></a>.
+Returns the current state, 0 for disabled and 1 for enabled.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -347,18 +405,32 @@ in a reference cycle.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="typeobj.html"
-                        title="上一章">Type Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="apiabiversion.html"
-                        title="下一章">API and ABI Versioning</a></p>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Supporting Cyclic Garbage Collection</a><ul>
+<li><a class="reference internal" href="#controlling-the-garbage-collector-state">Controlling the Garbage Collector State</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="typeobj.html"
+                          title="上一章">Type Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="apiabiversion.html"
+                          title="下一章">API and ABI Versioning</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/gcsupport.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/gcsupport.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -393,13 +465,11 @@ in a reference cycle.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="objimpl.html" >Object Implementation Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Supporting Cyclic Garbage Collection</a></li>
                 <li class="right">
@@ -419,25 +489,25 @@ in a reference cycle.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

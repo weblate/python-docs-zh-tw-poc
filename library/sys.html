@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>sys --- System-specific parameters and functions &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sys --- System-specific parameters and functions &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Python Runtime Services" href="python.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/sys.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="python.html"
-                        title="上一章">Python Runtime Services</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="sysconfig.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sysconfig</span></code> --- Provide access to Python's configuration information</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="python.html"
+                          title="上一章">Python Runtime Services</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="sysconfig.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sysconfig</span></code> --- Provide access to Python's configuration information</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/sys.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/sys.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="python.html" accesskey="U">Python Runtime Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code> --- System-specific parameters and functions</a></li>
                 <li class="right">
@@ -162,11 +162,11 @@ always available.</p>
 <dd><p>On POSIX systems where Python was built with the standard <code class="docutils literal notranslate"><span class="pre">configure</span></code>
 script, this contains the ABI flags as specified by <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3149"><strong>PEP 3149</strong></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Default flags became an empty string (<code class="docutils literal notranslate"><span class="pre">m</span></code> flag for pymalloc has been
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Default flags became an empty string (<code class="docutils literal notranslate"><span class="pre">m</span></code> flag for pymalloc has been
 removed).</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -191,10 +191,10 @@ all existing hooks.</p>
 <p>See the <a class="reference internal" href="audit_events.html#audit-events"><span class="std std-ref">audit events table</span></a> for all events raised by
 CPython, and <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0578"><strong>PEP 578</strong></a> for the original design discussion.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8.1 版更變: </span>Exceptions derived from <a class="reference internal" href="exceptions.html#Exception" title="Exception"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a> but not <a class="reference internal" href="exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></a>
+<p><span class="versionmodified changed">在 3.8.1 版本變更: </span>Exceptions derived from <a class="reference internal" href="exceptions.html#Exception" title="Exception"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a> but not <a class="reference internal" href="exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></a>
 are no longer suppressed.</p>
 </div>
 <div class="impl-detail compound">
@@ -214,6 +214,7 @@ the interpreter, <code class="docutils literal notranslate"><span class="pre">ar
 was passed to the Python interpreter, <code class="docutils literal notranslate"><span class="pre">argv[0]</span></code> is the empty string.</p>
 <p>To loop over the standard input, or the list of files given on the
 command line, see the <a class="reference internal" href="fileinput.html#module-fileinput" title="fileinput: Loop over standard input or a list of files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">fileinput</span></code></a> module.</p>
+<p>See also <a class="reference internal" href="#sys.orig_argv" title="sys.orig_argv"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.orig_argv</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>On Unix, command line arguments are passed by bytes from OS.  Python decodes
@@ -248,7 +249,7 @@ native function is preferred when possible.</p>
 <p>See the <a class="reference internal" href="audit_events.html#audit-events"><span class="std std-ref">audit events table</span></a> for all events raised by
 CPython.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -264,7 +265,7 @@ virtual environment, whereas <a class="reference internal" href="#sys.base_prefi
 <a class="reference internal" href="#sys.base_exec_prefix" title="sys.base_exec_prefix"><code class="xref py py-data docutils literal notranslate"><span class="pre">base_exec_prefix</span></code></a> will remain pointing to the base Python
 installation (the one which the virtual environment was created from).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -279,7 +280,7 @@ point to the virtual environment, whereas <a class="reference internal" href="#s
 <a class="reference internal" href="#sys.base_exec_prefix" title="sys.base_exec_prefix"><code class="xref py py-data docutils literal notranslate"><span class="pre">base_exec_prefix</span></code></a> will remain pointing to the base Python
 installation (the one which the virtual environment was created from).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -294,9 +295,10 @@ little-endian (least-significant byte first) platforms.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="sys.builtin_module_names">
 <span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">builtin_module_names</span></span><a class="headerlink" href="#sys.builtin_module_names" title="本定義的永久連結">¶</a></dt>
-<dd><p>A tuple of strings giving the names of all modules that are compiled into this
+<dd><p>A tuple of strings containing the names of all modules that are compiled into this
 Python interpreter.  (This information is not available in any other way ---
 <code class="docutils literal notranslate"><span class="pre">modules.keys()</span></code> only lists the imported modules.)</p>
+<p>See also the <a class="reference internal" href="#sys.stdlib_module_names" title="sys.stdlib_module_names"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.stdlib_module_names</span></code></a> list.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -339,6 +341,18 @@ code examines the frame.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="sys._current_exceptions">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">_current_exceptions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sys._current_exceptions" title="本定義的永久連結">¶</a></dt>
+<dd><p>Return a dictionary mapping each thread's identifier to the topmost exception
+currently active in that thread at the time the function is called.
+If a thread is not currently handling an exception, it is not included in
+the result dictionary.</p>
+<p>This is most useful for statistical profiling.</p>
+<p>This function should be used for internal and specialized purposes only.</p>
+<p class="audit-hook">Raises an <a class="reference internal" href="#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">sys._current_exceptions</span></code> with no arguments.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="sys.breakpointhook">
 <span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">breakpointhook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sys.breakpointhook" title="本定義的永久連結">¶</a></dt>
 <dd><p>This hook function is called by built-in <a class="reference internal" href="functions.html#breakpoint" title="breakpoint"><code class="xref py py-func docutils literal notranslate"><span class="pre">breakpoint()</span></code></a>.  By default,
@@ -367,7 +381,7 @@ breakpoint is ignored.</p>
 <p>Also note that if <code class="docutils literal notranslate"><span class="pre">sys.breakpointhook()</span></code> is overridden programmatically,
 <span class="target" id="index-5"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONBREAKPOINT"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONBREAKPOINT</span></code></a> is <em>not</em> consulted.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -376,10 +390,11 @@ breakpoint is ignored.</p>
 <span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">_debugmallocstats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sys._debugmallocstats" title="本定義的永久連結">¶</a></dt>
 <dd><p>Print low-level information to stderr about the state of CPython's memory
 allocator.</p>
-<p>If Python is configured --with-pydebug, it also performs some expensive
+<p>If Python is <cite>built in debug mode &lt;debug-build&gt;</cite> (<a class="reference internal" href="../using/configure.html#cmdoption-with-pydebug"><code class="xref std std-option docutils literal notranslate"><span class="pre">configure</span>
+<span class="pre">--with-pydebug</span> <span class="pre">option</span></code></a>), it also performs some expensive
 internal consistency checks.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="impl-detail compound">
 <p><strong>CPython implementation detail:</strong> This function is specific to CPython.  The exact output format is not
@@ -426,7 +441,7 @@ customized by assigning another one-argument function to <code class="docutils l
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Use <code class="docutils literal notranslate"><span class="pre">'backslashreplace'</span></code> error handler on <a class="reference internal" href="exceptions.html#UnicodeEncodeError" title="UnicodeEncodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeEncodeError</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Use <code class="docutils literal notranslate"><span class="pre">'backslashreplace'</span></code> error handler on <a class="reference internal" href="exceptions.html#UnicodeEncodeError" title="UnicodeEncodeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeEncodeError</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -456,7 +471,7 @@ same pycache prefix (if any) that you will use at runtime.</p>
 <span class="target" id="index-7"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONPYCACHEPREFIX"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPYCACHEPREFIX</span></code></a> environment variable (command-line takes
 precedence). If neither are set, it is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -500,10 +515,10 @@ program.  They are saved so that <code class="docutils literal notranslate"><spa
 <code class="docutils literal notranslate"><span class="pre">excepthook</span></code>, <code class="docutils literal notranslate"><span class="pre">unraisablehook</span></code> can be restored in case they happen to
 get replaced with broken or alternative objects.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入: </span>__breakpointhook__</p>
+<p><span class="versionmodified added">在 3.7 版本新加入: </span>__breakpointhook__</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入: </span>__unraisablehook__</p>
+<p><span class="versionmodified added">在 3.8 版本新加入: </span>__unraisablehook__</p>
 </div>
 </dd></dl>
 
@@ -558,7 +573,7 @@ or <code class="docutils literal notranslate"><span class="pre">None</span></cod
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sys.exit">
-<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">arg</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sys.exit" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sys.exit" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exit from Python.  This is implemented by raising the <a class="reference internal" href="exceptions.html#SystemExit" title="SystemExit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SystemExit</span></code></a>
 exception, so cleanup actions specified by finally clauses of <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a>
 statements are honored, and it is possible to intercept the exit attempt at
@@ -579,7 +594,7 @@ program when an error occurs.</p>
 the process when called from the main thread, and the exception is not
 intercepted.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>If an error occurs in the cleanup after the Python interpreter
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>If an error occurs in the cleanup after the Python interpreter
 has caught <a class="reference internal" href="exceptions.html#SystemExit" title="SystemExit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SystemExit</span></code></a> (such as an error flushing buffered data
 in the standard streams), the exit status is changed to 120.</p>
 </div>
@@ -649,19 +664,19 @@ flags. The attributes are read only.</p>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Added <code class="docutils literal notranslate"><span class="pre">quiet</span></code> attribute for the new <a class="reference internal" href="../using/cmdline.html#cmdoption-q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-q</span></code></a> flag.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Added <code class="docutils literal notranslate"><span class="pre">quiet</span></code> attribute for the new <a class="reference internal" href="../using/cmdline.html#cmdoption-q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-q</span></code></a> flag.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2.3 版新加入: </span>The <code class="docutils literal notranslate"><span class="pre">hash_randomization</span></code> attribute.</p>
+<p><span class="versionmodified added">在 3.2.3 版本新加入: </span>The <code class="docutils literal notranslate"><span class="pre">hash_randomization</span></code> attribute.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Removed obsolete <code class="docutils literal notranslate"><span class="pre">division_warning</span></code> attribute.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Removed obsolete <code class="docutils literal notranslate"><span class="pre">division_warning</span></code> attribute.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added <code class="docutils literal notranslate"><span class="pre">isolated</span></code> attribute for <a class="reference internal" href="../using/cmdline.html#cmdoption-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> <code class="docutils literal notranslate"><span class="pre">isolated</span></code> flag.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added <code class="docutils literal notranslate"><span class="pre">isolated</span></code> attribute for <a class="reference internal" href="../using/cmdline.html#cmdoption-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> <code class="docutils literal notranslate"><span class="pre">isolated</span></code> flag.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added the <code class="docutils literal notranslate"><span class="pre">dev_mode</span></code> attribute for the new <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">dev_mode</span></code> attribute for the new <a class="reference internal" href="devmode.html#devmode"><span class="std std-ref">Python Development
 Mode</span></a> and the <code class="docutils literal notranslate"><span class="pre">utf8_mode</span></code> attribute for the new  <a class="reference internal" href="../using/cmdline.html#cmdoption-X"><code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span></code></a>
 <code class="docutils literal notranslate"><span class="pre">utf8</span></code> flag.</p>
 </div>
@@ -786,7 +801,7 @@ in Python 3.1 and later.  Otherwise, <code class="docutils literal notranslate">
 <code class="docutils literal notranslate"><span class="pre">'legacy'</span></code> and <code class="docutils literal notranslate"><span class="pre">repr(x)</span></code> behaves in the same way as it did in
 versions of Python prior to 3.1.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -802,7 +817,7 @@ predictable results.</p>
 <p>If a Python build or implementation cannot reasonably compute this
 information, <a class="reference internal" href="#sys.getallocatedblocks" title="sys.getallocatedblocks"><code class="xref py py-func docutils literal notranslate"><span class="pre">getallocatedblocks()</span></code></a> is allowed to return 0 instead.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -812,7 +827,7 @@ information, <a class="reference internal" href="#sys.getallocatedblocks" title=
 <dd><p>Return the build time API version of Android as an integer.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Android.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -836,46 +851,47 @@ found in the <a class="reference internal" href="os.html#module-os" title="os: M
 <dl class="py function">
 <dt class="sig sig-object py" id="sys.getfilesystemencoding">
 <span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">getfilesystemencoding</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sys.getfilesystemencoding" title="本定義的永久連結">¶</a></dt>
-<dd><p>Return the name of the encoding used to convert between Unicode
-filenames and bytes filenames. For best compatibility, str should be
-used for filenames in all cases, although representing filenames as bytes
-is also supported. Functions accepting or returning filenames should support
-either str or bytes and internally convert to the system's preferred
-representation.</p>
-<p>This encoding is always ASCII-compatible.</p>
+<dd><p>Get the <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem encoding</span></a>:
+the encoding used with the <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem error handler</span></a> to convert between Unicode filenames and bytes
+filenames. The filesystem error handler is returned from
+<a class="reference internal" href="#sys.getfilesystemencoding" title="sys.getfilesystemencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">getfilesystemencoding()</span></code></a>.</p>
+<p>For best compatibility, str should be used for filenames in all cases,
+although representing filenames as bytes is also supported. Functions
+accepting or returning filenames should support either str or bytes and
+internally convert to the system's preferred representation.</p>
 <p><a class="reference internal" href="os.html#os.fsencode" title="os.fsencode"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.fsencode()</span></code></a> and <a class="reference internal" href="os.html#os.fsdecode" title="os.fsdecode"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.fsdecode()</span></code></a> should be used to ensure that
 the correct encoding and errors mode are used.</p>
-<ul class="simple">
-<li><p>In the UTF-8 mode, the encoding is <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> on any platform.</p></li>
-<li><p>On macOS, the encoding is <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>.</p></li>
-<li><p>On Unix, the encoding is the locale encoding.</p></li>
-<li><p>On Windows, the encoding may be <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code> or <code class="docutils literal notranslate"><span class="pre">'mbcs'</span></code>, depending
-on user configuration.</p></li>
-<li><p>On Android, the encoding is <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>.</p></li>
-<li><p>On VxWorks, the encoding is <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code>.</p></li>
-</ul>
+<p>The <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem encoding and error handler</span></a> are configured at Python
+startup by the <code class="xref c c-func docutils literal notranslate"><span class="pre">PyConfig_Read()</span></code> function: see
+<a class="reference internal" href="../c-api/init_config.html#c.PyConfig.filesystem_encoding" title="PyConfig.filesystem_encoding"><code class="xref c c-member docutils literal notranslate"><span class="pre">filesystem_encoding</span></code></a> and
+<a class="reference internal" href="../c-api/init_config.html#c.PyConfig.filesystem_errors" title="PyConfig.filesystem_errors"><code class="xref c c-member docutils literal notranslate"><span class="pre">filesystem_errors</span></code></a> members of <a class="reference internal" href="../c-api/init_config.html#c.PyConfig" title="PyConfig"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyConfig</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span><a class="reference internal" href="#sys.getfilesystemencoding" title="sys.getfilesystemencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">getfilesystemencoding()</span></code></a> result cannot be <code class="docutils literal notranslate"><span class="pre">None</span></code> anymore.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span><a class="reference internal" href="#sys.getfilesystemencoding" title="sys.getfilesystemencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">getfilesystemencoding()</span></code></a> result cannot be <code class="docutils literal notranslate"><span class="pre">None</span></code> anymore.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Windows is no longer guaranteed to return <code class="docutils literal notranslate"><span class="pre">'mbcs'</span></code>. See <span class="target" id="index-9"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0529"><strong>PEP 529</strong></a>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Windows is no longer guaranteed to return <code class="docutils literal notranslate"><span class="pre">'mbcs'</span></code>. See <span class="target" id="index-9"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0529"><strong>PEP 529</strong></a>
 and <a class="reference internal" href="#sys._enablelegacywindowsfsencoding" title="sys._enablelegacywindowsfsencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">_enablelegacywindowsfsencoding()</span></code></a> for more information.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Return 'utf-8' in the UTF-8 mode.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Return <code class="docutils literal notranslate"><span class="pre">'utf-8'</span></code> if the <a class="reference internal" href="os.html#utf8-mode"><span class="std std-ref">Python UTF-8 Mode</span></a> is
+enabled.</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sys.getfilesystemencodeerrors">
 <span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">getfilesystemencodeerrors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sys.getfilesystemencodeerrors" title="本定義的永久連結">¶</a></dt>
-<dd><p>Return the name of the error mode used to convert between Unicode filenames
-and bytes filenames. The encoding name is returned from
+<dd><p>Get the <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem error handler</span></a>: the error handler used with the <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem encoding</span></a> to convert between Unicode
+filenames and bytes filenames. The filesystem encoding is returned from
 <a class="reference internal" href="#sys.getfilesystemencoding" title="sys.getfilesystemencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">getfilesystemencoding()</span></code></a>.</p>
 <p><a class="reference internal" href="os.html#os.fsencode" title="os.fsencode"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.fsencode()</span></code></a> and <a class="reference internal" href="os.html#os.fsdecode" title="os.fsdecode"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.fsdecode()</span></code></a> should be used to ensure that
 the correct encoding and errors mode are used.</p>
+<p>The <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem encoding and error handler</span></a> are configured at Python
+startup by the <code class="xref c c-func docutils literal notranslate"><span class="pre">PyConfig_Read()</span></code> function: see
+<a class="reference internal" href="../c-api/init_config.html#c.PyConfig.filesystem_encoding" title="PyConfig.filesystem_encoding"><code class="xref c c-member docutils literal notranslate"><span class="pre">filesystem_encoding</span></code></a> and
+<a class="reference internal" href="../c-api/init_config.html#c.PyConfig.filesystem_errors" title="PyConfig.filesystem_errors"><code class="xref c c-member docutils literal notranslate"><span class="pre">filesystem_errors</span></code></a> members of <a class="reference internal" href="../c-api/init_config.html#c.PyConfig" title="PyConfig"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyConfig</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -898,7 +914,7 @@ overflow of the C stack and crashing Python.  It can be set by
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sys.getsizeof">
-<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">getsizeof</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">object</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">default</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sys.getsizeof" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">getsizeof</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sys.getsizeof" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the size of an object in bytes. The object can be any type of
 object. All built-in objects will return correct results, but this
 does not have to hold true for third-party extensions as it is implementation
@@ -921,13 +937,13 @@ containers and all their contents.</p>
 <dd><p>Return the interpreter's &quot;thread switch interval&quot;; see
 <a class="reference internal" href="#sys.setswitchinterval" title="sys.setswitchinterval"><code class="xref py py-func docutils literal notranslate"><span class="pre">setswitchinterval()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sys._getframe">
-<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">_getframe</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">depth</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sys._getframe" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">_getframe</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sys._getframe" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a frame object from the call stack.  If optional integer <em>depth</em> is
 given, return the frame object that many calls below the top of the stack.  If
 that is deeper than the call stack, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised.  The default
@@ -1011,11 +1027,11 @@ OS version.</p>
 </div>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Changed to a named tuple and added <em>service_pack_minor</em>,
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Changed to a named tuple and added <em>service_pack_minor</em>,
 <em>service_pack_major</em>, <em>suite_mask</em>, and <em>product_type</em>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>platform_version</em></p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>platform_version</em></p>
 </div>
 </dd></dl>
 
@@ -1029,7 +1045,7 @@ functions which take an <a class="reference internal" href="../glossary.html#ter
 argument, and are used to schedule finalization of an asynchronous
 generator by an event loop.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>See <span class="target" id="index-12"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0525"><strong>PEP 525</strong></a> for more details.</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>See <span class="target" id="index-12"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0525"><strong>PEP 525</strong></a> for more details.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -1044,7 +1060,7 @@ for details.)</p>
 <dd><p>Get the current coroutine origin tracking depth, as set by
 <a class="reference internal" href="#sys.set_coroutine_origin_tracking_depth" title="sys.set_coroutine_origin_tracking_depth"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_coroutine_origin_tracking_depth()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -1080,7 +1096,7 @@ implementation.  For more details about hashing of numeric types, see
 <td><p>hash value returned for a positive infinity</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-const docutils literal notranslate"><span class="pre">nan</span></code></p></td>
-<td><p>hash value returned for a nan</p></td>
+<td><p>(this attribute is no longer used)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-const docutils literal notranslate"><span class="pre">imag</span></code></p></td>
 <td><p>multiplier used for the imaginary part of a
@@ -1099,10 +1115,10 @@ and memoryview</p></td>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added <em>algorithm</em>, <em>hash_bits</em> and <em>seed_bits</em></p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added <em>algorithm</em>, <em>hash_bits</em> and <em>seed_bits</em></p>
 </div>
 </dd></dl>
 
@@ -1160,7 +1176,7 @@ an underscore, and are not described here.  Regardless of its contents,
 nor between implementation versions.  (It may change between Python
 language versions, however.)  See <span class="target" id="index-15"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0421"><strong>PEP 421</strong></a> for more information.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -1197,7 +1213,7 @@ represent a digit</p></td>
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1213,7 +1229,7 @@ read, so that you can set this hook there.  The <a class="reference internal" hr
 the hook is called on startup.</p>
 </p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1237,7 +1253,7 @@ value of <a class="reference internal" href="#sys.intern" title="sys.intern"><co
 <dd><p>Return <a class="reference internal" href="constants.html#True" title="True"><code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code></a> if the Python interpreter is
 <a class="reference internal" href="../glossary.html#term-interpreter-shutdown"><span class="xref std std-term">shutting down</span></a>, <a class="reference internal" href="constants.html#False" title="False"><code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code></a> otherwise.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1273,7 +1289,7 @@ take.  It's usually <code class="docutils literal notranslate"><span class="pre"
 <dd><p>An integer giving the value of the largest Unicode code point,
 i.e. <code class="docutils literal notranslate"><span class="pre">1114111</span></code> (<code class="docutils literal notranslate"><span class="pre">0x10FFFF</span></code> in hexadecimal).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Before <span class="target" id="index-18"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0393"><strong>PEP 393</strong></a>, <code class="docutils literal notranslate"><span class="pre">sys.maxunicode</span></code> used to be either <code class="docutils literal notranslate"><span class="pre">0xFFFF</span></code>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Before <span class="target" id="index-18"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0393"><strong>PEP 393</strong></a>, <code class="docutils literal notranslate"><span class="pre">sys.maxunicode</span></code> used to be either <code class="docutils literal notranslate"><span class="pre">0xFFFF</span></code>
 or <code class="docutils literal notranslate"><span class="pre">0x10FFFF</span></code>, depending on the configuration option that specified
 whether Unicode characters were stored as UCS-2 or UCS-4.</p>
 </div>
@@ -1303,7 +1319,7 @@ instances of.</p>
 </dl>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span><a class="reference internal" href="../glossary.html#term-module-spec"><span class="xref std std-term">Module specs</span></a> were introduced in Python 3.4, by
+<p><span class="versionmodified changed">在 3.4 版本變更: </span><a class="reference internal" href="../glossary.html#term-module-spec"><span class="xref std std-term">Module specs</span></a> were introduced in Python 3.4, by
 <span class="target" id="index-19"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0451"><strong>PEP 451</strong></a>. Earlier versions of Python looked for a method called
 <a class="reference internal" href="importlib.html#importlib.abc.MetaPathFinder.find_module" title="importlib.abc.MetaPathFinder.find_module"><code class="xref py py-meth docutils literal notranslate"><span class="pre">find_module()</span></code></a>.
 This is still called as a fallback if a <a class="reference internal" href="#sys.meta_path" title="sys.meta_path"><code class="xref py py-data docutils literal notranslate"><span class="pre">meta_path</span></code></a> entry doesn't
@@ -1317,7 +1333,22 @@ have a <a class="reference internal" href="importlib.html#importlib.abc.MetaPath
 <dd><p>This is a dictionary that maps module names to modules which have already been
 loaded.  This can be manipulated to force reloading of modules and other tricks.
 However, replacing the dictionary will not necessarily work as expected and
-deleting essential items from the dictionary may cause Python to fail.</p>
+deleting essential items from the dictionary may cause Python to fail.  If
+you want to iterate over this global dictionary always use
+<code class="docutils literal notranslate"><span class="pre">sys.modules.copy()</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple(sys.modules)</span></code> to avoid exceptions as its
+size may change during iteration as a side effect of code or activity in
+other threads.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.orig_argv">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">orig_argv</span></span><a class="headerlink" href="#sys.orig_argv" title="本定義的永久連結">¶</a></dt>
+<dd><p>The list of the original command line arguments passed to the Python
+executable.</p>
+<p>See also <a class="reference internal" href="#sys.argv" title="sys.argv"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.argv</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -1362,7 +1393,7 @@ finder is found on <a class="reference internal" href="#sys.path_hooks" title="s
 stored.</p>
 <p>Originally specified in <span class="target" id="index-24"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0302"><strong>PEP 302</strong></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span><code class="docutils literal notranslate"><span class="pre">None</span></code> is stored instead of <a class="reference internal" href="imp.html#imp.NullImporter" title="imp.NullImporter"><code class="xref py py-class docutils literal notranslate"><span class="pre">imp.NullImporter</span></code></a> when no finder
+<p><span class="versionmodified changed">在 3.3 版本變更: </span><code class="docutils literal notranslate"><span class="pre">None</span></code> is stored instead of <a class="reference internal" href="imp.html#imp.NullImporter" title="imp.NullImporter"><code class="xref py py-class docutils literal notranslate"><span class="pre">imp.NullImporter</span></code></a> when no finder
 is found.</p>
 </div>
 </dd></dl>
@@ -1415,13 +1446,13 @@ version, it is therefore recommended to use the following idiom:</p>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>On Linux, <a class="reference internal" href="#sys.platform" title="sys.platform"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.platform</span></code></a> doesn't contain the major version anymore.
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>On Linux, <a class="reference internal" href="#sys.platform" title="sys.platform"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.platform</span></code></a> doesn't contain the major version anymore.
 It is always <code class="docutils literal notranslate"><span class="pre">'linux'</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">'linux2'</span></code> or <code class="docutils literal notranslate"><span class="pre">'linux3'</span></code>.  Since
 older Python versions include the version number, it is recommended to
 always use the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> idiom presented above.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>On AIX, <a class="reference internal" href="#sys.platform" title="sys.platform"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.platform</span></code></a> doesn't contain the major version anymore.
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>On AIX, <a class="reference internal" href="#sys.platform" title="sys.platform"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.platform</span></code></a> doesn't contain the major version anymore.
 It is always <code class="docutils literal notranslate"><span class="pre">'aix'</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">'aix5'</span></code> or <code class="docutils literal notranslate"><span class="pre">'aix7'</span></code>.  Since
 older Python versions include the version number, it is recommended to
 always use the <code class="docutils literal notranslate"><span class="pre">startswith</span></code> idiom presented above.</p>
@@ -1455,7 +1486,7 @@ the exact filename is platform specific)</p></li>
 C extension modules of third-party packages</p></li>
 </ul>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1463,13 +1494,10 @@ C extension modules of third-party packages</p></li>
 <dt class="sig sig-object py" id="sys.prefix">
 <span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">prefix</span></span><a class="headerlink" href="#sys.prefix" title="本定義的永久連結">¶</a></dt>
 <dd><p>A string giving the site-specific directory prefix where the platform
-independent Python files are installed; by default, this is the string
+independent Python files are installed; on Unix, the default is
 <code class="docutils literal notranslate"><span class="pre">'/usr/local'</span></code>.  This can be set at build time with the <code class="docutils literal notranslate"><span class="pre">--prefix</span></code>
-argument to the <strong class="program">configure</strong> script.  The main collection of Python
-library modules is installed in the directory <code class="file docutils literal notranslate"><em><span class="pre">prefix</span></em><span class="pre">/lib/python</span><em><span class="pre">X.Y</span></em></code>
-while the platform independent header files (all except <code class="file docutils literal notranslate"><span class="pre">pyconfig.h</span></code>) are
-stored in <code class="file docutils literal notranslate"><em><span class="pre">prefix</span></em><span class="pre">/include/python</span><em><span class="pre">X.Y</span></em></code>, where <em>X.Y</em> is the version
-number of Python, for example <code class="docutils literal notranslate"><span class="pre">3.2</span></code>.</p>
+argument to the <strong class="program">configure</strong> script.  See
+<a class="reference internal" href="sysconfig.html#installation-paths"><span class="std std-ref">Installation paths</span></a> for derived paths.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>If a <a class="reference internal" href="venv.html#venv-def"><span class="std std-ref">virtual environment</span></a> is in effect, this
@@ -1555,7 +1583,7 @@ limit can lead to a crash.</p>
 <p>If the new limit is too low at the current recursion depth, a
 <a class="reference internal" href="exceptions.html#RecursionError" title="RecursionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RecursionError</span></code></a> exception is raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5.1 版更變: </span>A <a class="reference internal" href="exceptions.html#RecursionError" title="RecursionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RecursionError</span></code></a> exception is now raised if the new limit is too
+<p><span class="versionmodified changed">在 3.5.1 版本變更: </span>A <a class="reference internal" href="exceptions.html#RecursionError" title="RecursionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RecursionError</span></code></a> exception is now raised if the new limit is too
 low at the current recursion depth.</p>
 </div>
 </dd></dl>
@@ -1571,7 +1599,7 @@ are used.  Also, which thread becomes scheduled at the end of the interval
 is the operating system's decision.  The interpreter doesn't have its
 own scheduler.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1647,7 +1675,7 @@ implementation platform, rather than part of the language definition, and
 thus may not be available in all Python implementations.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><code class="docutils literal notranslate"><span class="pre">'opcode'</span></code> event type added; <code class="xref py py-attr docutils literal notranslate"><span class="pre">f_trace_lines</span></code> and
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><code class="docutils literal notranslate"><span class="pre">'opcode'</span></code> event type added; <code class="xref py py-attr docutils literal notranslate"><span class="pre">f_trace_lines</span></code> and
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">f_trace_opcodes</span></code> attributes added to frames</p>
 </div>
 </dd></dl>
@@ -1665,10 +1693,10 @@ is about to be garbage collected.</p>
 <p>Two auditing events are raised because the underlying API consists of two
 calls, each of which must raise its own event.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>See <span class="target" id="index-28"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0525"><strong>PEP 525</strong></a> for more details, and for a reference example of a
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>See <span class="target" id="index-28"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0525"><strong>PEP 525</strong></a> for more details, and for a reference example of a
 <em>finalizer</em> method see the implementation of
 <code class="docutils literal notranslate"><span class="pre">asyncio.Loop.shutdown_asyncgens</span></code> in
-<a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/asyncio/base_events.py">Lib/asyncio/base_events.py</a></p>
+<a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/asyncio/base_events.py">Lib/asyncio/base_events.py</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -1691,7 +1719,7 @@ number of frames whose information will be captured. To disable,
 pass set <em>depth</em> to zero.</p>
 <p>This setting is thread-specific.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -1703,13 +1731,16 @@ for details.)  Use it only for debugging purposes.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sys._enablelegacywindowsfsencoding">
 <span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">_enablelegacywindowsfsencoding</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sys._enablelegacywindowsfsencoding" title="本定義的永久連結">¶</a></dt>
-<dd><p>Changes the default filesystem encoding and errors mode to 'mbcs' and
-'replace' respectively, for consistency with versions of Python prior to 3.6.</p>
+<dd><p>Changes the <a class="reference internal" href="../glossary.html#term-filesystem-encoding-and-error-handler"><span class="xref std std-term">filesystem encoding and error handler</span></a> to 'mbcs' and
+'replace' respectively, for consistency with versions of Python prior to
+3.6.</p>
 <p>This is equivalent to defining the <span class="target" id="index-31"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONLEGACYWINDOWSFSENCODING"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONLEGACYWINDOWSFSENCODING</span></code></a>
 environment variable before launching Python.</p>
+<p>See also <a class="reference internal" href="#sys.getfilesystemencoding" title="sys.getfilesystemencoding"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.getfilesystemencoding()</span></code></a> and
+<a class="reference internal" href="#sys.getfilesystemencodeerrors" title="sys.getfilesystemencodeerrors"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.getfilesystemencodeerrors()</span></code></a>.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>See <span class="target" id="index-32"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0529"><strong>PEP 529</strong></a> for more details.</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>See <span class="target" id="index-32"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0529"><strong>PEP 529</strong></a> for more details.</p>
 </div>
 </dd></dl>
 
@@ -1733,16 +1764,15 @@ statements and for the prompts of <a class="reference internal" href="functions.
 returned by the <a class="reference internal" href="functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> function.  Their parameters are chosen as
 follows:</p>
 <ul>
-<li><p>The character encoding is platform-dependent.  Non-Windows
-platforms use the locale encoding (see
-<a class="reference internal" href="locale.html#locale.getpreferredencoding" title="locale.getpreferredencoding"><code class="xref py py-meth docutils literal notranslate"><span class="pre">locale.getpreferredencoding()</span></code></a>).</p>
+<li><p>The encoding and error handling are is initialized from
+<a class="reference internal" href="../c-api/init_config.html#c.PyConfig.stdio_encoding" title="PyConfig.stdio_encoding"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyConfig.stdio_encoding</span></code></a> and <a class="reference internal" href="../c-api/init_config.html#c.PyConfig.stdio_errors" title="PyConfig.stdio_errors"><code class="xref c c-member docutils literal notranslate"><span class="pre">PyConfig.stdio_errors</span></code></a>.</p>
 <p>On Windows, UTF-8 is used for the console device.  Non-character
 devices such as disk files and pipes use the system locale
 encoding (i.e. the ANSI codepage).  Non-console character
 devices such as NUL (i.e. where <code class="docutils literal notranslate"><span class="pre">isatty()</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code>) use the
 value of the console input and output codepages at startup,
 respectively for stdin and stdout/stderr. This defaults to the
-system locale encoding if the process is not initially attached
+system <a class="reference internal" href="../glossary.html#term-locale-encoding"><span class="xref std std-term">locale encoding</span></a> if the process is not initially attached
 to a console.</p>
 <p>The special behaviour of the console can be overridden
 by setting the environment variable PYTHONLEGACYWINDOWSSTDIO
@@ -1762,7 +1792,7 @@ by passing the <a class="reference internal" href="../using/cmdline.html#cmdopti
 <span class="target" id="index-36"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONUNBUFFERED"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONUNBUFFERED</span></code></a> environment variable.</p></li>
 </ul>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Non-interactive <code class="docutils literal notranslate"><span class="pre">stderr</span></code> is now line-buffered instead of fully
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Non-interactive <code class="docutils literal notranslate"><span class="pre">stderr</span></code> is now line-buffered instead of fully
 buffered.</p>
 </div>
 <div class="admonition note">
@@ -1798,6 +1828,24 @@ replacing it, and restore the saved object.</p>
 original values <code class="docutils literal notranslate"><span class="pre">__stdin__</span></code>, <code class="docutils literal notranslate"><span class="pre">__stdout__</span></code> and <code class="docutils literal notranslate"><span class="pre">__stderr__</span></code> can be
 <code class="docutils literal notranslate"><span class="pre">None</span></code>. It is usually the case for Windows GUI apps that aren't connected
 to a console and Python apps started with <strong class="program">pythonw</strong>.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.stdlib_module_names">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">stdlib_module_names</span></span><a class="headerlink" href="#sys.stdlib_module_names" title="本定義的永久連結">¶</a></dt>
+<dd><p>A frozenset of strings containing the names of standard library modules.</p>
+<p>It is the same on all platforms. Modules which are not available on
+some platforms and modules disabled at Python build are also listed.
+All module kinds are listed: pure Python, built-in, frozen and extension
+modules. Test modules are excluded.</p>
+<p>For packages, only the main package is listed: sub-packages and sub-modules
+are not listed. For example, the <code class="docutils literal notranslate"><span class="pre">email</span></code> package is listed, but the
+<code class="docutils literal notranslate"><span class="pre">email.mime</span></code> sub-package and the <code class="docutils literal notranslate"><span class="pre">email.message</span></code> sub-module are not
+listed.</p>
+<p>See also the <a class="reference internal" href="#sys.builtin_module_names" title="sys.builtin_module_names"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sys.builtin_module_names</span></code></a> list.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1847,7 +1895,7 @@ or <code class="docutils literal notranslate"><span class="pre">None</span></cod
 </tbody>
 </table>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1893,7 +1941,7 @@ The <code class="docutils literal notranslate"><span class="pre">unraisable</spa
 If no hook has been set, <code class="docutils literal notranslate"><span class="pre">hook</span></code> may be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1925,7 +1973,7 @@ is <code class="docutils literal notranslate"><span class="pre">(2,</span> <span
 so <code class="docutils literal notranslate"><span class="pre">sys.version_info[0]</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">sys.version_info.major</span></code>
 and so on.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Added named component attributes.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Added named component attributes.</p>
 </div>
 </dd></dl>
 
@@ -1969,7 +2017,7 @@ their values, if given explicitly, or to <a class="reference internal" href="con
 means, or not at all.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1988,18 +2036,22 @@ means, or not at all.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="python.html"
-                        title="上一章">Python Runtime Services</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="sysconfig.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sysconfig</span></code> --- Provide access to Python's configuration information</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="python.html"
+                          title="上一章">Python Runtime Services</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="sysconfig.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sysconfig</span></code> --- Provide access to Python's configuration information</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/sys.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/sys.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2034,13 +2086,11 @@ means, or not at all.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="python.html" >Python Runtime Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code> --- System-specific parameters and functions</a></li>
                 <li class="right">
@@ -2060,25 +2110,25 @@ means, or not at all.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

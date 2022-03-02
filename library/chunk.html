@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>chunk --- Read IFF chunked data &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chunk --- Read IFF chunked data &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="wave --- Read and write WAV files" href="wave.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/chunk.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="wave.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code> --- Read and write WAV files</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="colorsys.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">colorsys</span></code> --- Conversions between color systems</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="wave.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code> --- Read and write WAV files</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="colorsys.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">colorsys</span></code> --- Conversions between color systems</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/chunk.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/chunk.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="mm.html" accesskey="U">Multimedia Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">chunk</span></code> --- Read IFF chunked data</a></li>
                 <li class="right">
@@ -152,7 +152,7 @@
             
   <section id="module-chunk">
 <span id="chunk-read-iff-chunked-data"></span><h1><a class="reference internal" href="#module-chunk" title="chunk: Module to read IFF chunks."><code class="xref py py-mod docutils literal notranslate"><span class="pre">chunk</span></code></a> --- Read IFF chunked data<a class="headerlink" href="#module-chunk" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/chunk.py">Lib/chunk.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/chunk.py">Lib/chunk.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>This module provides an interface for reading files that use EA IFF 85 chunks.
 <a class="footnote-reference brackets" href="#id2" id="id1">1</a>  This format is used in at least the Audio Interchange File Format
@@ -205,7 +205,7 @@ new instance can be instantiated. At the end of the file, creating a new
 instance will fail with an <a class="reference internal" href="exceptions.html#EOFError" title="EOFError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">EOFError</span></code></a> exception.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="chunk.Chunk">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">chunk.</span></span><span class="sig-name descname"><span class="pre">Chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bigendian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inclheader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chunk.Chunk" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chunk.</span></span><span class="sig-name descname"><span class="pre">Chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bigendian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inclheader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chunk.Chunk" title="本定義的永久連結">¶</a></dt>
 <dd><p>Class which represents a chunk.  The <em>file</em> argument is expected to be a
 file-like object.  An instance of this class is specifically allowed.  The
 only method that is needed is <code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code>.  If the methods
@@ -286,7 +286,7 @@ start of the next chunk.</p>
 
 </dd></dl>
 
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>&quot;EA IFF 85&quot; Standard for Interchange Format Files, Jerry Morrison, Electronic
@@ -302,18 +302,22 @@ Arts, January 1985.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="wave.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code> --- Read and write WAV files</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="colorsys.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">colorsys</span></code> --- Conversions between color systems</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="wave.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wave</span></code> --- Read and write WAV files</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="colorsys.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">colorsys</span></code> --- Conversions between color systems</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/chunk.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/chunk.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -348,13 +352,11 @@ Arts, January 1985.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="mm.html" >Multimedia Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">chunk</span></code> --- Read IFF chunked data</a></li>
                 <li class="right">
@@ -374,25 +376,25 @@ Arts, January 1985.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

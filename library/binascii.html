@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>binascii --- Convert between binary and ASCII &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binascii --- Convert between binary and ASCII &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="binhex --- Encode and decode binhex4 files" href="binhex.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/binascii.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="binhex.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="quopri.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quopri</span></code> --- Encode and decode MIME quoted-printable data</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="binhex.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="quopri.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quopri</span></code> --- Encode and decode MIME quoted-printable data</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/binascii.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/binascii.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" accesskey="U">Internet Data Handling</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code> --- Convert between binary and ASCII</a></li>
                 <li class="right">
@@ -156,7 +156,7 @@
 <p>The <a class="reference internal" href="#module-binascii" title="binascii: Tools for converting between binary and various ASCII-encoded binary representations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code></a> module contains a number of methods to convert between
 binary and various ASCII-encoded binary representations. Normally, you will not
 use these functions directly but use wrapper modules like <a class="reference internal" href="uu.html#module-uu" title="uu: Encode and decode files in uuencode format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">uu</span></code></a>,
-<a class="reference internal" href="base64.html#module-base64" title="base64: RFC 3548: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a>, or <a class="reference internal" href="binhex.html#module-binhex" title="binhex: Encode and decode files in binhex4 format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code></a> instead. The <a class="reference internal" href="#module-binascii" title="binascii: Tools for converting between binary and various ASCII-encoded binary representations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code></a> module contains
+<a class="reference internal" href="base64.html#module-base64" title="base64: RFC 4648: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a>, or <a class="reference internal" href="binhex.html#module-binhex" title="binhex: Encode and decode files in binhex4 format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code></a> instead. The <a class="reference internal" href="#module-binascii" title="binascii: Tools for converting between binary and various ASCII-encoded binary representations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code></a> module contains
 low-level functions written in C for greater speed that are used by the
 higher-level modules.</p>
 <div class="admonition note">
@@ -166,7 +166,7 @@ Other functions only accept <a class="reference internal" href="../glossary.html
 <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>, <a class="reference internal" href="stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> and other objects that support the buffer
 protocol).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>ASCII-only unicode strings are now accepted by the <code class="docutils literal notranslate"><span class="pre">a2b_*</span></code> functions.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>ASCII-only unicode strings are now accepted by the <code class="docutils literal notranslate"><span class="pre">a2b_*</span></code> functions.</p>
 </div>
 </div>
 <p>The <a class="reference internal" href="#module-binascii" title="binascii: Tools for converting between binary and various ASCII-encoded binary representations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code></a> module defines the following functions:</p>
@@ -185,7 +185,7 @@ data may be followed by whitespace.</p>
 converted line, including a newline char. The length of <em>data</em> should be at most
 45. If <em>backtick</em> is true, zeros are represented by <code class="docutils literal notranslate"><span class="pre">'`'</span></code> instead of spaces.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added the <em>backtick</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added the <em>backtick</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -201,9 +201,9 @@ than one line may be passed at a time.</p>
 <span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">b2a_base64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binascii.b2a_base64" title="本定義的永久連結">¶</a></dt>
 <dd><p>Convert binary data to a line of ASCII characters in base64 coding. The return
 value is the converted line, including a newline char if <em>newline</em> is
-true.  The output of this function conforms to <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3548.html"><strong>RFC 3548</strong></a>.</p>
+true.  The output of this function conforms to <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3548.html"><strong>RFC 3548</strong></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added the <em>newline</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added the <em>newline</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -223,7 +223,7 @@ encoding.  The return value is the converted line(s). If the optional argument
 <em>quotetabs</em> is present and true, all tabs and spaces will be encoded.   If the
 optional argument <em>istext</em> is present and true, newlines are not encoded but
 trailing whitespace will be encoded. If the optional argument <em>header</em> is
-present and true, spaces will be encoded as underscores per <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1522.html"><strong>RFC 1522</strong></a>. If the
+present and true, spaces will be encoded as underscores per <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc1522.html"><strong>RFC 1522</strong></a>. If the
 optional argument <em>header</em> is present and false, newline characters will be
 encoded as well; otherwise linefeed conversion might corrupt the binary data
 stream.</p>
@@ -236,7 +236,7 @@ stream.</p>
 The string should contain a complete number of binary bytes, or (in case of the
 last portion of the binhex4 data) have the remaining bits zero.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -249,10 +249,10 @@ A count of <code class="docutils literal notranslate"><span class="pre">0</span>
 decompressed data, unless data input data ends in an orphaned repeat indicator,
 in which case the <a class="reference internal" href="#binascii.Incomplete" title="binascii.Incomplete"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Incomplete</span></code></a> exception is raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Accept only bytestring or bytearray objects as input.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Accept only bytestring or bytearray objects as input.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -261,7 +261,7 @@ in which case the <a class="reference internal" href="#binascii.Incomplete" titl
 <span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">rlecode_hqx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binascii.rlecode_hqx" title="本定義的永久連結">¶</a></dt>
 <dd><p>Perform binhex4 style RLE-compression on <em>data</em> and return the result.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -272,7 +272,7 @@ in which case the <a class="reference internal" href="#binascii.Incomplete" titl
 argument should already be RLE-coded, and have a length divisible by 3 (except
 possibly the last fragment).</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -287,7 +287,7 @@ initial CRC, and return the result.  This uses the CRC-CCITT polynomial
 
 <dl class="py function">
 <dt class="sig sig-object py" id="binascii.crc32">
-<span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">crc32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#binascii.crc32" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">crc32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#binascii.crc32" title="本定義的永久連結">¶</a></dt>
 <dd><p>Compute CRC-32, the 32-bit checksum of <em>data</em>, starting with an
 initial CRC of <em>value</em>.  The default initial CRC is zero.  The algorithm
 is consistent with the ZIP file checksum.  Since the algorithm is designed for
@@ -301,7 +301,7 @@ algorithm.  Use as follows:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.0 版更變: </span>The result is always unsigned.
+<p><span class="versionmodified changed">在 3.0 版本變更: </span>The result is always unsigned.
 To generate the same numeric value across all Python versions and
 platforms, use <code class="docutils literal notranslate"><span class="pre">crc32(data)</span> <span class="pre">&amp;</span> <span class="pre">0xffffffff</span></code>.</p>
 </div>
@@ -309,9 +309,9 @@ platforms, use <code class="docutils literal notranslate"><span class="pre">crc3
 
 <dl class="py function">
 <dt class="sig sig-object py" id="binascii.b2a_hex">
-<span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">b2a_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">sep</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">bytes_per_sep=1</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#binascii.b2a_hex" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">b2a_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">bytes_per_sep=1</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#binascii.b2a_hex" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py" id="binascii.hexlify">
-<span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">hexlify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">sep</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">bytes_per_sep=1</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#binascii.hexlify" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">hexlify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">bytes_per_sep=1</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#binascii.hexlify" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the hexadecimal representation of the binary <em>data</em>.  Every byte of
 <em>data</em> is converted into the corresponding 2-digit hex representation.  The
 returned bytes object is therefore twice as long as the length of <em>data</em>.</p>
@@ -333,7 +333,7 @@ if you wish to count from the left, supply a negative <em>bytes_per_sep</em> val
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>sep</em> and <em>bytes_per_sep</em> parameters were added.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>sep</em> and <em>bytes_per_sep</em> parameters were added.</p>
 </div>
 </dd></dl>
 
@@ -353,13 +353,13 @@ liberal towards whitespace) is also accessible using the
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="binascii.Error">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#binascii.Error" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#binascii.Error" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised on errors. These are usually programming errors.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="binascii.Incomplete">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">Incomplete</span></span><a class="headerlink" href="#binascii.Incomplete" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">binascii.</span></span><span class="sig-name descname"><span class="pre">Incomplete</span></span><a class="headerlink" href="#binascii.Incomplete" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised on incomplete data. These are usually not programming errors,
 but may be handled by reading a little more data and trying again.</p>
 </dd></dl>
@@ -367,7 +367,7 @@ but may be handled by reading a little more data and trying again.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt>Module <a class="reference internal" href="base64.html#module-base64" title="base64: RFC 3548: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a></dt><dd><p>Support for RFC compliant base64-style encoding in base 16, 32, 64,
+<dt>Module <a class="reference internal" href="base64.html#module-base64" title="base64: RFC 4648: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a></dt><dd><p>Support for RFC compliant base64-style encoding in base 16, 32, 64,
 and 85.</p>
 </dd>
 <dt>Module <a class="reference internal" href="binhex.html#module-binhex" title="binhex: Encode and decode files in binhex4 format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code></a></dt><dd><p>Support for the binhex format used on the Macintosh.</p>
@@ -387,18 +387,22 @@ and 85.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="binhex.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="quopri.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quopri</span></code> --- Encode and decode MIME quoted-printable data</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="binhex.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="quopri.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quopri</span></code> --- Encode and decode MIME quoted-printable data</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/binascii.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/binascii.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -433,13 +437,11 @@ and 85.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code> --- Convert between binary and ASCII</a></li>
                 <li class="right">
@@ -459,25 +461,25 @@ and 85.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

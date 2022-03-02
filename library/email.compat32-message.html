@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>email.message.Message: Representing an email message using the compat32 API &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email.message.Message: Representing an email message using the compat32 API &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="email: Examples" href="email.examples.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/email.compat32-message.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.examples.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code>: Examples</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.mime.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime</span></code>: Creating email and MIME objects from scratch</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.examples.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code>: Examples</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.mime.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime</span></code>: Creating email and MIME objects from scratch</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.compat32-message.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.compat32-message.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></li>
@@ -164,7 +164,7 @@ dealing with legacy code.</p>
 policy <a class="reference internal" href="email.policy.html#email.policy.Compat32" title="email.policy.Compat32"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Compat32</span></code></a>.  If you are going to use another policy,
 you should be using the <a class="reference internal" href="email.message.html#email.message.EmailMessage" title="email.message.EmailMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmailMessage</span></code></a> class instead.</p>
 <p>An email message consists of <em>headers</em> and a <em>payload</em>.  Headers must be
-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> style names and values, where the field name and value are
+<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> style names and values, where the field name and value are
 separated by a colon.  The colon is not part of either the field name or the
 field value.  The payload may be a simple text message, or a binary object, or
 a structured sequence of sub-messages each with their own set of headers and
@@ -190,14 +190,14 @@ string or bytes, in the case of simple message objects, or a list of
 <p>Here are the methods of the <a class="reference internal" href="#email.message.Message" title="email.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a> class:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="email.message.Message">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.message.</span></span><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.message.Message" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.message.</span></span><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">compat32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.message.Message" title="本定義的永久連結">¶</a></dt>
 <dd><p>If <em>policy</em> is specified (it must be an instance of a <a class="reference internal" href="email.policy.html#module-email.policy" title="email.policy: Controlling the parsing and generating of messages"><code class="xref py py-mod docutils literal notranslate"><span class="pre">policy</span></code></a>
 class) use the rules it specifies to update and serialize the representation
 of the message.  If <em>policy</em> is not set, use the <a class="reference internal" href="email.policy.html#email.policy.Compat32" title="email.policy.Compat32"><code class="xref py py-class docutils literal notranslate"><span class="pre">compat32</span></code></a> policy, which maintains backward compatibility with
 the Python 3.2 version of the email package.  For more information see the
 <a class="reference internal" href="email.policy.html#module-email.policy" title="email.policy: Controlling the parsing and generating of messages"><code class="xref py py-mod docutils literal notranslate"><span class="pre">policy</span></code></a> documentation.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The <em>policy</em> keyword argument was added.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The <em>policy</em> keyword argument was added.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="email.message.Message.as_string">
@@ -233,7 +233,7 @@ to RFC standards, the non-compliant data will be replaced by unicode
 &quot;unknown character&quot; code points.  (See also <a class="reference internal" href="#email.message.Message.as_bytes" title="email.message.Message.as_bytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">as_bytes()</span></code></a> and
 <a class="reference internal" href="email.generator.html#email.generator.BytesGenerator" title="email.generator.BytesGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">BytesGenerator</span></code></a>.)</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>the <em>policy</em> keyword argument was added.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>the <em>policy</em> keyword argument was added.</p>
 </div>
 </dd></dl>
 
@@ -273,7 +273,7 @@ For example:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -283,7 +283,7 @@ For example:</p>
 <dd><p>Equivalent to <a class="reference internal" href="#email.message.Message.as_bytes" title="email.message.Message.as_bytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">as_bytes()</span></code></a>.  Allows <code class="docutils literal notranslate"><span class="pre">bytes(msg)</span></code> to produce a
 bytes object containing the formatted message.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -418,7 +418,7 @@ message's payload.</p>
 </dd></dl>
 
 <p>The following methods implement a mapping-like interface for accessing the
-message's <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2822.html"><strong>RFC 2822</strong></a> headers.  Note that there are some semantic differences
+message's <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2822.html"><strong>RFC 2822</strong></a> headers.  Note that there are some semantic differences
 between these methods and a normal mapping (i.e. dictionary) interface.  For
 example, in a dictionary there are no duplicate keys, but here there may be
 duplicate message headers.  Also, in dictionaries there is no guaranteed
@@ -537,10 +537,10 @@ only the key will be added.  If the value contains non-ASCII characters,
 it can be specified as a three tuple in the format
 <code class="docutils literal notranslate"><span class="pre">(CHARSET,</span> <span class="pre">LANGUAGE,</span> <span class="pre">VALUE)</span></code>, where <code class="docutils literal notranslate"><span class="pre">CHARSET</span></code> is a string naming the
 charset to be used to encode the value, <code class="docutils literal notranslate"><span class="pre">LANGUAGE</span></code> can usually be set
-to <code class="docutils literal notranslate"><span class="pre">None</span></code> or the empty string (see <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2231.html"><strong>RFC 2231</strong></a> for other possibilities),
+to <code class="docutils literal notranslate"><span class="pre">None</span></code> or the empty string (see <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2231.html"><strong>RFC 2231</strong></a> for other possibilities),
 and <code class="docutils literal notranslate"><span class="pre">VALUE</span></code> is the string value containing non-ASCII code points.  If
 a three tuple is not passed and the value contains non-ASCII characters,
-it is automatically encoded in <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2231.html"><strong>RFC 2231</strong></a> format using a <code class="docutils literal notranslate"><span class="pre">CHARSET</span></code>
+it is automatically encoded in <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2231.html"><strong>RFC 2231</strong></a> format using a <code class="docutils literal notranslate"><span class="pre">CHARSET</span></code>
 of <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> and a <code class="docutils literal notranslate"><span class="pre">LANGUAGE</span></code> of <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>Here's an example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span><span class="o">.</span><span class="n">add_header</span><span class="p">(</span><span class="s1">&#39;Content-Disposition&#39;</span><span class="p">,</span> <span class="s1">&#39;attachment&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;bud.gif&#39;</span><span class="p">)</span>
@@ -576,13 +576,13 @@ matching header was found, a <a class="reference internal" href="exceptions.html
 lower case of the form <em class="mimetype">maintype/subtype</em>.  If there was no
 <em class="mailheader">Content-Type</em> header in the message the default type as given
 by <a class="reference internal" href="#email.message.Message.get_default_type" title="email.message.Message.get_default_type"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_default_type()</span></code></a> will be returned.  Since according to
-<span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a>, messages always have a default type, <a class="reference internal" href="#email.message.Message.get_content_type" title="email.message.Message.get_content_type"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_content_type()</span></code></a>
+<span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a>, messages always have a default type, <a class="reference internal" href="#email.message.Message.get_content_type" title="email.message.Message.get_content_type"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_content_type()</span></code></a>
 will always return a value.</p>
-<p><span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a> defines a message's default type to be <em class="mimetype">text/plain</em>
+<p><span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a> defines a message's default type to be <em class="mimetype">text/plain</em>
 unless it appears inside a <em class="mimetype">multipart/digest</em> container, in
 which case it would be <em class="mimetype">message/rfc822</em>.  If the
 <em class="mailheader">Content-Type</em> header has an invalid type specification,
-<span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a> mandates that the default type be <em class="mimetype">text/plain</em>.</p>
+<span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a> mandates that the default type be <em class="mimetype">text/plain</em>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -646,14 +646,14 @@ header or if there is no such parameter, then <em>failobj</em> is returned
 <p>Optional <em>header</em> if given, specifies the message header to use instead of
 <em class="mailheader">Content-Type</em>.</p>
 <p>Parameter keys are always compared case insensitively.  The return value
-can either be a string, or a 3-tuple if the parameter was <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2231.html"><strong>RFC 2231</strong></a>
+can either be a string, or a 3-tuple if the parameter was <span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2231.html"><strong>RFC 2231</strong></a>
 encoded.  When it's a 3-tuple, the elements of the value are of the form
 <code class="docutils literal notranslate"><span class="pre">(CHARSET,</span> <span class="pre">LANGUAGE,</span> <span class="pre">VALUE)</span></code>.  Note that both <code class="docutils literal notranslate"><span class="pre">CHARSET</span></code> and
 <code class="docutils literal notranslate"><span class="pre">LANGUAGE</span></code> can be <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case you should consider <code class="docutils literal notranslate"><span class="pre">VALUE</span></code>
 to be encoded in the <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code> charset.  You can usually ignore
 <code class="docutils literal notranslate"><span class="pre">LANGUAGE</span></code>.</p>
 <p>If your application doesn't care whether the parameter was encoded as in
-<span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2231.html"><strong>RFC 2231</strong></a>, you can collapse the parameter value by calling
+<span class="target" id="index-8"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2231.html"><strong>RFC 2231</strong></a>, you can collapse the parameter value by calling
 <a class="reference internal" href="email.utils.html#email.utils.collapse_rfc2231_value" title="email.utils.collapse_rfc2231_value"><code class="xref py py-func docutils literal notranslate"><span class="pre">email.utils.collapse_rfc2231_value()</span></code></a>, passing in the return value
 from <a class="reference internal" href="#email.message.Message.get_param" title="email.message.Message.get_param"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_param()</span></code></a>.  This will return a suitably decoded Unicode
 string when the value is a tuple, or the original string unquoted if it
@@ -678,19 +678,19 @@ returned by the header access methods.</p>
 parameter already exists in the header, its value will be replaced with
 <em>value</em>.  If the <em class="mailheader">Content-Type</em> header as not yet been defined
 for this message, it will be set to <em class="mimetype">text/plain</em> and the new
-parameter value will be appended as per <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a>.</p>
+parameter value will be appended as per <span class="target" id="index-9"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a>.</p>
 <p>Optional <em>header</em> specifies an alternative header to
 <em class="mailheader">Content-Type</em>, and all parameters will be quoted as necessary
 unless optional <em>requote</em> is <code class="docutils literal notranslate"><span class="pre">False</span></code> (the default is <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
 <p>If optional <em>charset</em> is specified, the parameter will be encoded
-according to <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2231.html"><strong>RFC 2231</strong></a>. Optional <em>language</em> specifies the RFC 2231
+according to <span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2231.html"><strong>RFC 2231</strong></a>. Optional <em>language</em> specifies the RFC 2231
 language, defaulting to the empty string.  Both <em>charset</em> and <em>language</em>
 should be strings.</p>
 <p>If <em>replace</em> is <code class="docutils literal notranslate"><span class="pre">False</span></code> (the default) the header is moved to the
 end of the list of headers.  If <em>replace</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the header
 will be updated in place.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span><code class="docutils literal notranslate"><span class="pre">replace</span></code> keyword was added.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span><code class="docutils literal notranslate"><span class="pre">replace</span></code> keyword was added.</p>
 </div>
 </dd></dl>
 
@@ -788,9 +788,9 @@ will be <em>failobj</em>.</p>
 <dd><p>Return the lowercased value (without parameters) of the message's
 <em class="mailheader">Content-Disposition</em> header if it has one, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.  The
 possible values for this method are <em>inline</em>, <em>attachment</em> or <code class="docutils literal notranslate"><span class="pre">None</span></code>
-if the message follows <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2183.html"><strong>RFC 2183</strong></a>.</p>
+if the message follows <span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2183.html"><strong>RFC 2183</strong></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -898,18 +898,22 @@ of the possible parsing defects.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.examples.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code>: Examples</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.mime.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime</span></code>: Creating email and MIME objects from scratch</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.examples.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code>: Examples</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.mime.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.mime</span></code>: Creating email and MIME objects from scratch</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.compat32-message.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.compat32-message.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -944,13 +948,11 @@ of the possible parsing defects.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.message.Message</span></code>: Representing an email message using the <code class="xref py py-data docutils literal notranslate"><span class="pre">compat32</span></code> API</a></li>
@@ -971,25 +973,25 @@ of the possible parsing defects.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

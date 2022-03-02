@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>lzma --- Compression using the LZMA algorithm &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lzma --- Compression using the LZMA algorithm &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="bz2 --- Support for bzip2 compression" href="bz2.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/lzma.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lzma</span></code> --- Compression using the LZMA algorithm</a><ul>
 <li><a class="reference internal" href="#reading-and-writing-compressed-files">Reading and writing compressed files</a></li>
 <li><a class="reference internal" href="#compressing-and-decompressing-data-in-memory">Compressing and decompressing data in memory</a></li>
@@ -84,18 +83,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="bz2.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code> --- Support for <strong class="program">bzip2</strong> compression</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="zipfile.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code> --- Work with ZIP archives</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="bz2.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code> --- Support for <strong class="program">bzip2</strong> compression</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="zipfile.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code> --- Work with ZIP archives</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/lzma.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/lzma.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -131,14 +135,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="archiving.html" accesskey="U">資料壓縮與保存</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="archiving.html" accesskey="U">Data Compression and Archiving</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">lzma</span></code> --- Compression using the LZMA algorithm</a></li>
                 <li class="right">
                     
@@ -165,21 +167,21 @@
   <section id="module-lzma">
 <span id="lzma-compression-using-the-lzma-algorithm"></span><h1><a class="reference internal" href="#module-lzma" title="lzma: A Python wrapper for the liblzma compression library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">lzma</span></code></a> --- Compression using the LZMA algorithm<a class="headerlink" href="#module-lzma" title="本標題的永久連結">¶</a></h1>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/lzma.py">Lib/lzma.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/lzma.py">Lib/lzma.py</a></p>
 <hr class="docutils" />
 <p>This module provides classes and convenience functions for compressing and
 decompressing data using the LZMA compression algorithm. Also included is a file
 interface supporting the <code class="docutils literal notranslate"><span class="pre">.xz</span></code> and legacy <code class="docutils literal notranslate"><span class="pre">.lzma</span></code> file formats used by the
 <strong class="program">xz</strong> utility, as well as raw compressed streams.</p>
 <p>The interface provided by this module is very similar to that of the <a class="reference internal" href="bz2.html#module-bz2" title="bz2: Interfaces for bzip2 compression and decompression."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code></a>
-module. However, note that <a class="reference internal" href="#lzma.LZMAFile" title="lzma.LZMAFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">LZMAFile</span></code></a> is <em>not</em> thread-safe, unlike
-<a class="reference internal" href="bz2.html#bz2.BZ2File" title="bz2.BZ2File"><code class="xref py py-class docutils literal notranslate"><span class="pre">bz2.BZ2File</span></code></a>, so if you need to use a single <a class="reference internal" href="#lzma.LZMAFile" title="lzma.LZMAFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">LZMAFile</span></code></a> instance
+module. Note that <a class="reference internal" href="#lzma.LZMAFile" title="lzma.LZMAFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">LZMAFile</span></code></a> and <a class="reference internal" href="bz2.html#bz2.BZ2File" title="bz2.BZ2File"><code class="xref py py-class docutils literal notranslate"><span class="pre">bz2.BZ2File</span></code></a> are <em>not</em>
+thread-safe, so if you need to use a single <a class="reference internal" href="#lzma.LZMAFile" title="lzma.LZMAFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">LZMAFile</span></code></a> instance
 from multiple threads, it is necessary to protect it with a lock.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lzma.LZMAError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">lzma.</span></span><span class="sig-name descname"><span class="pre">LZMAError</span></span><a class="headerlink" href="#lzma.LZMAError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lzma.</span></span><span class="sig-name descname"><span class="pre">LZMAError</span></span><a class="headerlink" href="#lzma.LZMAError" title="本定義的永久連結">¶</a></dt>
 <dd><p>This exception is raised when an error occurs during compression or
 decompression, or while initializing the compressor/decompressor state.</p>
 </dd></dl>
@@ -210,16 +212,16 @@ constructor: <code class="docutils literal notranslate"><span class="pre">LZMAFi
 <a class="reference internal" href="io.html#io.TextIOWrapper" title="io.TextIOWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">io.TextIOWrapper</span></code></a> instance with the specified encoding, error
 handling behavior, and line ending(s).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;xb&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;xt&quot;</span></code> modes.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;xb&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;xt&quot;</span></code> modes.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lzma.LZMAFile">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">lzma.</span></span><span class="sig-name descname"><span class="pre">LZMAFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lzma.LZMAFile" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lzma.</span></span><span class="sig-name descname"><span class="pre">LZMAFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lzma.LZMAFile" title="本定義的永久連結">¶</a></dt>
 <dd><p>Open an LZMA-compressed file in binary mode.</p>
 <p>An <a class="reference internal" href="#lzma.LZMAFile" title="lzma.LZMAFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">LZMAFile</span></code></a> can wrap an already-open <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a>, or operate
 directly on a named file. The <em>filename</em> argument specifies either the file
@@ -261,14 +263,14 @@ file object for <em>filename</em>).</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;xb&quot;</span></code> modes.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;xb&quot;</span></code> modes.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <a class="reference internal" href="io.html#io.BufferedIOBase.read" title="io.BufferedIOBase.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> method now accepts an argument of
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <a class="reference internal" href="io.html#io.BufferedIOBase.read" title="io.BufferedIOBase.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> method now accepts an argument of
 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -277,7 +279,7 @@ file object for <em>filename</em>).</p>
 <h2>Compressing and decompressing data in memory<a class="headerlink" href="#compressing-and-decompressing-data-in-memory" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="lzma.LZMACompressor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">lzma.</span></span><span class="sig-name descname"><span class="pre">LZMACompressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FORMAT_XZ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lzma.LZMACompressor" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lzma.</span></span><span class="sig-name descname"><span class="pre">LZMACompressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FORMAT_XZ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lzma.LZMACompressor" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a compressor object, which can be used to compress data incrementally.</p>
 <p>For a more convenient way of compressing a single chunk of data, see
 <a class="reference internal" href="#lzma.compress" title="lzma.compress"><code class="xref py py-func docutils literal notranslate"><span class="pre">compress()</span></code></a>.</p>
@@ -358,7 +360,7 @@ containing any data stored in the compressor's internal buffers.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lzma.LZMADecompressor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">lzma.</span></span><span class="sig-name descname"><span class="pre">LZMADecompressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FORMAT_AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memlimit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lzma.LZMADecompressor" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lzma.</span></span><span class="sig-name descname"><span class="pre">LZMADecompressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FORMAT_AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memlimit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lzma.LZMADecompressor" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a decompressor object, which can be used to decompress data
 incrementally.</p>
 <p>For a more convenient way of decompressing an entire compressed stream at
@@ -404,7 +406,7 @@ will be set to <code class="docutils literal notranslate"><span class="pre">True
 raises an <cite>EOFError</cite>.  Any data found after the end of the
 stream is ignored and saved in the <a class="reference internal" href="#lzma.LZMADecompressor.unused_data" title="lzma.LZMADecompressor.unused_data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">unused_data</span></code></a> attribute.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added the <em>max_length</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added the <em>max_length</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -435,7 +437,7 @@ determine what integrity check it uses.</p>
 <dd><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if the <a class="reference internal" href="#lzma.LZMADecompressor.decompress" title="lzma.LZMADecompressor.decompress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">decompress()</span></code></a> method can provide more
 decompressed data before requiring new uncompressed input.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -605,8 +607,9 @@ that should be mapped to the beginning of the input data. The default is 0.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lzma</span></code> --- Compression using the LZMA algorithm</a><ul>
 <li><a class="reference internal" href="#reading-and-writing-compressed-files">Reading and writing compressed files</a></li>
 <li><a class="reference internal" href="#compressing-and-decompressing-data-in-memory">Compressing and decompressing data in memory</a></li>
@@ -617,18 +620,23 @@ that should be mapped to the beginning of the input data. The default is 0.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="bz2.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code> --- Support for <strong class="program">bzip2</strong> compression</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="zipfile.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code> --- Work with ZIP archives</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="bz2.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code> --- Support for <strong class="program">bzip2</strong> compression</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="zipfile.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code> --- Work with ZIP archives</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/lzma.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/lzma.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -663,14 +671,12 @@ that should be mapped to the beginning of the input data. The default is 0.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="archiving.html" >資料壓縮與保存</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="archiving.html" >Data Compression and Archiving</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">lzma</span></code> --- Compression using the LZMA algorithm</a></li>
                 <li class="right">
                     
@@ -689,25 +695,25 @@ that should be mapped to the beginning of the input data. The default is 0.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

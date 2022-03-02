@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>struct --- Interpret bytes as packed binary data &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>struct --- Interpret bytes as packed binary data &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Binary Data Services" href="binary.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/struct.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code> --- Interpret bytes as packed binary data</a><ul>
 <li><a class="reference internal" href="#functions-and-exceptions">Functions and Exceptions</a></li>
 <li><a class="reference internal" href="#format-strings">Format Strings</a><ul>
@@ -87,18 +86,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="binary.html"
-                        title="上一章">Binary Data Services</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="codecs.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code> --- Codec registry and base classes</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="binary.html"
+                          title="上一章">Binary Data Services</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="codecs.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code> --- Codec registry and base classes</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/struct.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/struct.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -134,13 +138,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="binary.html" accesskey="U">Binary Data Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code> --- Interpret bytes as packed binary data</a></li>
                 <li class="right">
@@ -167,7 +169,7 @@
             
   <section id="module-struct">
 <span id="struct-interpret-bytes-as-packed-binary-data"></span><h1><a class="reference internal" href="#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> --- Interpret bytes as packed binary data<a class="headerlink" href="#module-struct" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/struct.py">Lib/struct.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/struct.py">Lib/struct.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>This module performs conversions between Python values and C structs represented
 as Python <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> objects.  This can be used in handling binary data
@@ -195,14 +197,14 @@ they can be read/filled without additional copying from a <a class="reference in
 <p>The module defines the following exception and functions:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="struct.error">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#struct.error" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#struct.error" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised on various occasions; argument is a string describing what
 is wrong.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="struct.pack">
-<span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">format</span></em>, <em class="sig-param"><span class="pre">v1</span></em>, <em class="sig-param"><span class="pre">v2</span></em>, <em class="sig-param"><span class="pre">...</span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.pack" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.pack" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a bytes object containing the values <em>v1</em>, <em>v2</em>, ... packed according
 to the format string <em>format</em>.  The arguments must match the values required by
 the format exactly.</p>
@@ -210,7 +212,7 @@ the format exactly.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="struct.pack_into">
-<span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">pack_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">format</span></em>, <em class="sig-param"><span class="pre">buffer</span></em>, <em class="sig-param"><span class="pre">offset</span></em>, <em class="sig-param"><span class="pre">v1</span></em>, <em class="sig-param"><span class="pre">v2</span></em>, <em class="sig-param"><span class="pre">...</span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.pack_into" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">pack_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.pack_into" title="本定義的永久連結">¶</a></dt>
 <dd><p>Pack the values <em>v1</em>, <em>v2</em>, ... according to the format string <em>format</em> and
 write the packed bytes into the writable buffer <em>buffer</em> starting at
 position <em>offset</em>.  Note that <em>offset</em> is a required argument.</p>
@@ -244,7 +246,7 @@ consumed.  The buffer's size in bytes must be a multiple of the size
 required by the format, as reflected by <a class="reference internal" href="#struct.calcsize" title="struct.calcsize"><code class="xref py py-func docutils literal notranslate"><span class="pre">calcsize()</span></code></a>.</p>
 <p>Each iteration yields a tuple as specified by the format string.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -328,7 +330,7 @@ the size and alignment of the latter is standardized.</p>
 as defined in <a class="reference external" href="https://tools.ietf.org/html/rfc1700">IETF RFC 1700</a>.</p>
 <p>There is no way to indicate non-native byte order (force byte-swapping); use the
 appropriate choice of <code class="docutils literal notranslate"><span class="pre">'&lt;'</span></code> or <code class="docutils literal notranslate"><span class="pre">'&gt;'</span></code>.</p>
-<p>註解：</p>
+<p>Notes:</p>
 <ol class="arabic simple">
 <li><p>Padding is only automatically added between successive structure members.
 No padding is added at the beginning or the end of the encoded struct.</p></li>
@@ -360,7 +362,7 @@ platform-dependent.</p>
 <th class="head"><p>C Type</p></th>
 <th class="head"><p>Python type</p></th>
 <th class="head"><p>Standard size</p></th>
-<th class="head"><p>註解</p></th>
+<th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
@@ -377,13 +379,13 @@ platform-dependent.</p>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">b</span></code></p></td>
-<td><p><span class="xref c c-texpr"><span class="kt">signed char</span></span></p></td>
+<td><p><span class="xref c c-texpr"><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span></span></p></td>
 <td><p>integer</p></td>
 <td><p>1</p></td>
 <td><p>(1), (2)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></td>
-<td><p><span class="xref c c-texpr"><span class="kt">unsigned char</span></span></p></td>
+<td><p><span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span></span></p></td>
 <td><p>integer</p></td>
 <td><p>1</p></td>
 <td><p>(2)</p></td>
@@ -401,7 +403,7 @@ platform-dependent.</p>
 <td><p>(2)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">H</span></code></p></td>
-<td><p><span class="xref c c-texpr"><span class="kt">unsigned short</span></span></p></td>
+<td><p><span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span></span></p></td>
 <td><p>integer</p></td>
 <td><p>2</p></td>
 <td><p>(2)</p></td>
@@ -413,7 +415,7 @@ platform-dependent.</p>
 <td><p>(2)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">I</span></code></p></td>
-<td><p><span class="xref c c-texpr"><span class="kt">unsigned int</span></span></p></td>
+<td><p><span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span></span></p></td>
 <td><p>integer</p></td>
 <td><p>4</p></td>
 <td><p>(2)</p></td>
@@ -425,19 +427,19 @@ platform-dependent.</p>
 <td><p>(2)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">L</span></code></p></td>
-<td><p><span class="xref c c-texpr"><span class="kt">unsigned long</span></span></p></td>
+<td><p><span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span></span></p></td>
 <td><p>integer</p></td>
 <td><p>4</p></td>
 <td><p>(2)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">q</span></code></p></td>
-<td><p><span class="xref c c-texpr"><span class="kt">long long</span></span></p></td>
+<td><p><span class="xref c c-texpr"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></span></p></td>
 <td><p>integer</p></td>
 <td><p>8</p></td>
 <td><p>(2)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Q</span></code></p></td>
-<td><p><span class="xref c c-texpr"><span class="kt">unsigned long long</span></span></p></td>
+<td><p><span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></span></p></td>
 <td><p>integer</p></td>
 <td><p>8</p></td>
 <td><p>(2)</p></td>
@@ -493,12 +495,12 @@ platform-dependent.</p>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">'n'</span></code> and <code class="docutils literal notranslate"><span class="pre">'N'</span></code> formats.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">'n'</span></code> and <code class="docutils literal notranslate"><span class="pre">'N'</span></code> formats.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">'e'</span></code> format.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added support for the <code class="docutils literal notranslate"><span class="pre">'e'</span></code> format.</p>
 </div>
-<p>註解：</p>
+<p>Notes:</p>
 <ol class="arabic">
 <li><p id="index-2">The <code class="docutils literal notranslate"><span class="pre">'?'</span></code> conversion code corresponds to the <span class="xref c c-texpr"><span class="kt">_Bool</span></span> type defined by
 C99. If this type is not available, it is simulated using a <span class="xref c c-texpr"><span class="kt">char</span></span>. In
@@ -508,7 +510,7 @@ standard mode, it is always represented by one byte.</p>
 codes, if the non-integer has a <code class="xref py py-meth docutils literal notranslate"><span class="pre">__index__()</span></code> method then that method is
 called to convert the argument to an integer before packing.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Added use of the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__index__()</span></code> method for non-integers.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Added use of the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__index__()</span></code> method for non-integers.</p>
 </div>
 </li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">'n'</span></code> and <code class="docutils literal notranslate"><span class="pre">'N'</span></code> conversion codes are only available for the native
@@ -550,7 +552,7 @@ of bytes.  As a special case, <code class="docutils literal notranslate"><span c
 <code class="docutils literal notranslate"><span class="pre">'q'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Q'</span></code>), if <code class="docutils literal notranslate"><span class="pre">x</span></code> is outside the valid range for that format
 then <a class="reference internal" href="#struct.error" title="struct.error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">struct.error</span></code></a> is raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Previously, some of the integer formats wrapped out-of-range values and
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Previously, some of the integer formats wrapped out-of-range values and
 raised <a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> instead of <a class="reference internal" href="#struct.error" title="struct.error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">struct.error</span></code></a>.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">'p'</span></code> format character encodes a &quot;Pascal string&quot;, meaning a short
@@ -621,7 +623,7 @@ alignment does not enforce any alignment.</p>
 <dl class="simple">
 <dt>Module <a class="reference internal" href="array.html#module-array" title="array: Space efficient arrays of uniformly typed numeric values."><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code></a></dt><dd><p>Packed binary storage of homogeneous data.</p>
 </dd>
-<dt>模組 <a class="reference internal" href="xdrlib.html#module-xdrlib" title="xdrlib: Encoders and decoders for the External Data Representation (XDR)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code></a></dt><dd><p>Packing and unpacking of XDR data.</p>
+<dt>Module <a class="reference internal" href="xdrlib.html#module-xdrlib" title="xdrlib: Encoders and decoders for the External Data Representation (XDR)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code></a></dt><dd><p>Packing and unpacking of XDR data.</p>
 </dd>
 </dl>
 </div>
@@ -632,7 +634,7 @@ alignment does not enforce any alignment.</p>
 <p>The <a class="reference internal" href="#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> module also defines the following type:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="struct.Struct">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.Struct" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">struct.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.Struct" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a new Struct object which writes and reads binary data according to
 the format string <em>format</em>.  Creating a Struct object once and calling its
 methods is more efficient than calling the <a class="reference internal" href="#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> functions with the
@@ -647,14 +649,14 @@ that use only a few format strings needn't worry about reusing a single
 <p>Compiled Struct objects support the following methods and attributes:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="struct.Struct.pack">
-<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">v1</span></em>, <em class="sig-param"><span class="pre">v2</span></em>, <em class="sig-param"><span class="pre">...</span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.Struct.pack" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.Struct.pack" title="本定義的永久連結">¶</a></dt>
 <dd><p>Identical to the <a class="reference internal" href="#struct.pack" title="struct.pack"><code class="xref py py-func docutils literal notranslate"><span class="pre">pack()</span></code></a> function, using the compiled format.
 (<code class="docutils literal notranslate"><span class="pre">len(result)</span></code> will equal <a class="reference internal" href="#struct.Struct.size" title="struct.Struct.size"><code class="xref py py-attr docutils literal notranslate"><span class="pre">size</span></code></a>.)</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="struct.Struct.pack_into">
-<span class="sig-name descname"><span class="pre">pack_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">buffer</span></em>, <em class="sig-param"><span class="pre">offset</span></em>, <em class="sig-param"><span class="pre">v1</span></em>, <em class="sig-param"><span class="pre">v2</span></em>, <em class="sig-param"><span class="pre">...</span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.Struct.pack_into" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pack_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#struct.Struct.pack_into" title="本定義的永久連結">¶</a></dt>
 <dd><p>Identical to the <a class="reference internal" href="#struct.pack_into" title="struct.pack_into"><code class="xref py py-func docutils literal notranslate"><span class="pre">pack_into()</span></code></a> function, using the compiled format.</p>
 </dd></dl>
 
@@ -679,7 +681,7 @@ The buffer's size in bytes, starting at position <em>offset</em>, must be at lea
 <dd><p>Identical to the <a class="reference internal" href="#struct.iter_unpack" title="struct.iter_unpack"><code class="xref py py-func docutils literal notranslate"><span class="pre">iter_unpack()</span></code></a> function, using the compiled format.
 The buffer's size in bytes must be a multiple of <a class="reference internal" href="#struct.Struct.size" title="struct.Struct.size"><code class="xref py py-attr docutils literal notranslate"><span class="pre">size</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -688,7 +690,7 @@ The buffer's size in bytes must be a multiple of <a class="reference internal" h
 <span class="sig-name descname"><span class="pre">format</span></span><a class="headerlink" href="#struct.Struct.format" title="本定義的永久連結">¶</a></dt>
 <dd><p>The format string used to construct this Struct object.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The format string type is now <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> instead of <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The format string type is now <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> instead of <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -711,8 +713,9 @@ by the <a class="reference internal" href="#struct.pack" title="struct.pack"><co
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code> --- Interpret bytes as packed binary data</a><ul>
 <li><a class="reference internal" href="#functions-and-exceptions">Functions and Exceptions</a></li>
 <li><a class="reference internal" href="#format-strings">Format Strings</a><ul>
@@ -726,18 +729,23 @@ by the <a class="reference internal" href="#struct.pack" title="struct.pack"><co
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="binary.html"
-                        title="上一章">Binary Data Services</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="codecs.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code> --- Codec registry and base classes</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="binary.html"
+                          title="上一章">Binary Data Services</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="codecs.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code> --- Codec registry and base classes</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/struct.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/struct.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -772,13 +780,11 @@ by the <a class="reference internal" href="#struct.pack" title="struct.pack"><co
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="binary.html" >Binary Data Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code> --- Interpret bytes as packed binary data</a></li>
                 <li class="right">
@@ -798,25 +804,25 @@ by the <a class="reference internal" href="#struct.pack" title="struct.pack"><co
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>turtle --- 龜圖學 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>turtle --- Turtle graphics &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="cmd --- Support for line-oriented command interpreters" href="cmd.html" />
-    <link rel="prev" title="程式框架" href="frameworks.html" />
+    <link rel="prev" title="Program Frameworks" href="frameworks.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/turtle.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,10 +70,11 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- 龜圖學</a><ul>
-<li><a class="reference internal" href="#introduction">介紹</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- Turtle graphics</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#overview-of-available-turtle-and-screen-methods">Overview of available Turtle and Screen methods</a><ul>
 <li><a class="reference internal" href="#turtle-methods">Turtle methods</a></li>
 <li><a class="reference internal" href="#methods-of-turtlescreen-screen">Methods of TurtleScreen/Screen</a></li>
@@ -125,18 +124,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="frameworks.html"
-                        title="上一章">程式框架</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="cmd.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmd</span></code> --- Support for line-oriented command interpreters</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="frameworks.html"
+                          title="上一章">Program Frameworks</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="cmd.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmd</span></code> --- Support for line-oriented command interpreters</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/turtle.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/turtle.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -160,7 +164,7 @@
           <a href="cmd.html" title="cmd --- Support for line-oriented command interpreters"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="frameworks.html" title="程式框架"
+          <a href="frameworks.html" title="Program Frameworks"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -172,15 +176,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="frameworks.html" accesskey="U">程式框架</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- 龜圖學</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="frameworks.html" accesskey="U">Program Frameworks</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- Turtle graphics</a></li>
                 <li class="right">
                     
 
@@ -204,18 +206,22 @@
           <div class="body" role="main">
             
   <section id="module-turtle">
-<span id="turtle-turtle-graphics"></span><h1><a class="reference internal" href="#module-turtle" title="turtle: An educational framework for simple graphics applications"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code></a> --- 龜圖學<a class="headerlink" href="#module-turtle" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/turtle.py">Lib/turtle.py</a></p>
+<span id="turtle-turtle-graphics"></span><h1><a class="reference internal" href="#module-turtle" title="turtle: An educational framework for simple graphics applications"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code></a> --- Turtle graphics<a class="headerlink" href="#module-turtle" title="本標題的永久連結">¶</a></h1>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/turtle.py">Lib/turtle.py</a></p>
 <hr class="docutils" />
 <section id="introduction">
-<h2>介紹<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
 <p>Turtle graphics is a popular way for introducing programming to kids.  It was
 part of the original Logo programming language developed by Wally Feurzeig,
 Seymour Papert and Cynthia Solomon in 1967.</p>
-<p>想像一下，一隻機器龜在 x-y 平面上從 (0, 0) 出發。在 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle</span></code> 之後，給它命令 <code class="docutils literal notranslate"><span class="pre">turtle.forward(15)</span></code> ，然後它就會移動 (在螢幕上！) 15 個單位像素，方向是朝著其正面對的方向。給它命令 <code class="docutils literal notranslate"><span class="pre">turtle.right(25)</span></code> ，它就會在原地順時針旋轉 25 度。</p>
+<p>Imagine a robotic turtle starting at (0, 0) in the x-y plane.  After an <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle</span></code>, give it the
+command <code class="docutils literal notranslate"><span class="pre">turtle.forward(15)</span></code>, and it moves (on-screen!) 15 pixels in the
+direction it is facing, drawing a line as it moves.  Give it the command
+<code class="docutils literal notranslate"><span class="pre">turtle.right(25)</span></code>, and it rotates in-place 25 degrees clockwise.</p>
 <aside class="sidebar">
 <p class="sidebar-title">Turtle star</p>
-<p>龜可以使用重複簡單動作之程式來畫出複雜的形狀。</p>
+<p>Turtle can draw intricate shapes using programs that repeat simple
+moves.</p>
 <img alt="../_images/turtle-star.png" class="align-center" src="../_images/turtle-star.png" />
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
@@ -230,7 +236,8 @@ Seymour Papert and Cynthia Solomon in 1967.</p>
 </pre></div>
 </div>
 </aside>
-<p>藉由結合這些類似的命令，複雜的形狀和圖形可以輕易被畫出來。</p>
+<p>By combining together these and similar commands, intricate shapes and pictures
+can easily be drawn.</p>
 <p>The <a class="reference internal" href="#module-turtle" title="turtle: An educational framework for simple graphics applications"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code></a> module is an extended reimplementation of the same-named
 module from the Python standard distribution up to version Python 2.5.</p>
 <p>It tries to keep the merits of the old turtle module and to be (nearly) 100%
@@ -1511,7 +1518,7 @@ regardless of its current tilt-angle.  <em>Do not</em> change the turtle's headi
 </pre></div>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.1 版後已棄用.</span></p>
+<p><span class="versionmodified deprecated">在 3.1 版本開始棄用.</span></p>
 </div>
 </dd></dl>
 
@@ -2408,9 +2415,9 @@ graphics window</p>
 <h2>Public classes<a class="headerlink" href="#public-classes" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="turtle.RawTurtle">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">RawTurtle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.RawTurtle" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">RawTurtle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.RawTurtle" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py" id="turtle.RawPen">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">RawPen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.RawPen" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">RawPen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">canvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.RawPen" title="本定義的永久連結">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">參數</dt>
 <dd class="field-odd"><p><strong>canvas</strong> -- a <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Canvas</span></code>, a <a class="reference internal" href="#turtle.ScrolledCanvas" title="turtle.ScrolledCanvas"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrolledCanvas</span></code></a> or a
@@ -2423,14 +2430,14 @@ Turtle/RawTurtle&quot;.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="turtle.Turtle">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">Turtle</span></span><a class="headerlink" href="#turtle.Turtle" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">Turtle</span></span><a class="headerlink" href="#turtle.Turtle" title="本定義的永久連結">¶</a></dt>
 <dd><p>Subclass of RawTurtle, has the same interface but draws on a default
 <a class="reference internal" href="#turtle.Screen" title="turtle.Screen"><code class="xref py py-class docutils literal notranslate"><span class="pre">Screen</span></code></a> object created automatically when needed for the first time.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="turtle.TurtleScreen">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">TurtleScreen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.TurtleScreen" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">TurtleScreen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.TurtleScreen" title="本定義的永久連結">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">參數</dt>
 <dd class="field-odd"><p><strong>cv</strong> -- a <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Canvas</span></code></p>
@@ -2442,13 +2449,13 @@ above.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="turtle.Screen">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">Screen</span></span><a class="headerlink" href="#turtle.Screen" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">Screen</span></span><a class="headerlink" href="#turtle.Screen" title="本定義的永久連結">¶</a></dt>
 <dd><p>Subclass of TurtleScreen, with <a class="reference internal" href="#screenspecific"><span class="std std-ref">four methods added</span></a>.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="turtle.ScrolledCanvas">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">ScrolledCanvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.ScrolledCanvas" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">ScrolledCanvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.ScrolledCanvas" title="本定義的永久連結">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">參數</dt>
 <dd class="field-odd"><p><strong>master</strong> -- some Tkinter widget to contain the ScrolledCanvas, i.e.
@@ -2461,7 +2468,7 @@ playground for the turtles.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="turtle.Shape">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">Shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.Shape" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">Shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.Shape" title="本定義的永久連結">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">參數</dt>
 <dd class="field-odd"><p><strong>type_</strong> -- one of the strings &quot;polygon&quot;, &quot;image&quot;, &quot;compound&quot;</p>
@@ -2518,7 +2525,7 @@ specification:</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="turtle.Vec2D">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">Vec2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.Vec2D" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turtle.</span></span><span class="sig-name descname"><span class="pre">Vec2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turtle.Vec2D" title="本定義的永久連結">¶</a></dt>
 <dd><p>A two-dimensional vector class, used as a helper class for implementing
 turtle graphics.  May be useful for turtle graphics programs too.  Derived
 from tuple, so a vector is a tuple!</p>
@@ -2736,7 +2743,7 @@ and use such files.</p></li>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>描述</p></th>
+<th class="head"><p>Description</p></th>
 <th class="head"><p>Features</p></th>
 </tr>
 </thead>
@@ -2902,10 +2909,11 @@ have been added to the <code class="file docutils literal notranslate"><span cla
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- 龜圖學</a><ul>
-<li><a class="reference internal" href="#introduction">介紹</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- Turtle graphics</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#overview-of-available-turtle-and-screen-methods">Overview of available Turtle and Screen methods</a><ul>
 <li><a class="reference internal" href="#turtle-methods">Turtle methods</a></li>
 <li><a class="reference internal" href="#methods-of-turtlescreen-screen">Methods of TurtleScreen/Screen</a></li>
@@ -2955,18 +2963,23 @@ have been added to the <code class="file docutils literal notranslate"><span cla
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="frameworks.html"
-                        title="上一章">程式框架</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="cmd.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmd</span></code> --- Support for line-oriented command interpreters</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="frameworks.html"
+                          title="上一章">Program Frameworks</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="cmd.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmd</span></code> --- Support for line-oriented command interpreters</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/turtle.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/turtle.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2989,7 +3002,7 @@ have been added to the <code class="file docutils literal notranslate"><span cla
           <a href="cmd.html" title="cmd --- Support for line-oriented command interpreters"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="frameworks.html" title="程式框架"
+          <a href="frameworks.html" title="Program Frameworks"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -3001,15 +3014,13 @@ have been added to the <code class="file docutils literal notranslate"><span cla
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="frameworks.html" >程式框架</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- 龜圖學</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="frameworks.html" >Program Frameworks</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- Turtle graphics</a></li>
                 <li class="right">
                     
 
@@ -3027,25 +3038,25 @@ have been added to the <code class="file docutils literal notranslate"><span cla
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

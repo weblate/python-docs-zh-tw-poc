@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>tracemalloc --- Trace memory allocations &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tracemalloc --- Trace memory allocations &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="軟體封裝與發布" href="distribution.html" />
+    <link rel="next" title="Software Packaging and Distribution" href="distribution.html" />
     <link rel="prev" title="trace --- Trace or track Python statement execution" href="trace.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/tracemalloc.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tracemalloc</span></code> --- Trace memory allocations</a><ul>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
 <li><a class="reference internal" href="#display-the-top-10">Display the top 10</a></li>
@@ -101,18 +100,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="trace.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">trace</span></code> --- Trace or track Python statement execution</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="distribution.html"
-                        title="下一章">軟體封裝與發布</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="trace.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">trace</span></code> --- Trace or track Python statement execution</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="distribution.html"
+                          title="下一章">Software Packaging and Distribution</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/tracemalloc.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/tracemalloc.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -133,7 +137,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="distribution.html" title="軟體封裝與發布"
+          <a href="distribution.html" title="Software Packaging and Distribution"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="trace.html" title="trace --- Trace or track Python statement execution"
@@ -148,13 +152,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="debug.html" accesskey="U">Debugging and Profiling</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">tracemalloc</span></code> --- Trace memory allocations</a></li>
                 <li class="right">
@@ -182,9 +184,9 @@
   <section id="module-tracemalloc">
 <span id="tracemalloc-trace-memory-allocations"></span><h1><a class="reference internal" href="#module-tracemalloc" title="tracemalloc: Trace memory allocations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tracemalloc</span></code></a> --- Trace memory allocations<a class="headerlink" href="#module-tracemalloc" title="本標題的永久連結">¶</a></h1>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/tracemalloc.py">Lib/tracemalloc.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/tracemalloc.py">Lib/tracemalloc.py</a></p>
 <hr class="docutils" />
 <p>The tracemalloc module is a debug tool to trace memory blocks allocated by
 Python. It provides the following information:</p>
@@ -503,7 +505,7 @@ clear any traces, unlike <a class="reference internal" href="#tracemalloc.clear_
 meaningfully compared to snapshots taken after the call.</p>
 <p>See also <a class="reference internal" href="#tracemalloc.get_traced_memory" title="tracemalloc.get_traced_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_traced_memory()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -525,7 +527,7 @@ allocations, <code class="docutils literal notranslate"><span class="pre">False<
 
 <dl class="py function">
 <dt class="sig sig-object py" id="tracemalloc.start">
-<span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nframe</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#int" title="int"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.start" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nframe</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#int" title="int"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.start" title="本定義的永久連結">¶</a></dt>
 <dd><p>Start tracing Python memory allocations: install hooks on Python memory
 allocators. Collected tracebacks of traces will be limited to <em>nframe</em>
 frames. By default, a trace of a memory block only stores the most recent
@@ -576,10 +578,10 @@ snapshot, see the <a class="reference internal" href="#tracemalloc.start" title=
 <h3>DomainFilter<a class="headerlink" href="#domainfilter" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="tracemalloc.DomainFilter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">DomainFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inclusive</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#int" title="int"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.DomainFilter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">DomainFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inclusive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#int" title="int"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.DomainFilter" title="本定義的永久連結">¶</a></dt>
 <dd><p>Filter traces of memory blocks by their address space (domain).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tracemalloc.DomainFilter.inclusive">
@@ -603,7 +605,7 @@ in the address space <a class="reference internal" href="#tracemalloc.DomainFilt
 <h3>Filter<a class="headerlink" href="#filter" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="tracemalloc.Filter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inclusive</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_pattern</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="stdtypes.html#str" title="str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#int" title="int"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_frames</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#int" title="int"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Filter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inclusive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stdtypes.html#str" title="str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#int" title="int"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_frames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#int" title="int"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Filter" title="本定義的永久連結">¶</a></dt>
 <dd><p>Filter on traces of memory blocks.</p>
 <p>See the <a class="reference internal" href="fnmatch.html#fnmatch.fnmatch" title="fnmatch.fnmatch"><code class="xref py py-func docutils literal notranslate"><span class="pre">fnmatch.fnmatch()</span></code></a> function for the syntax of
 <em>filename_pattern</em>. The <code class="docutils literal notranslate"><span class="pre">'.pyc'</span></code> file extension is
@@ -617,10 +619,10 @@ replaced with <code class="docutils literal notranslate"><span class="pre">'.py'
 <li><p><code class="docutils literal notranslate"><span class="pre">Filter(False,</span> <span class="pre">&quot;&lt;unknown&gt;&quot;)</span></code> excludes empty tracebacks</p></li>
 </ul>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <code class="docutils literal notranslate"><span class="pre">'.pyo'</span></code> file extension is no longer replaced with <code class="docutils literal notranslate"><span class="pre">'.py'</span></code>.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">'.pyo'</span></code> file extension is no longer replaced with <code class="docutils literal notranslate"><span class="pre">'.py'</span></code>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added the <a class="reference internal" href="#tracemalloc.Filter.domain" title="tracemalloc.Filter.domain"><code class="xref py py-attr docutils literal notranslate"><span class="pre">domain</span></code></a> attribute.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added the <a class="reference internal" href="#tracemalloc.Filter.domain" title="tracemalloc.Filter.domain"><code class="xref py py-attr docutils literal notranslate"><span class="pre">domain</span></code></a> attribute.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tracemalloc.Filter.domain">
@@ -671,7 +673,7 @@ attribute.</p>
 <h3>Frame<a class="headerlink" href="#frame" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="tracemalloc.Frame">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Frame</span></span><a class="headerlink" href="#tracemalloc.Frame" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Frame</span></span><a class="headerlink" href="#tracemalloc.Frame" title="本定義的永久連結">¶</a></dt>
 <dd><p>Frame of a traceback.</p>
 <p>The <a class="reference internal" href="#tracemalloc.Traceback" title="tracemalloc.Traceback"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traceback</span></code></a> class is a sequence of <a class="reference internal" href="#tracemalloc.Frame" title="tracemalloc.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></a> instances.</p>
 <dl class="py attribute">
@@ -693,12 +695,12 @@ attribute.</p>
 <h3>Snapshot<a class="headerlink" href="#snapshot" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="tracemalloc.Snapshot">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Snapshot</span></span><a class="headerlink" href="#tracemalloc.Snapshot" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Snapshot</span></span><a class="headerlink" href="#tracemalloc.Snapshot" title="本定義的永久連結">¶</a></dt>
 <dd><p>Snapshot of traces of memory blocks allocated by Python.</p>
 <p>The <a class="reference internal" href="#tracemalloc.take_snapshot" title="tracemalloc.take_snapshot"><code class="xref py py-func docutils literal notranslate"><span class="pre">take_snapshot()</span></code></a> function creates a snapshot instance.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tracemalloc.Snapshot.compare_to">
-<span class="sig-name descname"><span class="pre">compare_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_snapshot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#tracemalloc.Snapshot" title="tracemalloc.Snapshot"><span class="pre">Snapshot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="stdtypes.html#str" title="str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cumulative</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Snapshot.compare_to" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">compare_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_snapshot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#tracemalloc.Snapshot" title="tracemalloc.Snapshot"><span class="pre">Snapshot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stdtypes.html#str" title="str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cumulative</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Snapshot.compare_to" title="本定義的永久連結">¶</a></dt>
 <dd><p>Compute the differences with an old snapshot. Get statistics as a sorted
 list of <a class="reference internal" href="#tracemalloc.StatisticDiff" title="tracemalloc.StatisticDiff"><code class="xref py py-class docutils literal notranslate"><span class="pre">StatisticDiff</span></code></a> instances grouped by <em>key_type</em>.</p>
 <p>See the <a class="reference internal" href="#tracemalloc.Snapshot.statistics" title="tracemalloc.Snapshot.statistics"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Snapshot.statistics()</span></code></a> method for <em>key_type</em> and <em>cumulative</em>
@@ -727,20 +729,20 @@ sequence, <em>filters</em> is a list of <a class="reference internal" href="#tra
 inclusive filters match it. A trace is ignored if at least one exclusive
 filter matches it.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><a class="reference internal" href="#tracemalloc.DomainFilter" title="tracemalloc.DomainFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DomainFilter</span></code></a> instances are now also accepted in <em>filters</em>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><a class="reference internal" href="#tracemalloc.DomainFilter" title="tracemalloc.DomainFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DomainFilter</span></code></a> instances are now also accepted in <em>filters</em>.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tracemalloc.Snapshot.load">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Snapshot.load" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Snapshot.load" title="本定義的永久連結">¶</a></dt>
 <dd><p>Load a snapshot from a file.</p>
 <p>See also <a class="reference internal" href="#tracemalloc.Snapshot.dump" title="tracemalloc.Snapshot.dump"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dump()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tracemalloc.Snapshot.statistics">
-<span class="sig-name descname"><span class="pre">statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="stdtypes.html#str" title="str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cumulative</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Snapshot.statistics" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stdtypes.html#str" title="str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cumulative</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="functions.html#bool" title="bool"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Snapshot.statistics" title="本定義的永久連結">¶</a></dt>
 <dd><p>Get statistics as a sorted list of <a class="reference internal" href="#tracemalloc.Statistic" title="tracemalloc.Statistic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Statistic</span></code></a> instances grouped
 by <em>key_type</em>:</p>
 <table class="docutils align-default">
@@ -797,7 +799,7 @@ method to get a sorted list of statistics.</p>
 <h3>Statistic<a class="headerlink" href="#statistic" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="tracemalloc.Statistic">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Statistic</span></span><a class="headerlink" href="#tracemalloc.Statistic" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Statistic</span></span><a class="headerlink" href="#tracemalloc.Statistic" title="本定義的永久連結">¶</a></dt>
 <dd><p>Statistic on memory allocations.</p>
 <p><a class="reference internal" href="#tracemalloc.Snapshot.statistics" title="tracemalloc.Snapshot.statistics"><code class="xref py py-func docutils literal notranslate"><span class="pre">Snapshot.statistics()</span></code></a> returns a list of <a class="reference internal" href="#tracemalloc.Statistic" title="tracemalloc.Statistic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Statistic</span></code></a> instances.</p>
 <p>See also the <a class="reference internal" href="#tracemalloc.StatisticDiff" title="tracemalloc.StatisticDiff"><code class="xref py py-class docutils literal notranslate"><span class="pre">StatisticDiff</span></code></a> class.</p>
@@ -827,7 +829,7 @@ instance.</p>
 <h3>StatisticDiff<a class="headerlink" href="#statisticdiff" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="tracemalloc.StatisticDiff">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">StatisticDiff</span></span><a class="headerlink" href="#tracemalloc.StatisticDiff" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">StatisticDiff</span></span><a class="headerlink" href="#tracemalloc.StatisticDiff" title="本定義的永久連結">¶</a></dt>
 <dd><p>Statistic difference on memory allocations between an old and a new
 <a class="reference internal" href="#tracemalloc.Snapshot" title="tracemalloc.Snapshot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Snapshot</span></code></a> instance.</p>
 <p><a class="reference internal" href="#tracemalloc.Snapshot.compare_to" title="tracemalloc.Snapshot.compare_to"><code class="xref py py-func docutils literal notranslate"><span class="pre">Snapshot.compare_to()</span></code></a> returns a list of <a class="reference internal" href="#tracemalloc.StatisticDiff" title="tracemalloc.StatisticDiff"><code class="xref py py-class docutils literal notranslate"><span class="pre">StatisticDiff</span></code></a>
@@ -876,12 +878,12 @@ instance.</p>
 <h3>Trace<a class="headerlink" href="#trace" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="tracemalloc.Trace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Trace</span></span><a class="headerlink" href="#tracemalloc.Trace" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Trace</span></span><a class="headerlink" href="#tracemalloc.Trace" title="本定義的永久連結">¶</a></dt>
 <dd><p>Trace of a memory block.</p>
 <p>The <a class="reference internal" href="#tracemalloc.Snapshot.traces" title="tracemalloc.Snapshot.traces"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Snapshot.traces</span></code></a> attribute is a sequence of <a class="reference internal" href="#tracemalloc.Trace" title="tracemalloc.Trace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trace</span></code></a>
 instances.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added the <a class="reference internal" href="#tracemalloc.Trace.domain" title="tracemalloc.Trace.domain"><code class="xref py py-attr docutils literal notranslate"><span class="pre">domain</span></code></a> attribute.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added the <a class="reference internal" href="#tracemalloc.Trace.domain" title="tracemalloc.Trace.domain"><code class="xref py py-attr docutils literal notranslate"><span class="pre">domain</span></code></a> attribute.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tracemalloc.Trace.domain">
@@ -911,7 +913,7 @@ instance.</p>
 <h3>Traceback<a class="headerlink" href="#traceback" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="tracemalloc.Traceback">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Traceback</span></span><a class="headerlink" href="#tracemalloc.Traceback" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tracemalloc.</span></span><span class="sig-name descname"><span class="pre">Traceback</span></span><a class="headerlink" href="#tracemalloc.Traceback" title="本定義的永久連結">¶</a></dt>
 <dd><p>Sequence of <a class="reference internal" href="#tracemalloc.Frame" title="tracemalloc.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></a> instances sorted from the oldest frame to the
 most recent frame.</p>
 <p>A traceback contains at least <code class="docutils literal notranslate"><span class="pre">1</span></code> frame. If the <code class="docutils literal notranslate"><span class="pre">tracemalloc</span></code> module
@@ -925,7 +927,7 @@ has been truncated by the traceback limit.</p>
 <p>The <a class="reference internal" href="#tracemalloc.Trace.traceback" title="tracemalloc.Trace.traceback"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Trace.traceback</span></code></a> attribute is an instance of <a class="reference internal" href="#tracemalloc.Traceback" title="tracemalloc.Traceback"><code class="xref py py-class docutils literal notranslate"><span class="pre">Traceback</span></code></a>
 instance.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Frames are now sorted from the oldest to the most recent, instead of most recent to oldest.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Frames are now sorted from the oldest to the most recent, instead of most recent to oldest.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tracemalloc.Traceback.total_nframe">
@@ -936,17 +938,17 @@ available.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>The <a class="reference internal" href="#tracemalloc.Traceback.total_nframe" title="tracemalloc.Traceback.total_nframe"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Traceback.total_nframe</span></code></a> attribute was added.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>The <a class="reference internal" href="#tracemalloc.Traceback.total_nframe" title="tracemalloc.Traceback.total_nframe"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Traceback.total_nframe</span></code></a> attribute was added.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="tracemalloc.Traceback.format">
 <span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">most_recent_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tracemalloc.Traceback.format" title="本定義的永久連結">¶</a></dt>
-<dd><p>Format the traceback as a list of lines with newlines. Use the
-<a class="reference internal" href="linecache.html#module-linecache" title="linecache: Provides random access to individual lines from text files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">linecache</span></code></a> module to retrieve lines from the source code.
-If <em>limit</em> is set, format the <em>limit</em> most recent frames if <em>limit</em>
-is positive. Otherwise, format the <code class="docutils literal notranslate"><span class="pre">abs(limit)</span></code> oldest frames.
-If <em>most_recent_first</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the order of the formatted frames
-is reversed, returning the most recent frame first instead of last.</p>
+<dd><p>Format the traceback as a list of lines. Use the <a class="reference internal" href="linecache.html#module-linecache" title="linecache: Provides random access to individual lines from text files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">linecache</span></code></a> module to
+retrieve lines from the source code. If <em>limit</em> is set, format the <em>limit</em>
+most recent frames if <em>limit</em> is positive. Otherwise, format the
+<code class="docutils literal notranslate"><span class="pre">abs(limit)</span></code> oldest frames. If <em>most_recent_first</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the order
+of the formatted frames is reversed, returning the most recent frame first
+instead of last.</p>
 <p>Similar to the <a class="reference internal" href="traceback.html#traceback.format_tb" title="traceback.format_tb"><code class="xref py py-func docutils literal notranslate"><span class="pre">traceback.format_tb()</span></code></a> function, except that
 <a class="reference internal" href="#tracemalloc.Traceback.format" title="tracemalloc.Traceback.format"><code class="xref py py-meth docutils literal notranslate"><span class="pre">format()</span></code></a> does not include newlines.</p>
 <p>Example:</p>
@@ -978,8 +980,9 @@ is reversed, returning the most recent frame first instead of last.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tracemalloc</span></code> --- Trace memory allocations</a><ul>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
 <li><a class="reference internal" href="#display-the-top-10">Display the top 10</a></li>
@@ -1007,18 +1010,23 @@ is reversed, returning the most recent frame first instead of last.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="trace.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">trace</span></code> --- Trace or track Python statement execution</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="distribution.html"
-                        title="下一章">軟體封裝與發布</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="trace.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">trace</span></code> --- Trace or track Python statement execution</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="distribution.html"
+                          title="下一章">Software Packaging and Distribution</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/tracemalloc.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/tracemalloc.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1038,7 +1046,7 @@ is reversed, returning the most recent frame first instead of last.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="distribution.html" title="軟體封裝與發布"
+          <a href="distribution.html" title="Software Packaging and Distribution"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="trace.html" title="trace --- Trace or track Python statement execution"
@@ -1053,13 +1061,11 @@ is reversed, returning the most recent frame first instead of last.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="debug.html" >Debugging and Profiling</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">tracemalloc</span></code> --- Trace memory allocations</a></li>
                 <li class="right">
@@ -1079,25 +1085,25 @@ is reversed, returning the most recent frame first instead of last.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

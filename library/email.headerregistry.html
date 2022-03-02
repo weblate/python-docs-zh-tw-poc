@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>email.headerregistry: Custom Header Objects &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email.headerregistry: Custom Header Objects &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="email.errors: Exception and Defect classes" href="email.errors.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/email.headerregistry.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.errors.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.errors</span></code>: Exception and Defect classes</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.contentmanager.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.contentmanager</span></code>: Managing MIME Content</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.errors.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.errors</span></code>: Exception and Defect classes</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.contentmanager.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.contentmanager</span></code>: Managing MIME Content</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.headerregistry.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.headerregistry.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.headerregistry</span></code>: Custom Header Objects</a></li>
@@ -153,16 +153,16 @@
             
   <section id="module-email.headerregistry">
 <span id="email-headerregistry-custom-header-objects"></span><h1><a class="reference internal" href="#module-email.headerregistry" title="email.headerregistry: Automatic Parsing of headers based on the field name"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.headerregistry</span></code></a>: Custom Header Objects<a class="headerlink" href="#module-email.headerregistry" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/email/headerregistry.py">Lib/email/headerregistry.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/email/headerregistry.py">Lib/email/headerregistry.py</a></p>
 <hr class="docutils" />
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span><a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span><a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
 </div>
 <p>Headers are represented by customized subclasses of <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>.  The
 particular class used to represent a given header is determined by the
 <a class="reference internal" href="email.policy.html#email.policy.EmailPolicy.header_factory" title="email.policy.EmailPolicy.header_factory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">header_factory</span></code></a> of the <a class="reference internal" href="email.policy.html#module-email.policy" title="email.policy: Controlling the parsing and generating of messages"><code class="xref py py-mod docutils literal notranslate"><span class="pre">policy</span></code></a> in
 effect when the headers are created.  This section documents the particular
-<code class="docutils literal notranslate"><span class="pre">header_factory</span></code> implemented by the email package for handling <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a>
+<code class="docutils literal notranslate"><span class="pre">header_factory</span></code> implemented by the email package for handling <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a>
 compliant email messages, which not only provides customized header objects for
 various header types, but also provides an extension mechanism for applications
 to add their own custom header types.</p>
@@ -182,7 +182,7 @@ finally the support classes used to represent the data parsed from structured
 headers.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.BaseHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">BaseHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.BaseHeader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">BaseHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.BaseHeader" title="本定義的永久連結">¶</a></dt>
 <dd><p><em>name</em> and <em>value</em> are passed to <code class="docutils literal notranslate"><span class="pre">BaseHeader</span></code> from the
 <a class="reference internal" href="email.policy.html#email.policy.EmailPolicy.header_factory" title="email.policy.EmailPolicy.header_factory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">header_factory</span></code></a> call.  The string value of
 any header object is the <em>value</em> fully decoded to unicode.</p>
@@ -225,7 +225,7 @@ characters as required to correctly fold the header according to
 <em>policy</em>.  A <a class="reference internal" href="email.policy.html#email.policy.Policy.cte_type" title="email.policy.Policy.cte_type"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cte_type</span></code></a> of <code class="docutils literal notranslate"><span class="pre">8bit</span></code> will be
 treated as if it were <code class="docutils literal notranslate"><span class="pre">7bit</span></code>, since headers may not contain arbitrary
 binary data.  If <a class="reference internal" href="email.policy.html#email.policy.EmailPolicy.utf8" title="email.policy.EmailPolicy.utf8"><code class="xref py py-attr docutils literal notranslate"><span class="pre">utf8</span></code></a> is <code class="docutils literal notranslate"><span class="pre">False</span></code>,
-non-ASCII data will be <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> encoded.</p>
+non-ASCII data will be <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2047.html"><strong>RFC 2047</strong></a> encoded.</p>
 </dd></dl>
 
 <p><code class="docutils literal notranslate"><span class="pre">BaseHeader</span></code> by itself cannot be used to create a header object.  It
@@ -260,17 +260,17 @@ dictionary should be removed and handled, and the remaining contents of
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.UnstructuredHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">UnstructuredHeader</span></span><a class="headerlink" href="#email.headerregistry.UnstructuredHeader" title="本定義的永久連結">¶</a></dt>
-<dd><p>An &quot;unstructured&quot; header is the default type of header in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a>.
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">UnstructuredHeader</span></span><a class="headerlink" href="#email.headerregistry.UnstructuredHeader" title="本定義的永久連結">¶</a></dt>
+<dd><p>An &quot;unstructured&quot; header is the default type of header in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a>.
 Any header that does not have a specified syntax is treated as
 unstructured.  The classic example of an unstructured header is the
 <em class="mailheader">Subject</em> header.</p>
-<p>In <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a>, an unstructured header is a run of arbitrary text in the
-ASCII character set.  <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a>, however, has an <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> compatible
+<p>In <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a>, an unstructured header is a run of arbitrary text in the
+ASCII character set.  <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2047.html"><strong>RFC 2047</strong></a>, however, has an <span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> compatible
 mechanism for encoding non-ASCII text as ASCII characters within a header
 value.  When a <em>value</em> containing encoded words is passed to the
 constructor, the <code class="docutils literal notranslate"><span class="pre">UnstructuredHeader</span></code> parser converts such encoded words
-into unicode, following the <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> rules for unstructured text.  The
+into unicode, following the <span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2047.html"><strong>RFC 2047</strong></a> rules for unstructured text.  The
 parser uses heuristics to attempt to decode certain non-compliant encoded
 words.  Defects are registered in such cases, as well as defects for issues
 such as invalid characters within the encoded words or the non-encoded text.</p>
@@ -279,8 +279,8 @@ such as invalid characters within the encoded words or the non-encoded text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.DateHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">DateHeader</span></span><a class="headerlink" href="#email.headerregistry.DateHeader" title="本定義的永久連結">¶</a></dt>
-<dd><p><span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> specifies a very specific format for dates within email headers.
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">DateHeader</span></span><a class="headerlink" href="#email.headerregistry.DateHeader" title="本定義的永久連結">¶</a></dt>
+<dd><p><span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> specifies a very specific format for dates within email headers.
 The <code class="docutils literal notranslate"><span class="pre">DateHeader</span></code> parser recognizes that date format, as well as
 recognizing a number of variant forms that are sometimes found &quot;in the
 wild&quot;.</p>
@@ -300,7 +300,7 @@ offset.</p>
 </dd></dl>
 
 <p>The <code class="docutils literal notranslate"><span class="pre">decoded</span></code> value of the header is determined by formatting the
-<code class="docutils literal notranslate"><span class="pre">datetime</span></code> according to the <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> rules; that is, it is set to:</p>
+<code class="docutils literal notranslate"><span class="pre">datetime</span></code> according to the <span class="target" id="index-8"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> rules; that is, it is set to:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">email</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">format_datetime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -323,7 +323,7 @@ the current timezone offset.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.AddressHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">AddressHeader</span></span><a class="headerlink" href="#email.headerregistry.AddressHeader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">AddressHeader</span></span><a class="headerlink" href="#email.headerregistry.AddressHeader" title="本定義的永久連結">¶</a></dt>
 <dd><p>Address headers are one of the most complex structured header types.
 The <code class="docutils literal notranslate"><span class="pre">AddressHeader</span></code> class provides a generic interface to any address
 header.</p>
@@ -361,7 +361,7 @@ obtained from the <code class="docutils literal notranslate"><span class="pre">g
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.SingleAddressHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">SingleAddressHeader</span></span><a class="headerlink" href="#email.headerregistry.SingleAddressHeader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">SingleAddressHeader</span></span><a class="headerlink" href="#email.headerregistry.SingleAddressHeader" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#email.headerregistry.AddressHeader" title="email.headerregistry.AddressHeader"><code class="xref py py-class docutils literal notranslate"><span class="pre">AddressHeader</span></code></a> that adds one
 additional attribute:</p>
 <dl class="py attribute">
@@ -380,11 +380,11 @@ will result in a <a class="reference internal" href="exceptions.html#ValueError"
 variant, <a class="reference internal" href="#email.headerregistry.BaseHeader.max_count" title="email.headerregistry.BaseHeader.max_count"><code class="xref py py-attr docutils literal notranslate"><span class="pre">max_count</span></code></a> is set to 1.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.MIMEVersionHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">MIMEVersionHeader</span></span><a class="headerlink" href="#email.headerregistry.MIMEVersionHeader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">MIMEVersionHeader</span></span><a class="headerlink" href="#email.headerregistry.MIMEVersionHeader" title="本定義的永久連結">¶</a></dt>
 <dd><p>There is really only one valid value for the <em class="mailheader">MIME-Version</em>
 header, and that is <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.  For future proofing, this header class
 supports other valid version numbers.  If a version number has a valid value
-per <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a>, then the header object will have non-<code class="docutils literal notranslate"><span class="pre">None</span></code> values for
+per <span class="target" id="index-9"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a>, then the header object will have non-<code class="docutils literal notranslate"><span class="pre">None</span></code> values for
 the following attributes:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="email.headerregistry.MIMEVersionHeader.version">
@@ -409,7 +409,7 @@ removed.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.ParameterizedMIMEHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">ParameterizedMIMEHeader</span></span><a class="headerlink" href="#email.headerregistry.ParameterizedMIMEHeader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">ParameterizedMIMEHeader</span></span><a class="headerlink" href="#email.headerregistry.ParameterizedMIMEHeader" title="本定義的永久連結">¶</a></dt>
 <dd><p>MIME headers all start with the prefix 'Content-'.  Each specific header has
 a certain value, described under the class for that header.  Some can
 also take a list of supplemental parameters, which have a common format.
@@ -424,7 +424,7 @@ This class serves as a base for all the MIME headers that take parameters.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.ContentTypeHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">ContentTypeHeader</span></span><a class="headerlink" href="#email.headerregistry.ContentTypeHeader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">ContentTypeHeader</span></span><a class="headerlink" href="#email.headerregistry.ContentTypeHeader" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#email.headerregistry.ParameterizedMIMEHeader" title="email.headerregistry.ParameterizedMIMEHeader"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterizedMIMEHeader</span></code></a> class that handles the
 <em class="mailheader">Content-Type</em> header.</p>
 <dl class="py attribute">
@@ -447,7 +447,7 @@ This class serves as a base for all the MIME headers that take parameters.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.ContentDispositionHeader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">ContentDispositionHeader</span></span><a class="headerlink" href="#email.headerregistry.ContentDispositionHeader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">ContentDispositionHeader</span></span><a class="headerlink" href="#email.headerregistry.ContentDispositionHeader" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#email.headerregistry.ParameterizedMIMEHeader" title="email.headerregistry.ParameterizedMIMEHeader"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterizedMIMEHeader</span></code></a> class that handles the
 <em class="mailheader">Content-Disposition</em> header.</p>
 <dl class="py attribute">
@@ -460,20 +460,20 @@ This class serves as a base for all the MIME headers that take parameters.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.ContentTransferEncoding">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">ContentTransferEncoding</span></span><a class="headerlink" href="#email.headerregistry.ContentTransferEncoding" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">ContentTransferEncoding</span></span><a class="headerlink" href="#email.headerregistry.ContentTransferEncoding" title="本定義的永久連結">¶</a></dt>
 <dd><p>Handles the <em class="mailheader">Content-Transfer-Encoding</em> header.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="email.headerregistry.ContentTransferEncoding.cte">
 <span class="sig-name descname"><span class="pre">cte</span></span><a class="headerlink" href="#email.headerregistry.ContentTransferEncoding.cte" title="本定義的永久連結">¶</a></dt>
 <dd><p>Valid values are <code class="docutils literal notranslate"><span class="pre">7bit</span></code>, <code class="docutils literal notranslate"><span class="pre">8bit</span></code>, <code class="docutils literal notranslate"><span class="pre">base64</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">quoted-printable</span></code>.  See <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a> for more information.</p>
+<code class="docutils literal notranslate"><span class="pre">quoted-printable</span></code>.  See <span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a> for more information.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.HeaderRegistry">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">HeaderRegistry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">BaseHeader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">UnstructuredHeader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.HeaderRegistry" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">HeaderRegistry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">BaseHeader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">UnstructuredHeader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.HeaderRegistry" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is the factory used by <a class="reference internal" href="email.policy.html#email.policy.EmailPolicy" title="email.policy.EmailPolicy"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmailPolicy</span></code></a> by default.
 <code class="docutils literal notranslate"><span class="pre">HeaderRegistry</span></code> builds the class used to create a header instance
 dynamically, using <em>base_class</em> and a specialized class retrieved from a
@@ -581,18 +581,18 @@ structured headers and can, in general, be used by an application program to
 construct structured values to assign to specific headers.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.Address">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr_spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.Address" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr_spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.Address" title="本定義的永久連結">¶</a></dt>
 <dd><p>The class used to represent an email address.  The general form of an
 address is:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">display_name</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">username</span><span class="nd">@domain</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>或是：</p>
+<p>or:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">username</span><span class="nd">@domain</span>
 </pre></div>
 </div>
 <p>where each part must conform to specific syntax rules spelled out in
-<span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a>.</p>
+<span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a>.</p>
 <p>As a convenience <em>addr_spec</em> can be specified instead of <em>username</em> and
 <em>domain</em>, in which case <em>username</em> and <em>domain</em> will be parsed from the
 <em>addr_spec</em>.  An <em>addr_spec</em> must be a properly RFC quoted string; if it is
@@ -631,18 +631,18 @@ attribute is not mutable.</p>
 <dt class="sig sig-object py" id="email.headerregistry.Address.__str__">
 <span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.Address.__str__" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> value of the object is the address quoted according to
-<span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> rules, but with no Content Transfer Encoding of any non-ASCII
+<span class="target" id="index-12"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> rules, but with no Content Transfer Encoding of any non-ASCII
 characters.</p>
 </dd></dl>
 
-<p>To support SMTP (<span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>), <code class="docutils literal notranslate"><span class="pre">Address</span></code> handles one special case: if
+<p>To support SMTP (<span class="target" id="index-13"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5321.html"><strong>RFC 5321</strong></a>), <code class="docutils literal notranslate"><span class="pre">Address</span></code> handles one special case: if
 <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">domain</span></code> are both the empty string (or <code class="docutils literal notranslate"><span class="pre">None</span></code>), then
 the string value of the <code class="docutils literal notranslate"><span class="pre">Address</span></code> is <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="email.headerregistry.Group">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">Group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.Group" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">email.headerregistry.</span></span><span class="sig-name descname"><span class="pre">Group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addresses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.Group" title="本定義的永久連結">¶</a></dt>
 <dd><p>The class used to represent an address group.  The general form of an
 address group is:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_name</span><span class="p">:</span> <span class="p">[</span><span class="n">address</span><span class="o">-</span><span class="nb">list</span><span class="p">];</span>
@@ -670,7 +670,7 @@ addresses in the group.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="email.headerregistry.Group.__str__">
 <span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#email.headerregistry.Group.__str__" title="本定義的永久連結">¶</a></dt>
-<dd><p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> value of a <code class="docutils literal notranslate"><span class="pre">Group</span></code> is formatted according to <span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a>,
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> value of a <code class="docutils literal notranslate"><span class="pre">Group</span></code> is formatted according to <span class="target" id="index-14"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a>,
 but with no Content Transfer Encoding of any non-ASCII characters.  If
 <code class="docutils literal notranslate"><span class="pre">display_name</span></code> is none and there is a single <code class="docutils literal notranslate"><span class="pre">Address</span></code> in the
 <code class="docutils literal notranslate"><span class="pre">addresses</span></code> list, the <code class="docutils literal notranslate"><span class="pre">str</span></code> value will be the same as the <code class="docutils literal notranslate"><span class="pre">str</span></code> of
@@ -694,18 +694,22 @@ that single <code class="docutils literal notranslate"><span class="pre">Address
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="email.errors.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.errors</span></code>: Exception and Defect classes</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="email.contentmanager.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.contentmanager</span></code>: Managing MIME Content</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="email.errors.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.errors</span></code>: Exception and Defect classes</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="email.contentmanager.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.contentmanager</span></code>: Managing MIME Content</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/email.headerregistry.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/email.headerregistry.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -740,13 +744,11 @@ that single <code class="docutils literal notranslate"><span class="pre">Address
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="email.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code> --- An email and MIME handling package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">email.headerregistry</span></code>: Custom Header Objects</a></li>
@@ -767,25 +769,25 @@ that single <code class="docutils literal notranslate"><span class="pre">Address
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

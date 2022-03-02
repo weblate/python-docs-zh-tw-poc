@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>如何使用正規表達式 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression HOWTO &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Logging Cookbook" href="logging-cookbook.html" />
     <link rel="canonical" href="https://docs.python.org/3/howto/regex.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,10 +70,11 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">如何使用正規表達式</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Regular Expression HOWTO</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#simple-patterns">Simple Patterns</a><ul>
 <li><a class="reference internal" href="#matching-characters">Matching Characters</a></li>
 <li><a class="reference internal" href="#repeating-things">Repeating Things</a></li>
@@ -113,18 +112,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="logging-cookbook.html"
-                        title="上一章">Logging Cookbook</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="sockets.html"
-                        title="下一章">Socket Programming HOWTO</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="logging-cookbook.html"
+                          title="上一章">Logging Cookbook</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="sockets.html"
+                          title="下一章">Socket Programming HOWTO</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/regex.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/regex.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -160,14 +164,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python HOWTOs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">如何使用正規表達式</a></li>
+        <li class="nav-item nav-item-this"><a href="">Regular Expression HOWTO</a></li>
                 <li class="right">
                     
 
@@ -191,7 +193,7 @@
           <div class="body" role="main">
             
   <section id="regular-expression-howto">
-<span id="regex-howto"></span><h1>如何使用正規表達式<a class="headerlink" href="#regular-expression-howto" title="本標題的永久連結">¶</a></h1>
+<span id="regex-howto"></span><h1>Regular Expression HOWTO<a class="headerlink" href="#regular-expression-howto" title="本標題的永久連結">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><p>A.M. Kuchling &lt;<a class="reference external" href="mailto:amk&#37;&#52;&#48;amk&#46;ca">amk<span>&#64;</span>amk<span>&#46;</span>ca</a>&gt;</p>
@@ -199,11 +201,20 @@
 </dl>
 <div class="topic">
 <p class="topic-title">Abstract</p>
-<p>此文件為如何在 Python 中使用 <a class="reference internal" href="../library/re.html#module-re" title="re: Regular expression operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a> 模組來撰寫正規表達式的入門指導。進階使用及參考文件請見函式庫參考一章。</p>
+<p>This document is an introductory tutorial to using regular expressions in Python
+with the <a class="reference internal" href="../library/re.html#module-re" title="re: Regular expression operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a> module.  It provides a gentler introduction than the
+corresponding section in the Library Reference.</p>
 </div>
 <section id="introduction">
-<h2>簡介<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
-<p>正規表示式 (也稱為 REs、regexes 或 regex patterns) 是一個輕量且高專業化的程式語言。在 Python 中可透過內建的 <a class="reference internal" href="../library/re.html#module-re" title="re: Regular expression operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a>  模組直接使用。你可以使用此輕量化的語言針對想要匹配的一組字串撰寫規則，這組字串可能包含了英語句子、e-mail 地址、TeX 命令或任何東西。你可以檢查如「這組字串是否匹配這個規則？」或「這組字串中是否有任一處匹配這個規則？」。除此之外，你也可以使用 REs 來修改或是切割字串。</p>
+<h2>Introduction<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
+<p>Regular expressions (called REs, or regexes, or regex patterns) are essentially
+a tiny, highly specialized programming language embedded inside Python and made
+available through the <a class="reference internal" href="../library/re.html#module-re" title="re: Regular expression operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a> module. Using this little language, you specify
+the rules for the set of possible strings that you want to match; this set might
+contain English sentences, or e-mail addresses, or TeX commands, or anything you
+like.  You can then ask questions such as &quot;Does this string match the pattern?&quot;,
+or &quot;Is there a match for the pattern anywhere in this string?&quot;.  You can also
+use REs to modify a string or to split it apart in various ways.</p>
 <p>Regular expression patterns are compiled into a series of bytecodes which are
 then executed by a matching engine written in C.  For advanced use, it may be
 necessary to pay careful attention to how the engine will execute a given RE,
@@ -559,7 +570,7 @@ containing information about the match: where it starts and ends, the substring
 it matched, and more.</p>
 <p>You can learn about this by interactively experimenting with the <a class="reference internal" href="../library/re.html#module-re" title="re: Regular expression operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a>
 module.  If you have <a class="reference internal" href="../library/tkinter.html#module-tkinter" title="tkinter: Interface to Tcl/Tk for graphical user interfaces"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code></a> available, you may also want to look at
-<a class="reference external" href="https://github.com/python/cpython/tree/3.9/Tools/demo/redemo.py">Tools/demo/redemo.py</a>, a demonstration program included with the
+<a class="reference external" href="https://github.com/python/cpython/tree/3.10/Tools/demo/redemo.py">Tools/demo/redemo.py</a>, a demonstration program included with the
 Python distribution.  It allows you to enter REs and strings, and displays
 whether the RE matches or fails. <code class="file docutils literal notranslate"><span class="pre">redemo.py</span></code> can be quite useful when
 trying to debug a complicated RE.</p>
@@ -1251,7 +1262,7 @@ whitespace or by a fixed string.  As you'd expect, there's a module-level
 <a class="reference internal" href="../library/re.html#re.split" title="re.split"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.split()</span></code></a> function, too.</p>
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">maxsplit=0</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">maxsplit=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Split <em>string</em> by the matches of the regular expression.  If capturing
 parentheses are used in the RE, then their contents will also be returned as
 part of the resulting list.  If <em>maxsplit</em> is nonzero, at most <em>maxsplit</em> splits
@@ -1299,7 +1310,7 @@ with a different string.  The <a class="reference internal" href="../library/re.
 which can be either a string or a function, and the string to be processed.</p>
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">replacement</span></em>, <em class="sig-param"><span class="pre">string</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">count=0</span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replacement</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">count=0</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Returns the string obtained by replacing the leftmost non-overlapping
 occurrences of the RE in <em>string</em> by the replacement <em>replacement</em>.  If the
 pattern isn't found, <em>string</em> is returned unchanged.</p>
@@ -1541,10 +1552,11 @@ it out from your library.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">如何使用正規表達式</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Regular Expression HOWTO</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#simple-patterns">Simple Patterns</a><ul>
 <li><a class="reference internal" href="#matching-characters">Matching Characters</a></li>
 <li><a class="reference internal" href="#repeating-things">Repeating Things</a></li>
@@ -1582,18 +1594,23 @@ it out from your library.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="logging-cookbook.html"
-                        title="上一章">Logging Cookbook</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="sockets.html"
-                        title="下一章">Socket Programming HOWTO</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="logging-cookbook.html"
+                          title="上一章">Logging Cookbook</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="sockets.html"
+                          title="下一章">Socket Programming HOWTO</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/regex.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/regex.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1628,14 +1645,12 @@ it out from your library.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python HOWTOs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">如何使用正規表達式</a></li>
+        <li class="nav-item nav-item-this"><a href="">Regular Expression HOWTO</a></li>
                 <li class="right">
                     
 
@@ -1653,25 +1668,25 @@ it out from your library.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

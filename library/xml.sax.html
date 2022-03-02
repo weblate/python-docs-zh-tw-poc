@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>xml.sax --- Support for SAX2 parsers &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml.sax --- Support for SAX2 parsers &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="xml.dom.pulldom --- Support for building partial DOM trees" href="xml.dom.pulldom.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/xml.sax.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,26 +70,32 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code> --- Support for SAX2 parsers</a><ul>
 <li><a class="reference internal" href="#saxexception-objects">SAXException Objects</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xml.dom.pulldom.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.pulldom</span></code> --- Support for building partial DOM trees</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.sax.handler.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code> --- Base classes for SAX handlers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xml.dom.pulldom.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.pulldom</span></code> --- Support for building partial DOM trees</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.sax.handler.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code> --- Base classes for SAX handlers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.sax.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.sax.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -127,13 +131,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" accesskey="U">Structured Markup Processing Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code> --- Support for SAX2 parsers</a></li>
                 <li class="right">
@@ -160,7 +162,7 @@
             
   <section id="module-xml.sax">
 <span id="xml-sax-support-for-sax2-parsers"></span><h1><a class="reference internal" href="#module-xml.sax" title="xml.sax: Package containing SAX2 base classes and convenience functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code></a> --- Support for SAX2 parsers<a class="headerlink" href="#module-xml.sax" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/xml/sax/__init__.py">Lib/xml/sax/__init__.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/xml/sax/__init__.py">Lib/xml/sax/__init__.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-xml.sax" title="xml.sax: Package containing SAX2 base classes and convenience functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code></a> package provides a number of modules which implement the
 Simple API for XML (SAX) interface for Python.  The package itself provides the
@@ -173,7 +175,7 @@ constructed data.  If you need to parse untrusted or unauthenticated data see
 <a class="reference internal" href="xml.html#xml-vulnerabilities"><span class="std std-ref">XML vulnerabilities</span></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7.1 版更變: </span>The SAX parser no longer processes general external entities by default
+<p><span class="versionmodified changed">在 3.7.1 版本變更: </span>The SAX parser no longer processes general external entities by default
 to increase security. Before, the parser created network connections
 to fetch remote files or loaded local files from the file
 system for DTD and entities. The feature can be enabled again with method
@@ -190,7 +192,7 @@ be used.  If <em>parser_list</em> is provided, it must be an iterable of strings
 name modules that have a function named <code class="xref py py-func docutils literal notranslate"><span class="pre">create_parser()</span></code>.  Modules listed
 in <em>parser_list</em> will be used before modules in the default list of parsers.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>parser_list</em> argument can be any iterable, not just a list.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>parser_list</em> argument can be any iterable, not just a list.</p>
 </div>
 </dd></dl>
 
@@ -213,7 +215,7 @@ return value; all work must be done by the <em>handler</em> passed in.</p>
 parameter.  <em>string</em> must be a <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> instance or a
 <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added support of <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> instances.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added support of <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> instances.</p>
 </div>
 </dd></dl>
 
@@ -243,7 +245,7 @@ instantiated directly) and the handler classes are also available from
 classes.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.sax.SAXException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.sax.</span></span><span class="sig-name descname"><span class="pre">SAXException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.SAXException" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.</span></span><span class="sig-name descname"><span class="pre">SAXException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.SAXException" title="本定義的永久連結">¶</a></dt>
 <dd><p>Encapsulate an XML error or warning.  This class can contain basic error or
 warning information from either the XML parser or the application: it can be
 subclassed to provide additional functionality or to add localization.  Note
@@ -259,7 +261,7 @@ that was caught by the parsing code and is being passed along as information.</p
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.sax.SAXParseException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.sax.</span></span><span class="sig-name descname"><span class="pre">SAXParseException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.SAXParseException" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.</span></span><span class="sig-name descname"><span class="pre">SAXParseException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.SAXParseException" title="本定義的永久連結">¶</a></dt>
 <dd><p>Subclass of <a class="reference internal" href="#xml.sax.SAXException" title="xml.sax.SAXException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SAXException</span></code></a> raised on parse errors. Instances of this
 class are passed to the methods of the SAX
 <a class="reference internal" href="xml.sax.handler.html#xml.sax.handler.ErrorHandler" title="xml.sax.handler.ErrorHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorHandler</span></code></a> interface to provide information
@@ -270,7 +272,7 @@ about the parse error.  This class supports the SAX
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.sax.SAXNotRecognizedException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.sax.</span></span><span class="sig-name descname"><span class="pre">SAXNotRecognizedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.SAXNotRecognizedException" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.</span></span><span class="sig-name descname"><span class="pre">SAXNotRecognizedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.SAXNotRecognizedException" title="本定義的永久連結">¶</a></dt>
 <dd><p>Subclass of <a class="reference internal" href="#xml.sax.SAXException" title="xml.sax.SAXException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SAXException</span></code></a> raised when a SAX
 <a class="reference internal" href="xml.sax.reader.html#xml.sax.xmlreader.XMLReader" title="xml.sax.xmlreader.XMLReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">XMLReader</span></code></a> is
 confronted with an unrecognized feature or property.  SAX applications and
@@ -279,7 +281,7 @@ extensions may use this class for similar purposes.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="xml.sax.SAXNotSupportedException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">xml.sax.</span></span><span class="sig-name descname"><span class="pre">SAXNotSupportedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.SAXNotSupportedException" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.</span></span><span class="sig-name descname"><span class="pre">SAXNotSupportedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.SAXNotSupportedException" title="本定義的永久連結">¶</a></dt>
 <dd><p>Subclass of <a class="reference internal" href="#xml.sax.SAXException" title="xml.sax.SAXException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SAXException</span></code></a> raised when a SAX
 <a class="reference internal" href="xml.sax.reader.html#xml.sax.xmlreader.XMLReader" title="xml.sax.xmlreader.XMLReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">XMLReader</span></code></a> is asked to
 enable a feature that is not supported, or to set a property to a value that the
@@ -327,26 +329,32 @@ historical information are also available.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code> --- Support for SAX2 parsers</a><ul>
 <li><a class="reference internal" href="#saxexception-objects">SAXException Objects</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xml.dom.pulldom.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.pulldom</span></code> --- Support for building partial DOM trees</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.sax.handler.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code> --- Base classes for SAX handlers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xml.dom.pulldom.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.pulldom</span></code> --- Support for building partial DOM trees</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.sax.handler.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code> --- Base classes for SAX handlers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.sax.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.sax.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -381,13 +389,11 @@ historical information are also available.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" >Structured Markup Processing Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code> --- Support for SAX2 parsers</a></li>
                 <li class="right">
@@ -407,25 +413,25 @@ historical information are also available.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

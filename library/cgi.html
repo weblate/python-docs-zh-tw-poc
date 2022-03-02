@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>cgi --- Common Gateway Interface support &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cgi --- Common Gateway Interface support &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="cgitb --- Traceback manager for CGI scripts" href="cgitb.html" />
-    <link rel="prev" title="webbrowser --- Convenient Web-browser controller" href="webbrowser.html" />
+    <link rel="prev" title="webbrowser --- Convenient web-browser controller" href="webbrowser.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/cgi.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,10 +70,11 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgi</span></code> --- Common Gateway Interface support</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#using-the-cgi-module">Using the cgi module</a></li>
 <li><a class="reference internal" href="#higher-level-interface">Higher Level Interface</a></li>
 <li><a class="reference internal" href="#functions">Functions</a></li>
@@ -88,18 +87,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="webbrowser.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">webbrowser</span></code> --- Convenient Web-browser controller</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="cgitb.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgitb</span></code> --- Traceback manager for CGI scripts</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="webbrowser.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">webbrowser</span></code> --- Convenient web-browser controller</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="cgitb.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgitb</span></code> --- Traceback manager for CGI scripts</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/cgi.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/cgi.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -123,7 +127,7 @@
           <a href="cgitb.html" title="cgitb --- Traceback manager for CGI scripts"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="webbrowser.html" title="webbrowser --- Convenient Web-browser controller"
+          <a href="webbrowser.html" title="webbrowser --- Convenient web-browser controller"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -135,13 +139,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" accesskey="U">Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgi</span></code> --- Common Gateway Interface support</a></li>
                 <li class="right">
@@ -168,13 +170,13 @@
             
   <section id="module-cgi">
 <span id="cgi-common-gateway-interface-support"></span><h1><a class="reference internal" href="#module-cgi" title="cgi: Helpers for running Python scripts via the Common Gateway Interface."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgi</span></code></a> --- Common Gateway Interface support<a class="headerlink" href="#module-cgi" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/cgi.py">Lib/cgi.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/cgi.py">Lib/cgi.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>Support module for Common Gateway Interface (CGI) scripts.</p>
 <p>This module defines a number of utilities for use by CGI scripts written in
 Python.</p>
 <section id="introduction">
-<h2>簡介<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
 <p id="cgi-intro">A CGI script is invoked by an HTTP server, usually to process user input
 submitted through an HTML <code class="docutils literal notranslate"><span class="pre">&lt;FORM&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;ISINDEX&gt;</span></code> element.</p>
 <p>Most often, CGI scripts live in the server's special <code class="file docutils literal notranslate"><span class="pre">cgi-bin</span></code> directory.
@@ -214,7 +216,7 @@ prints a simple piece of HTML:</p>
 </pre></div>
 </div>
 <p>This activates a special exception handler that will display detailed reports in
-the Web browser if any errors occur.  If you'd rather not show the guts of your
+the web browser if any errors occur.  If you'd rather not show the guts of your
 program to users of your script, you can have the reports saved to files
 instead, with code like this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cgitb</span>
@@ -229,7 +231,7 @@ have tested your script and are confident that it works correctly.</p>
 contains non-ASCII characters, use the <em>encoding</em> keyword parameter set to the
 value of the encoding defined for the document. It is usually contained in the
 META tag in the HEAD section of the HTML document or by the
-<em class="mailheader">Content-Type</em> header).  This reads the form contents from the
+<em class="mailheader">Content-Type</em> header.  This reads the form contents from the
 standard input or the environment (depending on the value of various
 environment variables set according to the CGI standard).  Since it may consume
 standard input, it should be instantiated only once.</p>
@@ -313,11 +315,11 @@ actually be instances of the class <code class="xref py py-class docutils litera
 <p>A form submitted via POST that also has a query string will contain both
 <code class="xref py py-class docutils literal notranslate"><span class="pre">FieldStorage</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">MiniFieldStorage</span></code> items.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The <code class="xref py py-attr docutils literal notranslate"><span class="pre">file</span></code> attribute is automatically closed upon the
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The <code class="xref py py-attr docutils literal notranslate"><span class="pre">file</span></code> attribute is automatically closed upon the
 garbage collection of the creating <code class="xref py py-class docutils literal notranslate"><span class="pre">FieldStorage</span></code> instance.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added support for the context management protocol to the
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added support for the context management protocol to the
 <code class="xref py py-class docutils literal notranslate"><span class="pre">FieldStorage</span></code> class.</p>
 </div>
 </section>
@@ -420,11 +422,11 @@ fields, the value is a list of strings.</p>
 uploaded --- in that case, use the <code class="xref py py-class docutils literal notranslate"><span class="pre">FieldStorage</span></code> class instead
 which is much more flexible.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added the <em>encoding</em> and <em>errors</em> parameters.  For non-file fields, the
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added the <em>encoding</em> and <em>errors</em> parameters.  For non-file fields, the
 value is now a list of strings, not bytes.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9.2 版更變: </span>Added the <em>separator</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added the <em>separator</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -473,7 +475,7 @@ formats all information provided to the script in HTML format.</p>
 <a class="reference internal" href="os.html#os.system" title="os.system"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.system()</span></code></a>, <a class="reference internal" href="os.html#os.popen" title="os.popen"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.popen()</span></code></a> or other functions with similar
 functionality), make very sure you don't pass arbitrary strings received from
 the client to the shell.  This is a well-known security hole whereby clever
-hackers anywhere on the Web can exploit a gullible CGI script to invoke
+hackers anywhere on the web can exploit a gullible CGI script to invoke
 arbitrary shell commands.  Even parts of the URL or field names cannot be
 trusted, since the request doesn't have to come from your form!</p>
 <p>To be on the safe side, if you must pass a string gotten from a form to a shell
@@ -561,7 +563,7 @@ interpreter will still do this when your CGI script raises an exception, most
 likely the traceback will end up in one of the HTTP server's log files, or be
 discarded altogether.</p>
 <p>Fortunately, once you have managed to get your script to execute <em>some</em> code,
-you can easily send tracebacks to the Web browser using the <a class="reference internal" href="cgitb.html#module-cgitb" title="cgitb: Configurable traceback handler for CGI scripts."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgitb</span></code></a> module.
+you can easily send tracebacks to the web browser using the <a class="reference internal" href="cgitb.html#module-cgitb" title="cgitb: Configurable traceback handler for CGI scripts."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgitb</span></code></a> module.
 If you haven't done so already, just add the lines:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cgitb</span>
 <span class="n">cgitb</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
@@ -609,7 +611,7 @@ userid for a web server's <code class="docutils literal notranslate"><span class
 <li><p>Don't try to give a CGI script a set-uid mode.  This doesn't work on most
 systems, and is a security liability as well.</p></li>
 </ul>
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>Note that some recent versions of the HTML specification do state what
@@ -628,10 +630,11 @@ tedious and error-prone.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgi</span></code> --- Common Gateway Interface support</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#using-the-cgi-module">Using the cgi module</a></li>
 <li><a class="reference internal" href="#higher-level-interface">Higher Level Interface</a></li>
 <li><a class="reference internal" href="#functions">Functions</a></li>
@@ -644,18 +647,23 @@ tedious and error-prone.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="webbrowser.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">webbrowser</span></code> --- Convenient Web-browser controller</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="cgitb.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgitb</span></code> --- Traceback manager for CGI scripts</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="webbrowser.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">webbrowser</span></code> --- Convenient web-browser controller</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="cgitb.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgitb</span></code> --- Traceback manager for CGI scripts</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/cgi.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/cgi.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -678,7 +686,7 @@ tedious and error-prone.</p>
           <a href="cgitb.html" title="cgitb --- Traceback manager for CGI scripts"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="webbrowser.html" title="webbrowser --- Convenient Web-browser controller"
+          <a href="webbrowser.html" title="webbrowser --- Convenient web-browser controller"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -690,13 +698,11 @@ tedious and error-prone.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" >Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgi</span></code> --- Common Gateway Interface support</a></li>
                 <li class="right">
@@ -716,25 +722,25 @@ tedious and error-prone.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

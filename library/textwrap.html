@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>textwrap --- Text wrapping and filling &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textwrap --- Text wrapping and filling &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="difflib --- Helpers for computing deltas" href="difflib.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/textwrap.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="difflib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">difflib</span></code> --- Helpers for computing deltas</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="unicodedata.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unicodedata</span></code> --- Unicode Database</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="difflib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">difflib</span></code> --- Helpers for computing deltas</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="unicodedata.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unicodedata</span></code> --- Unicode Database</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/textwrap.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/textwrap.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="text.html" accesskey="U">Text Processing Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">textwrap</span></code> --- Text wrapping and filling</a></li>
                 <li class="right">
@@ -152,7 +152,7 @@
             
   <section id="module-textwrap">
 <span id="textwrap-text-wrapping-and-filling"></span><h1><a class="reference internal" href="#module-textwrap" title="textwrap: Text wrapping and filling"><code class="xref py py-mod docutils literal notranslate"><span class="pre">textwrap</span></code></a> --- Text wrapping and filling<a class="headerlink" href="#module-textwrap" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/textwrap.py">Lib/textwrap.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/textwrap.py">Lib/textwrap.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-textwrap" title="textwrap: Text wrapping and filling"><code class="xref py py-mod docutils literal notranslate"><span class="pre">textwrap</span></code></a> module provides some convenience functions,
 as well as <a class="reference internal" href="#textwrap.TextWrapper" title="textwrap.TextWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextWrapper</span></code></a>, the class that does all the work.
@@ -205,7 +205,7 @@ collapsed before the text is passed to the <a class="reference internal" href="#
 function, so changing the value of <a class="reference internal" href="#textwrap.TextWrapper.tabsize" title="textwrap.TextWrapper.tabsize"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tabsize</span></code></a>, <a class="reference internal" href="#textwrap.TextWrapper.expand_tabs" title="textwrap.TextWrapper.expand_tabs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expand_tabs</span></code></a>,
 <a class="reference internal" href="#textwrap.TextWrapper.drop_whitespace" title="textwrap.TextWrapper.drop_whitespace"><code class="xref py py-attr docutils literal notranslate"><span class="pre">drop_whitespace</span></code></a>, and <a class="reference internal" href="#textwrap.TextWrapper.replace_whitespace" title="textwrap.TextWrapper.replace_whitespace"><code class="xref py py-attr docutils literal notranslate"><span class="pre">replace_whitespace</span></code></a> will have no effect.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -257,7 +257,7 @@ and whitespace-only lines:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -271,7 +271,7 @@ hyphenated words; only then will long words be broken if necessary, unless
 <a class="reference internal" href="#textwrap.TextWrapper.break_long_words" title="textwrap.TextWrapper.break_long_words"><code class="xref py py-attr docutils literal notranslate"><span class="pre">TextWrapper.break_long_words</span></code></a> is set to false.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="textwrap.TextWrapper">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">textwrap.</span></span><span class="sig-name descname"><span class="pre">TextWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textwrap.TextWrapper" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textwrap.</span></span><span class="sig-name descname"><span class="pre">TextWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textwrap.TextWrapper" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#textwrap.TextWrapper" title="textwrap.TextWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextWrapper</span></code></a> constructor accepts a number of optional keyword
 arguments.  Each keyword argument corresponds to an instance attribute, so
 for example</p>
@@ -311,7 +311,7 @@ expanded to spaces using the <code class="xref py py-meth docutils literal notra
 in <em>text</em> will be expanded to zero or more spaces, depending on the
 current column and the given tab size.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -416,7 +416,7 @@ was to always allow breaking hyphenated words.</p>
 <dd><p>(default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) If not <code class="docutils literal notranslate"><span class="pre">None</span></code>, then the output will contain at most
 <em>max_lines</em> lines, with <em>placeholder</em> appearing at the end of the output.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -426,7 +426,7 @@ was to always allow breaking hyphenated words.</p>
 <dd><p>(default: <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">[...]'</span></code>) String that will appear at the end of the output
 text if it has been truncated.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -460,18 +460,22 @@ containing the wrapped paragraph.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="difflib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">difflib</span></code> --- Helpers for computing deltas</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="unicodedata.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unicodedata</span></code> --- Unicode Database</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="difflib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">difflib</span></code> --- Helpers for computing deltas</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="unicodedata.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unicodedata</span></code> --- Unicode Database</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/textwrap.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/textwrap.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -506,13 +510,11 @@ containing the wrapped paragraph.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="text.html" >Text Processing Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">textwrap</span></code> --- Text wrapping and filling</a></li>
                 <li class="right">
@@ -532,25 +534,25 @@ containing the wrapped paragraph.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

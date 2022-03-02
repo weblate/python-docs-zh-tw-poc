@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>contextvars --- Context Variables &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contextvars --- Context Variables &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="queue --- A synchronized queue class" href="queue.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/contextvars.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">contextvars</span></code> --- Context Variables</a><ul>
 <li><a class="reference internal" href="#context-variables">Context Variables</a></li>
 <li><a class="reference internal" href="#manual-context-management">Manual Context Management</a></li>
@@ -82,18 +81,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="queue.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">queue</span></code> --- A synchronized queue class</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="_thread.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">_thread</span></code> --- Low-level threading API</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="queue.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">queue</span></code> --- A synchronized queue class</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="_thread.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">_thread</span></code> --- Low-level threading API</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/contextvars.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/contextvars.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -129,13 +133,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concurrency.html" accesskey="U">Concurrent Execution</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">contextvars</span></code> --- Context Variables</a></li>
                 <li class="right">
@@ -173,13 +175,13 @@ instead of <a class="reference internal" href="threading.html#threading.local" t
 bleeding to other code unexpectedly, when used in concurrent code.</p>
 <p>See also <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0567"><strong>PEP 567</strong></a> for additional details.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 <section id="context-variables">
 <h2>Context Variables<a class="headerlink" href="#context-variables" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="contextvars.ContextVar">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">contextvars.</span></span><span class="sig-name descname"><span class="pre">ContextVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">*</span></em>, <em class="sig-param"><span class="pre">default</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#contextvars.ContextVar" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">contextvars.</span></span><span class="sig-name descname"><span class="pre">ContextVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#contextvars.ContextVar" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class is used to declare a new Context Variable, e.g.:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="p">:</span> <span class="n">ContextVar</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">ContextVar</span><span class="p">(</span><span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
@@ -198,13 +200,13 @@ from being properly garbage collected.</p>
 <span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#contextvars.ContextVar.name" title="本定義的永久連結">¶</a></dt>
 <dd><p>The name of the variable.  This is a read-only property.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="contextvars.ContextVar.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">default</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#contextvars.ContextVar.get" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#contextvars.ContextVar.get" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a value for the context variable for the current context.</p>
 <p>If there is no value for the variable in the current context,
 the method will:</p>
@@ -224,7 +226,7 @@ if it was created with one; or</p></li>
 context.</p>
 <p>The required <em>value</em> argument is the new value for the context
 variable.</p>
-<p>Returns a <a class="reference internal" href="#contextvars.contextvars.Token" title="contextvars.contextvars.Token"><code class="xref py py-class docutils literal notranslate"><span class="pre">Token</span></code></a> object that can be used
+<p>Returns a <a class="reference internal" href="#contextvars.Token" title="contextvars.Token"><code class="xref py py-class docutils literal notranslate"><span class="pre">Token</span></code></a> object that can be used
 to restore the variable to its previous value via the
 <a class="reference internal" href="#contextvars.ContextVar.reset" title="contextvars.ContextVar.reset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ContextVar.reset()</span></code></a> method.</p>
 </dd></dl>
@@ -250,32 +252,32 @@ to restore the variable to its previous value via the
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="contextvars.contextvars.Token">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">contextvars.</span></span><span class="sig-name descname"><span class="pre">Token</span></span><a class="headerlink" href="#contextvars.contextvars.Token" title="本定義的永久連結">¶</a></dt>
+<dt class="sig sig-object py" id="contextvars.Token">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">contextvars.</span></span><span class="sig-name descname"><span class="pre">Token</span></span><a class="headerlink" href="#contextvars.Token" title="本定義的永久連結">¶</a></dt>
 <dd><p><em>Token</em> objects are returned by the <a class="reference internal" href="#contextvars.ContextVar.set" title="contextvars.ContextVar.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ContextVar.set()</span></code></a> method.
 They can be passed to the <a class="reference internal" href="#contextvars.ContextVar.reset" title="contextvars.ContextVar.reset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ContextVar.reset()</span></code></a> method to revert
 the value of the variable to what it was before the corresponding
 <em>set</em>.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="contextvars.contextvars.Token.Token.var">
-<span class="sig-prename descclassname"><span class="pre">Token.</span></span><span class="sig-name descname"><span class="pre">var</span></span><a class="headerlink" href="#contextvars.contextvars.Token.Token.var" title="本定義的永久連結">¶</a></dt>
+<dt class="sig sig-object py" id="contextvars.Token.var">
+<span class="sig-name descname"><span class="pre">var</span></span><a class="headerlink" href="#contextvars.Token.var" title="本定義的永久連結">¶</a></dt>
 <dd><p>A read-only property.  Points to the <a class="reference internal" href="#contextvars.ContextVar" title="contextvars.ContextVar"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContextVar</span></code></a> object
 that created the token.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="contextvars.contextvars.Token.Token.old_value">
-<span class="sig-prename descclassname"><span class="pre">Token.</span></span><span class="sig-name descname"><span class="pre">old_value</span></span><a class="headerlink" href="#contextvars.contextvars.Token.Token.old_value" title="本定義的永久連結">¶</a></dt>
+<dt class="sig sig-object py" id="contextvars.Token.old_value">
+<span class="sig-name descname"><span class="pre">old_value</span></span><a class="headerlink" href="#contextvars.Token.old_value" title="本定義的永久連結">¶</a></dt>
 <dd><p>A read-only property.  Set to the value the variable had before
 the <a class="reference internal" href="#contextvars.ContextVar.set" title="contextvars.ContextVar.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ContextVar.set()</span></code></a> method call that created the token.
-It points to <code class="xref py py-attr docutils literal notranslate"><span class="pre">Token.MISSING</span></code> is the variable was not set
+It points to <a class="reference internal" href="#contextvars.Token.MISSING" title="contextvars.Token.MISSING"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Token.MISSING</span></code></a> is the variable was not set
 before the call.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="contextvars.contextvars.Token.Token.MISSING">
-<span class="sig-prename descclassname"><span class="pre">Token.</span></span><span class="sig-name descname"><span class="pre">MISSING</span></span><a class="headerlink" href="#contextvars.contextvars.Token.Token.MISSING" title="本定義的永久連結">¶</a></dt>
-<dd><p>A marker object used by <code class="xref py py-attr docutils literal notranslate"><span class="pre">Token.old_value</span></code>.</p>
+<dt class="sig sig-object py" id="contextvars.Token.MISSING">
+<span class="sig-name descname"><span class="pre">MISSING</span></span><a class="headerlink" href="#contextvars.Token.MISSING" title="本定義的永久連結">¶</a></dt>
+<dd><p>A marker object used by <a class="reference internal" href="#contextvars.Token.old_value" title="contextvars.Token.old_value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Token.old_value</span></code></a>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -300,7 +302,7 @@ a lot of them.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="contextvars.Context">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">contextvars.</span></span><span class="sig-name descname"><span class="pre">Context</span></span><a class="headerlink" href="#contextvars.Context" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">contextvars.</span></span><span class="sig-name descname"><span class="pre">Context</span></span><a class="headerlink" href="#contextvars.Context" title="本定義的永久連結">¶</a></dt>
 <dd><p>A mapping of <a class="reference internal" href="#contextvars.ContextVar" title="contextvars.ContextVar"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContextVars</span></code></a> to their values.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Context()</span></code> creates an empty context with no values in it.
 To get a copy of the current context use the
@@ -369,7 +371,7 @@ If the variable is not set in the context object, a
 
 <dl class="py method">
 <dt class="sig sig-object py" id="contextvars.Context.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">var</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">default</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#contextvars.Context.get" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#contextvars.Context.get" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the value for <em>var</em> if <em>var</em> has the value in the context
 object.  Return <em>default</em> otherwise.  If <em>default</em> is not given,
 return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
@@ -469,8 +471,9 @@ client:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">contextvars</span></code> --- Context Variables</a><ul>
 <li><a class="reference internal" href="#context-variables">Context Variables</a></li>
 <li><a class="reference internal" href="#manual-context-management">Manual Context Management</a></li>
@@ -479,18 +482,23 @@ client:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="queue.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">queue</span></code> --- A synchronized queue class</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="_thread.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">_thread</span></code> --- Low-level threading API</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="queue.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">queue</span></code> --- A synchronized queue class</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="_thread.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">_thread</span></code> --- Low-level threading API</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/contextvars.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/contextvars.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -525,13 +533,11 @@ client:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concurrency.html" >Concurrent Execution</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">contextvars</span></code> --- Context Variables</a></li>
                 <li class="right">
@@ -551,25 +557,25 @@ client:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

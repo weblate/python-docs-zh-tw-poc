@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>函式（Function）物件 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Objects &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="實體方法物件" href="method.html" />
+    <link rel="next" title="Instance Method Objects" href="method.html" />
     <link rel="prev" title="Set Objects" href="set.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/function.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="set.html"
-                        title="上一章">Set Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="method.html"
-                        title="下一章">實體方法物件</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="set.html"
+                          title="上一章">Set Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="method.html"
+                          title="下一章">Instance Method Objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/function.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/function.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -104,7 +106,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="method.html" title="實體方法物件"
+          <a href="method.html" title="Instance Method Objects"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="set.html" title="Set Objects"
@@ -119,15 +121,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concrete.html" accesskey="U">Concrete Objects Layer</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">函式（Function）物件</a></li>
+        <li class="nav-item nav-item-this"><a href="">Function Objects</a></li>
                 <li class="right">
                     
 
@@ -151,8 +151,8 @@
           <div class="body" role="main">
             
   <section id="function-objects">
-<span id="id1"></span><h1>函式（Function）物件<a class="headerlink" href="#function-objects" title="本標題的永久連結">¶</a></h1>
-<p id="index-0">這有一些少數Python函數的於具體說明。</p>
+<span id="id1"></span><h1>Function Objects<a class="headerlink" href="#function-objects" title="本標題的永久連結">¶</a></h1>
+<p id="index-0">There are a few functions specific to Python functions.</p>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.PyFunctionObject">
 <span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyFunctionObject</span></span></span><a class="headerlink" href="#c.PyFunctionObject" title="本定義的永久連結">¶</a><br /></dt>
@@ -191,28 +191,29 @@ set to <code class="docutils literal notranslate"><span class="pre">NULL</span><
 if <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, the <code class="docutils literal notranslate"><span class="pre">__qualname__</span></code> attribute is set to the same value as its
 <code class="docutils literal notranslate"><span class="pre">__name__</span></code> attribute.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFunction_GetCode">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyFunction_GetCode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFunction_GetCode" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="refcount">Return value: Borrowed reference.</em><p>回傳與程式碼物件相關的函數物件 <em>op</em>。</p>
+<dd><em class="refcount">Return value: Borrowed reference.</em><p>Return the code object associated with the function object <em>op</em>.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFunction_GetGlobals">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyFunction_GetGlobals</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFunction_GetGlobals" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="refcount">Return value: Borrowed reference.</em><p>回傳與全域函數字典相關的函數物件 <em>op</em>。</p>
+<dd><em class="refcount">Return value: Borrowed reference.</em><p>Return the globals dictionary associated with the function object <em>op</em>.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFunction_GetModule">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyFunction_GetModule</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFunction_GetModule" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="refcount">Return value: Borrowed reference.</em><p>Return the <em>__module__</em> attribute of the function object <em>op</em>. This is normally
-a string containing the module name, but can be set to any other object by
-Python code.</p>
+<dd><em class="refcount">Return value: Borrowed reference.</em><p>Return a <a class="reference internal" href="../glossary.html#term-borrowed-reference"><span class="xref std std-term">borrowed reference</span></a> to the <em>__module__</em> attribute of the
+function object <em>op</em>. It can be <em>NULL</em>.</p>
+<p>This is normally a string containing the module name, but can be set to any
+other object by Python code.</p>
 </dd></dl>
 
 <dl class="c function">
@@ -269,18 +270,22 @@ must be a dictionary or <code class="docutils literal notranslate"><span class="
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="set.html"
-                        title="上一章">Set Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="method.html"
-                        title="下一章">實體方法物件</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="set.html"
+                          title="上一章">Set Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="method.html"
+                          title="下一章">Instance Method Objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/function.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/function.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -300,7 +305,7 @@ must be a dictionary or <code class="docutils literal notranslate"><span class="
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="method.html" title="實體方法物件"
+          <a href="method.html" title="Instance Method Objects"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="set.html" title="Set Objects"
@@ -315,15 +320,13 @@ must be a dictionary or <code class="docutils literal notranslate"><span class="
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concrete.html" >Concrete Objects Layer</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">函式（Function）物件</a></li>
+        <li class="nav-item nav-item-this"><a href="">Function Objects</a></li>
                 <li class="right">
                     
 
@@ -341,25 +344,25 @@ must be a dictionary or <code class="docutils literal notranslate"><span class="
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

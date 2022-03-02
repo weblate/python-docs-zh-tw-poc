@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>fcntl --- The fcntl and ioctl system calls &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fcntl --- The fcntl and ioctl system calls &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="pty --- Pseudo-terminal utilities" href="pty.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/fcntl.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="pty.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pty</span></code> --- Pseudo-terminal utilities</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="pipes.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pipes</span></code> --- Interface to shell pipelines</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="pty.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pty</span></code> --- Pseudo-terminal utilities</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="pipes.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pipes</span></code> --- Interface to shell pipelines</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/fcntl.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/fcntl.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="unix.html" accesskey="U">Unix Specific Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">fcntl</span></code> --- The <code class="docutils literal notranslate"><span class="pre">fcntl</span></code> and <code class="docutils literal notranslate"><span class="pre">ioctl</span></code> system calls</a></li>
                 <li class="right">
@@ -163,19 +163,24 @@ argument.  This can be an integer file descriptor, such as returned by
 itself, which provides a <a class="reference internal" href="io.html#io.IOBase.fileno" title="io.IOBase.fileno"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fileno()</span></code></a> that returns a genuine file
 descriptor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Operations in this module used to raise an <a class="reference internal" href="exceptions.html#IOError" title="IOError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a> where they now
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Operations in this module used to raise an <a class="reference internal" href="exceptions.html#IOError" title="IOError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a> where they now
 raise an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The fcntl module now contains <code class="docutils literal notranslate"><span class="pre">F_ADD_SEALS</span></code>, <code class="docutils literal notranslate"><span class="pre">F_GET_SEALS</span></code>, and
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The fcntl module now contains <code class="docutils literal notranslate"><span class="pre">F_ADD_SEALS</span></code>, <code class="docutils literal notranslate"><span class="pre">F_GET_SEALS</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">F_SEAL_*</span></code> constants for sealing of <a class="reference internal" href="os.html#os.memfd_create" title="os.memfd_create"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.memfd_create()</span></code></a> file
 descriptors.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>On macOS, the fcntl module exposes the <code class="docutils literal notranslate"><span class="pre">F_GETPATH</span></code> constant, which obtains
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>On macOS, the fcntl module exposes the <code class="docutils literal notranslate"><span class="pre">F_GETPATH</span></code> constant, which obtains
 the path of a file from a file descriptor.
 On Linux(&gt;=3.15), the fcntl module exposes the <code class="docutils literal notranslate"><span class="pre">F_OFD_GETLK</span></code>, <code class="docutils literal notranslate"><span class="pre">F_OFD_SETLK</span></code>
 and <code class="docutils literal notranslate"><span class="pre">F_OFD_SETLKW</span></code> constants, which working with open file description locks.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>On Linux &gt;= 2.6.11, the fcntl module exposes the <code class="docutils literal notranslate"><span class="pre">F_GETPIPE_SZ</span></code> and
+<code class="docutils literal notranslate"><span class="pre">F_SETPIPE_SZ</span></code> constants, which allow to check and modify a pipe's size
+respectively.</p>
 </div>
 <p>The module defines the following functions:</p>
 <dl class="py function">
@@ -229,7 +234,7 @@ supplied buffer is less than 1024 bytes long it is first copied into a static
 buffer 1024 bytes long which is then passed to <a class="reference internal" href="#fcntl.ioctl" title="fcntl.ioctl"><code class="xref py py-func docutils literal notranslate"><span class="pre">ioctl()</span></code></a> and copied back
 into the supplied buffer.</p>
 <p>If the <code class="xref c c-func docutils literal notranslate"><span class="pre">ioctl()</span></code> fails, an <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> exception is raised.</p>
-<p>例子:</p>
+<p>An example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">array</span><span class="o">,</span> <span class="nn">fcntl</span><span class="o">,</span> <span class="nn">struct</span><span class="o">,</span> <span class="nn">termios</span><span class="o">,</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getpgrp</span><span class="p">()</span>
 <span class="go">13341</span>
@@ -323,18 +328,22 @@ functions.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="pty.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pty</span></code> --- Pseudo-terminal utilities</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="pipes.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pipes</span></code> --- Interface to shell pipelines</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="pty.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pty</span></code> --- Pseudo-terminal utilities</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="pipes.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pipes</span></code> --- Interface to shell pipelines</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/fcntl.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/fcntl.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -369,13 +378,11 @@ functions.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="unix.html" >Unix Specific Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">fcntl</span></code> --- The <code class="docutils literal notranslate"><span class="pre">fcntl</span></code> and <code class="docutils literal notranslate"><span class="pre">ioctl</span></code> system calls</a></li>
                 <li class="right">
@@ -395,25 +402,25 @@ functions.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

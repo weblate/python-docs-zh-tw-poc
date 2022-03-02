@@ -231,7 +231,7 @@ Other Language Changes
   absolute path for :mod:`__main__` module frames in this case.
   (Contributed by Victor Stinner in :issue:`20443`.)
 
-* In the :ref:`Python Development Mode <devmode>` and in debug build, the
+* In the :ref:`Python Development Mode <devmode>` and in :ref:`debug build <debug-build>`, the
   *encoding* and *errors* arguments are now checked for string encoding and
   decoding operations. Examples: :func:`open`, :meth:`str.encode` and
   :meth:`bytes.decode`.
@@ -484,7 +484,24 @@ Najera in :issue:`38944`.)
 Added keywords to module name completion list.  (Contributed by Terry J.
 Reedy in :issue:`37765`.)
 
+New in 3.9 maintenance releases
+
+Make IDLE invoke :func:`sys.excepthook` (when started without '-n').
+User hooks were previously ignored.  (Contributed by Ken Hilton in
+:issue:`43008`.)
+
 The changes above have been backported to 3.8 maintenance releases.
+
+Rearrange the settings dialog.  Split the General tab into Windows
+and Shell/Ed tabs.  Move help sources, which extend the Help menu, to the
+Extensions tab.  Make space for new options and shorten the dialog. The
+latter makes the dialog better fit small screens.  (Contributed by Terry Jan
+Reedy in :issue:`40468`.)  Move the indent space setting from the Font tab to
+the new Windows tab.  (Contributed by Mark Roseman and Terry Jan Reedy in
+:issue:`33962`.)
+
+Apply syntax highlighting to `.pyi` files. (Contributed by Alex
+Waygood and Terry Jan Reedy in :issue:`45447`.)
 
 imaplib
 -------
@@ -1136,7 +1153,7 @@ Changes in the Python API
 Changes in the C API
 --------------------
 
-* Instances of heap-allocated types (such as those created with
+* Instances of :ref:`heap-allocated types <heap-types>` (such as those created with
   :c:func:`PyType_FromSpec` and similar APIs) hold a reference to their type
   object since Python 3.8. As indicated in the "Changes in the C API" of Python
   3.8, for the vast majority of cases, there should be no side effect but for
@@ -1159,7 +1176,8 @@ Changes in the C API
 
   If your traverse function delegates to ``tp_traverse`` of its base class
   (or another type), ensure that ``Py_TYPE(self)`` is visited only once.
-  Note that only heap types are expected to visit the type in ``tp_traverse``.
+  Note that only :ref:`heap type <heap-types>` are expected to visit the type
+  in ``tp_traverse``.
 
     For example, if your ``tp_traverse`` function includes:
 
@@ -1172,7 +1190,7 @@ Changes in the C API
     .. code-block:: c
 
         #if PY_VERSION_HEX >= 0x03090000
-            // This was not needed before Python 3.9 (Python issue 35810 and 40217)
+            // This was not needed before Python 3.9 (bpo-35810 and bpo-40217)
             if (base->tp_flags & Py_TPFLAGS_HEAPTYPE) {
                 // a heap type's tp_traverse already visited Py_TYPE(self)
             } else {
@@ -1229,9 +1247,9 @@ Build Changes
   non-system Tcl and Tk frameworks if they are installed in
   ``/Library/Frameworks``, as had been the case on older releases
   of macOS. If a macOS SDK is explicitly configured, by using
-  ``--enable-universalsdk=`` or ``-isysroot``, only the SDK itself is
+  :option:`--enable-universalsdk` or ``-isysroot``, only the SDK itself is
   searched. The default behavior can still be overridden with
-  ``--with-tcltk-includes`` and ``--with-tcltk-libs``.
+  :option:`--with-tcltk-includes` and :option:`--with-tcltk-libs`.
   (Contributed by Ned Deily in :issue:`34956`.)
 
 * Python can now be built for Windows 10 ARM64.
@@ -1376,10 +1394,6 @@ Porting to Python 3.9
     :c:func:`PyObject_New` macro, and the :c:func:`PyObject_NEW_VAR` macro
     becomes an alias to the :c:func:`PyObject_NewVar` macro. They no longer
     access directly the :c:member:`PyTypeObject.tp_basicsize` member.
-
-  * :c:func:`PyType_HasFeature` now always calls :c:func:`PyType_GetFlags`.
-    Previously, it accessed directly the :c:member:`PyTypeObject.tp_flags`
-    member when the limited C API was not used.
 
   * :c:func:`PyObject_GET_WEAKREFS_LISTPTR` macro was converted to a function:
     the macro accessed directly the :c:member:`PyTypeObject.tp_weaklistoffset`
@@ -1551,26 +1565,3 @@ separator key, with ``&`` as the default.  This change also affects
 functions internally. For more details, please see their respective
 documentation.
 (Contributed by Adam Goldschmidt, Senthil Kumaran and Ken Jin in :issue:`42967`.)
-
-Notable changes in Python 3.9.3
-===============================
-
-A security fix alters the :class:`ftplib.FTP` behavior to not trust the
-IPv4 address sent from the remote server when setting up a passive data
-channel.  We reuse the ftp server IP address instead.  For unusual code
-requiring the old behavior, set a ``trust_server_pasv_ipv4_address``
-attribute on your FTP instance to ``True``.  (See :issue:`43285`)
-
-Notable changes in Python 3.9.5
-===============================
-
-urllib.parse
-------------
-
-The presence of newline or tab characters in parts of a URL allows for some
-forms of attacks. Following the WHATWG specification that updates :rfc:`3986`,
-ASCII newline ``\n``, ``\r`` and tab ``\t`` characters are stripped from the
-URL by the parser in :mod:`urllib.parse` preventing such attacks. The removal
-characters are controlled by a new module level variable
-``urllib.parse._UNSAFE_URL_BYTES_TO_REMOVE``. (See :issue:`43882`)
-

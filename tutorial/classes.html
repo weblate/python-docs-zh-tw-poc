@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9. Classes &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. Classes &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="10. Python 標準函式庫概覽" href="stdlib.html" />
-    <link rel="prev" title="8. 錯誤和例外" href="errors.html" />
+    <link rel="next" title="10. Brief Tour of the Standard Library" href="stdlib.html" />
+    <link rel="prev" title="8. Errors and Exceptions" href="errors.html" />
     <link rel="canonical" href="https://docs.python.org/3/tutorial/classes.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">9. Classes</a><ul>
 <li><a class="reference internal" href="#a-word-about-names-and-objects">9.1. A Word About Names and Objects</a></li>
 <li><a class="reference internal" href="#python-scopes-and-namespaces">9.2. Python Scopes and Namespaces</a><ul>
@@ -102,18 +101,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="errors.html"
-                        title="上一章"><span class="section-number">8. </span>錯誤和例外</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="stdlib.html"
-                        title="下一章"><span class="section-number">10. </span>Python 標準函式庫概覽</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="errors.html"
+                          title="上一章"><span class="section-number">8. </span>Errors and Exceptions</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="stdlib.html"
+                          title="下一章"><span class="section-number">10. </span>Brief Tour of the Standard Library</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/tutorial/classes.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/tutorial/classes.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -134,10 +138,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="stdlib.html" title="10. Python 標準函式庫概覽"
+          <a href="stdlib.html" title="10. Brief Tour of the Standard Library"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="errors.html" title="8. 錯誤和例外"
+          <a href="errors.html" title="8. Errors and Exceptions"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -149,13 +153,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The Python Tutorial</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">9. </span>Classes</a></li>
                 <li class="right">
                     
@@ -259,7 +261,7 @@ starts up, and is never deleted.  The global namespace for a module is created
 when the module definition is read in; normally, module namespaces also last
 until the interpreter quits.  The statements executed by the top-level
 invocation of the interpreter, either read from a script file or interactively,
-are considered part of a module called <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a>, so they have their own
+are considered part of a module called <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a>, so they have their own
 global namespace.  (The built-in names actually also live in a module; this is
 called <a class="reference internal" href="../library/builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a>.)</p>
 <p>The local namespace for a function is created when the function is called, and
@@ -856,7 +858,7 @@ using the <a class="reference internal" href="../library/functions.html#next" ti
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">it</span>
-<span class="go">&lt;iterator object at 0x00A1DB50&gt;</span>
+<span class="go">&lt;str_iterator object at 0x10c90e650&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
 <span class="go">&#39;a&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
@@ -964,7 +966,7 @@ than equivalent list comprehensions.</p>
 <span class="go">[&#39;f&#39;, &#39;l&#39;, &#39;o&#39;, &#39;g&#39;]</span>
 </pre></div>
 </div>
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Except for one thing.  Module objects have a secret read-only attribute called
@@ -984,8 +986,9 @@ should be restricted to things like post-mortem debuggers.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">9. Classes</a><ul>
 <li><a class="reference internal" href="#a-word-about-names-and-objects">9.1. A Word About Names and Objects</a></li>
 <li><a class="reference internal" href="#python-scopes-and-namespaces">9.2. Python Scopes and Namespaces</a><ul>
@@ -1014,18 +1017,23 @@ should be restricted to things like post-mortem debuggers.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="errors.html"
-                        title="上一章"><span class="section-number">8. </span>錯誤和例外</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="stdlib.html"
-                        title="下一章"><span class="section-number">10. </span>Python 標準函式庫概覽</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="errors.html"
+                          title="上一章"><span class="section-number">8. </span>Errors and Exceptions</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="stdlib.html"
+                          title="下一章"><span class="section-number">10. </span>Brief Tour of the Standard Library</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/tutorial/classes.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/tutorial/classes.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1045,10 +1053,10 @@ should be restricted to things like post-mortem debuggers.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="stdlib.html" title="10. Python 標準函式庫概覽"
+          <a href="stdlib.html" title="10. Brief Tour of the Standard Library"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="errors.html" title="8. 錯誤和例外"
+          <a href="errors.html" title="8. Errors and Exceptions"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -1060,13 +1068,11 @@ should be restricted to things like post-mortem debuggers.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Tutorial</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">9. </span>Classes</a></li>
                 <li class="right">
                     
@@ -1085,25 +1091,25 @@ should be restricted to things like post-mortem debuggers.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

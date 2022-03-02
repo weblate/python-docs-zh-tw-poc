@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New In Python 3.7 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New In Python 3.7 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="What&#39;s New In Python 3.8" href="3.8.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/3.7.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New In Python 3.7</a><ul>
 <li><a class="reference internal" href="#summary-release-highlights">Summary -- Release Highlights</a></li>
 <li><a class="reference internal" href="#new-features">New Features</a><ul>
@@ -208,18 +207,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="3.8.html"
-                        title="上一章">What's New In Python 3.8</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="3.6.html"
-                        title="下一章">What's New In Python 3.6</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.8.html"
+                          title="上一章">What's New In Python 3.8</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="3.6.html"
+                          title="下一章">What's New In Python 3.6</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/3.7.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/3.7.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -255,13 +259,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New In Python 3.7</a></li>
                 <li class="right">
                     
@@ -454,7 +456,7 @@ system. To better handle the case where no suitable target locale is available
 <section id="pep-540-forced-utf-8-runtime-mode">
 <span id="whatsnew37-pep540"></span><h3>PEP 540: Forced UTF-8 Runtime Mode<a class="headerlink" href="#pep-540-forced-utf-8-runtime-mode" title="本標題的永久連結">¶</a></h3>
 <p>The new <a class="reference internal" href="../using/cmdline.html#cmdoption-X"><code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span></code></a> <code class="docutils literal notranslate"><span class="pre">utf8</span></code> command line option and <span class="target" id="index-8"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONUTF8"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONUTF8</span></code></a>
-environment variable can be used to enable the CPython <em>UTF-8 mode</em>.</p>
+environment variable can be used to enable the <a class="reference internal" href="../library/os.html#utf8-mode"><span class="std std-ref">Python UTF-8 Mode</span></a>.</p>
 <p>When in UTF-8 mode, CPython ignores the locale settings, and uses the
 UTF-8 encoding by default.  The error handlers for <a class="reference internal" href="../library/sys.html#sys.stdin" title="sys.stdin"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stdin</span></code></a> and
 <a class="reference internal" href="../library/sys.html#sys.stdout" title="sys.stdout"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stdout</span></code></a> streams are set to <code class="docutils literal notranslate"><span class="pre">surrogateescape</span></code>.</p>
@@ -572,7 +574,7 @@ approximately 3 times better than that of <a class="reference internal" href="..
 <span id="whatsnew37-pep565"></span><h3>PEP 565: Show DeprecationWarning in <code class="docutils literal notranslate"><span class="pre">__main__</span></code><a class="headerlink" href="#pep-565-show-deprecationwarning-in-main" title="本標題的永久連結">¶</a></h3>
 <p>The default handling of <a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> has been changed such that
 these warnings are once more shown by default, but only when the code
-triggering them is running directly in the <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> module.  As a result,
+triggering them is running directly in the <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> module.  As a result,
 developers of single file scripts and those using Python interactively should
 once again start seeing deprecation warnings for the APIs they use, but
 deprecation warnings triggered by imported application, library and framework
@@ -583,7 +585,7 @@ between three different deprecation warning behaviours:</p>
 <li><p><a class="reference internal" href="../library/exceptions.html#FutureWarning" title="FutureWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">FutureWarning</span></code></a>: always displayed by default, recommended for warnings
 intended to be seen by application end users (e.g. for deprecated application
 configuration settings).</p></li>
-<li><p><a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>: displayed by default only in <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> and when
+<li><p><a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>: displayed by default only in <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> and when
 running tests, recommended for warnings intended to be seen by other Python
 developers where a version upgrade may result in changed behaviour or an
 error.</p></li>
@@ -1515,7 +1517,7 @@ are themselves mocks.
 </section>
 <section id="urllib-parse">
 <h3>urllib.parse<a class="headerlink" href="#urllib-parse" title="本標題的永久連結">¶</a></h3>
-<p><a class="reference internal" href="../library/urllib.parse.html#urllib.parse.quote" title="urllib.parse.quote"><code class="xref py py-func docutils literal notranslate"><span class="pre">urllib.parse.quote()</span></code></a> has been updated from <span class="target" id="index-34"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2396.html"><strong>RFC 2396</strong></a> to <span class="target" id="index-35"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3986.html"><strong>RFC 3986</strong></a>,
+<p><a class="reference internal" href="../library/urllib.parse.html#urllib.parse.quote" title="urllib.parse.quote"><code class="xref py py-func docutils literal notranslate"><span class="pre">urllib.parse.quote()</span></code></a> has been updated from <span class="target" id="index-34"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2396.html"><strong>RFC 2396</strong></a> to <span class="target" id="index-35"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3986.html"><strong>RFC 3986</strong></a>,
 adding <code class="docutils literal notranslate"><span class="pre">~</span></code> to the set of characters that are never quoted by default.
 (Contributed by Christian Theune and Ratnadeep Debnath in <a class="reference external" href="https://bugs.python.org/issue16285">bpo-16285</a>.)</p>
 </section>
@@ -1559,8 +1561,8 @@ for the new <code class="docutils literal notranslate"><span class="pre">-X</spa
 </ul>
 </div></blockquote>
 </li>
-<li><p>in CPython debug builds, all warnings are now displayed by default (the
-implicit filter list is empty)</p></li>
+<li><p>in <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">CPython debug builds</span></a>, all warnings are now displayed
+by default (the implicit filter list is empty)</p></li>
 </ul>
 <p>(Contributed by Nick Coghlan and Victor Stinner in <a class="reference external" href="https://bugs.python.org/issue20361">bpo-20361</a>,
 <a class="reference external" href="https://bugs.python.org/issue32043">bpo-32043</a>, and <a class="reference external" href="https://bugs.python.org/issue32230">bpo-32230</a>.)</p>
@@ -1654,7 +1656,7 @@ Contributed by Paul Ganssle in <a class="reference external" href="https://bugs.
 <p>The type of results of <code class="xref c c-func docutils literal notranslate"><span class="pre">PyThread_start_new_thread()</span></code> and
 <code class="xref c c-func docutils literal notranslate"><span class="pre">PyThread_get_thread_ident()</span></code>, and the <em>id</em> parameter of
 <a class="reference internal" href="../c-api/init.html#c.PyThreadState_SetAsyncExc" title="PyThreadState_SetAsyncExc"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyThreadState_SetAsyncExc()</span></code></a> changed from <span class="xref c c-texpr"><span class="kt">long</span></span> to
-<span class="xref c c-texpr"><span class="kt">unsigned long</span></span>.
+<span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span></span>.
 (Contributed by Serhiy Storchaka in <a class="reference external" href="https://bugs.python.org/issue6532">bpo-6532</a>.)</p>
 <p><a class="reference internal" href="../c-api/unicode.html#c.PyUnicode_AsWideCharString" title="PyUnicode_AsWideCharString"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyUnicode_AsWideCharString()</span></code></a> now raises a <a class="reference internal" href="../library/exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the
 second argument is <code class="docutils literal notranslate"><span class="pre">NULL</span></code> and the <span class="xref c c-texpr"><span class="n">wchar_t</span><span class="p">*</span></span> string contains null
@@ -1974,9 +1976,9 @@ default.</p>
 <p>Debian 9 (&quot;stretch&quot;) and Ubuntu 16.04 (&quot;xenial&quot;), as well as recent releases
 of other LTS Linux releases (e.g. RHEL/CentOS 7.5, SLES 12-SP3), use OpenSSL
 1.0.2 or later, and remain supported in the default build configuration.</p>
-<p>CPython's own <a class="reference external" href="https://github.com/python/cpython/tree/3.9/.travis.yml">CI configuration file</a> provides an
+<p>CPython's own <a class="reference external" href="https://github.com/python/cpython/tree/3.10/.travis.yml">CI configuration file</a> provides an
 example of using the SSL
-<a class="reference external" href="https://github.com/python/cpython/tree/3.9/Tools/ssl/multissltests.py">compatibility testing infrastructure</a> in
+<a class="reference external" href="https://github.com/python/cpython/tree/3.10/Tools/ssl/multissltests.py">compatibility testing infrastructure</a> in
 CPython's test suite to build and link against OpenSSL 1.1.0 rather than an
 outdated system provided OpenSSL.</p>
 </li>
@@ -2363,8 +2365,9 @@ documentation.
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New In Python 3.7</a><ul>
 <li><a class="reference internal" href="#summary-release-highlights">Summary -- Release Highlights</a></li>
 <li><a class="reference internal" href="#new-features">New Features</a><ul>
@@ -2499,18 +2502,23 @@ documentation.
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="3.8.html"
-                        title="上一章">What's New In Python 3.8</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="3.6.html"
-                        title="下一章">What's New In Python 3.6</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.8.html"
+                          title="上一章">What's New In Python 3.8</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="3.6.html"
+                          title="下一章">What's New In Python 3.6</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/3.7.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/3.7.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2545,13 +2553,11 @@ documentation.
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New In Python 3.7</a></li>
                 <li class="right">
                     
@@ -2570,25 +2576,25 @@ documentation.
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

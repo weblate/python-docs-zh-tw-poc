@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>operator --- Standard operators as functions &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator --- Standard operators as functions &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="檔案與目錄存取" href="filesys.html" />
+    <link rel="next" title="File and Directory Access" href="filesys.html" />
     <link rel="prev" title="functools --- Higher-order functions and operations on callable objects" href="functools.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/operator.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">operator</span></code> --- Standard operators as functions</a><ul>
 <li><a class="reference internal" href="#mapping-operators-to-functions">Mapping Operators to Functions</a></li>
 <li><a class="reference internal" href="#in-place-operators">In-place Operators</a></li>
@@ -81,18 +80,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="functools.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="filesys.html"
-                        title="下一章">檔案與目錄存取</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="functools.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="filesys.html"
+                          title="下一章">File and Directory Access</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/operator.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/operator.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -113,7 +117,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="filesys.html" title="檔案與目錄存取"
+          <a href="filesys.html" title="File and Directory Access"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="functools.html" title="functools --- Higher-order functions and operations on callable objects"
@@ -128,14 +132,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="functional.html" accesskey="U">函式編程模組</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="functional.html" accesskey="U">Functional Programming Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">operator</span></code> --- Standard operators as functions</a></li>
                 <li class="right">
                     
@@ -161,7 +163,7 @@
             
   <section id="module-operator">
 <span id="operator-standard-operators-as-functions"></span><h1><a class="reference internal" href="#module-operator" title="operator: Functions corresponding to the standard operators."><code class="xref py py-mod docutils literal notranslate"><span class="pre">operator</span></code></a> --- Standard operators as functions<a class="headerlink" href="#module-operator" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/operator.py">Lib/operator.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/operator.py">Lib/operator.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-operator" title="operator: Functions corresponding to the standard operators."><code class="xref py py-mod docutils literal notranslate"><span class="pre">operator</span></code></a> module exports a set of efficient functions corresponding to
 the intrinsic operators of Python.  For example, <code class="docutils literal notranslate"><span class="pre">operator.add(x,</span> <span class="pre">y)</span></code> is
@@ -278,6 +280,10 @@ equivalent to using the <a class="reference internal" href="functions.html#bool"
 <dt class="sig sig-object py" id="operator.__index__">
 <span class="sig-prename descclassname"><span class="pre">operator.</span></span><span class="sig-name descname"><span class="pre">__index__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#operator.__index__" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return <em>a</em> converted to an integer.  Equivalent to <code class="docutils literal notranslate"><span class="pre">a.__index__()</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>The result always has exact type <a class="reference internal" href="functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.  Previously, the result
+could have been an instance of a subclass of <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -323,7 +329,7 @@ equivalent to using the <a class="reference internal" href="functions.html#bool"
 <span class="sig-prename descclassname"><span class="pre">operator.</span></span><span class="sig-name descname"><span class="pre">__matmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#operator.__matmul__" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&#64;</span> <span class="pre">b</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -452,7 +458,7 @@ equivalent to using the <a class="reference internal" href="functions.html#bool"
 actual length, then an estimate using <a class="reference internal" href="../reference/datamodel.html#object.__length_hint__" title="object.__length_hint__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">object.__length_hint__()</span></code></a>, and
 finally return the default value.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -820,7 +826,7 @@ will perform the update, so no subsequent assignment is necessary:</p>
 <span class="sig-prename descclassname"><span class="pre">operator.</span></span><span class="sig-name descname"><span class="pre">__imatmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#operator.__imatmul__" title="本定義的永久連結">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">imatmul(a,</span> <span class="pre">b)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&#64;=</span> <span class="pre">b</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -882,8 +888,9 @@ will perform the update, so no subsequent assignment is necessary:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">operator</span></code> --- Standard operators as functions</a><ul>
 <li><a class="reference internal" href="#mapping-operators-to-functions">Mapping Operators to Functions</a></li>
 <li><a class="reference internal" href="#in-place-operators">In-place Operators</a></li>
@@ -891,18 +898,23 @@ will perform the update, so no subsequent assignment is necessary:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="functools.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="filesys.html"
-                        title="下一章">檔案與目錄存取</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="functools.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="filesys.html"
+                          title="下一章">File and Directory Access</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/operator.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/operator.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -922,7 +934,7 @@ will perform the update, so no subsequent assignment is necessary:</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="filesys.html" title="檔案與目錄存取"
+          <a href="filesys.html" title="File and Directory Access"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="functools.html" title="functools --- Higher-order functions and operations on callable objects"
@@ -937,14 +949,12 @@ will perform the update, so no subsequent assignment is necessary:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="functional.html" >函式編程模組</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="functional.html" >Functional Programming Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">operator</span></code> --- Standard operators as functions</a></li>
                 <li class="right">
                     
@@ -963,25 +973,25 @@ will perform the update, so no subsequent assignment is necessary:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

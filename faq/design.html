@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Design and History FAQ &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design and History FAQ &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="函式庫和擴充功能的常見問題" href="library.html" />
-    <link rel="prev" title="程式開發常見問答集" href="programming.html" />
+    <link rel="next" title="Library and Extension FAQ" href="library.html" />
+    <link rel="prev" title="Programming FAQ" href="programming.html" />
     <link rel="canonical" href="https://docs.python.org/3/faq/design.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,13 +70,14 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Design and History FAQ</a><ul>
 <li><a class="reference internal" href="#why-does-python-use-indentation-for-grouping-of-statements">Why does Python use indentation for grouping of statements?</a></li>
 <li><a class="reference internal" href="#why-am-i-getting-strange-results-with-simple-arithmetic-operations">Why am I getting strange results with simple arithmetic operations?</a></li>
-<li><a class="reference internal" href="#why-are-floating-point-calculations-so-inaccurate">為何浮點數運算如此不精確?</a></li>
-<li><a class="reference internal" href="#why-are-python-strings-immutable">為何Python字串為不可變動</a></li>
+<li><a class="reference internal" href="#why-are-floating-point-calculations-so-inaccurate">Why are floating-point calculations so inaccurate?</a></li>
+<li><a class="reference internal" href="#why-are-python-strings-immutable">Why are Python strings immutable?</a></li>
 <li><a class="reference internal" href="#why-must-self-be-used-explicitly-in-method-definitions-and-calls">Why must 'self' be used explicitly in method definitions and calls?</a></li>
 <li><a class="reference internal" href="#why-can-t-i-use-an-assignment-in-an-expression">Why can't I use an assignment in an expression?</a></li>
 <li><a class="reference internal" href="#why-does-python-use-methods-for-some-functionality-e-g-list-index-but-functions-for-other-e-g-len-list">Why does Python use methods for some functionality (e.g. list.index()) but functions for other (e.g. len(list))?</a></li>
@@ -86,18 +85,18 @@
 <li><a class="reference internal" href="#how-fast-are-exceptions">How fast are exceptions?</a></li>
 <li><a class="reference internal" href="#why-isn-t-there-a-switch-or-case-statement-in-python">Why isn't there a switch or case statement in Python?</a></li>
 <li><a class="reference internal" href="#can-t-you-emulate-threads-in-the-interpreter-instead-of-relying-on-an-os-specific-thread-implementation">Can't you emulate threads in the interpreter instead of relying on an OS-specific thread implementation?</a></li>
-<li><a class="reference internal" href="#why-can-t-lambda-expressions-contain-statements">為何lambda表示式不能包含在敘述內</a></li>
-<li><a class="reference internal" href="#can-python-be-compiled-to-machine-code-c-or-some-other-language">Python可以被編譯成機器語言或C語言或其他種語言嗎?</a></li>
-<li><a class="reference internal" href="#how-does-python-manage-memory">Python如何管理記憶體?</a></li>
-<li><a class="reference internal" href="#why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme">為何CPython不使用更多傳統的垃圾回收機制?</a></li>
-<li><a class="reference internal" href="#why-isn-t-all-memory-freed-when-cpython-exits">當CPython結束時，為何所有的記憶體不會被釋放?</a></li>
+<li><a class="reference internal" href="#why-can-t-lambda-expressions-contain-statements">Why can't lambda expressions contain statements?</a></li>
+<li><a class="reference internal" href="#can-python-be-compiled-to-machine-code-c-or-some-other-language">Can Python be compiled to machine code, C or some other language?</a></li>
+<li><a class="reference internal" href="#how-does-python-manage-memory">How does Python manage memory?</a></li>
+<li><a class="reference internal" href="#why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme">Why doesn't CPython use a more traditional garbage collection scheme?</a></li>
+<li><a class="reference internal" href="#why-isn-t-all-memory-freed-when-cpython-exits">Why isn't all memory freed when CPython exits?</a></li>
 <li><a class="reference internal" href="#why-are-there-separate-tuple-and-list-data-types">Why are there separate tuple and list data types?</a></li>
 <li><a class="reference internal" href="#how-are-lists-implemented-in-cpython">How are lists implemented in CPython?</a></li>
 <li><a class="reference internal" href="#how-are-dictionaries-implemented-in-cpython">How are dictionaries implemented in CPython?</a></li>
 <li><a class="reference internal" href="#why-must-dictionary-keys-be-immutable">Why must dictionary keys be immutable?</a></li>
-<li><a class="reference internal" href="#why-doesn-t-list-sort-return-the-sorted-list">為何list.sort()不是回傳排序過的串列?</a></li>
+<li><a class="reference internal" href="#why-doesn-t-list-sort-return-the-sorted-list">Why doesn't list.sort() return the sorted list?</a></li>
 <li><a class="reference internal" href="#how-do-you-specify-and-enforce-an-interface-spec-in-python">How do you specify and enforce an interface spec in Python?</a></li>
-<li><a class="reference internal" href="#why-is-there-no-goto">為何沒有goto語法?</a></li>
+<li><a class="reference internal" href="#why-is-there-no-goto">Why is there no goto?</a></li>
 <li><a class="reference internal" href="#why-can-t-raw-strings-r-strings-end-with-a-backslash">Why can't raw strings (r-strings) end with a backslash?</a></li>
 <li><a class="reference internal" href="#why-doesn-t-python-have-a-with-statement-for-attribute-assignments">Why doesn't Python have a &quot;with&quot; statement for attribute assignments?</a></li>
 <li><a class="reference internal" href="#why-don-t-generators-support-the-with-statement">Why don't generators support the with statement?</a></li>
@@ -107,18 +106,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="programming.html"
-                        title="上一章">程式開發常見問答集</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="library.html"
-                        title="下一章">函式庫和擴充功能的常見問題</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="programming.html"
+                          title="上一章">Programming FAQ</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="library.html"
+                          title="下一章">Library and Extension FAQ</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/faq/design.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/faq/design.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -139,10 +143,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="library.html" title="函式庫和擴充功能的常見問題"
+          <a href="library.html" title="Library and Extension FAQ"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="programming.html" title="程式開發常見問答集"
+          <a href="programming.html" title="Programming FAQ"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -154,13 +158,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 常見問題</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python Frequently Asked Questions</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Design and History FAQ</a></li>
                 <li class="right">
                     
@@ -193,8 +195,8 @@
 <ul>
 <li><p><a class="reference internal" href="#why-does-python-use-indentation-for-grouping-of-statements" id="id4">Why does Python use indentation for grouping of statements?</a></p></li>
 <li><p><a class="reference internal" href="#why-am-i-getting-strange-results-with-simple-arithmetic-operations" id="id5">Why am I getting strange results with simple arithmetic operations?</a></p></li>
-<li><p><a class="reference internal" href="#why-are-floating-point-calculations-so-inaccurate" id="id6">為何浮點數運算如此不精確?</a></p></li>
-<li><p><a class="reference internal" href="#why-are-python-strings-immutable" id="id7">為何Python字串為不可變動</a></p></li>
+<li><p><a class="reference internal" href="#why-are-floating-point-calculations-so-inaccurate" id="id6">Why are floating-point calculations so inaccurate?</a></p></li>
+<li><p><a class="reference internal" href="#why-are-python-strings-immutable" id="id7">Why are Python strings immutable?</a></p></li>
 <li><p><a class="reference internal" href="#why-must-self-be-used-explicitly-in-method-definitions-and-calls" id="id8">Why must 'self' be used explicitly in method definitions and calls?</a></p></li>
 <li><p><a class="reference internal" href="#why-can-t-i-use-an-assignment-in-an-expression" id="id9">Why can't I use an assignment in an expression?</a></p></li>
 <li><p><a class="reference internal" href="#why-does-python-use-methods-for-some-functionality-e-g-list-index-but-functions-for-other-e-g-len-list" id="id10">Why does Python use methods for some functionality (e.g. list.index()) but functions for other (e.g. len(list))?</a></p></li>
@@ -202,18 +204,18 @@
 <li><p><a class="reference internal" href="#how-fast-are-exceptions" id="id12">How fast are exceptions?</a></p></li>
 <li><p><a class="reference internal" href="#why-isn-t-there-a-switch-or-case-statement-in-python" id="id13">Why isn't there a switch or case statement in Python?</a></p></li>
 <li><p><a class="reference internal" href="#can-t-you-emulate-threads-in-the-interpreter-instead-of-relying-on-an-os-specific-thread-implementation" id="id14">Can't you emulate threads in the interpreter instead of relying on an OS-specific thread implementation?</a></p></li>
-<li><p><a class="reference internal" href="#why-can-t-lambda-expressions-contain-statements" id="id15">為何lambda表示式不能包含在敘述內</a></p></li>
-<li><p><a class="reference internal" href="#can-python-be-compiled-to-machine-code-c-or-some-other-language" id="id16">Python可以被編譯成機器語言或C語言或其他種語言嗎?</a></p></li>
-<li><p><a class="reference internal" href="#how-does-python-manage-memory" id="id17">Python如何管理記憶體?</a></p></li>
-<li><p><a class="reference internal" href="#why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme" id="id18">為何CPython不使用更多傳統的垃圾回收機制?</a></p></li>
-<li><p><a class="reference internal" href="#why-isn-t-all-memory-freed-when-cpython-exits" id="id19">當CPython結束時，為何所有的記憶體不會被釋放?</a></p></li>
+<li><p><a class="reference internal" href="#why-can-t-lambda-expressions-contain-statements" id="id15">Why can't lambda expressions contain statements?</a></p></li>
+<li><p><a class="reference internal" href="#can-python-be-compiled-to-machine-code-c-or-some-other-language" id="id16">Can Python be compiled to machine code, C or some other language?</a></p></li>
+<li><p><a class="reference internal" href="#how-does-python-manage-memory" id="id17">How does Python manage memory?</a></p></li>
+<li><p><a class="reference internal" href="#why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme" id="id18">Why doesn't CPython use a more traditional garbage collection scheme?</a></p></li>
+<li><p><a class="reference internal" href="#why-isn-t-all-memory-freed-when-cpython-exits" id="id19">Why isn't all memory freed when CPython exits?</a></p></li>
 <li><p><a class="reference internal" href="#why-are-there-separate-tuple-and-list-data-types" id="id20">Why are there separate tuple and list data types?</a></p></li>
 <li><p><a class="reference internal" href="#how-are-lists-implemented-in-cpython" id="id21">How are lists implemented in CPython?</a></p></li>
 <li><p><a class="reference internal" href="#how-are-dictionaries-implemented-in-cpython" id="id22">How are dictionaries implemented in CPython?</a></p></li>
 <li><p><a class="reference internal" href="#why-must-dictionary-keys-be-immutable" id="id23">Why must dictionary keys be immutable?</a></p></li>
-<li><p><a class="reference internal" href="#why-doesn-t-list-sort-return-the-sorted-list" id="id24">為何list.sort()不是回傳排序過的串列?</a></p></li>
+<li><p><a class="reference internal" href="#why-doesn-t-list-sort-return-the-sorted-list" id="id24">Why doesn't list.sort() return the sorted list?</a></p></li>
 <li><p><a class="reference internal" href="#how-do-you-specify-and-enforce-an-interface-spec-in-python" id="id25">How do you specify and enforce an interface spec in Python?</a></p></li>
-<li><p><a class="reference internal" href="#why-is-there-no-goto" id="id26">為何沒有goto語法?</a></p></li>
+<li><p><a class="reference internal" href="#why-is-there-no-goto" id="id26">Why is there no goto?</a></p></li>
 <li><p><a class="reference internal" href="#why-can-t-raw-strings-r-strings-end-with-a-backslash" id="id27">Why can't raw strings (r-strings) end with a backslash?</a></p></li>
 <li><p><a class="reference internal" href="#why-doesn-t-python-have-a-with-statement-for-attribute-assignments" id="id28">Why doesn't Python have a &quot;with&quot; statement for attribute assignments?</a></p></li>
 <li><p><a class="reference internal" href="#why-don-t-generators-support-the-with-statement" id="id29">Why don't generators support the with statement?</a></p></li>
@@ -256,10 +258,10 @@ the indentation-based syntax certainly helps.</p>
 </section>
 <section id="why-am-i-getting-strange-results-with-simple-arithmetic-operations">
 <h2><a class="toc-backref" href="#id5">Why am I getting strange results with simple arithmetic operations?</a><a class="headerlink" href="#why-am-i-getting-strange-results-with-simple-arithmetic-operations" title="本標題的永久連結">¶</a></h2>
-<p>請見下一個問題。</p>
+<p>See the next question.</p>
 </section>
 <section id="why-are-floating-point-calculations-so-inaccurate">
-<h2><a class="toc-backref" href="#id6">為何浮點數運算如此不精確?</a><a class="headerlink" href="#why-are-floating-point-calculations-so-inaccurate" title="本標題的永久連結">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Why are floating-point calculations so inaccurate?</a><a class="headerlink" href="#why-are-floating-point-calculations-so-inaccurate" title="本標題的永久連結">¶</a></h2>
 <p>Users are often surprised by results like this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mf">1.2</span> <span class="o">-</span> <span class="mf">1.0</span>
 <span class="go">0.19999999999999996</span>
@@ -294,8 +296,8 @@ decimal digits of accuracy.</p>
 <p>For a fuller explanation, please see the <a class="reference internal" href="../tutorial/floatingpoint.html#tut-fp-issues"><span class="std std-ref">floating point arithmetic</span></a> chapter in the Python tutorial.</p>
 </section>
 <section id="why-are-python-strings-immutable">
-<h2><a class="toc-backref" href="#id7">為何Python字串為不可變動</a><a class="headerlink" href="#why-are-python-strings-immutable" title="本標題的永久連結">¶</a></h2>
-<p>有許多優點。</p>
+<h2><a class="toc-backref" href="#id7">Why are Python strings immutable?</a><a class="headerlink" href="#why-are-python-strings-immutable" title="本標題的永久連結">¶</a></h2>
+<p>There are several advantages.</p>
 <p>One is performance: knowing that a string is immutable means we can allocate
 space for it at creation time, and the storage requirements are fixed and
 unchanging.  This is also one of the reasons for the distinction between tuples
@@ -306,7 +308,8 @@ Python, no amount of activity will change the string &quot;eight&quot; to anythi
 </section>
 <section id="why-must-self-be-used-explicitly-in-method-definitions-and-calls">
 <span id="why-self"></span><h2><a class="toc-backref" href="#id8">Why must 'self' be used explicitly in method definitions and calls?</a><a class="headerlink" href="#why-must-self-be-used-explicitly-in-method-definitions-and-calls" title="本標題的永久連結">¶</a></h2>
-<p>此構想從Modula-3而來。有許多原因可以說是非常實用。</p>
+<p>The idea was borrowed from Modula-3.  It turns out to be very useful, for a
+variety of reasons.</p>
 <p>First, it's more obvious that you are using a method or instance attribute
 instead of a local variable.  Reading <code class="docutils literal notranslate"><span class="pre">self.x</span></code> or <code class="docutils literal notranslate"><span class="pre">self.meth()</span></code> makes it
 absolutely clear that an instance variable or method is used even if you don't
@@ -432,18 +435,14 @@ is evaluated in all cases.</p>
 <section id="why-isn-t-there-a-switch-or-case-statement-in-python">
 <h2><a class="toc-backref" href="#id13">Why isn't there a switch or case statement in Python?</a><a class="headerlink" href="#why-isn-t-there-a-switch-or-case-statement-in-python" title="本標題的永久連結">¶</a></h2>
 <p>You can do this easily enough with a sequence of <code class="docutils literal notranslate"><span class="pre">if...</span> <span class="pre">elif...</span> <span class="pre">elif...</span> <span class="pre">else</span></code>.
-There have been some proposals for switch statement syntax, but there is no
-consensus (yet) on whether and how to do range tests.  See <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0275"><strong>PEP 275</strong></a> for
-complete details and the current status.</p>
+For literal values, or constants within a namespace, you can also use a
+<code class="docutils literal notranslate"><span class="pre">match</span> <span class="pre">...</span> <span class="pre">case</span></code> statement.</p>
 <p>For cases where you need to choose from a very large number of possibilities,
 you can create a dictionary mapping case values to functions to call.  For
 example:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_1</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-    <span class="o">...</span>
-
-<span class="n">functions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="n">function_1</span><span class="p">,</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">functions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="n">function_1</span><span class="p">,</span>
              <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="n">function_2</span><span class="p">,</span>
-             <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">method_1</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+             <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">method_1</span><span class="p">}</span>
 
 <span class="n">func</span> <span class="o">=</span> <span class="n">functions</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
 <span class="n">func</span><span class="p">()</span>
@@ -451,14 +450,14 @@ example:</p>
 </div>
 <p>For calling methods on objects, you can simplify yet further by using the
 <a class="reference internal" href="../library/functions.html#getattr" title="getattr"><code class="xref py py-func docutils literal notranslate"><span class="pre">getattr()</span></code></a> built-in to retrieve methods with a particular name:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visit_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
-    <span class="o">...</span>
-<span class="o">...</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyVisitor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">visit_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
 
-<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-    <span class="n">method_name</span> <span class="o">=</span> <span class="s1">&#39;visit_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-    <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)</span>
-    <span class="n">method</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">method_name</span> <span class="o">=</span> <span class="s1">&#39;visit_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)</span>
+        <span class="n">method</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>It's suggested that you use a prefix for the method names, such as <code class="docutils literal notranslate"><span class="pre">visit_</span></code> in
@@ -475,7 +474,7 @@ support for C.</p>
 which has a completely redesigned interpreter loop that avoids the C stack.</p>
 </section>
 <section id="why-can-t-lambda-expressions-contain-statements">
-<h2><a class="toc-backref" href="#id15">為何lambda表示式不能包含在敘述內</a><a class="headerlink" href="#why-can-t-lambda-expressions-contain-statements" title="本標題的永久連結">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Why can't lambda expressions contain statements?</a><a class="headerlink" href="#why-can-t-lambda-expressions-contain-statements" title="本標題的永久連結">¶</a></h2>
 <p>Python lambda expressions cannot contain statements because Python's syntactic
 framework can't handle statements nested inside expressions.  However, in
 Python, this is not a serious problem.  Unlike lambda forms in other languages,
@@ -488,7 +487,7 @@ function -- but that's just a local variable to which the function object (which
 is exactly the same type of object that a lambda expression yields) is assigned!</p>
 </section>
 <section id="can-python-be-compiled-to-machine-code-c-or-some-other-language">
-<h2><a class="toc-backref" href="#id16">Python可以被編譯成機器語言或C語言或其他種語言嗎?</a><a class="headerlink" href="#can-python-be-compiled-to-machine-code-c-or-some-other-language" title="本標題的永久連結">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Can Python be compiled to machine code, C or some other language?</a><a class="headerlink" href="#can-python-be-compiled-to-machine-code-c-or-some-other-language" title="本標題的永久連結">¶</a></h2>
 <p><a class="reference external" href="http://cython.org/">Cython</a> compiles a modified version of Python with
 optional annotations into C extensions.  <a class="reference external" href="http://www.nuitka.net/">Nuitka</a> is
 an up-and-coming compiler of Python into C++ code, aiming to support the full
@@ -496,7 +495,7 @@ Python language. For compiling to Java you can consider
 <a class="reference external" href="https://voc.readthedocs.io">VOC</a>.</p>
 </section>
 <section id="how-does-python-manage-memory">
-<h2><a class="toc-backref" href="#id17">Python如何管理記憶體?</a><a class="headerlink" href="#how-does-python-manage-memory" title="本標題的永久連結">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">How does Python manage memory?</a><a class="headerlink" href="#how-does-python-manage-memory" title="本標題的永久連結">¶</a></h2>
 <p>The details of Python memory management depend on the implementation.  The
 standard implementation of Python, <a class="reference internal" href="../glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a>, uses reference counting to
 detect inaccessible objects, and another mechanism to collect reference cycles,
@@ -530,7 +529,7 @@ this will work regardless of memory management scheme:</p>
 </div>
 </section>
 <section id="why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme">
-<h2><a class="toc-backref" href="#id18">為何CPython不使用更多傳統的垃圾回收機制?</a><a class="headerlink" href="#why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme" title="本標題的永久連結">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Why doesn't CPython use a more traditional garbage collection scheme?</a><a class="headerlink" href="#why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme" title="本標題的永久連結">¶</a></h2>
 <p>For one thing, this is not a C standard feature and hence it's not portable.
 (Yes, we know about the Boehm GC library.  It has bits of assembler code for
 <em>most</em> common platforms, not for all of them, and although it is mostly
@@ -544,7 +543,7 @@ and may not want Python's.  Right now, CPython works with anything that
 implements malloc() and free() properly.</p>
 </section>
 <section id="why-isn-t-all-memory-freed-when-cpython-exits">
-<h2><a class="toc-backref" href="#id19">當CPython結束時，為何所有的記憶體不會被釋放?</a><a class="headerlink" href="#why-isn-t-all-memory-freed-when-cpython-exits" title="本標題的永久連結">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Why isn't all memory freed when CPython exits?</a><a class="headerlink" href="#why-isn-t-all-memory-freed-when-cpython-exits" title="本標題的永久連結">¶</a></h2>
 <p>Objects referenced from the global namespaces of Python modules are not always
 deallocated when Python exits.  This may happen if there are circular
 references.  There are also certain bits of memory that are allocated by the C
@@ -674,7 +673,7 @@ prepared to think hard about the requirements and the consequences of not
 meeting them correctly.  Consider yourself warned.</p>
 </section>
 <section id="why-doesn-t-list-sort-return-the-sorted-list">
-<h2><a class="toc-backref" href="#id24">為何list.sort()不是回傳排序過的串列?</a><a class="headerlink" href="#why-doesn-t-list-sort-return-the-sorted-list" title="本標題的永久連結">¶</a></h2>
+<h2><a class="toc-backref" href="#id24">Why doesn't list.sort() return the sorted list?</a><a class="headerlink" href="#why-doesn-t-list-sort-return-the-sorted-list" title="本標題的永久連結">¶</a></h2>
 <p>In situations where performance matters, making a copy of the list just to sort
 it would be wasteful. Therefore, <a class="reference internal" href="../library/stdtypes.html#list.sort" title="list.sort"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list.sort()</span></code></a> sorts the list in place. In
 order to remind you of that fact, it does not return the sorted list.  This way,
@@ -724,7 +723,7 @@ any of the actual code.  Of course Python allows you to be sloppy and not write
 test cases at all.</p>
 </section>
 <section id="why-is-there-no-goto">
-<h2><a class="toc-backref" href="#id26">為何沒有goto語法?</a><a class="headerlink" href="#why-is-there-no-goto" title="本標題的永久連結">¶</a></h2>
+<h2><a class="toc-backref" href="#id26">Why is there no goto?</a><a class="headerlink" href="#why-is-there-no-goto" title="本標題的永久連結">¶</a></h2>
 <p>In the 1970s people realized that unrestricted goto could lead
 to messy &quot;spaghetti&quot; code that was hard to understand and revise.
 In a high-level language, it is also unneeded as long as there
@@ -827,7 +826,7 @@ to perform the resolution once.</p>
 <p>For technical reasons, a generator used directly as a context manager
 would not work correctly.  When, as is most common, a generator is used as
 an iterator run to completion, no closing is needed.  When it is, wrap
-it as &quot;contextlib.closing(generator)&quot; in the 'with' statment.</p>
+it as &quot;contextlib.closing(generator)&quot; in the 'with' statement.</p>
 </section>
 <section id="why-are-colons-required-for-the-if-while-def-class-statements">
 <h2><a class="toc-backref" href="#id30">Why are colons required for the if/while/def/class statements?</a><a class="headerlink" href="#why-are-colons-required-for-the-if-while-def-class-statements" title="本標題的永久連結">¶</a></h2>
@@ -860,7 +859,7 @@ dictionaries:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>這有許多原因可被允許。</p>
+<p>There are several reasons to allow this.</p>
 <p>When you have a literal value for a list, tuple, or dictionary spread across
 multiple lines, it's easier to add more elements because you don't have to
 remember to add a comma to the previous line.  The lines can also be reordered
@@ -888,13 +887,14 @@ For example:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Design and History FAQ</a><ul>
 <li><a class="reference internal" href="#why-does-python-use-indentation-for-grouping-of-statements">Why does Python use indentation for grouping of statements?</a></li>
 <li><a class="reference internal" href="#why-am-i-getting-strange-results-with-simple-arithmetic-operations">Why am I getting strange results with simple arithmetic operations?</a></li>
-<li><a class="reference internal" href="#why-are-floating-point-calculations-so-inaccurate">為何浮點數運算如此不精確?</a></li>
-<li><a class="reference internal" href="#why-are-python-strings-immutable">為何Python字串為不可變動</a></li>
+<li><a class="reference internal" href="#why-are-floating-point-calculations-so-inaccurate">Why are floating-point calculations so inaccurate?</a></li>
+<li><a class="reference internal" href="#why-are-python-strings-immutable">Why are Python strings immutable?</a></li>
 <li><a class="reference internal" href="#why-must-self-be-used-explicitly-in-method-definitions-and-calls">Why must 'self' be used explicitly in method definitions and calls?</a></li>
 <li><a class="reference internal" href="#why-can-t-i-use-an-assignment-in-an-expression">Why can't I use an assignment in an expression?</a></li>
 <li><a class="reference internal" href="#why-does-python-use-methods-for-some-functionality-e-g-list-index-but-functions-for-other-e-g-len-list">Why does Python use methods for some functionality (e.g. list.index()) but functions for other (e.g. len(list))?</a></li>
@@ -902,18 +902,18 @@ For example:</p>
 <li><a class="reference internal" href="#how-fast-are-exceptions">How fast are exceptions?</a></li>
 <li><a class="reference internal" href="#why-isn-t-there-a-switch-or-case-statement-in-python">Why isn't there a switch or case statement in Python?</a></li>
 <li><a class="reference internal" href="#can-t-you-emulate-threads-in-the-interpreter-instead-of-relying-on-an-os-specific-thread-implementation">Can't you emulate threads in the interpreter instead of relying on an OS-specific thread implementation?</a></li>
-<li><a class="reference internal" href="#why-can-t-lambda-expressions-contain-statements">為何lambda表示式不能包含在敘述內</a></li>
-<li><a class="reference internal" href="#can-python-be-compiled-to-machine-code-c-or-some-other-language">Python可以被編譯成機器語言或C語言或其他種語言嗎?</a></li>
-<li><a class="reference internal" href="#how-does-python-manage-memory">Python如何管理記憶體?</a></li>
-<li><a class="reference internal" href="#why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme">為何CPython不使用更多傳統的垃圾回收機制?</a></li>
-<li><a class="reference internal" href="#why-isn-t-all-memory-freed-when-cpython-exits">當CPython結束時，為何所有的記憶體不會被釋放?</a></li>
+<li><a class="reference internal" href="#why-can-t-lambda-expressions-contain-statements">Why can't lambda expressions contain statements?</a></li>
+<li><a class="reference internal" href="#can-python-be-compiled-to-machine-code-c-or-some-other-language">Can Python be compiled to machine code, C or some other language?</a></li>
+<li><a class="reference internal" href="#how-does-python-manage-memory">How does Python manage memory?</a></li>
+<li><a class="reference internal" href="#why-doesn-t-cpython-use-a-more-traditional-garbage-collection-scheme">Why doesn't CPython use a more traditional garbage collection scheme?</a></li>
+<li><a class="reference internal" href="#why-isn-t-all-memory-freed-when-cpython-exits">Why isn't all memory freed when CPython exits?</a></li>
 <li><a class="reference internal" href="#why-are-there-separate-tuple-and-list-data-types">Why are there separate tuple and list data types?</a></li>
 <li><a class="reference internal" href="#how-are-lists-implemented-in-cpython">How are lists implemented in CPython?</a></li>
 <li><a class="reference internal" href="#how-are-dictionaries-implemented-in-cpython">How are dictionaries implemented in CPython?</a></li>
 <li><a class="reference internal" href="#why-must-dictionary-keys-be-immutable">Why must dictionary keys be immutable?</a></li>
-<li><a class="reference internal" href="#why-doesn-t-list-sort-return-the-sorted-list">為何list.sort()不是回傳排序過的串列?</a></li>
+<li><a class="reference internal" href="#why-doesn-t-list-sort-return-the-sorted-list">Why doesn't list.sort() return the sorted list?</a></li>
 <li><a class="reference internal" href="#how-do-you-specify-and-enforce-an-interface-spec-in-python">How do you specify and enforce an interface spec in Python?</a></li>
-<li><a class="reference internal" href="#why-is-there-no-goto">為何沒有goto語法?</a></li>
+<li><a class="reference internal" href="#why-is-there-no-goto">Why is there no goto?</a></li>
 <li><a class="reference internal" href="#why-can-t-raw-strings-r-strings-end-with-a-backslash">Why can't raw strings (r-strings) end with a backslash?</a></li>
 <li><a class="reference internal" href="#why-doesn-t-python-have-a-with-statement-for-attribute-assignments">Why doesn't Python have a &quot;with&quot; statement for attribute assignments?</a></li>
 <li><a class="reference internal" href="#why-don-t-generators-support-the-with-statement">Why don't generators support the with statement?</a></li>
@@ -923,18 +923,23 @@ For example:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="programming.html"
-                        title="上一章">程式開發常見問答集</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="library.html"
-                        title="下一章">函式庫和擴充功能的常見問題</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="programming.html"
+                          title="上一章">Programming FAQ</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="library.html"
+                          title="下一章">Library and Extension FAQ</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/faq/design.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/faq/design.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -954,10 +959,10 @@ For example:</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="library.html" title="函式庫和擴充功能的常見問題"
+          <a href="library.html" title="Library and Extension FAQ"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="programming.html" title="程式開發常見問答集"
+          <a href="programming.html" title="Programming FAQ"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -969,13 +974,11 @@ For example:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 常見問題</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python Frequently Asked Questions</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Design and History FAQ</a></li>
                 <li class="right">
                     
@@ -994,25 +997,25 @@ For example:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

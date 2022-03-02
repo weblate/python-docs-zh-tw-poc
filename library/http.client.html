@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>http.client --- HTTP protocol client &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>http.client --- HTTP protocol client &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="http --- HTTP modules" href="http.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/http.client.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.client</span></code> --- HTTP protocol client</a><ul>
 <li><a class="reference internal" href="#httpconnection-objects">HTTPConnection Objects</a></li>
 <li><a class="reference internal" href="#httpresponse-objects">HTTPResponse Objects</a></li>
@@ -83,18 +82,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="http.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http</span></code> --- HTTP modules</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="ftplib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ftplib</span></code> --- FTP protocol client</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="http.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http</span></code> --- HTTP modules</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="ftplib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ftplib</span></code> --- FTP protocol client</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/http.client.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/http.client.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -130,13 +134,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" accesskey="U">Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.client</span></code> --- HTTP protocol client</a></li>
                 <li class="right">
@@ -163,7 +165,7 @@
             
   <section id="module-http.client">
 <span id="http-client-http-protocol-client"></span><h1><a class="reference internal" href="#module-http.client" title="http.client: HTTP and HTTPS protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.client</span></code></a> --- HTTP protocol client<a class="headerlink" href="#module-http.client" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/http/client.py">Lib/http/client.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/http/client.py">Lib/http/client.py</a></p>
 <span class="target" id="index-0"></span><hr class="docutils" id="index-1" />
 <p>This module defines classes which implement the client side of the HTTP and
 HTTPS protocols.  It is normally not used directly --- the module
@@ -181,7 +183,7 @@ is recommended for a higher-level HTTP client interface.</p>
 <p>The module provides the following classes:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="http.client.HTTPConnection">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">port=None</span></em>, <span class="optional">[</span><em class="sig-param"><span class="pre">timeout</span></em>, <span class="optional">]</span><em class="sig-param"><span class="pre">source_address=None</span></em>, <em class="sig-param"><span class="pre">blocksize=8192</span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPConnection" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port=None</span></span></em>, <span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em>, <span class="optional">]</span><em class="sig-param"><span class="n"><span class="pre">source_address=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocksize=8192</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPConnection" title="本定義的永久連結">¶</a></dt>
 <dd><p>An <a class="reference internal" href="#http.client.HTTPConnection" title="http.client.HTTPConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPConnection</span></code></a> instance represents one transaction with an HTTP
 server.  It should be instantiated passing it a host and optional port
 number.  If no port number is passed, the port is extracted from the host
@@ -202,49 +204,54 @@ at the same host and port:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span><em>source_address</em> was added.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span><em>source_address</em> was added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The  <em>strict</em> parameter was removed. HTTP 0.9-style &quot;Simple Responses&quot; are
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The  <em>strict</em> parameter was removed. HTTP 0.9-style &quot;Simple Responses&quot; are
 not longer supported.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><em>blocksize</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><em>blocksize</em> parameter was added.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="http.client.HTTPSConnection">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPSConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">port=None</span></em>, <em class="sig-param"><span class="pre">key_file=None</span></em>, <em class="sig-param"><span class="pre">cert_file=None</span></em>, <span class="optional">[</span><em class="sig-param"><span class="pre">timeout</span></em>, <span class="optional">]</span><em class="sig-param"><span class="pre">source_address=None</span></em>, <em class="sig-param"><span class="pre">*</span></em>, <em class="sig-param"><span class="pre">context=None</span></em>, <em class="sig-param"><span class="pre">check_hostname=None</span></em>, <em class="sig-param"><span class="pre">blocksize=8192</span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPSConnection" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPSConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_file=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cert_file=None</span></span></em>, <span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em>, <span class="optional">]</span><em class="sig-param"><span class="n"><span class="pre">source_address=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_hostname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocksize=8192</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPSConnection" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPConnection" title="http.client.HTTPConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPConnection</span></code></a> that uses SSL for communication with
 secure servers.  Default port is <code class="docutils literal notranslate"><span class="pre">443</span></code>.  If <em>context</em> is specified, it
 must be a <a class="reference internal" href="ssl.html#ssl.SSLContext" title="ssl.SSLContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssl.SSLContext</span></code></a> instance describing the various SSL
 options.</p>
 <p>Please read <a class="reference internal" href="ssl.html#ssl-security"><span class="std std-ref">Security considerations</span></a> for more information on best practices.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span><em>source_address</em>, <em>context</em> and <em>check_hostname</em> were added.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span><em>source_address</em>, <em>context</em> and <em>check_hostname</em> were added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>This class now supports HTTPS virtual hosts if possible (that is,
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>This class now supports HTTPS virtual hosts if possible (that is,
 if <a class="reference internal" href="ssl.html#ssl.HAS_SNI" title="ssl.HAS_SNI"><code class="xref py py-data docutils literal notranslate"><span class="pre">ssl.HAS_SNI</span></code></a> is true).</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The <em>strict</em> parameter was removed. HTTP 0.9-style &quot;Simple Responses&quot; are
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The <em>strict</em> parameter was removed. HTTP 0.9-style &quot;Simple Responses&quot; are
 no longer supported.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4.3 版更變: </span>This class now performs all the necessary certificate and hostname checks
+<p><span class="versionmodified changed">在 3.4.3 版本變更: </span>This class now performs all the necessary certificate and hostname checks
 by default. To revert to the previous, unverified, behavior
 <code class="xref py py-func docutils literal notranslate"><span class="pre">ssl._create_unverified_context()</span></code> can be passed to the <em>context</em>
 parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>This class now enables TLS 1.3
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>This class now enables TLS 1.3
 <a class="reference internal" href="ssl.html#ssl.SSLContext.post_handshake_auth" title="ssl.SSLContext.post_handshake_auth"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ssl.SSLContext.post_handshake_auth</span></code></a> for the default <em>context</em> or
 when <em>cert_file</em> is passed with a custom <em>context</em>.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>This class now sends an ALPN extension with protocol indicator
+<code class="docutils literal notranslate"><span class="pre">http/1.1</span></code> when no <em>context</em> is given. Custom <em>context</em> should set
+ALPN protocols with <code class="xref py py-meth docutils literal notranslate"><span class="pre">set_alpn_protocol()</span></code>.</p>
+</div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.6 版後已棄用: </span><em>key_file</em> and <em>cert_file</em> are deprecated in favor of <em>context</em>.
+<p><span class="versionmodified deprecated">在 3.6 版本開始棄用: </span><em>key_file</em> and <em>cert_file</em> are deprecated in favor of <em>context</em>.
 Please use <a class="reference internal" href="ssl.html#ssl.SSLContext.load_cert_chain" title="ssl.SSLContext.load_cert_chain"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ssl.SSLContext.load_cert_chain()</span></code></a> instead, or let
 <a class="reference internal" href="ssl.html#ssl.create_default_context" title="ssl.create_default_context"><code class="xref py py-func docutils literal notranslate"><span class="pre">ssl.create_default_context()</span></code></a> select the system's trusted CA
 certificates for you.</p>
@@ -256,11 +263,11 @@ be used instead.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="http.client.HTTPResponse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debuglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPResponse" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debuglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPResponse" title="本定義的永久連結">¶</a></dt>
 <dd><p>Class whose instances are returned upon successful connection.  Not
 instantiated directly by user.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The <em>strict</em> parameter was removed. HTTP 0.9 style &quot;Simple Responses&quot; are
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The <em>strict</em> parameter was removed. HTTP 0.9 style &quot;Simple Responses&quot; are
 no longer supported.</p>
 </div>
 </dd></dl>
@@ -271,7 +278,7 @@ no longer supported.</p>
 <span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">parse_headers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.client.parse_headers" title="本定義的永久連結">¶</a></dt>
 <dd><p>Parse the headers from a file pointer <em>fp</em> representing a HTTP
 request/response. The file has to be a <code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedIOBase</span></code> reader
-(i.e. not text) and must provide a valid <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2822.html"><strong>RFC 2822</strong></a> style header.</p>
+(i.e. not text) and must provide a valid <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2822.html"><strong>RFC 2822</strong></a> style header.</p>
 <p>This function returns an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">http.client.HTTPMessage</span></code>
 that holds the header fields, but no payload
 (the same as <a class="reference internal" href="#http.client.HTTPResponse.msg" title="http.client.HTTPResponse.msg"><code class="xref py py-attr docutils literal notranslate"><span class="pre">HTTPResponse.msg</span></code></a>
@@ -289,95 +296,95 @@ before calling the function.</p>
 <p>The following exceptions are raised as appropriate:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.HTTPException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPException</span></span><a class="headerlink" href="#http.client.HTTPException" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">HTTPException</span></span><a class="headerlink" href="#http.client.HTTPException" title="本定義的永久連結">¶</a></dt>
 <dd><p>The base class of the other exceptions in this module.  It is a subclass of
 <a class="reference internal" href="exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.NotConnected">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">NotConnected</span></span><a class="headerlink" href="#http.client.NotConnected" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">NotConnected</span></span><a class="headerlink" href="#http.client.NotConnected" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.InvalidURL">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">InvalidURL</span></span><a class="headerlink" href="#http.client.InvalidURL" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">InvalidURL</span></span><a class="headerlink" href="#http.client.InvalidURL" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>, raised if a port is given and is either
 non-numeric or empty.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.UnknownProtocol">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">UnknownProtocol</span></span><a class="headerlink" href="#http.client.UnknownProtocol" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">UnknownProtocol</span></span><a class="headerlink" href="#http.client.UnknownProtocol" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.UnknownTransferEncoding">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">UnknownTransferEncoding</span></span><a class="headerlink" href="#http.client.UnknownTransferEncoding" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">UnknownTransferEncoding</span></span><a class="headerlink" href="#http.client.UnknownTransferEncoding" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.UnimplementedFileMode">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">UnimplementedFileMode</span></span><a class="headerlink" href="#http.client.UnimplementedFileMode" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">UnimplementedFileMode</span></span><a class="headerlink" href="#http.client.UnimplementedFileMode" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.IncompleteRead">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">IncompleteRead</span></span><a class="headerlink" href="#http.client.IncompleteRead" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">IncompleteRead</span></span><a class="headerlink" href="#http.client.IncompleteRead" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.ImproperConnectionState">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">ImproperConnectionState</span></span><a class="headerlink" href="#http.client.ImproperConnectionState" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">ImproperConnectionState</span></span><a class="headerlink" href="#http.client.ImproperConnectionState" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.CannotSendRequest">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">CannotSendRequest</span></span><a class="headerlink" href="#http.client.CannotSendRequest" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">CannotSendRequest</span></span><a class="headerlink" href="#http.client.CannotSendRequest" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.ImproperConnectionState" title="http.client.ImproperConnectionState"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImproperConnectionState</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.CannotSendHeader">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">CannotSendHeader</span></span><a class="headerlink" href="#http.client.CannotSendHeader" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">CannotSendHeader</span></span><a class="headerlink" href="#http.client.CannotSendHeader" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.ImproperConnectionState" title="http.client.ImproperConnectionState"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImproperConnectionState</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.ResponseNotReady">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">ResponseNotReady</span></span><a class="headerlink" href="#http.client.ResponseNotReady" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">ResponseNotReady</span></span><a class="headerlink" href="#http.client.ResponseNotReady" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.ImproperConnectionState" title="http.client.ImproperConnectionState"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImproperConnectionState</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.BadStatusLine">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">BadStatusLine</span></span><a class="headerlink" href="#http.client.BadStatusLine" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">BadStatusLine</span></span><a class="headerlink" href="#http.client.BadStatusLine" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>.  Raised if a server responds with a HTTP
 status code that we don't understand.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.LineTooLong">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">LineTooLong</span></span><a class="headerlink" href="#http.client.LineTooLong" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">LineTooLong</span></span><a class="headerlink" href="#http.client.LineTooLong" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#http.client.HTTPException" title="http.client.HTTPException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">HTTPException</span></code></a>.  Raised if an excessively long line
 is received in the HTTP protocol from the server.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.client.RemoteDisconnected">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">RemoteDisconnected</span></span><a class="headerlink" href="#http.client.RemoteDisconnected" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.client.</span></span><span class="sig-name descname"><span class="pre">RemoteDisconnected</span></span><a class="headerlink" href="#http.client.RemoteDisconnected" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="exceptions.html#ConnectionResetError" title="ConnectionResetError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ConnectionResetError</span></code></a> and <a class="reference internal" href="#http.client.BadStatusLine" title="http.client.BadStatusLine"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BadStatusLine</span></code></a>.  Raised
 by <a class="reference internal" href="#http.client.HTTPConnection.getresponse" title="http.client.HTTPConnection.getresponse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">HTTPConnection.getresponse()</span></code></a> when the attempt to read the response
 results in no data read from the connection, indicating that the remote end
 has closed the connection.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入: </span>Previously, <a class="reference internal" href="#http.client.BadStatusLine" title="http.client.BadStatusLine"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BadStatusLine</span></code></a><code class="docutils literal notranslate"><span class="pre">('')</span></code> was raised.</p>
+<p><span class="versionmodified added">在 3.5 版本新加入: </span>Previously, <a class="reference internal" href="#http.client.BadStatusLine" title="http.client.BadStatusLine"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BadStatusLine</span></code></a><code class="docutils literal notranslate"><span class="pre">('')</span></code> was raised.</p>
 </div>
 </dd></dl>
 
@@ -448,10 +455,10 @@ the caller must either specify the Content-Length, or must pass a
 body representation.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入: </span><em>body</em> can now be an iterable.</p>
+<p><span class="versionmodified added">在 3.2 版本新加入: </span><em>body</em> can now be an iterable.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>If neither Content-Length nor Transfer-Encoding are set in
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>If neither Content-Length nor Transfer-Encoding are set in
 <em>headers</em>, file and iterable <em>body</em> objects are now chunk-encoded.
 The <em>encode_chunked</em> argument was added.
 No attempt is made to determine the Content-Length for file
@@ -470,7 +477,7 @@ Returns an <a class="reference internal" href="#http.client.HTTPResponse" title=
 request to the server.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>If a <a class="reference internal" href="exceptions.html#ConnectionError" title="ConnectionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ConnectionError</span></code></a> or subclass is raised, the
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>If a <a class="reference internal" href="exceptions.html#ConnectionError" title="ConnectionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ConnectionError</span></code></a> or subclass is raised, the
 <a class="reference internal" href="#http.client.HTTPConnection" title="http.client.HTTPConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPConnection</span></code></a> object will be ready to reconnect when
 a new request is sent.</p>
 </div>
@@ -484,7 +491,7 @@ debugging output is printed.  Any value greater than <code class="docutils liter
 currently defined debug output to be printed to stdout.  The <code class="docutils literal notranslate"><span class="pre">debuglevel</span></code>
 is passed to any new <a class="reference internal" href="#http.client.HTTPResponse" title="http.client.HTTPResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPResponse</span></code></a> objects that are created.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -509,7 +516,7 @@ the <a class="reference internal" href="#http.client.HTTPConnection.set_tunnel" 
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -519,6 +526,7 @@ the <a class="reference internal" href="#http.client.HTTPConnection.set_tunnel" 
 <dd><p>Connect to the server specified when the object was created.  By default,
 this is called automatically when making a request if the client does not
 already have a connection.</p>
+<p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">http.client.connect</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">host</span></code>, <code class="docutils literal notranslate"><span class="pre">port</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -532,7 +540,7 @@ already have a connection.</p>
 <span class="sig-prename descclassname"><span class="pre">HTTPConnection.</span></span><span class="sig-name descname"><span class="pre">blocksize</span></span><a class="headerlink" href="#http.client.HTTPConnection.blocksize" title="本定義的永久連結">¶</a></dt>
 <dd><p>Buffer size in bytes for sending a file-like message body.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -551,8 +559,8 @@ with non-False values.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="http.client.HTTPConnection.putheader">
-<span class="sig-prename descclassname"><span class="pre">HTTPConnection.</span></span><span class="sig-name descname"><span class="pre">putheader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">header</span></em>, <em class="sig-param"><span class="pre">argument</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPConnection.putheader" title="本定義的永久連結">¶</a></dt>
-<dd><p>Send an <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a>-style header to the server.  It sends a line to the server
+<span class="sig-prename descclassname"><span class="pre">HTTPConnection.</span></span><span class="sig-name descname"><span class="pre">putheader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPConnection.putheader" title="本定義的永久連結">¶</a></dt>
+<dd><p>Send an <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc822.html"><strong>RFC 822</strong></a>-style header to the server.  It sends a line to the server
 consisting of the header, a colon and a space, and the first argument.  If more
 arguments are given, continuation lines are sent, each consisting of a tab and
 an argument.</p>
@@ -565,7 +573,7 @@ an argument.</p>
 optional <em>message_body</em> argument can be used to pass a message body
 associated with the request.</p>
 <p>If <em>encode_chunked</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the result of each iteration of
-<em>message_body</em> will be chunk-encoded as specified in <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7230.html"><strong>RFC 7230</strong></a>,
+<em>message_body</em> will be chunk-encoded as specified in <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7230.html"><strong>RFC 7230</strong></a>,
 Section 3.3.1.  How the data is encoded is dependent on the type of
 <em>message_body</em>.  If <em>message_body</em> implements the <a class="reference internal" href="../c-api/buffer.html#bufferobjects"><span class="std std-ref">buffer interface</span></a> the encoding will result in a single chunk.
 If <em>message_body</em> is a <a class="reference internal" href="collections.abc.html#collections.abc.Iterable" title="collections.abc.Iterable"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Iterable</span></code></a>, each iteration
@@ -581,7 +589,7 @@ This is to avoid premature termination of the read of the request by
 the target server due to malformed encoding.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>Chunked encoding support.  The <em>encode_chunked</em> parameter was
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>Chunked encoding support.  The <em>encode_chunked</em> parameter was
 added.</p>
 </div>
 </dd></dl>
@@ -592,6 +600,7 @@ added.</p>
 <dd><p>Send data to the server.  This should be used directly only after the
 <a class="reference internal" href="#http.client.HTTPConnection.endheaders" title="http.client.HTTPConnection.endheaders"><code class="xref py py-meth docutils literal notranslate"><span class="pre">endheaders()</span></code></a> method has been called and before <a class="reference internal" href="#http.client.HTTPConnection.getresponse" title="http.client.HTTPConnection.getresponse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getresponse()</span></code></a> is
 called.</p>
+<p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">http.client.send</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 </dd></dl>
 
 </section>
@@ -602,12 +611,12 @@ server.  It provides access to the request headers and the entity
 body.  The response is an iterable object and can be used in a with
 statement.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <a class="reference internal" href="io.html#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">io.BufferedIOBase</span></code></a> interface is now implemented and
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <a class="reference internal" href="io.html#io.BufferedIOBase" title="io.BufferedIOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">io.BufferedIOBase</span></code></a> interface is now implemented and
 all of its reader operations are supported.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="http.client.HTTPResponse.read">
-<span class="sig-prename descclassname"><span class="pre">HTTPResponse.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">amt</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPResponse.read" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HTTPResponse.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">amt</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPResponse.read" title="本定義的永久連結">¶</a></dt>
 <dd><p>Reads and returns the response body, or up to the next <em>amt</em> bytes.</p>
 </dd></dl>
 
@@ -617,7 +626,7 @@ all of its reader operations are supported.</p>
 <dd><p>Reads up to the next len(b) bytes of the response body into the buffer <em>b</em>.
 Returns the number of bytes read.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -697,7 +706,7 @@ will be printed to stdout as the response is read and parsed.</p>
 <dt class="sig sig-object py" id="http.client.HTTPResponse.geturl">
 <span class="sig-prename descclassname"><span class="pre">HTTPResponse.</span></span><span class="sig-name descname"><span class="pre">geturl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPResponse.geturl" title="本定義的永久連結">¶</a></dt>
 <dd><div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用: </span>Deprecated in favor of <a class="reference internal" href="#http.client.HTTPResponse.url" title="http.client.HTTPResponse.url"><code class="xref py py-attr docutils literal notranslate"><span class="pre">url</span></code></a>.</p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用: </span>Deprecated in favor of <a class="reference internal" href="#http.client.HTTPResponse.url" title="http.client.HTTPResponse.url"><code class="xref py py-attr docutils literal notranslate"><span class="pre">url</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -705,7 +714,7 @@ will be printed to stdout as the response is read and parsed.</p>
 <dt class="sig sig-object py" id="http.client.HTTPResponse.info">
 <span class="sig-prename descclassname"><span class="pre">HTTPResponse.</span></span><span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPResponse.info" title="本定義的永久連結">¶</a></dt>
 <dd><div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用: </span>Deprecated in favor of <a class="reference internal" href="#http.client.HTTPResponse.headers" title="http.client.HTTPResponse.headers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">headers</span></code></a>.</p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用: </span>Deprecated in favor of <a class="reference internal" href="#http.client.HTTPResponse.headers" title="http.client.HTTPResponse.headers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">headers</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -713,7 +722,7 @@ will be printed to stdout as the response is read and parsed.</p>
 <dt class="sig sig-object py" id="http.client.HTTPResponse.getstatus">
 <span class="sig-prename descclassname"><span class="pre">HTTPResponse.</span></span><span class="sig-name descname"><span class="pre">getstatus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#http.client.HTTPResponse.getstatus" title="本定義的永久連結">¶</a></dt>
 <dd><div class="deprecated">
-<p><span class="versionmodified deprecated">3.9 版後已棄用: </span>Deprecated in favor of <a class="reference internal" href="#http.client.HTTPResponse.status" title="http.client.HTTPResponse.status"><code class="xref py py-attr docutils literal notranslate"><span class="pre">status</span></code></a>.</p>
+<p><span class="versionmodified deprecated">在 3.9 版本開始棄用: </span>Deprecated in favor of <a class="reference internal" href="#http.client.HTTPResponse.status" title="http.client.HTTPResponse.status"><code class="xref py py-attr docutils literal notranslate"><span class="pre">status</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -810,8 +819,9 @@ response.  It is implemented using the <a class="reference internal" href="email
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.client</span></code> --- HTTP protocol client</a><ul>
 <li><a class="reference internal" href="#httpconnection-objects">HTTPConnection Objects</a></li>
 <li><a class="reference internal" href="#httpresponse-objects">HTTPResponse Objects</a></li>
@@ -821,18 +831,23 @@ response.  It is implemented using the <a class="reference internal" href="email
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="http.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http</span></code> --- HTTP modules</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="ftplib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ftplib</span></code> --- FTP protocol client</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="http.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http</span></code> --- HTTP modules</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="ftplib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ftplib</span></code> --- FTP protocol client</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/http.client.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/http.client.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -867,13 +882,11 @@ response.  It is implemented using the <a class="reference internal" href="email
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" >Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.client</span></code> --- HTTP protocol client</a></li>
                 <li class="right">
@@ -893,25 +906,25 @@ response.  It is implemented using the <a class="reference internal" href="email
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

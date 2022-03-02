@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>搜尋 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜尋 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?2022.1" />
     
     
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -22,18 +22,17 @@
     <script src="_static/searchtools.js"></script>
     <script src="_static/language_data.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="about.html" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜尋" href="#" />
     <link rel="copyright" title="版權" href="copyright.html" />
+    
   <script src="searchindex.js" defer></script>
   
     <link rel="canonical" href="https://docs.python.org/3/search.html" />
     
-      
-      <script type="text/javascript" src="_static/switchers.js"></script>
       
     
 
@@ -49,6 +48,51 @@
             <script type="text/javascript" src="_static/copybutton.js"></script>
             <script type="text/javascript" src="_static/menu.js"></script> 
 
+
+    <script type="text/javascript">
+        var GLOSSARY_PAGE = 'glossary.html';
+
+        jQuery(function() {
+            $.getJSON("_static/glossary.json", function(glossary) {
+                var RESULT_TEMPLATE = '<div style="display: none" class="admonition seealso" id="glossary-result">' + 
+                                      '  <p class="topic-title">' +
+                                      '    <a class="glossary-title" href="#"></a>' +
+                                      '  </p>' +
+                                      '  <div class="glossary-body"></div>' +
+                                      '</div>';
+                $("#search-results").prepend(RESULT_TEMPLATE);
+
+                var params = $.getQueryParameters();
+                if (params.q) {
+                    var search_param = params.q[0].toLowerCase();
+                    var glossary_item = glossary[search_param];
+                    if (glossary_item) {
+                        var resultDiv = $("#glossary-result");
+                        
+                        // set up the title text with a link to the glossary page
+                        resultDiv.find(".glossary-title").text('Glossary: ' + glossary_item.title);
+                        var link_target = search_param.replace(/ /g, '-');
+                        resultDiv.find(".glossary-title").attr(
+                            'href', GLOSSARY_PAGE + '#term-' + link_target
+                        );
+
+                        // rewrite any anchor links (to other glossary terms)
+                        // to have a full reference to the glossary page
+                        var body = $(glossary_item.body).children();
+                        body.find("a[href^='#']").each(function() {
+                            var current_url = $(this).attr('href');
+                            $(this).attr('href', GLOSSARY_PAGE + current_url);
+                        });
+                        resultDiv.find(".glossary-body").html(body);
+
+                        resultDiv.show();
+                    } else {
+                        $("#glossary-result").hide('');
+                    }
+                }
+            });
+        });
+    </script>
 
   </head>
 <body>
@@ -91,10 +135,8 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="index.html">3.10.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">搜尋</a></li>
@@ -109,12 +151,13 @@
             
   <h1 id="search-documentation">搜尋</h1>
   
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
+  <noscript>
+  <div class="admonition warning">
   <p>
     請啟用 Javascript 以開啟搜尋功能。
   </p>
   </div>
+  </noscript>
   
   
   <p>
@@ -164,10 +207,8 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="index.html">3.10.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">搜尋</a></li>
@@ -175,25 +216,25 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

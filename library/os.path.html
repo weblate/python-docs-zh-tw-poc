@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>os.path --- Common pathname manipulations &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>os.path --- Common pathname manipulations &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="pathlib --- Object-oriented filesystem paths" href="pathlib.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/os.path.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="pathlib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pathlib</span></code> --- Object-oriented filesystem paths</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="fileinput.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fileinput</span></code> --- Iterate over lines from multiple input streams</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="pathlib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pathlib</span></code> --- Object-oriented filesystem paths</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="fileinput.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fileinput</span></code> --- Iterate over lines from multiple input streams</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/os.path.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/os.path.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,14 +121,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="filesys.html" accesskey="U">檔案與目錄存取</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="filesys.html" accesskey="U">File and Directory Access</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">os.path</span></code> --- Common pathname manipulations</a></li>
                 <li class="right">
                     
@@ -152,8 +152,8 @@
             
   <section id="module-os.path">
 <span id="os-path-common-pathname-manipulations"></span><h1><a class="reference internal" href="#module-os.path" title="os.path: Operations on pathnames."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os.path</span></code></a> --- Common pathname manipulations<a class="headerlink" href="#module-os.path" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/posixpath.py">Lib/posixpath.py</a> (for POSIX) and
-<a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/ntpath.py">Lib/ntpath.py</a> (for Windows NT).</p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/posixpath.py">Lib/posixpath.py</a> (for POSIX) and
+<a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/ntpath.py">Lib/ntpath.py</a> (for Windows NT).</p>
 <hr class="docutils" id="index-0" />
 <p>This module implements some useful functions on pathnames. To read or
 write files see <a class="reference internal" href="functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a>, and for accessing the filesystem see the
@@ -194,7 +194,7 @@ same interface:</p>
 </ul>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span><a class="reference internal" href="#os.path.exists" title="os.path.exists"><code class="xref py py-func docutils literal notranslate"><span class="pre">exists()</span></code></a>, <a class="reference internal" href="#os.path.lexists" title="os.path.lexists"><code class="xref py py-func docutils literal notranslate"><span class="pre">lexists()</span></code></a>, <a class="reference internal" href="#os.path.isdir" title="os.path.isdir"><code class="xref py py-func docutils literal notranslate"><span class="pre">isdir()</span></code></a>, <a class="reference internal" href="#os.path.isfile" title="os.path.isfile"><code class="xref py py-func docutils literal notranslate"><span class="pre">isfile()</span></code></a>,
+<p><span class="versionmodified changed">在 3.8 版本變更: </span><a class="reference internal" href="#os.path.exists" title="os.path.exists"><code class="xref py py-func docutils literal notranslate"><span class="pre">exists()</span></code></a>, <a class="reference internal" href="#os.path.lexists" title="os.path.lexists"><code class="xref py py-func docutils literal notranslate"><span class="pre">lexists()</span></code></a>, <a class="reference internal" href="#os.path.isdir" title="os.path.isdir"><code class="xref py py-func docutils literal notranslate"><span class="pre">isdir()</span></code></a>, <a class="reference internal" href="#os.path.isfile" title="os.path.isfile"><code class="xref py py-func docutils literal notranslate"><span class="pre">isfile()</span></code></a>,
 <a class="reference internal" href="#os.path.islink" title="os.path.islink"><code class="xref py py-func docutils literal notranslate"><span class="pre">islink()</span></code></a>, and <a class="reference internal" href="#os.path.ismount" title="os.path.ismount"><code class="xref py py-func docutils literal notranslate"><span class="pre">ismount()</span></code></a> now return <code class="docutils literal notranslate"><span class="pre">False</span></code> instead of
 raising an exception for paths that contain characters or bytes
 unrepresentable at the OS level.</p>
@@ -206,7 +206,7 @@ unrepresentable at the OS level.</p>
 platforms, this is equivalent to calling the function <a class="reference internal" href="#os.path.normpath" title="os.path.normpath"><code class="xref py py-func docutils literal notranslate"><span class="pre">normpath()</span></code></a> as
 follows: <code class="docutils literal notranslate"><span class="pre">normpath(join(os.getcwd(),</span> <span class="pre">path))</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -220,7 +220,7 @@ from the Unix <strong class="program">basename</strong> program; where <strong c
 <code class="docutils literal notranslate"><span class="pre">'/foo/bar/'</span></code> returns <code class="docutils literal notranslate"><span class="pre">'bar'</span></code>, the <a class="reference internal" href="#os.path.basename" title="os.path.basename"><code class="xref py py-func docutils literal notranslate"><span class="pre">basename()</span></code></a> function returns an
 empty string (<code class="docutils literal notranslate"><span class="pre">''</span></code>).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -234,10 +234,10 @@ if <em>paths</em> is empty.  Unlike <a class="reference internal" href="#os.path
 valid path.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a sequence of <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like objects</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a sequence of <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like objects</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -261,7 +261,7 @@ character at a time.  To obtain a valid path, see
 </div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -271,7 +271,7 @@ character at a time.  To obtain a valid path, see
 <dd><p>Return the directory name of pathname <em>path</em>.  This is the first element of
 the pair returned by passing <em>path</em> to the function <a class="reference internal" href="#os.path.split" title="os.path.split"><code class="xref py py-func docutils literal notranslate"><span class="pre">split()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -284,11 +284,11 @@ some platforms, this function may return <code class="docutils literal notransla
 not granted to execute <a class="reference internal" href="os.html#os.stat" title="os.stat"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.stat()</span></code></a> on the requested file, even
 if the <em>path</em> physically exists.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span><em>path</em> can now be an integer: <code class="docutils literal notranslate"><span class="pre">True</span></code> is returned if it is an
+<p><span class="versionmodified changed">在 3.3 版本變更: </span><em>path</em> can now be an integer: <code class="docutils literal notranslate"><span class="pre">True</span></code> is returned if it is an
  open file descriptor, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -299,7 +299,7 @@ if the <em>path</em> physically exists.</p>
 broken symbolic links.   Equivalent to <a class="reference internal" href="#os.path.exists" title="os.path.exists"><code class="xref py py-func docutils literal notranslate"><span class="pre">exists()</span></code></a> on platforms lacking
 <a class="reference internal" href="os.html#os.lstat" title="os.lstat"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.lstat()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -314,19 +314,19 @@ password directory through the built-in module <a class="reference internal" hre
 is looked up directly in the password directory.</p>
 <p>On Windows, <span class="target" id="index-4"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">USERPROFILE</span></code> will be used if set, otherwise a combination
 of <span class="target" id="index-5"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">HOMEPATH</span></code> and <span class="target" id="index-6"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">HOMEDRIVE</span></code> will be used.  An initial
-<code class="docutils literal notranslate"><span class="pre">~user</span></code> is handled by stripping the last directory component from the created
-user path derived above.</p>
+<code class="docutils literal notranslate"><span class="pre">~user</span></code> is handled by checking that the last directory component of the current
+user's home directory matches <span class="target" id="index-7"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">USERNAME</span></code>, and replacing it if so.</p>
 <p>If the expansion fails or if the path does not begin with a tilde, the path is
 returned unchanged.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>No longer uses <span class="target" id="index-7"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">HOME</span></code> on Windows.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>No longer uses <span class="target" id="index-8"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">HOME</span></code> on Windows.</p>
 </div>
 </dd></dl>
 
-<span class="target" id="index-8"></span><dl class="py function">
+<span class="target" id="index-9"></span><dl class="py function">
 <dt class="sig sig-object py" id="os.path.expandvars">
 <span class="sig-prename descclassname"><span class="pre">os.path.</span></span><span class="sig-name descname"><span class="pre">expandvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.path.expandvars" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the argument with environment variables expanded.  Substrings of the form
@@ -336,7 +336,7 @@ left unchanged.</p>
 <p>On Windows, <code class="docutils literal notranslate"><span class="pre">%name%</span></code> expansions are supported in addition to <code class="docutils literal notranslate"><span class="pre">$name</span></code> and
 <code class="docutils literal notranslate"><span class="pre">${name}</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -355,7 +355,7 @@ the number of seconds since the epoch (see the  <a class="reference internal" hr
 giving the number of seconds since the epoch (see the  <a class="reference internal" href="time.html#module-time" title="time: Time access and conversions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> module).
 Raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> if the file does not exist or is inaccessible.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -368,7 +368,7 @@ The return value is a number giving the number of seconds since the epoch (see
 the  <a class="reference internal" href="time.html#module-time" title="time: Time access and conversions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> module).  Raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> if the file does not exist or
 is inaccessible.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -378,7 +378,7 @@ is inaccessible.</p>
 <dd><p>Return the size, in bytes, of <em>path</em>.  Raise <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> if the file does
 not exist or is inaccessible.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -389,7 +389,7 @@ not exist or is inaccessible.</p>
 begins with a slash, on Windows that it begins with a (back)slash after chopping
 off a potential drive letter.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -400,7 +400,7 @@ off a potential drive letter.</p>
 This follows symbolic links, so both <a class="reference internal" href="#os.path.islink" title="os.path.islink"><code class="xref py py-func docutils literal notranslate"><span class="pre">islink()</span></code></a> and <a class="reference internal" href="#os.path.isfile" title="os.path.isfile"><code class="xref py py-func docutils literal notranslate"><span class="pre">isfile()</span></code></a> can
 be true for the same path.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -411,7 +411,7 @@ be true for the same path.</p>
 follows symbolic links, so both <a class="reference internal" href="#os.path.islink" title="os.path.islink"><code class="xref py py-func docutils literal notranslate"><span class="pre">islink()</span></code></a> and <a class="reference internal" href="#os.path.isdir" title="os.path.isdir"><code class="xref py py-func docutils literal notranslate"><span class="pre">isdir()</span></code></a> can be true
 for the same path.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -422,7 +422,7 @@ for the same path.</p>
 entry that is a symbolic link.  Always <code class="docutils literal notranslate"><span class="pre">False</span></code> if symbolic links are not
 supported by the Python runtime.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -439,10 +439,10 @@ same filesystem.  On Windows, a drive letter root and a share UNC are
 always mount points, and for any other path <code class="docutils literal notranslate"><span class="pre">GetVolumePathName</span></code> is called
 to see if it is different from the input path.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入: </span>Support for detecting non-root mount points on Windows.</p>
+<p><span class="versionmodified added">在 3.4 版本新加入: </span>Support for detecting non-root mount points on Windows.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -462,7 +462,7 @@ reset.  Note that since there is a current directory for each drive,
 <code class="docutils literal notranslate"><span class="pre">os.path.join(&quot;c:&quot;,</span> <span class="pre">&quot;foo&quot;)</span></code> represents a path relative to the current
 directory on drive <code class="file docutils literal notranslate"><span class="pre">C:</span></code> (<code class="file docutils literal notranslate"><span class="pre">c:foo</span></code>), not <code class="file docutils literal notranslate"><span class="pre">c:\foo</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a> for <em>path</em> and <em>paths</em>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a> for <em>path</em> and <em>paths</em>.</p>
 </div>
 </dd></dl>
 
@@ -473,7 +473,7 @@ directory on drive <code class="file docutils literal notranslate"><span class="
 pathname to lowercase, and also convert forward slashes to backward slashes.
 On other operating systems, return the path unchanged.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -498,27 +498,37 @@ manner, although more than two leading characters shall be treated as a
 single character.</p>
 </div></blockquote>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="os.path.realpath">
-<span class="sig-prename descclassname"><span class="pre">os.path.</span></span><span class="sig-name descname"><span class="pre">realpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.path.realpath" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">os.path.</span></span><span class="sig-name descname"><span class="pre">realpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.path.realpath" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the canonical path of the specified filename, eliminating any symbolic
 links encountered in the path (if they are supported by the operating
 system).</p>
+<p>If a path doesn't exist or a symlink loop is encountered, and <em>strict</em> is
+<code class="docutils literal notranslate"><span class="pre">True</span></code>, <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> is raised. If <em>strict</em> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the path is
+resolved as far as possible and any remainder is appended without checking
+whether it exists.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>When symbolic link cycles occur, the returned path will be one member of
-the cycle, but no guarantee is made about which member that will be.</p>
+<p>This function emulates the operating system's procedure for making a path
+canonical, which differs slightly between Windows and UNIX with respect
+to how links and subsequent path components interact.</p>
+<p>Operating system APIs make paths canonical as needed, so it's not
+normally necessary to call this function.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Symbolic links and junctions are now resolved on Windows.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Symbolic links and junctions are now resolved on Windows.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>The <em>strict</em> parameter was added.</p>
 </div>
 </dd></dl>
 
@@ -533,7 +543,7 @@ are on different drives.</p>
 <p><em>start</em> defaults to <a class="reference internal" href="os.html#os.curdir" title="os.curdir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">os.curdir</span></code></a>.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -545,13 +555,13 @@ This is determined by the device number and i-node number and raises an
 exception if an <a class="reference internal" href="os.html#os.stat" title="os.stat"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.stat()</span></code></a> call on either pathname fails.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Added Windows support.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Added Windows support.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Windows now uses the same implementation as all other platforms.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Windows now uses the same implementation as all other platforms.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -561,10 +571,10 @@ exception if an <a class="reference internal" href="os.html#os.stat" title="os.s
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the file descriptors <em>fp1</em> and <em>fp2</em> refer to the same file.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Added Windows support.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Added Windows support.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -577,10 +587,10 @@ These structures may have been returned by <a class="reference internal" href="o
 underlying comparison used by <a class="reference internal" href="#os.path.samefile" title="os.path.samefile"><code class="xref py py-func docutils literal notranslate"><span class="pre">samefile()</span></code></a> and <a class="reference internal" href="#os.path.sameopenfile" title="os.path.sameopenfile"><code class="xref py py-func docutils literal notranslate"><span class="pre">sameopenfile()</span></code></a>.</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added Windows support.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added Windows support.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -597,7 +607,7 @@ all cases, <code class="docutils literal notranslate"><span class="pre">join(hea
 (but the strings may differ).  Also see the functions <a class="reference internal" href="#os.path.dirname" title="os.path.dirname"><code class="xref py py-func docutils literal notranslate"><span class="pre">dirname()</span></code></a> and
 <a class="reference internal" href="#os.path.basename" title="os.path.basename"><code class="xref py py-func docutils literal notranslate"><span class="pre">basename()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -622,7 +632,7 @@ and share, up to but not including the fourth separator:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -641,15 +651,20 @@ most one period.</p>
 including the leading period. Note that previous periods will be ignored:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">splitext</span><span class="p">(</span><span class="s1">&#39;foo.bar.exe&#39;</span><span class="p">)</span>
 <span class="go">(&#39;foo.bar&#39;, &#39;.exe&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">splitext</span><span class="p">(</span><span class="s1">&#39;/foo/bar.exe&#39;</span><span class="p">)</span>
+<span class="go">(&#39;/foo/bar&#39;, &#39;.exe&#39;)</span>
 </pre></div>
 </div>
-<p>Leading periods on the basename are ignored:</p>
+<p>Leading periods of the last component of the path are considered to
+be part of the root:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">splitext</span><span class="p">(</span><span class="s1">&#39;.cshrc&#39;</span><span class="p">)</span>
 <span class="go">(&#39;.cshrc&#39;, &#39;&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">splitext</span><span class="p">(</span><span class="s1">&#39;/foo/....jpg&#39;</span><span class="p">)</span>
+<span class="go">(&#39;/foo/....jpg&#39;, &#39;&#39;)</span>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 </dd></dl>
 
@@ -669,18 +684,22 @@ imposed by the file system).</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="pathlib.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pathlib</span></code> --- Object-oriented filesystem paths</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="fileinput.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fileinput</span></code> --- Iterate over lines from multiple input streams</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="pathlib.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pathlib</span></code> --- Object-oriented filesystem paths</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="fileinput.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fileinput</span></code> --- Iterate over lines from multiple input streams</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/os.path.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/os.path.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -715,14 +734,12 @@ imposed by the file system).</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="filesys.html" >檔案與目錄存取</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="filesys.html" >File and Directory Access</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">os.path</span></code> --- Common pathname manipulations</a></li>
                 <li class="right">
                     
@@ -741,25 +758,25 @@ imposed by the file system).</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

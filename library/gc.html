@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>gc --- Garbage Collector interface &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gc --- Garbage Collector interface &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="__future__ --- Future statement definitions" href="__future__.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/gc.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="__future__.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- Future statement definitions</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="inspect.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">inspect</span></code> --- Inspect live objects</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="__future__.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- Future statement definitions</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="inspect.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">inspect</span></code> --- Inspect live objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/gc.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/gc.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="python.html" accesskey="U">Python Runtime Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">gc</span></code> --- Garbage Collector interface</a></li>
                 <li class="right">
@@ -216,7 +216,7 @@ combined using bit operations to control debugging.</p>
 returned. If <em>generation</em> is not None, return only the objects tracked by
 the collector that are in that generation.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>New <em>generation</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>New <em>generation</em> parameter.</p>
 </div>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">gc.get_objects</span></code> with argument <code class="docutils literal notranslate"><span class="pre">generation</span></code>.</p>
 </dd></dl>
@@ -237,13 +237,13 @@ to be uncollectable (and were therefore moved to the <a class="reference interna
 list) inside this generation.</p></li>
 </ul>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="gc.set_threshold">
-<span class="sig-prename descclassname"><span class="pre">gc.</span></span><span class="sig-name descname"><span class="pre">set_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">threshold0</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">threshold1</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">threshold2</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.set_threshold" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gc.</span></span><span class="sig-name descname"><span class="pre">set_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold0</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">threshold1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">threshold2</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.set_threshold" title="本定義的永久連結">¶</a></dt>
 <dd><p>Set the garbage collection thresholds (the collection frequency). Setting
 <em>threshold0</em> to zero disables collection.</p>
 <p>The GC classifies objects into three generations depending on how many
@@ -333,7 +333,7 @@ in order to suppress the garbage collector footprint of simple instances
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -357,7 +357,7 @@ garbage collector, <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -371,7 +371,7 @@ Also collection before a POSIX fork() call may free pages for future
 allocation which can cause copy-on-write too so it's advised to disable gc
 in parent process and freeze before fork and enable gc in child process.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -381,7 +381,7 @@ in parent process and freeze before fork and enable gc in child process.</p>
 <dd><p>Unfreeze the objects in the permanent generation, put them back into the
 oldest generation.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -390,7 +390,7 @@ oldest generation.</p>
 <span class="sig-prename descclassname"><span class="pre">gc.</span></span><span class="sig-name descname"><span class="pre">get_freeze_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.get_freeze_count" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the number of objects in the permanent generation.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -406,13 +406,13 @@ C extension types with a non-<code class="docutils literal notranslate"><span cl
 <p>If <a class="reference internal" href="#gc.DEBUG_SAVEALL" title="gc.DEBUG_SAVEALL"><code class="xref py py-const docutils literal notranslate"><span class="pre">DEBUG_SAVEALL</span></code></a> is set, then all unreachable objects will be
 added to this list rather than freed.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>If this list is non-empty at <a class="reference internal" href="../glossary.html#term-interpreter-shutdown"><span class="xref std std-term">interpreter shutdown</span></a>, a
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>If this list is non-empty at <a class="reference internal" href="../glossary.html#term-interpreter-shutdown"><span class="xref std std-term">interpreter shutdown</span></a>, a
 <a class="reference internal" href="exceptions.html#ResourceWarning" title="ResourceWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ResourceWarning</span></code></a> is emitted, which is silent by default.  If
 <a class="reference internal" href="#gc.DEBUG_UNCOLLECTABLE" title="gc.DEBUG_UNCOLLECTABLE"><code class="xref py py-const docutils literal notranslate"><span class="pre">DEBUG_UNCOLLECTABLE</span></code></a> is set, in addition all uncollectable objects
 are printed.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Following <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0442"><strong>PEP 442</strong></a>, objects with a <code class="xref py py-meth docutils literal notranslate"><span class="pre">__del__()</span></code> method don't end
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Following <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0442"><strong>PEP 442</strong></a>, objects with a <code class="xref py py-meth docutils literal notranslate"><span class="pre">__del__()</span></code> method don't end
 up in <a class="reference internal" href="#gc.garbage" title="gc.garbage"><code class="xref py py-attr docutils literal notranslate"><span class="pre">gc.garbage</span></code></a> anymore.</p>
 </div>
 </dd></dl>
@@ -447,7 +447,7 @@ takes.</p>
 types when they appear in <a class="reference internal" href="#gc.garbage" title="gc.garbage"><code class="xref py py-data docutils literal notranslate"><span class="pre">garbage</span></code></a>.</p>
 </div></blockquote>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -472,7 +472,7 @@ the collection frequency.</p>
 reachable but cannot be freed by the collector).  These objects will be added
 to the <code class="docutils literal notranslate"><span class="pre">garbage</span></code> list.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Also print the contents of the <a class="reference internal" href="#gc.garbage" title="gc.garbage"><code class="xref py py-data docutils literal notranslate"><span class="pre">garbage</span></code></a> list at
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Also print the contents of the <a class="reference internal" href="#gc.garbage" title="gc.garbage"><code class="xref py py-data docutils literal notranslate"><span class="pre">garbage</span></code></a> list at
 <a class="reference internal" href="../glossary.html#term-interpreter-shutdown"><span class="xref std std-term">interpreter shutdown</span></a>, if it isn't empty.</p>
 </div>
 </dd></dl>
@@ -501,18 +501,22 @@ leaking program (equal to <code class="docutils literal notranslate"><span class
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="__future__.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- Future statement definitions</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="inspect.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">inspect</span></code> --- Inspect live objects</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="__future__.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- Future statement definitions</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="inspect.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">inspect</span></code> --- Inspect live objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/gc.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/gc.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -547,13 +551,11 @@ leaking program (equal to <code class="docutils literal notranslate"><span class
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="python.html" >Python Runtime Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">gc</span></code> --- Garbage Collector interface</a></li>
                 <li class="right">
@@ -573,25 +575,25 @@ leaking program (equal to <code class="docutils literal notranslate"><span class
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

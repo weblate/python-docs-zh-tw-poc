@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. 淺嘗滋味 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Whetting Your Appetite &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="2. 使用 Python 直譯器" href="interpreter.html" />
-    <link rel="prev" title="Python 教學" href="index.html" />
+    <link rel="next" title="2. Using the Python Interpreter" href="interpreter.html" />
+    <link rel="prev" title="The Python Tutorial" href="index.html" />
     <link rel="canonical" href="https://docs.python.org/3/tutorial/appetite.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">Python 教學</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="interpreter.html"
-                        title="下一章"><span class="section-number">2. </span>使用 Python 直譯器</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="index.html"
+                          title="上一章">The Python Tutorial</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="interpreter.html"
+                          title="下一章"><span class="section-number">2. </span>Using the Python Interpreter</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/tutorial/appetite.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/tutorial/appetite.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -104,10 +106,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="interpreter.html" title="2. 使用 Python 直譯器"
+          <a href="interpreter.html" title="2. Using the Python Interpreter"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Python 教學"
+          <a href="index.html" title="The Python Tutorial"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -119,14 +121,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>淺嘗滋味</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The Python Tutorial</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>Whetting Your Appetite</a></li>
                 <li class="right">
                     
 
@@ -150,25 +150,73 @@
           <div class="body" role="main">
             
   <section id="whetting-your-appetite">
-<span id="tut-intro"></span><h1><span class="section-number">1. </span>淺嘗滋味<a class="headerlink" href="#whetting-your-appetite" title="本標題的永久連結">¶</a></h1>
-<p>如果你經常在電腦上工作，最終總能發現有些工作你會想要自動化。舉例來說，你會想在很多文字檔案裡做相同的搜尋取代，或者是用個複雜的規則重新命名或整理一群照片。也有可能你想寫個自己的小資料庫，一個專門的 GUI 應用程式，或一個小遊戲。</p>
-<p>如果你是一個職業軟體開發者，你可能要操作數個 C/C++/Java 程式庫，卻覺得平常寫程式碼、編譯、測試、再編譯的流程太慢；有可能你正為了一個程式庫撰寫一套測試集，但發現寫測試單調乏味；也有可能你正在開發一個能使用某一語言擴充的程式，但並不想要為了這程式特別設計一個全新的擴充語言。</p>
-<p>在上述的例子中，Python 正是你合適的語言。</p>
-<p>也許你可以為了某些任務而寫個 Unix shell 腳本或者 Windows 批次檔來處理，但 shell 腳本最適合於搬動檔案或更動文字內容，而不適於圖形應用程式或遊戲。你可以為此寫個 C/C++/Java 程式，但僅僅是完成個草稿也需要很長的開發時間。相較而言，Python 更易於使用，並能在 Windows、Mac OSX、Unix 作業系統上執行，且能更快速地幫助你完成工作。</p>
-<p>Python 即便易用也是個貨真價實的程式語言。它提供比 shell 腳本、批次檔更多樣的程式架構與更多的支援。另一方面，Python 提供比 C 更豐富的錯語檢查。相較於 C，Python 作為一個「非常高階的程式語言」，它內建了高階的資料型別如彈性的數列與字典。因為這些多用途的資料型別，Python 適用解決比 Awk（甚至是 Perl）能處理的更多問題上。至少在許多事情中，使用 Python 處理起來跟其他語言是同樣容易的。</p>
-<p>Python 允許你把程式切割成許多模組 (module) 並將他們重覆運用至其他 Python 程式中。Python 自帶了一個很大集合的標準模組，它們能做為你程式的基礎——或把它們當作一開始學寫 Python 程式的範例。有些模組提供了如檔案 I/O、系統呼叫、socket 的功能，甚至提供了 Tk 等圖形介面工具庫 (GUI toolkit) 的介面。</p>
-<p>Python 是個直譯式語言，因為不需要編譯與連結，能為你在開發過程中省下可觀的時間。它的直譯器能互動地使用，因此能很方便地實驗每個語言的功能、寫些用完即丟的程式、幫助測試一些從細部開始開發的函式。它也是個好用的計算機。</p>
-<p>Python 讓程式寫得精簡並易讀。用 Python 實作的程式長度往往遠比用 C、C++、Java 實作的短。這有以下幾個原因：</p>
+<span id="tut-intro"></span><h1><span class="section-number">1. </span>Whetting Your Appetite<a class="headerlink" href="#whetting-your-appetite" title="本標題的永久連結">¶</a></h1>
+<p>If you do much work on computers, eventually you find that there's some task
+you'd like to automate.  For example, you may wish to perform a
+search-and-replace over a large number of text files, or rename and rearrange a
+bunch of photo files in a complicated way. Perhaps you'd like to write a small
+custom database, or a specialized GUI application, or a simple game.</p>
+<p>If you're a professional software developer, you may have to work with several
+C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is
+too slow.  Perhaps you're writing a test suite for such a library and find
+writing the testing code a tedious task.  Or maybe you've written a program that
+could use an extension language, and you don't want to design and implement a
+whole new language for your application.</p>
+<p>Python is just the language for you.</p>
+<p>You could write a Unix shell script or Windows batch files for some of these
+tasks, but shell scripts are best at moving around files and changing text data,
+not well-suited for GUI applications or games. You could write a C/C++/Java
+program, but it can take a lot of development time to get even a first-draft
+program.  Python is simpler to use, available on Windows, macOS, and Unix
+operating systems, and will help you get the job done more quickly.</p>
+<p>Python is simple to use, but it is a real programming language, offering much
+more structure and support for large programs than shell scripts or batch files
+can offer.  On the other hand, Python also offers much more error checking than
+C, and, being a <em>very-high-level language</em>, it has high-level data types built
+in, such as flexible arrays and dictionaries.  Because of its more general data
+types Python is applicable to a much larger problem domain than Awk or even
+Perl, yet many things are at least as easy in Python as in those languages.</p>
+<p>Python allows you to split your program into modules that can be reused in other
+Python programs.  It comes with a large collection of standard modules that you
+can use as the basis of your programs --- or as examples to start learning to
+program in Python.  Some of these modules provide things like file I/O, system
+calls, sockets, and even interfaces to graphical user interface toolkits like
+Tk.</p>
+<p>Python is an interpreted language, which can save you considerable time during
+program development because no compilation and linking is necessary.  The
+interpreter can be used interactively, which makes it easy to experiment with
+features of the language, to write throw-away programs, or to test functions
+during bottom-up program development. It is also a handy desk calculator.</p>
+<p>Python enables programs to be written compactly and readably.  Programs written
+in Python are typically much shorter than equivalent C,  C++, or Java programs,
+for several reasons:</p>
 <ul class="simple">
-<li><p>Python 高階的資料型別能在一陳述式 (statement) 中表達很複雜的操作；</p></li>
-<li><p>陳述式的段落以縮排為區隔而非括號；</p></li>
-<li><p>不需要宣告變數和引數。</p></li>
+<li><p>the high-level data types allow you to express complex operations in a single
+statement;</p></li>
+<li><p>statement grouping is done by indentation instead of beginning and ending
+brackets;</p></li>
+<li><p>no variable or argument declarations are necessary.</p></li>
 </ul>
-<p>Python 是<em>可擴充的</em>：如果你會寫 C 程式，那麼要加個新的內建函式或模組到直譯器中是很容易的。無論是為了用最快速的執行速度完成一些關鍵的操作，或是讓 Python 連結到一些僅以二進位形式 (binary form) 釋出的程式庫（例如特定供應商的繪圖程式庫）。如果你想更多這樣的結合，你其實也可以把 Python 直譯器連結到用 C 寫的應用程式，並在該應用程式中使用 Python 寫擴充或者作為下達指令的語言。</p>
-<p>順帶一提，這個語言是以 BBC 的戲劇《Monty Python's Flying Circus》命名，與爬蟲類完全沒有關係。在說明文件中引用他們的喜劇不但沒問題，這甚至是個被鼓勵的行為！</p>
-<p>如果你現在已經躍躍欲試，你會想了解 Python 更多細節，而學習語言的最好方式就是直接使用它。接下來這個教學就將帶領你，一邊閱讀，一邊將所學用在 Python 直譯器中玩耍。</p>
-<p>在下個章節中，將會解說如何使用該直譯器。這也許只是個普通的資訊，但你必須試著操作接下來呈現的範例。</p>
-<p>接下來的教學裡，將會透過許多範例介紹 Python 語言與其系統的諸多特色。一開始是簡單的運算式 (expression)、陳述式 (statement) 和資料型別 (data type)；接著是函式 (function) 與模組 (module)；最後會接觸一些較進階的主題如例外 (exception) 與使用者自定義類別 (class)。</p>
+<p>Python is <em>extensible</em>: if you know how to program in C it is easy to add a new
+built-in function or module to the interpreter, either to perform critical
+operations at maximum speed, or to link Python programs to libraries that may
+only be available in binary form (such as a vendor-specific graphics library).
+Once you are really hooked, you can link the Python interpreter into an
+application written in C and use it as an extension or command language for that
+application.</p>
+<p>By the way, the language is named after the BBC show &quot;Monty Python's Flying
+Circus&quot; and has nothing to do with reptiles.  Making references to Monty
+Python skits in documentation is not only allowed, it is encouraged!</p>
+<p>Now that you are all excited about Python, you'll want to examine it in some
+more detail.  Since the best way to learn a language is to use it, the tutorial
+invites you to play with the Python interpreter as you read.</p>
+<p>In the next chapter, the mechanics of using the interpreter are explained.  This
+is rather mundane information, but essential for trying out the examples shown
+later.</p>
+<p>The rest of the tutorial introduces various features of the Python language and
+system through examples, beginning with simple expressions, statements and data
+types, through functions and modules, and finally touching upon advanced
+concepts like exceptions and user-defined classes.</p>
 </section>
 
 
@@ -178,18 +226,22 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">Python 教學</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="interpreter.html"
-                        title="下一章"><span class="section-number">2. </span>使用 Python 直譯器</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="index.html"
+                          title="上一章">The Python Tutorial</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="interpreter.html"
+                          title="下一章"><span class="section-number">2. </span>Using the Python Interpreter</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/tutorial/appetite.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/tutorial/appetite.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -209,10 +261,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="interpreter.html" title="2. 使用 Python 直譯器"
+          <a href="interpreter.html" title="2. Using the Python Interpreter"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Python 教學"
+          <a href="index.html" title="The Python Tutorial"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -224,14 +276,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>淺嘗滋味</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Tutorial</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>Whetting Your Appetite</a></li>
                 <li class="right">
                     
 
@@ -249,25 +299,25 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

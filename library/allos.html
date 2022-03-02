@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Generic Operating System Services &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generic Operating System Services &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="os --- Miscellaneous operating system interfaces" href="os.html" />
-    <link rel="prev" title="secrets --- 產生用於管理機密的安全亂數" href="secrets.html" />
+    <link rel="prev" title="secrets --- Generate secure random numbers for managing secrets" href="secrets.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/allos.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="secrets.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- 產生用於管理機密的安全亂數</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="os.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- Miscellaneous operating system interfaces</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="secrets.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- Generate secure random numbers for managing secrets</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="os.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- Miscellaneous operating system interfaces</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/allos.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/allos.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -107,7 +109,7 @@
           <a href="os.html" title="os --- Miscellaneous operating system interfaces"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="secrets.html" title="secrets --- 產生用於管理機密的安全亂數"
+          <a href="secrets.html" title="secrets --- Generate secure random numbers for managing secrets"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The Python Standard Library</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Generic Operating System Services</a></li>
                 <li class="right">
                     
@@ -159,6 +159,7 @@ but they are available on most other systems as well.  Here's an overview:</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="os.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- Miscellaneous operating system interfaces</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="os.html#file-names-command-line-arguments-and-environment-variables">File Names, Command Line Arguments, and Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="os.html#python-utf-8-mode">Python UTF-8 Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os.html#process-parameters">Process Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os.html#file-object-creation">File Object Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os.html#file-descriptor-operations">File Descriptor Operations</a><ul>
@@ -177,10 +178,14 @@ but they are available on most other systems as well.  Here's an overview:</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="io.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code> --- Core tools for working with streams</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="io.html#overview">總覽</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#overview">Overview</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="io.html#text-i-o">Text I/O</a></li>
 <li class="toctree-l3"><a class="reference internal" href="io.html#binary-i-o">Binary I/O</a></li>
 <li class="toctree-l3"><a class="reference internal" href="io.html#raw-i-o">Raw I/O</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#text-encoding">Text Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#opt-in-encodingwarning">Opt-in EncodingWarning</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="io.html#high-level-module-interface">High-level Module Interface</a></li>
@@ -287,6 +292,7 @@ but they are available on most other systems as well.  Here's an overview:</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="logging.config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.config</span></code> --- Logging configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="logging.config.html#configuration-functions">Configuration functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.config.html#security-considerations">Security considerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging.config.html#configuration-dictionary-schema">Configuration dictionary schema</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="logging.config.html#dictionary-schema-details">Dictionary Schema Details</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.config.html#incremental-configuration">Incremental Configuration</a></li>
@@ -340,8 +346,9 @@ but they are available on most other systems as well.  Here's an overview:</p>
 <li class="toctree-l2"><a class="reference internal" href="platform.html#cross-platform">Cross Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="platform.html#java-platform">Java Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="platform.html#windows-platform">Windows Platform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="platform.html#mac-os-platform">Mac OS Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#macos-platform">macOS Platform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="platform.html#unix-platforms">Unix Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#linux-platforms">Linux Platforms</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="errno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">errno</span></code> --- Standard errno system symbols</a></li>
@@ -394,18 +401,22 @@ but they are available on most other systems as well.  Here's an overview:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="secrets.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- 產生用於管理機密的安全亂數</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="os.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- Miscellaneous operating system interfaces</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="secrets.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- Generate secure random numbers for managing secrets</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="os.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> --- Miscellaneous operating system interfaces</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/allos.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/allos.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -428,7 +439,7 @@ but they are available on most other systems as well.  Here's an overview:</p>
           <a href="os.html" title="os --- Miscellaneous operating system interfaces"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="secrets.html" title="secrets --- 產生用於管理機密的安全亂數"
+          <a href="secrets.html" title="secrets --- Generate secure random numbers for managing secrets"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -440,13 +451,11 @@ but they are available on most other systems as well.  Here's an overview:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Generic Operating System Services</a></li>
                 <li class="right">
                     
@@ -465,25 +474,25 @@ but they are available on most other systems as well.  Here's an overview:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

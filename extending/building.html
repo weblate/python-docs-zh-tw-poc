@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Building C and C++ Extensions &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Building C and C++ Extensions &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="3. Defining Extension Types: Assorted Topics" href="newtypes.html" />
     <link rel="canonical" href="https://docs.python.org/3/extending/building.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">4. Building C and C++ Extensions</a><ul>
 <li><a class="reference internal" href="#building-c-and-c-extensions-with-distutils">4.1. Building C and C++ Extensions with distutils</a></li>
 <li><a class="reference internal" href="#distributing-your-extension-modules">4.2. Distributing your extension modules</a></li>
@@ -81,18 +80,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="newtypes.html"
-                        title="上一章"><span class="section-number">3. </span>Defining Extension Types: Assorted Topics</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="windows.html"
-                        title="下一章"><span class="section-number">5. </span>Building C and C++ Extensions on Windows</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="newtypes.html"
+                          title="上一章"><span class="section-number">3. </span>Defining Extension Types: Assorted Topics</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="windows.html"
+                          title="下一章"><span class="section-number">5. </span>Building C and C++ Extensions on Windows</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/extending/building.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/extending/building.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -128,10 +132,8 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Extending and Embedding the Python Interpreter</a> &#187;</li>
@@ -224,7 +226,7 @@ example above uses only a subset. Specifically, the example specifies
 meta-information to build packages, and it specifies the contents of the
 package.  Normally, a package will contain additional modules, like Python
 source modules, documentation, subpackages, etc. Please refer to the distutils
-documentation in <a class="reference internal" href="../distutils/index.html#distutils-index"><span class="std std-ref">發布 Python 模組（舊版）</span></a> to learn more about the features of
+documentation in <a class="reference internal" href="../distutils/index.html#distutils-index"><span class="std std-ref">Distributing Python Modules (Legacy version)</span></a> to learn more about the features of
 distutils; this section explains building extension modules only.</p>
 <p>It is common to pre-compute arguments to <code class="xref py py-func docutils literal notranslate"><span class="pre">setup()</span></code>, to better structure the
 driver script. In the example above, the <code class="docutils literal notranslate"><span class="pre">ext_modules</span></code> argument to
@@ -289,8 +291,7 @@ this is done through a <code class="file docutils literal notranslate"><span cla
 <p>If the source distribution has been built successfully, maintainers can also
 create binary distributions. Depending on the platform, one of the following
 commands can be used to do so.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">python</span><span class="w"> </span><span class="n">setup</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="n">bdist_wininst</span><span class="w"></span>
-<span class="n">python</span><span class="w"> </span><span class="n">setup</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="n">bdist_rpm</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">python</span><span class="w"> </span><span class="n">setup</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="n">bdist_rpm</span><span class="w"></span>
 <span class="n">python</span><span class="w"> </span><span class="n">setup</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="n">bdist_dumb</span><span class="w"></span>
 </pre></div>
 </div>
@@ -304,8 +305,9 @@ commands can be used to do so.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">4. Building C and C++ Extensions</a><ul>
 <li><a class="reference internal" href="#building-c-and-c-extensions-with-distutils">4.1. Building C and C++ Extensions with distutils</a></li>
 <li><a class="reference internal" href="#distributing-your-extension-modules">4.2. Distributing your extension modules</a></li>
@@ -313,18 +315,23 @@ commands can be used to do so.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="newtypes.html"
-                        title="上一章"><span class="section-number">3. </span>Defining Extension Types: Assorted Topics</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="windows.html"
-                        title="下一章"><span class="section-number">5. </span>Building C and C++ Extensions on Windows</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="newtypes.html"
+                          title="上一章"><span class="section-number">3. </span>Defining Extension Types: Assorted Topics</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="windows.html"
+                          title="下一章"><span class="section-number">5. </span>Building C and C++ Extensions on Windows</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/extending/building.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/extending/building.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -359,10 +366,8 @@ commands can be used to do so.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Extending and Embedding the Python Interpreter</a> &#187;</li>
@@ -384,25 +389,25 @@ commands can be used to do so.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

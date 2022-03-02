@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>token --- Constants used with Python parse trees &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>token --- Constants used with Python parse trees &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="keyword --- Testing for Python keywords" href="keyword.html" />
-    <link rel="prev" title="symbol --- Constants used with Python parse trees" href="symbol.html" />
+    <link rel="prev" title="symtable --- Access to the compiler&#39;s symbol tables" href="symtable.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/token.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="symbol.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symbol</span></code> --- Constants used with Python parse trees</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="keyword.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="symtable.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symtable</span></code> --- Access to the compiler's symbol tables</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="keyword.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/token.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/token.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -107,7 +109,7 @@
           <a href="keyword.html" title="keyword --- Testing for Python keywords"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="symbol.html" title="symbol --- Constants used with Python parse trees"
+          <a href="symtable.html" title="symtable --- Access to the compiler&#39;s symbol tables"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" accesskey="U">Python Language Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">token</span></code> --- Constants used with Python parse trees</a></li>
                 <li class="right">
@@ -152,10 +152,10 @@
             
   <section id="module-token">
 <span id="token-constants-used-with-python-parse-trees"></span><h1><a class="reference internal" href="#module-token" title="token: Constants representing terminal nodes of the parse tree."><code class="xref py py-mod docutils literal notranslate"><span class="pre">token</span></code></a> --- Constants used with Python parse trees<a class="headerlink" href="#module-token" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/token.py">Lib/token.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/token.py">Lib/token.py</a></p>
 <hr class="docutils" />
 <p>This module provides constants which represent the numeric values of leaf nodes
-of the parse tree (terminal tokens).  Refer to the file <code class="file docutils literal notranslate"><span class="pre">Grammar/Grammar</span></code>
+of the parse tree (terminal tokens).  Refer to the file <code class="file docutils literal notranslate"><span class="pre">Grammar/Tokens</span></code>
 in the Python distribution for the definitions of the names in the context of
 the language grammar.  The specific numeric values which the names map to may
 change between Python versions.</p>
@@ -531,6 +531,11 @@ to be generated.</p>
 <dd></dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="token.SOFT_KEYWORD">
+<span class="sig-prename descclassname"><span class="pre">token.</span></span><span class="sig-name descname"><span class="pre">SOFT_KEYWORD</span></span><a class="headerlink" href="#token.SOFT_KEYWORD" title="本定義的永久連結">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="token.ERRORTOKEN">
 <span class="sig-prename descclassname"><span class="pre">token.</span></span><span class="sig-name descname"><span class="pre">ERRORTOKEN</span></span><a class="headerlink" href="#token.ERRORTOKEN" title="本定義的永久連結">¶</a></dt>
 <dd></dd></dl>
@@ -579,17 +584,17 @@ tokens are only produced when <a class="reference internal" href="ast.html#ast.p
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added <a class="reference internal" href="#token.AWAIT" title="token.AWAIT"><code class="xref py py-data docutils literal notranslate"><span class="pre">AWAIT</span></code></a> and <a class="reference internal" href="#token.ASYNC" title="token.ASYNC"><code class="xref py py-data docutils literal notranslate"><span class="pre">ASYNC</span></code></a> tokens.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added <a class="reference internal" href="#token.AWAIT" title="token.AWAIT"><code class="xref py py-data docutils literal notranslate"><span class="pre">AWAIT</span></code></a> and <a class="reference internal" href="#token.ASYNC" title="token.ASYNC"><code class="xref py py-data docutils literal notranslate"><span class="pre">ASYNC</span></code></a> tokens.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added <a class="reference internal" href="#token.COMMENT" title="token.COMMENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">COMMENT</span></code></a>, <a class="reference internal" href="#token.NL" title="token.NL"><code class="xref py py-data docutils literal notranslate"><span class="pre">NL</span></code></a> and <a class="reference internal" href="#token.ENCODING" title="token.ENCODING"><code class="xref py py-data docutils literal notranslate"><span class="pre">ENCODING</span></code></a> tokens.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added <a class="reference internal" href="#token.COMMENT" title="token.COMMENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">COMMENT</span></code></a>, <a class="reference internal" href="#token.NL" title="token.NL"><code class="xref py py-data docutils literal notranslate"><span class="pre">NL</span></code></a> and <a class="reference internal" href="#token.ENCODING" title="token.ENCODING"><code class="xref py py-data docutils literal notranslate"><span class="pre">ENCODING</span></code></a> tokens.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Removed <a class="reference internal" href="#token.AWAIT" title="token.AWAIT"><code class="xref py py-data docutils literal notranslate"><span class="pre">AWAIT</span></code></a> and <a class="reference internal" href="#token.ASYNC" title="token.ASYNC"><code class="xref py py-data docutils literal notranslate"><span class="pre">ASYNC</span></code></a> tokens. &quot;async&quot; and &quot;await&quot; are
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Removed <a class="reference internal" href="#token.AWAIT" title="token.AWAIT"><code class="xref py py-data docutils literal notranslate"><span class="pre">AWAIT</span></code></a> and <a class="reference internal" href="#token.ASYNC" title="token.ASYNC"><code class="xref py py-data docutils literal notranslate"><span class="pre">ASYNC</span></code></a> tokens. &quot;async&quot; and &quot;await&quot; are
 now tokenized as <a class="reference internal" href="#token.NAME" title="token.NAME"><code class="xref py py-data docutils literal notranslate"><span class="pre">NAME</span></code></a> tokens.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added <a class="reference internal" href="#token.TYPE_COMMENT" title="token.TYPE_COMMENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">TYPE_COMMENT</span></code></a>, <a class="reference internal" href="#token.TYPE_IGNORE" title="token.TYPE_IGNORE"><code class="xref py py-data docutils literal notranslate"><span class="pre">TYPE_IGNORE</span></code></a>, <a class="reference internal" href="#token.COLONEQUAL" title="token.COLONEQUAL"><code class="xref py py-data docutils literal notranslate"><span class="pre">COLONEQUAL</span></code></a>.
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added <a class="reference internal" href="#token.TYPE_COMMENT" title="token.TYPE_COMMENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">TYPE_COMMENT</span></code></a>, <a class="reference internal" href="#token.TYPE_IGNORE" title="token.TYPE_IGNORE"><code class="xref py py-data docutils literal notranslate"><span class="pre">TYPE_IGNORE</span></code></a>, <a class="reference internal" href="#token.COLONEQUAL" title="token.COLONEQUAL"><code class="xref py py-data docutils literal notranslate"><span class="pre">COLONEQUAL</span></code></a>.
 Added <a class="reference internal" href="#token.AWAIT" title="token.AWAIT"><code class="xref py py-data docutils literal notranslate"><span class="pre">AWAIT</span></code></a> and <a class="reference internal" href="#token.ASYNC" title="token.ASYNC"><code class="xref py py-data docutils literal notranslate"><span class="pre">ASYNC</span></code></a> tokens back (they're needed
 to support parsing older Python versions for <a class="reference internal" href="ast.html#ast.parse" title="ast.parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">ast.parse()</span></code></a> with
 <code class="docutils literal notranslate"><span class="pre">feature_version</span></code> set to 6 or lower).</p>
@@ -603,18 +608,22 @@ to support parsing older Python versions for <a class="reference internal" href=
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="symbol.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symbol</span></code> --- Constants used with Python parse trees</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="keyword.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="symtable.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symtable</span></code> --- Access to the compiler's symbol tables</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="keyword.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/token.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/token.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -637,7 +646,7 @@ to support parsing older Python versions for <a class="reference internal" href=
           <a href="keyword.html" title="keyword --- Testing for Python keywords"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="symbol.html" title="symbol --- Constants used with Python parse trees"
+          <a href="symtable.html" title="symtable --- Access to the compiler&#39;s symbol tables"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -649,13 +658,11 @@ to support parsing older Python versions for <a class="reference internal" href=
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" >Python Language Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">token</span></code> --- Constants used with Python parse trees</a></li>
                 <li class="right">
@@ -675,25 +682,25 @@ to support parsing older Python versions for <a class="reference internal" href=
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>multiprocessing --- Process-based parallelism &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiprocessing --- Process-based parallelism &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="threading --- Thread-based parallelism" href="threading.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/multiprocessing.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,10 +70,11 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> --- Process-based parallelism</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li><a class="reference internal" href="#the-process-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code> class</a></li>
 <li><a class="reference internal" href="#contexts-and-start-methods">Contexts and start methods</a></li>
 <li><a class="reference internal" href="#exchanging-objects-between-processes">Exchanging objects between processes</a></li>
@@ -123,18 +122,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="threading.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code> --- Thread-based parallelism</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="multiprocessing.shared_memory.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing.shared_memory</span></code> ---  Provides shared memory for direct access across processes</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="threading.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code> --- Thread-based parallelism</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="multiprocessing.shared_memory.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing.shared_memory</span></code> ---  Provides shared memory for direct access across processes</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/multiprocessing.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/multiprocessing.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -170,13 +174,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concurrency.html" accesskey="U">Concurrent Execution</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> --- Process-based parallelism</a></li>
                 <li class="right">
@@ -203,10 +205,10 @@
             
   <section id="module-multiprocessing">
 <span id="multiprocessing-process-based-parallelism"></span><h1><a class="reference internal" href="#module-multiprocessing" title="multiprocessing: Process-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code></a> --- Process-based parallelism<a class="headerlink" href="#module-multiprocessing" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/multiprocessing/">Lib/multiprocessing/</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/multiprocessing/">Lib/multiprocessing/</a></p>
 <hr class="docutils" />
 <section id="introduction">
-<h2>簡介<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
 <p><a class="reference internal" href="#module-multiprocessing" title="multiprocessing: Process-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code></a> is a package that supports spawning processes using an
 API similar to the <a class="reference internal" href="threading.html#module-threading" title="threading: Thread-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code></a> module.  The <a class="reference internal" href="#module-multiprocessing" title="multiprocessing: Process-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code></a> package
 offers both local and remote concurrency, effectively side-stepping the
@@ -311,12 +313,12 @@ over Unix pipes.</p>
 </dl>
 </div></blockquote>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>On macOS, the <em>spawn</em> start method is now the default.  The <em>fork</em> start
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>On macOS, the <em>spawn</em> start method is now the default.  The <em>fork</em> start
 method should be considered unsafe as it can lead to crashes of the
 subprocess. See <a class="reference external" href="https://bugs.python.org/issue33725">bpo-33725</a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span><em>spawn</em> added on all unix platforms, and <em>forkserver</em> added for
+<p><span class="versionmodified changed">在 3.4 版本變更: </span><em>spawn</em> added on all unix platforms, and <em>forkserver</em> added for
 some unix platforms.
 Child processes no longer inherit all of the parents inheritable
 handles on Windows.</p>
@@ -632,7 +634,7 @@ stop the parent process somehow.)</p>
 <h3><a class="reference internal" href="#multiprocessing.Process" title="multiprocessing.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> and exceptions<a class="headerlink" href="#process-and-exceptions" title="本標題的永久連結">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.Process">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daemon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Process" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daemon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Process" title="本定義的永久連結">¶</a></dt>
 <dd><p>Process objects represent activity that is run in a separate process. The
 <a class="reference internal" href="#multiprocessing.Process" title="multiprocessing.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> class has equivalents of all the methods of
 <a class="reference internal" href="threading.html#threading.Thread" title="threading.Thread"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></a>.</p>
@@ -651,7 +653,7 @@ inherited from the creating process.</p>
 base class constructor (<code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.__init__()</span></code>) before doing anything else
 to the process.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added the <em>daemon</em> argument.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added the <em>daemon</em> argument.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.Process.run">
@@ -673,7 +675,7 @@ object's <a class="reference internal" href="#multiprocessing.Process.run" title
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.Process.join">
-<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Process.join" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Process.join" title="本定義的永久連結">¶</a></dt>
 <dd><p>If the optional argument <em>timeout</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), the method
 blocks until the process whose <a class="reference internal" href="#multiprocessing.Process.join" title="multiprocessing.Process.join"><code class="xref py py-meth docutils literal notranslate"><span class="pre">join()</span></code></a> method is called terminates.
 If <em>timeout</em> is a positive number, it blocks at most <em>timeout</em> seconds.
@@ -733,8 +735,13 @@ also support the following attributes and methods:</p>
 <dt class="sig sig-object py" id="multiprocessing.Process.exitcode">
 <span class="sig-name descname"><span class="pre">exitcode</span></span><a class="headerlink" href="#multiprocessing.Process.exitcode" title="本定義的永久連結">¶</a></dt>
 <dd><p>The child's exit code.  This will be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the process has not yet
-terminated.  A negative value <em>-N</em> indicates that the child was terminated
-by signal <em>N</em>.</p>
+terminated.</p>
+<p>If the child's <a class="reference internal" href="#multiprocessing.Process.run" title="multiprocessing.Process.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method returned normally, the exit code
+will be 0.  If it terminated via <a class="reference internal" href="sys.html#sys.exit" title="sys.exit"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.exit()</span></code></a> with an integer
+argument <em>N</em>, the exit code will be <em>N</em>.</p>
+<p>If the child terminated due to an exception not caught within
+<a class="reference internal" href="#multiprocessing.Process.run" title="multiprocessing.Process.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>, the exit code will be 1.  If it was terminated by
+signal <em>N</em>, the exit code will be the negative value <em>-N</em>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -761,7 +768,7 @@ calling <a class="reference internal" href="#multiprocessing.Process.join" title
 and <code class="docutils literal notranslate"><span class="pre">WaitForMultipleObjects</span></code> family of API calls.  On Unix, this is
 a file descriptor usable with primitives from the <a class="reference internal" href="select.html#module-select" title="select: Wait for I/O completion on multiple streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code></a> module.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -788,7 +795,7 @@ cause other processes to deadlock.</p>
 <span class="sig-name descname"><span class="pre">kill</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Process.kill" title="本定義的永久連結">¶</a></dt>
 <dd><p>Same as <a class="reference internal" href="#multiprocessing.Process.terminate" title="multiprocessing.Process.terminate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">terminate()</span></code></a> but using the <code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code> signal on Unix.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -801,7 +808,7 @@ is still running.  Once <a class="reference internal" href="#multiprocessing.Pro
 other methods and attributes of the <a class="reference internal" href="#multiprocessing.Process" title="multiprocessing.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> object will
 raise <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -828,13 +835,13 @@ the process that created the process object.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="multiprocessing.ProcessError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">ProcessError</span></span><a class="headerlink" href="#multiprocessing.ProcessError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">ProcessError</span></span><a class="headerlink" href="#multiprocessing.ProcessError" title="本定義的永久連結">¶</a></dt>
 <dd><p>The base class of all <a class="reference internal" href="#module-multiprocessing" title="multiprocessing: Process-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code></a> exceptions.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="multiprocessing.BufferTooShort">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">BufferTooShort</span></span><a class="headerlink" href="#multiprocessing.BufferTooShort" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">BufferTooShort</span></span><a class="headerlink" href="#multiprocessing.BufferTooShort" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised by <code class="xref py py-meth docutils literal notranslate"><span class="pre">Connection.recv_bytes_into()</span></code> when the supplied
 buffer object is too small for the message read.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">e</span></code> is an instance of <a class="reference internal" href="#multiprocessing.BufferTooShort" title="multiprocessing.BufferTooShort"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BufferTooShort</span></code></a> then <code class="docutils literal notranslate"><span class="pre">e.args[0]</span></code> will give
@@ -843,13 +850,13 @@ the message as a byte string.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="multiprocessing.AuthenticationError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">AuthenticationError</span></span><a class="headerlink" href="#multiprocessing.AuthenticationError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">AuthenticationError</span></span><a class="headerlink" href="#multiprocessing.AuthenticationError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised when there is an authentication error.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="multiprocessing.TimeoutError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">TimeoutError</span></span><a class="headerlink" href="#multiprocessing.TimeoutError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">TimeoutError</span></span><a class="headerlink" href="#multiprocessing.TimeoutError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Raised by methods with a timeout when the timeout expires.</p>
 </dd></dl>
 
@@ -922,7 +929,7 @@ process may hang on exit when it tries to join all its non-daemonic children.</p
 <a class="reference internal" href="#multiprocessing-examples"><span class="std std-ref">Examples</span></a>.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="multiprocessing.Pipe">
-<span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Pipe</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">duplex</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Pipe" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Pipe</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">duplex</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Pipe" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns a pair <code class="docutils literal notranslate"><span class="pre">(conn1,</span> <span class="pre">conn2)</span></code> of
 <a class="reference internal" href="#multiprocessing.connection.Connection" title="multiprocessing.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> objects representing the
 ends of a pipe.</p>
@@ -934,7 +941,7 @@ messages.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.Queue">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Queue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">maxsize</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Queue" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Queue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">maxsize</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Queue" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns a process shared queue implemented using a pipe and a few
 locks/semaphores.  When a process first puts an item on the queue a feeder
 thread is started which transfers objects from a buffer into the pipe.</p>
@@ -948,7 +955,7 @@ standard library's <a class="reference internal" href="queue.html#module-queue" 
 <dd><p>Return the approximate size of the queue.  Because of
 multithreading/multiprocessing semantics, this number is not reliable.</p>
 <p>Note that this may raise <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> on Unix platforms like
-Mac OS X where <code class="docutils literal notranslate"><span class="pre">sem_getvalue()</span></code> is not implemented.</p>
+macOS where <code class="docutils literal notranslate"><span class="pre">sem_getvalue()</span></code> is not implemented.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -967,7 +974,7 @@ multithreading/multiprocessing semantics, this is not reliable.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.Queue.put">
-<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">block</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Queue.put" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">block</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Queue.put" title="本定義的永久連結">¶</a></dt>
 <dd><p>Put obj into the queue.  If the optional argument <em>block</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code>
 (the default) and <em>timeout</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), block if necessary until
 a free slot is available.  If <em>timeout</em> is a positive number, it blocks at
@@ -977,7 +984,7 @@ free slot was available within that time.  Otherwise (<em>block</em> is
 available, else raise the <a class="reference internal" href="queue.html#queue.Full" title="queue.Full"><code class="xref py py-exc docutils literal notranslate"><span class="pre">queue.Full</span></code></a> exception (<em>timeout</em> is
 ignored in that case).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>If the queue is closed, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised instead of
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>If the queue is closed, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised instead of
 <a class="reference internal" href="exceptions.html#AssertionError" title="AssertionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -990,7 +997,7 @@ ignored in that case).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.Queue.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">block</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Queue.get" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Queue.get" title="本定義的永久連結">¶</a></dt>
 <dd><p>Remove and return an item from the queue.  If optional args <em>block</em> is
 <code class="docutils literal notranslate"><span class="pre">True</span></code> (the default) and <em>timeout</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), block if
 necessary until an item is available.  If <em>timeout</em> is a positive number,
@@ -999,7 +1006,7 @@ exception if no item was available within that time.  Otherwise (block is
 <code class="docutils literal notranslate"><span class="pre">False</span></code>), return an item if one is immediately available, else raise the
 <a class="reference internal" href="queue.html#queue.Empty" title="queue.Empty"><code class="xref py py-exc docutils literal notranslate"><span class="pre">queue.Empty</span></code></a> exception (<em>timeout</em> is ignored in that case).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>If the queue is closed, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised instead of
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>If the queue is closed, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised instead of
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -1041,7 +1048,7 @@ the background thread from being joined automatically when the process
 exits -- see <a class="reference internal" href="#multiprocessing.Queue.join_thread" title="multiprocessing.Queue.join_thread"><code class="xref py py-meth docutils literal notranslate"><span class="pre">join_thread()</span></code></a>.</p>
 <p>A better name for this method might be
 <code class="docutils literal notranslate"><span class="pre">allow_exit_without_flush()</span></code>.  It is likely to cause enqueued
-data to lost, and you almost certainly will not need to use it.
+data to be lost, and you almost certainly will not need to use it.
 It is really only there if you need the current process to exit
 immediately without waiting to flush enqueued data to the
 underlying pipe, and you don't care about lost data.</p>
@@ -1060,7 +1067,7 @@ of the specialized queue types listed below.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.SimpleQueue">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">SimpleQueue</span></span><a class="headerlink" href="#multiprocessing.SimpleQueue" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">SimpleQueue</span></span><a class="headerlink" href="#multiprocessing.SimpleQueue" title="本定義的永久連結">¶</a></dt>
 <dd><p>It is a simplified <a class="reference internal" href="#multiprocessing.Queue" title="multiprocessing.Queue"><code class="xref py py-class docutils literal notranslate"><span class="pre">Queue</span></code></a> type, very close to a locked <a class="reference internal" href="#multiprocessing.Pipe" title="multiprocessing.Pipe"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipe</span></code></a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.SimpleQueue.close">
@@ -1070,7 +1077,7 @@ of the specialized queue types listed below.</p>
 <a class="reference internal" href="#multiprocessing.SimpleQueue.get" title="multiprocessing.SimpleQueue.get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get()</span></code></a>, <a class="reference internal" href="#multiprocessing.SimpleQueue.put" title="multiprocessing.SimpleQueue.put"><code class="xref py py-meth docutils literal notranslate"><span class="pre">put()</span></code></a> and <a class="reference internal" href="#multiprocessing.SimpleQueue.empty" title="multiprocessing.SimpleQueue.empty"><code class="xref py py-meth docutils literal notranslate"><span class="pre">empty()</span></code></a> methods must no longer be
 called.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1096,7 +1103,7 @@ called.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.JoinableQueue">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">JoinableQueue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">maxsize</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.JoinableQueue" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">JoinableQueue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">maxsize</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.JoinableQueue" title="本定義的永久連結">¶</a></dt>
 <dd><p><a class="reference internal" href="#multiprocessing.JoinableQueue" title="multiprocessing.JoinableQueue"><code class="xref py py-class docutils literal notranslate"><span class="pre">JoinableQueue</span></code></a>, a <a class="reference internal" href="#multiprocessing.Queue" title="multiprocessing.Queue"><code class="xref py py-class docutils literal notranslate"><span class="pre">Queue</span></code></a> subclass, is a queue which
 additionally has <a class="reference internal" href="#multiprocessing.JoinableQueue.task_done" title="multiprocessing.JoinableQueue.task_done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">task_done()</span></code></a> and <a class="reference internal" href="#multiprocessing.JoinableQueue.join" title="multiprocessing.JoinableQueue.join"><code class="xref py py-meth docutils literal notranslate"><span class="pre">join()</span></code></a> methods.</p>
 <dl class="py method">
@@ -1144,7 +1151,8 @@ already finished.</p>
 <p>This number is not equivalent to the number of CPUs the current process can
 use.  The number of usable CPUs can be obtained with
 <code class="docutils literal notranslate"><span class="pre">len(os.sched_getaffinity(0))</span></code></p>
-<p>May raise <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a>.</p>
+<p>When the number of CPUs cannot be determined a <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a>
+is raised.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <p><a class="reference internal" href="os.html#os.cpu_count" title="os.cpu_count"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.cpu_count()</span></code></a></p>
@@ -1165,7 +1173,7 @@ use.  The number of usable CPUs can be obtained with
 the <a class="reference internal" href="#multiprocessing.current_process" title="multiprocessing.current_process"><code class="xref py py-func docutils literal notranslate"><span class="pre">current_process()</span></code></a>. For the main process, <code class="docutils literal notranslate"><span class="pre">parent_process</span></code> will
 be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1204,7 +1212,7 @@ is the default.  The possible start methods are <code class="docutils literal no
 available.  On Unix <code class="docutils literal notranslate"><span class="pre">'fork'</span></code> and <code class="docutils literal notranslate"><span class="pre">'spawn'</span></code> are always
 supported, with <code class="docutils literal notranslate"><span class="pre">'fork'</span></code> being the default.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1218,7 +1226,7 @@ Otherwise <em>method</em> should be <code class="docutils literal notranslate"><
 <code class="docutils literal notranslate"><span class="pre">'forkserver'</span></code>.  <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised if the specified
 start method is not available.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1232,16 +1240,21 @@ returned.  If the start method has not been fixed and <em>allow_none</em>
 is true then <code class="docutils literal notranslate"><span class="pre">None</span></code> is returned.</p>
 <p>The return value can be <code class="docutils literal notranslate"><span class="pre">'fork'</span></code>, <code class="docutils literal notranslate"><span class="pre">'spawn'</span></code>, <code class="docutils literal notranslate"><span class="pre">'forkserver'</span></code>
 or <code class="docutils literal notranslate"><span class="pre">None</span></code>.  <code class="docutils literal notranslate"><span class="pre">'fork'</span></code> is the default on Unix, while <code class="docutils literal notranslate"><span class="pre">'spawn'</span></code> is
-the default on Windows.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
-</div>
+the default on Windows and macOS.</p>
 </dd></dl>
 
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>On macOS, the <em>spawn</em> start method is now the default.  The <em>fork</em> start
+method should be considered unsafe as it can lead to crashes of the
+subprocess. See <a class="reference external" href="https://bugs.python.org/issue33725">bpo-33725</a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
+</div>
+</div>
 <dl class="py function">
 <dt class="sig sig-object py" id="multiprocessing.set_executable">
-<span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">set_executable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.set_executable" title="本定義的永久連結">¶</a></dt>
-<dd><p>Sets the path of the Python interpreter to use when starting a child process.
+<span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">set_executable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.set_executable" title="本定義的永久連結">¶</a></dt>
+<dd><p>Set the path of the Python interpreter to use when starting a child process.
 (By default <a class="reference internal" href="sys.html#sys.executable" title="sys.executable"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.executable</span></code></a> is used).  Embedders will probably need to
 do some thing like</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_executable</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exec_prefix</span><span class="p">,</span> <span class="s1">&#39;pythonw.exe&#39;</span><span class="p">))</span>
@@ -1249,7 +1262,7 @@ do some thing like</p>
 </div>
 <p>before they can create child processes.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Now supported on Unix when the <code class="docutils literal notranslate"><span class="pre">'spawn'</span></code> start method is used.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Now supported on Unix when the <code class="docutils literal notranslate"><span class="pre">'spawn'</span></code> start method is used.</p>
 </div>
 </dd></dl>
 
@@ -1262,7 +1275,7 @@ do some thing like</p>
 protected inside the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> clause of the
 main module.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -1283,7 +1296,7 @@ strings.  They can be thought of as message oriented connected sockets.</p>
 <a class="reference internal" href="#multiprocessing-listeners-clients"><span class="std std-ref">Listeners and Clients</span></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.connection.Connection">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.connection.</span></span><span class="sig-name descname"><span class="pre">Connection</span></span><a class="headerlink" href="#multiprocessing.connection.Connection" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.connection.</span></span><span class="sig-name descname"><span class="pre">Connection</span></span><a class="headerlink" href="#multiprocessing.connection.Connection" title="本定義的永久連結">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.connection.Connection.send">
 <span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.send" title="本定義的永久連結">¶</a></dt>
@@ -1317,7 +1330,7 @@ and the other end was closed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.connection.Connection.poll">
-<span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.poll" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.poll" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return whether there is any data available to be read.</p>
 <p>If <em>timeout</em> is not specified then it will return immediately.  If
 <em>timeout</em> is a number then this specifies the maximum time in seconds to
@@ -1328,7 +1341,7 @@ using <a class="reference internal" href="#multiprocessing.connection.wait" titl
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.connection.Connection.send_bytes">
-<span class="sig-name descname"><span class="pre">send_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">buffer</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">offset</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">size</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.send_bytes" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">send_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.send_bytes" title="本定義的永久連結">¶</a></dt>
 <dd><p>Send byte data from a <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> as a complete message.</p>
 <p>If <em>offset</em> is given then data is read from that position in <em>buffer</em>.  If
 <em>size</em> is given then that many bytes will be read from buffer.  Very large
@@ -1338,7 +1351,7 @@ buffers (approximately 32 MiB+, though it depends on the OS) may raise a
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.connection.Connection.recv_bytes">
-<span class="sig-name descname"><span class="pre">recv_bytes</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">maxlength</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.recv_bytes" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">recv_bytes</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">maxlength</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.recv_bytes" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a complete message of byte data sent from the other end of the
 connection as a string.  Blocks until there is something to receive.
 Raises <a class="reference internal" href="exceptions.html#EOFError" title="EOFError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">EOFError</span></code></a> if there is nothing left
@@ -1347,14 +1360,14 @@ to receive and the other end has closed.</p>
 then <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> is raised and the connection will no longer be
 readable.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>This function used to raise <a class="reference internal" href="exceptions.html#IOError" title="IOError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a>, which is now an
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>This function used to raise <a class="reference internal" href="exceptions.html#IOError" title="IOError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a>, which is now an
 alias of <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.connection.Connection.recv_bytes_into">
-<span class="sig-name descname"><span class="pre">recv_bytes_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">buffer</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">offset</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.recv_bytes_into" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">recv_bytes_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Connection.recv_bytes_into" title="本定義的永久連結">¶</a></dt>
 <dd><p>Read into <em>buffer</em> a complete message of byte data sent from the other end
 of the connection and return the number of bytes in the message.  Blocks
 until there is something to receive.  Raises
@@ -1370,11 +1383,11 @@ is the exception instance.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Connection objects themselves can now be transferred between processes
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Connection objects themselves can now be transferred between processes
 using <a class="reference internal" href="#multiprocessing.connection.Connection.send" title="multiprocessing.connection.Connection.send"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Connection.send()</span></code></a> and <a class="reference internal" href="#multiprocessing.connection.Connection.recv" title="multiprocessing.connection.Connection.recv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Connection.recv()</span></code></a>.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入: </span>Connection objects now support the context management protocol -- see
+<p><span class="versionmodified added">在 3.3 版本新加入: </span>Connection objects now support the context management protocol -- see
 <a class="reference internal" href="stdtypes.html#typecontextmanager"><span class="std std-ref">Context Manager Types</span></a>.  <a class="reference internal" href="stdtypes.html#contextmanager.__enter__" title="contextmanager.__enter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__enter__()</span></code></a> returns the
 connection object, and <a class="reference internal" href="stdtypes.html#contextmanager.__exit__" title="contextmanager.__exit__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__exit__()</span></code></a> calls <a class="reference internal" href="#multiprocessing.connection.Connection.close" title="multiprocessing.connection.Connection.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a>.</p>
 </div>
@@ -1425,47 +1438,47 @@ program as they are in a multithreaded program.  See the documentation for
 object -- see <a class="reference internal" href="#multiprocessing-managers"><span class="std std-ref">Managers</span></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.Barrier">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Barrier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">parties</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">action</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Barrier" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Barrier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parties</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Barrier" title="本定義的永久連結">¶</a></dt>
 <dd><p>A barrier object: a clone of <a class="reference internal" href="threading.html#threading.Barrier" title="threading.Barrier"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Barrier</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.BoundedSemaphore">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">BoundedSemaphore</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.BoundedSemaphore" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">BoundedSemaphore</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.BoundedSemaphore" title="本定義的永久連結">¶</a></dt>
 <dd><p>A bounded semaphore object: a close analog of
 <a class="reference internal" href="threading.html#threading.BoundedSemaphore" title="threading.BoundedSemaphore"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.BoundedSemaphore</span></code></a>.</p>
 <p>A solitary difference from its close analog exists: its <code class="docutils literal notranslate"><span class="pre">acquire</span></code> method's
 first argument is named <em>block</em>, as is consistent with <a class="reference internal" href="#multiprocessing.Lock.acquire" title="multiprocessing.Lock.acquire"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Lock.acquire()</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>On Mac OS X, this is indistinguishable from <a class="reference internal" href="#multiprocessing.Semaphore" title="multiprocessing.Semaphore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Semaphore</span></code></a> because
+<p>On macOS, this is indistinguishable from <a class="reference internal" href="#multiprocessing.Semaphore" title="multiprocessing.Semaphore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Semaphore</span></code></a> because
 <code class="docutils literal notranslate"><span class="pre">sem_getvalue()</span></code> is not implemented on that platform.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.Condition">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Condition</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">lock</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Condition" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Condition</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">lock</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Condition" title="本定義的永久連結">¶</a></dt>
 <dd><p>A condition variable: an alias for <a class="reference internal" href="threading.html#threading.Condition" title="threading.Condition"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Condition</span></code></a>.</p>
 <p>If <em>lock</em> is specified then it should be a <a class="reference internal" href="#multiprocessing.Lock" title="multiprocessing.Lock"><code class="xref py py-class docutils literal notranslate"><span class="pre">Lock</span></code></a> or <a class="reference internal" href="#multiprocessing.RLock" title="multiprocessing.RLock"><code class="xref py py-class docutils literal notranslate"><span class="pre">RLock</span></code></a>
 object from <a class="reference internal" href="#module-multiprocessing" title="multiprocessing: Process-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The <a class="reference internal" href="threading.html#threading.Condition.wait_for" title="threading.Condition.wait_for"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wait_for()</span></code></a> method was added.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The <a class="reference internal" href="threading.html#threading.Condition.wait_for" title="threading.Condition.wait_for"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wait_for()</span></code></a> method was added.</p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.Event">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><a class="headerlink" href="#multiprocessing.Event" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><a class="headerlink" href="#multiprocessing.Event" title="本定義的永久連結">¶</a></dt>
 <dd><p>A clone of <a class="reference internal" href="threading.html#threading.Event" title="threading.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Event</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.Lock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Lock</span></span><a class="headerlink" href="#multiprocessing.Lock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Lock</span></span><a class="headerlink" href="#multiprocessing.Lock" title="本定義的永久連結">¶</a></dt>
 <dd><p>A non-recursive lock object: a close analog of <a class="reference internal" href="threading.html#threading.Lock" title="threading.Lock"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Lock</span></code></a>.
 Once a process or thread has acquired a lock, subsequent attempts to
 acquire it from any process or thread will block until it is released;
@@ -1515,7 +1528,7 @@ when invoked on an unlocked lock, a <a class="reference internal" href="exceptio
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.RLock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">RLock</span></span><a class="headerlink" href="#multiprocessing.RLock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">RLock</span></span><a class="headerlink" href="#multiprocessing.RLock" title="本定義的永久連結">¶</a></dt>
 <dd><p>A recursive lock object: a close analog of <a class="reference internal" href="threading.html#threading.RLock" title="threading.RLock"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.RLock</span></code></a>.  A
 recursive lock must be released by the process or thread that acquired it.
 Once a process or thread has acquired a recursive lock, the same process
@@ -1572,7 +1585,7 @@ differs from the implemented behavior in <a class="reference internal" href="thr
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.Semaphore">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Semaphore</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Semaphore" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">Semaphore</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.Semaphore" title="本定義的永久連結">¶</a></dt>
 <dd><p>A semaphore object: a close analog of <a class="reference internal" href="threading.html#threading.Semaphore" title="threading.Semaphore"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Semaphore</span></code></a>.</p>
 <p>A solitary difference from its close analog exists: its <code class="docutils literal notranslate"><span class="pre">acquire</span></code> method's
 first argument is named <em>block</em>, as is consistent with <a class="reference internal" href="#multiprocessing.Lock.acquire" title="multiprocessing.Lock.acquire"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Lock.acquire()</span></code></a>.</p>
@@ -1580,7 +1593,7 @@ first argument is named <em>block</em>, as is consistent with <a class="referenc
 
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>On Mac OS X, <code class="docutils literal notranslate"><span class="pre">sem_timedwait</span></code> is unsupported, so calling <code class="docutils literal notranslate"><span class="pre">acquire()</span></code> with
+<p>On macOS, <code class="docutils literal notranslate"><span class="pre">sem_timedwait</span></code> is unsupported, so calling <code class="docutils literal notranslate"><span class="pre">acquire()</span></code> with
 a timeout will emulate that function's behavior using a sleeping loop.</p>
 </div>
 <div class="admonition note">
@@ -1741,7 +1754,7 @@ ctypes object <em>obj</em>.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="multiprocessing.sharedctypes.synchronized">
-<span class="sig-prename descclassname"><span class="pre">multiprocessing.sharedctypes.</span></span><span class="sig-name descname"><span class="pre">synchronized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">obj</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">lock</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.sharedctypes.synchronized" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">multiprocessing.sharedctypes.</span></span><span class="sig-name descname"><span class="pre">synchronized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">lock</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.sharedctypes.synchronized" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a process-safe wrapper object for a ctypes object which uses <em>lock</em> to
 synchronize access.  If <em>lock</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default) then a
 <a class="reference internal" href="#multiprocessing.RLock" title="multiprocessing.RLock"><code class="xref py py-class docutils literal notranslate"><span class="pre">multiprocessing.RLock</span></code></a> object is created automatically.</p>
@@ -1751,7 +1764,7 @@ object it wraps: <code class="xref py py-meth docutils literal notranslate"><spa
 <p>Note that accessing the ctypes object through the wrapper can be a lot slower
 than accessing the raw ctypes object.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Synchronized objects support the <a class="reference internal" href="../glossary.html#term-context-manager"><span class="xref std std-term">context manager</span></a> protocol.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Synchronized objects support the <a class="reference internal" href="../glossary.html#term-context-manager"><span class="xref std std-term">context manager</span></a> protocol.</p>
 </div>
 </dd></dl>
 
@@ -1854,7 +1867,7 @@ their parent process exits.  The manager classes are defined in the
 <a class="reference internal" href="#module-multiprocessing.managers" title="multiprocessing.managers: Share data between process with shared objects."><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing.managers</span></code></a> module:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.managers.BaseManager">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.managers.</span></span><span class="sig-name descname"><span class="pre">BaseManager</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">address</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">authkey</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.BaseManager" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.managers.</span></span><span class="sig-name descname"><span class="pre">BaseManager</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">authkey</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.BaseManager" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a BaseManager object.</p>
 <p>Once created one should call <a class="reference internal" href="#multiprocessing.managers.BaseManager.start" title="multiprocessing.managers.BaseManager.start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start()</span></code></a> or <code class="docutils literal notranslate"><span class="pre">get_server().serve_forever()</span></code> to ensure
 that the manager object refers to a started manager process.</p>
@@ -1866,7 +1879,7 @@ validity of incoming connections to the server process.  If
 Otherwise <em>authkey</em> is used and it must be a byte string.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.managers.BaseManager.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">initializer</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">initargs</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.BaseManager.start" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">initializer</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">initargs</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.BaseManager.start" title="本定義的永久連結">¶</a></dt>
 <dd><p>Start a subprocess to start the manager.  If <em>initializer</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>
 then the subprocess will call <code class="docutils literal notranslate"><span class="pre">initializer(*initargs)</span></code> when it starts.</p>
 </dd></dl>
@@ -1907,7 +1920,7 @@ the control of the Manager. The <code class="xref py py-class docutils literal n
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.managers.BaseManager.register">
-<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">typeid</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">callable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">proxytype</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">exposed</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">method_to_typeid</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">create_method</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.BaseManager.register" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typeid</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">callable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">proxytype</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">exposed</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">method_to_typeid</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">create_method</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.BaseManager.register" title="本定義的永久連結">¶</a></dt>
 <dd><p>A classmethod which can be used for registering a type or callable with
 the manager class.</p>
 <p><em>typeid</em> is a &quot;type identifier&quot; which is used to identify a particular
@@ -1947,7 +1960,7 @@ shared object and return a proxy for it.  By default it is <code class="docutils
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Manager objects support the context management protocol -- see
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Manager objects support the context management protocol -- see
 <a class="reference internal" href="stdtypes.html#typecontextmanager"><span class="std std-ref">Context Manager Types</span></a>.  <a class="reference internal" href="stdtypes.html#contextmanager.__enter__" title="contextmanager.__enter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__enter__()</span></code></a> starts the
 server process (if it has not already started) and then returns the
 manager object.  <a class="reference internal" href="stdtypes.html#contextmanager.__exit__" title="contextmanager.__exit__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__exit__()</span></code></a> calls <a class="reference internal" href="#multiprocessing.managers.BaseManager.shutdown" title="multiprocessing.managers.BaseManager.shutdown"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shutdown()</span></code></a>.</p>
@@ -1958,7 +1971,7 @@ manager's server process if it was not already started.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.managers.SyncManager">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.managers.</span></span><span class="sig-name descname"><span class="pre">SyncManager</span></span><a class="headerlink" href="#multiprocessing.managers.SyncManager" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.managers.</span></span><span class="sig-name descname"><span class="pre">SyncManager</span></span><a class="headerlink" href="#multiprocessing.managers.SyncManager" title="本定義的永久連結">¶</a></dt>
 <dd><p>A subclass of <a class="reference internal" href="#multiprocessing.managers.BaseManager" title="multiprocessing.managers.BaseManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseManager</span></code></a> which can be used for the synchronization
 of processes.  Objects of this type are returned by
 <code class="xref py py-func docutils literal notranslate"><span class="pre">multiprocessing.Manager()</span></code>.</p>
@@ -1967,30 +1980,30 @@ number of commonly used data types to be synchronized across processes.
 This notably includes shared lists and dictionaries.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.managers.SyncManager.Barrier">
-<span class="sig-name descname"><span class="pre">Barrier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">parties</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">action</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.Barrier" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">Barrier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parties</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.Barrier" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a shared <a class="reference internal" href="threading.html#threading.Barrier" title="threading.Barrier"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Barrier</span></code></a> object and return a
 proxy for it.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.managers.SyncManager.BoundedSemaphore">
-<span class="sig-name descname"><span class="pre">BoundedSemaphore</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.BoundedSemaphore" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">BoundedSemaphore</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.BoundedSemaphore" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a shared <a class="reference internal" href="threading.html#threading.BoundedSemaphore" title="threading.BoundedSemaphore"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.BoundedSemaphore</span></code></a> object and return a
 proxy for it.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.managers.SyncManager.Condition">
-<span class="sig-name descname"><span class="pre">Condition</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">lock</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.Condition" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">Condition</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">lock</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.Condition" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a shared <a class="reference internal" href="threading.html#threading.Condition" title="threading.Condition"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Condition</span></code></a> object and return a proxy for
 it.</p>
 <p>If <em>lock</em> is supplied then it should be a proxy for a
 <a class="reference internal" href="threading.html#threading.Lock" title="threading.Lock"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Lock</span></code></a> or <a class="reference internal" href="threading.html#threading.RLock" title="threading.RLock"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.RLock</span></code></a> object.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>The <a class="reference internal" href="threading.html#threading.Condition.wait_for" title="threading.Condition.wait_for"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wait_for()</span></code></a> method was added.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>The <a class="reference internal" href="threading.html#threading.Condition.wait_for" title="threading.Condition.wait_for"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wait_for()</span></code></a> method was added.</p>
 </div>
 </dd></dl>
 
@@ -2014,7 +2027,7 @@ it.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.managers.SyncManager.Queue">
-<span class="sig-name descname"><span class="pre">Queue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">maxsize</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.Queue" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">Queue</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">maxsize</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.Queue" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a shared <a class="reference internal" href="queue.html#queue.Queue" title="queue.Queue"><code class="xref py py-class docutils literal notranslate"><span class="pre">queue.Queue</span></code></a> object and return a proxy for it.</p>
 </dd></dl>
 
@@ -2026,7 +2039,7 @@ it.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.managers.SyncManager.Semaphore">
-<span class="sig-name descname"><span class="pre">Semaphore</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.Semaphore" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">Semaphore</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.SyncManager.Semaphore" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a shared <a class="reference internal" href="threading.html#threading.Semaphore" title="threading.Semaphore"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Semaphore</span></code></a> object and return a proxy for
 it.</p>
 </dd></dl>
@@ -2063,7 +2076,7 @@ for it.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Shared objects are capable of being nested.  For example, a shared
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Shared objects are capable of being nested.  For example, a shared
 container object such as a shared list can contain other shared objects
 which will all be managed and synchronized by the <a class="reference internal" href="#multiprocessing.managers.SyncManager" title="multiprocessing.managers.SyncManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">SyncManager</span></code></a>.</p>
 </div>
@@ -2071,7 +2084,7 @@ which will all be managed and synchronized by the <a class="reference internal" 
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.managers.Namespace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.managers.</span></span><span class="sig-name descname"><span class="pre">Namespace</span></span><a class="headerlink" href="#multiprocessing.managers.Namespace" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.managers.</span></span><span class="sig-name descname"><span class="pre">Namespace</span></span><a class="headerlink" href="#multiprocessing.managers.Namespace" title="本定義的永久連結">¶</a></dt>
 <dd><p>A type that can register with <a class="reference internal" href="#multiprocessing.managers.SyncManager" title="multiprocessing.managers.SyncManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">SyncManager</span></code></a>.</p>
 <p>A namespace object has no public methods, but does have writable attributes.
 Its representation shows the values of its attributes.</p>
@@ -2261,11 +2274,11 @@ by value.  So, for instance, we have:</p>
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.managers.BaseProxy">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.managers.</span></span><span class="sig-name descname"><span class="pre">BaseProxy</span></span><a class="headerlink" href="#multiprocessing.managers.BaseProxy" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.managers.</span></span><span class="sig-name descname"><span class="pre">BaseProxy</span></span><a class="headerlink" href="#multiprocessing.managers.BaseProxy" title="本定義的永久連結">¶</a></dt>
 <dd><p>Proxy objects are instances of subclasses of <a class="reference internal" href="#multiprocessing.managers.BaseProxy" title="multiprocessing.managers.BaseProxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProxy</span></code></a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.managers.BaseProxy._callmethod">
-<span class="sig-name descname"><span class="pre">_callmethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">methodname</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">args</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">kwds</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.BaseProxy._callmethod" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_callmethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodname</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">kwds</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.managers.BaseProxy._callmethod" title="本定義的永久連結">¶</a></dt>
 <dd><p>Call and return the result of a method of the proxy's referent.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">proxy</span></code> is a proxy whose referent is <code class="docutils literal notranslate"><span class="pre">obj</span></code> then the expression</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">_callmethod</span><span class="p">(</span><span class="n">methodname</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
@@ -2334,7 +2347,7 @@ any proxies referring to it.</p>
 with the <a class="reference internal" href="#multiprocessing.pool.Pool" title="multiprocessing.pool.Pool"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pool</span></code></a> class.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.pool.</span></span><span class="sig-name descname"><span class="pre">Pool</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">processes</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">initializer</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">initargs</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">maxtasksperchild</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">context</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.pool.</span></span><span class="sig-name descname"><span class="pre">Pool</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">processes</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">initializer</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">initargs</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">maxtasksperchild</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool" title="本定義的永久連結">¶</a></dt>
 <dd><p>A process pool object which controls a pool of worker processes to which jobs
 can be submitted.  It supports asynchronous results with timeouts and
 callbacks and has a parallel map implementation.</p>
@@ -2359,15 +2372,15 @@ the process which created the pool.</p>
 properly managed (like any other resource) by using the pool as a context manager
 or by calling <a class="reference internal" href="#multiprocessing.pool.Pool.close" title="multiprocessing.pool.Pool.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> and <a class="reference internal" href="#multiprocessing.pool.Pool.terminate" title="multiprocessing.pool.Pool.terminate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">terminate()</span></code></a> manually. Failure to do this
 can lead to the process hanging on finalization.</p>
-<p>Note that is <strong>not correct</strong> to rely on the garbage colletor to destroy the pool
+<p>Note that it is <strong>not correct</strong> to rely on the garbage collector to destroy the pool
 as CPython does not assure that the finalizer of the pool will be called
 (see <a class="reference internal" href="../reference/datamodel.html#object.__del__" title="object.__del__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">object.__del__()</span></code></a> for more information).</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入: </span><em>maxtasksperchild</em></p>
+<p><span class="versionmodified added">在 3.2 版本新加入: </span><em>maxtasksperchild</em></p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入: </span><em>context</em></p>
+<p><span class="versionmodified added">在 3.4 版本新加入: </span><em>context</em></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -2381,7 +2394,7 @@ argument to the <a class="reference internal" href="#multiprocessing.pool.Pool" 
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool.apply">
-<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">args</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">kwds</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.apply" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">kwds</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.apply" title="本定義的永久連結">¶</a></dt>
 <dd><p>Call <em>func</em> with arguments <em>args</em> and keyword arguments <em>kwds</em>.  It blocks
 until the result is ready. Given this blocks, <a class="reference internal" href="#multiprocessing.pool.Pool.apply_async" title="multiprocessing.pool.Pool.apply_async"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply_async()</span></code></a> is
 better suited for performing work in parallel. Additionally, <em>func</em>
@@ -2390,7 +2403,7 @@ is only executed in one of the workers of the pool.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool.apply_async">
-<span class="sig-name descname"><span class="pre">apply_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">args</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">kwds</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">callback</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">error_callback</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.apply_async" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apply_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">kwds</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">error_callback</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.apply_async" title="本定義的永久連結">¶</a></dt>
 <dd><p>A variant of the <a class="reference internal" href="#multiprocessing.pool.Pool.apply" title="multiprocessing.pool.Pool.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> method which returns a
 <a class="reference internal" href="#multiprocessing.pool.AsyncResult" title="multiprocessing.pool.AsyncResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncResult</span></code></a> object.</p>
 <p>If <em>callback</em> is specified then it should be a callable which accepts a
@@ -2406,7 +2419,7 @@ handles the results will get blocked.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool.map">
-<span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">iterable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">chunksize</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.map" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.map" title="本定義的永久連結">¶</a></dt>
 <dd><p>A parallel equivalent of the <a class="reference internal" href="functions.html#map" title="map"><code class="xref py py-func docutils literal notranslate"><span class="pre">map()</span></code></a> built-in function (it supports only
 one <em>iterable</em> argument though, for multiple iterables see <a class="reference internal" href="#multiprocessing.pool.Pool.starmap" title="multiprocessing.pool.Pool.starmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">starmap()</span></code></a>).
 It blocks until the result is ready.</p>
@@ -2420,7 +2433,7 @@ option for better efficiency.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool.map_async">
-<span class="sig-name descname"><span class="pre">map_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">iterable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">chunksize</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">callback</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">error_callback</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.map_async" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">map_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">error_callback</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.map_async" title="本定義的永久連結">¶</a></dt>
 <dd><p>A variant of the <a class="reference internal" href="#multiprocessing.pool.Pool.map" title="multiprocessing.pool.Pool.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a> method which returns a
 <a class="reference internal" href="#multiprocessing.pool.AsyncResult" title="multiprocessing.pool.AsyncResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncResult</span></code></a> object.</p>
 <p>If <em>callback</em> is specified then it should be a callable which accepts a
@@ -2436,7 +2449,7 @@ handles the results will get blocked.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool.imap">
-<span class="sig-name descname"><span class="pre">imap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">iterable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">chunksize</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.imap" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">imap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.imap" title="本定義的永久連結">¶</a></dt>
 <dd><p>A lazier version of <a class="reference internal" href="#multiprocessing.pool.Pool.map" title="multiprocessing.pool.Pool.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a>.</p>
 <p>The <em>chunksize</em> argument is the same as the one used by the <a class="reference internal" href="#multiprocessing.pool.Pool.map" title="multiprocessing.pool.Pool.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a>
 method.  For very long iterables using a large value for <em>chunksize</em> can
@@ -2450,7 +2463,7 @@ result cannot be returned within <em>timeout</em> seconds.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool.imap_unordered">
-<span class="sig-name descname"><span class="pre">imap_unordered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">iterable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">chunksize</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.imap_unordered" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">imap_unordered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.imap_unordered" title="本定義的永久連結">¶</a></dt>
 <dd><p>The same as <a class="reference internal" href="#multiprocessing.pool.Pool.imap" title="multiprocessing.pool.Pool.imap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">imap()</span></code></a> except that the ordering of the results from the
 returned iterator should be considered arbitrary.  (Only when there is
 only one worker process is the order guaranteed to be &quot;correct&quot;.)</p>
@@ -2458,24 +2471,25 @@ only one worker process is the order guaranteed to be &quot;correct&quot;.)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool.starmap">
-<span class="sig-name descname"><span class="pre">starmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">iterable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">chunksize</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.starmap" title="本定義的永久連結">¶</a></dt>
-<dd><p>Like <a class="reference internal" href="functions.html#map" title="map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a> except that the elements of the <em>iterable</em> are expected
-to be iterables that are unpacked as arguments.</p>
+<span class="sig-name descname"><span class="pre">starmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.starmap" title="本定義的永久連結">¶</a></dt>
+<dd><p>Like <a class="reference internal" href="#multiprocessing.pool.Pool.map" title="multiprocessing.pool.Pool.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a> except that the
+elements of the <em>iterable</em> are expected to be iterables that are
+unpacked as arguments.</p>
 <p>Hence an <em>iterable</em> of <code class="docutils literal notranslate"><span class="pre">[(1,2),</span> <span class="pre">(3,</span> <span class="pre">4)]</span></code> results in <code class="docutils literal notranslate"><span class="pre">[func(1,2),</span>
 <span class="pre">func(3,4)]</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.Pool.starmap_async">
-<span class="sig-name descname"><span class="pre">starmap_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">func</span></em>, <em class="sig-param"><span class="pre">iterable</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">chunksize</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">callback</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">error_callback</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.starmap_async" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">starmap_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">error_callback</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.Pool.starmap_async" title="本定義的永久連結">¶</a></dt>
 <dd><p>A combination of <a class="reference internal" href="#multiprocessing.pool.Pool.starmap" title="multiprocessing.pool.Pool.starmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">starmap()</span></code></a> and <a class="reference internal" href="#multiprocessing.pool.Pool.map_async" title="multiprocessing.pool.Pool.map_async"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map_async()</span></code></a> that iterates over
 <em>iterable</em> of iterables and calls <em>func</em> with the iterables unpacked.
 Returns a result object.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -2502,7 +2516,7 @@ called immediately.</p>
 </dd></dl>
 
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入: </span>Pool objects now support the context management protocol -- see
+<p><span class="versionmodified added">在 3.3 版本新加入: </span>Pool objects now support the context management protocol -- see
 <a class="reference internal" href="stdtypes.html#typecontextmanager"><span class="std std-ref">Context Manager Types</span></a>.  <a class="reference internal" href="stdtypes.html#contextmanager.__enter__" title="contextmanager.__enter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__enter__()</span></code></a> returns the
 pool object, and <a class="reference internal" href="stdtypes.html#contextmanager.__exit__" title="contextmanager.__exit__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__exit__()</span></code></a> calls <a class="reference internal" href="#multiprocessing.pool.Pool.terminate" title="multiprocessing.pool.Pool.terminate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">terminate()</span></code></a>.</p>
 </div>
@@ -2510,12 +2524,12 @@ pool object, and <a class="reference internal" href="stdtypes.html#contextmanage
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.pool.AsyncResult">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.pool.</span></span><span class="sig-name descname"><span class="pre">AsyncResult</span></span><a class="headerlink" href="#multiprocessing.pool.AsyncResult" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.pool.</span></span><span class="sig-name descname"><span class="pre">AsyncResult</span></span><a class="headerlink" href="#multiprocessing.pool.AsyncResult" title="本定義的永久連結">¶</a></dt>
 <dd><p>The class of the result returned by <a class="reference internal" href="#multiprocessing.pool.Pool.apply_async" title="multiprocessing.pool.Pool.apply_async"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Pool.apply_async()</span></code></a> and
 <a class="reference internal" href="#multiprocessing.pool.Pool.map_async" title="multiprocessing.pool.Pool.map_async"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Pool.map_async()</span></code></a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.AsyncResult.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.AsyncResult.get" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.AsyncResult.get" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the result when it arrives.  If <em>timeout</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and the
 result does not arrive within <em>timeout</em> seconds then
 <a class="reference internal" href="#multiprocessing.TimeoutError" title="multiprocessing.TimeoutError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">multiprocessing.TimeoutError</span></code></a> is raised.  If the remote call raised
@@ -2524,7 +2538,7 @@ an exception then that exception will be reraised by <a class="reference interna
 
 <dl class="py method">
 <dt class="sig sig-object py" id="multiprocessing.pool.AsyncResult.wait">
-<span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">timeout</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.AsyncResult.wait" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.AsyncResult.wait" title="本定義的永久連結">¶</a></dt>
 <dd><p>Wait until the result is available or until <em>timeout</em> seconds pass.</p>
 </dd></dl>
 
@@ -2540,7 +2554,7 @@ an exception then that exception will be reraised by <a class="reference interna
 <dd><p>Return whether the call completed without raising an exception.  Will
 raise <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the result is not ready.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>If the result is not ready, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised instead of
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>If the result is not ready, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised instead of
 <a class="reference internal" href="exceptions.html#AssertionError" title="AssertionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code></a>.</p>
 </div>
 </dd></dl>
@@ -2602,7 +2616,7 @@ key, and then send the digest back.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="multiprocessing.connection.Client">
-<span class="sig-prename descclassname"><span class="pre">multiprocessing.connection.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">address</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">family</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">authkey</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Client" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">multiprocessing.connection.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">family</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">authkey</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Client" title="本定義的永久連結">¶</a></dt>
 <dd><p>Attempt to set up a connection to the listener which is using address
 <em>address</em>, returning a <a class="reference internal" href="#multiprocessing.connection.Connection" title="multiprocessing.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a>.</p>
 <p>The type of the connection is determined by <em>family</em> argument, but this can
@@ -2617,7 +2631,7 @@ See <a class="reference internal" href="#multiprocessing-auth-keys"><span class=
 
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.connection.Listener">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.connection.</span></span><span class="sig-name descname"><span class="pre">Listener</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">address</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">family</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">backlog</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">authkey</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Listener" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.connection.</span></span><span class="sig-name descname"><span class="pre">Listener</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">family</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">backlog</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">authkey</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.connection.Listener" title="本定義的永久連結">¶</a></dt>
 <dd><p>A wrapper for a bound socket or Windows named pipe which is 'listening' for
 connections.</p>
 <p><em>address</em> is the address to be used by the bound socket or named pipe of the
@@ -2678,7 +2692,7 @@ unavailable then it is <code class="docutils literal notranslate"><span class="p
 </dd></dl>
 
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入: </span>Listener objects now support the context management protocol -- see
+<p><span class="versionmodified added">在 3.3 版本新加入: </span>Listener objects now support the context management protocol -- see
 <a class="reference internal" href="stdtypes.html#typecontextmanager"><span class="std std-ref">Context Manager Types</span></a>.  <a class="reference internal" href="stdtypes.html#contextmanager.__enter__" title="contextmanager.__enter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__enter__()</span></code></a> returns the
 listener object, and <a class="reference internal" href="stdtypes.html#contextmanager.__exit__" title="contextmanager.__exit__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__exit__()</span></code></a> calls <a class="reference internal" href="#multiprocessing.connection.Listener.close" title="multiprocessing.connection.Listener.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a>.</p>
 </div>
@@ -2714,7 +2728,7 @@ or it can be an object with a <code class="xref py py-meth docutils literal notr
 socket handle or pipe handle.  (Note that pipe handles and socket
 handles are <strong>not</strong> waitable handles.)</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -2847,11 +2861,12 @@ inherited.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="multiprocessing.log_to_stderr">
-<span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">log_to_stderr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.log_to_stderr" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">multiprocessing.</span></span><span class="sig-name descname"><span class="pre">log_to_stderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.log_to_stderr" title="本定義的永久連結">¶</a></dt>
 <dd><p>This function performs a call to <a class="reference internal" href="#multiprocessing.get_logger" title="multiprocessing.get_logger"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_logger()</span></code></a> but in addition to
 returning the logger created by get_logger, it adds a handler which sends
 output to <a class="reference internal" href="sys.html#sys.stderr" title="sys.stderr"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stderr</span></code></a> using format
-<code class="docutils literal notranslate"><span class="pre">'[%(levelname)s/%(processName)s]</span> <span class="pre">%(message)s'</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">'[%(levelname)s/%(processName)s]</span> <span class="pre">%(message)s'</span></code>.
+You can modify <code class="docutils literal notranslate"><span class="pre">levelname</span></code> of the logger by passing a <code class="docutils literal notranslate"><span class="pre">level</span></code> argument.</p>
 </dd></dl>
 
 <p>Below is an example session with logging turned on:</p>
@@ -2881,7 +2896,7 @@ returns an instance of <a class="reference internal" href="#multiprocessing.pool
 worker threads rather than worker processes.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="multiprocessing.pool.ThreadPool">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">multiprocessing.pool.</span></span><span class="sig-name descname"><span class="pre">ThreadPool</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">processes</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">initializer</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">initargs</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.ThreadPool" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">multiprocessing.pool.</span></span><span class="sig-name descname"><span class="pre">ThreadPool</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">processes</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">initializer</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">initargs</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#multiprocessing.pool.ThreadPool" title="本定義的永久連結">¶</a></dt>
 <dd><p>A thread pool object which controls a pool of worker threads to which jobs
 can be submitted.  <a class="reference internal" href="#multiprocessing.pool.ThreadPool" title="multiprocessing.pool.ThreadPool"><code class="xref py py-class docutils literal notranslate"><span class="pre">ThreadPool</span></code></a> instances are fully interface
 compatible with <a class="reference internal" href="#multiprocessing.pool.Pool" title="multiprocessing.pool.Pool"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pool</span></code></a> instances, and their resources must also be
@@ -3467,10 +3482,11 @@ processes and collect the results:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> --- Process-based parallelism</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li><a class="reference internal" href="#the-process-class">The <code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code> class</a></li>
 <li><a class="reference internal" href="#contexts-and-start-methods">Contexts and start methods</a></li>
 <li><a class="reference internal" href="#exchanging-objects-between-processes">Exchanging objects between processes</a></li>
@@ -3518,18 +3534,23 @@ processes and collect the results:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="threading.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code> --- Thread-based parallelism</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="multiprocessing.shared_memory.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing.shared_memory</span></code> ---  Provides shared memory for direct access across processes</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="threading.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code> --- Thread-based parallelism</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="multiprocessing.shared_memory.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing.shared_memory</span></code> ---  Provides shared memory for direct access across processes</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/multiprocessing.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/multiprocessing.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -3564,13 +3585,11 @@ processes and collect the results:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concurrency.html" >Concurrent Execution</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> --- Process-based parallelism</a></li>
                 <li class="right">
@@ -3590,25 +3609,25 @@ processes and collect the results:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

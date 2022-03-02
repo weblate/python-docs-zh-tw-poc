@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New In Python 3.8 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New In Python 3.8 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="What&#39;s New In Python 3.9" href="3.9.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/3.8.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New In Python 3.8</a><ul>
 <li><a class="reference internal" href="#summary-release-highlights">Summary -- Release highlights</a></li>
 <li><a class="reference internal" href="#new-features">New Features</a><ul>
@@ -159,18 +158,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="3.9.html"
-                        title="上一章">What's New In Python 3.9</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="3.7.html"
-                        title="下一章">What's New In Python 3.7</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.9.html"
+                          title="上一章">What's New In Python 3.9</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="3.7.html"
+                          title="下一章">What's New In Python 3.7</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/3.8.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/3.8.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -206,13 +210,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New In Python 3.8</a></li>
                 <li class="right">
                     
@@ -372,12 +374,12 @@ subdirectories).</p>
 <p>Python now uses the same ABI whether it's built in release or debug mode. On
 Unix, when Python is built in debug mode, it is now possible to load C
 extensions built in release mode and C extensions built using the stable ABI.</p>
-<p>Release builds and debug builds are now ABI compatible: defining the
+<p>Release builds and <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug builds</span></a> are now ABI compatible: defining the
 <code class="docutils literal notranslate"><span class="pre">Py_DEBUG</span></code> macro no longer implies the <code class="docutils literal notranslate"><span class="pre">Py_TRACE_REFS</span></code> macro, which
 introduces the only ABI incompatibility. The <code class="docutils literal notranslate"><span class="pre">Py_TRACE_REFS</span></code> macro, which
 adds the <code class="xref py py-func docutils literal notranslate"><span class="pre">sys.getobjects()</span></code> function and the <span class="target" id="index-3"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONDUMPREFS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONDUMPREFS</span></code></a>
-environment variable, can be set using the new <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--with-trace-refs</span></code>
-build option.
+environment variable, can be set using the new <a class="reference internal" href="../using/configure.html#cmdoption-with-trace-refs"><code class="xref std std-option docutils literal notranslate"><span class="pre">./configure</span>
+<span class="pre">--with-trace-refs</span></code></a> build option.
 (Contributed by Victor Stinner in <a class="reference external" href="https://bugs.python.org/issue36465">bpo-36465</a>.)</p>
 <p>On Unix, C extensions are no longer linked to libpython except on Android
 and Cygwin.
@@ -495,7 +497,8 @@ documentation.</p>
 <p><a class="reference internal" href="../c-api/call.html#vectorcall"><span class="std std-ref">The Vectorcall Protocol</span></a> is added to the Python/C API.
 It is meant to formalize existing optimizations which were already done
 for various classes.
-Any static type implementing a callable can use this protocol.</p>
+Any <a class="reference internal" href="../c-api/typeobj.html#static-types"><span class="std std-ref">static type</span></a> implementing a callable can use this
+protocol.</p>
 <p>This is currently provisional.
 The aim is to make it fully public in Python 3.9.</p>
 <p>See <span class="target" id="index-7"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0590"><strong>PEP 590</strong></a> for a full description.</p>
@@ -972,7 +975,7 @@ for <a class="reference internal" href="../library/functions.html#property" titl
 </section>
 <section id="io">
 <h3>io<a class="headerlink" href="#io" title="本標題的永久連結">¶</a></h3>
-<p>In development mode (<a class="reference internal" href="../using/cmdline.html#cmdoption-X"><code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span></code></a> <code class="docutils literal notranslate"><span class="pre">env</span></code>) and in debug build, the
+<p>In development mode (<a class="reference internal" href="../using/cmdline.html#cmdoption-X"><code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span></code></a> <code class="docutils literal notranslate"><span class="pre">env</span></code>) and in <a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug build</span></a>, the
 <a class="reference internal" href="../library/io.html#io.IOBase" title="io.IOBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">io.IOBase</span></code></a> finalizer now logs the exception if the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method
 fails. The exception is ignored silently by default in release build.
 (Contributed by Victor Stinner in <a class="reference external" href="https://bugs.python.org/issue18748">bpo-18748</a>.)</p>
@@ -1928,7 +1931,7 @@ Increasing the reference count of these type objects has been moved from
 <a class="reference internal" href="../c-api/allocation.html#c.PyObject_Init" title="PyObject_Init"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_Init()</span></code></a> and <code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_INIT()</span></code>.
 This makes types created through <a class="reference internal" href="../c-api/type.html#c.PyType_FromSpec" title="PyType_FromSpec"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyType_FromSpec()</span></code></a> behave like
 other classes in managed code.</p>
-<p>Statically allocated types are not affected.</p>
+<p><a class="reference internal" href="../c-api/typeobj.html#static-types"><span class="std std-ref">Statically allocated types</span></a> are not affected.</p>
 <p>For the vast majority of cases, there should be no side effect.
 However, types that manually increase the reference count after allocating
 an instance (perhaps to work around the bug) may now become immortal.
@@ -2004,7 +2007,7 @@ dlltool --dllname python38.dll --def tmp.def --output-lib libpython38.a
 </div>
 <p>The location of an installed <code class="file docutils literal notranslate"><span class="pre">pythonXY.dll</span></code> will depend on the
 installation options and the version and language of Windows. See
-<a class="reference internal" href="../using/windows.html#using-on-windows"><span class="std std-ref">在 Windows 上使用 Python</span></a> for more information. The resulting library should be
+<a class="reference internal" href="../using/windows.html#using-on-windows"><span class="std std-ref">Using Python on Windows</span></a> for more information. The resulting library should be
 placed in the same directory as <code class="file docutils literal notranslate"><span class="pre">pythonXY.lib</span></code>, which is generally the
 <code class="file docutils literal notranslate"><span class="pre">libs</span></code> directory under your Python installation.</p>
 <p>(Contributed by Steve Dower in <a class="reference external" href="https://bugs.python.org/issue37351">bpo-37351</a>.)</p>
@@ -2134,8 +2137,9 @@ to 3.8 by Achraf Merzouki.)</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New In Python 3.8</a><ul>
 <li><a class="reference internal" href="#summary-release-highlights">Summary -- Release highlights</a></li>
 <li><a class="reference internal" href="#new-features">New Features</a><ul>
@@ -2221,18 +2225,23 @@ to 3.8 by Achraf Merzouki.)</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="3.9.html"
-                        title="上一章">What's New In Python 3.9</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="3.7.html"
-                        title="下一章">What's New In Python 3.7</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.9.html"
+                          title="上一章">What's New In Python 3.9</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="3.7.html"
+                          title="下一章">What's New In Python 3.7</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/3.8.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/3.8.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2267,13 +2276,11 @@ to 3.8 by Achraf Merzouki.)</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New In Python 3.8</a></li>
                 <li class="right">
                     
@@ -2292,25 +2299,25 @@ to 3.8 by Achraf Merzouki.)</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

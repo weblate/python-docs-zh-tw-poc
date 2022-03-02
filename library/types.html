@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>types --- Dynamic type creation and names for built-in types &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>types --- Dynamic type creation and names for built-in types &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="weakref --- Weak references" href="weakref.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/types.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a><ul>
 <li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a></li>
 <li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a></li>
@@ -83,18 +82,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="weakref.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="copy.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- Shallow and deep copy operations</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="weakref.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="copy.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- Shallow and deep copy operations</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/types.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/types.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -130,13 +134,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">Data Types</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a></li>
                 <li class="right">
@@ -163,7 +165,7 @@
             
   <section id="module-types">
 <span id="types-dynamic-type-creation-and-names-for-built-in-types"></span><h1><a class="reference internal" href="#module-types" title="types: Names for built-in types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a> --- Dynamic type creation and names for built-in types<a class="headerlink" href="#module-types" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/types.py">Lib/types.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/types.py">Lib/types.py</a></p>
 <hr class="docutils" />
 <p>This module defines utility functions to assist in dynamic creation of
 new types.</p>
@@ -187,7 +189,7 @@ as its sole argument and update the namespace directly with the class
 contents. If no callback is provided, it has the same effect as passing
 in <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">ns:</span> <span class="pre">None</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -204,10 +206,10 @@ prepared class namespace and <em>kwds</em> is an updated copy of the passed
 in <em>kwds</em> argument with any <code class="docutils literal notranslate"><span class="pre">'metaclass'</span></code> entry removed. If no <em>kwds</em>
 argument is passed in, this will be an empty dict.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>The default value for the <code class="docutils literal notranslate"><span class="pre">namespace</span></code> element of the returned
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>The default value for the <code class="docutils literal notranslate"><span class="pre">namespace</span></code> element of the returned
 tuple has changed.  Now an insertion-order-preserving mapping is
 used when the metaclass does not have a <code class="docutils literal notranslate"><span class="pre">__prepare__</span></code> method.</p>
 </div>
@@ -233,7 +235,7 @@ calling this method.  If a <em>bases</em> item is an instance of <a class="refer
 or it doesn't have an <code class="docutils literal notranslate"><span class="pre">__mro_entries__</span></code> method, then it is included in
 the return tuple unchanged.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -252,6 +254,15 @@ the types that arise only incidentally during processing such as the
 <a class="reference internal" href="functions.html#issubclass" title="issubclass"><code class="xref py py-func docutils literal notranslate"><span class="pre">issubclass()</span></code></a> checks.</p>
 <p>If you instantiate any of these types, note that signatures may vary between Python versions.</p>
 <p>Standard names are defined for the following types:</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="types.NoneType">
+<span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">NoneType</span></span><a class="headerlink" href="#types.NoneType" title="本定義的永久連結">¶</a></dt>
+<dd><p>The type of <a class="reference internal" href="constants.html#None" title="None"><code class="xref py py-data docutils literal notranslate"><span class="pre">None</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
 <dl class="py data">
 <dt class="sig sig-object py" id="types.FunctionType">
 <span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">FunctionType</span></span><a class="headerlink" href="#types.FunctionType" title="本定義的永久連結">¶</a></dt>
@@ -277,7 +288,7 @@ generator functions.</p>
 <dd><p>The type of <a class="reference internal" href="../glossary.html#term-coroutine"><span class="xref std std-term">coroutine</span></a> objects, created by
 <a class="reference internal" href="../reference/compound_stmts.html#async-def"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code></a> functions.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -287,13 +298,13 @@ generator functions.</p>
 <dd><p>The type of <a class="reference internal" href="../glossary.html#term-asynchronous-generator"><span class="xref std std-term">asynchronous generator</span></a>-iterator objects, created by
 asynchronous generator functions.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="types.CodeType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">CodeType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.CodeType" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">CodeType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.CodeType" title="本定義的永久連結">¶</a></dt>
 <dd><p id="index-3">The type for code objects such as returned by <a class="reference internal" href="functions.html#compile" title="compile"><code class="xref py py-func docutils literal notranslate"><span class="pre">compile()</span></code></a>.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">code.__new__</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">filename</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">argcount</span></code>, <code class="docutils literal notranslate"><span class="pre">posonlyargcount</span></code>, <code class="docutils literal notranslate"><span class="pre">kwonlyargcount</span></code>, <code class="docutils literal notranslate"><span class="pre">nlocals</span></code>, <code class="docutils literal notranslate"><span class="pre">stacksize</span></code>, <code class="docutils literal notranslate"><span class="pre">flags</span></code>.</p>
 <p>Note that the audited arguments may not match the names or positions
@@ -304,7 +315,7 @@ instantiation of code objects, and is not raised for normal compilation.</p>
 <span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.CodeType.replace" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a copy of the code object with new values for the specified fields.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -316,7 +327,7 @@ instantiation of code objects, and is not raised for normal compilation.</p>
 <dd><p>The type for cell objects: such objects are used as containers for
 a function's free variables.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -342,7 +353,7 @@ C&quot;.)</p>
 <dd><p>The type of methods of some built-in data types and base classes such as
 <a class="reference internal" href="../reference/datamodel.html#object.__init__" title="object.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">object.__init__()</span></code></a> or <a class="reference internal" href="../reference/datamodel.html#object.__lt__" title="object.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">object.__lt__()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -352,7 +363,16 @@ C&quot;.)</p>
 <dd><p>The type of <em>bound</em> methods of some built-in data types and base classes.
 For example it is the type of <code class="code docutils literal notranslate"><span class="pre">object().__str__</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="types.NotImplementedType">
+<span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">NotImplementedType</span></span><a class="headerlink" href="#types.NotImplementedType" title="本定義的永久連結">¶</a></dt>
+<dd><p>The type of <a class="reference internal" href="constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -361,7 +381,7 @@ For example it is the type of <code class="code docutils literal notranslate"><s
 <span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">MethodDescriptorType</span></span><a class="headerlink" href="#types.MethodDescriptorType" title="本定義的永久連結">¶</a></dt>
 <dd><p>The type of methods of some built-in data types such as <a class="reference internal" href="stdtypes.html#str.join" title="str.join"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.join()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -371,13 +391,13 @@ For example it is the type of <code class="code docutils literal notranslate"><s
 <dd><p>The type of <em>unbound</em> class methods of some built-in data types such as
 <code class="docutils literal notranslate"><span class="pre">dict.__dict__['fromkeys']</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="types.ModuleType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">ModuleType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.ModuleType" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">ModuleType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.ModuleType" title="本定義的永久連結">¶</a></dt>
 <dd><p>The type of <a class="reference internal" href="../glossary.html#term-module"><span class="xref std std-term">modules</span></a>. The constructor takes the name of the
 module to be created and optionally its <a class="reference internal" href="../glossary.html#term-docstring"><span class="xref std std-term">docstring</span></a>.</p>
 <div class="admonition note">
@@ -400,13 +420,13 @@ as stored in the attr:<cite>__spec__</cite> object.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>A future version of Python may stop setting this attribute by default.
-To guard against this potential change, preferrably read from the
+To guard against this potential change, preferably read from the
 <a class="reference internal" href="../reference/import.html#spec__" title="__spec__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__spec__</span></code></a> attribute instead or use
 <code class="docutils literal notranslate"><span class="pre">getattr(module,</span> <span class="pre">&quot;__loader__&quot;,</span> <span class="pre">None)</span></code> if you explicitly need to use
 this attribute.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>. Previously the attribute was optional.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>. Previously the attribute was optional.</p>
 </div>
 </dd></dl>
 
@@ -429,13 +449,13 @@ as stored in the attr:<cite>__spec__</cite> object.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>A future version of Python may stop setting this attribute by default.
-To guard against this potential change, preferrably read from the
+To guard against this potential change, preferably read from the
 <a class="reference internal" href="../reference/import.html#spec__" title="__spec__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__spec__</span></code></a> attribute instead or use
 <code class="docutils literal notranslate"><span class="pre">getattr(module,</span> <span class="pre">&quot;__package__&quot;,</span> <span class="pre">None)</span></code> if you explicitly need to use
 this attribute.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>. Previously the attribute was optional.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>. Previously the attribute was optional.</p>
 </div>
 </dd></dl>
 
@@ -445,15 +465,24 @@ this attribute.</p>
 <dd><p>A record of the module's import-system-related state. Expected to be an
 instance of <a class="reference internal" href="importlib.html#importlib.machinery.ModuleSpec" title="importlib.machinery.ModuleSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">importlib.machinery.ModuleSpec</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 </dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="types.EllipsisType">
+<span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">EllipsisType</span></span><a class="headerlink" href="#types.EllipsisType" title="本定義的永久連結">¶</a></dt>
+<dd><p>The type of <a class="reference internal" href="constants.html#Ellipsis" title="Ellipsis"><code class="xref py py-data docutils literal notranslate"><span class="pre">Ellipsis</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="types.GenericAlias">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">GenericAlias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.GenericAlias" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">GenericAlias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.GenericAlias" title="本定義的永久連結">¶</a></dt>
 <dd><p>The type of <a class="reference internal" href="stdtypes.html#types-genericalias"><span class="std std-ref">parameterized generics</span></a> such as
 <code class="docutils literal notranslate"><span class="pre">list[int]</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">t_origin</span></code> should be a non-parameterized generic class, such as <code class="docutils literal notranslate"><span class="pre">list</span></code>,
@@ -468,16 +497,25 @@ length 1) of types which parameterize <code class="docutils literal notranslate"
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9.2 版更變: </span>This type can now be subclassed.</p>
+<p><span class="versionmodified changed">在 3.9.2 版本變更: </span>This type can now be subclassed.</p>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="types.UnionType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">UnionType</span></span><a class="headerlink" href="#types.UnionType" title="本定義的永久連結">¶</a></dt>
+<dd><p>The type of <a class="reference internal" href="stdtypes.html#types-union"><span class="std std-ref">union type expressions</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="types.TracebackType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">TracebackType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_next</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_lasti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_lineno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.TracebackType" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">TracebackType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_next</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_lasti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_lineno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.TracebackType" title="本定義的永久連結">¶</a></dt>
 <dd><p>The type of traceback objects such as found in <code class="docutils literal notranslate"><span class="pre">sys.exc_info()[2]</span></code>.</p>
 <p>See <a class="reference internal" href="../reference/datamodel.html#traceback-objects"><span class="std std-ref">the language reference</span></a> for details of the
 available attributes and operations, and guidance on creating tracebacks
@@ -517,15 +555,15 @@ as the <a class="reference internal" href="functions.html#property" title="prope
 
 <dl class="py class">
 <dt class="sig sig-object py" id="types.MappingProxyType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">MappingProxyType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.MappingProxyType" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">MappingProxyType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.MappingProxyType" title="本定義的永久連結">¶</a></dt>
 <dd><p>Read-only proxy of a mapping. It provides a dynamic view on the mapping's
 entries, which means that when the mapping changes, the view reflects these
 changes.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Updated to support the new union (<code class="docutils literal notranslate"><span class="pre">|</span></code>) operator from <span class="target" id="index-4"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>, which
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Updated to support the new union (<code class="docutils literal notranslate"><span class="pre">|</span></code>) operator from <span class="target" id="index-4"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0584"><strong>PEP 584</strong></a>, which
 simply delegates to the underlying mapping.</p>
 </div>
 <dl class="describe">
@@ -563,7 +601,7 @@ shortcut for <code class="docutils literal notranslate"><span class="pre">iter(p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="types.MappingProxyType.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">key</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">default</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#types.MappingProxyType.get" title="本定義的永久連結">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#types.MappingProxyType.get" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the value for <em>key</em> if <em>key</em> is in the underlying mapping, else
 <em>default</em>.  If <em>default</em> is not given, it defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>, so that
 this method never raises a <a class="reference internal" href="exceptions.html#KeyError" title="KeyError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code></a>.</p>
@@ -593,7 +631,7 @@ pairs).</p>
 <span class="sig-name descname"><span class="pre">reversed(proxy)</span></span></dt>
 <dd><p>Return a reverse iterator over the keys of the underlying mapping.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -604,7 +642,7 @@ pairs).</p>
 <h2>Additional Utility Classes and Functions<a class="headerlink" href="#additional-utility-classes-and-functions" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="types.SimpleNamespace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">SimpleNamespace</span></span><a class="headerlink" href="#types.SimpleNamespace" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">SimpleNamespace</span></span><a class="headerlink" href="#types.SimpleNamespace" title="本定義的永久連結">¶</a></dt>
 <dd><p>A simple <a class="reference internal" href="functions.html#object" title="object"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a> subclass that provides attribute access to its
 namespace, as well as a meaningful repr.</p>
 <p>Unlike <a class="reference internal" href="functions.html#object" title="object"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>, with <code class="docutils literal notranslate"><span class="pre">SimpleNamespace</span></code> you can add and remove
@@ -629,10 +667,10 @@ arguments, those are directly added to the underlying namespace.</p>
 However, for a structured record type use <a class="reference internal" href="collections.html#collections.namedtuple" title="collections.namedtuple"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a>
 instead.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Attribute order in the repr changed from alphabetical to insertion (like
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Attribute order in the repr changed from alphabetical to insertion (like
 <code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p>
 </div>
 </dd></dl>
@@ -648,7 +686,7 @@ class's __getattr__ method; this is done by raising AttributeError.</p>
 <p>This allows one to have properties active on an instance, and have virtual
 attributes on the class with the same name (see <a class="reference internal" href="enum.html#enum.Enum" title="enum.Enum"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a> for an example).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -670,7 +708,7 @@ returns an instance of <a class="reference internal" href="collections.abc.html#
 will be wrapped in an <em>awaitable</em> proxy object.  All other types
 of objects will be returned as is.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -684,8 +722,9 @@ of objects will be returned as is.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a><ul>
 <li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a></li>
 <li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a></li>
@@ -695,18 +734,23 @@ of objects will be returned as is.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="weakref.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="copy.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- Shallow and deep copy operations</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="weakref.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="copy.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- Shallow and deep copy operations</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/types.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/types.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -741,13 +785,11 @@ of objects will be returned as is.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" >Data Types</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a></li>
                 <li class="right">
@@ -767,25 +809,25 @@ of objects will be returned as is.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

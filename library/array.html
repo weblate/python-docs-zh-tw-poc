@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>array --- 高效率的數值型態陣列 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array --- Efficient arrays of numeric values &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="weakref --- Weak references" href="weakref.html" />
-    <link rel="prev" title="bisect --- 陣列二分演算法 (Array bisection algorithm)" href="bisect.html" />
+    <link rel="prev" title="bisect --- Array bisection algorithm" href="bisect.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/array.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="bisect.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- 陣列二分演算法 (Array bisection algorithm)</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="weakref.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="bisect.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- Array bisection algorithm</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="weakref.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/array.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/array.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -107,7 +109,7 @@
           <a href="weakref.html" title="weakref --- Weak references"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="bisect.html" title="bisect --- 陣列二分演算法 (Array bisection algorithm)"
+          <a href="bisect.html" title="bisect --- Array bisection algorithm"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -119,15 +121,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">Data Types</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- 高效率的數值型態陣列</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- Efficient arrays of numeric values</a></li>
                 <li class="right">
                     
 
@@ -151,9 +151,14 @@
           <div class="body" role="main">
             
   <section id="module-array">
-<span id="array-efficient-arrays-of-numeric-values"></span><h1><a class="reference internal" href="#module-array" title="array: Space efficient arrays of uniformly typed numeric values."><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code></a> --- 高效率的數值型態陣列<a class="headerlink" href="#module-array" title="本標題的永久連結">¶</a></h1>
+<span id="array-efficient-arrays-of-numeric-values"></span><h1><a class="reference internal" href="#module-array" title="array: Space efficient arrays of uniformly typed numeric values."><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code></a> --- Efficient arrays of numeric values<a class="headerlink" href="#module-array" title="本標題的永久連結">¶</a></h1>
 <hr class="docutils" id="index-0" />
-<p>這個模組定義了一個物件型別，可以簡潔的表達一個包含基本數值的陣列：字元、整數、浮點數。陣列是一個非常類似 list 的序列型態，除了陣列會限制儲存的物件型別。在建立陣列時可以使用一個字元的  <em class="dfn">type code</em> 來指定儲存的資料型別。下面是 type codes 的定義。</p>
+<p>This module defines an object type which can compactly represent an array of
+basic values: characters, integers, floating point numbers.  Arrays are sequence
+types and behave very much like lists, except that the type of objects stored in
+them is constrained.  The type is specified at object creation time by using a
+<em class="dfn">type code</em>, which is a single character.  The following type codes are
+defined:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 14%" />
@@ -166,8 +171,8 @@
 <tr class="row-odd"><th class="head"><p>Type code</p></th>
 <th class="head"><p>C Type</p></th>
 <th class="head"><p>Python Type</p></th>
-<th class="head"><p>最小所需的位元組</p></th>
-<th class="head"><p>註解</p></th>
+<th class="head"><p>Minimum size in bytes</p></th>
+<th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
@@ -251,11 +256,11 @@
 </tr>
 </tbody>
 </table>
-<p>註解：</p>
+<p>Notes:</p>
 <ol class="arabic">
 <li><p>It can be 16 bits or 32 bits depending on the platform.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span><code class="docutils literal notranslate"><span class="pre">array('u')</span></code> now uses <code class="docutils literal notranslate"><span class="pre">wchar_t</span></code> as C type instead of deprecated
+<p><span class="versionmodified changed">在 3.9 版本變更: </span><code class="docutils literal notranslate"><span class="pre">array('u')</span></code> now uses <code class="docutils literal notranslate"><span class="pre">wchar_t</span></code> as C type instead of deprecated
 <code class="docutils literal notranslate"><span class="pre">Py_UNICODE</span></code>. This change doesn't affect to its behavior because
 <code class="docutils literal notranslate"><span class="pre">Py_UNICODE</span></code> is alias of <code class="docutils literal notranslate"><span class="pre">wchar_t</span></code> since Python 3.3.</p>
 </div>
@@ -264,20 +269,28 @@
 </div>
 </li>
 </ol>
-<p>實際上數值的表示方法是被機器的架構所決定（更精準地說，被 C 的實作方法決定）。實際的大小可以透過 <code class="xref py py-attr docutils literal notranslate"><span class="pre">itemsize</span></code> 屬性存取。</p>
-<p>這個模組定義了下方的型別：</p>
+<p>The actual representation of values is determined by the machine architecture
+(strictly speaking, by the C implementation).  The actual size can be accessed
+through the <code class="xref py py-attr docutils literal notranslate"><span class="pre">itemsize</span></code> attribute.</p>
+<p>The module defines the following type:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="array.array">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">typecode</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">initializer</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array" title="本定義的永久連結">¶</a></dt>
-<dd><p>一個新的陣列中的元素被 <em>typecode</em> 限制，並由選用的 <em>initializer</em> 參數初始化， <em>initializer</em> 必須是一個 list、 <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> 或包含適當型別變數的 iterable 。</p>
-<p>如果指定一個 list 或 string ，新的陣列初始化時會傳入 <a class="reference internal" href="#array.array.fromlist" title="array.array.fromlist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromlist()</span></code></a> 、 <a class="reference internal" href="#array.array.frombytes" title="array.array.frombytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">frombytes()</span></code></a> 或 <a class="reference internal" href="#array.array.fromunicode" title="array.array.fromunicode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromunicode()</span></code></a> 方法（參照下方）將元素新增到其中。其他型態的變數則會傳入 <a class="reference internal" href="#array.array.extend" title="array.array.extend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extend()</span></code></a> 方法初始化。</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typecode</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">initializer</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array" title="本定義的永久連結">¶</a></dt>
+<dd><p>A new array whose items are restricted by <em>typecode</em>, and initialized
+from the optional <em>initializer</em> value, which must be a list, a
+<a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a>, or iterable over elements of the
+appropriate type.</p>
+<p>If given a list or string, the initializer is passed to the new array's
+<a class="reference internal" href="#array.array.fromlist" title="array.array.fromlist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromlist()</span></code></a>, <a class="reference internal" href="#array.array.frombytes" title="array.array.frombytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">frombytes()</span></code></a>, or <a class="reference internal" href="#array.array.fromunicode" title="array.array.fromunicode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromunicode()</span></code></a> method (see below)
+to add initial items to the array.  Otherwise, the iterable initializer is
+passed to the <a class="reference internal" href="#array.array.extend" title="array.array.extend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extend()</span></code></a> method.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">array.__new__</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">typecode</span></code>, <code class="docutils literal notranslate"><span class="pre">initializer</span></code>.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="array.typecodes">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">typecodes</span></span><a class="headerlink" href="#array.typecodes" title="本定義的永久連結">¶</a></dt>
-<dd><p>一個包含所有可用的 type code 的字串。</p>
+<dd><p>A string with all available type codes.</p>
 </dd></dl>
 
 <p>Array objects support the ordinary sequence operations of indexing, slicing,
@@ -285,59 +298,76 @@ concatenation, and multiplication.  When using slice assignment, the assigned
 value must be an array object with the same type code; in all other cases,
 <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> is raised. Array objects also implement the buffer interface,
 and may be used wherever <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like objects</span></a> are supported.</p>
-<p>提供下方的資料物件與方法。</p>
+<p>The following data items and methods are also supported:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="array.array.typecode">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">typecode</span></span><a class="headerlink" href="#array.array.typecode" title="本定義的永久連結">¶</a></dt>
-<dd><p>typecode 字元被用在建立陣列時。</p>
+<dd><p>The typecode character used to create the array.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="array.array.itemsize">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">itemsize</span></span><a class="headerlink" href="#array.array.itemsize" title="本定義的永久連結">¶</a></dt>
-<dd><p>陣列當中的一個元素在內部需要的位元組 (bytes) 長度。</p>
+<dd><p>The length in bytes of one array item in the internal representation.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.append">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.append" title="本定義的永久連結">¶</a></dt>
-<dd><p>新增一個元素 <em>x</em> 到陣列的最尾端。</p>
+<dd><p>Append a new item with value <em>x</em> to the end of the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.buffer_info">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">buffer_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.buffer_info" title="本定義的永久連結">¶</a></dt>
-<dd><p>回傳一個 tuple <code class="docutils literal notranslate"><span class="pre">(address,</span> <span class="pre">length)</span></code> 表示當前的記憶體位置和陣列儲存元素的緩衝區記憶體長度。緩衝區的長度單位是 bytes ，並可以用 <code class="docutils literal notranslate"><span class="pre">array.buffer_info()[1]</span> <span class="pre">*</span> <span class="pre">array.itemsize</span></code> 計算得到。這偶爾會在底層操作需要記憶體位置的輸出輸入時很有用，例如 <code class="xref c c-func docutils literal notranslate"><span class="pre">ioctl()</span></code> 指令。只要陣列存在且沒有使用任何更改長度的操作時，回傳的數值就有效。</p>
+<dd><p>Return a tuple <code class="docutils literal notranslate"><span class="pre">(address,</span> <span class="pre">length)</span></code> giving the current memory address and the
+length in elements of the buffer used to hold array's contents.  The size of the
+memory buffer in bytes can be computed as <code class="docutils literal notranslate"><span class="pre">array.buffer_info()[1]</span> <span class="pre">*</span>
+<span class="pre">array.itemsize</span></code>.  This is occasionally useful when working with low-level (and
+inherently unsafe) I/O interfaces that require memory addresses, such as certain
+<code class="xref c c-func docutils literal notranslate"><span class="pre">ioctl()</span></code> operations.  The returned numbers are valid as long as the array
+exists and no length-changing operations are applied to it.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>當使用來自 C 或 C++ 程式碼（這是唯一使得這個資訊有效的途徑） 的陣列物件時，更適當的做法是使用陣列物件支援的緩衝區介面。這個方法維護了向後兼容性，並應該在新的程式碼中避免。關於緩衝區介面的文件在 <a class="reference internal" href="../c-api/buffer.html#bufferobjects"><span class="std std-ref">Buffer Protocol</span></a> 。</p>
+<p>When using array objects from code written in C or C++ (the only way to
+effectively make use of this information), it makes more sense to use the buffer
+interface supported by array objects.  This method is maintained for backward
+compatibility and should be avoided in new code.  The buffer interface is
+documented in <a class="reference internal" href="../c-api/buffer.html#bufferobjects"><span class="std std-ref">Buffer Protocol</span></a>.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.byteswap">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">byteswap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.byteswap" title="本定義的永久連結">¶</a></dt>
-<dd><p>&quot;Byteswap&quot; 所有陣列中的物件。這只有支援物件長度為 1、2、4 或 8 位元組的陣列，其他型別的值會導致 <a class="reference internal" href="exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a> 。這在從機器讀取位元順序不同的檔案時很有用。</p>
+<dd><p>&quot;Byteswap&quot; all items of the array.  This is only supported for values which are
+1, 2, 4, or 8 bytes in size; for other types of values, <a class="reference internal" href="exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a> is
+raised.  It is useful when reading data from a file written on a machine with a
+different byte order.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.count">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.count" title="本定義的永久連結">¶</a></dt>
-<dd><p>回傳 <em>x</em> 在陣列中出現了幾次。</p>
+<dd><p>Return the number of occurrences of <em>x</em> in the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.extend">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.extend" title="本定義的永久連結">¶</a></dt>
-<dd><p>從 <em>iterable</em> 中新增元素到陣列的尾端，如果 <em>iterable</em> 是另一個陣列，他必須有完全相同的 type code ，如果不同會產生 <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> 。如果 <em>iterable</em> 不是一個陣列，他必須可以被迭代 (iterable) 且其中的元素必須是可以被加入陣列中的正確型態。</p>
+<dd><p>Append items from <em>iterable</em> to the end of the array.  If <em>iterable</em> is another
+array, it must have <em>exactly</em> the same type code; if not, <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> will
+be raised.  If <em>iterable</em> is not an array, it must be iterable and its elements
+must be the right type to be appended to the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.frombytes">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">frombytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.frombytes" title="本定義的永久連結">¶</a></dt>
-<dd><p>從字串中新增元素。讀取時會將字串當作一個陣列，裡面包含了 machine value（就像從檔案中使用 <a class="reference internal" href="#array.array.fromfile" title="array.array.fromfile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromfile()</span></code></a> 方法讀出的資料）。</p>
+<dd><p>Appends items from the string, interpreting the string as an array of machine
+values (as if it had been read from a file using the <a class="reference internal" href="#array.array.fromfile" title="array.array.fromfile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromfile()</span></code></a> method).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入: </span>為了更明確，之前的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">fromstring()</span></code> 被更名為 <a class="reference internal" href="#array.array.frombytes" title="array.array.frombytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">frombytes()</span></code></a> 。</p>
+<p><span class="versionmodified added">在 3.2 版本新加入: </span><code class="xref py py-meth docutils literal notranslate"><span class="pre">fromstring()</span></code> is renamed to <a class="reference internal" href="#array.array.frombytes" title="array.array.frombytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">frombytes()</span></code></a> for clarity.</p>
 </div>
 </dd></dl>
 
@@ -353,70 +383,87 @@ inserted into the array.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.fromlist">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">fromlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.fromlist" title="本定義的永久連結">¶</a></dt>
-<dd><p>從 list 中新增元素。這等價於 <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">list:</span> <span class="pre">a.append(x)</span></code> ，除了有型態錯誤產生時，陣列會保持原狀不會被更改。</p>
+<dd><p>Append items from the list.  This is equivalent to <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">list:</span>
+<span class="pre">a.append(x)</span></code> except that if there is a type error, the array is unchanged.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.fromunicode">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">fromunicode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.fromunicode" title="本定義的永久連結">¶</a></dt>
-<dd><p>用給定的 unicode 字串擴展這個陣列。陣列必須是型態 <code class="docutils literal notranslate"><span class="pre">u</span></code> 的陣列；其他的型態會產生 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> 錯誤。使用 <code class="docutils literal notranslate"><span class="pre">array.frombytes(unicodestring.encode(enc))</span></code> 來新增 Unicode 資料到一個其他型態的陣列。</p>
+<dd><p>Extends this array with data from the given unicode string.  The array must
+be a type <code class="docutils literal notranslate"><span class="pre">'u'</span></code> array; otherwise a <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised.  Use
+<code class="docutils literal notranslate"><span class="pre">array.frombytes(unicodestring.encode(enc))</span></code> to append Unicode data to an
+array of some other type.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.index">
-<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.index" title="本定義的永久連結">¶</a></dt>
-<dd><p>回傳最小的 <em>i</em> ，使得 <em>i</em> 是陣列中第一個 <em>x</em> 出現的索引值。</p>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.index" title="本定義的永久連結">¶</a></dt>
+<dd><p>Return the smallest <em>i</em> such that <em>i</em> is the index of the first occurrence of
+<em>x</em> in the array.  The optional arguments <em>start</em> and <em>stop</em> can be
+specified to search for <em>x</em> within a subsection of the array.  Raise
+<a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> if <em>x</em> is not found.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added optional <em>start</em> and <em>stop</em> parameters.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.insert">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.insert" title="本定義的永久連結">¶</a></dt>
-<dd><p>在位置 <em>i</em> 之前插入一個元素 <em>x</em> 。負數的索引值會從陣列尾端開始數。</p>
+<dd><p>Insert a new item with value <em>x</em> in the array before position <em>i</em>. Negative
+values are treated as being relative to the end of the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.pop">
-<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">i</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.pop" title="本定義的永久連結">¶</a></dt>
-<dd><p>移除並回傳陣列索引值 <em>i</em> 的元素。選擇性的參數 <em>i</em> 預設為 <code class="docutils literal notranslate"><span class="pre">-1</span></code> ，所以預設會刪除並回傳最後一個元素。</p>
+<span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.pop" title="本定義的永久連結">¶</a></dt>
+<dd><p>Removes the item with the index <em>i</em> from the array and returns it. The optional
+argument defaults to <code class="docutils literal notranslate"><span class="pre">-1</span></code>, so that by default the last item is removed and
+returned.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.remove">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.remove" title="本定義的永久連結">¶</a></dt>
-<dd><p>從陣列中刪除第一個出現的 <em>x</em> 。</p>
+<dd><p>Remove the first occurrence of <em>x</em> from the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.reverse">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.reverse" title="本定義的永久連結">¶</a></dt>
-<dd><p>將整個陣列的元素按照順序逆轉。</p>
+<dd><p>Reverse the order of the items in the array.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.tobytes">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">tobytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tobytes" title="本定義的永久連結">¶</a></dt>
-<dd><p>將陣列轉為另一個 machine values 的陣列並回傳他的位元組表示（跟用 <a class="reference internal" href="#array.array.tofile" title="array.array.tofile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tofile()</span></code></a> 方法寫入檔案時的位元序列相同）。</p>
+<dd><p>Convert the array to an array of machine values and return the bytes
+representation (the same sequence of bytes that would be written to a file by
+the <a class="reference internal" href="#array.array.tofile" title="array.array.tofile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tofile()</span></code></a> method.)</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入: </span>為了明確性，過去的 <code class="xref py py-meth docutils literal notranslate"><span class="pre">tostring()</span></code> 已更名為 <a class="reference internal" href="#array.array.tobytes" title="array.array.tobytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tobytes()</span></code></a> 。</p>
+<p><span class="versionmodified added">在 3.2 版本新加入: </span><code class="xref py py-meth docutils literal notranslate"><span class="pre">tostring()</span></code> is renamed to <a class="reference internal" href="#array.array.tobytes" title="array.array.tobytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tobytes()</span></code></a> for clarity.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.tofile">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">tofile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tofile" title="本定義的永久連結">¶</a></dt>
-<dd><p>將所有元素 （以 machine code 的形式）寫入 <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a> <em>f</em> 。</p>
+<dd><p>Write all items (as machine values) to the <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file object</span></a> <em>f</em>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.tolist">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">tolist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tolist" title="本定義的永久連結">¶</a></dt>
-<dd><p>不更改元素，將陣列轉為一般的 list 。</p>
+<dd><p>Convert the array to an ordinary list with the same items.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="array.array.tounicode">
 <span class="sig-prename descclassname"><span class="pre">array.</span></span><span class="sig-name descname"><span class="pre">tounicode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#array.array.tounicode" title="本定義的永久連結">¶</a></dt>
-<dd><p>將陣列轉為一個字串。陣列的型態必須為 <code class="docutils literal notranslate"><span class="pre">u</span></code> 。其他型態的陣列會產生 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> 錯誤。使用 <code class="docutils literal notranslate"><span class="pre">array.tobytes().decode(enc)</span></code> 將其他型態的陣列轉為字串。</p>
+<dd><p>Convert the array to a unicode string.  The array must be a type <code class="docutils literal notranslate"><span class="pre">'u'</span></code> array;
+otherwise a <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised. Use <code class="docutils literal notranslate"><span class="pre">array.tobytes().decode(enc)</span></code> to
+obtain a unicode string from an array of some other type.</p>
 </dd></dl>
 
 <p>When an array object is printed or converted to a string, it is represented as
@@ -435,11 +482,12 @@ Examples:</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt>模組 <a class="reference internal" href="struct.html#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a></dt><dd><p>將包含不同資料類型的二進位資料包裝與解開包裝。</p>
+<dt>Module <a class="reference internal" href="struct.html#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a></dt><dd><p>Packing and unpacking of heterogeneous binary data.</p>
 </dd>
-<dt>模組 <a class="reference internal" href="xdrlib.html#module-xdrlib" title="xdrlib: Encoders and decoders for the External Data Representation (XDR)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code></a></dt><dd><p>將 External Data Representation (XDR)  的資料包裝與解開包裝，這用在一些遠端操作的系統 ( remote procedure call systems ) 。</p>
+<dt>Module <a class="reference internal" href="xdrlib.html#module-xdrlib" title="xdrlib: Encoders and decoders for the External Data Representation (XDR)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code></a></dt><dd><p>Packing and unpacking of External Data Representation (XDR) data as used in some
+remote procedure call systems.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/">The Numerical Python Documentation</a></dt><dd><p>Python 數值運算的擴充 (The Numeric Python extension, NumPy) 定義了另一個陣列型態，更多關於 Python 的數值運算參考 <a class="reference external" href="http://www.numpy.org/">http://www.numpy.org/</a> 。</p>
+<dt><a class="reference external" href="https://numpy.org/">NumPy</a></dt><dd><p>The NumPy package defines another array type.</p>
 </dd>
 </dl>
 </div>
@@ -452,18 +500,22 @@ Examples:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="bisect.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- 陣列二分演算法 (Array bisection algorithm)</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="weakref.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="bisect.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- Array bisection algorithm</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="weakref.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/array.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/array.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -486,7 +538,7 @@ Examples:</p>
           <a href="weakref.html" title="weakref --- Weak references"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="bisect.html" title="bisect --- 陣列二分演算法 (Array bisection algorithm)"
+          <a href="bisect.html" title="bisect --- Array bisection algorithm"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -498,15 +550,13 @@ Examples:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" >Data Types</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- 高效率的數值型態陣列</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- Efficient arrays of numeric values</a></li>
                 <li class="right">
                     
 
@@ -524,25 +574,25 @@ Examples:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

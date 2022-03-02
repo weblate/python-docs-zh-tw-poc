@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>compileall --- Byte-compile Python libraries &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compileall --- Byte-compile Python libraries &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="dis --- Python bytecode的反組譯器" href="dis.html" />
+    <link rel="next" title="dis --- Disassembler for Python bytecode" href="dis.html" />
     <link rel="prev" title="py_compile --- Compile Python source files" href="py_compile.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/compileall.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a><ul>
 <li><a class="reference internal" href="#command-line-use">Command-line use</a></li>
 <li><a class="reference internal" href="#public-functions">Public functions</a></li>
@@ -81,18 +80,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="py_compile.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">py_compile</span></code> --- Compile Python source files</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="dis.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="py_compile.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">py_compile</span></code> --- Compile Python source files</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="dis.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/compileall.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/compileall.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -113,7 +117,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="dis.html" title="dis --- Python bytecode的反組譯器"
+          <a href="dis.html" title="dis --- Disassembler for Python bytecode"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="py_compile.html" title="py_compile --- Compile Python source files"
@@ -128,13 +132,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" accesskey="U">Python Language Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a></li>
                 <li class="right">
@@ -161,7 +163,7 @@
             
   <section id="module-compileall">
 <span id="compileall-byte-compile-python-libraries"></span><h1><a class="reference internal" href="#module-compileall" title="compileall: Tools for byte-compiling all Python source files in a directory tree."><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code></a> --- Byte-compile Python libraries<a class="headerlink" href="#module-compileall" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/compileall.py">Lib/compileall.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/compileall.py">Lib/compileall.py</a></p>
 <hr class="docutils" />
 <p>This module provides some utility functions to support installing Python
 libraries.  These functions compile Python source files in a directory tree.
@@ -303,18 +305,18 @@ the same content, use hard links to consolidate duplicate files.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Added the <code class="docutils literal notranslate"><span class="pre">-i</span></code>, <code class="docutils literal notranslate"><span class="pre">-b</span></code> and <code class="docutils literal notranslate"><span class="pre">-h</span></code> options.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">-i</span></code>, <code class="docutils literal notranslate"><span class="pre">-b</span></code> and <code class="docutils literal notranslate"><span class="pre">-h</span></code> options.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added the  <code class="docutils literal notranslate"><span class="pre">-j</span></code>, <code class="docutils literal notranslate"><span class="pre">-r</span></code>, and <code class="docutils literal notranslate"><span class="pre">-qq</span></code> options.  <code class="docutils literal notranslate"><span class="pre">-q</span></code> option
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added the  <code class="docutils literal notranslate"><span class="pre">-j</span></code>, <code class="docutils literal notranslate"><span class="pre">-r</span></code>, and <code class="docutils literal notranslate"><span class="pre">-qq</span></code> options.  <code class="docutils literal notranslate"><span class="pre">-q</span></code> option
 was changed to a multilevel value.  <code class="docutils literal notranslate"><span class="pre">-b</span></code> will always produce a
 byte-code file ending in <code class="docutils literal notranslate"><span class="pre">.pyc</span></code>, never <code class="docutils literal notranslate"><span class="pre">.pyo</span></code>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added the <code class="docutils literal notranslate"><span class="pre">--invalidation-mode</span></code> option.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">--invalidation-mode</span></code> option.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Added the <code class="docutils literal notranslate"><span class="pre">-s</span></code>, <code class="docutils literal notranslate"><span class="pre">-p</span></code>, <code class="docutils literal notranslate"><span class="pre">-e</span></code> and <code class="docutils literal notranslate"><span class="pre">--hardlink-dupes</span></code> options.
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">-s</span></code>, <code class="docutils literal notranslate"><span class="pre">-p</span></code>, <code class="docutils literal notranslate"><span class="pre">-e</span></code> and <code class="docutils literal notranslate"><span class="pre">--hardlink-dupes</span></code> options.
 Raised the default recursion limit from 10 to
 <a class="reference internal" href="sys.html#sys.getrecursionlimit" title="sys.getrecursionlimit"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.getrecursionlimit()</span></code></a>.
 Added the possibility to specify the <code class="docutils literal notranslate"><span class="pre">-o</span></code> option multiple times.</p>
@@ -374,32 +376,32 @@ They may be specified as <code class="docutils literal notranslate"><span class=
 <p>If <em>hardlink_dupes</em> is true and two <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files with different optimization
 level have the same content, use hard links to consolidate duplicate files.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Added the <em>legacy</em> and <em>optimize</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Added the <em>legacy</em> and <em>optimize</em> parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added the <em>workers</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added the <em>workers</em> parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span><em>quiet</em> parameter was changed to a multilevel value.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span><em>quiet</em> parameter was changed to a multilevel value.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <em>legacy</em> parameter only writes out <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files, not <code class="docutils literal notranslate"><span class="pre">.pyo</span></code> files
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <em>legacy</em> parameter only writes out <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files, not <code class="docutils literal notranslate"><span class="pre">.pyo</span></code> files
 no matter what the value of <em>optimize</em> is.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The <em>invalidation_mode</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The <em>invalidation_mode</em> parameter was added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7.2 版更變: </span>The <em>invalidation_mode</em> parameter's default value is updated to None.</p>
+<p><span class="versionmodified changed">在 3.7.2 版本變更: </span>The <em>invalidation_mode</em> parameter's default value is updated to None.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Setting <em>workers</em> to 0 now chooses the optimal number of cores.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Setting <em>workers</em> to 0 now chooses the optimal number of cores.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Added <em>stripdir</em>, <em>prependdir</em>, <em>limit_sl_dest</em> and <em>hardlink_dupes</em> arguments.
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added <em>stripdir</em>, <em>prependdir</em>, <em>limit_sl_dest</em> and <em>hardlink_dupes</em> arguments.
 Default value of <em>maxlevels</em> was changed from <code class="docutils literal notranslate"><span class="pre">10</span></code> to <code class="docutils literal notranslate"><span class="pre">sys.getrecursionlimit()</span></code></p>
 </div>
 </dd></dl>
@@ -438,23 +440,23 @@ They may be specified as <code class="docutils literal notranslate"><span class=
 <p>If <em>hardlink_dupes</em> is true and two <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files with different optimization
 level have the same content, use hard links to consolidate duplicate files.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span><em>quiet</em> parameter was changed to a multilevel value.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span><em>quiet</em> parameter was changed to a multilevel value.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <em>legacy</em> parameter only writes out <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files, not <code class="docutils literal notranslate"><span class="pre">.pyo</span></code> files
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <em>legacy</em> parameter only writes out <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files, not <code class="docutils literal notranslate"><span class="pre">.pyo</span></code> files
 no matter what the value of <em>optimize</em> is.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The <em>invalidation_mode</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The <em>invalidation_mode</em> parameter was added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7.2 版更變: </span>The <em>invalidation_mode</em> parameter's default value is updated to None.</p>
+<p><span class="versionmodified changed">在 3.7.2 版本變更: </span>The <em>invalidation_mode</em> parameter's default value is updated to None.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Added <em>stripdir</em>, <em>prependdir</em>, <em>limit_sl_dest</em> and <em>hardlink_dupes</em> arguments.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added <em>stripdir</em>, <em>prependdir</em>, <em>limit_sl_dest</em> and <em>hardlink_dupes</em> arguments.</p>
 </div>
 </dd></dl>
 
@@ -468,20 +470,20 @@ in the search.  All other parameters are passed to the <a class="reference inter
 function.  Note that unlike the other compile functions, <code class="docutils literal notranslate"><span class="pre">maxlevels</span></code>
 defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Added the <em>legacy</em> and <em>optimize</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Added the <em>legacy</em> and <em>optimize</em> parameter.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span><em>quiet</em> parameter was changed to a multilevel value.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span><em>quiet</em> parameter was changed to a multilevel value.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The <em>legacy</em> parameter only writes out <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files, not <code class="docutils literal notranslate"><span class="pre">.pyo</span></code> files
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The <em>legacy</em> parameter only writes out <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> files, not <code class="docutils literal notranslate"><span class="pre">.pyo</span></code> files
 no matter what the value of <em>optimize</em> is.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>The <em>invalidation_mode</em> parameter was added.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>The <em>invalidation_mode</em> parameter was added.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7.2 版更變: </span>The <em>invalidation_mode</em> parameter's default value is updated to None.</p>
+<p><span class="versionmodified changed">在 3.7.2 版本變更: </span>The <em>invalidation_mode</em> parameter's default value is updated to None.</p>
 </div>
 </dd></dl>
 
@@ -517,8 +519,9 @@ subdirectory and all its subdirectories:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a><ul>
 <li><a class="reference internal" href="#command-line-use">Command-line use</a></li>
 <li><a class="reference internal" href="#public-functions">Public functions</a></li>
@@ -526,18 +529,23 @@ subdirectory and all its subdirectories:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="py_compile.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">py_compile</span></code> --- Compile Python source files</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="dis.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="py_compile.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">py_compile</span></code> --- Compile Python source files</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="dis.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/compileall.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/compileall.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -557,7 +565,7 @@ subdirectory and all its subdirectories:</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="dis.html" title="dis --- Python bytecode的反組譯器"
+          <a href="dis.html" title="dis --- Disassembler for Python bytecode"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="py_compile.html" title="py_compile --- Compile Python source files"
@@ -572,13 +580,11 @@ subdirectory and all its subdirectories:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="language.html" >Python Language Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a></li>
                 <li class="right">
@@ -598,25 +604,25 @@ subdirectory and all its subdirectories:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

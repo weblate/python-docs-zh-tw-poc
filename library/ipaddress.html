@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>ipaddress --- IPv4/IPv6 manipulation library &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ipaddress --- IPv4/IPv6 manipulation library &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="xmlrpc.server --- Basic XML-RPC servers" href="xmlrpc.server.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/ipaddress.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code> --- IPv4/IPv6 manipulation library</a><ul>
 <li><a class="reference internal" href="#convenience-factory-functions">Convenience factory functions</a></li>
 <li><a class="reference internal" href="#ip-addresses">IP Addresses</a><ul>
@@ -110,18 +109,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xmlrpc.server.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="mm.html"
-                        title="下一章">Multimedia Services</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xmlrpc.server.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="mm.html"
+                          title="下一章">Multimedia Services</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/ipaddress.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/ipaddress.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -157,13 +161,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" accesskey="U">Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code> --- IPv4/IPv6 manipulation library</a></li>
                 <li class="right">
@@ -190,7 +192,7 @@
             
   <section id="module-ipaddress">
 <span id="ipaddress-ipv4-ipv6-manipulation-library"></span><h1><a class="reference internal" href="#module-ipaddress" title="ipaddress: IPv4/IPv6 manipulation library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code></a> --- IPv4/IPv6 manipulation library<a class="headerlink" href="#module-ipaddress" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/ipaddress.py">Lib/ipaddress.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/ipaddress.py">Lib/ipaddress.py</a></p>
 <hr class="docutils" />
 <p><a class="reference internal" href="#module-ipaddress" title="ipaddress: IPv4/IPv6 manipulation library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code></a> provides the capabilities to create, manipulate and
 operate on IPv4 and IPv6 addresses and networks.</p>
@@ -200,9 +202,9 @@ hosts are on the same subnet, iterating over all hosts in a particular
 subnet, checking whether or not a string represents a valid IP address or
 network definition, and so on.</p>
 <p>This is the full module API reference—for an overview and introduction, see
-<a class="reference internal" href="../howto/ipaddress.html#ipaddress-howto"><span class="std std-ref">ipaddress模組介紹</span></a>.</p>
+<a class="reference internal" href="../howto/ipaddress.html#ipaddress-howto"><span class="std std-ref">An introduction to the ipaddress module</span></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <section id="convenience-factory-functions">
 <h2>Convenience factory functions<a class="headerlink" href="#convenience-factory-functions" title="本標題的永久連結">¶</a></h2>
@@ -213,7 +215,7 @@ IP addresses, networks and interfaces:</p>
 <span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">ip_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.ip_address" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return an <a class="reference internal" href="#ipaddress.IPv4Address" title="ipaddress.IPv4Address"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv4Address</span></code></a> or <a class="reference internal" href="#ipaddress.IPv6Address" title="ipaddress.IPv6Address"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv6Address</span></code></a> object depending on
 the IP address passed as argument.  Either IPv4 or IPv6 addresses may be
-supplied; integers less than 2**32 will be considered to be IPv4 by default.
+supplied; integers less than <code class="docutils literal notranslate"><span class="pre">2**32</span></code> will be considered to be IPv4 by default.
 A <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised if <em>address</em> does not represent a valid IPv4
 or IPv6 address.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ipaddress</span><span class="o">.</span><span class="n">ip_address</span><span class="p">(</span><span class="s1">&#39;192.168.0.1&#39;</span><span class="p">)</span>
@@ -230,7 +232,7 @@ or IPv6 address.</p>
 <dd><p>Return an <a class="reference internal" href="#ipaddress.IPv4Network" title="ipaddress.IPv4Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv4Network</span></code></a> or <a class="reference internal" href="#ipaddress.IPv6Network" title="ipaddress.IPv6Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv6Network</span></code></a> object depending on
 the IP address passed as argument.  <em>address</em> is a string or integer
 representing the IP network.  Either IPv4 or IPv6 networks may be supplied;
-integers less than 2**32 will be considered to be IPv4 by default.  <em>strict</em>
+integers less than <code class="docutils literal notranslate"><span class="pre">2**32</span></code> will be considered to be IPv4 by default.  <em>strict</em>
 is passed to <a class="reference internal" href="#ipaddress.IPv4Network" title="ipaddress.IPv4Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv4Network</span></code></a> or <a class="reference internal" href="#ipaddress.IPv6Network" title="ipaddress.IPv6Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv6Network</span></code></a> constructor.  A
 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised if <em>address</em> does not represent a valid IPv4 or
 IPv6 address, or if the network has host bits set.</p>
@@ -246,7 +248,7 @@ IPv6 address, or if the network has host bits set.</p>
 <dd><p>Return an <a class="reference internal" href="#ipaddress.IPv4Interface" title="ipaddress.IPv4Interface"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv4Interface</span></code></a> or <a class="reference internal" href="#ipaddress.IPv6Interface" title="ipaddress.IPv6Interface"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv6Interface</span></code></a> object depending
 on the IP address passed as argument.  <em>address</em> is a string or integer
 representing the IP address.  Either IPv4 or IPv6 addresses may be supplied;
-integers less than 2**32 will be considered to be IPv4 by default.  A
+integers less than <code class="docutils literal notranslate"><span class="pre">2**32</span></code> will be considered to be IPv4 by default.  A
 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised if <em>address</em> does not represent a valid IPv4 or
 IPv6 address.</p>
 </dd></dl>
@@ -269,7 +271,7 @@ write code that handles both IP versions correctly.  Address objects are
 <a class="reference internal" href="../glossary.html#term-hashable"><span class="xref std std-term">hashable</span></a>, so they can be used as keys in dictionaries.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ipaddress.IPv4Address">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv4Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv4Address" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv4Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv4Address" title="本定義的永久連結">¶</a></dt>
 <dd><p>Construct an IPv4 address.  An <a class="reference internal" href="#ipaddress.AddressValueError" title="ipaddress.AddressValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AddressValueError</span></code></a> is raised if
 <em>address</em> is not a valid IPv4 address.</p>
 <p>The following constitutes a valid IPv4 address:</p>
@@ -291,20 +293,20 @@ significant octet first).</p></li>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Leading zeros are tolerated, even in ambiguous cases that look like
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Leading zeros are tolerated, even in ambiguous cases that look like
 octal notation.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.10 版更變: </span>Leading zeros are no longer tolerated and are treated as an error.
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Leading zeros are no longer tolerated and are treated as an error.
 IPv4 address strings are now parsed as strict as glibc
 <a class="reference internal" href="socket.html#socket.inet_pton" title="socket.inet_pton"><code class="xref py py-func docutils literal notranslate"><span class="pre">inet_pton()</span></code></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9.5 版更變: </span>The above change was also included in Python 3.9 starting with
+<p><span class="versionmodified changed">在 3.9.5 版本變更: </span>The above change was also included in Python 3.9 starting with
 version 3.9.5.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8.12 版更變: </span>The above change was also included in Python 3.8 starting with
+<p><span class="versionmodified changed">在 3.8.12 版本變更: </span>The above change was also included in Python 3.8 starting with
 version 3.8.12.</p>
 </div>
 <dl class="py attribute">
@@ -360,7 +362,7 @@ for IPv4 and 16 bytes for IPv6.</p>
 <p>This is the name that could be used for performing a PTR lookup, not the
 resolved hostname itself.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.5 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -368,7 +370,7 @@ resolved hostname itself.</p>
 <dt class="sig sig-object py" id="ipaddress.IPv4Address.is_multicast">
 <span class="sig-name descname"><span class="pre">is_multicast</span></span><a class="headerlink" href="#ipaddress.IPv4Address.is_multicast" title="本定義的永久連結">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the address is reserved for multicast use.  See
-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3171.html"><strong>RFC 3171</strong></a> (for IPv4) or <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2373.html"><strong>RFC 2373</strong></a> (for IPv6).</p>
+<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3171.html"><strong>RFC 3171</strong></a> (for IPv4) or <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2373.html"><strong>RFC 2373</strong></a> (for IPv6).</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -386,15 +388,15 @@ resolved hostname itself.</p>
 <a class="reference external" href="https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml">iana-ipv4-special-registry</a> (for IPv4) or <a class="reference external" href="https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml">iana-ipv6-special-registry</a>
 (for IPv6).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ipaddress.IPv4Address.is_unspecified">
 <span class="sig-name descname"><span class="pre">is_unspecified</span></span><a class="headerlink" href="#ipaddress.IPv4Address.is_unspecified" title="本定義的永久連結">¶</a></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the address is unspecified.  See <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5735.html"><strong>RFC 5735</strong></a> (for IPv4)
-or <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2373.html"><strong>RFC 2373</strong></a> (for IPv6).</p>
+<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the address is unspecified.  See <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5735.html"><strong>RFC 5735</strong></a> (for IPv4)
+or <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2373.html"><strong>RFC 2373</strong></a> (for IPv6).</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -406,15 +408,15 @@ or <span class="target" id="index-3"></span><a class="rfc reference external" hr
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ipaddress.IPv4Address.is_loopback">
 <span class="sig-name descname"><span class="pre">is_loopback</span></span><a class="headerlink" href="#ipaddress.IPv4Address.is_loopback" title="本定義的永久連結">¶</a></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if this is a loopback address.  See <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3330.html"><strong>RFC 3330</strong></a> (for IPv4)
-or <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2373.html"><strong>RFC 2373</strong></a> (for IPv6).</p>
+<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if this is a loopback address.  See <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3330.html"><strong>RFC 3330</strong></a> (for IPv4)
+or <span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2373.html"><strong>RFC 2373</strong></a> (for IPv6).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ipaddress.IPv4Address.is_link_local">
 <span class="sig-name descname"><span class="pre">is_link_local</span></span><a class="headerlink" href="#ipaddress.IPv4Address.is_link_local" title="本定義的永久連結">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the address is reserved for link-local usage.  See
-<span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3927.html"><strong>RFC 3927</strong></a>.</p>
+<span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3927.html"><strong>RFC 3927</strong></a>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -445,13 +447,13 @@ and f-strings.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="ipaddress.IPv6Address">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv6Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv6Address" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv6Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv6Address" title="本定義的永久連結">¶</a></dt>
 <dd><p>Construct an IPv6 address.  An <a class="reference internal" href="#ipaddress.AddressValueError" title="ipaddress.AddressValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AddressValueError</span></code></a> is raised if
 <em>address</em> is not a valid IPv6 address.</p>
 <p>The following constitutes a valid IPv6 address:</p>
@@ -460,13 +462,13 @@ and f-strings.</p>
 group representing 16 bits.  The groups are separated by colons.
 This describes an <em>exploded</em> (longhand) notation.  The string can
 also be <em>compressed</em> (shorthand notation) by various means.  See
-<span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4291.html"><strong>RFC 4291</strong></a> for details.  For example,
+<span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4291.html"><strong>RFC 4291</strong></a> for details.  For example,
 <code class="docutils literal notranslate"><span class="pre">&quot;0000:0000:0000:0000:0000:0abc:0007:0def&quot;</span></code> can be compressed to
 <code class="docutils literal notranslate"><span class="pre">&quot;::abc:7:def&quot;</span></code>.</p>
 <p>Optionally, the string may also have a scope zone ID, expressed
 with a suffix <code class="docutils literal notranslate"><span class="pre">%scope_id</span></code>. If present, the scope ID must be non-empty,
 and may not contain <code class="docutils literal notranslate"><span class="pre">%</span></code>.
-See <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4007.html"><strong>RFC 4007</strong></a> for details.
+See <span class="target" id="index-8"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4007.html"><strong>RFC 4007</strong></a> for details.
 For example, <code class="docutils literal notranslate"><span class="pre">fe80::1234%1</span></code> might identify address <code class="docutils literal notranslate"><span class="pre">fe80::1234</span></code> on the first link of the node.</p>
 </li>
 <li><p>An integer that fits into 128 bits.</p></li>
@@ -550,7 +552,7 @@ documentation of the <a class="reference internal" href="#ipaddress.IPv4Address"
 <dt class="sig sig-object py" id="ipaddress.IPv6Address.is_link_local">
 <span class="sig-name descname"><span class="pre">is_link_local</span></span><a class="headerlink" href="#ipaddress.IPv6Address.is_link_local" title="本定義的永久連結">¶</a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入: </span>is_global</p>
+<p><span class="versionmodified added">在 3.4 版本新加入: </span>is_global</p>
 </div>
 </dd></dl>
 
@@ -558,9 +560,9 @@ documentation of the <a class="reference internal" href="#ipaddress.IPv4Address"
 <dt class="sig sig-object py" id="ipaddress.IPv6Address.is_site_local">
 <span class="sig-name descname"><span class="pre">is_site_local</span></span><a class="headerlink" href="#ipaddress.IPv6Address.is_site_local" title="本定義的永久連結">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the address is reserved for site-local usage.  Note that
-the site-local address space has been deprecated by <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3879.html"><strong>RFC 3879</strong></a>. Use
+the site-local address space has been deprecated by <span class="target" id="index-9"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3879.html"><strong>RFC 3879</strong></a>. Use
 <a class="reference internal" href="#ipaddress.IPv4Address.is_private" title="ipaddress.IPv4Address.is_private"><code class="xref py py-attr docutils literal notranslate"><span class="pre">is_private</span></code></a> to test if this address is in the
-space of unique local addresses as defined by <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4193.html"><strong>RFC 4193</strong></a>.</p>
+space of unique local addresses as defined by <span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4193.html"><strong>RFC 4193</strong></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -574,7 +576,7 @@ For any other address, this property will be <code class="docutils literal notra
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ipaddress.IPv6Address.scope_id">
 <span class="sig-name descname"><span class="pre">scope_id</span></span><a class="headerlink" href="#ipaddress.IPv6Address.scope_id" title="本定義的永久連結">¶</a></dt>
-<dd><p>For scoped addresses as defined by <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4007.html"><strong>RFC 4007</strong></a>, this property identifies
+<dd><p>For scoped addresses as defined by <span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4007.html"><strong>RFC 4007</strong></a>, this property identifies
 the particular zone of the address's scope that the address belongs to,
 as a string. When no scope zone is specified, this property will be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd></dl>
@@ -583,7 +585,7 @@ as a string. When no scope zone is specified, this property will be <code class=
 <dt class="sig sig-object py" id="ipaddress.IPv6Address.sixtofour">
 <span class="sig-name descname"><span class="pre">sixtofour</span></span><a class="headerlink" href="#ipaddress.IPv6Address.sixtofour" title="本定義的永久連結">¶</a></dt>
 <dd><p>For addresses that appear to be 6to4 addresses  (starting with
-<code class="docutils literal notranslate"><span class="pre">2002::/16</span></code>) as defined by <span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3056.html"><strong>RFC 3056</strong></a>, this property will report
+<code class="docutils literal notranslate"><span class="pre">2002::/16</span></code>) as defined by <span class="target" id="index-12"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3056.html"><strong>RFC 3056</strong></a>, this property will report
 the embedded IPv4 address.  For any other address, this property will
 be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd></dl>
@@ -592,7 +594,7 @@ be <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dt class="sig sig-object py" id="ipaddress.IPv6Address.teredo">
 <span class="sig-name descname"><span class="pre">teredo</span></span><a class="headerlink" href="#ipaddress.IPv6Address.teredo" title="本定義的永久連結">¶</a></dt>
 <dd><p>For addresses that appear to be Teredo addresses (starting with
-<code class="docutils literal notranslate"><span class="pre">2001::/32</span></code>) as defined by <span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4380.html"><strong>RFC 4380</strong></a>, this property will report
+<code class="docutils literal notranslate"><span class="pre">2001::/32</span></code>) as defined by <span class="target" id="index-13"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4380.html"><strong>RFC 4380</strong></a>, this property will report
 the embedded <code class="docutils literal notranslate"><span class="pre">(server,</span> <span class="pre">client)</span></code> IP address pair.  For any other
 address, this property will be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd></dl>
@@ -605,7 +607,7 @@ address, this property will be <code class="docutils literal notranslate"><span 
 <dd><p>Refer to the corresponding method documentation in
 <a class="reference internal" href="#ipaddress.IPv4Address" title="ipaddress.IPv4Address"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv4Address</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -696,7 +698,7 @@ Network objects are <a class="reference internal" href="../glossary.html#term-ha
 dictionaries.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ipaddress.IPv4Network">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv4Network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv4Network" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv4Network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv4Network" title="本定義的永久連結">¶</a></dt>
 <dd><p>Construct an IPv4 network definition.  <em>address</em> can be one of the following:</p>
 <ol class="arabic">
 <li><p>A string consisting of an IP address and an optional mask, separated by
@@ -732,7 +734,7 @@ to determine the appropriate network address.</p>
 objects will raise <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> if the argument's IP version is
 incompatible to <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added the two-tuple form for the <em>address</em> constructor parameter.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added the two-tuple form for the <em>address</em> constructor parameter.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ipaddress.IPv4Network.version">
@@ -952,7 +954,7 @@ network object.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -967,7 +969,7 @@ network object.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -986,7 +988,7 @@ addresses are considered; host bits aren't.  Returns either <code class="docutil
 </pre></div>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.7 版後已棄用: </span>It uses the same ordering and comparison algorithm as &quot;&lt;&quot;, &quot;==&quot;, and &quot;&gt;&quot;</p>
+<p><span class="versionmodified deprecated">在 3.7 版本開始棄用: </span>It uses the same ordering and comparison algorithm as &quot;&lt;&quot;, &quot;==&quot;, and &quot;&gt;&quot;</p>
 </div>
 </dd></dl>
 
@@ -994,7 +996,7 @@ addresses are considered; host bits aren't.  Returns either <code class="docutil
 
 <dl class="py class">
 <dt class="sig sig-object py" id="ipaddress.IPv6Network">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv6Network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv6Network" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv6Network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv6Network" title="本定義的永久連結">¶</a></dt>
 <dd><p>Construct an IPv6 network definition.  <em>address</em> can be one of the following:</p>
 <ol class="arabic">
 <li><p>A string consisting of an IP address and an optional prefix length,
@@ -1003,7 +1005,7 @@ and the prefix length must be a single number, the <em>prefix</em>.  If no
 prefix length is provided, it's considered to be <code class="docutils literal notranslate"><span class="pre">/128</span></code>.</p>
 <p>Note that currently expanded netmasks are not supported.  That means
 <code class="docutils literal notranslate"><span class="pre">2001:db00::0/24</span></code> is a valid argument while <code class="docutils literal notranslate"><span class="pre">2001:db00::0/ffff:ff00::</span></code>
-not.</p>
+is not.</p>
 </li>
 <li><p>An integer that fits into 128 bits.  This is equivalent to a
 single-address network, with the network address being <em>address</em> and
@@ -1022,7 +1024,7 @@ an IPv6 address.</p>
 then <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised.  Otherwise, the host bits are masked out
 to determine the appropriate network address.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Added the two-tuple form for the <em>address</em> constructor parameter.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Added the two-tuple form for the <em>address</em> constructor parameter.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ipaddress.IPv6Network.version">
@@ -1237,7 +1239,7 @@ example:</p>
 dictionaries.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ipaddress.IPv4Interface">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv4Interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv4Interface" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv4Interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv4Interface" title="本定義的永久連結">¶</a></dt>
 <dd><p>Construct an IPv4 interface.  The meaning of <em>address</em> is as in the
 constructor of <a class="reference internal" href="#ipaddress.IPv4Network" title="ipaddress.IPv4Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv4Network</span></code></a>, except that arbitrary host addresses
 are always accepted.</p>
@@ -1303,7 +1305,7 @@ are available:</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="ipaddress.IPv6Interface">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv6Interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv6Interface" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">IPv6Interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.IPv6Interface" title="本定義的永久連結">¶</a></dt>
 <dd><p>Construct an IPv6 interface.  The meaning of <em>address</em> is as in the
 constructor of <a class="reference internal" href="#ipaddress.IPv6Network" title="ipaddress.IPv6Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPv6Network</span></code></a>, except that arbitrary host addresses
 are always accepted.</p>
@@ -1440,13 +1442,13 @@ this function as the <em>key</em> argument to <a class="reference internal" href
 module defines the following exceptions:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ipaddress.AddressValueError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">AddressValueError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.AddressValueError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">AddressValueError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.AddressValueError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Any value error related to the address.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="ipaddress.NetmaskValueError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">NetmaskValueError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.NetmaskValueError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipaddress.</span></span><span class="sig-name descname"><span class="pre">NetmaskValueError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipaddress.NetmaskValueError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Any value error related to the net mask.</p>
 </dd></dl>
 
@@ -1460,8 +1462,9 @@ module defines the following exceptions:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code> --- IPv4/IPv6 manipulation library</a><ul>
 <li><a class="reference internal" href="#convenience-factory-functions">Convenience factory functions</a></li>
 <li><a class="reference internal" href="#ip-addresses">IP Addresses</a><ul>
@@ -1498,18 +1501,23 @@ module defines the following exceptions:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xmlrpc.server.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="mm.html"
-                        title="下一章">Multimedia Services</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xmlrpc.server.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code> --- Basic XML-RPC servers</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="mm.html"
+                          title="下一章">Multimedia Services</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/ipaddress.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/ipaddress.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1544,13 +1552,11 @@ module defines the following exceptions:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" >Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">ipaddress</span></code> --- IPv4/IPv6 manipulation library</a></li>
                 <li class="right">
@@ -1570,25 +1576,25 @@ module defines the following exceptions:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

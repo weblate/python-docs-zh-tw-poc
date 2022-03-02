@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>code --- Interpreter base classes &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code --- Interpreter base classes &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Custom Python Interpreters" href="custominterp.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/code.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code> --- Interpreter base classes</a><ul>
 <li><a class="reference internal" href="#interactive-interpreter-objects">Interactive Interpreter Objects</a></li>
 <li><a class="reference internal" href="#interactive-console-objects">Interactive Console Objects</a></li>
@@ -81,18 +80,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="custominterp.html"
-                        title="上一章">Custom Python Interpreters</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="codeop.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codeop</span></code> --- Compile Python code</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="custominterp.html"
+                          title="上一章">Custom Python Interpreters</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="codeop.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codeop</span></code> --- Compile Python code</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/code.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/code.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -128,13 +132,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="custominterp.html" accesskey="U">Custom Python Interpreters</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code> --- Interpreter base classes</a></li>
                 <li class="right">
@@ -161,14 +163,14 @@
             
   <section id="module-code">
 <span id="code-interpreter-base-classes"></span><h1><a class="reference internal" href="#module-code" title="code: Facilities to implement read-eval-print loops."><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code></a> --- Interpreter base classes<a class="headerlink" href="#module-code" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/code.py">Lib/code.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/code.py">Lib/code.py</a></p>
 <hr class="docutils" />
 <p>The <code class="docutils literal notranslate"><span class="pre">code</span></code> module provides facilities to implement read-eval-print loops in
 Python.  Two classes and convenience functions are included which can be used to
 build applications which provide an interactive interpreter prompt.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="code.InteractiveInterpreter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">code.</span></span><span class="sig-name descname"><span class="pre">InteractiveInterpreter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#code.InteractiveInterpreter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">code.</span></span><span class="sig-name descname"><span class="pre">InteractiveInterpreter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#code.InteractiveInterpreter" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class deals with parsing and interpreter state (the user's namespace); it
 does not deal with input buffering or prompting or input file naming (the
 filename is always passed in explicitly). The optional <em>locals</em> argument
@@ -179,7 +181,7 @@ created dictionary with key <code class="docutils literal notranslate"><span cla
 
 <dl class="py class">
 <dt class="sig sig-object py" id="code.InteractiveConsole">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">code.</span></span><span class="sig-name descname"><span class="pre">InteractiveConsole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;console&gt;'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#code.InteractiveConsole" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">code.</span></span><span class="sig-name descname"><span class="pre">InteractiveConsole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;console&gt;'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#code.InteractiveConsole" title="本定義的永久連結">¶</a></dt>
 <dd><p>Closely emulate the behavior of the interactive Python interpreter. This class
 builds on <a class="reference internal" href="#code.InteractiveInterpreter" title="code.InteractiveInterpreter"><code class="xref py py-class docutils literal notranslate"><span class="pre">InteractiveInterpreter</span></code></a> and adds prompting using the familiar
 <code class="docutils literal notranslate"><span class="pre">sys.ps1</span></code> and <code class="docutils literal notranslate"><span class="pre">sys.ps2</span></code>, and input buffering.</p>
@@ -197,7 +199,7 @@ method of the instance is then run with <em>banner</em> and <em>exitmsg</em> pas
 banner and exit message to use, if provided.  The console object is discarded
 after use.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added <em>exitmsg</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added <em>exitmsg</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -272,7 +274,7 @@ output is written by the <a class="reference internal" href="#code.InteractiveIn
 because it is within the interpreter object implementation. The output is
 written by the <a class="reference internal" href="#code.InteractiveInterpreter.write" title="code.InteractiveInterpreter.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a> method.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The full chained traceback is displayed instead
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The full chained traceback is displayed instead
 of just the primary traceback.</p>
 </div>
 </dd></dl>
@@ -302,10 +304,10 @@ this with the real interpreter -- since it's so close!).</p>
 Pass the empty string to suppress the exit message. If <em>exitmsg</em> is not given or
 <code class="docutils literal notranslate"><span class="pre">None</span></code>, a default message is printed.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>To suppress printing any banner, pass an empty string.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>To suppress printing any banner, pass an empty string.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Print an exit message when exiting.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Print an exit message when exiting.</p>
 </div>
 </dd></dl>
 
@@ -347,8 +349,9 @@ with a different implementation.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code> --- Interpreter base classes</a><ul>
 <li><a class="reference internal" href="#interactive-interpreter-objects">Interactive Interpreter Objects</a></li>
 <li><a class="reference internal" href="#interactive-console-objects">Interactive Console Objects</a></li>
@@ -356,18 +359,23 @@ with a different implementation.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="custominterp.html"
-                        title="上一章">Custom Python Interpreters</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="codeop.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codeop</span></code> --- Compile Python code</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="custominterp.html"
+                          title="上一章">Custom Python Interpreters</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="codeop.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codeop</span></code> --- Compile Python code</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/code.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/code.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -402,13 +410,11 @@ with a different implementation.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="custominterp.html" >Custom Python Interpreters</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">code</span></code> --- Interpreter base classes</a></li>
                 <li class="right">
@@ -428,25 +434,25 @@ with a different implementation.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

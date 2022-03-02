@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Defining Extension Types: Assorted Topics &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Defining Extension Types: Assorted Topics &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="2. Defining Extension Types: Tutorial" href="newtypes_tutorial.html" />
     <link rel="canonical" href="https://docs.python.org/3/extending/newtypes.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">3. Defining Extension Types: Assorted Topics</a><ul>
 <li><a class="reference internal" href="#finalization-and-de-allocation">3.1. Finalization and De-allocation</a></li>
 <li><a class="reference internal" href="#object-presentation">3.2. Object Presentation</a></li>
@@ -90,18 +89,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="newtypes_tutorial.html"
-                        title="上一章"><span class="section-number">2. </span>Defining Extension Types: Tutorial</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="building.html"
-                        title="下一章"><span class="section-number">4. </span>Building C and C++ Extensions</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="newtypes_tutorial.html"
+                          title="上一章"><span class="section-number">2. </span>Defining Extension Types: Tutorial</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="building.html"
+                          title="下一章"><span class="section-number">4. </span>Building C and C++ Extensions</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/extending/newtypes.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/extending/newtypes.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -137,10 +141,8 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Extending and Embedding the Python Interpreter</a> &#187;</li>
@@ -172,8 +174,8 @@
 <p id="dnt-type-methods">This section aims to give a quick fly-by on the various type methods you can
 implement and what they do.</p>
 <p>Here is the definition of <a class="reference internal" href="../c-api/type.html#c.PyTypeObject" title="PyTypeObject"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyTypeObject</span></code></a>, with some fields only used in
-debug builds omitted:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="nc">_typeobject</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a class="reference internal" href="../using/configure.html#debug-build"><span class="std std-ref">debug builds</span></a> omitted:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_typeobject</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">PyObject_VAR_HEAD</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">tp_name</span><span class="p">;</span><span class="w"> </span><span class="cm">/* For printing, in format &quot;&lt;module&gt;.&lt;name&gt;&quot; */</span><span class="w"></span>
 <span class="w">    </span><span class="n">Py_ssize_t</span><span class="w"> </span><span class="n">tp_basicsize</span><span class="p">,</span><span class="w"> </span><span class="n">tp_itemsize</span><span class="p">;</span><span class="w"> </span><span class="cm">/* For allocation */</span><span class="w"></span>
@@ -210,12 +212,14 @@ debug builds omitted:</p>
 
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">tp_doc</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Documentation string */</span><span class="w"></span>
 
+<span class="w">    </span><span class="cm">/* Assigned meaning in release 2.0 */</span><span class="w"></span>
 <span class="w">    </span><span class="cm">/* call function for all accessible objects */</span><span class="w"></span>
 <span class="w">    </span><span class="n">traverseproc</span><span class="w"> </span><span class="n">tp_traverse</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="cm">/* delete references to contained objects */</span><span class="w"></span>
 <span class="w">    </span><span class="n">inquiry</span><span class="w"> </span><span class="n">tp_clear</span><span class="p">;</span><span class="w"></span>
 
+<span class="w">    </span><span class="cm">/* Assigned meaning in release 2.1 */</span><span class="w"></span>
 <span class="w">    </span><span class="cm">/* rich comparisons */</span><span class="w"></span>
 <span class="w">    </span><span class="n">richcmpfunc</span><span class="w"> </span><span class="n">tp_richcompare</span><span class="p">;</span><span class="w"></span>
 
@@ -227,10 +231,11 @@ debug builds omitted:</p>
 <span class="w">    </span><span class="n">iternextfunc</span><span class="w"> </span><span class="n">tp_iternext</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="cm">/* Attribute descriptor and subclassing stuff */</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span> <span class="nc">PyMethodDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_methods</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span> <span class="nc">PyMemberDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_members</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span> <span class="nc">PyGetSetDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_getset</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span> <span class="nc">_typeobject</span><span class="w"> </span><span class="o">*</span><span class="n">tp_base</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">PyMethodDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_methods</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">PyMemberDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_members</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">PyGetSetDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_getset</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Strong reference on a heap type, borrowed reference on a static type</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">_typeobject</span><span class="w"> </span><span class="o">*</span><span class="n">tp_base</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">tp_dict</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">descrgetfunc</span><span class="w"> </span><span class="n">tp_descr_get</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">descrsetfunc</span><span class="w"> </span><span class="n">tp_descr_set</span><span class="p">;</span><span class="w"></span>
@@ -251,7 +256,7 @@ debug builds omitted:</p>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tp_version_tag</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">destructor</span><span class="w"> </span><span class="n">tp_finalize</span><span class="p">;</span><span class="w"></span>
-
+<span class="w">    </span><span class="n">vectorcallfunc</span><span class="w"> </span><span class="n">tp_vectorcall</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="n">PyTypeObject</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
@@ -298,7 +303,19 @@ function:</p>
 <span class="nf">newdatatype_dealloc</span><span class="p">(</span><span class="n">newdatatypeobject</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">obj</span><span class="o">-&gt;</span><span class="n">obj_UnderlyingDatatypePtr</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">Py_TYPE</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">tp_free</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Py_TYPE</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">tp_free</span><span class="p">((</span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">obj</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>If your type supports garbage collection, the destructor should call
+<a class="reference internal" href="../c-api/gcsupport.html#c.PyObject_GC_UnTrack" title="PyObject_GC_UnTrack"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_GC_UnTrack()</span></code></a> before clearing any member fields:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"></span>
+<span class="nf">newdatatype_dealloc</span><span class="p">(</span><span class="n">newdatatypeobject</span><span class="w"> </span><span class="o">*</span><span class="n">obj</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">PyObject_GC_UnTrack</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Py_CLEAR</span><span class="p">(</span><span class="n">obj</span><span class="o">-&gt;</span><span class="n">other_obj</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="n">Py_TYPE</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">tp_free</span><span class="p">((</span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">obj</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -443,15 +460,15 @@ the type will only have attributes that are inherited from their base type, and
 should leave the <a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_getattro" title="PyTypeObject.tp_getattro"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_getattro</span></code></a> and <a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_setattro" title="PyTypeObject.tp_setattro"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_setattro</span></code></a> fields <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as
 well, allowing the base type to handle attributes.</p>
 <p>The tables are declared as three fields of the type object:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">PyMethodDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_methods</span><span class="p">;</span><span class="w"></span>
-<span class="k">struct</span> <span class="nc">PyMemberDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_members</span><span class="p">;</span><span class="w"></span>
-<span class="k">struct</span> <span class="nc">PyGetSetDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_getset</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">PyMethodDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_methods</span><span class="p">;</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">PyMemberDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_members</span><span class="p">;</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">PyGetSetDef</span><span class="w"> </span><span class="o">*</span><span class="n">tp_getset</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>If <a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_methods" title="PyTypeObject.tp_methods"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_methods</span></code></a> is not <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, it must refer to an array of
 <a class="reference internal" href="../c-api/structures.html#c.PyMethodDef" title="PyMethodDef"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyMethodDef</span></code></a> structures.  Each entry in the table is an instance of this
 structure:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="nc">PyMethodDef</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">PyMethodDef</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w">  </span><span class="o">*</span><span class="n">ml_name</span><span class="p">;</span><span class="w">       </span><span class="cm">/* method name */</span><span class="w"></span>
 <span class="w">    </span><span class="n">PyCFunction</span><span class="w">  </span><span class="n">ml_meth</span><span class="p">;</span><span class="w">       </span><span class="cm">/* implementation function */</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w">          </span><span class="n">ml_flags</span><span class="p">;</span><span class="w">      </span><span class="cm">/* flags */</span><span class="w"></span>
@@ -466,7 +483,7 @@ at the end; it is a sentinel that marks the end of the array.  The
 <p>The second table is used to define attributes which map directly to data stored
 in the instance.  A variety of primitive C types are supported, and access may
 be read-only or read-write.  The structures in the table are defined as:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="nc">PyMemberDef</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">PyMemberDef</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">type</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">offset</span><span class="p">;</span><span class="w"></span>
@@ -497,17 +514,19 @@ combined using bitwise-OR.</p>
 <tr class="row-even"><td><p><code class="xref py py-const docutils literal notranslate"><span class="pre">READONLY</span></code></p></td>
 <td><p>Never writable.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-const docutils literal notranslate"><span class="pre">READ_RESTRICTED</span></code></p></td>
-<td><p>Not readable in restricted mode.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-const docutils literal notranslate"><span class="pre">WRITE_RESTRICTED</span></code></p></td>
-<td><p>Not writable in restricted mode.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-const docutils literal notranslate"><span class="pre">RESTRICTED</span></code></p></td>
-<td><p>Not readable or writable in restricted mode.</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-const docutils literal notranslate"><span class="pre">PY_AUDIT_READ</span></code></p></td>
+<td><p>Emit an <code class="docutils literal notranslate"><span class="pre">object.__getattr__</span></code>
+<a class="reference internal" href="../library/audit_events.html#audit-events"><span class="std std-ref">audit events</span></a> before
+reading.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span><code class="xref py py-const docutils literal notranslate"><span class="pre">RESTRICTED</span></code>, <code class="xref py py-const docutils literal notranslate"><span class="pre">READ_RESTRICTED</span></code> and <code class="xref py py-const docutils literal notranslate"><span class="pre">WRITE_RESTRICTED</span></code>
+are deprecated. However, <code class="xref py py-const docutils literal notranslate"><span class="pre">READ_RESTRICTED</span></code> is an alias for
+<code class="xref py py-const docutils literal notranslate"><span class="pre">PY_AUDIT_READ</span></code>, so fields that specify either <code class="xref py py-const docutils literal notranslate"><span class="pre">RESTRICTED</span></code>
+or <code class="xref py py-const docutils literal notranslate"><span class="pre">READ_RESTRICTED</span></code> will also raise an audit event.</p>
+</div>
 <p id="index-4">An interesting advantage of using the <a class="reference internal" href="../c-api/typeobj.html#c.PyTypeObject.tp_members" title="PyTypeObject.tp_members"><code class="xref c c-member docutils literal notranslate"><span class="pre">tp_members</span></code></a> table to build
 descriptors that are used at runtime is that any attribute defined this way can
 have an associated doc string simply by providing the text in the table.  An
@@ -569,7 +588,7 @@ analogous to the <a class="reference internal" href="../reference/datamodel.html
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">__lt__()</span></code>, and also called by <a class="reference internal" href="../c-api/object.html#c.PyObject_RichCompare" title="PyObject_RichCompare"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_RichCompare()</span></code></a> and
 <a class="reference internal" href="../c-api/object.html#c.PyObject_RichCompareBool" title="PyObject_RichCompareBool"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_RichCompareBool()</span></code></a>.</p>
 <p>This function is called with two Python objects and the operator as arguments,
-where the operator is one of <code class="docutils literal notranslate"><span class="pre">Py_EQ</span></code>, <code class="docutils literal notranslate"><span class="pre">Py_NE</span></code>, <code class="docutils literal notranslate"><span class="pre">Py_LE</span></code>, <code class="docutils literal notranslate"><span class="pre">Py_GT</span></code>,
+where the operator is one of <code class="docutils literal notranslate"><span class="pre">Py_EQ</span></code>, <code class="docutils literal notranslate"><span class="pre">Py_NE</span></code>, <code class="docutils literal notranslate"><span class="pre">Py_LE</span></code>, <code class="docutils literal notranslate"><span class="pre">Py_GE</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Py_LT</span></code> or <code class="docutils literal notranslate"><span class="pre">Py_GT</span></code>.  It should compare the two objects with respect to the
 specified operator and return <code class="docutils literal notranslate"><span class="pre">Py_True</span></code> or <code class="docutils literal notranslate"><span class="pre">Py_False</span></code> if the comparison is
 successful, <code class="docutils literal notranslate"><span class="pre">Py_NotImplemented</span></code> to indicate that comparison is not
@@ -597,7 +616,7 @@ size of an internal pointer is equal:</p>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">Py_GT</span><span class="p">:</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size1</span><span class="w"> </span><span class="o">&gt;</span><span class="w">  </span><span class="n">size2</span><span class="p">;</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">Py_GE</span><span class="p">:</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">size2</span><span class="p">;</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nl">Py_True</span> <span class="p">:</span><span class="w"> </span><span class="n">Py_False</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Py_True</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Py_False</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">Py_INCREF</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"></span>
 <span class="w"> </span><span class="p">}</span><span class="w"></span>
@@ -607,7 +626,7 @@ size of an internal pointer is equal:</p>
 <section id="abstract-protocol-support">
 <h2><span class="section-number">3.5. </span>Abstract Protocol Support<a class="headerlink" href="#abstract-protocol-support" title="本標題的永久連結">¶</a></h2>
 <p>Python supports a variety of <em>abstract</em> 'protocols;' the specific interfaces
-provided to use these interfaces are documented in <a class="reference internal" href="../c-api/abstract.html#abstract"><span class="std std-ref">抽象物件層</span></a>.</p>
+provided to use these interfaces are documented in <a class="reference internal" href="../c-api/abstract.html#abstract"><span class="std std-ref">Abstract Objects Layer</span></a>.</p>
 <p>A number of these abstract interfaces were defined early in the development of
 the Python implementation.  In particular, the number, mapping, and sequence
 protocols have been part of Python since the beginning.  Other protocols have
@@ -743,7 +762,7 @@ so that the interpreter knows how to access and modify that field.</p></li>
 </ol>
 <p>Concretely, here is how a trivial object structure would be augmented
 with the required field:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">PyObject_HEAD</span><span class="w"></span>
 <span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">weakreflist</span><span class="p">;</span><span class="w">  </span><span class="cm">/* List of weak references */</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="n">TrivialObject</span><span class="p">;</span><span class="w"></span>
@@ -807,8 +826,9 @@ its use might be something like the following:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">3. Defining Extension Types: Assorted Topics</a><ul>
 <li><a class="reference internal" href="#finalization-and-de-allocation">3.1. Finalization and De-allocation</a></li>
 <li><a class="reference internal" href="#object-presentation">3.2. Object Presentation</a></li>
@@ -825,18 +845,23 @@ its use might be something like the following:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="newtypes_tutorial.html"
-                        title="上一章"><span class="section-number">2. </span>Defining Extension Types: Tutorial</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="building.html"
-                        title="下一章"><span class="section-number">4. </span>Building C and C++ Extensions</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="newtypes_tutorial.html"
+                          title="上一章"><span class="section-number">2. </span>Defining Extension Types: Tutorial</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="building.html"
+                          title="下一章"><span class="section-number">4. </span>Building C and C++ Extensions</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/extending/newtypes.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/extending/newtypes.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -871,10 +896,8 @@ its use might be something like the following:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Extending and Embedding the Python Interpreter</a> &#187;</li>
@@ -896,25 +919,25 @@ its use might be something like the following:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

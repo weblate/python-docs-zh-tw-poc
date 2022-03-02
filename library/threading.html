@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>threading --- Thread-based parallelism &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>threading --- Thread-based parallelism &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Concurrent Execution" href="concurrency.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/threading.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code> --- Thread-based parallelism</a><ul>
 <li><a class="reference internal" href="#thread-local-data">Thread-Local Data</a></li>
 <li><a class="reference internal" href="#thread-objects">Thread Objects</a></li>
@@ -92,18 +91,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="concurrency.html"
-                        title="上一章">Concurrent Execution</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="multiprocessing.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> --- Process-based parallelism</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="concurrency.html"
+                          title="上一章">Concurrent Execution</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="multiprocessing.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> --- Process-based parallelism</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/threading.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/threading.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -139,13 +143,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concurrency.html" accesskey="U">Concurrent Execution</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code> --- Thread-based parallelism</a></li>
                 <li class="right">
@@ -172,18 +174,18 @@
             
   <section id="module-threading">
 <span id="threading-thread-based-parallelism"></span><h1><a class="reference internal" href="#module-threading" title="threading: Thread-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code></a> --- Thread-based parallelism<a class="headerlink" href="#module-threading" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/threading.py">Lib/threading.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/threading.py">Lib/threading.py</a></p>
 <hr class="docutils" />
 <p>This module constructs higher-level threading interfaces on top of the lower
 level <a class="reference internal" href="_thread.html#module-_thread" title="_thread: Low-level threading API."><code class="xref py py-mod docutils literal notranslate"><span class="pre">_thread</span></code></a> module.  See also the <a class="reference internal" href="queue.html#module-queue" title="queue: A synchronized queue class."><code class="xref py py-mod docutils literal notranslate"><span class="pre">queue</span></code></a> module.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>This module used to be optional, it is now always available.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>This module used to be optional, it is now always available.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>While they are not listed below, the <code class="docutils literal notranslate"><span class="pre">camelCase</span></code> names used for some
-methods and functions in this module in the Python 2.x series are still
-supported by this module.</p>
+<p>In the Python 2.x series, this module contained <code class="docutils literal notranslate"><span class="pre">camelCase</span></code> names
+for some methods and functions. These are deprecated as of Python 3.10,
+but they are still supported for compatibility with Python 2.5 and lower.</p>
 </div>
 <div class="impl-detail compound">
 <p><strong>CPython implementation detail:</strong> In CPython, due to the <a class="reference internal" href="../glossary.html#term-global-interpreter-lock"><span class="xref std std-term">Global Interpreter Lock</span></a>, only one thread
@@ -201,6 +203,7 @@ multiple I/O-bound tasks simultaneously.</p>
 <span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">active_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.active_count" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the number of <a class="reference internal" href="#threading.Thread" title="threading.Thread"><code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></a> objects currently alive.  The returned
 count is equal to the length of the list returned by <a class="reference internal" href="#threading.enumerate" title="threading.enumerate"><code class="xref py py-func docutils literal notranslate"><span class="pre">enumerate()</span></code></a>.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">activeCount</span></code> is a deprecated alias for this function.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -210,6 +213,7 @@ count is equal to the length of the list returned by <a class="reference interna
 of control.  If the caller's thread of control was not created through the
 <a class="reference internal" href="#module-threading" title="threading: Thread-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code></a> module, a dummy thread object with limited functionality is
 returned.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">currentThread</span></code> is a deprecated alias for this function.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -240,7 +244,18 @@ hook completes to avoid resurrecting objects.</p>
 <p><a class="reference internal" href="sys.html#sys.excepthook" title="sys.excepthook"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.excepthook()</span></code></a> handles uncaught exceptions.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="threading.__excepthook__">
+<span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">__excepthook__</span></span><a class="headerlink" href="#threading.__excepthook__" title="本定義的永久連結">¶</a></dt>
+<dd><p>Holds the original value of <a class="reference internal" href="#threading.excepthook" title="threading.excepthook"><code class="xref py py-func docutils literal notranslate"><span class="pre">threading.excepthook()</span></code></a>. It is saved so that the
+original value can be restored in case they happen to get replaced with
+broken or alternative objects.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -253,7 +268,7 @@ to be used e.g. to index a dictionary of thread-specific data.  Thread
 identifiers may be recycled when a thread exits and another thread is
 created.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -266,7 +281,7 @@ Its value may be used to uniquely identify this particular thread system-wide
 (until the thread terminates, after which the value may be recycled by the OS).</p>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows, FreeBSD, Linux, macOS, OpenBSD, NetBSD, AIX.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -287,7 +302,7 @@ of the result, even when terminated.</p>
 main thread is the thread from which the Python interpreter was
 started.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -300,16 +315,34 @@ The <em>func</em> will be passed to  <a class="reference internal" href="sys.htm
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="threading.gettrace">
+<span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">gettrace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.gettrace" title="本定義的永久連結">¶</a></dt>
+<dd><p id="index-1">Get the trace function as set by <a class="reference internal" href="#threading.settrace" title="threading.settrace"><code class="xref py py-func docutils literal notranslate"><span class="pre">settrace()</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="threading.setprofile">
 <span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">setprofile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.setprofile" title="本定義的永久連結">¶</a></dt>
-<dd><p id="index-1">Set a profile function for all threads started from the <a class="reference internal" href="#module-threading" title="threading: Thread-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code></a> module.
+<dd><p id="index-2">Set a profile function for all threads started from the <a class="reference internal" href="#module-threading" title="threading: Thread-based parallelism."><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code></a> module.
 The <em>func</em> will be passed to  <a class="reference internal" href="sys.html#sys.setprofile" title="sys.setprofile"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.setprofile()</span></code></a> for each thread, before its
 <a class="reference internal" href="#threading.Thread.run" title="threading.Thread.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method is called.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="threading.getprofile">
+<span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">getprofile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.getprofile" title="本定義的永久連結">¶</a></dt>
+<dd><p id="index-3">Get the profiler function as set by <a class="reference internal" href="#threading.setprofile" title="threading.setprofile"><code class="xref py py-func docutils literal notranslate"><span class="pre">setprofile()</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="threading.stack_size">
-<span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">stack_size</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">size</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.stack_size" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">stack_size</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.stack_size" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the thread stack size used when creating new threads.  The optional
 <em>size</em> argument specifies the stack size to be used for subsequently created
 threads, and must be 0 (use platform or configured default) or a positive
@@ -336,7 +369,7 @@ the suggested approach in the absence of more specific information).</p>
 Specifying a timeout greater than this value will raise an
 <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -362,7 +395,7 @@ subclass) and store attributes on it:</p>
 <p>The instance's values will be different for separate threads.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.local">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">local</span></span><a class="headerlink" href="#threading.local" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">local</span></span><a class="headerlink" href="#threading.local" title="本定義的永久連結">¶</a></dt>
 <dd><p>A class that represents thread-local data.</p>
 <p>For more details and extensive examples, see the documentation string of the
 <code class="xref py py-mod docutils literal notranslate"><span class="pre">_threading_local</span></code> module.</p>
@@ -414,15 +447,17 @@ daemonic, and cannot be <a class="reference internal" href="#threading.Thread.jo
 since it is impossible to detect the termination of alien threads.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.Thread">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Thread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daemon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Thread" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Thread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daemon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Thread" title="本定義的永久連結">¶</a></dt>
 <dd><p>This constructor should always be called with keyword arguments.  Arguments
 are:</p>
 <p><em>group</em> should be <code class="docutils literal notranslate"><span class="pre">None</span></code>; reserved for future extension when a
 <code class="xref py py-class docutils literal notranslate"><span class="pre">ThreadGroup</span></code> class is implemented.</p>
 <p><em>target</em> is the callable object to be invoked by the <a class="reference internal" href="#threading.Thread.run" title="threading.Thread.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.
 Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>, meaning nothing is called.</p>
-<p><em>name</em> is the thread name.  By default, a unique name is constructed of the
-form &quot;Thread-<em>N</em>&quot; where <em>N</em> is a small decimal number.</p>
+<p><em>name</em> is the thread name. By default, a unique name is constructed
+of the form &quot;Thread-<em>N</em>&quot; where <em>N</em> is a small decimal number,
+or &quot;Thread-<em>N</em> (target)&quot; where &quot;target&quot; is <code class="docutils literal notranslate"><span class="pre">target.__name__</span></code> if the
+<em>target</em> argument is specified.</p>
 <p><em>args</em> is the argument tuple for the target invocation.  Defaults to <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 <p><em>kwargs</em> is a dictionary of keyword arguments for the target invocation.
 Defaults to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
@@ -433,7 +468,10 @@ current thread.</p>
 base class constructor (<code class="docutils literal notranslate"><span class="pre">Thread.__init__()</span></code>) before doing anything else to
 the thread.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Added the <em>daemon</em> argument.</p>
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Use the <em>target</em> name if <em>name</em> argument is omitted.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Added the <em>daemon</em> argument.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="threading.Thread.start">
@@ -491,8 +529,11 @@ the constructor.</p>
 <span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.Thread.getName" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py" id="threading.Thread.setName">
 <span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.Thread.setName" title="本定義的永久連結">¶</a></dt>
-<dd><p>Old getter/setter API for <a class="reference internal" href="#threading.Thread.name" title="threading.Thread.name"><code class="xref py py-attr docutils literal notranslate"><span class="pre">name</span></code></a>; use it directly as a
+<dd><p>Deprecated getter/setter API for <a class="reference internal" href="#threading.Thread.name" title="threading.Thread.name"><code class="xref py py-attr docutils literal notranslate"><span class="pre">name</span></code></a>; use it directly as a
 property instead.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">在 3.10 版本開始棄用.</span></p>
+</div>
 </dd></dl>
 
 <dl class="py attribute">
@@ -508,13 +549,12 @@ thread has exited.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="threading.Thread.native_id">
 <span class="sig-name descname"><span class="pre">native_id</span></span><a class="headerlink" href="#threading.Thread.native_id" title="本定義的永久連結">¶</a></dt>
-<dd><p>The native integral thread ID of this thread.
+<dd><p>The Thread ID (<code class="docutils literal notranslate"><span class="pre">TID</span></code>) of this thread, as assigned by the OS (kernel).
 This is a non-negative integer, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if the thread has not
 been started. See the <a class="reference internal" href="#threading.get_native_id" title="threading.get_native_id"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_native_id()</span></code></a> function.
-This represents the Thread ID (<code class="docutils literal notranslate"><span class="pre">TID</span></code>) as assigned to the
-thread by the OS (kernel).  Its value may be used to uniquely identify
-this particular thread system-wide (until the thread terminates,
-after which the value may be recycled by the OS).</p>
+This value may be used to uniquely identify this particular thread
+system-wide (until the thread terminates, after which the value
+may be recycled by the OS).</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>Similar to Process IDs, Thread IDs are only valid (guaranteed unique
@@ -523,7 +563,7 @@ has been terminated.</p>
 </div>
 <p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Requires <a class="reference internal" href="#threading.get_native_id" title="threading.get_native_id"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_native_id()</span></code></a> function.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -553,8 +593,11 @@ therefore all threads created in the main thread default to
 <span class="sig-name descname"><span class="pre">isDaemon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.Thread.isDaemon" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py" id="threading.Thread.setDaemon">
 <span class="sig-name descname"><span class="pre">setDaemon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.Thread.setDaemon" title="本定義的永久連結">¶</a></dt>
-<dd><p>Old getter/setter API for <a class="reference internal" href="#threading.Thread.daemon" title="threading.Thread.daemon"><code class="xref py py-attr docutils literal notranslate"><span class="pre">daemon</span></code></a>; use it directly as a
+<dd><p>Deprecated getter/setter API for <a class="reference internal" href="#threading.Thread.daemon" title="threading.Thread.daemon"><code class="xref py py-attr docutils literal notranslate"><span class="pre">daemon</span></code></a>; use it directly as a
 property instead.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">在 3.10 版本開始棄用.</span></p>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -584,7 +627,7 @@ is not defined, and may vary across implementations.</p>
 <p>All methods are executed atomically.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.Lock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Lock</span></span><a class="headerlink" href="#threading.Lock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Lock</span></span><a class="headerlink" href="#threading.Lock" title="本定義的永久連結">¶</a></dt>
 <dd><p>The class implementing primitive lock objects.  Once a thread has acquired a
 lock, subsequent attempts to acquire it block, until it is released; any
 thread may release it.</p>
@@ -608,10 +651,10 @@ when <em>blocking</em> is false.</p>
 <p>The return value is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the lock is acquired successfully,
 <code class="docutils literal notranslate"><span class="pre">False</span></code> if not (for example if the <em>timeout</em> expired).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>The <em>timeout</em> parameter is new.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>The <em>timeout</em> parameter is new.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Lock acquisition can now be interrupted by signals on POSIX if the
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Lock acquisition can now be interrupted by signals on POSIX if the
 underlying threading implementation supports it.</p>
 </div>
 </dd></dl>
@@ -653,7 +696,7 @@ allows another thread blocked in <a class="reference internal" href="#threading.
 <p>Reentrant locks also support the <a class="reference internal" href="#with-locks"><span class="std std-ref">context management protocol</span></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.RLock">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">RLock</span></span><a class="headerlink" href="#threading.RLock" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">RLock</span></span><a class="headerlink" href="#threading.RLock" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class implements reentrant lock objects.  A reentrant lock must be
 released by the thread that acquired it.  Once a thread has acquired a
 reentrant lock, the same thread may acquire it again without blocking; the
@@ -682,7 +725,7 @@ value, block for at most the number of seconds specified by <em>timeout</em>
 and as long as the lock cannot be acquired.  Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the lock has
 been acquired, false if the timeout has elapsed.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>The <em>timeout</em> parameter is new.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>The <em>timeout</em> parameter is new.</p>
 </div>
 </dd></dl>
 
@@ -765,14 +808,14 @@ waiting threads.  E.g. in a typical producer-consumer situation, adding one
 item to the buffer only needs to wake up one consumer thread.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.Condition">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lock</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Condition" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lock</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Condition" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class implements condition variable objects.  A condition variable
 allows one or more threads to wait until they are notified by another thread.</p>
 <p>If the <em>lock</em> argument is given and not <code class="docutils literal notranslate"><span class="pre">None</span></code>, it must be a <a class="reference internal" href="#threading.Lock" title="threading.Lock"><code class="xref py py-class docutils literal notranslate"><span class="pre">Lock</span></code></a>
 or <a class="reference internal" href="#threading.RLock" title="threading.RLock"><code class="xref py py-class docutils literal notranslate"><span class="pre">RLock</span></code></a> object, and it is used as the underlying lock.  Otherwise,
 a new <a class="reference internal" href="#threading.RLock" title="threading.RLock"><code class="xref py py-class docutils literal notranslate"><span class="pre">RLock</span></code></a> object is created and used as the underlying lock.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>changed from a factory function to a class.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>changed from a factory function to a class.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="threading.Condition.acquire">
@@ -811,7 +854,7 @@ reacquired.</p>
 <p>The return value is <code class="docutils literal notranslate"><span class="pre">True</span></code> unless a given <em>timeout</em> expired, in which
 case it is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>Previously, the method always returned <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Previously, the method always returned <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 </dd></dl>
 
@@ -835,7 +878,7 @@ writing:</p>
 held when called and is re-acquired on return.  The predicate is evaluated
 with the lock held.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -863,6 +906,7 @@ release the lock, its caller should.</p>
 <a class="reference internal" href="#threading.Condition.notify" title="threading.Condition.notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">notify()</span></code></a>, but wakes up all waiting threads instead of one. If the
 calling thread has not acquired the lock when this method is called, a
 <a class="reference internal" href="exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a> is raised.</p>
+<p>The method <code class="docutils literal notranslate"><span class="pre">notifyAll</span></code> is a deprecated alias for this method.</p>
 </dd></dl>
 
 </dd></dl>
@@ -882,7 +926,7 @@ finds that it is zero, it blocks, waiting until some other thread calls
 <p>Semaphores also support the <a class="reference internal" href="#with-locks"><span class="std std-ref">context management protocol</span></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.Semaphore">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Semaphore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Semaphore" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Semaphore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Semaphore" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class implements semaphore objects.  A semaphore manages an atomic
 counter representing the number of <a class="reference internal" href="#threading.Semaphore.release" title="threading.Semaphore.release"><code class="xref py py-meth docutils literal notranslate"><span class="pre">release()</span></code></a> calls minus the number of
 <a class="reference internal" href="#threading.Semaphore.acquire" title="threading.Semaphore.acquire"><code class="xref py py-meth docutils literal notranslate"><span class="pre">acquire()</span></code></a> calls, plus an initial value.  The <a class="reference internal" href="#threading.Semaphore.acquire" title="threading.Semaphore.acquire"><code class="xref py py-meth docutils literal notranslate"><span class="pre">acquire()</span></code></a> method
@@ -892,7 +936,7 @@ If not given, <em>value</em> defaults to 1.</p>
 defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>. If the <em>value</em> given is less than 0, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is
 raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>changed from a factory function to a class.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>changed from a factory function to a class.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="threading.Semaphore.acquire">
@@ -915,7 +959,7 @@ the same thing as when called without arguments, and return <code class="docutil
 most <em>timeout</em> seconds.  If acquire does not complete successfully in
 that interval, return <code class="docutils literal notranslate"><span class="pre">False</span></code>.  Return <code class="docutils literal notranslate"><span class="pre">True</span></code> otherwise.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>The <em>timeout</em> parameter is new.</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>The <em>timeout</em> parameter is new.</p>
 </div>
 </dd></dl>
 
@@ -926,7 +970,7 @@ that interval, return <code class="docutils literal notranslate"><span class="pr
 was zero on entry and other threads are waiting for it to become larger
 than zero again, wake up <em>n</em> of those threads.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Added the <em>n</em> parameter to release multiple waiting threads at once.</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added the <em>n</em> parameter to release multiple waiting threads at once.</p>
 </div>
 </dd></dl>
 
@@ -934,14 +978,14 @@ than zero again, wake up <em>n</em> of those threads.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.BoundedSemaphore">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">BoundedSemaphore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.BoundedSemaphore" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">BoundedSemaphore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.BoundedSemaphore" title="本定義的永久連結">¶</a></dt>
 <dd><p>Class implementing bounded semaphore objects.  A bounded semaphore checks to
 make sure its current value doesn't exceed its initial value.  If it does,
 <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised. In most situations semaphores are used to guard
 resources with limited capacity.  If the semaphore is released too many times
 it's a sign of a bug.  If not given, <em>value</em> defaults to 1.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>changed from a factory function to a class.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>changed from a factory function to a class.</p>
 </div>
 </dd></dl>
 
@@ -979,18 +1023,19 @@ thread signals an event and other threads wait for it.</p>
 method.  The <a class="reference internal" href="#threading.Event.wait" title="threading.Event.wait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wait()</span></code></a> method blocks until the flag is true.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.Event">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><a class="headerlink" href="#threading.Event" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><a class="headerlink" href="#threading.Event" title="本定義的永久連結">¶</a></dt>
 <dd><p>Class implementing event objects.  An event manages a flag that can be set to
 true with the <a class="reference internal" href="#threading.Event.set" title="threading.Event.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code></a> method and reset to false with the
 <a class="reference internal" href="#threading.Event.clear" title="threading.Event.clear"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clear()</span></code></a> method.  The <a class="reference internal" href="#threading.Event.wait" title="threading.Event.wait"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wait()</span></code></a> method blocks until the flag is true.
 The flag is initially false.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>changed from a factory function to a class.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>changed from a factory function to a class.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="threading.Event.is_set">
 <span class="sig-name descname"><span class="pre">is_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#threading.Event.is_set" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if and only if the internal flag is true.</p>
+<p>The method <code class="docutils literal notranslate"><span class="pre">isSet</span></code> is a deprecated alias for this method.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1023,7 +1068,7 @@ true, either before the wait call or after the wait starts, so it will
 always return <code class="docutils literal notranslate"><span class="pre">True</span></code> except if a timeout is given and the operation
 times out.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.1 版更變: </span>Previously, the method always returned <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p><span class="versionmodified changed">在 3.1 版本變更: </span>Previously, the method always returned <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 </dd></dl>
 
@@ -1050,13 +1095,13 @@ the user.</p>
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.Timer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Timer" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Timer" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a timer that will run <em>function</em> with arguments <em>args</em> and  keyword
 arguments <em>kwargs</em>, after <em>interval</em> seconds have passed.
 If <em>args</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default) then an empty list will be used.
 If <em>kwargs</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default) then an empty dict will be used.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>changed from a factory function to a class.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>changed from a factory function to a class.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="threading.Timer.cancel">
@@ -1071,7 +1116,7 @@ only work if the timer is still in its waiting stage.</p>
 <section id="barrier-objects">
 <h2>Barrier Objects<a class="headerlink" href="#barrier-objects" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 <p>This class provides a simple synchronization primitive for use by a fixed number
 of threads that need to wait for each other.  Each of the threads tries to pass
@@ -1098,7 +1143,7 @@ the threads are released simultaneously.</p>
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="threading.Barrier">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Barrier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Barrier" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">Barrier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#threading.Barrier" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create a barrier object for <em>parties</em> number of threads.  An <em>action</em>, when
 provided, is a callable to be called by one of the threads when they are
 released.  <em>timeout</em> is the default timeout value if none is specified for
@@ -1171,7 +1216,7 @@ awry.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="threading.BrokenBarrierError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">BrokenBarrierError</span></span><a class="headerlink" href="#threading.BrokenBarrierError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">threading.</span></span><span class="sig-name descname"><span class="pre">BrokenBarrierError</span></span><a class="headerlink" href="#threading.BrokenBarrierError" title="本定義的永久連結">¶</a></dt>
 <dd><p>This exception, a subclass of <a class="reference internal" href="exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a>, is raised when the
 <a class="reference internal" href="#threading.Barrier" title="threading.Barrier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Barrier</span></code></a> object is reset or broken.</p>
 </dd></dl>
@@ -1209,8 +1254,9 @@ the following snippet:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code> --- Thread-based parallelism</a><ul>
 <li><a class="reference internal" href="#thread-local-data">Thread-Local Data</a></li>
 <li><a class="reference internal" href="#thread-objects">Thread Objects</a></li>
@@ -1229,18 +1275,23 @@ the following snippet:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="concurrency.html"
-                        title="上一章">Concurrent Execution</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="multiprocessing.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> --- Process-based parallelism</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="concurrency.html"
+                          title="上一章">Concurrent Execution</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="multiprocessing.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> --- Process-based parallelism</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/threading.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/threading.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1275,13 +1326,11 @@ the following snippet:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concurrency.html" >Concurrent Execution</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">threading</span></code> --- Thread-based parallelism</a></li>
                 <li class="right">
@@ -1301,25 +1350,25 @@ the following snippet:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

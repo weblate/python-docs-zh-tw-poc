@@ -83,7 +83,7 @@ The module defines these functions:
       If an object containing an unsupported type was marshalled with :func:`dump`,
       :func:`load` will substitute ``None`` for the unmarshallable type.
 
-   .. versionchanged:: 3.9.7
+   .. versionchanged:: 3.10
 
       This call used to raise a ``code.__new__`` audit event for each code object. Now
       it raises a single ``marshal.load`` event for the entire load operation.
@@ -109,7 +109,7 @@ The module defines these functions:
 
    .. audit-event:: marshal.loads bytes marshal.load
 
-   .. versionchanged:: 3.9.7
+   .. versionchanged:: 3.10
 
       This call used to raise a ``code.__new__`` audit event for each code object. Now
       it raises a single ``marshal.loads`` event for the entire load operation.

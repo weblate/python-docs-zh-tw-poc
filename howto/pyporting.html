@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python 2 的程式碼移植到Python 3 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porting Python 2 Code to Python 3 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="遷移延伸模組到 Python 3" href="cporting.html" />
+    <link rel="next" title="Porting Extension Modules to Python 3" href="cporting.html" />
     <link rel="prev" title="Python HOWTOs" href="index.html" />
     <link rel="canonical" href="https://docs.python.org/3/howto/pyporting.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,16 +70,17 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Python 2 的程式碼移植到Python 3</a><ul>
-<li><a class="reference internal" href="#the-short-explanation">簡短的說明</a></li>
-<li><a class="reference internal" href="#details">詳細的</a><ul>
-<li><a class="reference internal" href="#drop-support-for-python-2-6-and-older">向下支援Python 2.6和更舊的版本</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Porting Python 2 Code to Python 3</a><ul>
+<li><a class="reference internal" href="#the-short-explanation">The Short Explanation</a></li>
+<li><a class="reference internal" href="#details">Details</a><ul>
+<li><a class="reference internal" href="#drop-support-for-python-2-6-and-older">Drop support for Python 2.6 and older</a></li>
 <li><a class="reference internal" href="#make-sure-you-specify-the-proper-version-support-in-your-setup-py-file">Make sure you specify the proper version support in your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file</a></li>
-<li><a class="reference internal" href="#have-good-test-coverage">有好的測試覆蓋率</a></li>
-<li><a class="reference internal" href="#learn-the-differences-between-python-2-3">瞭解Python 2 &amp; 3的差異</a></li>
-<li><a class="reference internal" href="#update-your-code">更新你的程式碼</a><ul>
+<li><a class="reference internal" href="#have-good-test-coverage">Have good test coverage</a></li>
+<li><a class="reference internal" href="#learn-the-differences-between-python-2-3">Learn the differences between Python 2 &amp; 3</a></li>
+<li><a class="reference internal" href="#update-your-code">Update your code</a><ul>
 <li><a class="reference internal" href="#division">Division</a></li>
 <li><a class="reference internal" href="#text-versus-binary-data">Text versus binary data</a></li>
 <li><a class="reference internal" href="#use-feature-detection-instead-of-version-detection">Use feature detection instead of version detection</a></li>
@@ -98,18 +97,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">Python HOWTOs</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="cporting.html"
-                        title="下一章">遷移延伸模組到 Python 3</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="index.html"
+                          title="上一章">Python HOWTOs</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="cporting.html"
+                          title="下一章">Porting Extension Modules to Python 3</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/pyporting.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/pyporting.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -130,7 +134,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="cporting.html" title="遷移延伸模組到 Python 3"
+          <a href="cporting.html" title="Porting Extension Modules to Python 3"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="index.html" title="Python HOWTOs"
@@ -145,14 +149,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python HOWTOs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Python 2 的程式碼移植到Python 3</a></li>
+        <li class="nav-item nav-item-this"><a href="">Porting Python 2 Code to Python 3</a></li>
                 <li class="right">
                     
 
@@ -176,7 +178,7 @@
           <div class="body" role="main">
             
   <section id="porting-python-2-code-to-python-3">
-<span id="pyporting-howto"></span><h1>Python 2 的程式碼移植到Python 3<a class="headerlink" href="#porting-python-2-code-to-python-3" title="本標題的永久連結">¶</a></h1>
+<span id="pyporting-howto"></span><h1>Porting Python 2 Code to Python 3<a class="headerlink" href="#porting-python-2-code-to-python-3" title="本標題的永久連結">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author</dt>
 <dd class="field-odd"><p>Brett Cannon</p>
@@ -189,21 +191,21 @@ use, it is good to have your project available for both major releases of
 Python. This guide is meant to help you figure out how best to support both
 Python 2 &amp; 3 simultaneously.</p>
 <p>If you are looking to port an extension module instead of pure Python code,
-please see <a class="reference internal" href="cporting.html#cporting-howto"><span class="std std-ref">遷移延伸模組到 Python 3</span></a>.</p>
+please see <a class="reference internal" href="cporting.html#cporting-howto"><span class="std std-ref">Porting Extension Modules to Python 3</span></a>.</p>
 <p>If you would like to read one core Python developer's take on why Python 3
 came into existence, you can read Nick Coghlan's <a class="reference external" href="https://ncoghlan-devs-python-notes.readthedocs.io/en/latest/python3/questions_and_answers.html">Python 3 Q &amp; A</a> or
 Brett Cannon's <a class="reference external" href="https://snarky.ca/why-python-3-exists">Why Python 3 exists</a>.</p>
 <p>For help with porting, you can view the archived <a class="reference external" href="https://mail.python.org/pipermail/python-porting/">python-porting</a> mailing list.</p>
 </div>
 <section id="the-short-explanation">
-<h2>簡短的說明<a class="headerlink" href="#the-short-explanation" title="本標題的永久連結">¶</a></h2>
+<h2>The Short Explanation<a class="headerlink" href="#the-short-explanation" title="本標題的永久連結">¶</a></h2>
 <p>To make your project be single-source Python 2/3 compatible, the basic steps
 are:</p>
 <ol class="arabic simple">
 <li><p>Only worry about supporting Python 2.7</p></li>
 <li><p>Make sure you have good test coverage (<a class="reference external" href="https://pypi.org/project/coverage">coverage.py</a> can help;
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">coverage</span></code>)</p></li>
-<li><p>瞭解Python 2 &amp; 3的差異</p></li>
+<li><p>Learn the differences between Python 2 &amp; 3</p></li>
 <li><p>Use <a class="reference external" href="http://python-future.org/automatic_conversion.html">Futurize</a> (or <a class="reference external" href="https://python-modernize.readthedocs.io/">Modernize</a>) to update your code (e.g. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">future</span></code>)</p></li>
 <li><p>Use <a class="reference external" href="https://pypi.org/project/pylint">Pylint</a> to help make sure you don't regress on your Python 3 support
 (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pylint</span></code>)</p></li>
@@ -225,7 +227,7 @@ a system-wide <code class="docutils literal notranslate"><span class="pre">pip</
 </div>
 </section>
 <section id="details">
-<h2>詳細的<a class="headerlink" href="#details" title="本標題的永久連結">¶</a></h2>
+<h2>Details<a class="headerlink" href="#details" title="本標題的永久連結">¶</a></h2>
 <p>A key point about supporting Python 2 &amp; 3 simultaneously is that you can start
 <strong>today</strong>! Even if your dependencies are not supporting Python 3 yet that does
 not mean you can't modernize your code <strong>now</strong> to support Python 3. Most changes
@@ -239,7 +241,7 @@ the automated changes immediately.</p>
 <p>Keep those key points in mind while you read on about the details of porting
 your code to support Python 2 &amp; 3 simultaneously.</p>
 <section id="drop-support-for-python-2-6-and-older">
-<h3>向下支援Python 2.6和更舊的版本<a class="headerlink" href="#drop-support-for-python-2-6-and-older" title="本標題的永久連結">¶</a></h3>
+<h3>Drop support for Python 2.6 and older<a class="headerlink" href="#drop-support-for-python-2-6-and-older" title="本標題的永久連結">¶</a></h3>
 <p>While you can make Python 2.5 work with Python 3, it is <strong>much</strong> easier if you
 only have to work with Python 2.7. If dropping Python 2.5 is not an
 option then the <a class="reference external" href="https://pypi.org/project/six">six</a> project can help you support Python 2.5 &amp; 3 simultaneously
@@ -267,7 +269,7 @@ also specify each major/minor version of Python that you do support, e.g.
 <code class="docutils literal notranslate"><span class="pre">Programming</span> <span class="pre">Language</span> <span class="pre">::</span> <span class="pre">Python</span> <span class="pre">::</span> <span class="pre">2.7</span></code>.</p>
 </section>
 <section id="have-good-test-coverage">
-<h3>有好的測試覆蓋率<a class="headerlink" href="#have-good-test-coverage" title="本標題的永久連結">¶</a></h3>
+<h3>Have good test coverage<a class="headerlink" href="#have-good-test-coverage" title="本標題的永久連結">¶</a></h3>
 <p>Once you have your code supporting the oldest version of Python 2 you want it
 to, you will want to make sure your test suite has good coverage. A good rule of
 thumb is that if you want to be confident enough in your test suite that any
@@ -278,7 +280,7 @@ coverage). If you don't already have a tool to measure test coverage then
 <a class="reference external" href="https://pypi.org/project/coverage">coverage.py</a> is recommended.</p>
 </section>
 <section id="learn-the-differences-between-python-2-3">
-<h3>瞭解Python 2 &amp; 3的差異<a class="headerlink" href="#learn-the-differences-between-python-2-3" title="本標題的永久連結">¶</a></h3>
+<h3>Learn the differences between Python 2 &amp; 3<a class="headerlink" href="#learn-the-differences-between-python-2-3" title="本標題的永久連結">¶</a></h3>
 <p>Once you have your code well-tested you are ready to begin porting your code to
 Python 3! But to fully understand how your code is going to change and what
 you want to look out for while you code, you will want to learn what changes
@@ -288,7 +290,7 @@ is reading the <a class="reference internal" href="../whatsnew/index.html#whatsn
 <a class="reference external" href="http://python-future.org/compatible_idioms.html">cheat sheet</a> from the Python-Future project.</p>
 </section>
 <section id="update-your-code">
-<h3>更新你的程式碼<a class="headerlink" href="#update-your-code" title="本標題的永久連結">¶</a></h3>
+<h3>Update your code<a class="headerlink" href="#update-your-code" title="本標題的永久連結">¶</a></h3>
 <p>Once you feel like you know what is different in Python 3 compared to Python 2,
 it's time to update your code! You have a choice between two tools in porting
 your code automatically: <a class="reference external" href="http://python-future.org/automatic_conversion.html">Futurize</a> and <a class="reference external" href="https://python-modernize.readthedocs.io/">Modernize</a>. Which tool you choose will
@@ -579,16 +581,17 @@ to make sure everything functions as expected in both versions of Python.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Python 2 的程式碼移植到Python 3</a><ul>
-<li><a class="reference internal" href="#the-short-explanation">簡短的說明</a></li>
-<li><a class="reference internal" href="#details">詳細的</a><ul>
-<li><a class="reference internal" href="#drop-support-for-python-2-6-and-older">向下支援Python 2.6和更舊的版本</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Porting Python 2 Code to Python 3</a><ul>
+<li><a class="reference internal" href="#the-short-explanation">The Short Explanation</a></li>
+<li><a class="reference internal" href="#details">Details</a><ul>
+<li><a class="reference internal" href="#drop-support-for-python-2-6-and-older">Drop support for Python 2.6 and older</a></li>
 <li><a class="reference internal" href="#make-sure-you-specify-the-proper-version-support-in-your-setup-py-file">Make sure you specify the proper version support in your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file</a></li>
-<li><a class="reference internal" href="#have-good-test-coverage">有好的測試覆蓋率</a></li>
-<li><a class="reference internal" href="#learn-the-differences-between-python-2-3">瞭解Python 2 &amp; 3的差異</a></li>
-<li><a class="reference internal" href="#update-your-code">更新你的程式碼</a><ul>
+<li><a class="reference internal" href="#have-good-test-coverage">Have good test coverage</a></li>
+<li><a class="reference internal" href="#learn-the-differences-between-python-2-3">Learn the differences between Python 2 &amp; 3</a></li>
+<li><a class="reference internal" href="#update-your-code">Update your code</a><ul>
 <li><a class="reference internal" href="#division">Division</a></li>
 <li><a class="reference internal" href="#text-versus-binary-data">Text versus binary data</a></li>
 <li><a class="reference internal" href="#use-feature-detection-instead-of-version-detection">Use feature detection instead of version detection</a></li>
@@ -605,18 +608,23 @@ to make sure everything functions as expected in both versions of Python.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">Python HOWTOs</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="cporting.html"
-                        title="下一章">遷移延伸模組到 Python 3</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="index.html"
+                          title="上一章">Python HOWTOs</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="cporting.html"
+                          title="下一章">Porting Extension Modules to Python 3</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/pyporting.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/pyporting.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -636,7 +644,7 @@ to make sure everything functions as expected in both versions of Python.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="cporting.html" title="遷移延伸模組到 Python 3"
+          <a href="cporting.html" title="Porting Extension Modules to Python 3"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="index.html" title="Python HOWTOs"
@@ -651,14 +659,12 @@ to make sure everything functions as expected in both versions of Python.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python HOWTOs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Python 2 的程式碼移植到Python 3</a></li>
+        <li class="nav-item nav-item-this"><a href="">Porting Python 2 Code to Python 3</a></li>
                 <li class="right">
                     
 
@@ -676,25 +682,25 @@ to make sure everything functions as expected in both versions of Python.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

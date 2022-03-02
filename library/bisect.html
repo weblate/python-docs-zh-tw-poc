@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>bisect --- 陣列二分演算法 (Array bisection algorithm) &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bisect --- Array bisection algorithm &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="array --- 高效率的數值型態陣列" href="array.html" />
-    <link rel="prev" title="heapq --- 堆積佇列 (heap queue) 演算法" href="heapq.html" />
+    <link rel="next" title="array --- Efficient arrays of numeric values" href="array.html" />
+    <link rel="prev" title="heapq --- Heap queue algorithm" href="heapq.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/bisect.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,27 +70,34 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- 陣列二分演算法 (Array bisection algorithm)</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- Array bisection algorithm</a><ul>
+<li><a class="reference internal" href="#performance-notes">Performance Notes</a></li>
 <li><a class="reference internal" href="#searching-sorted-lists">Searching Sorted Lists</a></li>
-<li><a class="reference internal" href="#other-examples">Other Examples</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="heapq.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">heapq</span></code> --- 堆積佇列 (heap queue) 演算法</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="array.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- 高效率的數值型態陣列</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="heapq.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">heapq</span></code> --- Heap queue algorithm</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="array.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- Efficient arrays of numeric values</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/bisect.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/bisect.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -113,10 +118,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="array.html" title="array --- 高效率的數值型態陣列"
+          <a href="array.html" title="array --- Efficient arrays of numeric values"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="heapq.html" title="heapq --- 堆積佇列 (heap queue) 演算法"
+          <a href="heapq.html" title="heapq --- Heap queue algorithm"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -128,15 +133,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">Data Types</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- 陣列二分演算法 (Array bisection algorithm)</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- Array bisection algorithm</a></li>
                 <li class="right">
                     
 
@@ -160,48 +163,120 @@
           <div class="body" role="main">
             
   <section id="module-bisect">
-<span id="bisect-array-bisection-algorithm"></span><h1><a class="reference internal" href="#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code></a> --- 陣列二分演算法 (Array bisection algorithm)<a class="headerlink" href="#module-bisect" title="本標題的永久連結">¶</a></h1>
-<p><strong>原始碼：</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/bisect.py">Lib/bisect.py</a></p>
+<span id="bisect-array-bisection-algorithm"></span><h1><a class="reference internal" href="#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code></a> --- Array bisection algorithm<a class="headerlink" href="#module-bisect" title="本標題的永久連結">¶</a></h1>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/bisect.py">Lib/bisect.py</a></p>
 <hr class="docutils" />
-<p>這個模組維護一個已經排序過的 list ，當我們每次做完插入後不需要再次排序整個 list 。一個很長的 list 的比較操作很花費時間，為了改進這點，這個模組是其中一個常用的方法。這個模組被命名為 <a class="reference internal" href="#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code></a> 來自他使用一個基礎的 bisection 演算法實作。模組的原始碼是這個演算法的一個完善的實作（邊界條件已經是正確的了）。</p>
-<p>此模組提供下面的函式</p>
+<p>This module provides support for maintaining a list in sorted order without
+having to sort the list after each insertion.  For long lists of items with
+expensive comparison operations, this can be an improvement over the more common
+approach.  The module is called <a class="reference internal" href="#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code></a> because it uses a basic bisection
+algorithm to do its work.  The source code may be most useful as a working
+example of the algorithm (the boundary conditions are already right!).</p>
+<p>The following functions are provided:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="bisect.bisect_left">
-<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">bisect_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect_left" title="本定義的永久連結">¶</a></dt>
-<dd><p>在 <em>a</em> 當中找到一個位置，讓 <em>x</em>  插入後 <em>a</em> 仍然是排序好的。參數 <em>lo</em> 和 <em>hi</em> 用來指定 list 中應該被考慮的子區間，預設是考慮整個 list 。如果 <em>a</em> 裡面已經有 <em>x</em> 出現，插入的位置會在所有 <em>x</em> 的前面（左邊）。回傳值可以被當作 <code class="docutils literal notranslate"><span class="pre">list.insert()</span></code> 的第一個參數，但列表 <em>a</em> 必須先排序過。</p>
-<p>回傳的插入位置 <em>i</em> 將陣列 <em>a</em> 分為兩半，使得 <code class="docutils literal notranslate"><span class="pre">all(val</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">a[lo:i])</span></code> 都在左側且 <code class="docutils literal notranslate"><span class="pre">all(val</span> <span class="pre">&gt;=</span> <span class="pre">x</span> <span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">a[i:hi])</span></code> 都在右側。</p>
+<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">bisect_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect_left" title="本定義的永久連結">¶</a></dt>
+<dd><p>Locate the insertion point for <em>x</em> in <em>a</em> to maintain sorted order.
+The parameters <em>lo</em> and <em>hi</em> may be used to specify a subset of the list
+which should be considered; by default the entire list is used.  If <em>x</em> is
+already present in <em>a</em>, the insertion point will be before (to the left of)
+any existing entries.  The return value is suitable for use as the first
+parameter to <code class="docutils literal notranslate"><span class="pre">list.insert()</span></code> assuming that <em>a</em> is already sorted.</p>
+<p>The returned insertion point <em>i</em> partitions the array <em>a</em> into two halves so
+that <code class="docutils literal notranslate"><span class="pre">all(val</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">a[lo</span> <span class="pre">:</span> <span class="pre">i])</span></code> for the left side and
+<code class="docutils literal notranslate"><span class="pre">all(val</span> <span class="pre">&gt;=</span> <span class="pre">x</span> <span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">a[i</span> <span class="pre">:</span> <span class="pre">hi])</span></code> for the right side.</p>
+<p><em>key</em> specifies a <a class="reference internal" href="../glossary.html#term-key-function"><span class="xref std std-term">key function</span></a> of one argument that is used to
+extract a comparison key from each input element.  The default value is
+<code class="docutils literal notranslate"><span class="pre">None</span></code> (compare the elements directly).</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added the <em>key</em> parameter.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="bisect.bisect_right">
-<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">bisect_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect_right" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">bisect_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect_right" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py" id="bisect.bisect">
-<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">bisect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect" title="本定義的永久連結">¶</a></dt>
-<dd><p>類似 <a class="reference internal" href="#bisect.bisect_left" title="bisect.bisect_left"><code class="xref py py-func docutils literal notranslate"><span class="pre">bisect_left()</span></code></a> ，但回傳的插入位置會在所有 <em>a</em> 當中的 <em>x</em> 的後面（右邊）。</p>
-<p>回傳的插入位置 <em>i</em> 將陣列 <em>a</em> 分為兩半，使得 <code class="docutils literal notranslate"><span class="pre">all(val</span> <span class="pre">&lt;=</span> <span class="pre">x</span> <span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">a[lo:i])</span></code> 都在左側且 <code class="docutils literal notranslate"><span class="pre">all(val</span> <span class="pre">&gt;</span> <span class="pre">x</span> <span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">a[i:hi])</span></code> 都在右側。</p>
+<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">bisect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect" title="本定義的永久連結">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#bisect.bisect_left" title="bisect.bisect_left"><code class="xref py py-func docutils literal notranslate"><span class="pre">bisect_left()</span></code></a>, but returns an insertion point which comes
+after (to the right of) any existing entries of <em>x</em> in <em>a</em>.</p>
+<p>The returned insertion point <em>i</em> partitions the array <em>a</em> into two halves so
+that <code class="docutils literal notranslate"><span class="pre">all(val</span> <span class="pre">&lt;=</span> <span class="pre">x</span> <span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">a[lo</span> <span class="pre">:</span> <span class="pre">i])</span></code> for the left side and
+<code class="docutils literal notranslate"><span class="pre">all(val</span> <span class="pre">&gt;</span> <span class="pre">x</span> <span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">a[i</span> <span class="pre">:</span> <span class="pre">hi])</span></code> for the right side.</p>
+<p><em>key</em> specifies a <a class="reference internal" href="../glossary.html#term-key-function"><span class="xref std std-term">key function</span></a> of one argument that is used to
+extract a comparison key from each input element.  The default value is
+<code class="docutils literal notranslate"><span class="pre">None</span></code> (compare the elements directly).</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added the <em>key</em> parameter.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="bisect.insort_left">
-<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">insort_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort_left" title="本定義的永久連結">¶</a></dt>
-<dd><p>不破壞 <em>a</em> 的排序下插入 <em>x</em> ，這等價於 <code class="docutils literal notranslate"><span class="pre">a.insert(bisect.bisect_left(a,</span> <span class="pre">x,</span> <span class="pre">lo,</span> <span class="pre">hi),</span> <span class="pre">x)</span></code>  ，注意 <em>a</em> 必須是已經排序過的 list 。注意搜尋只需要 O(log n) 時間而插入需要很慢的 O(n) 時間，這使得插入操作主導了需要的花費時間。</p>
+<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">insort_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort_left" title="本定義的永久連結">¶</a></dt>
+<dd><p>Insert <em>x</em> in <em>a</em> in sorted order.</p>
+<p><em>key</em> specifies a <a class="reference internal" href="../glossary.html#term-key-function"><span class="xref std std-term">key function</span></a> of one argument that is used to
+extract a comparison key from each input element.  The default value is
+<code class="docutils literal notranslate"><span class="pre">None</span></code> (compare the elements directly).</p>
+<p>This function first runs <a class="reference internal" href="#bisect.bisect_left" title="bisect.bisect_left"><code class="xref py py-func docutils literal notranslate"><span class="pre">bisect_left()</span></code></a> to locate an insertion point.
+Next, it runs the <code class="xref py py-meth docutils literal notranslate"><span class="pre">insert()</span></code> method on <em>a</em> to insert <em>x</em> at the
+appropriate position to maintain sort order.</p>
+<p>Keep in mind that the <code class="docutils literal notranslate"><span class="pre">O(log</span> <span class="pre">n)</span></code> search is dominated by the slow O(n)
+insertion step.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added the <em>key</em> parameter.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="bisect.insort_right">
-<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">insort_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort_right" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">insort_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort_right" title="本定義的永久連結">¶</a></dt>
 <dt class="sig sig-object py" id="bisect.insort">
-<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">insort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort" title="本定義的永久連結">¶</a></dt>
-<dd><p>類似 <a class="reference internal" href="#bisect.insort_left" title="bisect.insort_left"><code class="xref py py-func docutils literal notranslate"><span class="pre">insort_left()</span></code></a> ，但插入的位置會在所有 <em>a</em> 當中的 <em>x</em> 的後面（右邊）。</p>
+<span class="sig-prename descclassname"><span class="pre">bisect.</span></span><span class="sig-name descname"><span class="pre">insort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">len(a)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort" title="本定義的永久連結">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#bisect.insort_left" title="bisect.insort_left"><code class="xref py py-func docutils literal notranslate"><span class="pre">insort_left()</span></code></a>, but inserting <em>x</em> in <em>a</em> after any existing
+entries of <em>x</em>.</p>
+<p><em>key</em> specifies a <a class="reference internal" href="../glossary.html#term-key-function"><span class="xref std std-term">key function</span></a> of one argument that is used to
+extract a comparison key from each input element.  The default value is
+<code class="docutils literal notranslate"><span class="pre">None</span></code> (compare the elements directly).</p>
+<p>This function first runs <a class="reference internal" href="#bisect.bisect_right" title="bisect.bisect_right"><code class="xref py py-func docutils literal notranslate"><span class="pre">bisect_right()</span></code></a> to locate an insertion point.
+Next, it runs the <code class="xref py py-meth docutils literal notranslate"><span class="pre">insert()</span></code> method on <em>a</em> to insert <em>x</em> at the
+appropriate position to maintain sort order.</p>
+<p>Keep in mind that the <code class="docutils literal notranslate"><span class="pre">O(log</span> <span class="pre">n)</span></code> search is dominated by the slow O(n)
+insertion step.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added the <em>key</em> parameter.</p>
+</div>
 </dd></dl>
 
+<section id="performance-notes">
+<h2>Performance Notes<a class="headerlink" href="#performance-notes" title="本標題的永久連結">¶</a></h2>
+<p>When writing time sensitive code using <em>bisect()</em> and <em>insort()</em>, keep these
+thoughts in mind:</p>
+<ul class="simple">
+<li><p>Bisection is effective for searching ranges of values.
+For locating specific values, dictionaries are more performant.</p></li>
+<li><p>The <em>insort()</em> functions are <code class="docutils literal notranslate"><span class="pre">O(n)</span></code> because the logarithmic search step
+is dominated by the linear time insertion step.</p></li>
+<li><p>The search functions are stateless and discard key function results after
+they are used.  Consequently, if the search functions are used in a loop,
+the key function may be called again and again on the same array elements.
+If the key function isn't fast, consider wrapping it with
+<a class="reference internal" href="functools.html#functools.cache" title="functools.cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">functools.cache()</span></code></a> to avoid duplicate computations.  Alternatively,
+consider searching an array of precomputed keys to locate the insertion
+point (as shown in the examples section below).</p></li>
+</ul>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
-<p><a class="reference external" href="https://code.activestate.com/recipes/577197-sortedcollection/">SortedCollection recipe</a> that uses
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.grantjenks.com/docs/sortedcollections/">Sorted Collections</a> is a high performance
+module that uses <em>bisect</em> to managed sorted collections of data.</p></li>
+<li><p>The <a class="reference external" href="https://code.activestate.com/recipes/577197-sortedcollection/">SortedCollection recipe</a> uses
 bisect to build a full-featured collection class with straight-forward search
 methods and support for a key-function.  The keys are precomputed to save
-unnecessary calls to the key function during searches.</p>
+unnecessary calls to the key function during searches.</p></li>
+</ul>
 </div>
+</section>
 <section id="searching-sorted-lists">
 <h2>Searching Sorted Lists<a class="headerlink" href="#searching-sorted-lists" title="本標題的永久連結">¶</a></h2>
 <p>The above <a class="reference internal" href="#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-func docutils literal notranslate"><span class="pre">bisect()</span></code></a> functions are useful for finding insertion points but
@@ -245,8 +320,8 @@ lists:</p>
 </pre></div>
 </div>
 </section>
-<section id="other-examples">
-<h2>Other Examples<a class="headerlink" href="#other-examples" title="本標題的永久連結">¶</a></h2>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="本標題的永久連結">¶</a></h2>
 <p id="bisect-example">The <a class="reference internal" href="#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-func docutils literal notranslate"><span class="pre">bisect()</span></code></a> function can be useful for numeric table lookups. This
 example uses <a class="reference internal" href="#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-func docutils literal notranslate"><span class="pre">bisect()</span></code></a> to look up a letter grade for an exam score (say)
 based on a set of ordered numeric breakpoints: 90 and up is an 'A', 80 to 89 is
@@ -259,15 +334,11 @@ a 'B', and so on:</p>
 <span class="go">[&#39;F&#39;, &#39;A&#39;, &#39;C&#39;, &#39;C&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;]</span>
 </pre></div>
 </div>
-<p>Unlike the <a class="reference internal" href="functions.html#sorted" title="sorted"><code class="xref py py-func docutils literal notranslate"><span class="pre">sorted()</span></code></a> function, it does not make sense for the <a class="reference internal" href="#module-bisect" title="bisect: Array bisection algorithms for binary searching."><code class="xref py py-func docutils literal notranslate"><span class="pre">bisect()</span></code></a>
-functions to have <em>key</em> or <em>reversed</em> arguments because that would lead to an
-inefficient design (successive calls to bisect functions would not &quot;remember&quot;
-all of the previous key lookups).</p>
-<p>Instead, it is better to search a list of precomputed keys to find the index
-of the record in question:</p>
+<p>One technique to avoid repeated calls to a key function is to search a list of
+precomputed keys to find the index of a record:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>         <span class="c1"># precomputed list of keys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>       <span class="c1"># Or use operator.itemgetter(1).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>         <span class="c1"># Precompute a list of keys.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="p">[</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
 <span class="go">(&#39;black&#39;, 0)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="p">[</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
@@ -288,27 +359,34 @@ of the record in question:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- 陣列二分演算法 (Array bisection algorithm)</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- Array bisection algorithm</a><ul>
+<li><a class="reference internal" href="#performance-notes">Performance Notes</a></li>
 <li><a class="reference internal" href="#searching-sorted-lists">Searching Sorted Lists</a></li>
-<li><a class="reference internal" href="#other-examples">Other Examples</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="heapq.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">heapq</span></code> --- 堆積佇列 (heap queue) 演算法</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="array.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- 高效率的數值型態陣列</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="heapq.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">heapq</span></code> --- Heap queue algorithm</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="array.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- Efficient arrays of numeric values</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/bisect.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/bisect.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -328,10 +406,10 @@ of the record in question:</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="array.html" title="array --- 高效率的數值型態陣列"
+          <a href="array.html" title="array --- Efficient arrays of numeric values"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="heapq.html" title="heapq --- 堆積佇列 (heap queue) 演算法"
+          <a href="heapq.html" title="heapq --- Heap queue algorithm"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -343,15 +421,13 @@ of the record in question:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" >Data Types</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- 陣列二分演算法 (Array bisection algorithm)</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- Array bisection algorithm</a></li>
                 <li class="right">
                     
 
@@ -369,25 +445,25 @@ of the record in question:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

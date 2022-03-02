@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>statistics --- 數學統計函式 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>statistics --- Mathematical statistics functions &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="函式編程模組" href="functional.html" />
+    <link rel="next" title="Functional Programming Modules" href="functional.html" />
     <link rel="prev" title="random --- Generate pseudo-random numbers" href="random.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/statistics.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,12 +70,14 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- 數學統計函式</a><ul>
-<li><a class="reference internal" href="#averages-and-measures-of-central-location">平均值與中央位置量數</a></li>
-<li><a class="reference internal" href="#measures-of-spread">離度 (spread) 的測量</a></li>
-<li><a class="reference internal" href="#function-details">函式細節</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- Mathematical statistics functions</a><ul>
+<li><a class="reference internal" href="#averages-and-measures-of-central-location">Averages and measures of central location</a></li>
+<li><a class="reference internal" href="#measures-of-spread">Measures of spread</a></li>
+<li><a class="reference internal" href="#statistics-for-relations-between-two-inputs">Statistics for relations between two inputs</a></li>
+<li><a class="reference internal" href="#function-details">Function details</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 <li><a class="reference internal" href="#normaldist-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">NormalDist</span></code> objects</a><ul>
 <li><a class="reference internal" href="#normaldist-examples-and-recipes"><code class="xref py py-class docutils literal notranslate"><span class="pre">NormalDist</span></code> Examples and Recipes</a></li>
@@ -87,18 +87,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="random.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">random</span></code> --- Generate pseudo-random numbers</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="functional.html"
-                        title="下一章">函式編程模組</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="random.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">random</span></code> --- Generate pseudo-random numbers</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="functional.html"
+                          title="下一章">Functional Programming Modules</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/statistics.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/statistics.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,7 +124,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="functional.html" title="函式編程模組"
+          <a href="functional.html" title="Functional Programming Modules"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="random.html" title="random --- Generate pseudo-random numbers"
@@ -134,15 +139,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="numeric.html" accesskey="U">數值與數學模組</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- 數學統計函式</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="numeric.html" accesskey="U">Numeric and Mathematical Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- Mathematical statistics functions</a></li>
                 <li class="right">
                     
 
@@ -166,11 +169,11 @@
           <div class="body" role="main">
             
   <section id="module-statistics">
-<span id="statistics-mathematical-statistics-functions"></span><h1><a class="reference internal" href="#module-statistics" title="statistics: Mathematical statistics functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code></a> --- 數學統計函式<a class="headerlink" href="#module-statistics" title="本標題的永久連結">¶</a></h1>
+<span id="statistics-mathematical-statistics-functions"></span><h1><a class="reference internal" href="#module-statistics" title="statistics: Mathematical statistics functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code></a> --- Mathematical statistics functions<a class="headerlink" href="#module-statistics" title="本標題的永久連結">¶</a></h1>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/statistics.py">Lib/statistics.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/statistics.py">Lib/statistics.py</a></p>
 <hr class="docutils" />
 <p>This module provides functions for calculating mathematical statistics of
 numeric (<a class="reference internal" href="numbers.html#numbers.Real" title="numbers.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>-valued) data.</p>
@@ -187,8 +190,9 @@ and implementation-dependent.  If your input data consists of mixed types,
 you may be able to use <a class="reference internal" href="functions.html#map" title="map"><code class="xref py py-func docutils literal notranslate"><span class="pre">map()</span></code></a> to ensure a consistent result, for
 example: <code class="docutils literal notranslate"><span class="pre">map(float,</span> <span class="pre">input_data)</span></code>.</p>
 <section id="averages-and-measures-of-central-location">
-<h2>平均值與中央位置量數<a class="headerlink" href="#averages-and-measures-of-central-location" title="本標題的永久連結">¶</a></h2>
-<p>這些函式計算來自一個母體或樣本的平均值或代表值。</p>
+<h2>Averages and measures of central location<a class="headerlink" href="#averages-and-measures-of-central-location" title="本標題的永久連結">¶</a></h2>
+<p>These functions calculate an average or typical value from a population
+or sample.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 27%" />
@@ -196,7 +200,7 @@ example: <code class="docutils literal notranslate"><span class="pre">map(float,
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#statistics.mean" title="statistics.mean"><code class="xref py py-func docutils literal notranslate"><span class="pre">mean()</span></code></a></p></td>
-<td><p>數據的算術平均（平均值）。</p></td>
+<td><p>Arithmetic mean (&quot;average&quot;) of data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#statistics.fmean" title="statistics.fmean"><code class="xref py py-func docutils literal notranslate"><span class="pre">fmean()</span></code></a></p></td>
 <td><p>Fast, floating point arithmetic mean.</p></td>
@@ -208,22 +212,22 @@ example: <code class="docutils literal notranslate"><span class="pre">map(float,
 <td><p>Harmonic mean of data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#statistics.median" title="statistics.median"><code class="xref py py-func docutils literal notranslate"><span class="pre">median()</span></code></a></p></td>
-<td><p>數據的中位數（中間值）。</p></td>
+<td><p>Median (middle value) of data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#statistics.median_low" title="statistics.median_low"><code class="xref py py-func docutils literal notranslate"><span class="pre">median_low()</span></code></a></p></td>
-<td><p>數據中較小的中位數。</p></td>
+<td><p>Low median of data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#statistics.median_high" title="statistics.median_high"><code class="xref py py-func docutils literal notranslate"><span class="pre">median_high()</span></code></a></p></td>
-<td><p>數據中較大的中位數。</p></td>
+<td><p>High median of data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#statistics.median_grouped" title="statistics.median_grouped"><code class="xref py py-func docutils literal notranslate"><span class="pre">median_grouped()</span></code></a></p></td>
-<td><p>分組數據的中位數或50%處。</p></td>
+<td><p>Median, or 50th percentile, of grouped data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#statistics.mode" title="statistics.mode"><code class="xref py py-func docutils literal notranslate"><span class="pre">mode()</span></code></a></p></td>
 <td><p>Single mode (most common value) of discrete or nominal data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#statistics.multimode" title="statistics.multimode"><code class="xref py py-func docutils literal notranslate"><span class="pre">multimode()</span></code></a></p></td>
-<td><p>List of modes (most common values) of discrete or nomimal data.</p></td>
+<td><p>List of modes (most common values) of discrete or nominal data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#statistics.quantiles" title="statistics.quantiles"><code class="xref py py-func docutils literal notranslate"><span class="pre">quantiles()</span></code></a></p></td>
 <td><p>Divide data into intervals with equal probability.</p></td>
@@ -232,8 +236,9 @@ example: <code class="docutils literal notranslate"><span class="pre">map(float,
 </table>
 </section>
 <section id="measures-of-spread">
-<h2>離度 (spread) 的測量<a class="headerlink" href="#measures-of-spread" title="本標題的永久連結">¶</a></h2>
-<p>這些函式計算母體或樣本偏離平均值的程度。</p>
+<h2>Measures of spread<a class="headerlink" href="#measures-of-spread" title="本標題的永久連結">¶</a></h2>
+<p>These functions calculate a measure of how much the population or sample
+tends to deviate from the typical or average values.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -241,22 +246,43 @@ example: <code class="docutils literal notranslate"><span class="pre">map(float,
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#statistics.pstdev" title="statistics.pstdev"><code class="xref py py-func docutils literal notranslate"><span class="pre">pstdev()</span></code></a></p></td>
-<td><p>數據的母體標準差</p></td>
+<td><p>Population standard deviation of data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#statistics.pvariance" title="statistics.pvariance"><code class="xref py py-func docutils literal notranslate"><span class="pre">pvariance()</span></code></a></p></td>
-<td><p>數據的母體變異數</p></td>
+<td><p>Population variance of data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#statistics.stdev" title="statistics.stdev"><code class="xref py py-func docutils literal notranslate"><span class="pre">stdev()</span></code></a></p></td>
-<td><p>數據的樣本標準差</p></td>
+<td><p>Sample standard deviation of data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#statistics.variance" title="statistics.variance"><code class="xref py py-func docutils literal notranslate"><span class="pre">variance()</span></code></a></p></td>
-<td><p>數據的樣本變異數</p></td>
+<td><p>Sample variance of data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="statistics-for-relations-between-two-inputs">
+<h2>Statistics for relations between two inputs<a class="headerlink" href="#statistics-for-relations-between-two-inputs" title="本標題的永久連結">¶</a></h2>
+<p>These functions calculate statistics regarding relations between two inputs.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#statistics.covariance" title="statistics.covariance"><code class="xref py py-func docutils literal notranslate"><span class="pre">covariance()</span></code></a></p></td>
+<td><p>Sample covariance for two variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#statistics.correlation" title="statistics.correlation"><code class="xref py py-func docutils literal notranslate"><span class="pre">correlation()</span></code></a></p></td>
+<td><p>Pearson's correlation coefficient for two variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#statistics.linear_regression" title="statistics.linear_regression"><code class="xref py py-func docutils literal notranslate"><span class="pre">linear_regression()</span></code></a></p></td>
+<td><p>Slope and intercept for simple linear regression.</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="function-details">
-<h2>函式細節<a class="headerlink" href="#function-details" title="本標題的永久連結">¶</a></h2>
+<h2>Function details<a class="headerlink" href="#function-details" title="本標題的永久連結">¶</a></h2>
 <p>Note: The functions do not require the data given to them to be sorted.
 However, for reading convenience, most of the examples show sorted sequences.</p>
 <dl class="py function">
@@ -285,10 +311,9 @@ the data.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>The mean is strongly affected by outliers and is not a robust estimator
-for central location: the mean is not necessarily a typical example of
-the data points.  For more robust measures of central location, see
-<a class="reference internal" href="#statistics.median" title="statistics.median"><code class="xref py py-func docutils literal notranslate"><span class="pre">median()</span></code></a> and <a class="reference internal" href="#statistics.mode" title="statistics.mode"><code class="xref py py-func docutils literal notranslate"><span class="pre">mode()</span></code></a>.</p>
+<p>The mean is strongly affected by <a class="reference external" href="https://en.wikipedia.org/wiki/Outlier">outliers</a> and is not necessarily a
+typical example of the data points. For a more robust, although less
+efficient, measure of <a class="reference external" href="https://en.wikipedia.org/wiki/Central_tendency">central tendency</a>, see <a class="reference internal" href="#statistics.median" title="statistics.median"><code class="xref py py-func docutils literal notranslate"><span class="pre">median()</span></code></a>.</p>
 <p>The sample mean gives an unbiased estimate of the true population mean,
 so that when taken on average over all the possible samples,
 <code class="docutils literal notranslate"><span class="pre">mean(sample)</span></code> converges on the true mean of the entire population.  If
@@ -309,7 +334,7 @@ dataset is empty, raises a <a class="reference internal" href="#statistics.Stati
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -330,43 +355,46 @@ The <em>data</em> may be a sequence or iterable.</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="statistics.harmonic_mean">
-<span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">harmonic_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.harmonic_mean" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">harmonic_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.harmonic_mean" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return the harmonic mean of <em>data</em>, a sequence or iterable of
-real-valued numbers.</p>
-<p>The harmonic mean, sometimes called the subcontrary mean, is the
-reciprocal of the arithmetic <a class="reference internal" href="#statistics.mean" title="statistics.mean"><code class="xref py py-func docutils literal notranslate"><span class="pre">mean()</span></code></a> of the reciprocals of the
-data. For example, the harmonic mean of three values <em>a</em>, <em>b</em> and <em>c</em>
-will be equivalent to <code class="docutils literal notranslate"><span class="pre">3/(1/a</span> <span class="pre">+</span> <span class="pre">1/b</span> <span class="pre">+</span> <span class="pre">1/c)</span></code>.  If one of the values
-is zero, the result will be zero.</p>
+real-valued numbers.  If <em>weights</em> is omitted or <em>None</em>, then
+equal weighting is assumed.</p>
+<p>The harmonic mean is the reciprocal of the arithmetic <a class="reference internal" href="#statistics.mean" title="statistics.mean"><code class="xref py py-func docutils literal notranslate"><span class="pre">mean()</span></code></a> of the
+reciprocals of the data. For example, the harmonic mean of three values <em>a</em>,
+<em>b</em> and <em>c</em> will be equivalent to <code class="docutils literal notranslate"><span class="pre">3/(1/a</span> <span class="pre">+</span> <span class="pre">1/b</span> <span class="pre">+</span> <span class="pre">1/c)</span></code>.  If one of the
+values is zero, the result will be zero.</p>
 <p>The harmonic mean is a type of average, a measure of the central
 location of the data.  It is often appropriate when averaging
-rates or ratios, for example speeds.</p>
+ratios or rates, for example speeds.</p>
 <p>Suppose a car travels 10 km at 40 km/hr, then another 10 km at 60 km/hr.
 What is the average speed?</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">harmonic_mean</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
 <span class="go">48.0</span>
 </pre></div>
 </div>
-<p>Suppose an investor purchases an equal value of shares in each of
-three companies, with P/E (price/earning) ratios of 2.5, 3 and 10.
-What is the average P/E ratio for the investor's portfolio?</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">harmonic_mean</span><span class="p">([</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>  <span class="c1"># For an equal investment portfolio.</span>
-<span class="go">3.6</span>
+<p>Suppose a car travels 40 km/hr for 5 km, and when traffic clears,
+speeds-up to 60 km/hr for the remaining 30 km of the journey. What
+is the average speed?</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">harmonic_mean</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="go">56.0</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="#statistics.StatisticsError" title="statistics.StatisticsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StatisticsError</span></code></a> is raised if <em>data</em> is empty, or any element
-is less than zero.</p>
+<p><a class="reference internal" href="#statistics.StatisticsError" title="statistics.StatisticsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StatisticsError</span></code></a> is raised if <em>data</em> is empty, any element
+is less than zero, or if the weighted sum isn't positive.</p>
 <p>The current algorithm has an early-out when it encounters a zero
 in the input.  This means that the subsequent inputs are not tested
 for validity.  (This behavior may change in the future.)</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.6 版本新加入.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span>Added support for <em>weights</em>.</p>
 </div>
 </dd></dl>
 
@@ -499,7 +527,7 @@ also applies to nominal (non-numeric) data:</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Now handles multimodal datasets by returning the first mode encountered.
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Now handles multimodal datasets by returning the first mode encountered.
 Formerly, it raised <a class="reference internal" href="#statistics.StatisticsError" title="statistics.StatisticsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StatisticsError</span></code></a> when more than one mode was
 found.</p>
 </div>
@@ -518,7 +546,7 @@ there are multiple modes or an empty list if the <em>data</em> is empty:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -692,7 +720,90 @@ values, the method sorts them and assigns the following percentiles:
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="statistics.covariance">
+<span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">covariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.covariance" title="本定義的永久連結">¶</a></dt>
+<dd><p>Return the sample covariance of two inputs <em>x</em> and <em>y</em>. Covariance
+is a measure of the joint variability of two inputs.</p>
+<p>Both inputs must be of the same length (no less than two), otherwise
+<a class="reference internal" href="#statistics.StatisticsError" title="statistics.StatisticsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StatisticsError</span></code></a> is raised.</p>
+<p>Examples:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">covariance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">0.75</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">covariance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">-7.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">covariance</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">-7.5</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="statistics.correlation">
+<span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">correlation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.correlation" title="本定義的永久連結">¶</a></dt>
+<dd><p>Return the <a class="reference external" href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Pearson's correlation coefficient</a>
+for two inputs. Pearson's correlation coefficient <em>r</em> takes values
+between -1 and +1. It measures the strength and direction of the linear
+relationship, where +1 means very strong, positive linear relationship,
+-1 very strong, negative linear relationship, and 0 no linear relationship.</p>
+<p>Both inputs must be of the same length (no less than two), and need
+not to be constant, otherwise <a class="reference internal" href="#statistics.StatisticsError" title="statistics.StatisticsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StatisticsError</span></code></a> is raised.</p>
+<p>Examples:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">correlation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">correlation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">-1.0</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="statistics.linear_regression">
+<span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">linear_regression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.linear_regression" title="本定義的永久連結">¶</a></dt>
+<dd><p>Return the slope and intercept of <a class="reference external" href="https://en.wikipedia.org/wiki/Simple_linear_regression">simple linear regression</a>
+parameters estimated using ordinary least squares. Simple linear
+regression describes the relationship between an independent variable <em>x</em> and
+a dependent variable <em>y</em> in terms of this linear function:</p>
+<blockquote>
+<div><p><em>y = slope * x + intercept + noise</em></p>
+</div></blockquote>
+<p>where <code class="docutils literal notranslate"><span class="pre">slope</span></code> and <code class="docutils literal notranslate"><span class="pre">intercept</span></code> are the regression parameters that are
+estimated, and <code class="docutils literal notranslate"><span class="pre">noise</span></code> represents the
+variability of the data that was not explained by the linear regression
+(it is equal to the difference between predicted and actual values
+of the dependent variable).</p>
+<p>Both inputs must be of the same length (no less than two), and
+the independent variable <em>x</em> cannot be constant;
+otherwise a <a class="reference internal" href="#statistics.StatisticsError" title="statistics.StatisticsError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StatisticsError</span></code></a> is raised.</p>
+<p>For example, we can use the <a class="reference external" href="https://en.wikipedia.org/wiki/Monty_Python#Films">release dates of the Monty
+Python films</a>
+to predict the cumulative number of Monty Python films
+that would have been produced by 2019
+assuming that they had kept the pace.</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">year</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1971</span><span class="p">,</span> <span class="mi">1975</span><span class="p">,</span> <span class="mi">1979</span><span class="p">,</span> <span class="mi">1982</span><span class="p">,</span> <span class="mi">1983</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">films_total</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">films_total</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">slope</span> <span class="o">*</span> <span class="mi">2019</span> <span class="o">+</span> <span class="n">intercept</span><span class="p">)</span>
+<span class="go">16</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -702,7 +813,7 @@ values, the method sorts them and assigns the following percentiles:
 <p>A single exception is defined:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="statistics.StatisticsError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">StatisticsError</span></span><a class="headerlink" href="#statistics.StatisticsError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">StatisticsError</span></span><a class="headerlink" href="#statistics.StatisticsError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Subclass of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> for statistics-related exceptions.</p>
 </dd></dl>
 
@@ -717,7 +828,7 @@ measurements as a single entity.</p>
 of applications in statistics.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="statistics.NormalDist">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">NormalDist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.NormalDist" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">statistics.</span></span><span class="sig-name descname"><span class="pre">NormalDist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.NormalDist" title="本定義的永久連結">¶</a></dt>
 <dd><p>Returns a new <em>NormalDist</em> object where <em>mu</em> represents the <a class="reference external" href="https://en.wikipedia.org/wiki/Arithmetic_mean">arithmetic
 mean</a> and <em>sigma</em>
 represents the <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a>.</p>
@@ -759,7 +870,7 @@ distribution. Equal to the square of the standard deviation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="statistics.NormalDist.from_samples">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_samples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.NormalDist.from_samples" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_samples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.NormalDist.from_samples" title="本定義的永久連結">¶</a></dt>
 <dd><p>Makes a normal distribution instance with <em>mu</em> and <em>sigma</em> parameters
 estimated from the <em>data</em> using <a class="reference internal" href="#statistics.fmean" title="statistics.fmean"><code class="xref py py-func docutils literal notranslate"><span class="pre">fmean()</span></code></a> and <a class="reference internal" href="#statistics.stdev" title="statistics.stdev"><code class="xref py py-func docutils literal notranslate"><span class="pre">stdev()</span></code></a>.</p>
 <p>The <em>data</em> can be any <a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a> and should consist of values
@@ -840,7 +951,7 @@ describing <em>x</em> in terms of the number of standard deviations
 above or below the mean of the normal distribution:
 <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">-</span> <span class="pre">mean)</span> <span class="pre">/</span> <span class="pre">stdev</span></code>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -868,7 +979,7 @@ represented as instances of <a class="reference internal" href="#statistics.Norm
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -990,12 +1101,14 @@ feature measurements given the gender:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- 數學統計函式</a><ul>
-<li><a class="reference internal" href="#averages-and-measures-of-central-location">平均值與中央位置量數</a></li>
-<li><a class="reference internal" href="#measures-of-spread">離度 (spread) 的測量</a></li>
-<li><a class="reference internal" href="#function-details">函式細節</a></li>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- Mathematical statistics functions</a><ul>
+<li><a class="reference internal" href="#averages-and-measures-of-central-location">Averages and measures of central location</a></li>
+<li><a class="reference internal" href="#measures-of-spread">Measures of spread</a></li>
+<li><a class="reference internal" href="#statistics-for-relations-between-two-inputs">Statistics for relations between two inputs</a></li>
+<li><a class="reference internal" href="#function-details">Function details</a></li>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 <li><a class="reference internal" href="#normaldist-objects"><code class="xref py py-class docutils literal notranslate"><span class="pre">NormalDist</span></code> objects</a><ul>
 <li><a class="reference internal" href="#normaldist-examples-and-recipes"><code class="xref py py-class docutils literal notranslate"><span class="pre">NormalDist</span></code> Examples and Recipes</a></li>
@@ -1005,18 +1118,23 @@ feature measurements given the gender:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="random.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">random</span></code> --- Generate pseudo-random numbers</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="functional.html"
-                        title="下一章">函式編程模組</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="random.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">random</span></code> --- Generate pseudo-random numbers</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="functional.html"
+                          title="下一章">Functional Programming Modules</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/statistics.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/statistics.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1036,7 +1154,7 @@ feature measurements given the gender:</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="functional.html" title="函式編程模組"
+          <a href="functional.html" title="Functional Programming Modules"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="random.html" title="random --- Generate pseudo-random numbers"
@@ -1051,15 +1169,13 @@ feature measurements given the gender:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="numeric.html" >數值與數學模組</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- 數學統計函式</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="numeric.html" >Numeric and Mathematical Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- Mathematical statistics functions</a></li>
                 <li class="right">
                     
 
@@ -1077,25 +1193,25 @@ feature measurements given the gender:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

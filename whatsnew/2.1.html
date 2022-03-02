@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New in Python 2.1 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New in Python 2.1 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="What&#39;s New in Python 2.2" href="2.2.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/2.1.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,10 +70,11 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.1</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#pep-227-nested-scopes">PEP 227: Nested Scopes</a></li>
 <li><a class="reference internal" href="#pep-236-future-directives">PEP 236: __future__ Directives</a></li>
 <li><a class="reference internal" href="#pep-207-rich-comparisons">PEP 207: Rich Comparisons</a></li>
@@ -94,18 +93,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.2.html"
-                        title="上一章">What's New in Python 2.2</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.0.html"
-                        title="下一章">What's New in Python 2.0</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.2.html"
+                          title="上一章">What's New in Python 2.2</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.0.html"
+                          title="下一章">What's New in Python 2.0</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.1.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.1.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -141,13 +145,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.1</a></li>
                 <li class="right">
                     
@@ -179,7 +181,7 @@
 </dd>
 </dl>
 <section id="introduction">
-<h2>簡介<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
 <p>This article explains the new features in Python 2.1.  While there aren't as
 many changes in 2.1 as there were in Python 2.0, there are still some pleasant
 surprises in store.  2.1 is the first release to be steered through the use of
@@ -425,7 +427,7 @@ now.  The warning can be suppressed by calling</p>
 </pre></div>
 </div>
 <p>This adds a filter that will apply only to warnings of the class
-<a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> triggered in the <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where the top-level script is run."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> module, and applies
+<a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a> triggered in the <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> module, and applies
 a regular expression to only match the message about the <code class="xref py py-mod docutils literal notranslate"><span class="pre">regex</span></code> module
 being deprecated, and will cause such warnings to be ignored.  Warnings can also
 be printed only once, printed every time the offending code is executed, or
@@ -560,7 +562,7 @@ exists.  If the object is deallocated, attempting to use a proxy will cause a
 <p>In Python 2.1, functions can now have arbitrary information attached to them.
 People were often using docstrings to hold information about functions and
 methods, because the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> attribute was the only way of attaching any
-information to a function.  For example, in the Zope Web application server,
+information to a function.  For example, in the Zope web application server,
 functions are marked as safe for public access by having a docstring, and in
 John Aycock's SPARK parsing framework, docstrings hold parts of the BNF grammar
 to be parsed.  This overloading is unfortunate, since docstrings are really
@@ -892,10 +894,11 @@ Hudson, Marc-André Lemburg, Fredrik Lundh, Neil Schemenauer, Thomas Wouters.</p
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.1</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#pep-227-nested-scopes">PEP 227: Nested Scopes</a></li>
 <li><a class="reference internal" href="#pep-236-future-directives">PEP 236: __future__ Directives</a></li>
 <li><a class="reference internal" href="#pep-207-rich-comparisons">PEP 207: Rich Comparisons</a></li>
@@ -914,18 +917,23 @@ Hudson, Marc-André Lemburg, Fredrik Lundh, Neil Schemenauer, Thomas Wouters.</p
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.2.html"
-                        title="上一章">What's New in Python 2.2</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.0.html"
-                        title="下一章">What's New in Python 2.0</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.2.html"
+                          title="上一章">What's New in Python 2.2</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.0.html"
+                          title="下一章">What's New in Python 2.0</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.1.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.1.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -960,13 +968,11 @@ Hudson, Marc-André Lemburg, Fredrik Lundh, Neil Schemenauer, Thomas Wouters.</p
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.1</a></li>
                 <li class="right">
                     
@@ -985,25 +991,25 @@ Hudson, Marc-André Lemburg, Fredrik Lundh, Neil Schemenauer, Thomas Wouters.</p
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

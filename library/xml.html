@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>XML 處理模組 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Processing Modules &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="html.entities --- Definitions of HTML general entities" href="html.entities.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/xml.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,27 +70,33 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">XML 處理模組</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">XML Processing Modules</a><ul>
 <li><a class="reference internal" href="#xml-vulnerabilities">XML vulnerabilities</a></li>
 <li><a class="reference internal" href="#the-defusedxml-package">The <code class="xref py py-mod docutils literal notranslate"><span class="pre">defusedxml</span></code> Package</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="html.entities.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">html.entities</span></code> --- Definitions of HTML general entities</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.etree.elementtree.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="html.entities.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">html.entities</span></code> --- Definitions of HTML general entities</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.etree.elementtree.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -128,15 +132,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" accesskey="U">Structured Markup Processing Tools</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">XML 處理模組</a></li>
+        <li class="nav-item nav-item-this"><a href="">XML Processing Modules</a></li>
                 <li class="right">
                     
 
@@ -160,8 +162,8 @@
           <div class="body" role="main">
             
   <section id="module-xml">
-<span id="xml-processing-modules"></span><span id="xml"></span><h1>XML 處理模組<a class="headerlink" href="#module-xml" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/xml/">Lib/xml/</a></p>
+<span id="xml-processing-modules"></span><span id="xml"></span><h1>XML Processing Modules<a class="headerlink" href="#module-xml" title="本標題的永久連結">¶</a></h1>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/xml/">Lib/xml/</a></p>
 <hr class="docutils" />
 <p>Python's interfaces for processing XML are grouped in the <code class="docutils literal notranslate"><span class="pre">xml</span></code> package.</p>
 <div class="admonition warning">
@@ -316,27 +318,33 @@ XML exploits such as XPath injection.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">XML 處理模組</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">XML Processing Modules</a><ul>
 <li><a class="reference internal" href="#xml-vulnerabilities">XML vulnerabilities</a></li>
 <li><a class="reference internal" href="#the-defusedxml-package">The <code class="xref py py-mod docutils literal notranslate"><span class="pre">defusedxml</span></code> Package</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="html.entities.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">html.entities</span></code> --- Definitions of HTML general entities</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.etree.elementtree.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="html.entities.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">html.entities</span></code> --- Definitions of HTML general entities</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.etree.elementtree.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -371,15 +379,13 @@ XML exploits such as XPath injection.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" >Structured Markup Processing Tools</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">XML 處理模組</a></li>
+        <li class="nav-item nav-item-this"><a href="">XML Processing Modules</a></li>
                 <li class="right">
                     
 
@@ -397,25 +403,25 @@ XML exploits such as XPath injection.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

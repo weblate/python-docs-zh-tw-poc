@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Logging Cookbook &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging Cookbook &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="如何使用正規表達式" href="regex.html" />
-    <link rel="prev" title="如何使用 Logging 模組" href="logging.html" />
+    <link rel="next" title="Regular Expression HOWTO" href="regex.html" />
+    <link rel="prev" title="Logging HOWTO" href="logging.html" />
     <link rel="canonical" href="https://docs.python.org/3/howto/logging-cookbook.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Logging Cookbook</a><ul>
 <li><a class="reference internal" href="#using-logging-in-multiple-modules">Using logging in multiple modules</a></li>
 <li><a class="reference internal" href="#logging-from-multiple-threads">Logging from multiple threads</a></li>
@@ -81,7 +80,10 @@
 <li><a class="reference internal" href="#logging-to-multiple-destinations">Logging to multiple destinations</a></li>
 <li><a class="reference internal" href="#configuration-server-example">Configuration server example</a></li>
 <li><a class="reference internal" href="#dealing-with-handlers-that-block">Dealing with handlers that block</a></li>
-<li><a class="reference internal" href="#sending-and-receiving-logging-events-across-a-network">Sending and receiving logging events across a network</a></li>
+<li><a class="reference internal" href="#sending-and-receiving-logging-events-across-a-network">Sending and receiving logging events across a network</a><ul>
+<li><a class="reference internal" href="#running-a-logging-socket-listener-in-production">Running a logging socket listener in production</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#adding-contextual-information-to-your-logging-output">Adding contextual information to your logging output</a><ul>
 <li><a class="reference internal" href="#using-loggeradapters-to-impart-contextual-information">Using LoggerAdapters to impart contextual information</a><ul>
 <li><a class="reference internal" href="#using-objects-other-than-dicts-to-pass-contextual-information">Using objects other than dicts to pass contextual information</a></li>
@@ -92,6 +94,7 @@
 </li>
 <li><a class="reference internal" href="#logging-to-a-single-file-from-multiple-processes">Logging to a single file from multiple processes</a><ul>
 <li><a class="reference internal" href="#using-concurrent-futures-processpoolexecutor">Using concurrent.futures.ProcessPoolExecutor</a></li>
+<li><a class="reference internal" href="#deploying-web-applications-using-gunicorn-and-uwsgi">Deploying Web applications using Gunicorn and uWSGI</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#using-file-rotation">Using file rotation</a></li>
@@ -129,18 +132,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="logging.html"
-                        title="上一章">如何使用 Logging 模組</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="regex.html"
-                        title="下一章">如何使用正規表達式</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="logging.html"
+                          title="上一章">Logging HOWTO</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="regex.html"
+                          title="下一章">Regular Expression HOWTO</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/logging-cookbook.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/logging-cookbook.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -161,10 +169,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="regex.html" title="如何使用正規表達式"
+          <a href="regex.html" title="Regular Expression HOWTO"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="logging.html" title="如何使用 Logging 模組"
+          <a href="logging.html" title="Logging HOWTO"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -176,10 +184,8 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python HOWTOs</a> &#187;</li>
@@ -210,7 +216,7 @@
 <span id="id1"></span><h1>Logging Cookbook<a class="headerlink" href="#logging-cookbook" title="本標題的永久連結">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
-<dd class="field-odd"><p>原文作者 Vinay Sajip &lt;vinay_sajip at red-dove dot com&gt;</p>
+<dd class="field-odd"><p>Vinay Sajip &lt;vinay_sajip at red-dove dot com&gt;</p>
 </dd>
 </dl>
 <p>This page contains a number of recipes related to logging, which have been found
@@ -516,7 +522,7 @@ configuration:</p>
 <section id="dealing-with-handlers-that-block">
 <h2>Dealing with handlers that block<a class="headerlink" href="#dealing-with-handlers-that-block" title="本標題的永久連結">¶</a></h2>
 <p>Sometimes you have to get your logging handlers to do their work without
-blocking the thread you're logging from. This is common in Web applications,
+blocking the thread you're logging from. This is common in web applications,
 though of course it also occurs in other scenarios.</p>
 <p>A common culprit which demonstrates sluggish behaviour is the
 <a class="reference internal" href="../library/logging.handlers.html#logging.handlers.SMTPHandler" title="logging.handlers.SMTPHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SMTPHandler</span></code></a>: sending emails can take a long time, for a
@@ -569,7 +575,7 @@ classes, which would eat up one thread per handler for no particular benefit.</p
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>Prior to Python 3.5, the <a class="reference internal" href="../library/logging.handlers.html#logging.handlers.QueueListener" title="logging.handlers.QueueListener"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueueListener</span></code></a> always passed every message
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>Prior to Python 3.5, the <a class="reference internal" href="../library/logging.handlers.html#logging.handlers.QueueListener" title="logging.handlers.QueueListener"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueueListener</span></code></a> always passed every message
 received from the queue to every handler it was initialized with. (This was
 because it was assumed that level filtering was all done on the other side,
 where the queue is filled.) From 3.5 onwards, this behaviour can be changed
@@ -712,6 +718,14 @@ these affect you, you can use an alternative serialization scheme by overriding
 the <code class="xref py py-meth docutils literal notranslate"><span class="pre">makePickle()</span></code> method and implementing your
 alternative there, as well as adapting the above script to use your alternative
 serialization.</p>
+<section id="running-a-logging-socket-listener-in-production">
+<h3>Running a logging socket listener in production<a class="headerlink" href="#running-a-logging-socket-listener-in-production" title="本標題的永久連結">¶</a></h3>
+<p>To run a logging listener in production, you may need to use a process-management tool
+such as <a class="reference external" href="http://supervisord.org/">Supervisor</a>. <a class="reference external" href="https://gist.github.com/vsajip/4b227eeec43817465ca835ca66f75e2b">Here</a> is a Gist which
+provides the bare-bones files to run the above functionality using Supervisor: you
+will need to change the <cite>/path/to/</cite> parts in the Gist to reflect the actual paths you
+want to use.</p>
+</section>
 </section>
 <section id="adding-contextual-information-to-your-logging-output">
 <span id="context-info"></span><h2>Adding contextual information to your logging output<a class="headerlink" href="#adding-contextual-information-to-your-logging-output" title="本標題的永久連結">¶</a></h2>
@@ -1126,6 +1140,15 @@ Instead of</p>
         <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">worker_process</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">worker_configurer</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="deploying-web-applications-using-gunicorn-and-uwsgi">
+<h3>Deploying Web applications using Gunicorn and uWSGI<a class="headerlink" href="#deploying-web-applications-using-gunicorn-and-uwsgi" title="本標題的永久連結">¶</a></h3>
+<p>When deploying Web applications using <a class="reference external" href="https://gunicorn.org/">Gunicorn</a> or <a class="reference external" href="https://uwsgi-docs.readthedocs.io/en/latest/">uWSGI</a> (or similar), multiple worker
+processes are created to handle client requests. In such environments, avoid creating
+file-based handlers directly in your web application. Instead, use a
+<a class="reference internal" href="../library/logging.handlers.html#logging.handlers.SocketHandler" title="logging.handlers.SocketHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocketHandler</span></code></a> to log from the web application to a listener in a separate
+process. This can be set up using a process management tool such as Supervisor - see
+<a class="reference internal" href="#running-a-logging-socket-listener-in-production">Running a logging socket listener in production</a> for more details.</p>
 </section>
 </section>
 <section id="using-file-rotation">
@@ -1786,11 +1809,11 @@ works:</p>
 </section>
 <section id="inserting-a-bom-into-messages-sent-to-a-sysloghandler">
 <h2>Inserting a BOM into messages sent to a SysLogHandler<a class="headerlink" href="#inserting-a-bom-into-messages-sent-to-a-sysloghandler" title="本標題的永久連結">¶</a></h2>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5424.html"><strong>RFC 5424</strong></a> requires that a
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5424.html"><strong>RFC 5424</strong></a> requires that a
 Unicode message be sent to a syslog daemon as a set of bytes which have the
 following structure: an optional pure-ASCII component, followed by a UTF-8 Byte
 Order Mark (BOM), followed by Unicode encoded using UTF-8. (See the
-<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5424.html#section-6"><strong>relevant section of the specification</strong></a>.)</p>
+<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5424.html#section-6"><strong>relevant section of the specification</strong></a>.)</p>
 <p>In Python 3.1, code was added to
 <a class="reference internal" href="../library/logging.handlers.html#logging.handlers.SysLogHandler" title="logging.handlers.SysLogHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">SysLogHandler</span></code></a> to insert a BOM into the message, but
 unfortunately, it was implemented incorrectly, with the BOM appearing at the
@@ -1798,7 +1821,7 @@ beginning of the message and hence not allowing any pure-ASCII component to
 appear before it.</p>
 <p>As this behaviour is broken, the incorrect BOM insertion code is being removed
 from Python 3.2.4 and later. However, it is not being replaced, and if you
-want to produce <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5424.html"><strong>RFC 5424</strong></a>-compliant messages which include a BOM, an optional
+want to produce <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5424.html"><strong>RFC 5424</strong></a>-compliant messages which include a BOM, an optional
 pure-ASCII sequence before it and arbitrary Unicode after it, encoded using
 UTF-8, then you need to do the following:</p>
 <ol class="arabic">
@@ -1820,7 +1843,7 @@ range, that's fine -- it will be encoded using UTF-8.</p></li>
 </ol>
 <p>The formatted message <em>will</em> be encoded using UTF-8 encoding by
 <code class="docutils literal notranslate"><span class="pre">SysLogHandler</span></code>. If you follow the above rules, you should be able to produce
-<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5424.html"><strong>RFC 5424</strong></a>-compliant messages. If you don't, logging may not complain, but your
+<span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5424.html"><strong>RFC 5424</strong></a>-compliant messages. If you don't, logging may not complain, but your
 messages will not be RFC 5424-compliant, and your syslog daemon may complain.</p>
 </section>
 <section id="implementing-structured-logging">
@@ -3050,8 +3073,9 @@ more fine-grained than that).</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Logging Cookbook</a><ul>
 <li><a class="reference internal" href="#using-logging-in-multiple-modules">Using logging in multiple modules</a></li>
 <li><a class="reference internal" href="#logging-from-multiple-threads">Logging from multiple threads</a></li>
@@ -3059,7 +3083,10 @@ more fine-grained than that).</p>
 <li><a class="reference internal" href="#logging-to-multiple-destinations">Logging to multiple destinations</a></li>
 <li><a class="reference internal" href="#configuration-server-example">Configuration server example</a></li>
 <li><a class="reference internal" href="#dealing-with-handlers-that-block">Dealing with handlers that block</a></li>
-<li><a class="reference internal" href="#sending-and-receiving-logging-events-across-a-network">Sending and receiving logging events across a network</a></li>
+<li><a class="reference internal" href="#sending-and-receiving-logging-events-across-a-network">Sending and receiving logging events across a network</a><ul>
+<li><a class="reference internal" href="#running-a-logging-socket-listener-in-production">Running a logging socket listener in production</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#adding-contextual-information-to-your-logging-output">Adding contextual information to your logging output</a><ul>
 <li><a class="reference internal" href="#using-loggeradapters-to-impart-contextual-information">Using LoggerAdapters to impart contextual information</a><ul>
 <li><a class="reference internal" href="#using-objects-other-than-dicts-to-pass-contextual-information">Using objects other than dicts to pass contextual information</a></li>
@@ -3070,6 +3097,7 @@ more fine-grained than that).</p>
 </li>
 <li><a class="reference internal" href="#logging-to-a-single-file-from-multiple-processes">Logging to a single file from multiple processes</a><ul>
 <li><a class="reference internal" href="#using-concurrent-futures-processpoolexecutor">Using concurrent.futures.ProcessPoolExecutor</a></li>
+<li><a class="reference internal" href="#deploying-web-applications-using-gunicorn-and-uwsgi">Deploying Web applications using Gunicorn and uWSGI</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#using-file-rotation">Using file rotation</a></li>
@@ -3107,18 +3135,23 @@ more fine-grained than that).</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="logging.html"
-                        title="上一章">如何使用 Logging 模組</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="regex.html"
-                        title="下一章">如何使用正規表達式</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="logging.html"
+                          title="上一章">Logging HOWTO</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="regex.html"
+                          title="下一章">Regular Expression HOWTO</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/logging-cookbook.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/logging-cookbook.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -3138,10 +3171,10 @@ more fine-grained than that).</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="regex.html" title="如何使用正規表達式"
+          <a href="regex.html" title="Regular Expression HOWTO"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="logging.html" title="如何使用 Logging 模組"
+          <a href="logging.html" title="Logging HOWTO"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -3153,10 +3186,8 @@ more fine-grained than that).</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python HOWTOs</a> &#187;</li>
@@ -3178,25 +3209,25 @@ more fine-grained than that).</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>netrc --- netrc file processing &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netrc --- netrc file processing &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="configparser --- Configuration file parser" href="configparser.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/netrc.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,26 +70,32 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">netrc</span></code> --- netrc file processing</a><ul>
 <li><a class="reference internal" href="#netrc-objects">netrc Objects</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="configparser.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xdrlib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code> --- Encode and decode XDR data</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="configparser.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xdrlib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code> --- Encode and decode XDR data</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/netrc.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/netrc.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -127,14 +131,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="fileformats.html" accesskey="U">檔案格式</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="fileformats.html" accesskey="U">File Formats</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">netrc</span></code> --- netrc file processing</a></li>
                 <li class="right">
                     
@@ -160,13 +162,13 @@
             
   <section id="module-netrc">
 <span id="netrc-netrc-file-processing"></span><h1><a class="reference internal" href="#module-netrc" title="netrc: Loading of .netrc files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">netrc</span></code></a> --- netrc file processing<a class="headerlink" href="#module-netrc" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/netrc.py">Lib/netrc.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/netrc.py">Lib/netrc.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#netrc.netrc" title="netrc.netrc"><code class="xref py py-class docutils literal notranslate"><span class="pre">netrc</span></code></a> class parses and encapsulates the netrc file format used by
 the Unix <strong class="program">ftp</strong> program and other FTP clients.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="netrc.netrc">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">netrc.</span></span><span class="sig-name descname"><span class="pre">netrc</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">file</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#netrc.netrc" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">netrc.</span></span><span class="sig-name descname"><span class="pre">netrc</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#netrc.netrc" title="本定義的永久連結">¶</a></dt>
 <dd><p>A <a class="reference internal" href="#netrc.netrc" title="netrc.netrc"><code class="xref py py-class docutils literal notranslate"><span class="pre">netrc</span></code></a> instance or subclass instance encapsulates data from  a netrc
 file.  The initialization argument, if present, specifies the file to parse.  If
 no argument is given, the file <code class="file docutils literal notranslate"><span class="pre">.netrc</span></code> in the user's home directory --
@@ -181,17 +183,21 @@ running the process, or accessible for read or write by any other user).
 This implements security behavior equivalent to that of ftp and other
 programs that use <code class="file docutils literal notranslate"><span class="pre">.netrc</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added the POSIX permission check.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added the POSIX permission check.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span><a class="reference internal" href="os.path.html#os.path.expanduser" title="os.path.expanduser"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.expanduser()</span></code></a> is used to find the location of the
+<p><span class="versionmodified changed">在 3.7 版本變更: </span><a class="reference internal" href="os.path.html#os.path.expanduser" title="os.path.expanduser"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.path.expanduser()</span></code></a> is used to find the location of the
 <code class="file docutils literal notranslate"><span class="pre">.netrc</span></code> file when <em>file</em> is not passed as argument.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.10 版本變更: </span><a class="reference internal" href="#module-netrc" title="netrc: Loading of .netrc files."><code class="xref py py-class docutils literal notranslate"><span class="pre">netrc</span></code></a> try UTF-8 encoding before using locale specific
+encoding.</p>
 </div>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="netrc.NetrcParseError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">netrc.</span></span><span class="sig-name descname"><span class="pre">NetrcParseError</span></span><a class="headerlink" href="#netrc.NetrcParseError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">netrc.</span></span><span class="sig-name descname"><span class="pre">NetrcParseError</span></span><a class="headerlink" href="#netrc.NetrcParseError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Exception raised by the <a class="reference internal" href="#netrc.netrc" title="netrc.netrc"><code class="xref py py-class docutils literal notranslate"><span class="pre">netrc</span></code></a> class when syntactical errors are
 encountered in source text.  Instances of this exception provide three
 interesting attributes:  <code class="xref py py-attr docutils literal notranslate"><span class="pre">msg</span></code> is a textual explanation of the error,
@@ -249,26 +255,32 @@ of the way the .netrc file is parsed and may be removed in the future.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">netrc</span></code> --- netrc file processing</a><ul>
 <li><a class="reference internal" href="#netrc-objects">netrc Objects</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="configparser.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xdrlib.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code> --- Encode and decode XDR data</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="configparser.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xdrlib.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xdrlib</span></code> --- Encode and decode XDR data</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/netrc.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/netrc.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -303,14 +315,12 @@ of the way the .netrc file is parsed and may be removed in the future.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="fileformats.html" >檔案格式</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="fileformats.html" >File Formats</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">netrc</span></code> --- netrc file processing</a></li>
                 <li class="right">
                     
@@ -329,25 +339,25 @@ of the way the .netrc file is parsed and may be removed in the future.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

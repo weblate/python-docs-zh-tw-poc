@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>http.cookies --- HTTP state management &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>http.cookies --- HTTP state management &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="http.server --- HTTP servers" href="http.server.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/http.cookies.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookies</span></code> --- HTTP state management</a><ul>
 <li><a class="reference internal" href="#cookie-objects">Cookie Objects</a></li>
 <li><a class="reference internal" href="#morsel-objects">Morsel Objects</a></li>
@@ -82,18 +81,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="http.server.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.server</span></code> --- HTTP servers</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="http.cookiejar.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookiejar</span></code> --- Cookie handling for HTTP clients</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="http.server.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.server</span></code> --- HTTP servers</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="http.cookiejar.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookiejar</span></code> --- Cookie handling for HTTP clients</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/http.cookies.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/http.cookies.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -129,13 +133,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" accesskey="U">Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookies</span></code> --- HTTP state management</a></li>
                 <li class="right">
@@ -162,14 +164,14 @@
             
   <section id="module-http.cookies">
 <span id="http-cookies-http-state-management"></span><h1><a class="reference internal" href="#module-http.cookies" title="http.cookies: Support for HTTP state management (cookies)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookies</span></code></a> --- HTTP state management<a class="headerlink" href="#module-http.cookies" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/http/cookies.py">Lib/http/cookies.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/http/cookies.py">Lib/http/cookies.py</a></p>
 <hr class="docutils" />
 <p>The <a class="reference internal" href="#module-http.cookies" title="http.cookies: Support for HTTP state management (cookies)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookies</span></code></a> module defines classes for abstracting the concept of
 cookies, an HTTP state management mechanism. It supports both simple string-only
 cookies, and provides an abstraction for having any serializable data-type as
 cookie value.</p>
 <p>The module formerly strictly applied the parsing rules described in the
-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2109.html"><strong>RFC 2109</strong></a> and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2068.html"><strong>RFC 2068</strong></a> specifications.  It has since been discovered that
+<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2109.html"><strong>RFC 2109</strong></a> and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2068.html"><strong>RFC 2068</strong></a> specifications.  It has since been discovered that
 MSIE 3.0x doesn't follow the character rules outlined in those specs and also
 many current day browsers and servers have relaxed parsing rules when comes to
 Cookie handling.  As a result, the parsing rules used are a bit less strict.</p>
@@ -177,7 +179,7 @@ Cookie handling.  As a result, the parsing rules used are a bit less strict.</p>
 <code class="docutils literal notranslate"><span class="pre">!#$%&amp;'*+-.^_`|~:</span></code> denote the set of valid characters allowed by this module
 in Cookie name (as <a class="reference internal" href="#http.cookies.Morsel.key" title="http.cookies.Morsel.key"><code class="xref py py-attr docutils literal notranslate"><span class="pre">key</span></code></a>).</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Allowed ':' as a valid Cookie name character.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Allowed ':' as a valid Cookie name character.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -187,14 +189,14 @@ and catch <a class="reference internal" href="#http.cookies.CookieError" title="
 </div>
 <dl class="py exception">
 <dt class="sig sig-object py" id="http.cookies.CookieError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">http.cookies.</span></span><span class="sig-name descname"><span class="pre">CookieError</span></span><a class="headerlink" href="#http.cookies.CookieError" title="本定義的永久連結">¶</a></dt>
-<dd><p>Exception failing because of <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2109.html"><strong>RFC 2109</strong></a> invalidity: incorrect attributes,
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.cookies.</span></span><span class="sig-name descname"><span class="pre">CookieError</span></span><a class="headerlink" href="#http.cookies.CookieError" title="本定義的永久連結">¶</a></dt>
+<dd><p>Exception failing because of <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2109.html"><strong>RFC 2109</strong></a> invalidity: incorrect attributes,
 incorrect <em class="mailheader">Set-Cookie</em> header, etc.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="http.cookies.BaseCookie">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">http.cookies.</span></span><span class="sig-name descname"><span class="pre">BaseCookie</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">input</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.BaseCookie" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.cookies.</span></span><span class="sig-name descname"><span class="pre">BaseCookie</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.BaseCookie" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class is a dictionary-like object whose keys are strings and whose values
 are <a class="reference internal" href="#http.cookies.Morsel" title="http.cookies.Morsel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Morsel</span></code></a> instances. Note that upon setting a key to a value, the
 value is first converted to a <a class="reference internal" href="#http.cookies.Morsel" title="http.cookies.Morsel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Morsel</span></code></a> containing the key and the value.</p>
@@ -203,7 +205,7 @@ value is first converted to a <a class="reference internal" href="#http.cookies.
 
 <dl class="py class">
 <dt class="sig sig-object py" id="http.cookies.SimpleCookie">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">http.cookies.</span></span><span class="sig-name descname"><span class="pre">SimpleCookie</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">input</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.SimpleCookie" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.cookies.</span></span><span class="sig-name descname"><span class="pre">SimpleCookie</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.SimpleCookie" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class derives from <a class="reference internal" href="#http.cookies.BaseCookie" title="http.cookies.BaseCookie"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCookie</span></code></a> and overrides <code class="xref py py-meth docutils literal notranslate"><span class="pre">value_decode()</span></code>
 and <code class="xref py py-meth docutils literal notranslate"><span class="pre">value_encode()</span></code>. SimpleCookie supports strings as cookie values.
 When setting the value, SimpleCookie calls the builtin <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> to convert
@@ -216,7 +218,7 @@ the value to a string. Values received from HTTP are kept as strings.</p>
 <dt>Module <a class="reference internal" href="http.cookiejar.html#module-http.cookiejar" title="http.cookiejar: Classes for automatic handling of HTTP cookies."><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookiejar</span></code></a></dt><dd><p>HTTP cookie handling for web <em>clients</em>.  The <a class="reference internal" href="http.cookiejar.html#module-http.cookiejar" title="http.cookiejar: Classes for automatic handling of HTTP cookies."><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookiejar</span></code></a> and
 <a class="reference internal" href="#module-http.cookies" title="http.cookies: Support for HTTP state management (cookies)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookies</span></code></a> modules do not depend on each other.</p>
 </dd>
-<dt><span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2109.html"><strong>RFC 2109</strong></a> - HTTP State Management Mechanism</dt><dd><p>This is the state management specification implemented by this module.</p>
+<dt><span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2109.html"><strong>RFC 2109</strong></a> - HTTP State Management Mechanism</dt><dd><p>This is the state management specification implemented by this module.</p>
 </dd>
 </dl>
 </div>
@@ -243,7 +245,7 @@ be overridden.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="http.cookies.BaseCookie.output">
-<span class="sig-prename descclassname"><span class="pre">BaseCookie.</span></span><span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Set-Cookie:'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\\r\\n'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.BaseCookie.output" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseCookie.</span></span><span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Set-Cookie:'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\r\n'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.BaseCookie.output" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a string representation suitable to be sent as HTTP headers. <em>attrs</em> and
 <em>header</em> are sent to each <a class="reference internal" href="#http.cookies.Morsel" title="http.cookies.Morsel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Morsel</span></code></a>'s <a class="reference internal" href="#http.cookies.BaseCookie.output" title="http.cookies.BaseCookie.output"><code class="xref py py-meth docutils literal notranslate"><span class="pre">output()</span></code></a> method. <em>sep</em> is used
 to join the headers together, and is by default the combination <code class="docutils literal notranslate"><span class="pre">'\r\n'</span></code>
@@ -274,10 +276,10 @@ found there as <a class="reference internal" href="#http.cookies.Morsel" title="
 <span id="id2"></span><h2>Morsel Objects<a class="headerlink" href="#morsel-objects" title="本標題的永久連結">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="http.cookies.Morsel">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">http.cookies.</span></span><span class="sig-name descname"><span class="pre">Morsel</span></span><a class="headerlink" href="#http.cookies.Morsel" title="本定義的永久連結">¶</a></dt>
-<dd><p>Abstract a key/value pair, which has some <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2109.html"><strong>RFC 2109</strong></a> attributes.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">http.cookies.</span></span><span class="sig-name descname"><span class="pre">Morsel</span></span><a class="headerlink" href="#http.cookies.Morsel" title="本定義的永久連結">¶</a></dt>
+<dd><p>Abstract a key/value pair, which has some <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2109.html"><strong>RFC 2109</strong></a> attributes.</p>
 <p>Morsels are dictionary-like objects, whose set of keys is constant --- the valid
-<span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2109.html"><strong>RFC 2109</strong></a> attributes, which are</p>
+<span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2109.html"><strong>RFC 2109</strong></a> attributes, which are</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">expires</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p></li>
@@ -297,16 +299,16 @@ send the cookie along with cross-site requests. This helps to mitigate CSRF
 attacks. Valid values for this attribute are &quot;Strict&quot; and &quot;Lax&quot;.</p>
 <p>The keys are case-insensitive and their default value is <code class="docutils literal notranslate"><span class="pre">''</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code> now takes <a class="reference internal" href="#http.cookies.Morsel.key" title="http.cookies.Morsel.key"><code class="xref py py-attr docutils literal notranslate"><span class="pre">key</span></code></a> and <a class="reference internal" href="#http.cookies.Morsel.value" title="http.cookies.Morsel.value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code></a>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code> now takes <a class="reference internal" href="#http.cookies.Morsel.key" title="http.cookies.Morsel.key"><code class="xref py py-attr docutils literal notranslate"><span class="pre">key</span></code></a> and <a class="reference internal" href="#http.cookies.Morsel.value" title="http.cookies.Morsel.value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code></a>
 into account.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Attributes <a class="reference internal" href="#http.cookies.Morsel.key" title="http.cookies.Morsel.key"><code class="xref py py-attr docutils literal notranslate"><span class="pre">key</span></code></a>, <a class="reference internal" href="#http.cookies.Morsel.value" title="http.cookies.Morsel.value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code></a> and
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Attributes <a class="reference internal" href="#http.cookies.Morsel.key" title="http.cookies.Morsel.key"><code class="xref py py-attr docutils literal notranslate"><span class="pre">key</span></code></a>, <a class="reference internal" href="#http.cookies.Morsel.value" title="http.cookies.Morsel.value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code></a> and
 <a class="reference internal" href="#http.cookies.Morsel.coded_value" title="http.cookies.Morsel.coded_value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">coded_value</span></code></a> are read-only.  Use <a class="reference internal" href="#http.cookies.Morsel.set" title="http.cookies.Morsel.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code></a> for
 setting them.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>Added support for the <code class="xref py py-attr docutils literal notranslate"><span class="pre">samesite</span></code> attribute.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>Added support for the <code class="xref py py-attr docutils literal notranslate"><span class="pre">samesite</span></code> attribute.</p>
 </div>
 </dd></dl>
 
@@ -370,9 +372,9 @@ JavaScript.</p>
 <span class="sig-prename descclassname"><span class="pre">Morsel.</span></span><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.Morsel.update" title="本定義的永久連結">¶</a></dt>
 <dd><p>Update the values in the Morsel dictionary with the values in the dictionary
 <em>values</em>.  Raise an error if any of the keys in the <em>values</em> dict is not a
-valid <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2109.html"><strong>RFC 2109</strong></a> attribute.</p>
+valid <span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2109.html"><strong>RFC 2109</strong></a> attribute.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>an error is raised for invalid keys.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>an error is raised for invalid keys.</p>
 </div>
 </dd></dl>
 
@@ -381,14 +383,14 @@ valid <span class="target" id="index-6"></span><a class="rfc reference external"
 <span class="sig-prename descclassname"><span class="pre">Morsel.</span></span><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.Morsel.copy" title="本定義的永久連結">¶</a></dt>
 <dd><p>Return a shallow copy of the Morsel object.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>return a Morsel object instead of a dict.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>return a Morsel object instead of a dict.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="http.cookies.Morsel.setdefault">
 <span class="sig-prename descclassname"><span class="pre">Morsel.</span></span><span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.cookies.Morsel.setdefault" title="本定義的永久連結">¶</a></dt>
-<dd><p>Raise an error if key is not a valid <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2109.html"><strong>RFC 2109</strong></a> attribute, otherwise
+<dd><p>Raise an error if key is not a valid <span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2109.html"><strong>RFC 2109</strong></a> attribute, otherwise
 behave the same as <a class="reference internal" href="stdtypes.html#dict.setdefault" title="dict.setdefault"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dict.setdefault()</span></code></a>.</p>
 </dd></dl>
 
@@ -453,8 +455,9 @@ behave the same as <a class="reference internal" href="stdtypes.html#dict.setdef
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookies</span></code> --- HTTP state management</a><ul>
 <li><a class="reference internal" href="#cookie-objects">Cookie Objects</a></li>
 <li><a class="reference internal" href="#morsel-objects">Morsel Objects</a></li>
@@ -463,18 +466,23 @@ behave the same as <a class="reference internal" href="stdtypes.html#dict.setdef
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="http.server.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.server</span></code> --- HTTP servers</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="http.cookiejar.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookiejar</span></code> --- Cookie handling for HTTP clients</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="http.server.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.server</span></code> --- HTTP servers</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="http.cookiejar.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookiejar</span></code> --- Cookie handling for HTTP clients</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/http.cookies.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/http.cookies.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -509,13 +517,11 @@ behave the same as <a class="reference internal" href="stdtypes.html#dict.setdef
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="internet.html" >Internet Protocols and Support</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">http.cookies</span></code> --- HTTP state management</a></li>
                 <li class="right">
@@ -535,25 +541,25 @@ behave the same as <a class="reference internal" href="stdtypes.html#dict.setdef
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

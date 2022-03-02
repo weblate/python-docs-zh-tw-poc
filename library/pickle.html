@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>pickle --- Python object serialization &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pickle --- Python object serialization &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="Data Persistence" href="persistence.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/pickle.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> --- Python object serialization</a><ul>
 <li><a class="reference internal" href="#relationship-to-other-python-modules">Relationship to other Python modules</a><ul>
 <li><a class="reference internal" href="#comparison-with-marshal">Comparison with <code class="docutils literal notranslate"><span class="pre">marshal</span></code></a></li>
@@ -103,18 +102,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="persistence.html"
-                        title="上一章">Data Persistence</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="copyreg.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copyreg</span></code> --- Register <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> support functions</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="persistence.html"
+                          title="上一章">Data Persistence</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="copyreg.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copyreg</span></code> --- Register <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> support functions</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/pickle.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/pickle.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -150,13 +154,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="persistence.html" accesskey="U">Data Persistence</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> --- Python object serialization</a></li>
                 <li class="right">
@@ -183,7 +185,7 @@
             
   <section id="module-pickle">
 <span id="pickle-python-object-serialization"></span><h1><a class="reference internal" href="#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> --- Python object serialization<a class="headerlink" href="#module-pickle" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/pickle.py">Lib/pickle.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/pickle.py">Lib/pickle.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>The <a class="reference internal" href="#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> module implements binary protocols for serializing and
 de-serializing a Python object structure.  <em>&quot;Pickling&quot;</em> is the process
@@ -339,10 +341,10 @@ for pickling.  May be less than <a class="reference internal" href="#pickle.HIGH
 default protocol is 4, first introduced in Python 3.4 and incompatible
 with previous versions.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.0 版更變: </span>The default protocol is 3.</p>
+<p><span class="versionmodified changed">在 3.0 版本變更: </span>The default protocol is 3.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The default protocol is 4.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The default protocol is 4.</p>
 </div>
 </dd></dl>
 
@@ -357,7 +359,7 @@ process more convenient:</p>
 <p>Arguments <em>file</em>, <em>protocol</em>, <em>fix_imports</em> and <em>buffer_callback</em> have
 the same meaning as in the <a class="reference internal" href="#pickle.Pickler" title="pickle.Pickler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pickler</span></code></a> constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>buffer_callback</em> argument was added.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>buffer_callback</em> argument was added.</p>
 </div>
 </dd></dl>
 
@@ -369,7 +371,7 @@ instead of writing it to a file.</p>
 <p>Arguments <em>protocol</em>, <em>fix_imports</em> and <em>buffer_callback</em> have the same
 meaning as in the <a class="reference internal" href="#pickle.Pickler" title="pickle.Pickler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pickler</span></code></a> constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>buffer_callback</em> argument was added.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>buffer_callback</em> argument was added.</p>
 </div>
 </dd></dl>
 
@@ -385,7 +387,7 @@ of the object are ignored.</p>
 <p>Arguments <em>file</em>, <em>fix_imports</em>, <em>encoding</em>, <em>errors</em>, <em>strict</em> and <em>buffers</em>
 have the same meaning as in the <a class="reference internal" href="#pickle.Unpickler" title="pickle.Unpickler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unpickler</span></code></a> constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>buffers</em> argument was added.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>buffers</em> argument was added.</p>
 </div>
 </dd></dl>
 
@@ -400,21 +402,21 @@ of the object are ignored.</p>
 <p>Arguments <em>file</em>, <em>fix_imports</em>, <em>encoding</em>, <em>errors</em>, <em>strict</em> and <em>buffers</em>
 have the same meaning as in the <a class="reference internal" href="#pickle.Unpickler" title="pickle.Unpickler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unpickler</span></code></a> constructor.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>buffers</em> argument was added.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>buffers</em> argument was added.</p>
 </div>
 </dd></dl>
 
 <p>The <a class="reference internal" href="#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> module defines three exceptions:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="pickle.PickleError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">PickleError</span></span><a class="headerlink" href="#pickle.PickleError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">PickleError</span></span><a class="headerlink" href="#pickle.PickleError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Common base class for the other pickling exceptions.  It inherits
 <a class="reference internal" href="exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="pickle.PicklingError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">PicklingError</span></span><a class="headerlink" href="#pickle.PicklingError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">PicklingError</span></span><a class="headerlink" href="#pickle.PicklingError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Error raised when an unpicklable object is encountered by <a class="reference internal" href="#pickle.Pickler" title="pickle.Pickler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pickler</span></code></a>.
 It inherits <a class="reference internal" href="#pickle.PickleError" title="pickle.PickleError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PickleError</span></code></a>.</p>
 <p>Refer to <a class="reference internal" href="#pickle-picklable"><span class="std std-ref">What can be pickled and unpickled?</span></a> to learn what kinds of objects can be
@@ -423,7 +425,7 @@ pickled.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="pickle.UnpicklingError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">UnpicklingError</span></span><a class="headerlink" href="#pickle.UnpicklingError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">UnpicklingError</span></span><a class="headerlink" href="#pickle.UnpicklingError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Error raised when there is a problem unpickling an object, such as a data
 corruption or a security violation.  It inherits <a class="reference internal" href="#pickle.PickleError" title="pickle.PickleError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PickleError</span></code></a>.</p>
 <p>Note that other exceptions may also be raised during unpickling, including
@@ -435,7 +437,7 @@ IndexError.</p>
 <a class="reference internal" href="#pickle.Unpickler" title="pickle.Unpickler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unpickler</span></code></a> and <a class="reference internal" href="#pickle.PickleBuffer" title="pickle.PickleBuffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">PickleBuffer</span></code></a>:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pickle.Pickler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">Pickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pickle.Pickler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">Pickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pickle.Pickler" title="本定義的永久連結">¶</a></dt>
 <dd><p>This takes a binary file for writing a pickle data stream.</p>
 <p>The optional <em>protocol</em> argument, an integer, tells the pickler to use
 the given protocol; supported protocols are 0 to <a class="reference internal" href="#pickle.HIGHEST_PROTOCOL" title="pickle.HIGHEST_PROTOCOL"><code class="xref py py-data docutils literal notranslate"><span class="pre">HIGHEST_PROTOCOL</span></code></a>.
@@ -457,7 +459,7 @@ otherwise the buffer is serialized in-band, i.e. inside the pickle stream.</p>
 <p>It is an error if <em>buffer_callback</em> is not None and <em>protocol</em> is
 None or smaller than 5.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>buffer_callback</em> argument was added.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>buffer_callback</em> argument was added.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="pickle.Pickler.dump">
@@ -498,7 +500,7 @@ object.  Alternatively, if a subclass of <a class="reference internal" href="#pi
 default dispatch table for instances of that class.</p>
 <p>See <a class="reference internal" href="#pickle-dispatch"><span class="std std-ref">Dispatch Tables</span></a> for usage examples.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -512,7 +514,7 @@ can optionally return <code class="docutils literal notranslate"><span class="pr
 <a class="reference internal" href="#pickle.Pickler.dispatch_table" title="pickle.Pickler.dispatch_table"><code class="xref py py-attr docutils literal notranslate"><span class="pre">dispatch_table</span></code></a>-registered reducers to pickle <code class="docutils literal notranslate"><span class="pre">obj</span></code>.</p>
 <p>For a detailed example, see <a class="reference internal" href="#reducer-override"><span class="std std-ref">Custom Reduction for Types, Functions, and Other Objects</span></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -531,7 +533,7 @@ recurse infinitely.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pickle.Unpickler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">Unpickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASCII'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pickle.Unpickler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">Unpickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASCII'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pickle.Unpickler" title="本定義的永久連結">¶</a></dt>
 <dd><p>This takes a binary file for reading a pickle data stream.</p>
 <p>The protocol version of the pickle is detected automatically, so no
 protocol argument is needed.</p>
@@ -560,7 +562,7 @@ objects that is consumed each time the pickle stream references
 an <a class="reference internal" href="#pickle-oob"><span class="std std-ref">out-of-band</span></a> buffer view.  Such buffers have been
 given in order to the <em>buffer_callback</em> of a Pickler object.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>The <em>buffers</em> argument was added.</p>
+<p><span class="versionmodified changed">在 3.8 版本變更: </span>The <em>buffers</em> argument was added.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="pickle.Unpickler.load">
@@ -598,7 +600,7 @@ how they can be loaded, potentially reducing security risks. Refer to
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pickle.PickleBuffer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">PickleBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pickle.PickleBuffer" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pickle.</span></span><span class="sig-name descname"><span class="pre">PickleBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pickle.PickleBuffer" title="本定義的永久連結">¶</a></dt>
 <dd><p>A wrapper for a buffer representing picklable data.  <em>buffer</em> must be a
 <a class="reference internal" href="../c-api/buffer.html#bufferobjects"><span class="std std-ref">buffer-providing</span></a> object, such as a
 <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> or a N-dimensional array.</p>
@@ -609,7 +611,7 @@ such as <a class="reference internal" href="stdtypes.html#memoryview" title="mem
 protocol 5 or higher.  They are eligible for
 <a class="reference internal" href="#pickle-oob"><span class="std std-ref">out-of-band serialization</span></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="pickle.PickleBuffer.raw">
@@ -712,7 +714,7 @@ unpickling.</p>
 class requires keyword-only arguments.  Otherwise, it is recommended for
 compatibility to implement <a class="reference internal" href="#object.__getnewargs__" title="object.__getnewargs__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs__()</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span><a class="reference internal" href="#object.__getnewargs_ex__" title="object.__getnewargs_ex__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs_ex__()</span></code></a> is now used in protocols 2 and 3.</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span><a class="reference internal" href="#object.__getnewargs_ex__" title="object.__getnewargs_ex__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs_ex__()</span></code></a> is now used in protocols 2 and 3.</p>
 </div>
 </dd></dl>
 
@@ -725,7 +727,7 @@ supports only positional arguments.  It must return a tuple of arguments
 <p><a class="reference internal" href="#object.__getnewargs__" title="object.__getnewargs__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs__()</span></code></a> will not be called if <a class="reference internal" href="#object.__getnewargs_ex__" title="object.__getnewargs_ex__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs_ex__()</span></code></a> is
 defined.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Before Python 3.6, <a class="reference internal" href="#object.__getnewargs__" title="object.__getnewargs__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs__()</span></code></a> was called instead of
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Before Python 3.6, <a class="reference internal" href="#object.__getnewargs__" title="object.__getnewargs__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs__()</span></code></a> was called instead of
 <a class="reference internal" href="#object.__getnewargs_ex__" title="object.__getnewargs_ex__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getnewargs_ex__()</span></code></a> in protocols 2 and 3.</p>
 </div>
 </dd></dl>
@@ -816,7 +818,7 @@ behavior of a specific object, instead of using <code class="docutils literal no
 <a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__setstate__()</span></code></a> method. If not <code class="docutils literal notranslate"><span class="pre">None</span></code>, this callable will have
 priority over <code class="docutils literal notranslate"><span class="pre">obj</span></code>'s <a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__setstate__()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入: </span>The optional sixth tuple item, <code class="docutils literal notranslate"><span class="pre">(obj,</span> <span class="pre">state)</span></code>, was added.</p>
+<p><span class="versionmodified added">在 3.8 版本新加入: </span>The optional sixth tuple item, <code class="docutils literal notranslate"><span class="pre">(obj,</span> <span class="pre">state)</span></code>, was added.</p>
 </div>
 </li>
 </ul>
@@ -1043,7 +1045,7 @@ reading resumes from the last location. The <code class="xref py py-meth docutil
 <section id="custom-reduction-for-types-functions-and-other-objects">
 <span id="reducer-override"></span><h2>Custom Reduction for Types, Functions, and Other Objects<a class="headerlink" href="#custom-reduction-for-types-functions-and-other-objects" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 <p>Sometimes, <a class="reference internal" href="#pickle.Pickler.dispatch_table" title="pickle.Pickler.dispatch_table"><code class="xref py py-attr docutils literal notranslate"><span class="pre">dispatch_table</span></code></a> may not be flexible enough.
 In particular we may want to customize pickling based on another criterion
@@ -1099,7 +1101,7 @@ a given class:</p>
 <section id="out-of-band-buffers">
 <span id="pickle-oob"></span><h2>Out-of-band Buffers<a class="headerlink" href="#out-of-band-buffers" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 <p>In some contexts, the <a class="reference internal" href="#module-pickle" title="pickle: Convert Python objects to streams of bytes and back."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> module is used to transfer massive amounts
 of data.  Therefore, it can be important to minimize the number of memory
@@ -1321,7 +1323,7 @@ Also, the <a class="reference internal" href="#module-pickle" title="pickle: Con
 </dd>
 </dl>
 </div>
-<p class="rubric">註解</p>
+<p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Don't confuse this with the <a class="reference internal" href="marshal.html#module-marshal" title="marshal: Convert Python objects to streams of bytes and back (with different constraints)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">marshal</span></code></a> module</p>
@@ -1355,8 +1357,9 @@ persistent IDs, the resulting pickle will become unreadable.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> --- Python object serialization</a><ul>
 <li><a class="reference internal" href="#relationship-to-other-python-modules">Relationship to other Python modules</a><ul>
 <li><a class="reference internal" href="#comparison-with-marshal">Comparison with <code class="docutils literal notranslate"><span class="pre">marshal</span></code></a></li>
@@ -1386,18 +1389,23 @@ persistent IDs, the resulting pickle will become unreadable.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="persistence.html"
-                        title="上一章">Data Persistence</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="copyreg.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copyreg</span></code> --- Register <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> support functions</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="persistence.html"
+                          title="上一章">Data Persistence</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="copyreg.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copyreg</span></code> --- Register <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> support functions</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/pickle.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/pickle.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1432,13 +1440,11 @@ persistent IDs, the resulting pickle will become unreadable.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="persistence.html" >Data Persistence</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code> --- Python object serialization</a></li>
                 <li class="right">
@@ -1458,25 +1464,25 @@ persistent IDs, the resulting pickle will become unreadable.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

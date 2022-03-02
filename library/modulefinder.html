@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>modulefinder --- Find modules used by a script &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modulefinder --- Find modules used by a script &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="pkgutil --- Package extension utility" href="pkgutil.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/modulefinder.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,26 +70,32 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">modulefinder</span></code> --- Find modules used by a script</a><ul>
 <li><a class="reference internal" href="#example-usage-of-modulefinder">Example usage of <code class="xref py py-class docutils literal notranslate"><span class="pre">ModuleFinder</span></code></a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="pkgutil.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pkgutil</span></code> --- Package extension utility</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="runpy.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">runpy</span></code> --- Locating and executing Python modules</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="pkgutil.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pkgutil</span></code> --- Package extension utility</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="runpy.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">runpy</span></code> --- Locating and executing Python modules</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/modulefinder.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/modulefinder.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -127,14 +131,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">匯入模組</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Importing Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">modulefinder</span></code> --- Find modules used by a script</a></li>
                 <li class="right">
                     
@@ -160,7 +162,7 @@
             
   <section id="module-modulefinder">
 <span id="modulefinder-find-modules-used-by-a-script"></span><h1><a class="reference internal" href="#module-modulefinder" title="modulefinder: Find modules used by a script."><code class="xref py py-mod docutils literal notranslate"><span class="pre">modulefinder</span></code></a> --- Find modules used by a script<a class="headerlink" href="#module-modulefinder" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/modulefinder.py">Lib/modulefinder.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/modulefinder.py">Lib/modulefinder.py</a></p>
 <hr class="docutils" />
 <p>This module provides a <a class="reference internal" href="#modulefinder.ModuleFinder" title="modulefinder.ModuleFinder"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModuleFinder</span></code></a> class that can be used to determine
 the set of modules imported by a script. <code class="docutils literal notranslate"><span class="pre">modulefinder.py</span></code> can also be run as
@@ -181,7 +183,7 @@ report of the imported modules will be printed.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="modulefinder.ModuleFinder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">modulefinder.</span></span><span class="sig-name descname"><span class="pre">ModuleFinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excludes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modulefinder.ModuleFinder" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modulefinder.</span></span><span class="sig-name descname"><span class="pre">ModuleFinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excludes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modulefinder.ModuleFinder" title="本定義的永久連結">¶</a></dt>
 <dd><p>This class provides <a class="reference internal" href="#modulefinder.ModuleFinder.run_script" title="modulefinder.ModuleFinder.run_script"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run_script()</span></code></a> and <a class="reference internal" href="#modulefinder.ModuleFinder.report" title="modulefinder.ModuleFinder.report"><code class="xref py py-meth docutils literal notranslate"><span class="pre">report()</span></code></a> methods to determine
 the set of modules imported by a script. <em>path</em> can be a list of directories to
 search for modules; if not specified, <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> is used.  <em>debug</em> sets the
@@ -275,26 +277,32 @@ code.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">modulefinder</span></code> --- Find modules used by a script</a><ul>
 <li><a class="reference internal" href="#example-usage-of-modulefinder">Example usage of <code class="xref py py-class docutils literal notranslate"><span class="pre">ModuleFinder</span></code></a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="pkgutil.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pkgutil</span></code> --- Package extension utility</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="runpy.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">runpy</span></code> --- Locating and executing Python modules</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="pkgutil.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pkgutil</span></code> --- Package extension utility</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="runpy.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">runpy</span></code> --- Locating and executing Python modules</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/modulefinder.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/modulefinder.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -329,14 +337,12 @@ code.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="modules.html" >匯入模組</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Importing Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">modulefinder</span></code> --- Find modules used by a script</a></li>
                 <li class="right">
                     
@@ -355,25 +361,25 @@ code.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

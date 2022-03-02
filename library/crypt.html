@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>crypt --- Function to check Unix passwords &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crypt --- Function to check Unix passwords &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="grp --- The group database" href="grp.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/crypt.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">crypt</span></code> --- Function to check Unix passwords</a><ul>
 <li><a class="reference internal" href="#hashing-methods">Hashing Methods</a></li>
 <li><a class="reference internal" href="#module-attributes">Module Attributes</a></li>
@@ -83,18 +82,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="grp.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grp</span></code> --- The group database</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="termios.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">termios</span></code> --- POSIX style tty control</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="grp.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grp</span></code> --- The group database</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="termios.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">termios</span></code> --- POSIX style tty control</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/crypt.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/crypt.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -130,13 +134,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="unix.html" accesskey="U">Unix Specific Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">crypt</span></code> --- Function to check Unix passwords</a></li>
                 <li class="right">
@@ -163,7 +165,7 @@
             
   <section id="module-crypt">
 <span id="crypt-function-to-check-unix-passwords"></span><h1><a class="reference internal" href="#module-crypt" title="crypt: The crypt() function used to check Unix passwords. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">crypt</span></code></a> --- Function to check Unix passwords<a class="headerlink" href="#module-crypt" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/crypt.py">Lib/crypt.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/crypt.py">Lib/crypt.py</a></p>
 <hr class="docutils" id="index-0" />
 <p>This module implements an interface to the <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/crypt(3)">crypt(3)</a></em> routine, which is
 a one-way hash function based upon a modified DES algorithm; see the Unix man
@@ -178,7 +180,7 @@ this module.</p>
 <section id="hashing-methods">
 <h2>Hashing Methods<a class="headerlink" href="#hashing-methods" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <p>The <a class="reference internal" href="#module-crypt" title="crypt: The crypt() function used to check Unix passwords. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">crypt</span></code></a> module defines the list of hashing methods (not all methods
 are available on all platforms):</p>
@@ -202,7 +204,7 @@ character hash based on the SHA-256 hash function.</p>
 <dd><p>Another Modular Crypt Format method with 22 character salt and 31
 character hash based on the Blowfish cipher.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.7 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.7 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -224,7 +226,7 @@ hash.  This is the weakest method.</p>
 <section id="module-attributes">
 <h2>Module Attributes<a class="headerlink" href="#module-attributes" title="本標題的永久連結">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="crypt.methods">
@@ -262,7 +264,7 @@ characters from the same alphabet as the salt.</p>
 different sizes in the <em>salt</em>, it is recommended to use  the full crypted
 password as salt when checking for a password.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>Accept <code class="docutils literal notranslate"><span class="pre">crypt.METHOD_*</span></code> values in addition to strings for <em>salt</em>.</p>
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>Accept <code class="docutils literal notranslate"><span class="pre">crypt.METHOD_*</span></code> values in addition to strings for <em>salt</em>.</p>
 </div>
 </dd></dl>
 
@@ -282,10 +284,10 @@ For <code class="docutils literal notranslate"><span class="pre">METHOD_SHA256</
 and <code class="docutils literal notranslate"><span class="pre">2_147_483_648</span></code> (2<sup>31</sup>), the default is <code class="docutils literal notranslate"><span class="pre">4096</span></code>
 (2<sup>12</sup>).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7 版更變: </span>Added the <em>rounds</em> parameter.</p>
+<p><span class="versionmodified changed">在 3.7 版本變更: </span>Added the <em>rounds</em> parameter.</p>
 </div>
 </dd></dl>
 
@@ -332,8 +334,9 @@ check it against the original:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">crypt</span></code> --- Function to check Unix passwords</a><ul>
 <li><a class="reference internal" href="#hashing-methods">Hashing Methods</a></li>
 <li><a class="reference internal" href="#module-attributes">Module Attributes</a></li>
@@ -343,18 +346,23 @@ check it against the original:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="grp.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grp</span></code> --- The group database</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="termios.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">termios</span></code> --- POSIX style tty control</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="grp.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grp</span></code> --- The group database</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="termios.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">termios</span></code> --- POSIX style tty control</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/crypt.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/crypt.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -389,13 +397,11 @@ check it against the original:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="unix.html" >Unix Specific Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">crypt</span></code> --- Function to check Unix passwords</a></li>
                 <li class="right">
@@ -415,25 +421,25 @@ check it against the original:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

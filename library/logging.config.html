@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>logging.config --- Logging configuration &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logging.config --- Logging configuration &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="logging --- Logging facility for Python" href="logging.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/logging.config.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,10 +70,12 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.config</span></code> --- Logging configuration</a><ul>
 <li><a class="reference internal" href="#configuration-functions">Configuration functions</a></li>
+<li><a class="reference internal" href="#security-considerations">Security considerations</a></li>
 <li><a class="reference internal" href="#configuration-dictionary-schema">Configuration dictionary schema</a><ul>
 <li><a class="reference internal" href="#dictionary-schema-details">Dictionary Schema Details</a></li>
 <li><a class="reference internal" href="#incremental-configuration">Incremental Configuration</a></li>
@@ -91,18 +91,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="logging.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code> --- Logging facility for Python</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="logging.handlers.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code> --- Logging handlers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="logging.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code> --- Logging facility for Python</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="logging.handlers.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code> --- Logging handlers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/logging.config.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/logging.config.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -138,13 +143,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="allos.html" accesskey="U">Generic Operating System Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.config</span></code> --- Logging configuration</a></li>
                 <li class="right">
@@ -171,7 +174,7 @@
             
   <section id="module-logging.config">
 <span id="logging-config-logging-configuration"></span><h1><a class="reference internal" href="#module-logging.config" title="logging.config: Configuration of the logging module."><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.config</span></code></a> --- Logging configuration<a class="headerlink" href="#module-logging.config" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/logging/config.py">Lib/logging/config.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/logging/config.py">Lib/logging/config.py</a></p>
 <aside class="sidebar">
 <p class="sidebar-title">Important</p>
 <p>This page contains only reference information. For tutorials,
@@ -232,13 +235,13 @@ set up custom prefixes which would be usable in the subsequent
 this new subclass, and then <a class="reference internal" href="#logging.config.dictConfig" title="logging.config.dictConfig"><code class="xref py py-func docutils literal notranslate"><span class="pre">dictConfig()</span></code></a> could be called exactly as
 in the default, uncustomized state.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.2 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.2 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="logging.config.fileConfig">
-<span class="sig-prename descclassname"><span class="pre">logging.config.</span></span><span class="sig-name descname"><span class="pre">fileConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaults</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disable_existing_loggers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logging.config.fileConfig" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">logging.config.</span></span><span class="sig-name descname"><span class="pre">fileConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaults</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disable_existing_loggers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logging.config.fileConfig" title="本定義的永久連結">¶</a></dt>
 <dd><p>Reads the logging configuration from a <a class="reference internal" href="configparser.html#module-configparser" title="configparser: Configuration file parser."><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code></a>-format file. The
 format of the file should be as described in
 <a class="reference internal" href="#logging-config-fileformat"><span class="std std-ref">Configuration file format</span></a>.
@@ -261,27 +264,40 @@ it is assumed to be a filename and passed to
 <a class="reference internal" href="configparser.html#configparser.ConfigParser.read" title="configparser.ConfigParser.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a>.</p></li>
 <li><p><strong>defaults</strong> -- Defaults to be passed to the ConfigParser can be specified
 in this argument.</p></li>
-<li><p><strong>disable_existing_loggers</strong> -- If specified as <code class="docutils literal notranslate"><span class="pre">False</span></code>, loggers which
-exist when this call is made are left
+<li><p><strong>disable_existing_loggers</strong> -- <dl class="simple">
+<dt>If specified as <code class="docutils literal notranslate"><span class="pre">False</span></code>, loggers which</dt><dd><p>exist when this call is made are left
 enabled. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code> because this
 enables old behaviour in a
 backward-compatible way. This behaviour is to
 disable any existing non-root loggers unless
 they or their ancestors are explicitly named
-in the logging configuration.</p></li>
+in the logging configuration.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">param encoding</dt>
+<dd class="field-odd"><p>The encoding used to open file when <em>fname</em> is filename.</p>
+</dd>
+</dl>
+</p></li>
 </ul>
 </dd>
 </dl>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>An instance of a subclass of <a class="reference internal" href="configparser.html#configparser.RawConfigParser" title="configparser.RawConfigParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawConfigParser</span></code></a> is
-now accepted as a value for <code class="docutils literal notranslate"><span class="pre">fname</span></code>. This facilitates:</p>
-<ul class="simple">
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>An instance of a subclass of <a class="reference internal" href="configparser.html#configparser.RawConfigParser" title="configparser.RawConfigParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">RawConfigParser</span></code></a> is
+  now accepted as a value for <code class="docutils literal notranslate"><span class="pre">fname</span></code>. This facilitates:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Use of a configuration file where logging configuration is just part
 of the overall application configuration.</p></li>
 <li><p>Use of a configuration read from a file, and then modified by the using
 application (e.g. based on command-line parameters or other aspects
 of the runtime environment) before being passed to <code class="docutils literal notranslate"><span class="pre">fileConfig</span></code>.</p></li>
 </ul>
+</div></blockquote>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入: </span>The <em>encoding</em> parameter is added.</p>
+</div>
 </div>
 </dd></dl>
 
@@ -323,12 +339,12 @@ victim user's process, simply by connecting to the victim's
 <a class="reference internal" href="#logging.config.listen" title="logging.config.listen"><code class="xref py py-func docutils literal notranslate"><span class="pre">listen()</span></code></a> socket and sending a configuration which runs whatever
 code the attacker wants to have executed in the victim's process. This is
 especially easy to do if the default port is used, but not hard even if a
-different port is used). To avoid the risk of this happening, use the
+different port is used. To avoid the risk of this happening, use the
 <code class="docutils literal notranslate"><span class="pre">verify</span></code> argument to <a class="reference internal" href="#logging.config.listen" title="logging.config.listen"><code class="xref py py-func docutils literal notranslate"><span class="pre">listen()</span></code></a> to prevent unrecognised
 configurations from being applied.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>The <code class="docutils literal notranslate"><span class="pre">verify</span></code> argument was added.</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>The <code class="docutils literal notranslate"><span class="pre">verify</span></code> argument was added.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -348,6 +364,18 @@ This is typically called before calling <code class="xref py py-meth docutils li
 <a class="reference internal" href="#logging.config.listen" title="logging.config.listen"><code class="xref py py-func docutils literal notranslate"><span class="pre">listen()</span></code></a>.</p>
 </dd></dl>
 
+</section>
+<section id="security-considerations">
+<h2>Security considerations<a class="headerlink" href="#security-considerations" title="本標題的永久連結">¶</a></h2>
+<p>The logging configuration functionality tries to offer convenience, and in part this
+is done by offering the ability to convert text in configuration files into Python
+objects used in logging configuration - for example, as described in
+<a class="reference internal" href="#logging-config-dict-userdef"><span class="std std-ref">User-defined objects</span></a>. However, these same mechanisms (importing
+callables from user-defined modules and calling them with parameters from the
+configuration) could be used to invoke any code you like, and for this reason you
+should treat configuration files from untrusted sources with <em>extreme caution</em> and
+satisfy yourself that nothing bad can happen if you load them, before actually loading
+them.</p>
 </section>
 <section id="configuration-dictionary-schema">
 <span id="logging-config-dictschema"></span><h2>Configuration dictionary schema<a class="headerlink" href="#configuration-dictionary-schema" title="本標題的永久連結">¶</a></h2>
@@ -377,18 +405,29 @@ mentioned, it will be checked for the special <code class="docutils literal notr
 custom instantiation is required.  If so, the mechanism described in
 <a class="reference internal" href="#logging-config-dict-userdef"><span class="std std-ref">User-defined objects</span></a> below is used to create an instance;
 otherwise, the context is used to determine what to instantiate.</p>
-<ul>
+<ul id="logging-config-dictschema-formatters">
 <li><p><em>formatters</em> - the corresponding value will be a dict in which each
 key is a formatter id and each value is a dict describing how to
 configure the corresponding <a class="reference internal" href="logging.html#logging.Formatter" title="logging.Formatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></a> instance.</p>
-<p>The configuring dict is searched for keys <code class="docutils literal notranslate"><span class="pre">format</span></code> and <code class="docutils literal notranslate"><span class="pre">datefmt</span></code>
-(with defaults of <code class="docutils literal notranslate"><span class="pre">None</span></code>) and these are used to construct a
-<a class="reference internal" href="logging.html#logging.Formatter" title="logging.Formatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></a> instance.</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">3.8 版更變: </span>a <code class="docutils literal notranslate"><span class="pre">validate</span></code> key (with default of <code class="docutils literal notranslate"><span class="pre">True</span></code>) can be added into
-the <code class="docutils literal notranslate"><span class="pre">formatters</span></code> section of the configuring dict, this is to
-validate the format.</p>
-</div>
+<p>The configuring dict is searched for the following optional keys
+which correspond to the arguments passed to create a
+<a class="reference internal" href="logging.html#logging.Formatter" title="logging.Formatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></a> object:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">format</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datefmt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">validate</span></code> (since version &gt;=3.8)</p></li>
+</ul>
+</div></blockquote>
+<p>An optional <code class="docutils literal notranslate"><span class="pre">class</span></code> key indicates the name of the formatter's
+class (as a dotted module and class name).  The instantiation
+arguments are as for <a class="reference internal" href="logging.html#logging.Formatter" title="logging.Formatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></a>, thus this key is
+most useful for instantiating a customised subclass of
+<a class="reference internal" href="logging.html#logging.Formatter" title="logging.Formatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></a>.  For example, the alternative class
+might present exception tracebacks in an expanded or condensed
+format.  If your formatter requires different or extra configuration
+keys, you should use <a class="reference internal" href="#logging-config-dict-userdef"><span class="std std-ref">User-defined objects</span></a>.</p>
 </li>
 <li><p><em>filters</em> - the corresponding value will be a dict in which each key
 is a filter id and each value is a dict describing how to configure
@@ -412,19 +451,19 @@ handler.</p></li>
 </ul>
 <p>All <em>other</em> keys are passed through as keyword arguments to the
 handler's constructor.  For example, given the snippet:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">handlers</span><span class="p">:</span>
-  <span class="nt">console</span><span class="p">:</span>
-    <span class="nt">class </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">logging.StreamHandler</span>
-    <span class="nt">formatter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">brief</span>
-    <span class="nt">level   </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">INFO</span>
-    <span class="nt">filters</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">allow_foo</span><span class="p p-Indicator">]</span>
-    <span class="nt">stream  </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ext://sys.stdout</span>
-  <span class="nt">file</span><span class="p">:</span>
-    <span class="nt">class </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">logging.handlers.RotatingFileHandler</span>
-    <span class="nt">formatter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">precise</span>
-    <span class="nt">filename</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">logconfig.log</span>
-    <span class="nt">maxBytes</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1024</span>
-    <span class="nt">backupCount</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">handlers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">console</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">class </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logging.StreamHandler</span><span class="w"></span>
+<span class="w">    </span><span class="nt">formatter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">brief</span><span class="w"></span>
+<span class="w">    </span><span class="nt">level   </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">INFO</span><span class="w"></span>
+<span class="w">    </span><span class="nt">filters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">allow_foo</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">stream  </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ext://sys.stdout</span><span class="w"></span>
+<span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">class </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logging.handlers.RotatingFileHandler</span><span class="w"></span>
+<span class="w">    </span><span class="nt">formatter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precise</span><span class="w"></span>
+<span class="w">    </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logconfig.log</span><span class="w"></span>
+<span class="w">    </span><span class="nt">maxBytes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1024</span><span class="w"></span>
+<span class="w">    </span><span class="nt">backupCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 </pre></div>
 </div>
 <p>the handler with id <code class="docutils literal notranslate"><span class="pre">console</span></code> is instantiated as a
@@ -506,22 +545,22 @@ it unambiguously, and then using the id in the source object's
 configuration to indicate that a connection exists between the source
 and the destination object with that id.</p>
 <p>So, for example, consider the following YAML snippet:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">formatters</span><span class="p">:</span>
-  <span class="nt">brief</span><span class="p">:</span>
-    <span class="c1"># configuration for formatter with id &#39;brief&#39; goes here</span>
-  <span class="nt">precise</span><span class="p">:</span>
-    <span class="c1"># configuration for formatter with id &#39;precise&#39; goes here</span>
-<span class="nt">handlers</span><span class="p">:</span>
-  <span class="nt">h1</span><span class="p">:</span> <span class="c1">#This is an id</span>
-   <span class="c1"># configuration of handler with id &#39;h1&#39; goes here</span>
-   <span class="nt">formatter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">brief</span>
-  <span class="nt">h2</span><span class="p">:</span> <span class="c1">#This is another id</span>
-   <span class="c1"># configuration of handler with id &#39;h2&#39; goes here</span>
-   <span class="nt">formatter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">precise</span>
-<span class="nt">loggers</span><span class="p">:</span>
-  <span class="nt">foo.bar.baz</span><span class="p">:</span>
-    <span class="c1"># other configuration for logger &#39;foo.bar.baz&#39;</span>
-    <span class="nt">handlers</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">h1</span><span class="p p-Indicator">,</span> <span class="nv">h2</span><span class="p p-Indicator">]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">formatters</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">brief</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># configuration for formatter with id &#39;brief&#39; goes here</span><span class="w"></span>
+<span class="w">  </span><span class="nt">precise</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># configuration for formatter with id &#39;precise&#39; goes here</span><span class="w"></span>
+<span class="nt">handlers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">h1</span><span class="p">:</span><span class="w"> </span><span class="c1">#This is an id</span><span class="w"></span>
+<span class="w">   </span><span class="c1"># configuration of handler with id &#39;h1&#39; goes here</span><span class="w"></span>
+<span class="w">   </span><span class="nt">formatter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">brief</span><span class="w"></span>
+<span class="w">  </span><span class="nt">h2</span><span class="p">:</span><span class="w"> </span><span class="c1">#This is another id</span><span class="w"></span>
+<span class="w">   </span><span class="c1"># configuration of handler with id &#39;h2&#39; goes here</span><span class="w"></span>
+<span class="w">   </span><span class="nt">formatter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precise</span><span class="w"></span>
+<span class="nt">loggers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">foo.bar.baz</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># other configuration for logger &#39;foo.bar.baz&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">handlers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">h1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">h2</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>(Note: YAML used here because it's a little more readable than the
@@ -556,17 +595,17 @@ configuration dictionary and which returns the instantiated object.
 This is signalled by an absolute import path to the factory being
 made available under the special key <code class="docutils literal notranslate"><span class="pre">'()'</span></code>.  Here's a concrete
 example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">formatters</span><span class="p">:</span>
-  <span class="nt">brief</span><span class="p">:</span>
-    <span class="nt">format</span><span class="p">:</span> <span class="s">&#39;%(message)s&#39;</span>
-  <span class="nt">default</span><span class="p">:</span>
-    <span class="nt">format</span><span class="p">:</span> <span class="s">&#39;%(asctime)s</span><span class="nv"> </span><span class="s">%(levelname)-8s</span><span class="nv"> </span><span class="s">%(name)-15s</span><span class="nv"> </span><span class="s">%(message)s&#39;</span>
-    <span class="nt">datefmt</span><span class="p">:</span> <span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M:%S&#39;</span>
-  <span class="nt">custom</span><span class="p">:</span>
-      <span class="nt">()</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my.package.customFormatterFactory</span>
-      <span class="nt">bar</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz</span>
-      <span class="nt">spam</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">99.9</span>
-      <span class="nt">answer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">42</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">formatters</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">brief</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%(message)s&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">default</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%(asctime)s</span><span class="nv"> </span><span class="s">%(levelname)-8s</span><span class="nv"> </span><span class="s">%(name)-15s</span><span class="nv"> </span><span class="s">%(message)s&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">datefmt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M:%S&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">custom</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">()</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.package.customFormatterFactory</span><span class="w"></span>
+<span class="w">      </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baz</span><span class="w"></span>
+<span class="w">      </span><span class="nt">spam</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99.9</span><span class="w"></span>
+<span class="w">      </span><span class="nt">answer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The above YAML snippet defines three formatters.  The first, with id
@@ -660,13 +699,13 @@ id.  If, however, a user defines a <code class="docutils literal notranslate"><s
 an <code class="docutils literal notranslate"><span class="pre">alternate</span></code> handler, the configuration system would not know that
 the <code class="docutils literal notranslate"><span class="pre">alternate</span></code> referred to a handler.  To cater for this, a generic
 resolution system allows the user to specify:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">handlers</span><span class="p">:</span>
-  <span class="nt">file</span><span class="p">:</span>
-    <span class="c1"># configuration of file handler goes here</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">handlers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># configuration of file handler goes here</span><span class="w"></span>
 
-  <span class="nt">custom</span><span class="p">:</span>
-    <span class="nt">()</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my.package.MyHandler</span>
-    <span class="nt">alternate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cfg://handlers.file</span>
+<span class="w">  </span><span class="nt">custom</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">()</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.package.MyHandler</span><span class="w"></span>
+<span class="w">    </span><span class="nt">alternate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cfg://handlers.file</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The literal string <code class="docutils literal notranslate"><span class="pre">'cfg://handlers.file'</span></code> will be resolved in an
@@ -674,22 +713,22 @@ analogous way to strings with the <code class="docutils literal notranslate"><sp
 in the configuration itself rather than the import namespace.  The
 mechanism allows access by dot or by index, in a similar way to
 that provided by <code class="docutils literal notranslate"><span class="pre">str.format</span></code>.  Thus, given the following snippet:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">handlers</span><span class="p">:</span>
-  <span class="nt">email</span><span class="p">:</span>
-    <span class="nt">class</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">logging.handlers.SMTPHandler</span>
-    <span class="nt">mailhost</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-    <span class="nt">fromaddr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my_app@domain.tld</span>
-    <span class="nt">toaddrs</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">support_team@domain.tld</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dev_team@domain.tld</span>
-    <span class="nt">subject</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Houston, we have a problem.</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">handlers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">email</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logging.handlers.SMTPHandler</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mailhost</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
+<span class="w">    </span><span class="nt">fromaddr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_app@domain.tld</span><span class="w"></span>
+<span class="w">    </span><span class="nt">toaddrs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">support_team@domain.tld</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev_team@domain.tld</span><span class="w"></span>
+<span class="w">    </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Houston, we have a problem.</span><span class="w"></span>
 </pre></div>
 </div>
 <p>in the configuration, the string <code class="docutils literal notranslate"><span class="pre">'cfg://handlers'</span></code> would resolve to
 the dict with key <code class="docutils literal notranslate"><span class="pre">handlers</span></code>, the string <code class="docutils literal notranslate"><span class="pre">'cfg://handlers.email</span></code>
 would resolve to the dict with key <code class="docutils literal notranslate"><span class="pre">email</span></code> in the <code class="docutils literal notranslate"><span class="pre">handlers</span></code> dict,
 and so on.  The string <code class="docutils literal notranslate"><span class="pre">'cfg://handlers.email.toaddrs[1]</span></code> would
-resolve to <code class="docutils literal notranslate"><span class="pre">'dev_team.domain.tld'</span></code> and the string
+resolve to <code class="docutils literal notranslate"><span class="pre">'dev_team&#64;domain.tld'</span></code> and the string
 <code class="docutils literal notranslate"><span class="pre">'cfg://handlers.email.toaddrs[0]'</span></code> would resolve to the value
 <code class="docutils literal notranslate"><span class="pre">'support_team&#64;domain.tld'</span></code>. The <code class="docutils literal notranslate"><span class="pre">subject</span></code> value could be accessed
 using either <code class="docutils literal notranslate"><span class="pre">'cfg://handlers.email.subject'</span></code> or, equivalently,
@@ -754,21 +793,21 @@ enhancements to configuration functionality will be added to
 API when it's convenient to do so.</p>
 </div>
 <p>Examples of these sections in the file are given below.</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[loggers]</span>
-<span class="na">keys</span><span class="o">=</span><span class="s">root,log02,log03,log04,log05,log06,log07</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[loggers]</span><span class="w"></span>
+<span class="na">keys</span><span class="o">=</span><span class="s">root,log02,log03,log04,log05,log06,log07</span><span class="w"></span>
 
-<span class="k">[handlers]</span>
-<span class="na">keys</span><span class="o">=</span><span class="s">hand01,hand02,hand03,hand04,hand05,hand06,hand07,hand08,hand09</span>
+<span class="k">[handlers]</span><span class="w"></span>
+<span class="na">keys</span><span class="o">=</span><span class="s">hand01,hand02,hand03,hand04,hand05,hand06,hand07,hand08,hand09</span><span class="w"></span>
 
-<span class="k">[formatters]</span>
-<span class="na">keys</span><span class="o">=</span><span class="s">form01,form02,form03,form04,form05,form06,form07,form08,form09</span>
+<span class="k">[formatters]</span><span class="w"></span>
+<span class="na">keys</span><span class="o">=</span><span class="s">form01,form02,form03,form04,form05,form06,form07,form08,form09</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The root logger must specify a level and a list of handlers. An example of a
 root logger section is given below.</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[logger_root]</span>
-<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span>
-<span class="na">handlers</span><span class="o">=</span><span class="s">hand01</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[logger_root]</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span><span class="w"></span>
+<span class="na">handlers</span><span class="o">=</span><span class="s">hand01</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">level</span></code> entry can be one of <code class="docutils literal notranslate"><span class="pre">DEBUG,</span> <span class="pre">INFO,</span> <span class="pre">WARNING,</span> <span class="pre">ERROR,</span> <span class="pre">CRITICAL</span></code> or
@@ -781,11 +820,11 @@ appear in the <code class="docutils literal notranslate"><span class="pre">[hand
 file.</p>
 <p>For loggers other than the root logger, some additional information is required.
 This is illustrated by the following example.</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[logger_parser]</span>
-<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
-<span class="na">handlers</span><span class="o">=</span><span class="s">hand01</span>
-<span class="na">propagate</span><span class="o">=</span><span class="s">1</span>
-<span class="na">qualname</span><span class="o">=</span><span class="s">compiler.parser</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[logger_parser]</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span><span class="w"></span>
+<span class="na">handlers</span><span class="o">=</span><span class="s">hand01</span><span class="w"></span>
+<span class="na">propagate</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+<span class="na">qualname</span><span class="o">=</span><span class="s">compiler.parser</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">level</span></code> and <code class="docutils literal notranslate"><span class="pre">handlers</span></code> entries are interpreted as for the root logger,
@@ -797,11 +836,11 @@ indicate that messages are <strong>not</strong> propagated to handlers up the hi
 <code class="docutils literal notranslate"><span class="pre">qualname</span></code> entry is the hierarchical channel name of the logger, that is to
 say the name used by the application to get the logger.</p>
 <p>Sections which specify handler configuration are exemplified by the following.</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[handler_hand01]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">StreamHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form01</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(sys.stdout,)</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[handler_hand01]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">StreamHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form01</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(sys.stdout,)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">class</span></code> entry indicates the handler's class (as determined by <a class="reference internal" href="functions.html#eval" title="eval"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval()</span></code></a>
@@ -819,76 +858,69 @@ to <code class="docutils literal notranslate"><span class="pre">()</span></code>
 <p>The optional <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> entry, when <a class="reference internal" href="functions.html#eval" title="eval"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval()</span></code></a>uated in the context of the
 <code class="docutils literal notranslate"><span class="pre">logging</span></code> package's namespace, is the keyword argument dict to the constructor
 for the handler class. If not provided, it defaults to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[handler_hand02]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">FileHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form02</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(&#39;python.log&#39;, &#39;w&#39;)</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[handler_hand02]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">FileHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">DEBUG</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form02</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(&#39;python.log&#39;, &#39;w&#39;)</span><span class="w"></span>
 
-<span class="k">[handler_hand03]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">handlers.SocketHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">INFO</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form03</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(&#39;localhost&#39;, handlers.DEFAULT_TCP_LOGGING_PORT)</span>
+<span class="k">[handler_hand03]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">handlers.SocketHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">INFO</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form03</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(&#39;localhost&#39;, handlers.DEFAULT_TCP_LOGGING_PORT)</span><span class="w"></span>
 
-<span class="k">[handler_hand04]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">handlers.DatagramHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">WARN</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form04</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(&#39;localhost&#39;, handlers.DEFAULT_UDP_LOGGING_PORT)</span>
+<span class="k">[handler_hand04]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">handlers.DatagramHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">WARN</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form04</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(&#39;localhost&#39;, handlers.DEFAULT_UDP_LOGGING_PORT)</span><span class="w"></span>
 
-<span class="k">[handler_hand05]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">handlers.SysLogHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">ERROR</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form05</span>
-<span class="na">args</span><span class="o">=</span><span class="s">((&#39;localhost&#39;, handlers.SYSLOG_UDP_PORT), handlers.SysLogHandler.LOG_USER)</span>
+<span class="k">[handler_hand05]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">handlers.SysLogHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">ERROR</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form05</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">((&#39;localhost&#39;, handlers.SYSLOG_UDP_PORT), handlers.SysLogHandler.LOG_USER)</span><span class="w"></span>
 
-<span class="k">[handler_hand06]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">handlers.NTEventLogHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">CRITICAL</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form06</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(&#39;Python Application&#39;, &#39;&#39;, &#39;Application&#39;)</span>
+<span class="k">[handler_hand06]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">handlers.NTEventLogHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">CRITICAL</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form06</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(&#39;Python Application&#39;, &#39;&#39;, &#39;Application&#39;)</span><span class="w"></span>
 
-<span class="k">[handler_hand07]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">handlers.SMTPHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">WARN</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form07</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(&#39;localhost&#39;, &#39;from@abc&#39;, [&#39;user1@abc&#39;, &#39;user2@xyz&#39;], &#39;Logger Subject&#39;)</span>
-<span class="na">kwargs</span><span class="o">=</span><span class="s">{&#39;timeout&#39;: 10.0}</span>
+<span class="k">[handler_hand07]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">handlers.SMTPHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">WARN</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form07</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(&#39;localhost&#39;, &#39;from@abc&#39;, [&#39;user1@abc&#39;, &#39;user2@xyz&#39;], &#39;Logger Subject&#39;)</span><span class="w"></span>
+<span class="na">kwargs</span><span class="o">=</span><span class="s">{&#39;timeout&#39;: 10.0}</span><span class="w"></span>
 
-<span class="k">[handler_hand08]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">handlers.MemoryHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form08</span>
-<span class="na">target</span><span class="o">=</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(10, ERROR)</span>
+<span class="k">[handler_hand08]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">handlers.MemoryHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form08</span><span class="w"></span>
+<span class="na">target</span><span class="o">=</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(10, ERROR)</span><span class="w"></span>
 
-<span class="k">[handler_hand09]</span>
-<span class="na">class</span><span class="o">=</span><span class="s">handlers.HTTPHandler</span>
-<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span>
-<span class="na">formatter</span><span class="o">=</span><span class="s">form09</span>
-<span class="na">args</span><span class="o">=</span><span class="s">(&#39;localhost:9022&#39;, &#39;/log&#39;, &#39;GET&#39;)</span>
-<span class="na">kwargs</span><span class="o">=</span><span class="s">{&#39;secure&#39;: True}</span>
+<span class="k">[handler_hand09]</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">handlers.HTTPHandler</span><span class="w"></span>
+<span class="na">level</span><span class="o">=</span><span class="s">NOTSET</span><span class="w"></span>
+<span class="na">formatter</span><span class="o">=</span><span class="s">form09</span><span class="w"></span>
+<span class="na">args</span><span class="o">=</span><span class="s">(&#39;localhost:9022&#39;, &#39;/log&#39;, &#39;GET&#39;)</span><span class="w"></span>
+<span class="na">kwargs</span><span class="o">=</span><span class="s">{&#39;secure&#39;: True}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Sections which specify formatter configuration are typified by the following.</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[formatter_form01]</span>
-<span class="na">format</span><span class="o">=</span><span class="s">F1 %(asctime)s %(levelname)s %(message)s</span>
-<span class="na">datefmt</span><span class="o">=</span>
-<span class="na">class</span><span class="o">=</span><span class="s">logging.Formatter</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[formatter_form01]</span><span class="w"></span>
+<span class="na">format</span><span class="o">=</span><span class="s">F1 %(asctime)s %(levelname)s %(message)s</span><span class="w"></span>
+<span class="na">datefmt</span><span class="o">=</span><span class="w"></span>
+<span class="na">style</span><span class="o">=</span><span class="s">&#39;%&#39;</span><span class="w"></span>
+<span class="na">validate</span><span class="o">=</span><span class="s">True</span><span class="w"></span>
+<span class="na">class</span><span class="o">=</span><span class="s">logging.Formatter</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">format</span></code> entry is the overall format string, and the <code class="docutils literal notranslate"><span class="pre">datefmt</span></code> entry is
-the <code class="xref py py-func docutils literal notranslate"><span class="pre">strftime()</span></code>-compatible date/time format string.  If empty, the
-package substitutes something which is almost equivalent to specifying the date
-format string <code class="docutils literal notranslate"><span class="pre">'%Y-%m-%d</span> <span class="pre">%H:%M:%S'</span></code>.  This format also specifies milliseconds,
-which are appended to the result of using the above format string, with a comma
-separator.  An example time in this format is <code class="docutils literal notranslate"><span class="pre">2003-01-23</span> <span class="pre">00:29:50,411</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">class</span></code> entry is optional.  It indicates the name of the formatter's class
-(as a dotted module and class name.)  This option is useful for instantiating a
-<a class="reference internal" href="logging.html#logging.Formatter" title="logging.Formatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></a> subclass.  Subclasses of
-<a class="reference internal" href="logging.html#logging.Formatter" title="logging.Formatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></a> can present exception tracebacks in an expanded or
-condensed format.</p>
+<p>The arguments for the formatter configuration are the same as the keys
+in the dictionary schema <a class="reference internal" href="#logging-config-dictschema-formatters"><span class="std std-ref">formatters section</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
 <p>Due to the use of <a class="reference internal" href="functions.html#eval" title="eval"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval()</span></code></a> as described above, there are
@@ -916,10 +948,12 @@ multiple users with no mutual trust run code on the same machine; see the
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.config</span></code> --- Logging configuration</a><ul>
 <li><a class="reference internal" href="#configuration-functions">Configuration functions</a></li>
+<li><a class="reference internal" href="#security-considerations">Security considerations</a></li>
 <li><a class="reference internal" href="#configuration-dictionary-schema">Configuration dictionary schema</a><ul>
 <li><a class="reference internal" href="#dictionary-schema-details">Dictionary Schema Details</a></li>
 <li><a class="reference internal" href="#incremental-configuration">Incremental Configuration</a></li>
@@ -935,18 +969,23 @@ multiple users with no mutual trust run code on the same machine; see the
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="logging.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code> --- Logging facility for Python</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="logging.handlers.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code> --- Logging handlers</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="logging.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code> --- Logging facility for Python</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="logging.handlers.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.handlers</span></code> --- Logging handlers</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/logging.config.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/logging.config.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -981,13 +1020,11 @@ multiple users with no mutual trust run code on the same machine; see the
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="allos.html" >Generic Operating System Services</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging.config</span></code> --- Logging configuration</a></li>
                 <li class="right">
@@ -1007,25 +1044,25 @@ multiple users with no mutual trust run code on the same machine; see the
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

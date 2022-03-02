@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New in Python 2.2 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New in Python 2.2 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="What&#39;s New in Python 2.3" href="2.3.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/2.2.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,10 +70,11 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.2</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#peps-252-and-253-type-and-class-changes">PEPs 252 and 253: Type and Class Changes</a><ul>
 <li><a class="reference internal" href="#old-and-new-classes">Old and New Classes</a></li>
 <li><a class="reference internal" href="#descriptors">Descriptors</a></li>
@@ -98,18 +97,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.3.html"
-                        title="上一章">What's New in Python 2.3</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.1.html"
-                        title="下一章">What's New in Python 2.1</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.3.html"
+                          title="上一章">What's New in Python 2.3</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.1.html"
+                          title="下一章">What's New in Python 2.1</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.2.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.2.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -145,13 +149,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.2</a></li>
                 <li class="right">
                     
@@ -183,7 +185,7 @@
 </dd>
 </dl>
 <section id="introduction">
-<h2>簡介<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
 <p>This article explains the new features in Python 2.2.2, released on October 14,
 2002.  Python 2.2.2 is a bugfix release of Python 2.2, originally released on
 December 21, 2001.</p>
@@ -207,7 +209,7 @@ that your code will continue to run unchanged, but the changes provide some
 amazing new capabilities. Before beginning this, the longest and most
 complicated section of this article, I'll provide an overview of the changes and
 offer some comments.</p>
-<p>A long time ago I wrote a Web page listing flaws in Python's design.  One of the
+<p>A long time ago I wrote a web page listing flaws in Python's design.  One of the
 most significant flaws was that it's impossible to subclass Python types
 implemented in C.  In particular, it's not possible to subclass built-in types,
 so you can't just subclass, say, lists in order to add a single useful method to
@@ -1030,7 +1032,7 @@ and then  lists the recent headlines for one channel:</p>
 XML-RPC servers.  See <a class="reference external" href="http://xmlrpc.scripting.com/">http://xmlrpc.scripting.com/</a> for more information about XML-RPC.</p>
 </li>
 <li><p>The new <a class="reference internal" href="../library/hmac.html#module-hmac" title="hmac: Keyed-Hashing for Message Authentication (HMAC) implementation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hmac</span></code></a> module implements the HMAC algorithm described by
-<span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2104.html"><strong>RFC 2104</strong></a>. (Contributed by Gerhard Häring.)</p></li>
+<span class="target" id="index-17"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2104.html"><strong>RFC 2104</strong></a>. (Contributed by Gerhard Häring.)</p></li>
 <li><p>Several functions that originally returned lengthy tuples now return
 pseudo-sequences that still behave like tuples but also have mnemonic attributes such
 as memberst_mtime or <code class="xref py py-attr docutils literal notranslate"><span class="pre">tm_year</span></code>. The enhanced functions include
@@ -1048,7 +1050,7 @@ output have been corrected.  (Contributed by Fred L. Drake, Jr. and Tim Peters.)
 <code class="xref std std-option docutils literal notranslate"><span class="pre">--enable-ipv6</span></code> option to Python's configure script.  (Contributed by
 Jun-ichiro &quot;itojun&quot; Hagino.)</p></li>
 <li><p>Two new format characters were added to the <a class="reference internal" href="../library/struct.html#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> module for 64-bit
-integers on platforms that support the C <span class="xref c c-texpr"><span class="kt">long long</span></span> type.  <code class="docutils literal notranslate"><span class="pre">q</span></code> is for
+integers on platforms that support the C <span class="xref c c-texpr"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></span> type.  <code class="docutils literal notranslate"><span class="pre">q</span></code> is for
 a signed 64-bit integer, and <code class="docutils literal notranslate"><span class="pre">Q</span></code> is for an unsigned one.  The value is
 returned in Python's long integer type.  (Contributed by Tim Peters.)</p></li>
 <li><p>In the interpreter's interactive mode, there's a new built-in function
@@ -1065,15 +1067,15 @@ speeds up certain Unicode character ranges by a factor of two, and a new
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">finditer()</span></code>  method that returns an iterator over all the non-overlapping
 matches in  a given string.  (SRE is maintained by Fredrik Lundh.  The
 BIGCHARSET patch was contributed by Martin von Löwis.)</p></li>
-<li><p>The <a class="reference internal" href="../library/smtplib.html#module-smtplib" title="smtplib: SMTP protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtplib</span></code></a> module now supports <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2487.html"><strong>RFC 2487</strong></a>, &quot;Secure SMTP over TLS&quot;, so
+<li><p>The <a class="reference internal" href="../library/smtplib.html#module-smtplib" title="smtplib: SMTP protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtplib</span></code></a> module now supports <span class="target" id="index-18"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2487.html"><strong>RFC 2487</strong></a>, &quot;Secure SMTP over TLS&quot;, so
 it's now possible to encrypt the SMTP traffic between a Python program and the
 mail transport agent being handed a message.  <a class="reference internal" href="../library/smtplib.html#module-smtplib" title="smtplib: SMTP protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtplib</span></code></a> also supports SMTP
 authentication.  (Contributed by Gerhard Häring.)</p></li>
 <li><p>The <a class="reference internal" href="../library/imaplib.html#module-imaplib" title="imaplib: IMAP4 protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">imaplib</span></code></a> module, maintained by Piers Lauder, has support for several
-new extensions: the NAMESPACE extension defined in <span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2342.html"><strong>RFC 2342</strong></a>, SORT, GETACL and
+new extensions: the NAMESPACE extension defined in <span class="target" id="index-19"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2342.html"><strong>RFC 2342</strong></a>, SORT, GETACL and
 SETACL.  (Contributed by Anthony Baxter and Michel Pelletier.)</p></li>
 <li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">rfc822</span></code> module's parsing of email addresses is now compliant with
-<span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2822.html"><strong>RFC 2822</strong></a>, an update to <span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a>.  (The module's name is <em>not</em> going to be
+<span class="target" id="index-20"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2822.html"><strong>RFC 2822</strong></a>, an update to <span class="target" id="index-21"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc822.html"><strong>RFC 822</strong></a>.  (The module's name is <em>not</em> going to be
 changed to <code class="docutils literal notranslate"><span class="pre">rfc2822</span></code>.)  A new package, <a class="reference internal" href="../library/email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a>, has also been added for
 parsing and generating e-mail messages.  (Contributed by Barry Warsaw, and
 arising out of his work on Mailman.)</p></li>
@@ -1282,10 +1284,11 @@ Reinhardt, Neil Schemenauer, Guido van Rossum, Greg Ward, Edward Welbourne.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.2</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#peps-252-and-253-type-and-class-changes">PEPs 252 and 253: Type and Class Changes</a><ul>
 <li><a class="reference internal" href="#old-and-new-classes">Old and New Classes</a></li>
 <li><a class="reference internal" href="#descriptors">Descriptors</a></li>
@@ -1308,18 +1311,23 @@ Reinhardt, Neil Schemenauer, Guido van Rossum, Greg Ward, Edward Welbourne.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.3.html"
-                        title="上一章">What's New in Python 2.3</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.1.html"
-                        title="下一章">What's New in Python 2.1</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.3.html"
+                          title="上一章">What's New in Python 2.3</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.1.html"
+                          title="下一章">What's New in Python 2.1</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.2.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.2.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1354,13 +1362,11 @@ Reinhardt, Neil Schemenauer, Guido van Rossum, Greg Ward, Edward Welbourne.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.2</a></li>
                 <li class="right">
                     
@@ -1379,25 +1385,25 @@ Reinhardt, Neil Schemenauer, Guido van Rossum, Greg Ward, Edward Welbourne.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

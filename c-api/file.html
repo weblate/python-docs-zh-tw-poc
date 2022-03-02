@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>檔案（File）物件 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Objects &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="模組物件模組" href="module.html" />
+    <link rel="next" title="Module Objects" href="module.html" />
     <link rel="prev" title="Code Objects" href="code.html" />
     <link rel="canonical" href="https://docs.python.org/3/c-api/file.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="code.html"
-                        title="上一章">Code Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="module.html"
-                        title="下一章">模組物件模組</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="code.html"
+                          title="上一章">Code Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="module.html"
+                          title="下一章">Module Objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/file.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/file.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -104,7 +106,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="module.html" title="模組物件模組"
+          <a href="module.html" title="Module Objects"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="code.html" title="Code Objects"
@@ -119,15 +121,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concrete.html" accesskey="U">Concrete Objects Layer</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">檔案（File）物件</a></li>
+        <li class="nav-item nav-item-this"><a href="">File Objects</a></li>
                 <li class="right">
                     
 
@@ -151,7 +151,7 @@
           <div class="body" role="main">
             
   <section id="file-objects">
-<span id="fileobjects"></span><h1>檔案（File）物件<a class="headerlink" href="#file-objects" title="本標題的永久連結">¶</a></h1>
+<span id="fileobjects"></span><h1>File Objects<a class="headerlink" href="#file-objects" title="本標題的永久連結">¶</a></h1>
 <p id="index-0">These APIs are a minimal emulation of the Python 2 C API for built-in file
 objects, which used to rely on the buffered I/O (<span class="xref c c-texpr"><span class="n">FILE</span><span class="p">*</span></span>) support
 from the C standard library.  In Python 3, files and streams use the new
@@ -163,7 +163,7 @@ the <a class="reference internal" href="../library/io.html#module-io" title="io:
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFile_FromFd">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyFile_FromFd</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">fd</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">mode</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">buffering</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">encoding</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">errors</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">newline</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">closefd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFile_FromFd" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="refcount">Return value: New reference.</em><p>Create a Python file object from the file descriptor of an already
+<dd><em class="refcount">Return value: New reference.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Create a Python file object from the file descriptor of an already
 opened file <em>fd</em>.  The arguments <em>name</em>, <em>encoding</em>, <em>errors</em> and <em>newline</em>
 can be <code class="docutils literal notranslate"><span class="pre">NULL</span></code> to use the defaults; <em>buffering</em> can be <em>-1</em> to use the
 default. <em>name</em> is ignored and kept for backward compatibility. Return
@@ -176,14 +176,14 @@ OS-level file descriptors can produce various issues (such as unexpected
 ordering of data).</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.2 版更變: </span>忽略 <em>name</em> 屬性。</p>
+<p><span class="versionmodified changed">在 3.2 版本變更: </span>Ignore <em>name</em> attribute.</p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_AsFileDescriptor">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_AsFileDescriptor</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_AsFileDescriptor" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>Return the file descriptor associated with <em>p</em> as an <span class="xref c c-texpr"><span class="kt">int</span></span>.  If the
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Return the file descriptor associated with <em>p</em> as an <span class="xref c c-texpr"><span class="kt">int</span></span>.  If the
 object is an integer, its value is returned.  If not, the
 object's <a class="reference internal" href="../library/io.html#io.IOBase.fileno" title="io.IOBase.fileno"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fileno()</span></code></a> method is called if it exists; the
 method must return an integer, which is returned as the file descriptor
@@ -193,7 +193,7 @@ value.  Sets an exception and returns <code class="docutils literal notranslate"
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFile_GetLine">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyFile_GetLine</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFile_GetLine" title="本定義的永久連結">¶</a><br /></dt>
-<dd><em class="refcount">Return value: New reference.</em><p id="index-1">Equivalent to <code class="docutils literal notranslate"><span class="pre">p.readline([n])</span></code>, this function reads one line from the
+<dd><em class="refcount">Return value: New reference.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-1">Equivalent to <code class="docutils literal notranslate"><span class="pre">p.readline([n])</span></code>, this function reads one line from the
 object <em>p</em>.  <em>p</em> may be a file object or any object with a
 <a class="reference internal" href="../library/io.html#io.IOBase.readline" title="io.IOBase.readline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code></a>
 method.  If <em>n</em> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, exactly one line is read, regardless of the length of
@@ -222,14 +222,14 @@ during its execution unless they are known to be frozen or available in
 <p>This function is safe to call before <a class="reference internal" href="init.html#c.Py_Initialize" title="Py_Initialize"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_Initialize()</span></code></a>.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="../library/sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">setopencodehook</span></code> with no arguments.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.8 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFile_WriteObject">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyFile_WriteObject</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flags</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFile_WriteObject" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p id="index-2">Write object <em>obj</em> to file object <em>p</em>.  The only supported flag for <em>flags</em> is
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p id="index-2">Write object <em>obj</em> to file object <em>p</em>.  The only supported flag for <em>flags</em> is
 <code class="xref py py-const docutils literal notranslate"><span class="pre">Py_PRINT_RAW</span></code>; if given, the <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> of the object is written
 instead of the <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a>.  Return <code class="docutils literal notranslate"><span class="pre">0</span></code> on success or <code class="docutils literal notranslate"><span class="pre">-1</span></code> on failure; the
 appropriate exception will be set.</p>
@@ -238,7 +238,8 @@ appropriate exception will be set.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyFile_WriteString">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyFile_WriteString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">s</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyFile_WriteString" title="本定義的永久連結">¶</a><br /></dt>
-<dd><p>寫入字串 <em>s</em> 到 檔案物件 <em>p</em>。當成功時回傳 0，而當失敗時回傳 -1，並會設定合適的例外狀況。</p>
+<dd><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a>.</em><p>Write string <em>s</em> to file object <em>p</em>.  Return <code class="docutils literal notranslate"><span class="pre">0</span></code> on success or <code class="docutils literal notranslate"><span class="pre">-1</span></code> on
+failure; the appropriate exception will be set.</p>
 </dd></dl>
 
 </section>
@@ -250,18 +251,22 @@ appropriate exception will be set.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="code.html"
-                        title="上一章">Code Objects</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="module.html"
-                        title="下一章">模組物件模組</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="code.html"
+                          title="上一章">Code Objects</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="module.html"
+                          title="下一章">Module Objects</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/c-api/file.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/c-api/file.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -281,7 +286,7 @@ appropriate exception will be set.</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="module.html" title="模組物件模組"
+          <a href="module.html" title="Module Objects"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="code.html" title="Code Objects"
@@ -296,15 +301,13 @@ appropriate exception will be set.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python / C API 參考手冊</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="concrete.html" >Concrete Objects Layer</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">檔案（File）物件</a></li>
+        <li class="nav-item nav-item-this"><a href="">File Objects</a></li>
                 <li class="right">
                     
 
@@ -322,25 +325,25 @@ appropriate exception will be set.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

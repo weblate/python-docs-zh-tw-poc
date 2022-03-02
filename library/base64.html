@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>base64 —— Base16、Base32、Base64、Base85 資料編碼 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base64 --- Base16, Base32, Base64, Base85 Data Encodings &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="mimetypes --- Map filenames to MIME types" href="mimetypes.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/base64.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,32 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="mimetypes.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mimetypes</span></code> --- Map filenames to MIME types</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="binhex.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></p>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code> --- Base16, Base32, Base64, Base85 Data Encodings</a><ul>
+<li><a class="reference internal" href="#security-considerations">Security Considerations</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="mimetypes.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mimetypes</span></code> --- Map filenames to MIME types</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="binhex.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/base64.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/base64.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -119,15 +131,13 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" accesskey="U">Internet Data Handling</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code> —— Base16、Base32、Base64、Base85 資料編碼</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code> --- Base16, Base32, Base64, Base85 Data Encodings</a></li>
                 <li class="right">
                     
 
@@ -151,27 +161,34 @@
           <div class="body" role="main">
             
   <section id="module-base64">
-<span id="base64-base16-base32-base64-base85-data-encodings"></span><h1><a class="reference internal" href="#module-base64" title="base64: RFC 3548: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a> —— Base16、Base32、Base64、Base85 資料編碼<a class="headerlink" href="#module-base64" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/base64.py">Lib/base64.py</a></p>
+<span id="base64-base16-base32-base64-base85-data-encodings"></span><h1><a class="reference internal" href="#module-base64" title="base64: RFC 4648: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a> --- Base16, Base32, Base64, Base85 Data Encodings<a class="headerlink" href="#module-base64" title="本標題的永久連結">¶</a></h1>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/base64.py">Lib/base64.py</a></p>
 <hr class="docutils" id="index-0" />
-<p>這個模組提供將二進位資料編碼成可顯示 ASCII 字元以及解碼回原始資料的功能，包括了<span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3548.html"><strong>RFC 3548</strong></a>中的 Base16、Base32、Base64 等編碼方式，以及標準 Ascii85、Base85 編碼等。</p>
-<p><span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3548.html"><strong>RFC 3548</strong></a>標準編碼可以使電子郵件、URL，或是 HTTP POST 內容等傳輸管道安全地傳遞資料。這些編碼演算法與<strong class="program">uuencode</strong> 並不相同。</p>
+<p>This module provides functions for encoding binary data to printable
+ASCII characters and decoding such encodings back to binary data.
+It provides encoding and decoding functions for the encodings specified in
+<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4648.html"><strong>RFC 4648</strong></a>, which defines the Base16, Base32, and Base64 algorithms,
+and for the de-facto standard Ascii85 and Base85 encodings.</p>
+<p>The <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4648.html"><strong>RFC 4648</strong></a> encodings are suitable for encoding binary data so that it can be
+safely sent by email, used as parts of URLs, or included as part of an HTTP
+POST request.  The encoding algorithm is not the same as the
+<strong class="program">uuencode</strong> program.</p>
 <p>There are two interfaces provided by this module.  The modern interface
 supports encoding <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like objects</span></a> to ASCII
 <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>, and decoding <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like objects</span></a> or
 strings containing ASCII to <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.  Both base-64 alphabets
-defined in <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3548.html"><strong>RFC 3548</strong></a> (normal, and URL- and filesystem-safe) are supported.</p>
+defined in <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4648.html"><strong>RFC 4648</strong></a> (normal, and URL- and filesystem-safe) are supported.</p>
 <p>The legacy interface does not support decoding from strings, but it does
 provide functions for encoding and decoding to and from <a class="reference internal" href="../glossary.html#term-file-object"><span class="xref std std-term">file objects</span></a>.  It only supports the Base64 standard alphabet, and it adds
-newlines every 76 characters as per <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a>.  Note that if you are looking
-for <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a> support you probably want to be looking at the <a class="reference internal" href="email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a>
+newlines every 76 characters as per <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a>.  Note that if you are looking
+for <span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a> support you probably want to be looking at the <a class="reference internal" href="email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a>
 package instead.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 版更變: </span>ASCII-only Unicode strings are now accepted by the decoding functions of
+<p><span class="versionmodified changed">在 3.3 版本變更: </span>ASCII-only Unicode strings are now accepted by the decoding functions of
 the modern interface.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Any <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like objects</span></a> are now accepted by all
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Any <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like objects</span></a> are now accepted by all
 encoding and decoding functions in this module.  Ascii85/Base85 support added.</p>
 </div>
 <p>The modern interface provides:</p>
@@ -253,7 +270,7 @@ return the decoded <a class="reference internal" href="stdtypes.html#bytes" titl
 <p>Optional <em>casefold</em> is a flag specifying
 whether a lowercase alphabet is acceptable as input.  For security purposes,
 the default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p><span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3548.html"><strong>RFC 3548</strong></a> allows for optional mapping of the digit 0 (zero) to the letter O
+<p><span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4648.html"><strong>RFC 4648</strong></a> allows for optional mapping of the digit 0 (zero) to the letter O
 (oh), and for optional mapping of the digit 1 (one) to either the letter I (eye)
 or letter L (el).  The optional argument <em>map01</em> when not <code class="docutils literal notranslate"><span class="pre">None</span></code>, specifies
 which letter the digit 1 should be mapped to (when <em>map01</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>, the
@@ -262,6 +279,30 @@ digit 0 is always mapped to the letter O).  For security purposes the default is
 <p>A <a class="reference internal" href="binascii.html#binascii.Error" title="binascii.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">binascii.Error</span></code></a> is raised if <em>s</em> is
 incorrectly padded or if there are non-alphabet characters present in the
 input.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="base64.b32hexencode">
+<span class="sig-prename descclassname"><span class="pre">base64.</span></span><span class="sig-name descname"><span class="pre">b32hexencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base64.b32hexencode" title="本定義的永久連結">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#base64.b32encode" title="base64.b32encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">b32encode()</span></code></a> but uses the Extended Hex Alphabet, as defined in
+<span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4648.html"><strong>RFC 4648</strong></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="base64.b32hexdecode">
+<span class="sig-prename descclassname"><span class="pre">base64.</span></span><span class="sig-name descname"><span class="pre">b32hexdecode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">casefold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base64.b32hexdecode" title="本定義的永久連結">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#base64.b32decode" title="base64.b32decode"><code class="xref py py-func docutils literal notranslate"><span class="pre">b32decode()</span></code></a> but uses the Extended Hex Alphabet, as defined in
+<span class="target" id="index-8"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4648.html"><strong>RFC 4648</strong></a>.</p>
+<p>This version does not allow the digit 0 (zero) to the letter O (oh) and digit
+1 (one) to either the letter I (eye) or letter L (el) mappings, all these
+characters are included in the Extended Hex Alphabet and are not
+interchangeable.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版本新加入.</span></p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -300,13 +341,13 @@ before encoding. Note that the <code class="docutils literal notranslate"><span 
 <p><em>adobe</em> controls whether the encoded byte sequence is framed with <code class="docutils literal notranslate"><span class="pre">&lt;~</span></code>
 and <code class="docutils literal notranslate"><span class="pre">~&gt;</span></code>, which is used by the Adobe implementation.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="base64.a85decode">
-<span class="sig-prename descclassname"><span class="pre">base64.</span></span><span class="sig-name descname"><span class="pre">a85decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foldspaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adobe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignorechars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b'</span> <span class="pre">\\t\\n\\r\\v'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base64.a85decode" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">base64.</span></span><span class="sig-name descname"><span class="pre">a85decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foldspaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adobe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignorechars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b'</span> <span class="pre">\t\n\r\x0b'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base64.a85decode" title="本定義的永久連結">¶</a></dt>
 <dd><p>Decode the Ascii85 encoded <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> or ASCII string <em>b</em> and
 return the decoded <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p>
 <p><em>foldspaces</em> is a flag that specifies whether the 'y' short sequence
@@ -319,7 +360,7 @@ containing characters to ignore
 from the input. This should only contain whitespace characters, and by
 default contains all whitespace characters in ASCII.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -331,7 +372,7 @@ git-style binary diffs) and return the encoded <a class="reference internal" hre
 <p>If <em>pad</em> is true, the input is padded with <code class="docutils literal notranslate"><span class="pre">b'\0'</span></code> so its length is a
 multiple of 4 bytes before encoding.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -342,7 +383,7 @@ multiple of 4 bytes before encoding.</p>
 return the decoded <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.  Padding is implicitly removed, if
 necessary.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.4 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -361,7 +402,7 @@ empty bytes object.</p>
 <dd><p>Decode the <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> <em>s</em>, which must contain one or more
 lines of base64 encoded data, and return the decoded <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -373,7 +414,7 @@ encoded data to the <em>output</em> file. <em>input</em> and <em>output</em> mus
 objects</span></a>. <em>input</em> will be read until <code class="docutils literal notranslate"><span class="pre">input.read()</span></code> returns
 an empty bytes object. <a class="reference internal" href="#base64.encode" title="base64.encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">encode()</span></code></a> inserts a newline character (<code class="docutils literal notranslate"><span class="pre">b'\n'</span></code>)
 after every 76 bytes of the output, as well as ensuring that the output
-always ends with a newline, as per <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a> (MIME).</p>
+always ends with a newline, as per <span class="target" id="index-9"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a> (MIME).</p>
 </dd></dl>
 
 <dl class="py function">
@@ -382,9 +423,9 @@ always ends with a newline, as per <span class="target" id="index-7"></span><a c
 <dd><p>Encode the <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> <em>s</em>, which can contain arbitrary binary
 data, and return <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> containing the base64-encoded data, with newlines
 (<code class="docutils literal notranslate"><span class="pre">b'\n'</span></code>) inserted after every 76 bytes of output, and ensuring that
-there is a trailing newline, as per <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a> (MIME).</p>
+there is a trailing newline, as per <span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2045.html"><strong>RFC 2045</strong></a> (MIME).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.1 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.1 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -398,16 +439,21 @@ there is a trailing newline, as per <span class="target" id="index-8"></span><a 
 <span class="go">b&#39;data to be encoded&#39;</span>
 </pre></div>
 </div>
+<section id="security-considerations">
+<span id="base64-security"></span><h2>Security Considerations<a class="headerlink" href="#security-considerations" title="本標題的永久連結">¶</a></h2>
+<p>A new security considerations section was added to <span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4648.html"><strong>RFC 4648</strong></a> (section 12); it's
+recommended to review the security section for any code deployed to production.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
 <dt>Module <a class="reference internal" href="binascii.html#module-binascii" title="binascii: Tools for converting between binary and various ASCII-encoded binary representations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code></a></dt><dd><p>Support module containing ASCII-to-binary and binary-to-ASCII conversions.</p>
 </dd>
-<dt><span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1521.html"><strong>RFC 1521</strong></a> - MIME (Multipurpose Internet Mail Extensions) Part One: Mechanisms for Specifying and Describing the Format of Internet Message Bodies</dt><dd><p>Section 5.2, &quot;Base64 Content-Transfer-Encoding,&quot; provides the definition of the
+<dt><span class="target" id="index-12"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc1521.html"><strong>RFC 1521</strong></a> - MIME (Multipurpose Internet Mail Extensions) Part One: Mechanisms for Specifying and Describing the Format of Internet Message Bodies</dt><dd><p>Section 5.2, &quot;Base64 Content-Transfer-Encoding,&quot; provides the definition of the
 base64 encoding.</p>
 </dd>
 </dl>
 </div>
+</section>
 </section>
 
 
@@ -417,18 +463,32 @@ base64 encoding.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="mimetypes.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mimetypes</span></code> --- Map filenames to MIME types</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="binhex.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></p>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code> --- Base16, Base32, Base64, Base85 Data Encodings</a><ul>
+<li><a class="reference internal" href="#security-considerations">Security Considerations</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="mimetypes.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mimetypes</span></code> --- Map filenames to MIME types</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="binhex.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/base64.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/base64.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -463,15 +523,13 @@ base64 encoding.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="netdata.html" >Internet Data Handling</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code> —— Base16、Base32、Base64、Base85 資料編碼</a></li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code> --- Base16, Base32, Base64, Base85 Data Encodings</a></li>
                 <li class="right">
                     
 
@@ -489,25 +547,25 @@ base64 encoding.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

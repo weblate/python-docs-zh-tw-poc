@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New In Python 3.4 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New In Python 3.4 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
     <link rel="next" title="What&#39;s New In Python 3.3" href="3.3.html" />
-    <link rel="prev" title="Python 3.5 有什麼新功能" href="3.5.html" />
+    <link rel="prev" title="What&#39;s New In Python 3.5" href="3.5.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/3.4.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New In Python 3.4</a><ul>
 <li><a class="reference internal" href="#summary-release-highlights">Summary -- Release Highlights</a></li>
 <li><a class="reference internal" href="#new-features">New Features</a><ul>
@@ -200,18 +199,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="3.5.html"
-                        title="上一章">Python 3.5 有什麼新功能</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="3.3.html"
-                        title="下一章">What's New In Python 3.3</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.5.html"
+                          title="上一章">What's New In Python 3.5</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="3.3.html"
+                          title="下一章">What's New In Python 3.3</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/3.4.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/3.4.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -235,7 +239,7 @@
           <a href="3.3.html" title="What&#39;s New In Python 3.3"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="3.5.html" title="Python 3.5 有什麼新功能"
+          <a href="3.5.html" title="What&#39;s New In Python 3.5"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -247,13 +251,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New In Python 3.4</a></li>
                 <li class="right">
                     
@@ -428,15 +430,15 @@ systems with multiple Python installations.</p>
 </section>
 <section id="documentation-changes">
 <h4>Documentation Changes<a class="headerlink" href="#documentation-changes" title="本標題的永久連結">¶</a></h4>
-<p>As part of this change, the <a class="reference internal" href="../installing/index.html#installing-index"><span class="std std-ref">安裝 Python 模組</span></a> and
-<a class="reference internal" href="../distributing/index.html#distributing-index"><span class="std std-ref">發布 Python 模組</span></a> sections of the documentation have been
+<p>As part of this change, the <a class="reference internal" href="../installing/index.html#installing-index"><span class="std std-ref">Installing Python Modules</span></a> and
+<a class="reference internal" href="../distributing/index.html#distributing-index"><span class="std std-ref">Distributing Python Modules</span></a> sections of the documentation have been
 completely redesigned as short getting started and FAQ documents. Most
 packaging documentation has now been moved out to the Python Packaging
 Authority maintained <a class="reference external" href="https://packaging.python.org">Python Packaging User Guide</a> and the documentation of the individual
 projects.</p>
 <p>However, as this migration is currently still incomplete, the legacy
-versions of those guides remaining available as <a class="reference internal" href="../install/index.html#install-index"><span class="std std-ref">安裝 Python 模組（舊版）</span></a>
-and <a class="reference internal" href="../distutils/index.html#distutils-index"><span class="std std-ref">發布 Python 模組（舊版）</span></a>.</p>
+versions of those guides remaining available as <a class="reference internal" href="../install/index.html#install-index"><span class="std std-ref">Installing Python Modules (Legacy version)</span></a>
+and <a class="reference internal" href="../distutils/index.html#distutils-index"><span class="std std-ref">Distributing Python Modules (Legacy version)</span></a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
@@ -642,7 +644,7 @@ environment was declined.</p>
 <p><a class="reference internal" href="../library/ensurepip.html#module-ensurepip" title="ensurepip: Bootstrapping the &quot;pip&quot; installer into an existing Python installation or virtual environment."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code></a> includes a bundled copy of <code class="docutils literal notranslate"><span class="pre">pip</span></code>, up-to-date as of the first
 release candidate of the release of CPython with which it ships (this applies
 to both maintenance releases and feature releases).  <code class="docutils literal notranslate"><span class="pre">ensurepip</span></code> does not
-access the internet.  If the installation has Internet access, after
+access the internet.  If the installation has internet access, after
 <code class="docutils literal notranslate"><span class="pre">ensurepip</span></code> is run the bundled <code class="docutils literal notranslate"><span class="pre">pip</span></code> can be used to upgrade <code class="docutils literal notranslate"><span class="pre">pip</span></code> to a
 more recent release than the bundled one.  (Note that such an upgraded version
 of <code class="docutils literal notranslate"><span class="pre">pip</span></code> is considered to be a separately installed package and will not be
@@ -766,7 +768,7 @@ are not accepted: they didn't work before, now they raise an error right away.
 </section>
 <section id="base64">
 <h3>base64<a class="headerlink" href="#base64" title="本標題的永久連結">¶</a></h3>
-<p>The encoding and decoding functions in <a class="reference internal" href="../library/base64.html#module-base64" title="base64: RFC 3548: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a> now accept any
+<p>The encoding and decoding functions in <a class="reference internal" href="../library/base64.html#module-base64" title="base64: RFC 4648: Base16, Base32, Base64 Data Encodings; Base85 and Ascii85"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code></a> now accept any
 <a class="reference internal" href="../glossary.html#term-bytes-like-object"><span class="xref std std-term">bytes-like object</span></a> in cases where it previously required a
 <a class="reference internal" href="../library/stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> or <a class="reference internal" href="../library/stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> instance.  (Contributed by Nick Coghlan in
 <a class="reference external" href="https://bugs.python.org/issue17839">bpo-17839</a>.)</p>
@@ -1049,16 +1051,16 @@ is equivalent to <code class="docutils literal notranslate"><span class="pre">co
 for the <a class="reference internal" href="../library/importlib.html#importlib.abc.InspectLoader.get_code" title="importlib.abc.InspectLoader.get_code"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_code()</span></code></a> method.  However,
 it will normally be desirable to override the default implementation
 for performance reasons.  (Contributed by Brett Cannon in <a class="reference external" href="https://bugs.python.org/issue18072">bpo-18072</a>.)</p>
-<p>The <a class="reference internal" href="../library/importlib.html#importlib.reload" title="importlib.reload"><code class="xref py py-func docutils literal notranslate"><span class="pre">reload()</span></code></a> function has been moved from <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> to
-<a class="reference internal" href="../library/importlib.html#module-importlib" title="importlib: The implementation of the import machinery."><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib</span></code></a> as part of the <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module deprecation.  (Contributed by
+<p>The <a class="reference internal" href="../library/importlib.html#importlib.reload" title="importlib.reload"><code class="xref py py-func docutils literal notranslate"><span class="pre">reload()</span></code></a> function has been moved from <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> to
+<a class="reference internal" href="../library/importlib.html#module-importlib" title="importlib: The implementation of the import machinery."><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib</span></code></a> as part of the <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module deprecation.  (Contributed by
 Berker Peksag in <a class="reference external" href="https://bugs.python.org/issue18193">bpo-18193</a>.)</p>
 <p><a class="reference internal" href="../library/importlib.html#module-importlib.util" title="importlib.util: Utility code for importers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.util</span></code></a> now has a <a class="reference internal" href="../library/importlib.html#importlib.util.MAGIC_NUMBER" title="importlib.util.MAGIC_NUMBER"><code class="xref py py-data docutils literal notranslate"><span class="pre">MAGIC_NUMBER</span></code></a> attribute
 providing access to the bytecode version number.  This replaces the
-<a class="reference internal" href="../library/imp.html#imp.get_magic" title="imp.get_magic"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_magic()</span></code></a> function in the deprecated <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module.
+<a class="reference internal" href="../library/imp.html#imp.get_magic" title="imp.get_magic"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_magic()</span></code></a> function in the deprecated <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module.
 (Contributed by Brett Cannon in <a class="reference external" href="https://bugs.python.org/issue18192">bpo-18192</a>.)</p>
 <p>New <a class="reference internal" href="../library/importlib.html#module-importlib.util" title="importlib.util: Utility code for importers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.util</span></code></a> functions <a class="reference internal" href="../library/importlib.html#importlib.util.cache_from_source" title="importlib.util.cache_from_source"><code class="xref py py-func docutils literal notranslate"><span class="pre">cache_from_source()</span></code></a>
 and <a class="reference internal" href="../library/importlib.html#importlib.util.source_from_cache" title="importlib.util.source_from_cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">source_from_cache()</span></code></a> replace the same-named functions
-in the deprecated <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module.  (Contributed by Brett Cannon in
+in the deprecated <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module.  (Contributed by Brett Cannon in
 <a class="reference external" href="https://bugs.python.org/issue18194">bpo-18194</a>.)</p>
 <p>The <a class="reference internal" href="../library/importlib.html#module-importlib" title="importlib: The implementation of the import machinery."><code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib</span></code></a> bootstrap <code class="xref py py-class docutils literal notranslate"><span class="pre">NamespaceLoader</span></code> now conforms to
 the <a class="reference internal" href="../library/importlib.html#importlib.abc.InspectLoader" title="importlib.abc.InspectLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">InspectLoader</span></code></a> ABC, which means that <code class="docutils literal notranslate"><span class="pre">runpy</span></code> and
@@ -1929,9 +1931,9 @@ take care of the rest; and
 <a class="reference internal" href="../library/importlib.html#importlib.util.module_for_loader" title="importlib.util.module_for_loader"><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.util.module_for_loader()</span></code></a>, <a class="reference internal" href="../library/importlib.html#importlib.util.set_loader" title="importlib.util.set_loader"><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.util.set_loader()</span></code></a>,
 and <a class="reference internal" href="../library/importlib.html#importlib.util.set_package" title="importlib.util.set_package"><code class="xref py py-meth docutils literal notranslate"><span class="pre">importlib.util.set_package()</span></code></a> are no longer needed because their
 functions are now handled automatically by the import system.</p></li>
-<li><p>The <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module is pending deprecation. To keep compatibility with
+<li><p>The <a class="reference internal" href="../library/imp.html#module-imp" title="imp: Access the implementation of the import statement.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imp</span></code></a> module is pending deprecation. To keep compatibility with
 Python 2/3 code bases, the module's removal is currently not scheduled.</p></li>
-<li><p>The <a class="reference internal" href="../library/formatter.html#module-formatter" title="formatter: Generic output formatter and device interface.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">formatter</span></code></a> module is pending deprecation and is slated for removal
+<li><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">formatter</span></code> module is pending deprecation and is slated for removal
 in Python 3.6.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">MD5</span></code> as the default <em>digestmod</em> for the <a class="reference internal" href="../library/hmac.html#hmac.new" title="hmac.new"><code class="xref py py-func docutils literal notranslate"><span class="pre">hmac.new()</span></code></a> function is
 deprecated.  Python 3.6 will require an explicit digest name or constructor as
@@ -2311,8 +2313,9 @@ alternate context:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New In Python 3.4</a><ul>
 <li><a class="reference internal" href="#summary-release-highlights">Summary -- Release Highlights</a></li>
 <li><a class="reference internal" href="#new-features">New Features</a><ul>
@@ -2439,18 +2442,23 @@ alternate context:</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="3.5.html"
-                        title="上一章">Python 3.5 有什麼新功能</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="3.3.html"
-                        title="下一章">What's New In Python 3.3</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="3.5.html"
+                          title="上一章">What's New In Python 3.5</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="3.3.html"
+                          title="下一章">What's New In Python 3.3</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/3.4.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/3.4.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2473,7 +2481,7 @@ alternate context:</p>
           <a href="3.3.html" title="What&#39;s New In Python 3.3"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="3.5.html" title="Python 3.5 有什麼新功能"
+          <a href="3.5.html" title="What&#39;s New In Python 3.5"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -2485,13 +2493,11 @@ alternate context:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New In Python 3.4</a></li>
                 <li class="right">
                     
@@ -2510,25 +2516,25 @@ alternate context:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New in Python 2.0 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New in Python 2.0 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="Changelog（更動日誌）" href="changelog.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
     <link rel="prev" title="What&#39;s New in Python 2.1" href="2.1.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/2.0.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,14 +70,15 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.0</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#what-about-python-1-6">What About Python 1.6?</a></li>
 <li><a class="reference internal" href="#new-development-process">New Development Process</a></li>
 <li><a class="reference internal" href="#unicode">Unicode</a></li>
-<li><a class="reference internal" href="#list-comprehensions">串列綜合運算（List Comprehension）</a></li>
+<li><a class="reference internal" href="#list-comprehensions">List Comprehensions</a></li>
 <li><a class="reference internal" href="#augmented-assignment">Augmented Assignment</a></li>
 <li><a class="reference internal" href="#string-methods">String Methods</a></li>
 <li><a class="reference internal" href="#garbage-collection-of-cycles">Garbage Collection of Cycles</a></li>
@@ -106,18 +105,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.1.html"
-                        title="上一章">What's New in Python 2.1</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="changelog.html"
-                        title="下一章">Changelog（更動日誌）</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.1.html"
+                          title="上一章">What's New in Python 2.1</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="changelog.html"
+                          title="下一章">Changelog</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.0.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.0.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -138,7 +142,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="changelog.html" title="Changelog（更動日誌）"
+          <a href="changelog.html" title="Changelog"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="2.1.html" title="What&#39;s New in Python 2.1"
@@ -153,13 +157,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.0</a></li>
                 <li class="right">
                     
@@ -191,7 +193,7 @@
 </dd>
 </dl>
 <section id="introduction">
-<h2>簡介<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="本標題的永久連結">¶</a></h2>
 <p>A new release of Python, version 2.0, was released on October 16, 2000. This
 article covers the exciting new features in 2.0, highlights some other useful
 changes, and points out a few incompatible changes that may require rewriting
@@ -274,7 +276,7 @@ usually easy compared to the earlier task of coming up with a good design.
 Discussions of new features can often explode into lengthy mailing list threads,
 making the discussion hard to follow, and no one can read every posting to
 python-dev.  Therefore, a relatively formal process has been set up to write
-Python Enhancement Proposals (PEPs), modelled on the Internet RFC process.  PEPs
+Python Enhancement Proposals (PEPs), modelled on the internet RFC process.  PEPs
 are draft documents that describe a proposed new feature, and are continually
 revised until the community reaches a consensus, either accepting or rejecting
 the proposal.  Quoting from the introduction to <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0001"><strong>PEP 1</strong></a>, &quot;PEP Purpose and
@@ -401,7 +403,7 @@ used in testing and future-proofing your Python code, since some future version
 of Python may drop support for 8-bit strings and provide only Unicode strings.</p>
 </section>
 <section id="list-comprehensions">
-<h2>串列綜合運算（List Comprehension）<a class="headerlink" href="#list-comprehensions" title="本標題的永久連結">¶</a></h2>
+<h2>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="本標題的永久連結">¶</a></h2>
 <p>Lists are a workhorse data type in Python, and many programs manipulate a list
 at some point.  Two common operations on lists are to loop over them, and either
 pick out the elements that meet a certain criterion, or apply some function to
@@ -831,7 +833,7 @@ file, <code class="file docutils literal notranslate"><span class="pre">Include/
 it easy to have the Python interpreter use a custom allocator instead of C's
 standard <code class="xref py py-func docutils literal notranslate"><span class="pre">malloc()</span></code>.  For documentation, read the comments in
 <code class="file docutils literal notranslate"><span class="pre">Include/pymem.h</span></code> and <code class="file docutils literal notranslate"><span class="pre">Include/objimpl.h</span></code>.  For the lengthy
-discussions during which the interface was hammered out, see the Web archives of
+discussions during which the interface was hammered out, see the web archives of
 the 'patches' and 'python-dev' lists at python.org.</p>
 <p>Recent versions of the GUSI development environment for MacOS support POSIX
 threads.  Therefore, Python's POSIX threading support now works on the
@@ -850,7 +852,7 @@ only supports K&amp;R C.</p>
 limiting the size of source files.  In particular, this affected the maximum
 size of literal lists and dictionaries in Python source; occasionally people who
 are generating Python code would run into this limit.  A patch by Charles G.
-Waldman raises the limit from <code class="docutils literal notranslate"><span class="pre">2^16</span></code> to <code class="docutils literal notranslate"><span class="pre">2^{32}</span></code>.</p>
+Waldman raises the limit from <code class="docutils literal notranslate"><span class="pre">2**16</span></code> to <code class="docutils literal notranslate"><span class="pre">2**32</span></code>.</p>
 <p>Three new convenience functions intended for adding constants to a module's
 dictionary at module initialization time were added: <code class="xref py py-func docutils literal notranslate"><span class="pre">PyModule_AddObject()</span></code>,
 <code class="xref py py-func docutils literal notranslate"><span class="pre">PyModule_AddIntConstant()</span></code>, and <code class="xref py py-func docutils literal notranslate"><span class="pre">PyModule_AddStringConstant()</span></code>.  Each
@@ -1037,7 +1039,7 @@ the different <code class="xref py py-class docutils literal notranslate"><span 
 <section id="relationship-to-pyxml">
 <h3>Relationship to PyXML<a class="headerlink" href="#relationship-to-pyxml" title="本標題的永久連結">¶</a></h3>
 <p>The XML Special Interest Group has been working on XML-related Python code for a
-while.  Its code distribution, called PyXML, is available from the SIG's Web
+while.  Its code distribution, called PyXML, is available from the SIG's web
 pages at <a class="reference external" href="https://www.python.org/community/sigs/current/xml-sig">https://www.python.org/community/sigs/current/xml-sig</a>. The PyXML distribution also used
 the package name <code class="docutils literal notranslate"><span class="pre">xml</span></code>.  If you've written programs that used PyXML, you're
 probably wondering about its compatibility with the 2.0 <a class="reference internal" href="../library/xml.html#module-xml" title="xml: Package containing XML processing modules"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml</span></code></a> package.</p>
@@ -1123,7 +1125,7 @@ module. (Contributed by Sam Rushing, with some extensions by A.M. Kuchling.)</p>
 <li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyexpat</span></code>: An interface to the Expat XML parser. (Contributed by Paul
 Prescod.)</p></li>
 <li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotparser</span></code>: Parse a <code class="file docutils literal notranslate"><span class="pre">robots.txt</span></code> file, which is used for writing
-Web spiders that politely avoid certain areas of a Web site.  The parser accepts
+web spiders that politely avoid certain areas of a web site.  The parser accepts
 the contents of a <code class="file docutils literal notranslate"><span class="pre">robots.txt</span></code> file, builds a set of rules from it, and
 can then answer questions about the fetchability of a given URL.  (Contributed
 by Skip Montanaro.)</p></li>
@@ -1131,7 +1133,7 @@ by Skip Montanaro.)</p></li>
 indentation. (Contributed by Tim Peters.)</p></li>
 <li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">UserString</span></code>: A base class useful for deriving objects that behave like
 strings.</p></li>
-<li><p><a class="reference internal" href="../library/webbrowser.html#module-webbrowser" title="webbrowser: Easy-to-use controller for Web browsers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">webbrowser</span></code></a>: A module that provides a platform independent way to launch
+<li><p><a class="reference internal" href="../library/webbrowser.html#module-webbrowser" title="webbrowser: Easy-to-use controller for web browsers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">webbrowser</span></code></a>: A module that provides a platform independent way to launch
 a web browser on a specific URL. For each platform, various browsers are tried
 in a specific order. The user can alter which browser is launched by setting the
 <em>BROWSER</em> environment variable.  (Originally inspired by Eric S. Raymond's patch
@@ -1203,14 +1205,15 @@ Marangozov, Tobias Polzin, Guido van Rossum, Neil Schemenauer, and Russ Schmidt.
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.0</a><ul>
-<li><a class="reference internal" href="#introduction">簡介</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#what-about-python-1-6">What About Python 1.6?</a></li>
 <li><a class="reference internal" href="#new-development-process">New Development Process</a></li>
 <li><a class="reference internal" href="#unicode">Unicode</a></li>
-<li><a class="reference internal" href="#list-comprehensions">串列綜合運算（List Comprehension）</a></li>
+<li><a class="reference internal" href="#list-comprehensions">List Comprehensions</a></li>
 <li><a class="reference internal" href="#augmented-assignment">Augmented Assignment</a></li>
 <li><a class="reference internal" href="#string-methods">String Methods</a></li>
 <li><a class="reference internal" href="#garbage-collection-of-cycles">Garbage Collection of Cycles</a></li>
@@ -1237,18 +1240,23 @@ Marangozov, Tobias Polzin, Guido van Rossum, Neil Schemenauer, and Russ Schmidt.
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.1.html"
-                        title="上一章">What's New in Python 2.1</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="changelog.html"
-                        title="下一章">Changelog（更動日誌）</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.1.html"
+                          title="上一章">What's New in Python 2.1</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="changelog.html"
+                          title="下一章">Changelog</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.0.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.0.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -1268,7 +1276,7 @@ Marangozov, Tobias Polzin, Guido van Rossum, Neil Schemenauer, and Russ Schmidt.
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="changelog.html" title="Changelog（更動日誌）"
+          <a href="changelog.html" title="Changelog"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="2.1.html" title="What&#39;s New in Python 2.1"
@@ -1283,13 +1291,11 @@ Marangozov, Tobias Polzin, Guido van Rossum, Neil Schemenauer, and Russ Schmidt.
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.0</a></li>
                 <li class="right">
                     
@@ -1308,25 +1314,25 @@ Marangozov, Tobias Polzin, Guido van Rossum, Neil Schemenauer, and Russ Schmidt.
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

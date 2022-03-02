@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>xml.sax.handler --- Base classes for SAX handlers &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml.sax.handler --- Base classes for SAX handlers &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="xml.sax --- Support for SAX2 parsers" href="xml.sax.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/xml.sax.handler.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,29 +70,36 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code> --- Base classes for SAX handlers</a><ul>
 <li><a class="reference internal" href="#contenthandler-objects">ContentHandler Objects</a></li>
 <li><a class="reference internal" href="#dtdhandler-objects">DTDHandler Objects</a></li>
 <li><a class="reference internal" href="#entityresolver-objects">EntityResolver Objects</a></li>
 <li><a class="reference internal" href="#errorhandler-objects">ErrorHandler Objects</a></li>
+<li><a class="reference internal" href="#lexicalhandler-objects">LexicalHandler Objects</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xml.sax.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code> --- Support for SAX2 parsers</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.sax.utils.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.saxutils</span></code> --- SAX Utilities</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xml.sax.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code> --- Support for SAX2 parsers</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.sax.utils.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.saxutils</span></code> --- SAX Utilities</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.sax.handler.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.sax.handler.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -130,13 +135,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" accesskey="U">Structured Markup Processing Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code> --- Base classes for SAX handlers</a></li>
                 <li class="right">
@@ -163,17 +166,17 @@
             
   <section id="module-xml.sax.handler">
 <span id="xml-sax-handler-base-classes-for-sax-handlers"></span><h1><a class="reference internal" href="#module-xml.sax.handler" title="xml.sax.handler: Base classes for SAX event handlers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code></a> --- Base classes for SAX handlers<a class="headerlink" href="#module-xml.sax.handler" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/xml/sax/handler.py">Lib/xml/sax/handler.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/xml/sax/handler.py">Lib/xml/sax/handler.py</a></p>
 <hr class="docutils" />
-<p>The SAX API defines four kinds of handlers: content handlers, DTD handlers,
-error handlers, and entity resolvers. Applications normally only need to
-implement those interfaces whose events they are interested in; they can
-implement the interfaces in a single object or in multiple objects. Handler
-implementations should inherit from the base classes provided in the module
-<a class="reference internal" href="#module-xml.sax.handler" title="xml.sax.handler: Base classes for SAX event handlers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code></a>, so that all methods get default implementations.</p>
+<p>The SAX API defines five kinds of handlers: content handlers, DTD handlers,
+error handlers, entity resolvers and lexical handlers. Applications normally
+only need to implement those interfaces whose events they are interested in;
+they can implement the interfaces in a single object or in multiple objects.
+Handler implementations should inherit from the base classes provided in the
+module <a class="reference internal" href="#module-xml.sax.handler" title="xml.sax.handler: Base classes for SAX event handlers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code></a>, so that all methods get default implementations.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xml.sax.handler.ContentHandler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">ContentHandler</span></span><a class="headerlink" href="#xml.sax.handler.ContentHandler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">ContentHandler</span></span><a class="headerlink" href="#xml.sax.handler.ContentHandler" title="本定義的永久連結">¶</a></dt>
 <dd><p>This is the main callback interface in SAX, and the one most important to
 applications. The order of events in this interface mirrors the order of the
 information in the document.</p>
@@ -181,7 +184,7 @@ information in the document.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xml.sax.handler.DTDHandler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">DTDHandler</span></span><a class="headerlink" href="#xml.sax.handler.DTDHandler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">DTDHandler</span></span><a class="headerlink" href="#xml.sax.handler.DTDHandler" title="本定義的永久連結">¶</a></dt>
 <dd><p>Handle DTD events.</p>
 <p>This interface specifies only those DTD events required for basic parsing
 (unparsed entities and attributes).</p>
@@ -189,7 +192,7 @@ information in the document.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xml.sax.handler.EntityResolver">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">EntityResolver</span></span><a class="headerlink" href="#xml.sax.handler.EntityResolver" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">EntityResolver</span></span><a class="headerlink" href="#xml.sax.handler.EntityResolver" title="本定義的永久連結">¶</a></dt>
 <dd><p>Basic interface for resolving entities. If you create an object implementing
 this interface, then register the object with your Parser, the parser will call
 the method in your object to resolve all external entities.</p>
@@ -197,10 +200,17 @@ the method in your object to resolve all external entities.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xml.sax.handler.ErrorHandler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">ErrorHandler</span></span><a class="headerlink" href="#xml.sax.handler.ErrorHandler" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">ErrorHandler</span></span><a class="headerlink" href="#xml.sax.handler.ErrorHandler" title="本定義的永久連結">¶</a></dt>
 <dd><p>Interface used by the parser to present error and warning messages to the
 application.  The methods of this object control whether errors are immediately
 converted to exceptions or are handled in some other way.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="xml.sax.handler.LexicalHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">LexicalHandler</span></span><a class="headerlink" href="#xml.sax.handler.LexicalHandler" title="本定義的永久連結">¶</a></dt>
+<dd><p>Interface used by the parser to represent low frequency events which may not
+be of interest to many applications.</p>
 </dd></dl>
 
 <p>In addition to these classes, <a class="reference internal" href="#module-xml.sax.handler" title="xml.sax.handler: Base classes for SAX event handlers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code></a> provides symbolic constants
@@ -289,7 +299,7 @@ DTD subset.</div>
 <span class="sig-prename descclassname"><span class="pre">xml.sax.handler.</span></span><span class="sig-name descname"><span class="pre">property_lexical_handler</span></span><a class="headerlink" href="#xml.sax.handler.property_lexical_handler" title="本定義的永久連結">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">value: <code class="docutils literal notranslate"><span class="pre">&quot;http://xml.org/sax/properties/lexical-handler&quot;</span></code></div>
-<div class="line">data type: xml.sax.sax2lib.LexicalHandler (not supported in Python 2)</div>
+<div class="line">data type: xml.sax.handler.LexicalHandler (not supported in Python 2)</div>
 <div class="line">description: An optional extension handler for lexical events like
 comments.</div>
 <div class="line">access: read/write</div>
@@ -581,6 +591,52 @@ in this method will cause parsing to end.</p>
 </dd></dl>
 
 </section>
+<section id="lexicalhandler-objects">
+<span id="lexical-handler-objects"></span><h2>LexicalHandler Objects<a class="headerlink" href="#lexicalhandler-objects" title="本標題的永久連結">¶</a></h2>
+<p>Optional SAX2 handler for lexical events.</p>
+<p>This handler is used to obtain lexical information about an XML
+document. Lexical information includes information describing the
+document encoding used and XML comments embedded in the document, as
+well as section boundaries for the DTD and for any CDATA sections.
+The lexical handlers are used in the same manner as content handlers.</p>
+<p>Set the LexicalHandler of an XMLReader by using the setProperty method
+with the property identifier
+<code class="docutils literal notranslate"><span class="pre">'http://xml.org/sax/properties/lexical-handler'</span></code>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="xml.sax.handler.LexicalHandler.comment">
+<span class="sig-prename descclassname"><span class="pre">LexicalHandler.</span></span><span class="sig-name descname"><span class="pre">comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.handler.LexicalHandler.comment" title="本定義的永久連結">¶</a></dt>
+<dd><p>Reports a comment anywhere in the document (including the DTD and
+outside the document element).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xml.sax.handler.LexicalHandler.startDTD">
+<span class="sig-prename descclassname"><span class="pre">LexicalHandler.</span></span><span class="sig-name descname"><span class="pre">startDTD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">public_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.handler.LexicalHandler.startDTD" title="本定義的永久連結">¶</a></dt>
+<dd><p>Reports the start of the DTD declarations if the document has an
+associated DTD.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xml.sax.handler.LexicalHandler.endDTD">
+<span class="sig-prename descclassname"><span class="pre">LexicalHandler.</span></span><span class="sig-name descname"><span class="pre">endDTD</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.handler.LexicalHandler.endDTD" title="本定義的永久連結">¶</a></dt>
+<dd><p>Reports the end of DTD declaration.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xml.sax.handler.LexicalHandler.startCDATA">
+<span class="sig-prename descclassname"><span class="pre">LexicalHandler.</span></span><span class="sig-name descname"><span class="pre">startCDATA</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.handler.LexicalHandler.startCDATA" title="本定義的永久連結">¶</a></dt>
+<dd><p>Reports the start of a CDATA marked section.</p>
+<p>The contents of the CDATA marked section will be reported through
+the characters handler.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xml.sax.handler.LexicalHandler.endCDATA">
+<span class="sig-prename descclassname"><span class="pre">LexicalHandler.</span></span><span class="sig-name descname"><span class="pre">endCDATA</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.handler.LexicalHandler.endCDATA" title="本定義的永久連結">¶</a></dt>
+<dd><p>Reports the end of a CDATA marked section.</p>
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -590,29 +646,36 @@ in this method will cause parsing to end.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code> --- Base classes for SAX handlers</a><ul>
 <li><a class="reference internal" href="#contenthandler-objects">ContentHandler Objects</a></li>
 <li><a class="reference internal" href="#dtdhandler-objects">DTDHandler Objects</a></li>
 <li><a class="reference internal" href="#entityresolver-objects">EntityResolver Objects</a></li>
 <li><a class="reference internal" href="#errorhandler-objects">ErrorHandler Objects</a></li>
+<li><a class="reference internal" href="#lexicalhandler-objects">LexicalHandler Objects</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="xml.sax.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code> --- Support for SAX2 parsers</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="xml.sax.utils.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.saxutils</span></code> --- SAX Utilities</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="xml.sax.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code> --- Support for SAX2 parsers</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="xml.sax.utils.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.saxutils</span></code> --- SAX Utilities</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/xml.sax.handler.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/xml.sax.handler.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -647,13 +710,11 @@ in this method will cause parsing to end.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="markup.html" >Structured Markup Processing Tools</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.handler</span></code> --- Base classes for SAX handlers</a></li>
                 <li class="right">
@@ -673,25 +734,25 @@ in this method will cause parsing to end.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

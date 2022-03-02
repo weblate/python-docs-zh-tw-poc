@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What&#39;s New in Python 2.3 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What&#39;s New in Python 2.3 &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="What&#39;s New in Python 2.4" href="2.4.html" />
     <link rel="canonical" href="https://docs.python.org/3/whatsnew/2.3.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.3</a><ul>
 <li><a class="reference internal" href="#pep-218-a-standard-set-datatype">PEP 218: A Standard Set Datatype</a></li>
 <li><a class="reference internal" href="#pep-255-simple-generators">PEP 255: Simple Generators</a></li>
@@ -112,18 +111,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.4.html"
-                        title="上一章">What's New in Python 2.4</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.2.html"
-                        title="下一章">What's New in Python 2.2</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.4.html"
+                          title="上一章">What's New in Python 2.4</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.2.html"
+                          title="下一章">What's New in Python 2.2</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.3.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.3.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -159,13 +163,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.3</a></li>
                 <li class="right">
                     
@@ -1301,8 +1303,8 @@ this:</p>
 <p>Modifying <code class="file docutils literal notranslate"><span class="pre">sample.h</span></code> would then cause the module to be recompiled.
 (Contributed by Jeremy Hylton.)</p>
 </li>
-<li><p>Other minor changes to Distutils: it now checks for the <span class="target" id="index-24"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CC</span></code>,
-<span class="target" id="index-25"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CFLAGS</span></code>, <span class="target" id="index-26"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CPP</span></code>, <span class="target" id="index-27"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">LDFLAGS</span></code>, and <span class="target" id="index-28"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CPPFLAGS</span></code>
+<li><p>Other minor changes to Distutils: it now checks for the <span class="target" id="index-24"></span><a class="reference internal" href="../using/configure.html#envvar-CC"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CC</span></code></a>,
+<span class="target" id="index-25"></span><a class="reference internal" href="../using/configure.html#envvar-CFLAGS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CFLAGS</span></code></a>, <span class="target" id="index-26"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CPP</span></code>, <span class="target" id="index-27"></span><a class="reference internal" href="../using/configure.html#envvar-LDFLAGS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">LDFLAGS</span></code></a>, and <span class="target" id="index-28"></span><a class="reference internal" href="../using/configure.html#envvar-CPPFLAGS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CPPFLAGS</span></code></a>
 environment variables, using them to override the settings in Python's
 configuration (contributed by Robert Weber).</p></li>
 <li><p>Previously the <a class="reference internal" href="../library/doctest.html#module-doctest" title="doctest: Test pieces of code within docstrings."><code class="xref py py-mod docutils literal notranslate"><span class="pre">doctest</span></code></a> module would only search the docstrings of
@@ -1409,7 +1411,7 @@ work properly when confronted with floating point time stamps, or if they use
 the tuple API. If used, the feature should be activated on an application level
 instead of trying to enable it on a per-use basis.</p>
 </li>
-<li><p>The <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module contains a new parser for command-line arguments
+<li><p>The <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module contains a new parser for command-line arguments
 that can convert option values to a particular Python type  and will
 automatically generate a usage message.  See the following section for  more
 details.</p></li>
@@ -1652,7 +1654,7 @@ you must supply a true value for the <em>allow_none</em> parameter when creating
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Marshaller</span></code> instance.</p></li>
 <li><p>The new <code class="xref py py-mod docutils literal notranslate"><span class="pre">DocXMLRPCServer</span></code> module allows writing self-documenting XML-RPC
 servers. Run it in demo mode (as a program) to see it in action.   Pointing the
-Web browser to the RPC server produces pydoc-style documentation; pointing
+web browser to the RPC server produces pydoc-style documentation; pointing
 xmlrpclib to the server allows invoking the actual methods. (Contributed by
 Brian Quinlan.)</p></li>
 <li><p>Support for internationalized domain names (RFCs 3454, 3490, 3491, and 3492)
@@ -1723,7 +1725,7 @@ support for parsing strings and getting back a <code class="xref py py-class doc
 <section id="the-optparse-module">
 <h3>The optparse Module<a class="headerlink" href="#the-optparse-module" title="本標題的永久連結">¶</a></h3>
 <p>The <a class="reference internal" href="../library/getopt.html#module-getopt" title="getopt: Portable parser for command line options; support both short and long option names."><code class="xref py py-mod docutils literal notranslate"><span class="pre">getopt</span></code></a> module provides simple parsing of command-line arguments.  The
-new <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module (originally named Optik) provides more elaborate
+new <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> module (originally named Optik) provides more elaborate
 command-line parsing that follows the Unix conventions, automatically creates
 the output for <code class="xref std std-option docutils literal notranslate"><span class="pre">--help</span></code>, and can perform different actions for different
 options.</p>
@@ -1866,7 +1868,7 @@ and the argument checking can then be removed.  If compatibility with pre-2.2
 versions of Python is important, the code could use <code class="docutils literal notranslate"><span class="pre">PyArg_ParseTuple(args,</span>
 <span class="pre">&quot;&quot;)</span></code> instead, but this will be slower than using <a class="reference internal" href="../c-api/structures.html#METH_NOARGS" title="METH_NOARGS"><code class="xref py py-const docutils literal notranslate"><span class="pre">METH_NOARGS</span></code></a>.</p></li>
 <li><p><a class="reference internal" href="../c-api/arg.html#c.PyArg_ParseTuple" title="PyArg_ParseTuple"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyArg_ParseTuple()</span></code></a> accepts new format characters for various sizes of
-unsigned integers: <code class="docutils literal notranslate"><span class="pre">B</span></code> for <span class="xref c c-texpr"><span class="kt">unsigned char</span></span>, <code class="docutils literal notranslate"><span class="pre">H</span></code> for <span class="xref c c-texpr"><span class="kt">unsigned short int</span></span>,  <code class="docutils literal notranslate"><span class="pre">I</span></code> for <span class="xref c c-texpr"><span class="kt">unsigned int</span></span>,  and <code class="docutils literal notranslate"><span class="pre">K</span></code> for <span class="xref c c-texpr"><span class="kt">unsigned long long</span></span>.</p></li>
+unsigned integers: <code class="docutils literal notranslate"><span class="pre">B</span></code> for <span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span></span>, <code class="docutils literal notranslate"><span class="pre">H</span></code> for <span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="kt">int</span></span>,  <code class="docutils literal notranslate"><span class="pre">I</span></code> for <span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span></span>,  and <code class="docutils literal notranslate"><span class="pre">K</span></code> for <span class="xref c c-texpr"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></span>.</p></li>
 <li><p>A new function, <code class="docutils literal notranslate"><span class="pre">PyObject_DelItemString(mapping,</span> <span class="pre">char</span> <span class="pre">*key)</span></code> was added
 as shorthand for <code class="docutils literal notranslate"><span class="pre">PyObject_DelItem(mapping,</span> <span class="pre">PyString_New(key))</span></code>.</p></li>
 <li><p>File objects now manage their internal string buffer differently, increasing
@@ -2015,8 +2017,9 @@ Suzi, Jason Tishler, Just van Rossum.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">What's New in Python 2.3</a><ul>
 <li><a class="reference internal" href="#pep-218-a-standard-set-datatype">PEP 218: A Standard Set Datatype</a></li>
 <li><a class="reference internal" href="#pep-255-simple-generators">PEP 255: Simple Generators</a></li>
@@ -2055,18 +2058,23 @@ Suzi, Jason Tishler, Just van Rossum.</p>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="2.4.html"
-                        title="上一章">What's New in Python 2.4</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="2.2.html"
-                        title="下一章">What's New in Python 2.2</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="2.4.html"
+                          title="上一章">What's New in Python 2.4</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="2.2.html"
+                          title="下一章">What's New in Python 2.2</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/whatsnew/2.3.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/whatsnew/2.3.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -2101,13 +2109,11 @@ Suzi, Jason Tishler, Just van Rossum.</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 有什麼新功能？</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What's New in Python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">What's New in Python 2.3</a></li>
                 <li class="right">
                     
@@ -2126,25 +2132,25 @@ Suzi, Jason Tishler, Just van Rossum.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

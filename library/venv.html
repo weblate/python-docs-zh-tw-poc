@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>venv --- Creation of virtual environments &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>venv --- Creation of virtual environments &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -30,8 +30,6 @@
     <link rel="prev" title="ensurepip --- Bootstrapping the pip installer" href="ensurepip.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/venv.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,8 +70,9 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code> --- Creation of virtual environments</a><ul>
 <li><a class="reference internal" href="#creating-virtual-environments">Creating virtual environments</a></li>
 <li><a class="reference internal" href="#api">API</a></li>
@@ -82,18 +81,23 @@
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="ensurepip.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code> --- Bootstrapping the <code class="docutils literal notranslate"><span class="pre">pip</span></code> installer</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="zipapp.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> --- Manage executable Python zip archives</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="ensurepip.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code> --- Bootstrapping the <code class="docutils literal notranslate"><span class="pre">pip</span></code> installer</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="zipapp.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> --- Manage executable Python zip archives</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/venv.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/venv.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -129,14 +133,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="distribution.html" accesskey="U">軟體封裝與發布</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="distribution.html" accesskey="U">Software Packaging and Distribution</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code> --- Creation of virtual environments</a></li>
                 <li class="right">
                     
@@ -163,9 +165,9 @@
   <section id="module-venv">
 <span id="venv-creation-of-virtual-environments"></span><h1><a class="reference internal" href="#module-venv" title="venv: Creation of virtual environments."><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code></a> --- Creation of virtual environments<a class="headerlink" href="#module-venv" title="本標題的永久連結">¶</a></h1>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/venv/">Lib/venv/</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/venv/">Lib/venv/</a></p>
 <hr class="docutils" id="index-0" />
 <p>The <a class="reference internal" href="#module-venv" title="venv: Creation of virtual environments."><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code></a> module provides support for creating lightweight &quot;virtual
 environments&quot; with their own site directories, optionally isolated from system
@@ -196,11 +198,11 @@ used at environment creation time). It also creates an (initially empty)
 <code class="docutils literal notranslate"><span class="pre">Lib\site-packages</span></code>). If an existing directory is specified, it will be
 re-used.</p>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">3.6 版後已棄用: </span><code class="docutils literal notranslate"><span class="pre">pyvenv</span></code> was the recommended tool for creating virtual environments for
+<p><span class="versionmodified deprecated">在 3.6 版本開始棄用: </span><code class="docutils literal notranslate"><span class="pre">pyvenv</span></code> was the recommended tool for creating virtual environments for
 Python 3.3 and 3.4, and is <a class="reference external" href="https://docs.python.org/dev/whatsnew/3.6.html#deprecated-features">deprecated in Python 3.6</a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.5 版更變: </span>The use of <code class="docutils literal notranslate"><span class="pre">venv</span></code> is now recommended for creating virtual environments.</p>
+<p><span class="versionmodified changed">在 3.5 版本變更: </span>The use of <code class="docutils literal notranslate"><span class="pre">venv</span></code> is now recommended for creating virtual environments.</p>
 </div>
 <p>On Windows, invoke the <code class="docutils literal notranslate"><span class="pre">venv</span></code> command as follows:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>c:\&gt;c:\Python35\python -m venv c:\path\to\myenv
@@ -246,14 +248,14 @@ sourcing an activate script in its bin directory.
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.9 版更變: </span>Add <code class="docutils literal notranslate"><span class="pre">--upgrade-deps</span></code> option to upgrade pip + setuptools to the latest on PyPI</p>
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Add <code class="docutils literal notranslate"><span class="pre">--upgrade-deps</span></code> option to upgrade pip + setuptools to the latest on PyPI</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Installs pip by default, added the <code class="docutils literal notranslate"><span class="pre">--without-pip</span></code>  and <code class="docutils literal notranslate"><span class="pre">--copies</span></code>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Installs pip by default, added the <code class="docutils literal notranslate"><span class="pre">--without-pip</span></code>  and <code class="docutils literal notranslate"><span class="pre">--copies</span></code>
 options</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>In earlier versions, if the target directory already existed, an error was
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>In earlier versions, if the target directory already existed, an error was
 raised, unless the <code class="docutils literal notranslate"><span class="pre">--clear</span></code> or <code class="docutils literal notranslate"><span class="pre">--upgrade</span></code> option was provided.</p>
 </div>
 <div class="admonition note">
@@ -335,10 +337,10 @@ and run with the virtual environment's Python automatically.</p>
 The exact mechanism is platform-specific and is an internal implementation
 detail (typically a script or shell function will be used).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.4 版新加入: </span><code class="docutils literal notranslate"><span class="pre">fish</span></code> and <code class="docutils literal notranslate"><span class="pre">csh</span></code> activation scripts.</p>
+<p><span class="versionmodified added">在 3.4 版本新加入: </span><code class="docutils literal notranslate"><span class="pre">fish</span></code> and <code class="docutils literal notranslate"><span class="pre">csh</span></code> activation scripts.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.8 版新加入: </span>PowerShell activation scripts installed under POSIX for PowerShell Core
+<p><span class="versionmodified added">在 3.8 版本新加入: </span>PowerShell activation scripts installed under POSIX for PowerShell Core
 support.</p>
 </div>
 <div class="admonition note" id="venv-def">
@@ -392,7 +394,7 @@ mechanisms for third-party virtual environment creators to customize environment
 creation according to their needs, the <a class="reference internal" href="#venv.EnvBuilder" title="venv.EnvBuilder"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvBuilder</span></code></a> class.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="venv.EnvBuilder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">venv.</span></span><span class="sig-name descname"><span class="pre">EnvBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system_site_packages</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symlinks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_pip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade_deps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#venv.EnvBuilder" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">venv.</span></span><span class="sig-name descname"><span class="pre">EnvBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system_site_packages</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symlinks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_pip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade_deps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#venv.EnvBuilder" title="本定義的永久連結">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#venv.EnvBuilder" title="venv.EnvBuilder"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvBuilder</span></code></a> class accepts the following keyword arguments on
 instantiation:</p>
 <ul class="simple">
@@ -415,13 +417,13 @@ current directory is used as the prompt.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">upgrade_deps</span></code> -- Update the base venv modules to the latest on PyPI</p></li>
 </ul>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added the <code class="docutils literal notranslate"><span class="pre">with_pip</span></code> parameter</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">with_pip</span></code> parameter</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.6 版新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> parameter</p>
+<p><span class="versionmodified added">在 3.6 版本新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> parameter</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">upgrade_deps</span></code> parameter</p>
+<p><span class="versionmodified added">在 3.9 版本新加入: </span>Added the <code class="docutils literal notranslate"><span class="pre">upgrade_deps</span></code> parameter</p>
 </div>
 <p>Creators of third-party virtual environment tools will be free to use the
 provided <a class="reference internal" href="#venv.EnvBuilder" title="venv.EnvBuilder"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvBuilder</span></code></a> class as a base class.</p>
@@ -493,7 +495,7 @@ environment.</p>
 <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>) in the environment. This is done by shelling out to the
 <code class="docutils literal notranslate"><span class="pre">pip</span></code> executable in the environment.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -506,12 +508,12 @@ perform other post-creation steps.</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7.2 版更變: </span>Windows now uses redirector scripts for <code class="docutils literal notranslate"><span class="pre">python[w].exe</span></code> instead of
+<p><span class="versionmodified changed">在 3.7.2 版本變更: </span>Windows now uses redirector scripts for <code class="docutils literal notranslate"><span class="pre">python[w].exe</span></code> instead of
 copying the actual binaries. In 3.7.2 only <a class="reference internal" href="#venv.EnvBuilder.setup_python" title="venv.EnvBuilder.setup_python"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup_python()</span></code></a> does
 nothing unless running from a build in the source tree.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.7.3 版更變: </span>Windows copies the redirector scripts as part of <a class="reference internal" href="#venv.EnvBuilder.setup_python" title="venv.EnvBuilder.setup_python"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup_python()</span></code></a>
+<p><span class="versionmodified changed">在 3.7.3 版本變更: </span>Windows copies the redirector scripts as part of <a class="reference internal" href="#venv.EnvBuilder.setup_python" title="venv.EnvBuilder.setup_python"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup_python()</span></code></a>
 instead of <a class="reference internal" href="#venv.EnvBuilder.setup_scripts" title="venv.EnvBuilder.setup_scripts"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup_scripts()</span></code></a>. This was not the case in 3.7.2.
 When using symlinks, the original executables will be linked.</p>
 </div>
@@ -547,17 +549,20 @@ is being upgraded).</p>
 <p>There is also a module-level convenience function:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="venv.create">
-<span class="sig-prename descclassname"><span class="pre">venv.</span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system_site_packages</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symlinks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_pip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#venv.create" title="本定義的永久連結">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">venv.</span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system_site_packages</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symlinks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_pip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade_deps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#venv.create" title="本定義的永久連結">¶</a></dt>
 <dd><p>Create an <a class="reference internal" href="#venv.EnvBuilder" title="venv.EnvBuilder"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvBuilder</span></code></a> with the given keyword arguments, and call its
 <a class="reference internal" href="#venv.EnvBuilder.create" title="venv.EnvBuilder.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a> method with the <em>env_dir</em> argument.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">3.3 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.3 版本新加入.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.4 版更變: </span>Added the <code class="docutils literal notranslate"><span class="pre">with_pip</span></code> parameter</p>
+<p><span class="versionmodified changed">在 3.4 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">with_pip</span></code> parameter</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.6 版更變: </span>Added the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> parameter</p>
+<p><span class="versionmodified changed">在 3.6 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> parameter</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 3.9 版本變更: </span>Added the <code class="docutils literal notranslate"><span class="pre">upgrade_deps</span></code> parameter</p>
 </div>
 </dd></dl>
 
@@ -719,7 +724,7 @@ subclass which installs setuptools and pip into a created virtual environment:</
                                                      <span class="s1">&#39;more target &#39;</span>
                                                      <span class="s1">&#39;directories.&#39;</span><span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;dirs&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;ENV_DIR&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
-                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;A directory in which to create the</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;A directory in which to create the &#39;</span>
                                  <span class="s1">&#39;virtual environment.&#39;</span><span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--no-setuptools&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                             <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;nodist&#39;</span><span class="p">,</span>
@@ -793,8 +798,9 @@ subclass which installs setuptools and pip into a created virtual environment:</
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code> --- Creation of virtual environments</a><ul>
 <li><a class="reference internal" href="#creating-virtual-environments">Creating virtual environments</a></li>
 <li><a class="reference internal" href="#api">API</a></li>
@@ -803,18 +809,23 @@ subclass which installs setuptools and pip into a created virtual environment:</
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="ensurepip.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code> --- Bootstrapping the <code class="docutils literal notranslate"><span class="pre">pip</span></code> installer</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="zipapp.html"
-                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> --- Manage executable Python zip archives</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="ensurepip.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code> --- Bootstrapping the <code class="docutils literal notranslate"><span class="pre">pip</span></code> installer</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="zipapp.html"
+                          title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipapp</span></code> --- Manage executable Python zip archives</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/venv.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/venv.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -849,14 +860,12 @@ subclass which installs setuptools and pip into a created virtual environment:</
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="distribution.html" >軟體封裝與發布</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="distribution.html" >Software Packaging and Distribution</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code> --- Creation of virtual environments</a></li>
                 <li class="right">
                     
@@ -875,25 +884,25 @@ subclass which installs setuptools and pip into a created virtual environment:</
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

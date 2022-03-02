@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>graphlib --- Functionality to operate with graph-like structures &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>graphlib --- Functionality to operate with graph-like structures &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="數值與數學模組" href="numeric.html" />
+    <link rel="next" title="Numeric and Mathematical Modules" href="numeric.html" />
     <link rel="prev" title="enum --- Support for enumerations" href="enum.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/graphlib.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,26 +70,32 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a><ul>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="enum.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code> --- Support for enumerations</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="numeric.html"
-                        title="下一章">數值與數學模組</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="enum.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code> --- Support for enumerations</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="numeric.html"
+                          title="下一章">Numeric and Mathematical Modules</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/graphlib.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/graphlib.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -112,7 +116,7 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="numeric.html" title="數值與數學模組"
+          <a href="numeric.html" title="Numeric and Mathematical Modules"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
           <a href="enum.html" title="enum --- Support for enumerations"
@@ -127,13 +131,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" accesskey="U">Data Types</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a></li>
                 <li class="right">
@@ -160,11 +162,11 @@
             
   <section id="module-graphlib">
 <span id="graphlib-functionality-to-operate-with-graph-like-structures"></span><h1><a class="reference internal" href="#module-graphlib" title="graphlib: Functionality to operate with graph-like structures"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code></a> --- Functionality to operate with graph-like structures<a class="headerlink" href="#module-graphlib" title="本標題的永久連結">¶</a></h1>
-<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.9/Lib/graphlib.py">Lib/graphlib.py</a></p>
+<p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/graphlib.py">Lib/graphlib.py</a></p>
 <hr class="docutils" />
 <dl class="py class">
 <dt class="sig sig-object py" id="graphlib.TopologicalSorter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">graphlib.</span></span><span class="sig-name descname"><span class="pre">TopologicalSorter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#graphlib.TopologicalSorter" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphlib.</span></span><span class="sig-name descname"><span class="pre">TopologicalSorter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#graphlib.TopologicalSorter" title="本定義的永久連結">¶</a></dt>
 <dd><p>Provides functionality to topologically sort a graph of hashable nodes.</p>
 <p>A topological order is a linear ordering of the vertices in a graph such that
 for every directed edge u -&gt; v from vertex u to vertex v, vertex u comes
@@ -339,7 +341,7 @@ determined by the order of insertion.</p>
 </dd></dl>
 
 <div class="versionadded">
-<p><span class="versionmodified added">3.9 版新加入.</span></p>
+<p><span class="versionmodified added">在 3.9 版本新加入.</span></p>
 </div>
 </dd></dl>
 
@@ -348,7 +350,7 @@ determined by the order of insertion.</p>
 <p>The <a class="reference internal" href="#module-graphlib" title="graphlib: Functionality to operate with graph-like structures"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code></a> module defines the following exception classes:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="graphlib.CycleError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">graphlib.</span></span><span class="sig-name descname"><span class="pre">CycleError</span></span><a class="headerlink" href="#graphlib.CycleError" title="本定義的永久連結">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">graphlib.</span></span><span class="sig-name descname"><span class="pre">CycleError</span></span><a class="headerlink" href="#graphlib.CycleError" title="本定義的永久連結">¶</a></dt>
 <dd><p>Subclass of <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> raised by <a class="reference internal" href="#graphlib.TopologicalSorter.prepare" title="graphlib.TopologicalSorter.prepare"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TopologicalSorter.prepare()</span></code></a> if cycles exist
 in the working graph. If multiple cycles exist, only one undefined choice among them will
 be reported and included in the exception.</p>
@@ -368,26 +370,32 @@ the first and the last node will be the same, to make it clear that it is cyclic
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a><ul>
 <li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="enum.html"
-                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code> --- Support for enumerations</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="numeric.html"
-                        title="下一章">數值與數學模組</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="enum.html"
+                          title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">enum</span></code> --- Support for enumerations</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="numeric.html"
+                          title="下一章">Numeric and Mathematical Modules</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/graphlib.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/graphlib.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -407,7 +415,7 @@ the first and the last node will be the same, to make it clear that it is cyclic
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="numeric.html" title="數值與數學模組"
+          <a href="numeric.html" title="Numeric and Mathematical Modules"
              >下一頁</a> |</li>
         <li class="right" >
           <a href="enum.html" title="enum --- Support for enumerations"
@@ -422,13 +430,11 @@ the first and the last node will be the same, to make it clear that it is cyclic
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="datatypes.html" >Data Types</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a></li>
                 <li class="right">
@@ -448,25 +454,25 @@ the first and the last node will be the same, to make it clear that it is cyclic
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

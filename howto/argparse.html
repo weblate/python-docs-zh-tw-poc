@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Argparse 教學 &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argparse Tutorial &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="ipaddress模組介紹" href="ipaddress.html" />
-    <link rel="prev" title="如何使用urllib套件取得網路資源" href="urllib2.html" />
+    <link rel="next" title="An introduction to the ipaddress module" href="ipaddress.html" />
+    <link rel="prev" title="HOWTO Fetch Internet Resources Using The urllib Package" href="urllib2.html" />
     <link rel="canonical" href="https://docs.python.org/3/howto/argparse.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,38 +70,44 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Argparse 教學</a><ul>
-<li><a class="reference internal" href="#concepts">概念</a></li>
-<li><a class="reference internal" href="#the-basics">基本用法</a></li>
-<li><a class="reference internal" href="#introducing-positional-arguments">介紹位置參數</a></li>
-<li><a class="reference internal" href="#introducing-optional-arguments">介紹選項參數</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Argparse Tutorial</a><ul>
+<li><a class="reference internal" href="#concepts">Concepts</a></li>
+<li><a class="reference internal" href="#the-basics">The basics</a></li>
+<li><a class="reference internal" href="#introducing-positional-arguments">Introducing Positional arguments</a></li>
+<li><a class="reference internal" href="#introducing-optional-arguments">Introducing Optional arguments</a><ul>
 <li><a class="reference internal" href="#short-options">Short options</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#combining-positional-and-optional-arguments">現在結合位置與選項參數</a></li>
+<li><a class="reference internal" href="#combining-positional-and-optional-arguments">Combining Positional and Optional arguments</a></li>
 <li><a class="reference internal" href="#getting-a-little-more-advanced">Getting a little more advanced</a><ul>
 <li><a class="reference internal" href="#conflicting-options">Conflicting options</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#conclusion">結論</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="urllib2.html"
-                        title="上一章">如何使用urllib套件取得網路資源</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="ipaddress.html"
-                        title="下一章">ipaddress模組介紹</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="urllib2.html"
+                          title="上一章">HOWTO Fetch Internet Resources Using The urllib Package</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="ipaddress.html"
+                          title="下一章">An introduction to the ipaddress module</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/argparse.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/argparse.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -124,10 +128,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="ipaddress.html" title="ipaddress模組介紹"
+          <a href="ipaddress.html" title="An introduction to the ipaddress module"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="urllib2.html" title="如何使用urllib套件取得網路資源"
+          <a href="urllib2.html" title="HOWTO Fetch Internet Resources Using The urllib Package"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -139,14 +143,12 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python HOWTOs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Argparse 教學</a></li>
+        <li class="nav-item nav-item-this"><a href="">Argparse Tutorial</a></li>
                 <li class="right">
                     
 
@@ -170,20 +172,26 @@
           <div class="body" role="main">
             
   <section id="argparse-tutorial">
-<h1>Argparse 教學<a class="headerlink" href="#argparse-tutorial" title="本標題的永久連結">¶</a></h1>
+<h1>Argparse Tutorial<a class="headerlink" href="#argparse-tutorial" title="本標題的永久連結">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author</dt>
 <dd class="field-odd"><p>Tshepang Lekhonkhobe</p>
 </dd>
 </dl>
-<p id="id1">這個教學傾向簡介 Python 官方標準含式庫中推薦的命令列解析模組 <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a>。</p>
+<p id="id1">This tutorial is intended to be a gentle introduction to <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a>, the
+recommended command-line parsing module in the Python standard library.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>另外兩個具有同樣功能的模組 <a class="reference internal" href="../library/getopt.html#module-getopt" title="getopt: Portable parser for command line options; support both short and long option names."><code class="xref py py-mod docutils literal notranslate"><span class="pre">getopt</span></code></a> （一個相等於 C 語言中的 <code class="xref c c-func docutils literal notranslate"><span class="pre">getopt()</span></code>）以及被棄用的 <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>。而 <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> 也是根據 <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.(已棄用)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a> 為基礎發展而來，因此有非常近似的使用方式。</p>
+<p>There are two other modules that fulfill the same task, namely
+<a class="reference internal" href="../library/getopt.html#module-getopt" title="getopt: Portable parser for command line options; support both short and long option names."><code class="xref py py-mod docutils literal notranslate"><span class="pre">getopt</span></code></a> (an equivalent for <code class="xref c c-func docutils literal notranslate"><span class="pre">getopt()</span></code> from the C
+language) and the deprecated <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>.
+Note also that <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> is based on <a class="reference internal" href="../library/optparse.html#module-optparse" title="optparse: Command-line option parsing library.（已棄用）"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optparse</span></code></a>,
+and therefore very similar in terms of usage.</p>
 </div>
 <section id="concepts">
-<h2>概念<a class="headerlink" href="#concepts" title="本標題的永久連結">¶</a></h2>
-<p>藉由命令 <strong class="command">ls</strong> 的使用開始這些功能的介紹：</p>
+<h2>Concepts<a class="headerlink" href="#concepts" title="本標題的永久連結">¶</a></h2>
+<p>Let's show the sort of functionality that we are going to explore in this
+introductory tutorial by making use of the <strong class="command">ls</strong> command:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls
 <span class="go">cpython  devguide  prog.py  pypy  rm-unused-function.patch</span>
 <span class="gp">$ </span>ls pypy
@@ -202,28 +210,40 @@
 <span class="go">...</span>
 </pre></div>
 </div>
-<p>我們可以從四個命令中可以學到的幾個概念：</p>
+<p>A few concepts we can learn from the four commands:</p>
 <ul class="simple">
-<li><p>命令 <strong class="command">ls</strong> 在執行時不用其他參數就可以顯示出當前目錄底下的內容。</p></li>
-<li><p>根據這樣的概念延伸後來舉個例子，如果我們想秀出一個不在目錄的資料夾 <code class="docutils literal notranslate"><span class="pre">pypy</span></code> 的內容。我們可以在命令後加上一個位置參數。會用位置參數這樣的名稱是因為程式會知道輸入的參數該做的事情。這樣的概念很像另一個命令 <strong class="command">cp</strong>，基本的使用方式是 <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">SRC</span> <span class="pre">DEST</span></code>。第一個位置參數代表的是<em>想要複製的目標</em>，第二個位置的參數代表的則是<em>想要複製到的地方</em>。</p></li>
-<li><p>現在我們想再增加一些，要顯示除了檔名之外更多的資訊。在這裡就可以選擇加上 <code class="docutils literal notranslate"><span class="pre">-l</span></code> 這個參數。</p></li>
-<li><p>這是 help 文件的片段。對於以前從未使用過的程序來說非常有用，可以透過這些 help 文件來了解這些該怎麼使用。</p></li>
+<li><p>The <strong class="command">ls</strong> command is useful when run without any options at all. It defaults
+to displaying the contents of the current directory.</p></li>
+<li><p>If we want beyond what it provides by default, we tell it a bit more. In
+this case, we want it to display a different directory, <code class="docutils literal notranslate"><span class="pre">pypy</span></code>.
+What we did is specify what is known as a positional argument. It's named so
+because the program should know what to do with the value, solely based on
+where it appears on the command line. This concept is more relevant
+to a command like <strong class="command">cp</strong>, whose most basic usage is <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">SRC</span> <span class="pre">DEST</span></code>.
+The first position is <em>what you want copied,</em> and the second
+position is <em>where you want it copied to</em>.</p></li>
+<li><p>Now, say we want to change behaviour of the program. In our example,
+we display more info for each file instead of just showing the file names.
+The <code class="docutils literal notranslate"><span class="pre">-l</span></code> in that case is known as an optional argument.</p></li>
+<li><p>That's a snippet of the help text. It's very useful in that you can
+come across a program you have never used before, and can figure out
+how it works simply by reading its help text.</p></li>
 </ul>
 </section>
 <section id="the-basics">
-<h2>基本用法<a class="headerlink" href="#the-basics" title="本標題的永久連結">¶</a></h2>
-<p>我們以一個很簡單的例子開始下面的介紹：</p>
+<h2>The basics<a class="headerlink" href="#the-basics" title="本標題的永久連結">¶</a></h2>
+<p>Let us start with a very simple example which does (almost) nothing:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>下面是運行這些代碼的結果：</p>
+<p>Following is a result of running the code:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py
 <span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h]</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help  show this help message and exit</span>
 <span class="gp">$ </span>python3 prog.py --verbose
 <span class="go">usage: prog.py [-h]</span>
@@ -233,16 +253,21 @@
 <span class="go">prog.py: error: unrecognized arguments: foo</span>
 </pre></div>
 </div>
-<p>接者是發生的情況：</p>
+<p>Here is what is happening:</p>
 <ul class="simple">
-<li><p>運行這個腳本而沒有給與任何參數時就不會顯示任何東西至標準輸出畫面上。這裡並不是這麼的有用。</p></li>
-<li><p>第二個我們呈現出了 <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> 模組的用處。我們幾乎沒有做什麼事情，但已經得到一個很好的幫助信息。</p></li>
-<li><p>這個 <code class="docutils literal notranslate"><span class="pre">--help</span></code> 選項可以簡短的表示成 <code class="docutils literal notranslate"><span class="pre">-h</span></code> , 這是唯一一個選項我們不用去指明的（意即，沒有必要在這個參數後加上任何數值）。如果指定其他參數給他會造成錯誤。也因為這樣，我們得到了一個免費的信息。</p></li>
+<li><p>Running the script without any options results in nothing displayed to
+stdout. Not so useful.</p></li>
+<li><p>The second one starts to display the usefulness of the <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a>
+module. We have done almost nothing, but already we get a nice help message.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">--help</span></code> option, which can also be shortened to <code class="docutils literal notranslate"><span class="pre">-h</span></code>, is the only
+option we get for free (i.e. no need to specify it). Specifying anything
+else results in an error. But even then, we do get a useful usage message,
+also for free.</p></li>
 </ul>
 </section>
 <section id="introducing-positional-arguments">
-<h2>介紹位置參數<a class="headerlink" href="#introducing-positional-arguments" title="本標題的永久連結">¶</a></h2>
-<p>例子：</p>
+<h2>Introducing Positional arguments<a class="headerlink" href="#introducing-positional-arguments" title="本標題的永久連結">¶</a></h2>
+<p>An example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;echo&quot;</span><span class="p">)</span>
@@ -250,7 +275,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">echo</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>運行這段代碼：</p>
+<p>And running the code:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py
 <span class="go">usage: prog.py [-h] echo</span>
 <span class="go">prog.py: error: the following arguments are required: echo</span>
@@ -260,23 +285,29 @@
 <span class="go">positional arguments:</span>
 <span class="go">  echo</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help  show this help message and exit</span>
 <span class="gp">$ </span>python3 prog.py foo
 <span class="go">foo</span>
 </pre></div>
 </div>
-<p>接者是發生的情況：</p>
+<p>Here is what's happening:</p>
 <ul class="simple">
-<li><p>我們增加了 <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_argument()</span></code> ，利用這個方法可以指名讓我們的程式接受哪些命令列參數。</p></li>
-<li><p>現在呼叫我們的程序時需要指定一個參數選項。</p></li>
-<li><p>在這個例子中， <code class="xref py py-meth docutils literal notranslate"><span class="pre">parse_args()</span></code> 這個方法確實根據了 <code class="docutils literal notranslate"><span class="pre">echo</span></code> 這個選項回傳了資料。</p></li>
+<li><p>We've added the <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_argument()</span></code> method, which is what we use to specify
+which command-line options the program is willing to accept. In this case,
+I've named it <code class="docutils literal notranslate"><span class="pre">echo</span></code> so that it's in line with its function.</p></li>
+<li><p>Calling our program now requires us to specify an option.</p></li>
+<li><p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">parse_args()</span></code> method actually returns some data from the
+options specified, in this case, <code class="docutils literal notranslate"><span class="pre">echo</span></code>.</p></li>
 <li><p>The variable is some form of 'magic' that <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> performs for free
 (i.e. no need to specify which variable that value is stored in).
 You will also notice that its name matches the string argument given
 to the method, <code class="docutils literal notranslate"><span class="pre">echo</span></code>.</p></li>
 </ul>
-<p>注意, 雖然 help 秀出了看起來不錯的信息, 但現在並沒有給予到實質幫助。像剛剛增加的 <code class="docutils literal notranslate"><span class="pre">echo</span></code> 這個位置參數，除了猜測和讀原始碼之外，我們根本不曉得該怎麼使用他。因此我們來做一點事讓他變得更有用：</p>
+<p>Note however that, although the help display looks nice and all, it currently
+is not as helpful as it can be. For example we see that we got <code class="docutils literal notranslate"><span class="pre">echo</span></code> as a
+positional argument, but we don't know what it does, other than by guessing or
+by reading the source code. So, let's make it a bit more useful:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;echo the string you use here&quot;</span><span class="p">)</span>
@@ -284,18 +315,18 @@ to the method, <code class="docutils literal notranslate"><span class="pre">echo
 <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">echo</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>然後我們得到：</p>
+<p>And we get:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py -h
 <span class="go">usage: prog.py [-h] echo</span>
 
 <span class="go">positional arguments:</span>
 <span class="go">  echo        echo the string you use here</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help  show this help message and exit</span>
 </pre></div>
 </div>
-<p>現在來做一些更有用處的事情：</p>
+<p>Now, how about doing something even more useful:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;square&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;display a square of a given number&quot;</span><span class="p">)</span>
@@ -303,7 +334,7 @@ to the method, <code class="docutils literal notranslate"><span class="pre">echo
 <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>下面是運行這些代碼的結果：</p>
+<p>Following is a result of running the code:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">Traceback (most recent call last):</span>
 <span class="go">  File &quot;prog.py&quot;, line 5, in &lt;module&gt;</span>
@@ -311,7 +342,9 @@ to the method, <code class="docutils literal notranslate"><span class="pre">echo
 <span class="go">TypeError: unsupported operand type(s) for ** or pow(): &#39;str&#39; and &#39;int&#39;</span>
 </pre></div>
 </div>
-<p>那並沒有如預期這樣。這是因為 <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> 將我們給予選項的值當成字串，除然我們告訴他要怎麼做。所以我們來告訴 <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> 將這個輸入值當成整數來使用：</p>
+<p>That didn't go so well. That's because <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> treats the options we
+give it as strings, unless we tell it otherwise. So, let's tell
+<a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> to treat that input as an integer:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;square&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;display a square of a given number&quot;</span><span class="p">,</span>
@@ -320,7 +353,7 @@ to the method, <code class="docutils literal notranslate"><span class="pre">echo
 <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>下面是運行這些代碼的結果：</p>
+<p>Following is a result of running the code:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
 <span class="gp">$ </span>python3 prog.py four
@@ -328,10 +361,11 @@ to the method, <code class="docutils literal notranslate"><span class="pre">echo
 <span class="go">prog.py: error: argument square: invalid int value: &#39;four&#39;</span>
 </pre></div>
 </div>
-<p>這樣很順利。現在程序在開始之前會因為錯誤的輸入而回報有用的訊息並結束掉。</p>
+<p>That went well. The program now even helpfully quits on bad illegal input
+before proceeding.</p>
 </section>
 <section id="introducing-optional-arguments">
-<h2>介紹選項參數<a class="headerlink" href="#introducing-optional-arguments" title="本標題的永久連結">¶</a></h2>
+<h2>Introducing Optional arguments<a class="headerlink" href="#introducing-optional-arguments" title="本標題的永久連結">¶</a></h2>
 <p>So far we have been playing with positional arguments. Let us
 have a look on how to add optional ones:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
@@ -342,14 +376,14 @@ have a look on how to add optional ones:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;verbosity turned on&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>接者是結果：</p>
+<p>And the output:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py --verbosity <span class="m">1</span>
 <span class="go">verbosity turned on</span>
 <span class="gp">$ </span>python3 prog.py
 <span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h] [--verbosity VERBOSITY]</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help            show this help message and exit</span>
 <span class="go">  --verbosity VERBOSITY</span>
 <span class="go">                        increase output verbosity</span>
@@ -358,18 +392,22 @@ have a look on how to add optional ones:</p>
 <span class="go">prog.py: error: argument --verbosity: expected one argument</span>
 </pre></div>
 </div>
-<p>接者是發生的情況：</p>
+<p>Here is what is happening:</p>
 <ul class="simple">
-<li><p>這個程式是寫成如果有指名 <code class="docutils literal notranslate"><span class="pre">--verbosity</span></code> 這個參數選項那才顯示些資訊，反之亦然。</p></li>
+<li><p>The program is written so as to display something when <code class="docutils literal notranslate"><span class="pre">--verbosity</span></code> is
+specified and display nothing when not.</p></li>
 <li><p>To show that the option is actually optional, there is no error when running
 the program without it. Note that by default, if an optional argument isn't
 used, the relevant variable, in this case <code class="xref py py-attr docutils literal notranslate"><span class="pre">args.verbosity</span></code>, is
 given <code class="docutils literal notranslate"><span class="pre">None</span></code> as a value, which is the reason it fails the truth
 test of the <a class="reference internal" href="../reference/compound_stmts.html#if"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a> statement.</p></li>
-<li><p>Help 訊息稍微有些不一樣。</p></li>
-<li><p>當使用 <code class="docutils literal notranslate"><span class="pre">--verbosity</span></code> 參數選項時必須要指定一個數值。</p></li>
+<li><p>The help message is a bit different.</p></li>
+<li><p>When using the <code class="docutils literal notranslate"><span class="pre">--verbosity</span></code> option, one must also specify some value,
+any value.</p></li>
 </ul>
-<p>在上面的例子中 <code class="docutils literal notranslate"><span class="pre">--verbosity</span></code>，接受任意的整數，但對我們的程式來說只接受兩個輸入值， <code class="docutils literal notranslate"><span class="pre">True</span></code> 或 <code class="docutils literal notranslate"><span class="pre">False</span></code>。所以我們來修改一下程式碼使其符合：</p>
+<p>The above example accepts arbitrary integer values for <code class="docutils literal notranslate"><span class="pre">--verbosity</span></code>, but for
+our simple program, only two values are actually useful, <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+Let's modify the code accordingly:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--verbose&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;increase output verbosity&quot;</span><span class="p">,</span>
@@ -379,7 +417,7 @@ test of the <a class="reference internal" href="../reference/compound_stmts.html
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;verbosity turned on&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>接者是結果：</p>
+<p>And the output:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py --verbose
 <span class="go">verbosity turned on</span>
 <span class="gp">$ </span>python3 prog.py --verbose <span class="m">1</span>
@@ -388,12 +426,12 @@ test of the <a class="reference internal" href="../reference/compound_stmts.html
 <span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h] [--verbose]</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help  show this help message and exit</span>
 <span class="go">  --verbose   increase output verbosity</span>
 </pre></div>
 </div>
-<p>接者是發生的情況：</p>
+<p>Here is what is happening:</p>
 <ul class="simple">
 <li><p>The option is now more of a flag than something that requires a value.
 We even changed the name of the option to match that idea.
@@ -403,11 +441,13 @@ assign the value <code class="docutils literal notranslate"><span class="pre">Tr
 Not specifying it implies <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 <li><p>It complains when you specify a value, in true spirit of what flags
 actually are.</p></li>
-<li><p>注意不同的 help 文件。</p></li>
+<li><p>Notice the different help text.</p></li>
 </ul>
 <section id="short-options">
 <h3>Short options<a class="headerlink" href="#short-options" title="本標題的永久連結">¶</a></h3>
-<p>如果你很熟悉命令列的使用的話，你將會發現我還沒講到關於短參數。其實這很簡單：</p>
+<p>If you are familiar with command line usage,
+you will notice that I haven't yet touched on the topic of short
+versions of the options. It's quite simple:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-v&quot;</span><span class="p">,</span> <span class="s2">&quot;--verbose&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;increase output verbosity&quot;</span><span class="p">,</span>
@@ -423,17 +463,17 @@ actually are.</p></li>
 <span class="gp">$ </span>python3 prog.py --help
 <span class="go">usage: prog.py [-h] [-v]</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help     show this help message and exit</span>
 <span class="go">  -v, --verbose  increase output verbosity</span>
 </pre></div>
 </div>
-<p>注意新的表示對於幫助文件也是一樣的</p>
+<p>Note that the new ability is also reflected in the help text.</p>
 </section>
 </section>
 <section id="combining-positional-and-optional-arguments">
-<h2>現在結合位置與選項參數<a class="headerlink" href="#combining-positional-and-optional-arguments" title="本標題的永久連結">¶</a></h2>
-<p>我們的程式成長的越來越複雜：</p>
+<h2>Combining Positional and Optional arguments<a class="headerlink" href="#combining-positional-and-optional-arguments" title="本標題的永久連結">¶</a></h2>
+<p>Our program keeps growing in complexity:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;square&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
@@ -443,12 +483,12 @@ actually are.</p></li>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="o">**</span><span class="mi">2</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the square of </span><span class="si">{}</span><span class="s2"> equals </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the square of </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>然後現在的輸出結果：</p>
+<p>And now the output:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py
 <span class="go">usage: prog.py [-h] [-v] square</span>
 <span class="go">prog.py: error: the following arguments are required: square</span>
@@ -462,7 +502,7 @@ actually are.</p></li>
 </div>
 <ul class="simple">
 <li><p>We've brought back a positional argument, hence the complaint.</p></li>
-<li><p>注意現在的順序對於程式來說已經不再重要了.</p></li>
+<li><p>Note that the order does not matter.</p></li>
 </ul>
 <p>How about we give this program of ours back the ability to have
 multiple verbosity values, and actually get to use them:</p>
@@ -475,14 +515,14 @@ multiple verbosity values, and actually get to use them:</p>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="o">**</span><span class="mi">2</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the square of </span><span class="si">{}</span><span class="s2"> equals </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the square of </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^2 == </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2">^2 == </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>接者是結果：</p>
+<p>And the output:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
 <span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v
@@ -507,14 +547,14 @@ Let's fix it by restricting the values the <code class="docutils literal notrans
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="o">**</span><span class="mi">2</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the square of </span><span class="si">{}</span><span class="s2"> equals </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the square of </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^2 == </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2">^2 == </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>接者是結果：</p>
+<p>And the output:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v <span class="m">3</span>
 <span class="go">usage: prog.py [-h] [-v {0,1,2}] square</span>
 <span class="go">prog.py: error: argument -v/--verbosity: invalid choice: 3 (choose from 0, 1, 2)</span>
@@ -524,7 +564,7 @@ Let's fix it by restricting the values the <code class="docutils literal notrans
 <span class="go">positional arguments:</span>
 <span class="go">  square                display a square of a given number</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help            show this help message and exit</span>
 <span class="go">  -v {0,1,2}, --verbosity {0,1,2}</span>
 <span class="go">                        increase output verbosity</span>
@@ -544,14 +584,15 @@ verbosity argument (check the output of <code class="docutils literal notranslat
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="o">**</span><span class="mi">2</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the square of </span><span class="si">{}</span><span class="s2"> equals </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the square of </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^2 == </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2">^2 == </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>我們已經介紹過另一個操作 &quot;count&quot; 用來計算指定的選項參數出現的次數。</p>
+<p>We have introduced another action, &quot;count&quot;,
+to count the number of occurrences of specific options.</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
 <span class="gp">$ </span>python3 prog.py <span class="m">4</span> -v
@@ -569,7 +610,7 @@ verbosity argument (check the output of <code class="docutils literal notranslat
 <span class="go">positional arguments:</span>
 <span class="go">  square           display a square of a given number</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help       show this help message and exit</span>
 <span class="go">  -v, --verbosity  increase output verbosity</span>
 <span class="gp">$ </span>python3 prog.py <span class="m">4</span> -vvv
@@ -580,16 +621,18 @@ verbosity argument (check the output of <code class="docutils literal notranslat
 <li><p>Yes, it's now more of a flag (similar to <code class="docutils literal notranslate"><span class="pre">action=&quot;store_true&quot;</span></code>) in the
 previous version of our script. That should explain the complaint.</p></li>
 <li><p>It also behaves similar to &quot;store_true&quot; action.</p></li>
-<li><p>現在來秀一下 &quot;count&quot; 這個動作會給予什麼。你可能之前就有見過這種用法。</p></li>
+<li><p>Now here's a demonstration of what the &quot;count&quot; action gives. You've probably
+seen this sort of usage before.</p></li>
 <li><p>And if you don't specify the <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag, that flag is considered to have
 <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p></li>
-<li><p>應該要如預期那樣，就算給予長選項我們也要獲得一樣的輸出結果。</p></li>
+<li><p>As should be expected, specifying the long form of the flag, we should get
+the same output.</p></li>
 <li><p>Sadly, our help output isn't very informative on the new ability our script
 has acquired, but that can always be fixed by improving the documentation for
 our script (e.g. via the <code class="docutils literal notranslate"><span class="pre">help</span></code> keyword argument).</p></li>
 <li><p>That last output exposes a bug in our program.</p></li>
 </ul>
-<p>讓我們來解決問題</p>
+<p>Let's fix:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;square&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
@@ -601,14 +644,14 @@ our script (e.g. via the <code class="docutils literal notranslate"><span class=
 
 <span class="c1"># bugfix: replace == with &gt;=</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the square of </span><span class="si">{}</span><span class="s2"> equals </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the square of </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^2 == </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2">^2 == </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>而這也正是它給的：</p>
+<p>And this is what it gives:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span> -vvv
 <span class="go">the square of 4 equals 16</span>
 <span class="gp">$ </span>python3 prog.py <span class="m">4</span> -vvvv
@@ -623,9 +666,9 @@ our script (e.g. via the <code class="docutils literal notranslate"><span class=
 <ul class="simple">
 <li><p>First output went well, and fixes the bug we had before.
 That is, we want any value &gt;= 2 to be as verbose as possible.</p></li>
-<li><p>第三個輸出不是這麼的好。</p></li>
+<li><p>Third output not so good.</p></li>
 </ul>
-<p>我們來修復這個錯誤：</p>
+<p>Let's fix that bug:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;square&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
@@ -635,9 +678,9 @@ That is, we want any value &gt;= 2 to be as verbose as possible.</p></li>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="o">**</span><span class="mi">2</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the square of </span><span class="si">{}</span><span class="s2"> equals </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the square of </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^2 == </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">square</span><span class="si">}</span><span class="s2">^2 == </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
@@ -648,7 +691,7 @@ Remember that by default,
 if an optional argument isn't specified,
 it gets the <code class="docutils literal notranslate"><span class="pre">None</span></code> value, and that cannot be compared to an int value
 (hence the <a class="reference internal" href="../library/exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> exception).</p>
-<p>而且</p>
+<p>And:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span>
 <span class="go">16</span>
 </pre></div>
@@ -660,7 +703,8 @@ and we'll explore a bit more of it before we end this tutorial.</p>
 </section>
 <section id="getting-a-little-more-advanced">
 <h2>Getting a little more advanced<a class="headerlink" href="#getting-a-little-more-advanced" title="本標題的永久連結">¶</a></h2>
-<p>如果我們想要擴展我們的小程式做比範例更多的事：</p>
+<p>What if we wanted to expand our tiny program to perform other powers,
+not just squares:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;the base&quot;</span><span class="p">)</span>
@@ -669,14 +713,14 @@ and we'll explore a bit more of it before we end this tutorial.</p>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="n">args</span><span class="o">.</span><span class="n">y</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> to the power </span><span class="si">{}</span><span class="s2"> equals </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2"> to the power </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^</span><span class="si">{}</span><span class="s2"> == </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">^</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2"> == </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>結果：</p>
+<p>Output:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py
 <span class="go">usage: prog.py [-h] [-v] x y</span>
 <span class="go">prog.py: error: the following arguments are required: x, y</span>
@@ -687,7 +731,7 @@ and we'll explore a bit more of it before we end this tutorial.</p>
 <span class="go">  x                the base</span>
 <span class="go">  y                the exponent</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help       show this help message and exit</span>
 <span class="go">  -v, --verbosity</span>
 <span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -v
@@ -705,13 +749,13 @@ to display <em>more</em> text instead:</p>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="n">args</span><span class="o">.</span><span class="n">y</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running &#39;</span><span class="si">{</span><span class="vm">__file__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^</span><span class="si">{}</span><span class="s2"> == &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">^</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2"> == &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>結果：</p>
+<p>Output:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span>
 <span class="go">16</span>
 <span class="gp">$ </span>python3 prog.py <span class="m">4</span> <span class="m">2</span> -v
@@ -744,9 +788,9 @@ which will be the opposite of the <code class="docutils literal notranslate"><sp
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> to the power </span><span class="si">{}</span><span class="s2"> equals </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2"> to the power </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^</span><span class="si">{}</span><span class="s2"> == </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">^</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2"> == </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Our program is now simpler, and we've lost some functionality for the sake of
@@ -768,7 +812,8 @@ demonstration. Anyways, here's the output:</p>
 <p>That should be easy to follow. I've added that last output so you can see the
 sort of flexibility you get, i.e. mixing long form options with short form
 ones.</p>
-<p>在我們結論之前，你可能想告訴你的用戶這個程式的主要目的，以防萬一他們不知道：</p>
+<p>Before we conclude, you probably want to tell your users the main purpose of
+your program, just in case they don't know:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;calculate X to the power of Y&quot;</span><span class="p">)</span>
@@ -800,7 +845,7 @@ but not both at the same time:</p>
 <span class="go">  x              the base</span>
 <span class="go">  y              the exponent</span>
 
-<span class="go">optional arguments:</span>
+<span class="go">options:</span>
 <span class="go">  -h, --help     show this help message and exit</span>
 <span class="go">  -v, --verbose</span>
 <span class="go">  -q, --quiet</span>
@@ -809,8 +854,11 @@ but not both at the same time:</p>
 </section>
 </section>
 <section id="conclusion">
-<h2>結論<a class="headerlink" href="#conclusion" title="本標題的永久連結">¶</a></h2>
-<p><a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> 模組提供了比這裡展示更多的功能。它的文件是非常全面詳細且充滿了例子。通過本教學，你應該比較容易消化它們了。</p>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="本標題的永久連結">¶</a></h2>
+<p>The <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> module offers a lot more than shown here.
+Its docs are quite detailed and thorough, and full of examples.
+Having gone through this tutorial, you should easily digest them
+without feeling overwhelmed.</p>
 </section>
 </section>
 
@@ -821,38 +869,44 @@ but not both at the same time:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../contents.html">目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Argparse 教學</a><ul>
-<li><a class="reference internal" href="#concepts">概念</a></li>
-<li><a class="reference internal" href="#the-basics">基本用法</a></li>
-<li><a class="reference internal" href="#introducing-positional-arguments">介紹位置參數</a></li>
-<li><a class="reference internal" href="#introducing-optional-arguments">介紹選項參數</a><ul>
+  <div>
+    <h3><a href="../contents.html">目錄</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Argparse Tutorial</a><ul>
+<li><a class="reference internal" href="#concepts">Concepts</a></li>
+<li><a class="reference internal" href="#the-basics">The basics</a></li>
+<li><a class="reference internal" href="#introducing-positional-arguments">Introducing Positional arguments</a></li>
+<li><a class="reference internal" href="#introducing-optional-arguments">Introducing Optional arguments</a><ul>
 <li><a class="reference internal" href="#short-options">Short options</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#combining-positional-and-optional-arguments">現在結合位置與選項參數</a></li>
+<li><a class="reference internal" href="#combining-positional-and-optional-arguments">Combining Positional and Optional arguments</a></li>
 <li><a class="reference internal" href="#getting-a-little-more-advanced">Getting a little more advanced</a><ul>
 <li><a class="reference internal" href="#conflicting-options">Conflicting options</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#conclusion">結論</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上個主題</h4>
-  <p class="topless"><a href="urllib2.html"
-                        title="上一章">如何使用urllib套件取得網路資源</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="ipaddress.html"
-                        title="下一章">ipaddress模組介紹</a></p>
+  </div>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="urllib2.html"
+                          title="上一章">HOWTO Fetch Internet Resources Using The urllib Package</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="ipaddress.html"
+                          title="下一章">An introduction to the ipaddress module</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/howto/argparse.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/howto/argparse.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -872,10 +926,10 @@ but not both at the same time:</p>
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="ipaddress.html" title="ipaddress模組介紹"
+          <a href="ipaddress.html" title="An introduction to the ipaddress module"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="urllib2.html" title="如何使用urllib套件取得網路資源"
+          <a href="urllib2.html" title="HOWTO Fetch Internet Resources Using The urllib Package"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -887,14 +941,12 @@ but not both at the same time:</p>
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python HOWTOs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Argparse 教學</a></li>
+        <li class="nav-item nav-item-this"><a href="">Argparse Tutorial</a></li>
                 <li class="right">
                     
 
@@ -912,25 +964,25 @@ but not both at the same time:</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>

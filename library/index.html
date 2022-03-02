@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python 標準函式庫 (Standard Library) &#8212; Python 3.9.7 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Python Standard Library &#8212; Python 3.10.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2021.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -20,18 +20,16 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.9.7 說明文件 中搜尋"
+          title="在 Python 3.10.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
     <link rel="copyright" title="版權" href="../copyright.html" />
-    <link rel="next" title="簡介" href="intro.html" />
-    <link rel="prev" title="10. 完整的語法規格書" href="../reference/grammar.html" />
+    <link rel="next" title="Introduction" href="intro.html" />
+    <link rel="prev" title="10. Full Grammar specification" href="../reference/grammar.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/index.html" />
     
-      
-      <script type="text/javascript" src="../_static/switchers.js"></script>
       
     
 
@@ -72,18 +70,22 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
-  <h4>上個主題</h4>
-  <p class="topless"><a href="../reference/grammar.html"
-                        title="上一章"><span class="section-number">10. </span>完整的語法規格書</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="intro.html"
-                        title="下一章">簡介</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="../reference/grammar.html"
+                          title="上一章"><span class="section-number">10. </span>Full Grammar specification</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="intro.html"
+                          title="下一章">Introduction</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/index.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/index.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -104,10 +106,10 @@
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="intro.html" title="簡介"
+          <a href="intro.html" title="Introduction"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="../reference/grammar.html" title="10. 完整的語法規格書"
+          <a href="../reference/grammar.html" title="10. Full Grammar specification"
              accesskey="P">上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -119,13 +121,11 @@
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-        <li class="nav-item nav-item-this"><a href="">Python 標準函式庫 (Standard Library)</a></li>
+        <li class="nav-item nav-item-this"><a href="">The Python Standard Library</a></li>
                 <li class="right">
                     
 
@@ -149,26 +149,43 @@
           <div class="body" role="main">
             
   <section id="the-python-standard-library">
-<span id="library-index"></span><h1>Python 標準函式庫 (Standard Library)<a class="headerlink" href="#the-python-standard-library" title="本標題的永久連結">¶</a></h1>
-<p><a class="reference internal" href="../reference/index.html#reference-index"><span class="std std-ref">The Python Language Reference</span></a> 說明 Python 這門語言確切的文法及語意，而這份函式庫參考手冊則是說明隨著 Python 一起發佈的標準函式庫，除此之外，其內容也包含一些時常出現在 Python 發佈版本中的非必要套件。</p>
-<p>Python 的標準函式庫是非常龐大的，其提供了如下所述極多且涵蓋用途極廣的許多模組。包含一些用 C 語言撰寫，可以操作像是檔案讀寫等系統相關功能的內建模組，當然也有用 Python 撰寫，並使用標準解法解決許多常見問題的模組。其中有些模組則是特別針對 Python 的可攜性去設計的，為此特地將一些平台特殊相依性的功能抽象化成可跨平台的 API。</p>
-<p>Python 的 Windows 安裝檔基本上包含整個標準函式庫，且通常也包含許多額外套件；而類 Unix 作業系統方面，Python 則提供一系列的套件，對於某些非必要性的套件，可能得使用該作業系統提供的套件管理工具來安裝。</p>
+<span id="library-index"></span><h1>The Python Standard Library<a class="headerlink" href="#the-python-standard-library" title="本標題的永久連結">¶</a></h1>
+<p>While <a class="reference internal" href="../reference/index.html#reference-index"><span class="std std-ref">The Python Language Reference</span></a> describes the exact syntax and
+semantics of the Python language, this library reference manual
+describes the standard library that is distributed with Python. It also
+describes some of the optional components that are commonly included
+in Python distributions.</p>
+<p>Python's standard library is very extensive, offering a wide range of
+facilities as indicated by the long table of contents listed below. The
+library contains built-in modules (written in C) that provide access to
+system functionality such as file I/O that would otherwise be
+inaccessible to Python programmers, as well as modules written in Python
+that provide standardized solutions for many problems that occur in
+everyday programming. Some of these modules are explicitly designed to
+encourage and enhance the portability of Python programs by abstracting
+away platform-specifics into platform-neutral APIs.</p>
+<p>The Python installers for the Windows platform usually include
+the entire standard library and often also include many additional
+components. For Unix-like operating systems Python is normally provided
+as a collection of packages, so it may be necessary to use the packaging
+tools provided with the operating system to obtain some or all of the
+optional components.</p>
 <p>In addition to the standard library, there is a growing collection of
 several thousand components (from individual programs and modules to
 packages and entire application development frameworks), available from
 the <a class="reference external" href="https://pypi.org">Python Package Index</a>.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">簡介</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#notes-on-availability">Notes on availability</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">內建函式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="constants.html">內建常數</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Built-in Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constants.html">Built-in Constants</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="constants.html#constants-added-by-the-site-module">Constants added by the <code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code> module</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="stdtypes.html">內建型態</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="stdtypes.html">Built-in Types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="stdtypes.html#truth-value-testing">Truth Value Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stdtypes.html#boolean-operations-and-or-not">Boolean Operations --- <code class="xref std std-keyword docutils literal notranslate"><span class="pre">and</span></code>, <code class="xref std std-keyword docutils literal notranslate"><span class="pre">or</span></code>, <code class="xref std std-keyword docutils literal notranslate"><span class="pre">not</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="stdtypes.html#comparisons">Comparisons</a></li>
@@ -180,12 +197,14 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="stdtypes.html#set-types-set-frozenset">Set Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">frozenset</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="stdtypes.html#mapping-types-dict">Mapping Types --- <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="stdtypes.html#context-manager-types">Context Manager Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#generic-alias-type">Generic Alias Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#type-annotation-types-generic-alias-union">Type Annotation Types --- <span class="xref std std-ref">Generic Alias</span>, <span class="xref std std-ref">Union</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="stdtypes.html#other-built-in-types">Other Built-in Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stdtypes.html#special-attributes">Special Attributes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="exceptions.html">內建的例外</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Built-in Exceptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-context">Exception context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#inheriting-from-built-in-exceptions">Inheriting from built-in exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exceptions.html#base-classes">Base classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exceptions.html#concrete-exceptions">Concrete exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exceptions.html#warnings">Warnings</a></li>
@@ -212,11 +231,11 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="datetime.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> --- Basic date and time types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zoneinfo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zoneinfo</span></code> --- IANA time zone support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">calendar</span></code> --- General calendar-related functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collections.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- 容器資料型態</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code> --- Container datatypes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="collections.abc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections.abc</span></code> --- Abstract Base Classes for Containers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="heapq.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">heapq</span></code> --- 堆積佇列 (heap queue) 演算法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bisect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- 陣列二分演算法 (Array bisection algorithm)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- 高效率的數值型態陣列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heapq.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">heapq</span></code> --- Heap queue algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bisect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bisect</span></code> --- Array bisection algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> --- Efficient arrays of numeric values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weakref.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code> --- Weak references</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> --- Dynamic type creation and names for built-in types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="copy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">copy</span></code> --- Shallow and deep copy operations</a></li>
@@ -226,23 +245,23 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="graphlib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">graphlib</span></code> --- Functionality to operate with graph-like structures</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numeric.html">數值與數學模組</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="numeric.html">Numeric and Mathematical Modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code> --- Numeric abstract base classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="math.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> --- Mathematical functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> --- Mathematical functions for complex numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="decimal.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">decimal</span></code> --- Decimal fixed point and floating point arithmetic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fractions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fractions</span></code> --- Rational numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="random.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">random</span></code> --- Generate pseudo-random numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- 數學統計函式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code> --- Mathematical statistics functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="functional.html">函式編程模組</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="functional.html">Functional Programming Modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="itertools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">itertools</span></code> --- Functions creating iterators for efficient looping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functools</span></code> --- Higher-order functions and operations on callable objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">operator</span></code> --- Standard operators as functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="filesys.html">檔案與目錄存取</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="filesys.html">File and Directory Access</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pathlib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pathlib</span></code> --- Object-oriented filesystem paths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os.path.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os.path</span></code> --- Common pathname manipulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fileinput.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fileinput</span></code> --- Iterate over lines from multiple input streams</a></li>
@@ -264,7 +283,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="sqlite3.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code> --- DB-API 2.0 interface for SQLite databases</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="archiving.html">資料壓縮與保存</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="archiving.html">Data Compression and Archiving</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="zlib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zlib</span></code> --- Compression compatible with <strong class="program">gzip</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="gzip.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gzip</span></code> --- Support for <strong class="program">gzip</strong> files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bz2.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code> --- Support for <strong class="program">bzip2</strong> compression</a></li>
@@ -273,7 +292,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="tarfile.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tarfile</span></code> --- Read and write tar archive files</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fileformats.html">檔案格式</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="csv.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code> --- CSV File Reading and Writing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configparser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">configparser</span></code> --- Configuration file parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="netrc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">netrc</span></code> --- netrc file processing</a></li>
@@ -284,7 +303,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l1"><a class="reference internal" href="crypto.html">Cryptographic Services</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hashlib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> --- Secure hashes and message digests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hmac.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hmac</span></code> --- Keyed-Hashing for Message Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="secrets.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- 產生用於管理機密的安全亂數</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secrets.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">secrets</span></code> --- Generate secure random numbers for managing secrets</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="allos.html">Generic Operating System Services</a><ul>
@@ -337,7 +356,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="mailcap.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailcap</span></code> --- Mailcap file handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mailbox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mailbox</span></code> --- Manipulate mailboxes in various formats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mimetypes.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mimetypes</span></code> --- Map filenames to MIME types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base64.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code> —— Base16、Base32、Base64、Base85 資料編碼</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base64.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">base64</span></code> --- Base16, Base32, Base64, Base85 Data Encodings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binhex.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binhex</span></code> --- Encode and decode binhex4 files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binascii.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code> --- Convert between binary and ASCII</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quopri.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quopri</span></code> --- Encode and decode MIME quoted-printable data</a></li>
@@ -348,7 +367,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="html.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">html</span></code> --- HyperText Markup Language support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html.parser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">html.parser</span></code> --- Simple HTML and XHTML parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html.entities.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">html.entities</span></code> --- Definitions of HTML general entities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml.html">XML 處理模組</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xml.html">XML Processing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml.etree.elementtree.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code> --- The ElementTree XML API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml.dom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code> --- The Document Object Model API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml.dom.minidom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> --- Minimal DOM implementation</a></li>
@@ -361,7 +380,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="internet.html">Internet Protocols and Support</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="webbrowser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">webbrowser</span></code> --- Convenient Web-browser controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webbrowser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">webbrowser</span></code> --- Convenient web-browser controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cgi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgi</span></code> --- Common Gateway Interface support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cgitb.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cgitb</span></code> --- Traceback manager for CGI scripts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wsgiref.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wsgiref</span></code> --- WSGI Utilities and Reference Implementation</a></li>
@@ -403,18 +422,18 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="ossaudiodev.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ossaudiodev</span></code> --- Access to OSS-compatible audio devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="i18n.html">國際化</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="i18n.html">Internationalization</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="gettext.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gettext</span></code> --- Multilingual internationalization services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="locale.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">locale</span></code> --- Internationalization services</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="frameworks.html">程式框架</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="turtle.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- 龜圖學</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frameworks.html">Program Frameworks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">turtle</span></code> --- Turtle graphics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmd</span></code> --- Support for line-oriented command interpreters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shlex.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shlex</span></code> --- Simple lexical analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tk.html">以 Tk 打造 GUI</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="tk.html">Graphical User Interfaces with Tk</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code> --- Python interface to Tcl/Tk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.colorchooser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.colorchooser</span></code> --- Color choosing dialog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tkinter.font.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.font</span></code> --- Tkinter font wrapper</a></li>
@@ -427,7 +446,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="idle.html">IDLE</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="development.html">開發工具</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="typing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">typing</span></code> --- Support for type hints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pydoc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pydoc</span></code> --- Documentation generator and online help system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="devmode.html">Python Development Mode</a></li>
@@ -435,15 +454,19 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="devmode.html#resourcewarning-example">ResourceWarning Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="devmode.html#bad-file-descriptor-error-example">Bad file descriptor error example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="doctest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doctest</span></code> --- Test interactive Python examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unittest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code> --- 單元測試框架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code> --- Unit testing framework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unittest.mock.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- mock object library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unittest.mock-examples.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest.mock</span></code> --- getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2to3.html">2to3 - 自動將 Python 2的程式碼轉成 Python 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2to3.html">2to3 - Automated Python 2 to 3 code translation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test</span></code> --- Regression tests package for Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="test.html#module-test.support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support</span></code> --- Utilities for the Python test suite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="test.html#module-test.support.socket_helper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support.socket_helper</span></code> --- Utilities for socket tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="test.html#module-test.support.script_helper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support.script_helper</span></code> --- Utilities for the Python execution tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="test.html#module-test.support.bytecode_helper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support.bytecode_helper</span></code> --- Support tools for testing correct bytecode generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html#module-test.support.threading_helper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support.threading_helper</span></code> --- Utilities for threading tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html#module-test.support.os_helper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support.os_helper</span></code> --- Utilities for os tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html#module-test.support.import_helper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support.import_helper</span></code> --- Utilities for import tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html#module-test.support.warnings_helper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test.support.warnings_helper</span></code> --- Utilities for warnings tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="debug.html">Debugging and Profiling</a><ul>
@@ -457,7 +480,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="tracemalloc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tracemalloc</span></code> --- Trace memory allocations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="distribution.html">軟體封裝與發布</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="distribution.html">Software Packaging and Distribution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="distutils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">distutils</span></code> --- Building and installing Python modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensurepip.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code> --- Bootstrapping the <code class="docutils literal notranslate"><span class="pre">pip</span></code> installer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="venv.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code> --- Creation of virtual environments</a></li>
@@ -468,7 +491,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="sys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code> --- System-specific parameters and functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sysconfig.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sysconfig</span></code> --- Provide access to Python's configuration information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="builtins.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code> --- Built-in objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="__main__.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code> --- Top-level script environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="__main__.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code> --- Top-level code environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="warnings.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code> --- Warning control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dataclasses.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code> --- Data Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contextlib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">contextlib</span></code> --- Utilities for <code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code>-statement contexts</a></li>
@@ -486,7 +509,7 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="codeop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">codeop</span></code> --- Compile Python code</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">匯入模組</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Importing Modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="zipimport.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipimport</span></code> --- Import modules from Zip archives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pkgutil.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pkgutil</span></code> --- Package extension utility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modulefinder.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">modulefinder</span></code> --- Find modules used by a script</a></li>
@@ -496,10 +519,8 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="language.html">Python Language Services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="parser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parser</span></code> --- Access Python parse trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ast.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ast</span></code> --- Abstract Syntax Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="symtable.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symtable</span></code> --- Access to the compiler's symbol tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symbol.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symbol</span></code> --- Constants used with Python parse trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="token.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">token</span></code> --- Constants used with Python parse trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keyword.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">keyword</span></code> --- Testing for Python keywords</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tokenize.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tokenize</span></code> --- Tokenizer for Python source</a></li>
@@ -507,12 +528,8 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
 <li class="toctree-l2"><a class="reference internal" href="pyclbr.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyclbr</span></code> --- Python module browser support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py_compile.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">py_compile</span></code> --- Compile Python source files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compileall.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code> --- Byte-compile Python libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dis.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Python bytecode的反組譯器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dis.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dis</span></code> --- Disassembler for Python bytecode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pickletools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickletools</span></code> --- Tools for pickle developers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous Services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="formatter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">formatter</span></code> --- Generic output formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="windows.html">MS Windows Specific Services</a><ul>
@@ -559,18 +576,22 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>上個主題</h4>
-  <p class="topless"><a href="../reference/grammar.html"
-                        title="上一章"><span class="section-number">10. </span>完整的語法規格書</a></p>
-  <h4>下個主題</h4>
-  <p class="topless"><a href="intro.html"
-                        title="下一章">簡介</a></p>
+  <div>
+    <h4>上個主題</h4>
+    <p class="topless"><a href="../reference/grammar.html"
+                          title="上一章"><span class="section-number">10. </span>Full Grammar specification</a></p>
+  </div>
+  <div>
+    <h4>下個主題</h4>
+    <p class="topless"><a href="intro.html"
+                          title="下一章">Introduction</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>此頁面</h3>
     <ul class="this-page-menu">
       <li><a href="../bugs.html">回報錯誤</a></li>
       <li>
-        <a href="https://github.com/python/cpython/blob/3.9/Doc/library/index.rst"
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/index.rst"
             rel="nofollow">顯示原始碼
         </a>
       </li>
@@ -590,10 +611,10 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
           <a href="../py-modindex.html" title="Python 模組索引"
              >模組</a> |</li>
         <li class="right" >
-          <a href="intro.html" title="簡介"
+          <a href="intro.html" title="Introduction"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="../reference/grammar.html" title="10. 完整的語法規格書"
+          <a href="../reference/grammar.html" title="10. Full Grammar specification"
              >上一頁</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -605,13 +626,11 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
           <li>
               
           </li>
-    <li>
-      <span class="language_switcher_placeholder">zh_TW</span>
-      <span class="version_switcher_placeholder">3.9.7</span>
-      <a href="../index.html">說明文件 </a> &#187;
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.2 Documentation</a> &#187;
     </li>
 
-        <li class="nav-item nav-item-this"><a href="">Python 標準函式庫 (Standard Library)</a></li>
+        <li class="nav-item nav-item-this"><a href="">The Python Standard Library</a></li>
                 <li class="right">
                     
 
@@ -629,25 +648,25 @@ the <a class="reference external" href="https://pypi.org">Python Package Index</
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2021, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2022, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
-    See <a href="">History and License</a> for more information.
-    <br /><br />
+    See <a href="/license.html">History and License</a> for more information.<br />
+    <br />
 
     The Python Software Foundation is a non-profit corporation.
 <a href="https://www.python.org/psf/donations/">Please donate.</a>
 <br />
     <br />
 
-    最後更新於 9月 06, 2021。
-    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    最後更新於 3月 02, 2022。
+    <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0 建立。
     </div>
 
   </body>
