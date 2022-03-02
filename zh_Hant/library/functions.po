@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-11 08:29+0000\n"
-"PO-Revision-Date: 2022-01-31 17:42+0800\n"
-"Last-Translator: Phil Lin <linooohon@gmail.com>\n"
-"Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-"
-"tw)\n"
-"Language: zh_TW\n"
+"PO-Revision-Date: 2022-03-02 18:46+0000\n"
+"Last-Translator: Josix <josixwang@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
+"python-3-10-documentation-zh-tw/libraryfunctions-po/zh_Hant/>\n"
+"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Weblate 4.11.1-dev\n"
 
 #: ../../library/functions.rst:5 ../../library/functions.rst:11
 msgid "Built-in Functions"
@@ -407,10 +407,11 @@ msgstr ""
 "返回一個數的絕對值。實參可以是整數或浮點數。如果實參是一個複數，返回它的模。"
 
 #: ../../library/functions.rst:66
+#, fuzzy
 msgid ""
 "Return an :term:`asynchronous iterator` for an :term:`asynchronous "
 "iterable`. Equivalent to calling ``x.__aiter__()``."
-msgstr ""
+msgstr "為一個異步迭代器返回一個異步迭代器。相當於調用 ``x.__aiter__()``。"
 
 #: ../../library/functions.rst:69
 msgid "Note: Unlike :func:`iter`, :func:`aiter` has no 2-argument variant."
